@@ -382,7 +382,7 @@ div.rounded-contact-icon i:hover{
  } */
 
  div#upper-footer{
-    background: rgb(0 0 0 / 87%) !important;
+    background: #181818 !important;
  }
  div#bottom-footer{
     background: rgb(210, 35, 42) !important;
@@ -411,4 +411,21 @@ div.rounded-contact-icon i:hover{
  div.footer-social-icons a:hover{
     transform: rotate(360deg);
     transition: 1s;
+ }
+
+ footer div.footer-list-1st-heading h5{
+     font-size: 25px;
+ }
+ footer div.footer-list-1st-row li{
+     list-style: none;
+     font-size: 18px;
+ }
+ footer div.footer-list-2nd-row h5{
+     font-size: 25px;
+ }
+ footer div.footer-list-2nd-row li{
+    list-style: none;
+ }
+ footer div.footer-list-2nd-row li a{
+     font-size: 13px;
  }
