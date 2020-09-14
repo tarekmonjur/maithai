@@ -14,7 +14,7 @@
 
   <!-- Style.css -->
   <link rel="stylesheet" href="css/style.css">
-</head>
+</head>   
 
 <body>
   <!--------------- HEADER ------------------>
@@ -31,26 +31,36 @@
           <!-- Top Menu -->
           <div class="topMenu">
             <ul>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Request Call Back</a></li>
-              <li><a href="#">Register</a></li>
-              <li><a href="#">Login</a></li>
+              <li><a href="#" class="text-capitalize">help</a></li>
+              <li><a href="#" class="text-capitalize">request call back</a></li>
+              <li><a href="#" class="text-capitalize">register</a></li>
+              <li><a href="#" class="text-capitalize">login</a></li>
             </ul>
           </div>
           <!-- Phone Contact -->
           <div class="mt-3 top-contact">
             <div class="phone-num-bar">
               <i class="fas fa-phone-alt icon"></i>
-              <div class="num">call: 01708044344</div>
+              <div class="num">call: <span class="font-weight-bold">01708044344</span></div>
             </div>
-            
+           <!-- Charts Total -->
             <div class="ml-3 cart-bar">
               <i class="fas fa-shopping-cart"></i>
+              <span class="badge badge-light">4</span>
+              <div class="carts-section text-uppercase">
+                  <span class="mr-2">total carts: <span class="text-danger font-weight-bold">4</span></span>
+                  <div style="border-left: 2px solid tomato;"></div>
+                  <span>price amount: <span class="text-danger font-weight-bold">1200TK</span></span>
+              </div>
             </div>
-            <!-- Button Of Header -->
-            <div class="ml-3">
-              <button class="btn btn-custom-outline text-capitalize">order food online</button>
+           <!-- Clock for Opening and closing time -->
+            <div class="ml-3 buisness-hour">
+              <i class="far fa-clock"></i>
+              <div class="time-table">
+                <span class="text-uppercase font-weight-bold">GET ON 5 DAYS A WEEK FROM 10.00 AM TO 6PM IST</span>
+              </div>
             </div>
+           
           </div>
         </div>
 
@@ -76,7 +86,7 @@
             <a class="nav-link active-now" href="#">home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">about us</a>
+            <a class="nav-link" href="aboutUs.html">about us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">food list</a>
@@ -85,13 +95,13 @@
             <a class="nav-link" href="#">food grid</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">login & register</a>
+            <a class="nav-link" href="loginRegister.html">login & register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">contact us</a>
+            <a class="nav-link" href="contactUs.html">contact us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">terms & policy</a>
+            <a class="nav-link" href="termsPolicy.html">terms & policy</a>
           </li>
         </ul>
       </div>
@@ -99,7 +109,7 @@
   </nav>
 
   <!------------- SECTION of Banners Page ----------------->
-  <section>
+  <section id="home-cover">
     <div class="jumbotron">
       <div class="dark-bg">
         <div id="intro">
@@ -124,6 +134,7 @@
         </div>
 
         <a href="#" class="about-btn mt-4">About The Restaurant</a>
+        <a href="#" class="order-btn mt-4 ml-3">Order Food Online!</a>
         </div>
       </div>
     </div>
@@ -158,11 +169,11 @@
     <div class="mt-5 row">
       <!-- Aside LeftSide -->
       <aside class="col-md-6 text-center">
-        <div class="card" style="width: 33rem;">
+        <div class="card" style="width: 33rem; min-height: 380px;">
           <div class="card-body">
             <h1 class="card-title text-capitalize m-4" style="color: tomato;">welcome to MAITHAI</h1>
             <h6 class="card-subtitle mb-2">Get Best, Feel Happy!</h6>
-            <p class="card-text text-muted">Mai Thai Delivers Deliciously Authentic Thai Mai Kitchen & an atmosphere that is friendly and fun for the whole family. Our authentic Thai Mai Menu balances elements of sweet and sour, salt and spice to bring the best Thai Flavours to your Table. Prepared by experienced Thai Chefs, We offer a range of dishes from the classic Pad Thai to Sizzling Ginger Blue Cod.</p>
+            <p class="card-text text-muted" style="font-size: 13px; word-spacing: 2px; letter-spacing: 0.5px; ">Mai Thai Delivers Deliciously Authentic Thai Mai Kitchen & an atmosphere that is friendly and fun for the whole family. Our authentic Thai Mai Menu balances elements of sweet and sour, salt and spice to bring the best Thai Flavours to your Table. Prepared by experienced Thai Chefs, We offer a range of dishes from the classic Pad Thai to Sizzling Ginger Blue Cod.</p>
 
             <a href="#" class="btn btn-custom m-4">
               <span class="text-uppercase text-light">more info</span>
@@ -173,7 +184,7 @@
 
       <!-- Aside RightSide -->
       <aside class="col-md-6">
-        <img src="assets/img/cover3.jpg" alt="PIZZAAA" class="img img-fluid" style="height: 380px">
+        <img src="assets/img/cover3.jpg" alt="PIZZAAA" class="img img-fluid" style="min-height: 380px">
       </aside>
     </div>
   </section>
@@ -593,6 +604,7 @@
 
   <!-------------- FOOTER AREA ----------------->
   <footer class="footer text-light">
+    <!---------- TOP black FOOTER -------->
       <div id="upper-footer" class="p-5">
           <div class="container">
             <!-- One Section -->
@@ -617,7 +629,7 @@
                 <div class="col-md-4">
                     <ul>
                       <li>FAX: +1-800-999-9898</li>
-                      <li>E-mail: mail@foodbingodemo.com</li>
+                      <li>E-mail: mail@maithai.com</li>
                     </ul>
                 </div>
             </div>
@@ -626,60 +638,68 @@
 
             <!-- After Footers One Section -->
             <div class="row mt-5 footer-list-2nd-row">
-                <div class="col-md-3">
-                    <h5 class="text-capitalize mb-3">restaurant by area</h5>
+                <div class="col-md-4">
+                    <h5 class="text-capitalize mb-3">popular foods</h5>
                     <ul class="text-capitalize">
-                      <li><a href="" class="text-light">restaurant in uttora</a></li>
-                      <li><a href="" class="text-light">restautant in mirpur</a></li>
-                      <li><a href="" class="text-light">retaurant in gulshan</a></li>
-                      <li><a href="" class="text-light">restaurant in shadarghat</a></li>
-                      <li><a href="" class="text-light">restaurant in uttora 13</a></li>
+                      <li><a href="" class="text-light">masala pasta</a></li>
+                      <li><a href="" class="text-light">veep pasta</a></li>
+                      <li><a href="" class="text-light">chicken barger</a></li>
+                      <li><a href="" class="text-light">chines fish fry</a></li>
+                      <li><a href="" class="text-light">dhaka kacchi</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                  <h5 class="text-capitalize mb-3">top rated cuisines</h5>
+                <div class="col-md-4">
+                  <h5 class="text-capitalize mb-3">top rated foods</h5>
                   <ul class="text-capitalize">
-                    <li><a href="" class="text-light">north indian</a></li>
-                    <li><a href="" class="text-light">italian</a></li>
-                    <li><a href="" class="text-light">bengali</a></li>
-                    <li><a href="" class="text-light">chinese</a></li>
-                    <li><a href="" class="text-light">bangladeshi</a></li>
+                    <li><a href="" class="text-light">chinese masala</a></li>
+                    <li><a href="" class="text-light"></a></li>
+                    <li><a href="" class="text-light">bread & masala</a></li>
+                    <li><a href="" class="text-light">milk cream pizza</a></li>
+                    <li><a href="" class="text-light">veep noodles</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3">
-                   <h5 class="text-capitalize mb-3">popular restaurant</h5>
-                   <ul class="text-capitalize">
-                     <li><a href="" class="text-light">hinglish cafe</a></li>
-                     <li><a href="" class="text-light">mama mia italia</a></li>
-                     <li><a href="" class="text-light">khaan saab</a></li>
-                     <li><a href="" class="text-light">call of benga</a></li>
-                     <li><a href="" class="text-light">china by marcopolo</a></li>
+                <div class="col-md-4 business-hour">
+                   <h5 class="text-capitalize mb-3">business hour</h5>
+                   <ul>
+                     <li>
+                      <span>monday</span>
+                      <div class="dotted-dateline ml-3 mr-3"></div>
+                      <span>closed</span>
+                     </li>
+                     <li>
+                      <span>tue - fri</span>
+                      <div class="dotted-dateline ml-3 mr-3"></div>
+                      <span>9am - 10pm</span>
+                     </li>
+                     <li>
+                      <span>sat - sun</span>
+                      <div class="dotted-dateline ml-3 mr-3"></div>
+                      <span>7am - 11pm</span>
+                     </li>
+                     <li>
+                      <span>holidays</span>
+                      <div class="dotted-dateline ml-3 mr-3"></div>
+                      <span>7am - 11pm</span>
+                     </li>
                    </ul>
-                </div>
-                <div class="col-md-3">
-                  <h5 class="text-capitalize mb-3">popuar cities</h5>
-                  <ul class="text-capitalize">
-                    <li><a href="" class="text-light">Dhaka</a></li>
-                    <li><a href="" class="text-light">Feni</a></li>
-                    <li><a href="" class="text-light">Chittagong</a></li>
-                    <li><a href="" class="text-light">Cumilla</a></li>
-                    <li><a href="" class="text-light">Silet</a></li>
-                  </ul>
                 </div>
             </div>
           </div>
       </div>
 
+     <!------- BOTTOM tomato FOOTER -------->
       <div id="bottom-footer" class="p-2">
           <div class="container">
             <div class="row">
+              <!-- Footer App Logo -->
               <div class="col-md-4">
                 <div class="logo">
                   <img src="assets/logo/logo.png" alt="">
                 </div>
               </div>
 
-              <div class="col-md-4 footer-social-icons">
+              <!-- Footer SOCIAL ICONS -->
+              <div class="col-md-4 footer-social-icons" style="display: inline-flex; justify-content: center;">
                   <div class="d-flex mt-4">
                     <a href="" class="ml-4">
                       <i class="fab fa-twitter"></i>
@@ -699,7 +719,8 @@
                   </div>
               </div>
 
-              <div class="col-md-4 footer-qr-code">
+              <!-- QR-CODE Section -->
+              <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
                   <img class="img img-fluid img-thumbnail" src="assets/logo/qr-code.png" alt="QR-CODE">
               </div>
             </div>

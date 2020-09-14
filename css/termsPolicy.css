@@ -1,0 +1,25 @@
+/************TERMS & POLICY***********/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+section#about-cover .jumbotron{
+    background: url('../assets/img/aboutUsCover.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 80vh;
+}
+div.about-text-section{
+    float: left; 
+    margin-left: 5rem; 
+    margin-top: 3rem;
+}
+div.about-text-section div.about-cover{
+    line-height: 30px;
+}
+section#about-content h3{   
+    color: #cf3d27;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+}
+section#about-content p{
+    padding: 0 10px;
+    font-size: 14px;
+}

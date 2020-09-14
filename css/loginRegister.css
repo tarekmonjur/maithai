@@ -1,0 +1,36 @@
+/***********The Login & Register CSS***********/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+div.form-row{
+    border: 5px solid lightgray;
+    margin: 2rem;
+    padding: 40px 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px lightgray;
+}
+div.login-section{
+    width: 30rem;
+    float: left;
+    border-right: 1px solid lightgray;
+    padding-right: 5rem;
+}
+div.register-section{
+    width: 30rem;
+    float: right;
+    padding-left: 3rem;
+}
+div.form-label h1{
+    font-size: 27px;
+    font-family: 'Quicksand', sans-serif;
+    color: #cf3d27;
+    font-weight: bold;
+}
+div.form-label p{
+    font-family: 'Quicksand', sans-serif;
+}
+button[type="submit"].login-btn, button[type="button"].register-btn{
+    width: 100%;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
