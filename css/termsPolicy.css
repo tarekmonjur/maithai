@@ -40,5 +40,9 @@ section#about-content p{
         line-height: 1.2;
         margin-bottom: 20px;
     }
+    div.about-text-section {
+        position: unset;
+        margin-top: 13rem;
+    }
     
 }

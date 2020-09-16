@@ -170,7 +170,7 @@ div.grid-area div.grid-footer button.btn-grid-order:active{
     div.list-area div.list-body{
         width: 100%;
     }
-    section#food-list div.food-list-body button{
+    section#food-list div.food-list-body button.btn-list-order{
         width: 100% !important;
     }
     div.list-footer{
@@ -193,10 +193,13 @@ div.grid-area div.grid-footer button.btn-grid-order:active{
         width: 100% !important;
     }
     section#food-list div.food-list-body button{
-        width: 20px !important;
+        width: 20px;
         padding-left: 10px;
         float: right;
         padding-right: 10px;
+    }
+    button.btn-food-search{
+        width: 20px !important;
     }
     h3.text-capitalize.text-danger {
         font-size: 20px;

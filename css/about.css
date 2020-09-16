@@ -161,6 +161,9 @@ section#about-founders .image-content:hover::before{
     div.about-text-section{
         float: unset;
         margin-left: 0;
+        position: unset;
+        margin-top: 13rem;
+        
     }
     section#about-content{
         margin-bottom: 0 !important;
