@@ -10,6 +10,9 @@ div.about-text-section{
     float: left; 
     margin-left: 5rem; 
     margin-top: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 div.about-text-section div.about-cover{
     line-height: 30px;
@@ -22,4 +25,20 @@ section#about-content h3{
 section#about-content p{
     padding: 0 10px;
     font-size: 14px;
+}
+
+/**The Media quries for Responsive**/
+@media only screen and (max-width: 720px){
+    div.about-text-section{
+        float: unset;
+        margin-left: 0;
+        text-align: center;
+    }
+    .display-3 {
+        font-size: 3rem;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    
 }

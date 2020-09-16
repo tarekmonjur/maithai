@@ -34,3 +34,43 @@ button[type="submit"].login-btn, button[type="button"].register-btn{
     letter-spacing: 1px;
     word-spacing: 2px;
 }
+
+
+/**The Media Quries for Phone Screen Confortable**/
+/**iPhone 6,7,8 or Uppper Screen Comfortable**/
+@media only screen and (max-width: 720px){
+    div.form-row{
+        margin: 0;
+        border-radius: 0;
+        border: 0;
+    }
+    section#login-register {
+        margin-bottom: 0 !important;
+    }
+    div.login-section{
+        width: 100%;
+        float: unset;
+        border-right: 0;
+        padding: 0;
+        border-bottom: 1px solid lightgray;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center;
+    }
+    form.form-section {
+        margin-bottom: 3rem;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /**Registation Form**/
+    div.register-section{
+        width: 100%;
+        float: unset;
+        padding: 0;
+        margin-top: 2rem;
+        text-align: center;
+        display: grid;
+        justify-items: center;
+    }
+}
