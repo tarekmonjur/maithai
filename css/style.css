@@ -678,3 +678,12 @@ div.dotted-dateline{
         justify-content: center !important;
     }
 }
+
+@media only screen and (max-width: 1366px){
+    div.row.carousel-item{
+        height: 70vh;
+    }
+    div.special-card {
+        max-height: 74vh;
+    }
+}
