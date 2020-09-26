@@ -175,20 +175,20 @@ div.cart-bar:hover > div.cart-section{
 
 /**************Nav Bar***************/
 nav{
-    background: rgb(0 0 0 / 87%);
+    background: rgb(0 0 0 / 80%);
     color: #fff;
-    border-top: 1px solid rgb(210, 35, 42);
-    box-shadow: 0px 8px 20px #000
+    box-shadow: 0px 1px 3px #000000c4;
 }
 .navbar{
     padding: 0;
+    min-height: 60px;
 }
 nav li.nav-item a{
     color: rgb(211, 211, 211) !important;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
-    padding: 15px 20px !important;
+    padding: 20px 25px !important;
 }
 nav li.nav-item a:hover{
     background: rgb(210, 35, 42);
@@ -309,6 +309,7 @@ div.search-food .form-control{
     height: 100px;
     text-align: center;
     transition: 0.5s ease-in-out;
+    margin: auto;
 }
 .jumbo-one .rounded-icon:hover{
     text-shadow: 5px 5px 10px #808080;
@@ -318,10 +319,13 @@ div.search-food .form-control{
     color: dimgray;
 }
 div.col-jumbo-one{
-    padding-left: 5rem;
+    /*padding-left: 5rem;*/
+    justify-content: center;
+    margin: auto;
 }
 .jumbo-one p{
     margin-top: 20px;
+    text-align: center;
 }
 
 /***************OFFERS FOOD**************/
@@ -573,8 +577,8 @@ div.dotted-dateline{
         display: grid;
         justify-items: center;
         width: auto;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        justify-content: center;
+        margin: auto;
         text-align: center;
     }
     .jumbo-one p{
