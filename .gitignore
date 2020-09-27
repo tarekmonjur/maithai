@@ -1,1 +1,17 @@
 .idea
+/info
+/web/data
+/web/db
+
+/web/www/node_modules
+/web/www/public/hot
+/web/www/public/storage
+/web/www/storage/*.key
+/web/www/vendor
+web/www/.env
+web/www/.env.backup
+web/www/.phpunit.result.cache
+web/www/Homestead.json
+web/www/Homestead.yaml
+web/www/npm-debug.log
+web/www/yarn-error.log

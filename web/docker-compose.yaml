@@ -1,0 +1,56 @@
+version: '3'
+
+networks:
+  maithai:
+    external: true
+
+services:
+  apache:
+    build:
+      context: ./.docker/apache
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./www:/var/www/html/
+      - ./.docker/apache/maithai.apache.conf:/usr/local/apache2/conf/maithai.apache.conf
+    ports:
+      - 8081:80
+    links:
+      - php-fpm
+    networks:
+      - maithai
+
+  php-fpm:
+    build:
+      context: ./.docker/php
+      dockerfile: ./Dockerfile
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/
+    #      - ./.docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+    #      - ./.docker/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    ports:
+      - 9000:9000
+    links:
+      - mysql
+    networks:
+      - maithai
+    environment:
+      DB_HOST: mysql
+      DB_DATABASE: maithai
+      DB_USERNAME: maithai21
+      DB_PASSWORD: secret
+
+  mysql:
+    image: mysql:5.6
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./data:/docker-entrypoint-initdb.d
+    ports:
+      - 3307:3306
+    networks:
+      - maithai
+    environment:
+      MYSQL_DATABASE: maithai
+      MYSQL_USER: maithai
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
