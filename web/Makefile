@@ -36,7 +36,8 @@ laravel:
 
 permissions:
 	sudo chmod -R 775 $(CURDIR)/www/
-	sudo chown -R www-data:www-data $(CURDIR)/www/
+# 	sudo chown -R www-data:www-data $(CURDIR)/www/
+	sudo chown -R monjur:monjur $(CURDIR)/www/
 	sudo chmod -R 777 $(CURDIR)/www/storage
 
 scheduler:
