@@ -152,7 +152,7 @@ div.buisness-hour:hover > div.time-table,
 div.phone-num-bar:focus > div.num,
 div.cart-bar:focus > div.carts-section,
 div.buisness-hour:focus > div.time-table{
-    display: inline-flex;
+    display: inline-block;
 } 
 button.btn-custom-outline{
     background: #fff;
@@ -165,7 +165,7 @@ button.btn-custom-outline:hover{
 
 /**------HOver the Carts Section----**/
 div.cart-bar:hover > div.cart-section{
-    display: inline-flex;
+    display: inline-block;
 }
 
 /**--------Cart Bedges Hover Effect-------**/

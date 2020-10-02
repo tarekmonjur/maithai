@@ -76,8 +76,10 @@ section#about-founders div.row div.underline-hr{
 
 /**-----------Animation with Image Hover-------------**/
 section#about-founders .image{
-	width: 200px;
-    max-height: 250px;
+	/* width: 200px;
+    max-height: 250px; */
+    width: 290px;
+    max-height: 280px;
     border-radius: 0.5rem;
 	overflow: hidden;
 	cursor: pointer;
