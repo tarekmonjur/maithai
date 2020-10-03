@@ -29,25 +29,16 @@
 
 .hi-slide .hi-next:hover,
 .hi-slide .hi-prev:hover {
-    opacity: 1;
-    background-color: #000;
+    opacity: .9;
     color: #fff;
 }
 
 .hi-slide .hi-prev {
-    left: -60px;
-}
-
-.hi-slide .hi-prev::before {
-    content: '<';
+    left: -150px;
 }
 
 .hi-slide .hi-next {
-    right: -60px;
-}
-
-.hi-slide .hi-next::before {
-    content: '>';
+    right: -150px;
 }
 
 .hi-slide>ul {
