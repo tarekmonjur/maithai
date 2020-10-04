@@ -78,7 +78,7 @@ section#about-founders div.row div.underline-hr{
 section#about-founders .image{
 	/* width: 200px;
     max-height: 250px; */
-    width: 290px;
+    width: 280px;
     max-height: 280px;
     border-radius: 0.5rem;
 	overflow: hidden;
@@ -152,6 +152,14 @@ section#about-founders .image-content::before {
 section#about-founders .image-content:hover::before{
 	height: 140px;
 }
+button.btn.btn-lg.text-light.text-uppercase {
+    background: rgb(255, 99, 71);
+    border: 1px solid;
+}
+button.btn.btn-lg.text-light.text-uppercas:hover{
+    background: none;
+    border: 1px solid  rgb(255, 99, 71);
+}
 
 /**Media Queries for Mobile View**/
 /**iPhone 6,7,8 to Uppper Screens Confortable**/
@@ -178,6 +186,20 @@ section#about-founders .image-content:hover::before{
     }
     section#about-content h1{
         font-size: 3rem;
+    }
+    div.col-md-4{
+        display: grid;
+        justify-items: center;
+    }
+    section#about-founders div.row h5{
+        text-align: center;
+    }
+    
+    section#about-founders div.row p{
+        text-align: center;
+    }
+    section#about-founders div.row p.text-body-muted{
+        margin-top: 1rem;
     }
     section#about-founders div.col-md-3{
         padding: 0;
