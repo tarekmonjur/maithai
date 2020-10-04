@@ -27,16 +27,23 @@ ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
     border-radius: 0 !important;
 }
 /**-----------BUTTON----------**/
-.btn-custom{
+.btn-custom {
     font-size: 18px;
     border-radius: 0 !important;
-    margin-bottom: 4px;
+    margin-bottom: 5.5px;
     background: rgb(255, 99, 71) !important;
     color: #fff;
+    height: 43px;
+    border: 2px solid tomato;
 }
+.btn-custom:hover{
+    background: none !important;
+    border: 2px solid tomato;
+}
+
 /**--------Cart Styles--------**/
 .cart-img{
-    height: 220px;
+    height: 300px;
 }
 .card-img{
     height: 280px;
@@ -46,11 +53,15 @@ ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
     width: 25px;
     position: absolute;
     background: tomato;
-    left: 20px;
+    left: 17rem;
+    float: right;
     box-shadow: 5px 5px 20px;
 }
 .card-title{
     font-family: 'Baloo 2', cursive;
+}
+h3.card-title {
+    color: tomato;
 }
 /**------Text Shadow-------**/
 .text-shadow{
@@ -292,6 +303,7 @@ div.search-food .form-control{
     border-radius: 0 !important;
     border: none !important;
     outline: none !important;
+    height: 43px;
 }
 
 /***********Sections Jumbotron-One***********/
@@ -330,37 +342,42 @@ div.col-jumbo-one{
 
 /***************OFFERS FOOD**************/
 div.row.carousel-item {
-    height: 60vh;
-}
-div#carouselExampleControls {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-div.carousel-image{
-    margin-right: 1rem;
+    max-height: 44vh;
 }
 img.img-offer{
-    width: 80vh;
+    width: 44vh;
 }
-div.carousel-item h1{
-    justify-self: self-end;
+div.indian-list, div.junk-list,div.fast-list{
+    position: relative;
+    bottom: 28rem;
 }
 ul.offer-list-ul{
     font-size: 14px;
     text-transform: capitalize;
     font-weight: bold;
+} 
+a.ml-5.carousel-control-prev,
+a.mr-5.carousel-control-next{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d2232a;
+    color: #fff;
+    transition: all 0.6s;
+    font-size: 20px;
+    font-weight: bold;
 }
-div.fast.food.row{
-    position: relative;
-    bottom: 5rem;
+a.ml-5.carousel-control-prev {
+    left: 15%;
 }
-div.indian-list, div.junk-list{
-    position: relative;
-    bottom: 20rem;
-}
-div.fast-list{
-    position: relative;
-    bottom: 25rem;
+a.mr-5.carousel-control-next {
+    right: 15%;
 }
 
 /*************SPECIAL FOOD MENU*****************/
@@ -394,7 +411,7 @@ div.card p.card-text.text-muted{
     font-size: 14.5px;
 }
 /*The Next and the Previous Button for Carousel*/
-.carousel-control-next:hover,
+/* .carousel-control-next:hover,
 .carousel-control-prev:hover {
     color: #fff;
     text-decoration: none;
@@ -402,6 +419,29 @@ div.card p.card-text.text-muted{
     opacity: .9;
     background: rgb(0 0 0 / 0.5);
     border-radius: 8px;
+} */
+a.carousel-control-prev,
+a.carousel-control-next{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d2232a;
+    color: #fff;
+    transition: all 0.6s;
+    font-size: 20px;
+    font-weight: bold;
+}
+a.carousel-control-prev {
+    left: 15%;
+}
+a.carousel-control-next{
+    right: 14%;
 }
 
 /*******************CONTACT US*********************/
@@ -624,33 +664,13 @@ div.dotted-dateline{
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
+    .card.special-food-card {
+        min-height: 535px;
+    }
 
     /**Food Menu Tab**/
-    div#carouselExampleControls{
-        margin-bottom: 3rem;
-        text-align: center;
-    }
-    div.carousel-item{
-        height: 95vh !important;
-    }
-    div.carousel-item div.col-md-6{
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-    div.indian-list, div.junk-list{
-        position: unset;
-        bottom: 0;
-        text-align: center;
-    }
-    div.fast-list{
-        position: relative;
-        bottom: 2rem;
-    }
-    li.list-group-item{
-        position: unset;
-        display: grid;
-        text-align: center;
-        justify-items: center;
+    div.indian-list{
+        margin-top: 0;
     }
 
     /**The Special Food Offer Section**/
@@ -673,6 +693,24 @@ div.dotted-dateline{
     section.special-food-menu .carousel-control-prev:hover{
         background: none;
     }
+    section.jumbotron.special-food-menu {
+        max-height: 130vh;
+    }
+    div.special-card {
+        max-height: 90vh !important;
+    }
+
+    section.special-food-menu .carousel-control-next:hover, section.special-food-menu .carousel-control-prev:hover {
+        background: #000;
+    }
+
+    a.carousel-control-prev, a.carousel-control-next {
+        top: 95% !important;
+        width: 40px !important;
+        height: 40px;
+        border-radius: 100%;
+        /* line-height: 18px; */
+    }
 
     /**CONTACT US**/
     div.contact-col p{
@@ -686,7 +724,14 @@ div.dotted-dateline{
 
     /**Top Footer**/
     div.business-hour ul li{
-        font-size: 14px;
+        font-size: 11px;
+    }
+    .newsletters-phone {
+        display: grid;
+        justify-items: center;
+    }
+    .newsletters-phone img {
+        max-width: 250px;
     }
 
     /**Bottom Foooter**/
@@ -696,13 +741,67 @@ div.dotted-dateline{
     div.col-md-4.footer-qr-code{
         justify-content: center !important;
     }
+
+    div.indian-list, div.junk-list,div.fast-list{
+        top: 2rem;
+        text-align: center;
+    }
+
+    div.row.carousel-item {
+        min-height: 100vh;
+        max-height: 135vh !important;
+    }
+    img.img-offer{
+        width: 44vh;
+    }
+    a.ml-5.carousel-control-prev {
+        left: -10% !important;
+    }
+    a.mr-5.carousel-control-next {
+        right: -10% !important;
+    }
+    a.mr-5.carousel-control-prev.menu-btn,
+    a.mr-5.carousel-control-next.menu-btn{
+        top: 50% !important;
+    }
+    .display-2 {
+        font-size: 4.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+    h1.text-uppercase.display-2.text-shadow {
+        text-align: center;
+        margin-left: 10%;
+    }
 }
 
 @media only screen and (max-width: 1366px){
-    div.row.carousel-item{
-        height: 70vh;
-    }
     div.special-card {
         max-height: 74vh;
+    }
+    div.row.carousel-item {
+        max-height: 60vh;
+    }
+    img.img-offer{
+        width: 60vh;
+    }
+    div.indian-list, div.junk-list, div.fast-list {
+        position: relative;
+        bottom: 25rem;
+    }
+    a.ml-5.carousel-control-prev {
+        left: 0;
+    }
+    a.mr-5.carousel-control-next {
+        right: 0;
+    }
+    a.carousel-control-prev {
+        left: 0;
+    }
+    a.carousel-control-next{
+        right: 0;
+    }
+    a.carousel-control-next{
+        right: 15%;
     }
 }
