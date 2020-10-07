@@ -58,7 +58,7 @@
                   total carts: <span class="text-danger font-weight-bold">4</span>
                   <span class="ml-2 mr-2"> | </span>
                   price amount: <span class="text-danger font-weight-bold">1200TK</span>
-              </span>
+                </span>
               </div>
             </div>
             <!-- Clock for Opening and closing time -->
@@ -90,20 +90,20 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="index.html">home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutUs.html">about us</a>
+            <a class="nav-link active-now" href="#">food list <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="foodList.html">food list</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link active-now" href="#">food grid <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="foodList.html">food package</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="loginRegister.html">login & register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">about us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contactUs.html">contact us</a>
@@ -125,371 +125,599 @@
             <h5 class="intro-title text-uppercase mb-4">stock food grid combo</h5>
           </div>
 
-        <div class="search-food mb-5">
-          <input type="text" placeholder="Find Your Choice!" class="form-control">
-          <button type="submit" class="btn btn-danger btn-custom text-uppercase">
-            <i class="fas fa-search"></i>
-            <span> </span>
-            <span>Search</span>
-          </button>
-        </div>
+          <div class="search-food mb-5">
+            <input type="text" placeholder="Find Your Choice!" class="form-control">
+            <button type="submit" class="btn btn-danger btn-custom text-uppercase">
+              <i class="fas fa-search"></i>
+              <span> </span>
+              <span>Search</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-   <!-------------- Food Grid Section ------------>
-   <section id="food-list" class="mt-5 mb-5">
+  <!-------------- Food Grid Section ------------>
+  <section id="food-list" class="mt-5 mb-5">
     <div class="container">
-        <div class="food-list-header">
-           <h3 class="text-capitalize text-danger">food grids, combo food catagories</h3>
-        </div>
-        <hr>
+      <div class="food-list-header">
+        <h3 class="text-capitalize text-danger">food grids, combo food catagories</h3>
+      </div>
+      <hr>
 
       <!------- The Main Food Grid and Food Search, Filtering Section ----------->
-        <div class="food-list-body row">
-          <div class="filter-item col-md-3 col-sm-4 col-xs-12">
-              <div class="forms">
-                <!------- Food Search Bar ------->
-                  <div class="form-control search-input mb-3">
-                    <input type="text" placeholder="Search for...">
-                    <button class="btn-food-search"><i class="fas fa-search"></i></button>
-                  </div>
-                <!------ Select Catagories Bar ------->
-                  <div class="form-control select-input mb-4">
-                    <select name="parent" id="select">
-                      <option value="1">Sort by: Popularity</option>
-                      <option value="2">Top Rated</option>
-                      <option value="3">Special Cuisins</option>
-                      <option value="4">Cost</option>
-                      <option value="5">Latest</option>
-                    </select>
-                  </div>
-              </div>
-
-          <!----- Food Filtering Area with Checkboxes ----->
-              <div class="checkbox-list mt-3">
-                <h6 class="text-capitalize">filter by cuisines</h6>
-                <ul class="mt-3">
-                  <li class="checkbox">
-                    <input type="checkbox" value="juices">
-                    <span class="text-capitalize ml-2">juices</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="korean">
-                    <span class="text-capitalize ml-2">korean</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="chineese">
-                    <span class="text-capitalize ml-2">chineese</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="indian">
-                    <span class="text-capitalize ml-2">indian</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="thai">
-                    <span class="text-capitalize ml-2">thai</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="junk">
-                    <span class="text-capitalize ml-2">junk</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="fast">
-                    <span class="text-capitalize ml-2">fast</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="bangladeshi">
-                    <span class="text-capitalize ml-2">bangladeshi</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="karela">
-                    <span class="text-capitalize ml-2">karela</span>
-                  </li>
-                </ul>
-              </div>
+      <div class="food-list-body row">
+        <div class="filter-item col-md-3 col-sm-4 col-xs-12">
+          <div class="forms">
+            <!------- Food Search Bar ------->
+            <div class="form-control search-input mb-3">
+              <input type="text" placeholder="Search for...">
+              <button class="btn-food-search"><i class="fas fa-search"></i></button>
+            </div>
+            <!------ Select Catagories Bar ------->
+            <div class="form-control select-input mb-4">
+              <select name="parent" id="select">
+                <option value="1">Sort by: Popularity</option>
+                <option value="2">Top Rated</option>
+                <option value="3">Special Cuisins</option>
+                <option value="4">Cost</option>
+                <option value="5">Latest</option>
+              </select>
+            </div>
           </div>
 
-       <!------------- Food List Area Here -------------->
-          <div class="grid-area col-md-9 col-sm-8 col-xs-12">
-           <!------- Food Grid Cards With Row & Cols --------->
-            <div class="row row-cols-1 row-cols-md-3">
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/wideCard1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                  <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
+
+          <!----------- Collapse Bar ----------->
+          <div id="accordion" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <span>
+                      <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1"> filter by cuisines</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">juices</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">korean</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">chineese</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">indian</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">thai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">junk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">fast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="bangladeshi">
+                        <span class="text-capitalize ml-2">bangladeshi</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="karela">
+                        <span class="text-capitalize ml-2">karela</span>
+                      </li>
                     </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">250Tk / <del>240Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!---------------------- 2nd Collapse Bar --------------------------->
+          <div id="accordion-2" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
+                    <span>
+                      <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1"> filter by Food package</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-2">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">juices</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">korean</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">chineese</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">indian</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">thai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">junk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">fast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="bangladeshi">
+                        <span class="text-capitalize ml-2">bangladeshi</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="karela">
+                        <span class="text-capitalize ml-2">karela</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!--------------------- 3rd Collapse Bar ---------------------->
+          <div id="accordion-3" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    <span>
+                      <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1"> filter by catagories</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-3">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">juices</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">korean</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">chineese</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">indian</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">thai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">junk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">fast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="bangladeshi">
+                        <span class="text-capitalize ml-2">bangladeshi</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="karela">
+                        <span class="text-capitalize ml-2">karela</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!------------------- 4th Collapse Bar ------------------------->
+          <div id="accordion-4" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                    aria-controls="collapseFour">
+                    <span>
+                      <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">Filter by price</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseFour" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-4">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">10 - 50TK</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">60 - 150Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">180 - 250Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">300 - 450Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">500 - 600Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">600 - 800Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">900 - 1200Tk</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </div><!--END of The Left Side Section  -->
+
+
+
+        <!------------- Food List Area Here -------------->
+        <div class="grid-area col-md-9 col-sm-8 col-xs-12">
+          <!------- Food Grid Cards With Row & Cols --------->
+          <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">250Tk / <del>240Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/wideCard2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                 <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">100Tk / <del>240Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/wideCard3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                  <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">450Tk / <del>740Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                  <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                 <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">330Tk / <del>440Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/coverA.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                  <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">50Tk / <del>100Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/cover2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                 <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">120Tk / <del>240Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/cover3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                  <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">150Tk / <del>540Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col mb-4">
-                <div class="card h-100">
-                  <img src="assets/img/cover1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                  <div class="card-body grid-body">
-                    <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                    <ul class="list-body-mini-list">
-                      <li><a href="#">Pizza</a></li>
-                      <li><a href="#">American</a></li>
-                      <li><a href="#">Sandwiches</a></li>
-                      <li><a href="#">Pasta</a></li>
-                    </ul>
-                    <hr>
-                    <div class="d-grid grid-footer text-center">
-                      <div class="discount-title">
-                        <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
-                      </div>
-                      <div class="grid-footer-btn mt-2">
-                        <button class="btn-grid-order text-capitalize">
-                          <i class="fas fa-plus-circle"></i>
-                          <span>add cart</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
-          <!------------- Page Pagination Bar ------------->
-              <div class="pagination" aria-label="...">
-                <ul class="pagination pagination-sm">
-                  <li class="page-item active" aria-current="page">
-                    <span class="page-link">
-                      1
-                      <span class="sr-only">(current)</span>
-                    </span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">5</a></li>
-                  <li class="page-item"><a class="page-link" href="#">6</a></li>
-                </ul>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">100Tk / <del>240Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">450Tk / <del>740Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">330Tk / <del>440Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/coverA.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">50Tk / <del>100Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">120Tk / <del>240Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">150Tk / <del>540Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!------------- Page Pagination Bar ------------->
+          <div class="pagination" aria-label="...">
+            <ul class="pagination pagination-sm">
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">
+                  1
+                  <span class="sr-only">(current)</span>
+                </span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+            </ul>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
-  
+
 
   <!-------------- FOOTER AREA ----------------->
   <footer class="footer text-light">
@@ -628,6 +856,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+<script src="js/collapse_button.js" defer></script>
 
 </html>
