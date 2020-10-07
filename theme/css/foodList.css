@@ -46,6 +46,42 @@ section#food-list div.food-list-body div.select-input{
     width: 250px !important;
 }
 
+/*****The Parent Menu Collapse****/
+div#accordion .card-header,
+div#accordion-2 .card-header,
+div#accordion-3 .card-header,
+div#accordion-4 .card-header{
+    padding: 0 !important;
+    margin-bottom: 0;
+    background: none !important;
+    border: 0 !important;
+}
+div#accordion .card,
+div#accordion-2 .card,
+div#accordion-3 .card,
+div#accordion-4 .card{
+    border: 0 !important;
+}
+div#accordion h6.text-capitalize,
+div#accordion-2 h6.text-capitalize,
+div#accordion-3 h6.text-capitalize,
+div#accordion-4 h6.text-capitalize{
+    cursor: default;
+}
+div#accordion img,
+div#accordion-2 img,
+div#accordion-3 img,
+div#accordion-4 img{
+    cursor: pointer;
+}
+
+div#accordion .card-body,
+div#accordion-2 .card-body,
+div#accordion-3 .card-body,
+div#accordion-4 .card-body{
+    padding: 1rem;
+}
+
 /**----Checkbox Of Filtering----**/
 div.checkbox-list h6{
     font-size: 18px;

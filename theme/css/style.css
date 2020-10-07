@@ -126,7 +126,10 @@ header img{
 }
 .top-contact>div.phone-num-bar>.fa-phone-alt,
 .top-contact>div.cart-bar>.fa-shopping-cart,
-.top-contact>div.buisness-hour>.fa-clock{
+.top-contact>div.buisness-hour>.fa-clock,
+svg.svg-inline--fa.fa-phone-alt.fa-w-16.icon,
+svg.svg-inline--fa.fa-shopping-cart.fa-w-18,
+svg.svg-inline--fa.fa-clock.fa-w-16{
     color: #d2232a;
     background: #fff;
     padding: 10px;
@@ -140,6 +143,7 @@ header img{
     line-height: 20px;
     cursor: pointer;
     transition: 0.5s;
+    margin-right: 3px;
 }
 .top-contact>div.phone-num-bar>.fa-phone-alt:hover,
 .top-contact>div.cart-bar>.fa-shopping-cart:hover,
@@ -151,7 +155,7 @@ div.num, div.carts-section, div.time-table{
     cursor: pointer;
     color: darkslategray;
     background: #fff;
-    padding: 5px 10px;
+    padding: 7px 10px;
     border-radius: 20px;
     border: 2px solid tomato;
     font-size: 14px;
@@ -163,7 +167,7 @@ div.buisness-hour:hover > div.time-table,
 div.phone-num-bar:focus > div.num,
 div.cart-bar:focus > div.carts-section,
 div.buisness-hour:focus > div.time-table{
-    display: inline-block;
+    display: inline-flex;
 } 
 button.btn-custom-outline{
     background: #fff;
@@ -173,6 +177,17 @@ button.btn-custom-outline:hover{
     background: rgb(210, 35, 42);
     color: #fff;
 }
+
+/***New Added Here to solve problem***/
+.phone-num-bar, .cart-bar, .buisness-hour{
+    height: 40px;
+    display: inline-flex;
+}
+span.badge.badge-light {
+    height: 20px;
+    width: 20px;
+}
+
 
 /**------HOver the Carts Section----**/
 div.cart-bar:hover > div.cart-section{
@@ -374,10 +389,10 @@ a.mr-5.carousel-control-next{
     font-weight: bold;
 }
 a.ml-5.carousel-control-prev {
-    left: 15%;
+    left: 6%;
 }
 a.mr-5.carousel-control-next {
-    right: 15%;
+    right: 6%;
 }
 
 /*************SPECIAL FOOD MENU*****************/
@@ -438,10 +453,10 @@ a.carousel-control-next{
     font-weight: bold;
 }
 a.carousel-control-prev {
-    left: 15%;
+    left: 6%;
 }
 a.carousel-control-next{
-    right: 14%;
+    right: 6%;
 }
 
 /*******************CONTACT US*********************/
@@ -706,10 +721,16 @@ div.dotted-dateline{
 
     a.carousel-control-prev, a.carousel-control-next {
         top: 95% !important;
-        width: 40px !important;
-        height: 40px;
+        width: 30px !important;
+        height: 30px;
         border-radius: 100%;
         /* line-height: 18px; */
+    }
+    a.carousel-control-prev {
+        left: 11rem !important;
+    }
+    a.carousel-control-next{
+        right: 1rem !important;
     }
 
     /**CONTACT US**/
@@ -762,16 +783,30 @@ div.dotted-dateline{
     }
     a.mr-5.carousel-control-prev.menu-btn,
     a.mr-5.carousel-control-next.menu-btn{
-        top: 50% !important;
+        top: 60% !important;
+    }
+    a.ml-5.carousel-control-prev, 
+    a.mr-5.carousel-control-next{
+        top: 60% !important;
     }
     .display-2 {
-        font-size: 4.5rem;
+        font-size: 4rem;
         font-weight: 300;
         line-height: 1.2;
     }
     h1.text-uppercase.display-2.text-shadow {
         text-align: center;
         margin-left: 10%;
+    }
+    .d-flex.offer-list{
+        justify-content: center;
+    }
+    .col-md-6.carousel-image {
+        padding-left: 20px !important;
+        padding-right: 0 !important;
+    }
+    li.list-group-item {
+        font-size: 12px;
     }
 }
 
@@ -796,12 +831,22 @@ div.dotted-dateline{
         right: 0;
     }
     a.carousel-control-prev {
-        left: 0;
+        left: 2%;
     }
     a.carousel-control-next{
         right: 0;
     }
     a.carousel-control-next{
-        right: 15%;
+        right: 0;
+    }
+    a.carousel-control-prev, a.carousel-control-next {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+    a.ml-5.carousel-control-prev, a.mr-5.carousel-control-next{
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
     }
 }

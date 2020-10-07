@@ -80,40 +80,39 @@
     </div>
   </header>
 
-  <!-------------------- NAVBAR ----------------------->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <!-------------------- NAVBAR ----------------------->
+ <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+      <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav m-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="aboutUs.html">about us</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link active-now" href="#">food list <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="foodGird.html">food grid</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="loginRegister.html">login & register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contactUs.html">contact us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="termsPolicy.html">terms & policy</a>
-          </li>
-        </ul>
+          <ul class="navbar-nav m-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="foodGird.html">food list</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active-now" href="#">food package <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="loginRegister.html">login & register</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="aboutUs.html">about us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contactUs.html">contact us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="termsPolicy.html">terms & policy</a>
+              </li>
+          </ul>
       </div>
-    </div>
+  </div>
   </nav>
 
   <!------------- SECTION of Banners Page ----------------->
@@ -167,57 +166,284 @@
                   </div>
               </div>
 
-          <!----- Food Filtering Area with Checkboxes ----->
-              <div class="checkbox-list mt-3">
-                <h6 class="text-capitalize">filter by cuisines</h6>
-                <ul class="mt-3">
-                  <li class="checkbox">
-                    <input type="checkbox" value="juices">
-                    <span class="text-capitalize ml-2">juices</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="korean">
-                    <span class="text-capitalize ml-2">korean</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="chineese">
-                    <span class="text-capitalize ml-2">chineese</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="indian">
-                    <span class="text-capitalize ml-2">indian</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="thai">
-                    <span class="text-capitalize ml-2">thai</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="junk">
-                    <span class="text-capitalize ml-2">junk</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="fast">
-                    <span class="text-capitalize ml-2">fast</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="bangladeshi">
-                    <span class="text-capitalize ml-2">bangladeshi</span>
-                  </li>
-
-                  <li class="checkbox">
-                    <input type="checkbox" value="karela">
-                    <span class="text-capitalize ml-2">karela</span>
-                  </li>
-                </ul>
+          <!----------- Collapse Bar ----------->
+          <div id="accordion" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <span>
+                      <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1"> filter by cuisines</span>
+                  </h6>
+                </h5>
               </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">juices</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">korean</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">chineese</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">indian</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">thai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">junk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">fast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="bangladeshi">
+                        <span class="text-capitalize ml-2">bangladeshi</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="karela">
+                        <span class="text-capitalize ml-2">karela</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+
+          <!---------------------- 2nd Collapse Bar --------------------------->
+          <div id="accordion-2" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
+                    <span>
+                      <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1"> filter by Food package</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-2">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">juices</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">korean</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">chineese</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">indian</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">thai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">junk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">fast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="bangladeshi">
+                        <span class="text-capitalize ml-2">bangladeshi</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="karela">
+                        <span class="text-capitalize ml-2">karela</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!--------------------- 3rd Collapse Bar ---------------------->
+          <div id="accordion-3" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    <span>
+                      <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1"> filter by catagories</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-3">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">juices</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">korean</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">chineese</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">indian</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">thai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">junk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">fast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="bangladeshi">
+                        <span class="text-capitalize ml-2">bangladeshi</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="karela">
+                        <span class="text-capitalize ml-2">karela</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!------------------- 4th Collapse Bar ------------------------->
+          <div id="accordion-4" class="mb-2">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                    aria-controls="collapseFour">
+                    <span>
+                      <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">Filter by price</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseFour" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-4">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="juices">
+                        <span class="text-capitalize ml-2">10 - 50TK</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="korean">
+                        <span class="text-capitalize ml-2">60 - 150Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="chineese">
+                        <span class="text-capitalize ml-2">180 - 250Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="indian">
+                        <span class="text-capitalize ml-2">300 - 450Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai">
+                        <span class="text-capitalize ml-2">500 - 600Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="junk">
+                        <span class="text-capitalize ml-2">600 - 800Tk</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="fast">
+                        <span class="text-capitalize ml-2">900 - 1200Tk</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          </div> <!--END of the Left Side Section-->
+
+          
 
        <!------------- Food List Area Here -------------->
           <div class="list-area col-md-9 col-sm-8 col-xs-12">
@@ -552,6 +778,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+  <script src="js/collapse_button.js" defer></script>
 
 </html>
