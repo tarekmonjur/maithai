@@ -40,6 +40,14 @@ ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
     background: none !important;
     border: 2px solid tomato;
 }
+a.bookmark-text{
+    text-decoration: none;
+    color: #333;
+}
+a.bookmark-text:hover{
+    text-decoration: none;
+    color: rgb(255, 99, 71);
+}
 
 /**--------Cart Styles--------**/
 .cart-img{
