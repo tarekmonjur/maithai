@@ -33,7 +33,6 @@
           <!-- Top Menu -->
           <div class="topMenu">
             <ul>
-              <li><a href="#" class="text-capitalize">help</a></li>
               <li><a href="#" class="text-capitalize">request call back</a></li>
               <li><a href="register.html" class="text-capitalize">register</a></li>
               <li><a href="loginRegister.html" class="text-capitalize">login</a></li>
@@ -52,20 +51,22 @@
               <div class="carts-section text-uppercase">
                 <!-- <span class="mr-2">total carts: <span class="text-danger font-weight-bold">4</span></span>
                 <div style="border-left: 2px solid tomato;"></div>
-                <span>price amount: <span class="text-danger font-weight-bold">1200TK</span></span> -->
+                <span>price amount: <span class="text-danger font-weight-bold">$1200</span></span> -->
 
                 <span class="text-uppercase font-weight-bold">
                   total carts: <span class="text-danger font-weight-bold">4</span>
                   <span class="ml-2 mr-2"> | </span>
-                  price amount: <span class="text-danger font-weight-bold">1200TK</span>
-              </span>
+                  price amount: <span class="text-danger font-weight-bold">$1200</span>
+                </span>
               </div>
             </div>
             <!-- Clock for Opening and closing time -->
             <div class="ml-3 buisness-hour">
               <i class="far fa-clock"></i>
               <div class="time-table">
-                <span class="text-uppercase font-weight-bold">GET ON 5 DAYS A WEEK FROM 10.00 AM TO 6PM IST</span>
+                <a href="#time-table-bookmark" class="bookmark-text">
+                  <span class="text-uppercase font-weight-bold">GET ON 5 DAYS A WEEK FROM 10.00 AM TO 6PM IST</span>
+                </a>
               </div>
             </div>
 
@@ -80,39 +81,40 @@
     </div>
   </header>
 
- <!-------------------- NAVBAR ----------------------->
- <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-      <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-------------------- NAVBAR ----------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="index.html">home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="foodGird.html">food list</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active-now" href="#">food package <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="loginRegister.html">login & register</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="aboutUs.html">about us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="contactUs.html">contact us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="termsPolicy.html">terms & policy</a>
-              </li>
-          </ul>
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="foodGird.html">food list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-now" href="#">food package <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loginRegister.html">login & register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">about us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactUs.html">contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="termsPolicy.html">terms & policy</a>
+          </li>
+        </ul>
       </div>
-  </div>
+    </div>
   </nav>
 
   <!------------- SECTION of Banners Page ----------------->
@@ -124,55 +126,163 @@
             <h5 class="intro-title text-uppercase mb-4">find foods from food list</h5>
           </div>
 
-        <div class="search-food mb-5">
-          <input type="text" placeholder="Find Your Choice!" class="form-control">
-          <button type="submit" class="btn btn-danger btn-custom text-uppercase">
-            <i class="fas fa-search"></i>
-            <span> </span>
-            <span>Search</span>
-          </button>
-        </div>
+          <div id="search-food" class="search-food mb-5">
+            <input type="text" placeholder="Find Your Choice!" class="form-control">
+
+            <!--------- The Search Collapse DropDown Bar ------->
+            <!-- <ul class="search-dropdown-menu" style="display: none; top: 45px; left: 0px;">
+            <li class="search-item"><a href="#">
+              <div class="image">
+                <img src="assets/img/card1.jpg" alt="card1">
+              </div>
+              <div class="name">Big 8</div>
+              <div class="price">$800.</div>
+            </a></li>
+
+            <li><a href="#"></a>
+              <div class="image">
+                <img src="assets/img/card1.jpg" alt="card1">
+              </div>
+              <div class="name">Pizza</div>
+              <div class="price">$700.</div>
+            </li>
+
+            <li><a href="#">
+              <div class="image">
+                <img src="assets/img/card1.jpg" alt="card1">
+              </div>
+              <div class="name">Fish Kabab</div>
+              <div class="price">$430.</div>
+            </a></li>
+
+            <li><a href="#">
+              <div class="image">
+                <img src="assets/img/card1.jpg" alt="card1">
+              </div>
+              <div class="name">Mutton Biriyani</div>
+              <div class="price">$860.</div>
+            </a></li>
+
+            <li><a href="#">
+              <div class="image">
+                <img src="assets/img/card1.jpg" alt="card1">
+              </div>
+              <div class="name">Masala Pasta</div>
+              <div class="price">$600.</div>
+            </a></li>
+          </ul> -->
+
+            <button type="submit" class="btn btn-danger btn-custom text-uppercase">
+              <i class="fas fa-search"></i>
+              <span> </span>
+              <span>Search</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Search Bar Drop Down Related Options by Pressing button on Search Bar -->
+  <!-- <div id="food-search-bar">
+    <ul class="search-dropdown-menu" style="display: inline-block; top: 45px; left: 0px;">
+      <li class="search-item mt-2"><a href="#">
+          <div class="image">
+            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
+          </div>
+
+          <div class="search-item">
+            <div class="name">Big 8</div>
+            <div class="price">$80.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item"><a href="#">
+          <div class="image">
+            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
+          </div>
+
+          <div class="search-item-body">
+            <div class="name">Pizza</div>
+            <div class="price">$70.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item"><a href="#">
+          <div class="image">
+            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
+          </div>
+
+          <div class="search-item">
+            <div class="name">Fish Kabab</div>
+            <div class="price">$43.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item"><a href="#">
+          <div class="image">
+            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
+          </div>
+
+          <div class="search-item">
+            <div class="name">Mutton Biriyani</div>
+            <div class="price">$86.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item mb-2"><a href="#">
+          <div class="image">
+            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
+          </div>
+
+          <div class="search-item">
+            <div class="name">Masala Pasta</div>
+            <div class="price">$60.</div>
+          </div>
+        </a></li>
+    </ul>
+  </div> -->
+
   <!-------------- Food List Section ------------>
   <section id="food-list" class="mt-5 mb-5">
     <div class="container">
-        <div class="food-list-header">
-           <h3 class="text-capitalize text-danger">all food list to chooce by flat order some parcentage off</h3>
-        </div>
-        <hr>
+      <div class="food-list-header">
+        <h3 class="text-capitalize text-danger">all food list to chooce by flat order some parcentage off</h3>
+      </div>
+      <hr>
 
       <!------- The Main Food List and Food Search, Filtering Section ----------->
-        <div class="food-list-body row">
-          <div class="filter-item col-md-3 col-sm-4 col-xs-12">
-              <div class="forms">
-                <!------- Food Search Bar ------->
-                  <div class="form-control search-input mb-3">
-                    <input type="text" placeholder="Search for...">
-                    <button class="btn-food-search"><i class="fas fa-search"></i></button>
-                  </div>
-                <!------ Select Catagories Bar ------->
-                  <div class="form-control select-input mb-4">
-                    <select name="parent" id="select">
-                      <option value="1">Sort by: Popularity</option>
-                      <option value="2">Top Rated</option>
-                      <option value="3">Special Cuisins</option>
-                      <option value="4">Cost</option>
-                      <option value="5">Latest</option>
-                    </select>
-                  </div>
-              </div>
+      <div class="food-list-body row">
+        <div class="filter-item col-md-3 col-sm-4 col-xs-12">
+          <div class="forms">
+            <!------- Food Search Bar ------->
+            <div class="form-control search-input mb-3">
+              <input type="text" placeholder="Search for...">
+              <button class="btn-food-search"><i class="fas fa-search"></i></button>
+            </div>
+            <!------ Select Catagories Bar ------->
+            <div class="form-control select-input mb-4">
+              <select name="parent" id="select">
+                <option value="1">Sort by: Popularity</option>
+                <option value="2">Top Rated</option>
+                <option value="3">Special Cuisins</option>
+                <option value="4">Cost</option>
+                <option value="5">Latest</option>
+              </select>
+            </div>
+          </div>
 
           <!----------- Collapse Bar ----------->
           <div id="accordion" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne">
+                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
                     <span>
                       <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
                     </span>
@@ -243,8 +353,8 @@
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                    aria-controls="collapseTwo">
+                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
                     <span>
                       <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -309,13 +419,13 @@
             </div>
           </div>
 
-        <!--------------------- 3rd Collapse Bar ---------------------->
+          <!--------------------- 3rd Collapse Bar ---------------------->
           <div id="accordion-3" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                    aria-controls="collapseThree">
+                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
                     <span>
                       <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -380,13 +490,13 @@
             </div>
           </div>
 
-        <!------------------- 4th Collapse Bar ------------------------->
+          <!------------------- 4th Collapse Bar ------------------------->
           <div id="accordion-4" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                    aria-controls="collapseFour">
+                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="false" aria-controls="collapseFour">
                     <span>
                       <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -402,37 +512,37 @@
                     <ul>
                       <li class="checkbox">
                         <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">10 - 50TK</span>
+                        <span class="text-capitalize ml-2">$10 - $50</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">60 - 150Tk</span>
+                        <span class="text-capitalize ml-2">$60 - $70</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">180 - 250Tk</span>
+                        <span class="text-capitalize ml-2">$33 - $55</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="indian">
-                        <span class="text-capitalize ml-2">300 - 450Tk</span>
+                        <span class="text-capitalize ml-2">$30 - $45</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">500 - 600Tk</span>
+                        <span class="text-capitalize ml-2">$100 - $300</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">600 - 800Tk</span>
+                        <span class="text-capitalize ml-2">$200 - $400</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="fast">
-                        <span class="text-capitalize ml-2">900 - 1200Tk</span>
+                        <span class="text-capitalize ml-2">$90 - $120</span>
                       </li>
                     </ul>
                   </div>
@@ -440,203 +550,210 @@
               </div>
             </div>
           </div>
-    
-          </div> <!--END of the Left Side Section-->
 
-          
+        </div>
+        <!--END of the Left Side Section-->
 
-       <!------------- Food List Area Here -------------->
-          <div class="list-area col-md-9 col-sm-8 col-xs-12">
-              <ul>
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
-                    <div class="discount-title">
-                      <h5 class="text-danger">200Tk / <del>240Tk</del></h5>
-                    </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
-                    <div class="discount-title">
-                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
-                    </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
-                    <div class="discount-title">
-                      <h5 class="text-danger">550Tk / <del>640Tk</del></h5>
-                    </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
+        <!------------- Food List Area Here -------------->
+        <div class="list-area col-md-9 col-sm-8 col-xs-12">
+          <ul>
+            <li class="d-flex mb-4 all-food-list">
+              <!-- list-image -->
+              <div class="list-img">
+                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
+              </div>
+              <!-- list-body -->
+              <div class="list-body ml-4 mr-2">
+                <h5>Eagle Boys Village Plaza</h5>
+                <ul class="list-body-mini-list">
+                  <li><a href="#">Pizza</a></li>
+                  <li><a href="#">American</a></li>
+                  <li><a href="#">Sandwiches</a></li>
+                  <li><a href="#">Steak House</a></li>
+                  <li><a href="#">Pasta</a></li>
+                  <li><a href="#">Wraps</a></li>
+                </ul>
+                <p style="font-size: 14px;" class="text-muted mt-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
+                  cupiditate animi.
+                </p>
+              </div>
+              <!-- list-footer -->
+              <div class="list-footer">
+                <div class="discount-title">
+                  <h5 class="text-danger">$200 / <del>$240</del></h5>
+                </div>
+                <div class="list-footer-btn mt-4">
+                  <button class="btn-list-order">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Cart</span>
+                  </button>
+                </div>
+              </div>
+            </li>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
-                    <div class="discount-title">
-                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
-                    </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
+            <li class="d-flex mb-4 all-food-list">
+              <!-- list-image -->
+              <div class="list-img">
+                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
+              </div>
+              <!-- list-body -->
+              <div class="list-body ml-4 mr-2">
+                <h5>Eagle Boys Village Plaza</h5>
+                <ul class="list-body-mini-list">
+                  <li><a href="#">Pizza</a></li>
+                  <li><a href="#">American</a></li>
+                  <li><a href="#">Sandwiches</a></li>
+                  <li><a href="#">Steak House</a></li>
+                  <li><a href="#">Pasta</a></li>
+                  <li><a href="#">Wraps</a></li>
+                </ul>
+                <p style="font-size: 14px;" class="text-muted mt-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
+                  cupiditate animi.
+                </p>
+              </div>
+              <!-- list-footer -->
+              <div class="list-footer">
+                <div class="discount-title">
+                  <h5 class="text-danger">$150 / <del>$240</del></h5>
+                </div>
+                <div class="list-footer-btn mt-4">
+                  <button class="btn-list-order">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Cart</span>
+                  </button>
+                </div>
+              </div>
+            </li>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
-                    <div class="discount-title">
-                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
-                    </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul> <!---END of This All Food List ul--->
+            <li class="d-flex mb-4 all-food-list">
+              <!-- list-image -->
+              <div class="list-img">
+                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
+              </div>
+              <!-- list-body -->
+              <div class="list-body ml-4 mr-2">
+                <h5>Eagle Boys Village Plaza</h5>
+                <ul class="list-body-mini-list">
+                  <li><a href="#">Pizza</a></li>
+                  <li><a href="#">American</a></li>
+                  <li><a href="#">Sandwiches</a></li>
+                  <li><a href="#">Steak House</a></li>
+                  <li><a href="#">Pasta</a></li>
+                  <li><a href="#">Wraps</a></li>
+                </ul>
+                <p style="font-size: 14px;" class="text-muted mt-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
+                  cupiditate animi.
+                </p>
+              </div>
+              <!-- list-footer -->
+              <div class="list-footer">
+                <div class="discount-title">
+                  <h5 class="text-danger">$550 / <del>$640</del></h5>
+                </div>
+                <div class="list-footer-btn mt-4">
+                  <button class="btn-list-order">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Cart</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+
+            <li class="d-flex mb-4 all-food-list">
+              <!-- list-image -->
+              <div class="list-img">
+                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
+              </div>
+              <!-- list-body -->
+              <div class="list-body ml-4 mr-2">
+                <h5>Eagle Boys Village Plaza</h5>
+                <ul class="list-body-mini-list">
+                  <li><a href="#">Pizza</a></li>
+                  <li><a href="#">American</a></li>
+                  <li><a href="#">Sandwiches</a></li>
+                  <li><a href="#">Steak House</a></li>
+                  <li><a href="#">Pasta</a></li>
+                  <li><a href="#">Wraps</a></li>
+                </ul>
+                <p style="font-size: 14px;" class="text-muted mt-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
+                  cupiditate animi.
+                </p>
+              </div>
+              <!-- list-footer -->
+              <div class="list-footer">
+                <div class="discount-title">
+                  <h5 class="text-danger">$150 / <del>$240</del></h5>
+                </div>
+                <div class="list-footer-btn mt-4">
+                  <button class="btn-list-order">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Cart</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+
+            <li class="d-flex mb-4 all-food-list">
+              <!-- list-image -->
+              <div class="list-img">
+                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
+              </div>
+              <!-- list-body -->
+              <div class="list-body ml-4 mr-2">
+                <h5>Eagle Boys Village Plaza</h5>
+                <ul class="list-body-mini-list">
+                  <li><a href="#">Pizza</a></li>
+                  <li><a href="#">American</a></li>
+                  <li><a href="#">Sandwiches</a></li>
+                  <li><a href="#">Steak House</a></li>
+                  <li><a href="#">Pasta</a></li>
+                  <li><a href="#">Wraps</a></li>
+                </ul>
+                <p style="font-size: 14px;" class="text-muted mt-2">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
+                  cupiditate animi.
+                </p>
+              </div>
+              <!-- list-footer -->
+              <div class="list-footer">
+                <div class="discount-title">
+                  <h5 class="text-danger">$150 / <del>$240</del></h5>
+                </div>
+                <div class="list-footer-btn mt-4">
+                  <button class="btn-list-order">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Cart</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!---END of This All Food List ul--->
 
           <!------------- Page Pagination Bar ------------->
-              <div class="pagination" aria-label="...">
-                <ul class="pagination pagination-sm">
-                  <li class="page-item active" aria-current="page">
-                    <span class="page-link">
-                      1
-                      <span class="sr-only">(current)</span>
-                    </span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">5</a></li>
-                  <li class="page-item"><a class="page-link" href="#">6</a></li>
-                </ul>
-              </div>
+          <div class="pagination" aria-label="...">
+            <ul class="pagination pagination-sm">
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">
+                  1
+                  <span class="sr-only">(current)</span>
+                </span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+            </ul>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
@@ -697,7 +814,7 @@
               <li><a href="" class="text-light">veep noodles</a></li>
             </ul>
           </div>
-          <div class="col-md-4 business-hour">
+          <div class="col-md-4 business-hour" id="time-table-bookmark">
             <h5 class="text-capitalize mb-3">business hour</h5>
             <ul>
               <li>
@@ -778,6 +895,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <script src="js/collapse_button.js" defer></script>
+<script src="js/collapse_button.js" defer></script>
 
 </html>

@@ -40,6 +40,14 @@ ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
     background: none !important;
     border: 2px solid tomato;
 }
+a.bookmark-text{
+    text-decoration: none;
+    color: #333;
+}
+a.bookmark-text:hover{
+    text-decoration: none;
+    color: rgb(255, 99, 71);
+}
 
 /**--------Cart Styles--------**/
 .cart-img{
@@ -319,6 +327,77 @@ div.search-food .form-control{
     border: none !important;
     outline: none !important;
     height: 43px;
+}
+
+/*******The Search Items DropDown Controling******/
+ /* .search-dropdown-menu {
+    position: absolute;
+    top: 50% !important;
+    left: 0 !important;
+    z-index: 1000;
+    display: inline-block;
+    float: left;
+    min-width: 160px;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    max-height: 365px;
+    overflow: auto;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+} */
+.search-dropdown-menu {
+    position: absolute;
+    top: 80% !important;
+    left: 46% !important;
+    transform: translate(-50.6%, -50%) !important;
+    z-index: 1000;
+    display: inline-block;
+    float: left;
+    min-width: 160px;
+    max-width: 450px;
+    width: 435px !important;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    max-height: 365px;
+    overflow: auto;
+    width: 30.1%;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+/**DropDown Search Menu's Image**/
+img.search-bar-image{
+    width: 80px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+li.search-item a{
+    display: inline-flex;
+}
+li.search-item .name{
+    color: black;
+    font-size: 18px;
+}
+li.search-item .price{
+    color: red;
+    font-weight: bold;
 }
 
 /***********Sections Jumbotron-One***********/
@@ -810,6 +889,7 @@ div.dotted-dateline{
     }
 }
 
+/***** For The Minimal Screen ****/
 @media only screen and (max-width: 1366px){
     div.special-card {
         max-height: 74vh;
@@ -822,7 +902,7 @@ div.dotted-dateline{
     }
     div.indian-list, div.junk-list, div.fast-list {
         position: relative;
-        bottom: 25rem;
+        bottom: 25rem !important;
     }
     a.ml-5.carousel-control-prev {
         left: 0;
@@ -848,5 +928,30 @@ div.dotted-dateline{
         width: 30px;
         height: 30px;
         font-size: 10px;
+    }
+}
+
+/**For 8:9 screen ratio size metter**/
+@media only screen and (max-width: 1440px){
+    a.ml-5.carousel-control-prev {
+        left: 0;
+    }
+    a.mr-5.carousel-control-next {
+        right: 0;
+    }
+    div.indian-list, div.junk-list, div.fast-list {
+        bottom: 20rem;
+    }
+    a.carousel-control-prev {
+        left: 0;
+    }
+    a.carousel-control-next {
+        right: 0;
+    }
+    .hi-slide .hi-prev {
+        left: -10rem !important;
+    }
+    .hi-slide .hi-next {
+        right: -10rem !important;
     }
 }
