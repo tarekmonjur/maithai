@@ -382,10 +382,6 @@ ul.search-dropdown-menu li.search-item .price{
     font-weight: bold;
 }
 
-ul.search-dropdown-menu li.search-item:hover{
-    background
-}
-
 /***********Sections Jumbotron-One***********/
 .jumbo-one{
     margin: 0 !important;
@@ -863,6 +859,7 @@ div.dotted-dateline{
     h1.text-uppercase.display-2.text-shadow {
         text-align: center;
         margin-left: 10%;
+        font-size: 3rem;
     }
     .d-flex.offer-list{
         justify-content: center;
@@ -969,7 +966,7 @@ div.dotted-dateline{
         right: 0;
     }
     div.indian-list, div.junk-list, div.fast-list {
-        bottom: 20rem;
+        bottom: 21rem;
     }
     a.carousel-control-prev {
         left: 0;
