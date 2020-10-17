@@ -274,7 +274,10 @@ section#home-cover .jumbotron::after{
 	text-align: center;
 	padding: 0 40px;
 	box-sizing: border-box;
+    overflow: unset;
 }
+
+
 div#intro-section .intro-title{
     color: #fff;
     font-family: 'Lato', sans-serif;
@@ -330,74 +333,57 @@ div.search-food .form-control{
 }
 
 /*******The Search Items DropDown Controling******/
- /* .search-dropdown-menu {
+.search-dropdown-menu {
     position: absolute;
-    top: 50% !important;
-    left: 0 !important;
+/*    top: 82.8rem !important;*/
+    top: 50rem !important;
+    left: 50% !important;
+/*    transform: translate(-64%, -50rem);*/
+    transform: translate(-64%, -17.2rem);
+    width: 433px !important;
     z-index: 1000;
     display: inline-block;
     float: left;
-    min-width: 160px;
     font-size: 14px;
     text-align: left;
     list-style: none;
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
+/*    border: 1px solid rgba(0,0,0,.15);*/
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    max-height: 365px;
+    max-height: 330px;
     overflow: auto;
     width: 100%;
     border-radius: 0;
     margin: 0;
     padding: 0;
-} */
-.search-dropdown-menu {
-    position: absolute;
-    top: 80% !important;
-    left: 46% !important;
-    transform: translate(-50.6%, -50%) !important;
-    z-index: 1000;
-    display: inline-block;
-    float: left;
-    min-width: 160px;
-    max-width: 450px;
-    width: 435px !important;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    max-height: 365px;
-    overflow: auto;
-    width: 30.1%;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
 }
-/**DropDown Search Menu's Image**/
+
+/**DropDown Search Menu's Image, Name, Price**/
 img.search-bar-image{
-    width: 80px;
+    width: 50px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-li.search-item a{
+ul.search-dropdown-menu li.search-item a{
     display: inline-flex;
+    width: 100%;
+    margin: 0;
 }
-li.search-item .name{
+ul.search-dropdown-menu li.search-item .name{
     color: black;
     font-size: 18px;
 }
-li.search-item .price{
+ul.search-dropdown-menu li.search-item .price{
     color: red;
     font-weight: bold;
+}
+
+ul.search-dropdown-menu li.search-item:hover{
+    background
 }
 
 /***********Sections Jumbotron-One***********/
@@ -585,6 +571,7 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
  }
  div#bottom-footer img{
      width: 80px;
+     Height: 80px;
  }
  div.footer-social-icons a{
     text-decoration: none;
@@ -887,6 +874,49 @@ div.dotted-dateline{
     li.list-group-item {
         font-size: 12px;
     }
+    
+    .search-dropdown-menu{
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -17rem) !important;
+        width: 88.8% !important;
+    }
+}
+
+/**The Median Mobile Screens Width About Search Bar Relative Items Section*/
+@media only screen and (max-width: 530px){
+    .search-dropdown-menu{
+        width: 81% !important;
+    }
+}
+
+/***iPhone 6,7,8 type Mobiles Screen***/
+@media only screen and (max-width: 380px){
+    .search-dropdown-menu{
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -16.2rem) !important;
+        width: 79% !important;
+    }
+}
+/***iPad Pro type tab Screen***/
+@media only screen and (max-width: 1024px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -15.8rem);
+    }
+}
+@media only screen and (max-width: 768px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -17rem);
+    }
+}
+
+/*****Galaxy Fold New Smallest Screen Ever****/
+@media only screen and (max-width: 280px){
+    .search-dropdown-menu{
+        transform: translate(-48rem, -13.8rem) !important;
+        width: 80% !important;
+    }
 }
 
 /***** For The Minimal Screen ****/
@@ -929,7 +959,6 @@ div.dotted-dateline{
         height: 30px;
         font-size: 10px;
     }
-}
 
 /**For 8:9 screen ratio size metter**/
 @media only screen and (max-width: 1440px){
@@ -955,3 +984,4 @@ div.dotted-dateline{
         right: -10rem !important;
     }
 }
+	

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MaiThai Kitchen | Food List</title>
+  <title>MaiThai Kitchen | Food Grid</title>
   <link rel="icon" href="assets/logo/logo.png">
 
   <!-- CSS only -->
@@ -95,10 +95,10 @@
             <a class="nav-link" href="index.html">home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="foodGird.html">food list</a>
+            <a class="nav-link active-now" href="#">food list <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active-now" href="#">food package <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="foodPackage.html">food package</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="loginRegister.html">login & register</a>
@@ -123,55 +123,11 @@
       <div class="dark-bg">
         <div id="intro">
           <div id="intro-section" class="mb-4">
-            <h5 class="intro-title text-uppercase mb-4">find foods from food list</h5>
+            <h5 class="intro-title text-uppercase mb-4">stock food grid combo</h5>
           </div>
 
-          <div id="search-food" class="search-food mb-5">
+          <div class="search-food mb-5">
             <input type="text" placeholder="Find Your Choice!" class="form-control">
-
-            <!--------- The Search Collapse DropDown Bar ------->
-            <!-- <ul class="search-dropdown-menu" style="display: none; top: 45px; left: 0px;">
-            <li class="search-item"><a href="#">
-              <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1">
-              </div>
-              <div class="name">Big 8</div>
-              <div class="price">$800.</div>
-            </a></li>
-
-            <li><a href="#"></a>
-              <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1">
-              </div>
-              <div class="name">Pizza</div>
-              <div class="price">$700.</div>
-            </li>
-
-            <li><a href="#">
-              <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1">
-              </div>
-              <div class="name">Fish Kabab</div>
-              <div class="price">$430.</div>
-            </a></li>
-
-            <li><a href="#">
-              <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1">
-              </div>
-              <div class="name">Mutton Biriyani</div>
-              <div class="price">$860.</div>
-            </a></li>
-
-            <li><a href="#">
-              <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1">
-              </div>
-              <div class="name">Masala Pasta</div>
-              <div class="price">$600.</div>
-            </a></li>
-          </ul> -->
-
             <button type="submit" class="btn btn-danger btn-custom text-uppercase">
               <i class="fas fa-search"></i>
               <span> </span>
@@ -181,81 +137,78 @@
         </div>
       </div>
     </div>
+    
+    <!--------- The Search Collapse DropDown Bar ------->
+        <ul class="search-dropdown-menu" style="display: none;">
+        <li class="search-item mt-2"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+          <div class="nameAndPrice">
+              <div class="name">Big 8</div>
+              <div class="price">$800.</div>
+          </div>
+        </a></li>
+        <hr>
+
+        <li class="search-item"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+          
+          <div class="nameAndPrice">
+            <div class="name">Pizza</div>
+            <div class="price">$700.</div>
+          </div>
+        </a></li>
+        <hr>
+
+        <li class="search-item"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+          
+          <div class="nameAndPrice">
+              <div class="name">Fish Kabab</div>
+              <div class="price">$430.</div>
+          </div>
+        </a></li>
+        <hr>
+
+        <li class="search-item"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+          
+          <div class="nameAndPrice">
+            <div class="name">Mutton Biriyani</div>
+            <div class="price">$860.</div>
+          </div>
+        </a></li>
+        <hr>
+
+        <li class="search-item mb-2"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+          
+          <div class="nameAndPrice">
+            <div class="name">Masala Pasta</div>
+            <div class="price">$600.</div>
+           </div>
+        </a></li>
+      </ul>
   </section>
 
-  <!-- Search Bar Drop Down Related Options by Pressing button on Search Bar -->
-  <!-- <div id="food-search-bar">
-    <ul class="search-dropdown-menu" style="display: inline-block; top: 45px; left: 0px;">
-      <li class="search-item mt-2"><a href="#">
-          <div class="image">
-            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
-          </div>
-
-          <div class="search-item">
-            <div class="name">Big 8</div>
-            <div class="price">$80.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item"><a href="#">
-          <div class="image">
-            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
-          </div>
-
-          <div class="search-item-body">
-            <div class="name">Pizza</div>
-            <div class="price">$70.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item"><a href="#">
-          <div class="image">
-            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
-          </div>
-
-          <div class="search-item">
-            <div class="name">Fish Kabab</div>
-            <div class="price">$43.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item"><a href="#">
-          <div class="image">
-            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
-          </div>
-
-          <div class="search-item">
-            <div class="name">Mutton Biriyani</div>
-            <div class="price">$86.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item mb-2"><a href="#">
-          <div class="image">
-            <img class="search-bar-image img-thumbnail" src="assets/img/card1.jpg" alt="card1">
-          </div>
-
-          <div class="search-item">
-            <div class="name">Masala Pasta</div>
-            <div class="price">$60.</div>
-          </div>
-        </a></li>
-    </ul>
-  </div> -->
-
-  <!-------------- Food List Section ------------>
+  <!-------------- Food Grid Section ------------>
   <section id="food-list" class="mt-5 mb-5">
     <div class="container">
       <div class="food-list-header">
-        <h3 class="text-capitalize text-danger">all food list to chooce by flat order some parcentage off</h3>
+        <h3 class="text-capitalize text-danger">food grids, combo food catagories</h3>
       </div>
       <hr>
 
-      <!------- The Main Food List and Food Search, Filtering Section ----------->
+      <!------- The Main Food Grid and Food Search, Filtering Section ----------->
       <div class="food-list-body row">
         <div class="filter-item col-md-3 col-sm-4 col-xs-12">
           <div class="forms">
@@ -276,13 +229,14 @@
             </div>
           </div>
 
+
           <!----------- Collapse Bar ----------->
           <div id="accordion" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
+                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
                     <span>
                       <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
                     </span>
@@ -353,8 +307,8 @@
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
+                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
                     <span>
                       <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -419,13 +373,13 @@
             </div>
           </div>
 
-          <!--------------------- 3rd Collapse Bar ---------------------->
+        <!--------------------- 3rd Collapse Bar ---------------------->
           <div id="accordion-3" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="false" aria-controls="collapseThree">
+                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
                     <span>
                       <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -490,13 +444,13 @@
             </div>
           </div>
 
-          <!------------------- 4th Collapse Bar ------------------------->
+        <!------------------- 4th Collapse Bar ------------------------->
           <div id="accordion-4" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour"
-                    aria-expanded="false" aria-controls="collapseFour">
+                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                    aria-controls="collapseFour">
                     <span>
                       <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -512,17 +466,17 @@
                     <ul>
                       <li class="checkbox">
                         <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">$10 - $50</span>
+                        <span class="text-capitalize ml-2">$5 - $10</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">$60 - $70</span>
+                        <span class="text-capitalize ml-2">$6 - $15</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">$33 - $55</span>
+                        <span class="text-capitalize ml-2">$18 - $25</span>
                       </li>
 
                       <li class="checkbox">
@@ -532,12 +486,12 @@
 
                       <li class="checkbox">
                         <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">$100 - $300</span>
+                        <span class="text-capitalize ml-2">$50 - $60</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">$200 - $400</span>
+                        <span class="text-capitalize ml-2">$60 - $80</span>
                       </li>
 
                       <li class="checkbox">
@@ -550,191 +504,259 @@
               </div>
             </div>
           </div>
-
-        </div>
-        <!--END of the Left Side Section-->
+    
+        </div><!--END of The Left Side Section  -->
 
 
 
         <!------------- Food List Area Here -------------->
-        <div class="list-area col-md-9 col-sm-8 col-xs-12">
-          <ul>
-            <li class="d-flex mb-4 all-food-list">
-              <!-- list-image -->
-              <div class="list-img">
-                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-              </div>
-              <!-- list-body -->
-              <div class="list-body ml-4 mr-2">
-                <h5>Eagle Boys Village Plaza</h5>
-                <ul class="list-body-mini-list">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">American</a></li>
-                  <li><a href="#">Sandwiches</a></li>
-                  <li><a href="#">Steak House</a></li>
-                  <li><a href="#">Pasta</a></li>
-                  <li><a href="#">Wraps</a></li>
-                </ul>
-                <p style="font-size: 14px;" class="text-muted mt-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
-                  cupiditate animi.
-                </p>
-              </div>
-              <!-- list-footer -->
-              <div class="list-footer">
-                <div class="discount-title">
-                  <h5 class="text-danger">$200 / <del>$240</del></h5>
-                </div>
-                <div class="list-footer-btn mt-4">
-                  <button class="btn-list-order">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Cart</span>
-                  </button>
+        <div class="grid-area col-md-9 col-sm-8 col-xs-12">
+          <!------- Food Grid Cards With Row & Cols --------->
+          <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$25 / <del>$24</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
+            </div>
 
-            <li class="d-flex mb-4 all-food-list">
-              <!-- list-image -->
-              <div class="list-img">
-                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-              </div>
-              <!-- list-body -->
-              <div class="list-body ml-4 mr-2">
-                <h5>Eagle Boys Village Plaza</h5>
-                <ul class="list-body-mini-list">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">American</a></li>
-                  <li><a href="#">Sandwiches</a></li>
-                  <li><a href="#">Steak House</a></li>
-                  <li><a href="#">Pasta</a></li>
-                  <li><a href="#">Wraps</a></li>
-                </ul>
-                <p style="font-size: 14px;" class="text-muted mt-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
-                  cupiditate animi.
-                </p>
-              </div>
-              <!-- list-footer -->
-              <div class="list-footer">
-                <div class="discount-title">
-                  <h5 class="text-danger">$150 / <del>$240</del></h5>
-                </div>
-                <div class="list-footer-btn mt-4">
-                  <button class="btn-list-order">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Cart</span>
-                  </button>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$10 / <del>$24</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
+            </div>
 
-            <li class="d-flex mb-4 all-food-list">
-              <!-- list-image -->
-              <div class="list-img">
-                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-              </div>
-              <!-- list-body -->
-              <div class="list-body ml-4 mr-2">
-                <h5>Eagle Boys Village Plaza</h5>
-                <ul class="list-body-mini-list">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">American</a></li>
-                  <li><a href="#">Sandwiches</a></li>
-                  <li><a href="#">Steak House</a></li>
-                  <li><a href="#">Pasta</a></li>
-                  <li><a href="#">Wraps</a></li>
-                </ul>
-                <p style="font-size: 14px;" class="text-muted mt-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
-                  cupiditate animi.
-                </p>
-              </div>
-              <!-- list-footer -->
-              <div class="list-footer">
-                <div class="discount-title">
-                  <h5 class="text-danger">$550 / <del>$640</del></h5>
-                </div>
-                <div class="list-footer-btn mt-4">
-                  <button class="btn-list-order">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Cart</span>
-                  </button>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$45 / <del>$74</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
+            </div>
 
-            <li class="d-flex mb-4 all-food-list">
-              <!-- list-image -->
-              <div class="list-img">
-                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-              </div>
-              <!-- list-body -->
-              <div class="list-body ml-4 mr-2">
-                <h5>Eagle Boys Village Plaza</h5>
-                <ul class="list-body-mini-list">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">American</a></li>
-                  <li><a href="#">Sandwiches</a></li>
-                  <li><a href="#">Steak House</a></li>
-                  <li><a href="#">Pasta</a></li>
-                  <li><a href="#">Wraps</a></li>
-                </ul>
-                <p style="font-size: 14px;" class="text-muted mt-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
-                  cupiditate animi.
-                </p>
-              </div>
-              <!-- list-footer -->
-              <div class="list-footer">
-                <div class="discount-title">
-                  <h5 class="text-danger">$150 / <del>$240</del></h5>
-                </div>
-                <div class="list-footer-btn mt-4">
-                  <button class="btn-list-order">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Cart</span>
-                  </button>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$15 / <del>$24</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
+            </div>
 
-            <li class="d-flex mb-4 all-food-list">
-              <!-- list-image -->
-              <div class="list-img">
-                <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-              </div>
-              <!-- list-body -->
-              <div class="list-body ml-4 mr-2">
-                <h5>Eagle Boys Village Plaza</h5>
-                <ul class="list-body-mini-list">
-                  <li><a href="#">Pizza</a></li>
-                  <li><a href="#">American</a></li>
-                  <li><a href="#">Sandwiches</a></li>
-                  <li><a href="#">Steak House</a></li>
-                  <li><a href="#">Pasta</a></li>
-                  <li><a href="#">Wraps</a></li>
-                </ul>
-                <p style="font-size: 14px;" class="text-muted mt-2">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus
-                  cupiditate animi.
-                </p>
-              </div>
-              <!-- list-footer -->
-              <div class="list-footer">
-                <div class="discount-title">
-                  <h5 class="text-danger">$150 / <del>$240</del></h5>
-                </div>
-                <div class="list-footer-btn mt-4">
-                  <button class="btn-list-order">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Cart</span>
-                  </button>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$33 / <del>$44</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </li>
-          </ul>
-          <!---END of This All Food List ul--->
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/coverA.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$50 / <del>$100</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$120 / <del>$240</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$15 / <del>$54</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$150 / <del>$240</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <!------------- Page Pagination Bar ------------->
           <div class="pagination" aria-label="...">
@@ -756,6 +778,7 @@
       </div>
     </div>
   </section>
+
 
 
   <!-------------- FOOTER AREA ----------------->
