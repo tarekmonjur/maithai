@@ -46,6 +46,7 @@ section#food-list div.food-list-body input[type="text"]{
 section#food-list div.food-list-body button{
     width: 20px;
     padding-left: 10px;
+    Padding-right: 20px;
 }
 div.search-input,
 section#food-list div.food-list-body div.select-input{
