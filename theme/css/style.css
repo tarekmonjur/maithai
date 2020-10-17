@@ -614,7 +614,7 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
     list-style: none;
  }
  footer div.footer-list-2nd-row li a{
-     font-size: 13px;
+     font-size: 15px;
  }
 
 
@@ -872,11 +872,27 @@ div.dotted-dateline{
         font-size: 12px;
     }
     
+   /**Search DropDown Menu**/ 
     .search-dropdown-menu{
         top: 54rem !important;
         left: 50rem !important;
         transform: translate(-47.5rem, -17rem) !important;
         width: 88.8% !important;
+    }
+
+   /**Footers Sections (Row's) Items**/ 
+    footer div.footer-list-1st-heading h5 {
+        font-size: 22px;
+        margin-bottom: 0.5rem;
+    }
+    footer div.footer-list-1st-row li{
+        font-size: 13px;
+    }
+    .row.mb-4.footer-list-1st-row {
+        padding-left: 5px;
+    }
+    footer div.footer-list-2nd-row li a {
+        font-size: 13px;
     }
 }
 
