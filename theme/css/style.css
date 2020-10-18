@@ -600,12 +600,27 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
     transition: 1s;
  }
 
+
+ /**The Footer Top Menu**/
+ footer ul.footer-top-menu{
+     display: inline-flex;
+     list-style: none;
+ }
+ footer ul.footer-top-menu li a{
+     text-decoration: none;
+     color: #fff;
+ }
+ footer ul.footer-top-menu li a:hover{
+     text-decoration: none;
+     color: rgb(210, 35, 42);
+ }
+
  footer div.footer-list-1st-heading h5{
      font-size: 25px;
  }
  footer div.footer-list-1st-row li{
      list-style: none;
-     font-size: 18px;
+     font-size: 17px;
  }
  footer div.footer-list-2nd-row h5{
      font-size: 25px;
@@ -623,18 +638,29 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
      justify-content: flex-end;
  }
 
- footer li.business-logo img{
-    width: 80px;
-    height: 70px;
-    object-fit: contain;
+ footer li.business-logo img.american-express{
+    width: 58px;
+    height: 55px;
+    object-fit: cover;
  }
+ footer li.business-logo img.visa{
+    width: 92px;
+    height: 44px;
+    object-fit: cover;
+ }
+ footer li.business-logo img.master{
+    width: 93px;
+    height: 50px;
+    object-fit: cover;
+ }
+
 
 /*****Business Hour*****/
 div.business-hour ul li{
     display: inline-flex;
     text-transform: capitalize;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 16px;
 }
 div.dotted-dateline{
     border-bottom: 1px dotted lightgray;
