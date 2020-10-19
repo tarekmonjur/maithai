@@ -22,6 +22,12 @@ section.food-list-home-banner .dark-bg {
     padding: 0 40px;
     box-sizing: border-box;
 }
+
+.search-dropdown-menu{
+    transform: translate(-64%, -24.3rem);
+}
+
+
 section#food-list div.food-list-header h2{
     color: tomato;
 }
@@ -40,6 +46,7 @@ section#food-list div.food-list-body input[type="text"]{
 section#food-list div.food-list-body button{
     width: 20px;
     padding-left: 10px;
+    Padding-right: 20px;
 }
 div.search-input,
 section#food-list div.food-list-body div.select-input{
@@ -243,9 +250,34 @@ div.grid-area div.grid-footer button.btn-grid-order:active{
     h3.text-capitalize.text-danger {
         font-size: 20px;
     }
+    
+    .search-dropdown-menu {
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -24rem) !important;
+        /* width: 88.8% !important; */
+    }
 }
+
+@media only screen and (max-width: 1024px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -25.8rem);
+    }
+}
+
+/*****Galaxy Fold New Smallest Screen Ever****/
+@media only screen and (max-width: 280px){
+    .search-dropdown-menu{
+        transform: translate(-47.5rem, -21rem) !important;
+    }
+}
+
+
 @media only screen and (max-width: 1366px){
     section.food-list-home-banner .dark-bg{
         top: 25%;
+    }
+    .search-dropdown-menu {
+        transform: translate(-64%, -27.3rem);
     }
 }
