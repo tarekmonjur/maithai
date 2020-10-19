@@ -267,7 +267,7 @@ section#home-cover-2 .jumbotron::after{
 	height: 100%;
 	background: url('../assets/img/coverA.jpg') no-repeat fixed;
 	background-size: cover;
-	opacity: .3;
+	opacity: .5;
 	animation: asad 25s linear infinite;
 }
 section#home-cover-3 .jumbotron::after{
@@ -279,7 +279,7 @@ section#home-cover-3 .jumbotron::after{
 	height: 100%;
 	background: url('../assets/img/cover2.jpg') no-repeat fixed;
 	background-size: cover;
-	opacity: .3;
+	opacity: .5;
 	animation: asad 25s linear infinite;
 }
 
@@ -342,7 +342,7 @@ div#intro .about-btn:hover, .order-btn:hover{
 
 div.bordered-intro{
     border: 5px solid #333333;
-    background: rgb(210 36 41 / 70%);
+    background: rgba(210, 36, 41, 0.8);
     /* border-radius: 5px; */
     padding: 10px;
 }
