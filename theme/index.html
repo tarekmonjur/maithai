@@ -122,103 +122,176 @@
     </nav>
 
     <!------------- SECTION of Banners Page ----------------->
-    <section id="home-cover">
-        <div class="jumbotron">
-            <div class="dark-bg">
-                <div id="intro">
-                    <div id="intro-section" class="mb-4">
-                        <h1 class="intro-title text-uppercase mb-4">
-                            mai thai
-                            <br>
-                            <span>
-                                <small class="small">kitchen</small>
-                            </span>
-                        </h1>
-                        <h5 class="intro-info text-capitalize mb-3">find the best food, cafes & cuisine.</h5>
+    <div id="homeCarouselIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#homeCarouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#homeCarouselIndicators" data-slide-to="1"></li>
+            <li data-target="#homeCarouselIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <!---------- All Sliders Carousel's Here! --------->
+        <div class="carousel-inner">
+            <!----------- The Carousels First Item here ------------->
+            <div class="carousel-item active">
+                <section id="home-cover">
+                    <div class="jumbotron">
+                        <div class="dark-bg">
+                            <div id="intro">
+                                <div id="intro-section" class="mb-4">
+                                    <h1 class="intro-title text-uppercase mb-4">
+                                        mai thai
+                                        <br>
+                                        <span>
+                                            <small class="small">kitchen</small>
+                                        </span>
+                                    </h1>
+                                    <h5 class="intro-info text-capitalize mb-3">find the best food, cafes & cuisine.
+                                    </h5>
+                                </div>
+
+                                <div class="search-food mb-5">
+                                    <input type="text" placeholder="Find Your Choice!" class="form-control">
+
+                                    <!--------- The Search Collapse DropDown Bar ------->
+
+                                    <button type="submit" class="btn btn-danger btn-custom text-uppercase">
+                                        <i class="fas fa-search"></i>
+                                        <span> </span>
+                                        <span>Search</span>
+                                    </button>
+                                </div>
+
+                                <a href="#" class="about-btn mt-4">About The Restaurant</a>
+                                <a href="#" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            </div>
+                        </div>
                     </div>
+                </section>
+            </div>
 
-                    <div class="search-food mb-5">
-                        <input type="text" placeholder="Find Your Choice!" class="form-control">
+            <!-------- Carousels 2nd Item here -------->
+            <div class="carousel-item">
+                <section id="home-cover-2">
+                    <div class="jumbotron">
+                        <div class="dark-bg">
+                            <div id="intro">
+                                <div id="intro-section" class="mb-4 bordered-intro">
+                                    <h1 class="intro-title home-slide-intro-2 mb-4" style="font-family: 'Lato', sans-serif; font-weight: 500; font-size: 50px;">
+                                        <span style="color: rgb(190, 190, 190); font-weight: lighter;">
+                                            "Short of screaming-hot Thai food,
+                                        </span>
+                                        <span class="text-light" style="font-weight: bold;">
+                                            everything can be suitable for kids too"
+                                        </span>
+                                    </h1>
+                                </div>
 
-                        <!--------- The Search Collapse DropDown Bar ------->
 
-
-
-                        <button type="submit" class="btn btn-danger btn-custom text-uppercase">
-                            <i class="fas fa-search"></i>
-                            <span> </span>
-                            <span>Search</span>
-                        </button>
+                                <a href="#" class="about-btn mt-4">About The Restaurant</a>
+                                <a href="#" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            </div>
+                        </div>
                     </div>
+                </section>
+            </div>
 
-                    <a href="#" class="about-btn mt-4">About The Restaurant</a>
-                    <a href="#" class="order-btn mt-4 ml-3">Order Food Online!</a>
-                </div>
+            <!--------- Carousel 3rd Item here ----------->
+            <div class="carousel-item">
+                <section id="home-cover-3">
+                    <div class="jumbotron">
+                        <div class="dark-bg">
+                            <div id="intro">
+                                <div id="intro-section" class="bordered-intro mb-4">
+                                    <h1 class="intro-title home-slide-intro-3 mb-4" style="font-family: 'Lato', sans-serif; font-weight: 500; font-size: 50px;">
+                                        "Find the best food, Cafes & Cuisine."
+                                    </h1>
+                                </div>
+
+
+                                <a href="#" class="about-btn mt-4">About The Restaurant</a>
+                                <a href="#" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 
-        <!--------- The Search Collapse DropDown Bar ------->
-        <ul class="search-dropdown-menu" style="display: none;">
-            <li class="search-item mt-2"><a href="#">
-                    <div class="image">
-                        <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-                    </div>
-                    <div class="nameAndPrice">
-                        <div class="name">Big 8</div>
-                        <div class="price">$800.</div>
-                    </div>
-                </a></li>
-            <hr>
 
-            <li class="search-item"><a href="#">
-                    <div class="image">
-                        <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-                    </div>
+        <!-- Carousel's Arrow Buttons for Next & Previous -->
+        <a class="carousel-control-prev home-slide-prev" href="#homeCarouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next home-slide-next" href="#homeCarouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!---- END of The Banners Slider Section of Home page ---->
 
-                    <div class="nameAndPrice">
-                        <div class="name">Pizza</div>
-                        <div class="price">$700.</div>
-                    </div>
-                </a></li>
-            <hr>
 
-            <li class="search-item"><a href="#">
-                    <div class="image">
-                        <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-                    </div>
+    <!--------- The Search Collapse DropDown Bar For Home Carousel ------->
+    <ul class="search-dropdown-menu" style="display: none;">
+        <li class="search-item mt-2"><a href="#">
+                <div class="image">
+                    <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                </div>
+                <div class="nameAndPrice">
+                    <div class="name">Big 8</div>
+                    <div class="price">$800.</div>
+                </div>
+            </a></li>
+        <hr>
 
-                    <div class="nameAndPrice">
-                        <div class="name">Fish Kabab</div>
-                        <div class="price">$430.</div>
-                    </div>
-                </a></li>
-            <hr>
+        <li class="search-item"><a href="#">
+                <div class="image">
+                    <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                </div>
 
-            <li class="search-item"><a href="#">
-                    <div class="image">
-                        <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-                    </div>
+                <div class="nameAndPrice">
+                    <div class="name">Pizza</div>
+                    <div class="price">$700.</div>
+                </div>
+            </a></li>
+        <hr>
 
-                    <div class="nameAndPrice">
-                        <div class="name">Mutton Biriyani</div>
-                        <div class="price">$860.</div>
-                    </div>
-                </a></li>
-            <hr>
+        <li class="search-item"><a href="#">
+                <div class="image">
+                    <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                </div>
 
-            <li class="search-item mb-2"><a href="#">
-                    <div class="image">
-                        <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-                    </div>
+                <div class="nameAndPrice">
+                    <div class="name">Fish Kabab</div>
+                    <div class="price">$430.</div>
+                </div>
+            </a></li>
+        <hr>
 
-                    <div class="nameAndPrice">
-                        <div class="name">Masala Pasta</div>
-                        <div class="price">$600.</div>
-                    </div>
-                </a></li>
-        </ul>
+        <li class="search-item"><a href="#">
+                <div class="image">
+                    <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                </div>
 
-    </section>
+                <div class="nameAndPrice">
+                    <div class="name">Mutton Biriyani</div>
+                    <div class="price">$860.</div>
+                </div>
+            </a></li>
+        <hr>
+
+        <li class="search-item mb-2"><a href="#">
+                <div class="image">
+                    <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                </div>
+
+                <div class="nameAndPrice">
+                    <div class="name">Masala Pasta</div>
+                    <div class="price">$600.</div>
+                </div>
+            </a></li>
+    </ul>
+    
 
     <!---------------- Title Of Delivery and Others ShowCase ------------>
     <section class="jumbotron jumbo-one mt-0 mb-5">
@@ -924,15 +997,18 @@
                 <!-- After Footers One Section -->
                 <div class="row mt-5 footer-list-2nd-row">
                     <div class="col-md-5 business-hour" id="time-table-bookmark">
-                        <h5 class="text-capitalize mb-3">opening time</h5>
+                        <h5 class="text-capitalize mb-3">opening time:</h5>
                         <ul>
                             <li>
-                                <span>Everyday For Lunch</span>
+                                <span>Sunday - Saturday (Everyday)</span>
+                            </li>
+                            <li>
+                                <span>Lunch Time</span>
                                 <div class="dotted-dateline ml-3 mr-3"></div>
                                 <span>12pm - 3pm</span>
                             </li>
                             <li>
-                                <span>Everyday For Dinner</span>
+                                <span>Dinner Time</span>
                                 <div class="dotted-dateline ml-3 mr-3"></div>
                                 <span>5pm - 10pm</span>
                             </li>
@@ -943,7 +1019,7 @@
                     </div>
 
                     <div class="col-md-4 business-hour" id="time-table-bookmark">
-                        <h5 class="text-capitalize mb-3">delivery time slot</h5>
+                        <h5 class="text-capitalize mb-3">delivery time slot:</h5>
                         <ul>
                             <li>
                                 <span>Everyday</span>
@@ -956,21 +1032,23 @@
                         </ul>
                     </div>
 
-                <!-- The Footers Business Card's  -->
+                    <!-- The Footers Business Card's  -->
                     <div class="col-md-3">
+                        <h5 class="text-capitalize mb-3">Payment Methods:</h5>
+
                         <ul class="d-flex business-logo-section">
                             <li class="business-logo">
-                                <img class="american-express" src="assets/logo/business_logo_1.webp" alt="">
+                                <img class="paypal" src="assets/logo/paypal.png" alt="">
                             </li>
                             <li class="business-logo">
-                                <img class="visa" src="assets/logo/business_logo_3.webp" alt="">
+                                <img class="visa" src="assets/logo/visa.png" alt="">
                             </li>
                             <li class="business-logo">
-                                <img class="master" src="assets/logo/business_logo_2.webp" alt="">
+                                <img class="master" src="assets/logo/master.png" alt="">
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

@@ -234,7 +234,9 @@ nav li.nav-item .active-now{
 
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
-section#home-cover .jumbotron{
+section#home-cover .jumbotron,
+section#home-cover-2 .jumbotron,
+section#home-cover-3 .jumbotron{
 	width: 100%;
 	height: 600px;
 	background-color: #000;
@@ -243,6 +245,7 @@ section#home-cover .jumbotron{
     border-radius: 0 !important;
     margin-bottom: 0 !important;
 }
+
 section#home-cover .jumbotron::after{
 	content: "";
 	position: absolute;
@@ -255,6 +258,31 @@ section#home-cover .jumbotron::after{
 	opacity: .3;
 	animation: asad 25s linear infinite;
 }
+section#home-cover-2 .jumbotron::after{
+    content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../assets/img/coverA.jpg') no-repeat fixed;
+	background-size: cover;
+	opacity: .3;
+	animation: asad 25s linear infinite;
+}
+section#home-cover-3 .jumbotron::after{
+    content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../assets/img/cover2.jpg') no-repeat fixed;
+	background-size: cover;
+	opacity: .3;
+	animation: asad 25s linear infinite;
+}
+
 @keyframes asad{
 	50%{
 		transform: scale(2);
@@ -283,7 +311,7 @@ div#intro-section .intro-title{
     font-family: 'Lato', sans-serif;
     font-size: 56px;
     font-weight: 600;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding-bottom: 0;
 }
 div#intro-section .intro-title small.small{
@@ -310,6 +338,13 @@ div#intro .about-btn, div#intro .order-btn{
 }
 div#intro .about-btn:hover, .order-btn:hover{
     background: rgb(255, 99, 71);
+}
+
+div.bordered-intro{
+    border: 5px solid #333333;
+    background: rgb(210 36 41 / 70%);
+    /* border-radius: 5px; */
+    padding: 10px;
 }
 
 /*--------ContentArea--------*/
@@ -380,6 +415,14 @@ ul.search-dropdown-menu li.search-item .name{
 ul.search-dropdown-menu li.search-item .price{
     color: red;
     font-weight: bold;
+}
+
+/**Home Sections Slider control Buttons**/
+a.carousel-control-prev.home-slide-prev {
+    left: 10%;
+}
+a.carousel-control-next.home-slide-next {
+    right: 10%;
 }
 
 /***********Sections Jumbotron-One***********/
@@ -616,14 +659,14 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
  }
 
  footer div.footer-list-1st-heading h5{
-     font-size: 25px;
+     font-size: 24px;
  }
  footer div.footer-list-1st-row li{
      list-style: none;
-     font-size: 17px;
+     font-size: 16px;
  }
  footer div.footer-list-2nd-row h5{
-     font-size: 25px;
+     font-size: 22px;
  }
  footer div.footer-list-2nd-row li{
     list-style: none;
@@ -633,15 +676,16 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
  }
 
  footer .business-logo-section{
-     margin-top: 3rem;
+     margin-top: 2rem;
      display: flex;
-     justify-content: flex-end;
+     justify-content: flex-start;
  }
 
- footer li.business-logo img.american-express{
-    width: 58px;
-    height: 55px;
+ footer li.business-logo img.paypal{
+    width: 60px;
+    height: 50px;
     object-fit: cover;
+    border-radius: 5px;
  }
  footer li.business-logo img.visa{
     width: 92px;
@@ -660,7 +704,7 @@ div.business-hour ul li{
     display: inline-flex;
     text-transform: capitalize;
     font-weight: 100;
-    font-size: 16px;
+    font-size: 15px;
 }
 div.dotted-dateline{
     border-bottom: 1px dotted lightgray;
@@ -737,6 +781,13 @@ div.dotted-dateline{
         margin-left: 0 !important;
     }
     
+    /**Home Slide Intro 2nd Page Title**/
+    .home-slide-intro-2,
+    .home-slide-intro-3{
+        font-size: 30px !important;
+    }
+
+
     /**Title Of Delivery ShowCase**/
     div.row{
         justify-content: center;
@@ -917,6 +968,30 @@ div.dotted-dateline{
         width: 88.8% !important;
     }
 
+    /**Home Sections Slider control Buttons**/
+    a.carousel-control-prev.home-slide-prev {
+        display: none;
+    }
+    a.carousel-control-next.home-slide-next {
+        display: none;
+    }
+
+    /***Food Menu Carousels Buttons***/
+    a.mr-5.carousel-control-prev.menu-btn, a.mr-5.carousel-control-next.menu-btn {
+        top: 95% !important;
+    }
+    a.ml-5.carousel-control-prev {
+        left: 60% !important;
+    }
+
+    a.ml-5.carousel-control-prev, a.mr-5.carousel-control-next {
+        top: 95% !important;
+    }
+    a.mr-5.carousel-control-next {
+        right: -5% !important;
+    }
+
+
    /**Footers Sections (Row's) Items**/ 
     footer div.footer-list-1st-heading h5 {
         font-size: 22px;
@@ -930,6 +1005,18 @@ div.dotted-dateline{
     }
     footer div.footer-list-2nd-row li a {
         font-size: 13px;
+    }
+
+    footer ul.footer-top-menu li a {
+        font-size: 13px;
+        text-align: center;
+    }
+    div#time-table-bookmark {
+        margin-bottom: 2rem;
+    }
+    footer .business-logo-section{
+        margin-top: 1rem;
+        justify-content: center;
     }
 }
 
