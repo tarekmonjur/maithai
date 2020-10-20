@@ -703,6 +703,14 @@ div.dotted-dateline{
 /*****The Media Queries for this way****/
 /**---iPhone 6,7,8 or Higher Screen Comportable ---**/
 @media only screen and (max-width: 720px){
+    /**All Sections Title Text Style, Font-size**/
+    .our-food-style-title, 
+    .food-menu-title, 
+    .contact-us-title,
+    .gellary-title{
+        font-size: 30px;
+    }
+
     div.leftHeaderItem{
         display: flex;
         float: none;
@@ -819,6 +827,12 @@ div.dotted-dateline{
     }
     .card.special-food-card {
         min-height: 535px;
+        margin: auto;
+    }
+
+    /**Cart Image Size of Our Food Styles Section**/
+    img.food-style-cart{
+        height: 380px;
     }
 
     /**Food Menu Tab**/
@@ -827,6 +841,11 @@ div.dotted-dateline{
     }
 
     /**The Special Food Offer Section**/
+    /*** Special Offers Section Title ****/
+    section.special-food-menu div.carousel-title h1{
+        font-size: 2rem;
+    }
+
     div.cards-group{
         display: -webkit-box !important;
     }
@@ -925,7 +944,7 @@ div.dotted-dateline{
     h1.text-uppercase.display-2.text-shadow {
         text-align: center;
         margin-left: 10%;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .d-flex.offer-list{
         justify-content: center;
@@ -1040,6 +1059,25 @@ div.dotted-dateline{
         right: -5%
     }
 }
+
+/********* iPhone 5/SE/5s World Smallest **********/
+@media only screen and (max-width: 330px){
+    /***Food Menu Carousels Buttons***/
+    a.mr-5.carousel-control-prev.menu-btn, a.mr-5.carousel-control-next.menu-btn {
+        top: 21rem !important;
+    }
+    a.ml-5.carousel-control-prev {
+        left: -10%;
+    }
+
+    a.ml-5.carousel-control-prev, a.mr-5.carousel-control-next {
+        top: 21rem !important;
+    }
+    a.mr-5.carousel-control-next {
+        right: -10%
+    }
+}
+
 /***iPad Pro type tab Screen***/
 @media only screen and (max-width: 1024px){
     .search-dropdown-menu{
