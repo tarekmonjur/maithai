@@ -120,6 +120,12 @@ div.list-area div.list-body ul li:first-child{
     padding: 0;
 }
 
+/********* Foood Package List Image Size ******/
+.list-img img {
+    width: 80px;
+    height: 80px;
+}
+
 /*The LIst Footer*/
 div.list-footer{
     margin-left: 3rem;
