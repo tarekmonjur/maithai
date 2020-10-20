@@ -235,8 +235,7 @@ nav li.nav-item .active-now{
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
 section#home-cover .jumbotron,
-section#home-cover-2 .jumbotron,
-section#home-cover-3 .jumbotron{
+section#home-cover-2 .jumbotron{
 	width: 100%;
 	height: 600px;
 	background-color: #000;
@@ -267,19 +266,7 @@ section#home-cover-2 .jumbotron::after{
 	height: 100%;
 	background: url('../assets/img/coverA.jpg') no-repeat fixed;
 	background-size: cover;
-	opacity: .5;
-	animation: asad 25s linear infinite;
-}
-section#home-cover-3 .jumbotron::after{
-    content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: url('../assets/img/cover2.jpg') no-repeat fixed;
-	background-size: cover;
-	opacity: .5;
+	opacity: .3;
 	animation: asad 25s linear infinite;
 }
 
@@ -305,6 +292,12 @@ section#home-cover-3 .jumbotron::after{
     overflow: unset;
 }
 
+div.carousel.slide:hover > a.carousel-control-prev.home-slide-prev{
+    visibility: visible;
+}
+div.carousel.slide:hover > a.carousel-control-next.home-slide-next{
+    visibility: visible;
+}
 
 div#intro-section .intro-title{
     color: #fff;
@@ -338,13 +331,6 @@ div#intro .about-btn, div#intro .order-btn{
 }
 div#intro .about-btn:hover, .order-btn:hover{
     background: rgb(255, 99, 71);
-}
-
-div.bordered-intro{
-    border: 5px solid #333333;
-    background: rgba(210, 36, 41, 0.8);
-    /* border-radius: 5px; */
-    padding: 10px;
 }
 
 /*--------ContentArea--------*/
@@ -420,9 +406,11 @@ ul.search-dropdown-menu li.search-item .price{
 /**Home Sections Slider control Buttons**/
 a.carousel-control-prev.home-slide-prev {
     left: 10%;
+    visibility: hidden;
 }
 a.carousel-control-next.home-slide-next {
     right: 10%;
+    visibility: hidden;
 }
 
 /***********Sections Jumbotron-One***********/
@@ -715,6 +703,14 @@ div.dotted-dateline{
 /*****The Media Queries for this way****/
 /**---iPhone 6,7,8 or Higher Screen Comportable ---**/
 @media only screen and (max-width: 720px){
+    /**All Sections Title Text Style, Font-size**/
+    .our-food-style-title, 
+    .food-menu-title, 
+    .contact-us-title,
+    .gellary-title{
+        font-size: 30px;
+    }
+
     div.leftHeaderItem{
         display: flex;
         float: none;
@@ -831,6 +827,12 @@ div.dotted-dateline{
     }
     .card.special-food-card {
         min-height: 535px;
+        margin: auto;
+    }
+
+    /**Cart Image Size of Our Food Styles Section**/
+    img.food-style-cart{
+        height: 380px;
     }
 
     /**Food Menu Tab**/
@@ -839,6 +841,11 @@ div.dotted-dateline{
     }
 
     /**The Special Food Offer Section**/
+    /*** Special Offers Section Title ****/
+    section.special-food-menu div.carousel-title h1{
+        font-size: 2rem;
+    }
+
     div.cards-group{
         display: -webkit-box !important;
     }
@@ -869,18 +876,8 @@ div.dotted-dateline{
         background: #000;
     }
 
-    a.carousel-control-prev, a.carousel-control-next {
-        top: 95% !important;
-        width: 30px !important;
-        height: 30px;
-        border-radius: 100%;
-        /* line-height: 18px; */
-    }
-    a.carousel-control-prev {
-        left: 11rem !important;
-    }
-    a.carousel-control-next{
-        right: 1rem !important;
+    a.carousel-control-prev.offer-slide, a.carousel-control-next.offer-slide {
+        display: none;
     }
 
     /**CONTACT US**/
@@ -925,19 +922,19 @@ div.dotted-dateline{
     img.img-offer{
         width: 44vh;
     }
-    a.ml-5.carousel-control-prev {
-        left: -10% !important;
+    a.ml-5.carousel-control-prev.menu-btn {
+        left: -5% !important;
     }
-    a.mr-5.carousel-control-next {
-        right: -10% !important;
+    a.mr-5.carousel-control-next.menu-btn {
+        right: -5% !important;
     }
-    a.mr-5.carousel-control-prev.menu-btn,
+    a.mr-5.carousel-control-prev.menu-btn.menu-btn,
+    a.mr-5.carousel-control-next.menu-btn.menu-btn{
+        top: 24.5rem;
+    }
+    a.ml-5.carousel-control-prev.menu-btn, 
     a.mr-5.carousel-control-next.menu-btn{
-        top: 60% !important;
-    }
-    a.ml-5.carousel-control-prev, 
-    a.mr-5.carousel-control-next{
-        top: 60% !important;
+        top: 24.5rem ;
     }
     .display-2 {
         font-size: 4rem;
@@ -947,7 +944,7 @@ div.dotted-dateline{
     h1.text-uppercase.display-2.text-shadow {
         text-align: center;
         margin-left: 10%;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .d-flex.offer-list{
         justify-content: center;
@@ -978,17 +975,17 @@ div.dotted-dateline{
 
     /***Food Menu Carousels Buttons***/
     a.mr-5.carousel-control-prev.menu-btn, a.mr-5.carousel-control-next.menu-btn {
-        top: 95% !important;
+        top: 27rem !important;
     }
     a.ml-5.carousel-control-prev {
-        left: 60% !important;
+        left: -5% ;
     }
 
     a.ml-5.carousel-control-prev, a.mr-5.carousel-control-next {
-        top: 95% !important;
+        top: 27rem !important;
     }
     a.mr-5.carousel-control-next {
-        right: -5% !important;
+        right: -5% ;
     }
 
 
@@ -1012,11 +1009,22 @@ div.dotted-dateline{
         text-align: center;
     }
     div#time-table-bookmark {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
     footer .business-logo-section{
         margin-top: 1rem;
         justify-content: center;
+    }
+
+    footer ul.footer-top-menu li a{
+        font-size: 12px;
+    }
+
+    /**Make Every Footer List to Center**/
+    div.footer-list-1st-heading,
+    div.footer-list-1st-row,
+    div.footer-list-2nd-row{
+        text-align: center;
     }
 }
 
@@ -1035,7 +1043,41 @@ div.dotted-dateline{
         transform: translate(-47.5rem, -16.2rem) !important;
         width: 79% !important;
     }
+
+     /***Food Menu Carousels Buttons***/
+     a.mr-5.carousel-control-prev.menu-btn, a.mr-5.carousel-control-next.menu-btn {
+        top: 24.5rem !important;
+    }
+    a.ml-5.carousel-control-prev {
+        left: -5%;
+    }
+
+    a.ml-5.carousel-control-prev, a.mr-5.carousel-control-next {
+        top: 24.5rem !important;
+    }
+    a.mr-5.carousel-control-next {
+        right: -5%
+    }
 }
+
+/********* iPhone 5/SE/5s World Smallest **********/
+@media only screen and (max-width: 330px){
+    /***Food Menu Carousels Buttons***/
+    a.mr-5.carousel-control-prev.menu-btn, a.mr-5.carousel-control-next.menu-btn {
+        top: 21rem !important;
+    }
+    a.ml-5.carousel-control-prev {
+        left: -10%;
+    }
+
+    a.ml-5.carousel-control-prev, a.mr-5.carousel-control-next {
+        top: 21rem !important;
+    }
+    a.mr-5.carousel-control-next {
+        right: -10%
+    }
+}
+
 /***iPad Pro type tab Screen***/
 @media only screen and (max-width: 1024px){
     .search-dropdown-menu{
