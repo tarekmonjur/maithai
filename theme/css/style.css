@@ -83,6 +83,11 @@ span.badge-light{
     border-radius: 100%;
 }
 
+/******------- QR-CODE ------********/
+.img-qr-code{
+    padding: 0;
+}
+
 /****************Customize the CSS**************/
 header{
     background: rgb(210, 35, 42);
