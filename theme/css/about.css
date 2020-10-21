@@ -1,6 +1,16 @@
 /**********CSS FOR ABOUT US PAGE***************/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
+
+/*** Form Style When Focus-In ***/
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #f3d1cb;
+    outline: 0;
+    box-shadow: none;
+}
+
 section#about-cover .jumbotron{
     background: url('../assets/img/aboutUsCover.jpg') no-repeat center center fixed;
     background-size: cover;
