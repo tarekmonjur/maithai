@@ -31,8 +31,8 @@ composer-autoload:
 laravel-install:
 	docker-compose exec php-fpm bash -c "composer create-project --prefer-dist laravel/laravel . '6.*'"
 
-laravel:
-	docker-compose exec php-fpm bash -c "php artisan $(artisan)"
+artisan:
+	docker-compose exec php-fpm bash -c "php artisan $(cmd)"
 
 permissions:
 	sudo chmod -R 775 $(CURDIR)/www/

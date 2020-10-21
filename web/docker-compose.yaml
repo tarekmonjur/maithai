@@ -36,8 +36,9 @@ services:
       - maithai
     environment:
       DB_HOST: mysql
+      DB_PORT: 3306
       DB_DATABASE: maithai
-      DB_USERNAME: maithai21
+      DB_USERNAME: maithai
       DB_PASSWORD: secret
 
   mysql:
@@ -49,6 +50,7 @@ services:
       - 3307:3306
     networks:
       - maithai
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
     environment:
       MYSQL_DATABASE: maithai
       MYSQL_USER: maithai

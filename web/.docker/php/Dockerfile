@@ -12,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libmagickwand-dev --no-install-recommends \
     libfreetype6-dev \
     openssl \
-    mysql-client \
+    mariadb-client \
     curl \
     zip \
     unzip
