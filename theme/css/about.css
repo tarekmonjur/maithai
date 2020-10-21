@@ -185,7 +185,7 @@ button.btn.btn-lg.text-light.text-uppercas:hover{
         font-size: 2rem;
     }
     section#about-content h1{
-        font-size: 3rem;
+        font-size: 2rem;
     }
     div.col-md-4{
         display: grid;
@@ -212,4 +212,18 @@ button.btn.btn-lg.text-light.text-uppercas:hover{
         margin: auto;
     }
 
+    .contact-title{
+        font-size: 25px;
+    }
+
+    section#about-content-2nd ul li{
+        font-size: 12px;
+    }
+
+    section#about-content p{
+        font-size: 13px;
+    }
+    .founders-some-talk-text{
+        font-size: 14px;
+    }
 }

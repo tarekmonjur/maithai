@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MaiThai Kitchen | Food List</title>
+  <title>MaiThai Kitchen | Food Grid</title>
   <link rel="icon" href="assets/logo/logo.png">
 
   <!-- CSS only -->
@@ -51,13 +51,13 @@
               <div class="carts-section text-uppercase">
                 <!-- <span class="mr-2">total carts: <span class="text-danger font-weight-bold">4</span></span>
                 <div style="border-left: 2px solid tomato;"></div>
-                <span>price amount: <span class="text-danger font-weight-bold">1200TK</span></span> -->
+                <span>price amount: <span class="text-danger font-weight-bold">$1200</span></span> -->
 
                 <span class="text-uppercase font-weight-bold">
                   total carts: <span class="text-danger font-weight-bold">4</span>
                   <span class="ml-2 mr-2"> | </span>
-                  price amount: <span class="text-danger font-weight-bold">1200TK</span>
-              </span>
+                  price amount: <span class="text-danger font-weight-bold">$1200</span>
+                </span>
               </div>
             </div>
             <!-- Clock for Opening and closing time -->
@@ -65,7 +65,7 @@
               <i class="far fa-clock"></i>
               <div class="time-table">
                 <a href="#time-table-bookmark" class="bookmark-text">
-                  <span class="text-uppercase font-weight-bold">GET ON 5 DAYS A WEEK FROM 10.00 AM TO 6PM IST</span>
+                  <span class="text-uppercase font-weight-bold">opening time & delivery time slot</span>
                 </a>
               </div>
             </div>
@@ -81,39 +81,40 @@
     </div>
   </header>
 
- <!-------------------- NAVBAR ----------------------->
- <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-      <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-------------------- NAVBAR ----------------------->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="index.html">home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="foodGird.html">food list</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link active-now" href="#">food package <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="loginRegister.html">login & register</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="aboutUs.html">about us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="contactUs.html">contact us</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="termsPolicy.html">terms & policy</a>
-              </li>
-          </ul>
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-now" href="#">food list <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="foodPackage.html">food package</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loginRegister.html">login & register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.html">about us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactUs.html">contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="termsPolicy.html">terms & policy</a>
+          </li>
+        </ul>
       </div>
-  </div>
+    </div>
   </nav>
 
   <!------------- SECTION of Banners Page ----------------->
@@ -122,58 +123,120 @@
       <div class="dark-bg">
         <div id="intro">
           <div id="intro-section" class="mb-4">
-            <h5 class="intro-title text-uppercase mb-4">find foods from food list</h5>
+            <h5 class="intro-title text-uppercase mb-4">stock food grid combo</h5>
           </div>
 
-        <div class="search-food mb-5">
-          <input type="text" placeholder="Find Your Choice!" class="form-control">
-          <button type="submit" class="btn btn-danger btn-custom text-uppercase">
-            <i class="fas fa-search"></i>
-            <span> </span>
-            <span>Search</span>
-          </button>
-        </div>
+          <div class="search-food mb-5">
+            <input type="text" placeholder="Find Your Choice!" class="form-control">
+            <button type="submit" class="btn btn-danger btn-custom text-uppercase">
+              <i class="fas fa-search"></i>
+              <span> </span>
+              <span>Search</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
+
+    <!--------- The Search Collapse DropDown Bar ------->
+    <ul class="search-dropdown-menu" style="display: none;">
+      <li class="search-item mt-2"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+          <div class="nameAndPrice">
+            <div class="name">Big 8</div>
+            <div class="price">$800.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+
+          <div class="nameAndPrice">
+            <div class="name">Pizza</div>
+            <div class="price">$700.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+
+          <div class="nameAndPrice">
+            <div class="name">Fish Kabab</div>
+            <div class="price">$430.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+
+          <div class="nameAndPrice">
+            <div class="name">Mutton Biriyani</div>
+            <div class="price">$860.</div>
+          </div>
+        </a></li>
+      <hr>
+
+      <li class="search-item mb-2"><a href="#">
+          <div class="image">
+            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+          </div>
+
+          <div class="nameAndPrice">
+            <div class="name">Masala Pasta</div>
+            <div class="price">$600.</div>
+          </div>
+        </a></li>
+    </ul>
   </section>
 
-  <!-------------- Food List Section ------------>
+  <!-------------- Food Grid Section ------------>
   <section id="food-list" class="mt-5 mb-5">
     <div class="container">
-        <div class="food-list-header">
-           <h3 class="text-capitalize text-danger">all food list to chooce by flat order some parcentage off</h3>
-        </div>
-        <hr>
+      <div class="food-list-header">
+        <h3 class="text-capitalize text-danger">food grids, combo food catagories</h3>
+      </div>
+      <hr>
 
-      <!------- The Main Food List and Food Search, Filtering Section ----------->
-        <div class="food-list-body row">
-          <div class="filter-item col-md-3 col-sm-4 col-xs-12">
-              <div class="forms">
-                <!------- Food Search Bar ------->
-                  <div class="form-control search-input mb-3">
-                    <input type="text" placeholder="Search for...">
-                    <button class="btn-food-search"><i class="fas fa-search"></i></button>
-                  </div>
-                <!------ Select Catagories Bar ------->
-                  <div class="form-control select-input mb-4">
-                    <select name="parent" id="select">
-                      <option value="1">Sort by: Popularity</option>
-                      <option value="2">Top Rated</option>
-                      <option value="3">Special Cuisins</option>
-                      <option value="4">Cost</option>
-                      <option value="5">Latest</option>
-                    </select>
-                  </div>
-              </div>
+      <!------- The Main Food Grid and Food Search, Filtering Section ----------->
+      <div class="food-list-body row">
+        <div class="filter-item col-md-3 col-sm-4 col-xs-12">
+          <div class="forms">
+            <!------- Food Search Bar ------->
+            <div class="form-control search-input mb-3">
+              <input type="text" placeholder="Search for...">
+              <button class="btn-food-search"><i class="fas fa-search"></i></button>
+            </div>
+            <!------ Select Catagories Bar ------->
+            <div class="form-control select-input mb-4">
+              <select name="parent" id="select">
+                <option value="1">Sort by: Popularity</option>
+                <option value="2">Top Rated</option>
+                <option value="3">Special Cuisins</option>
+                <option value="4">Cost</option>
+                <option value="5">Latest</option>
+              </select>
+            </div>
+          </div>
+
 
           <!----------- Collapse Bar ----------->
           <div id="accordion" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne">
+                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
                     <span>
                       <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
                     </span>
@@ -244,8 +307,8 @@
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                    aria-controls="collapseTwo">
+                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
                     <span>
                       <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -310,13 +373,13 @@
             </div>
           </div>
 
-        <!--------------------- 3rd Collapse Bar ---------------------->
+          <!--------------------- 3rd Collapse Bar ---------------------->
           <div id="accordion-3" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                    aria-controls="collapseThree">
+                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
                     <span>
                       <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -381,13 +444,13 @@
             </div>
           </div>
 
-        <!------------------- 4th Collapse Bar ------------------------->
+          <!------------------- 4th Collapse Bar ------------------------->
           <div id="accordion-4" class="mb-2">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                    aria-controls="collapseFour">
+                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="false" aria-controls="collapseFour">
                     <span>
                       <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
@@ -403,37 +466,37 @@
                     <ul>
                       <li class="checkbox">
                         <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">10 - 50TK</span>
+                        <span class="text-capitalize ml-2">$5 - $10</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">60 - 150Tk</span>
+                        <span class="text-capitalize ml-2">$6 - $15</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">180 - 250Tk</span>
+                        <span class="text-capitalize ml-2">$18 - $25</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="indian">
-                        <span class="text-capitalize ml-2">300 - 450Tk</span>
+                        <span class="text-capitalize ml-2">$30 - $45</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">500 - 600Tk</span>
+                        <span class="text-capitalize ml-2">$50 - $60</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">600 - 800Tk</span>
+                        <span class="text-capitalize ml-2">$60 - $80</span>
                       </li>
 
                       <li class="checkbox">
                         <input type="checkbox" value="fast">
-                        <span class="text-capitalize ml-2">900 - 1200Tk</span>
+                        <span class="text-capitalize ml-2">$90 - $120</span>
                       </li>
                     </ul>
                   </div>
@@ -441,332 +504,449 @@
               </div>
             </div>
           </div>
-    
-          </div> <!--END of the Left Side Section-->
 
-          
+        </div>
+        <!--END of The Left Side Section  -->
 
-       <!------------- Food List Area Here -------------->
-          <div class="list-area col-md-9 col-sm-8 col-xs-12">
-              <ul>
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
+
+
+        <!------------- Food List Area Here -------------->
+        <div class="grid-area col-md-9 col-sm-8 col-xs-12">
+          <!------- Food Grid Cards With Row & Cols --------->
+          <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
                     <div class="discount-title">
-                      <h5 class="text-danger">200Tk / <del>240Tk</del></h5>
+                      <h5 class="text-danger">$25 / <del>$24</del></h5>
                     </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
                         <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
+                        <span>add cart</span>
                       </button>
                     </div>
                   </div>
-                </li>
+                </div>
+              </div>
+            </div>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
                     <div class="discount-title">
-                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
+                      <h5 class="text-danger">$10 / <del>$24</del></h5>
                     </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
                         <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
+                        <span>add cart</span>
                       </button>
                     </div>
                   </div>
-                </li>
+                </div>
+              </div>
+            </div>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/wideCard3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
                     <div class="discount-title">
-                      <h5 class="text-danger">550Tk / <del>640Tk</del></h5>
+                      <h5 class="text-danger">$45 / <del>$74</del></h5>
                     </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
                         <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
+                        <span>add cart</span>
                       </button>
                     </div>
                   </div>
-                </li>
+                </div>
+              </div>
+            </div>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
                     <div class="discount-title">
-                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
+                      <h5 class="text-danger">$15 / <del>$24</del></h5>
                     </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
                         <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
+                        <span>add cart</span>
                       </button>
                     </div>
                   </div>
-                </li>
+                </div>
+              </div>
+            </div>
 
-                <li class="d-flex mb-4 all-food-list">
-                  <!-- list-image -->
-                  <div class="list-img">
-                      <img src="assets/logo/hotel.jpg" alt="Hotel Logo">
-                  </div>
-                  <!-- list-body -->
-                  <div class="list-body ml-4 mr-2">
-                      <h5>Eagle Boys Village Plaza</h5>
-                      <ul class="list-body-mini-list">
-                        <li><a href="#">Pizza</a></li>
-                        <li><a href="#">American</a></li>
-                        <li><a href="#">Sandwiches</a></li>
-                        <li><a href="#">Steak House</a></li>
-                        <li><a href="#">Pasta</a></li>
-                        <li><a href="#">Wraps</a></li>
-                      </ul>
-                      <p style="font-size: 14px;" class="text-muted mt-2">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi eum aliquam. Accusamus cupiditate animi. 
-                      </p>
-                  </div>
-                 <!-- list-footer -->
-                  <div class="list-footer">
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
                     <div class="discount-title">
-                      <h5 class="text-danger">150Tk / <del>240Tk</del></h5>
+                      <h5 class="text-danger">$33 / <del>$44</del></h5>
                     </div>
-                    <div class="list-footer-btn mt-4">
-                      <button class="btn-list-order">
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
                         <i class="fas fa-plus-circle"></i>
-                        <span>Add Cart</span>
+                        <span>add cart</span>
                       </button>
                     </div>
                   </div>
-                </li>
-              </ul> <!---END of This All Food List ul--->
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/coverA.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$50 / <del>$100</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$120 / <del>$240</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$15 / <del>$54</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="assets/img/cover1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                <div class="card-body grid-body">
+                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
+                  <ul class="list-body-mini-list">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">American</a></li>
+                    <li><a href="#">Sandwiches</a></li>
+                    <li><a href="#">Pasta</a></li>
+                  </ul>
+                  <hr>
+                  <div class="d-grid grid-footer text-center">
+                    <div class="discount-title">
+                      <h5 class="text-danger">$150 / <del>$240</del></h5>
+                    </div>
+                    <div class="grid-footer-btn mt-2">
+                      <button class="btn-grid-order text-capitalize">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>add cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <!------------- Page Pagination Bar ------------->
-              <div class="pagination" aria-label="...">
-                <ul class="pagination pagination-sm">
-                  <li class="page-item active" aria-current="page">
-                    <span class="page-link">
-                      1
-                      <span class="sr-only">(current)</span>
-                    </span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">5</a></li>
-                  <li class="page-item"><a class="page-link" href="#">6</a></li>
-                </ul>
-              </div>
+          <div class="pagination" aria-label="...">
+            <ul class="pagination pagination-sm">
+              <li class="page-item active" aria-current="page">
+                <span class="page-link">
+                  1
+                  <span class="sr-only">(current)</span>
+                </span>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+            </ul>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
 
-  <!-------------- FOOTER AREA ----------------->
-  <footer class="footer text-light">
+
+   <!-------------- FOOTER AREA ----------------->
+   <footer class="footer text-light">
     <!---------- TOP black FOOTER -------->
     <div id="upper-footer" class="p-5">
       <div class="container">
-        <!-- One Section -->
-        <div class="row mb-2 footer-list-1st-heading">
-          <div class="col-md-12">
-            <h5 class="text-light text-capitalize">address :</h5>
-          </div>
-        </div>
-        <div class="row mb-4 footer-list-1st-row">
-          <div class="col-md-4 text-capitalize">
-            <ul>
-              <li>28 Jackson Blvd Ste 1020 Chicago</li>
-              <li>IL 60604-2340</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul>
-              <li>Freephone: +1-800-559-1234</li>
-              <li>Telephone: +1-800-603-9874</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul>
-              <li>FAX: +1-800-999-9898</li>
-              <li>E-mail: mail@maithai.com</li>
-            </ul>
-          </div>
-        </div>
-        <br>
-        <div style="border-bottom: 1px dotted gray; width: 90%;"></div>
 
-        <!-- After Footers One Section -->
-        <div class="row mt-5 footer-list-2nd-row">
-          <div class="col-md-4">
-            <h5 class="text-capitalize mb-3">popular foods</h5>
-            <ul class="text-capitalize">
-              <li><a href="" class="text-light">masala pasta</a></li>
-              <li><a href="" class="text-light">veep pasta</a></li>
-              <li><a href="" class="text-light">chicken barger</a></li>
-              <li><a href="" class="text-light">chines fish fry</a></li>
-              <li><a href="" class="text-light">dhaka kacchi</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5 class="text-capitalize mb-3">top rated foods</h5>
-            <ul class="text-capitalize">
-              <li><a href="" class="text-light">chinese masala</a></li>
-              <li><a href="" class="text-light"></a></li>
-              <li><a href="" class="text-light">bread & masala</a></li>
-              <li><a href="" class="text-light">milk cream pizza</a></li>
-              <li><a href="" class="text-light">veep noodles</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 business-hour" id="time-table-bookmark">
-            <h5 class="text-capitalize mb-3">business hour</h5>
-            <ul>
-              <li>
-                <span>monday</span>
-                <div class="dotted-dateline ml-3 mr-3"></div>
-                <span>closed</span>
-              </li>
-              <li>
-                <span>tue - fri</span>
-                <div class="dotted-dateline ml-3 mr-3"></div>
-                <span>9am - 10pm</span>
-              </li>
-              <li>
-                <span>sat - sun</span>
-                <div class="dotted-dateline ml-3 mr-3"></div>
-                <span>7am - 11pm</span>
-              </li>
-              <li>
-                <span>holidays</span>
-                <div class="dotted-dateline ml-3 mr-3"></div>
-                <span>7am - 11pm</span>
-              </li>
-            </ul>
-          </div>
+           <!-- Footers Top Menu -->
+           <div class="row mb-4">
+            <div class="col-md-12 text-center">
+                <ul class="footer-top-menu">
+                    <li>
+                        <a href="aboutUs.html">About</a>
+                        <span class="ml-2 mr-2 line"> - </span>
+                    </li>
+                    <li>
+                        <a href="termsPolicy.html">Refund Policy</a>
+                        <span class="ml-2 mr-2 line"> - </span>
+                    </li>
+                    <li>
+                        <a href="contactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+        
+          <div style="border-bottom: 1px dotted gray;"></div>
+
+          <!-- Two Section -->
+          <!-- Address -->
+          <div class="row mb-2 footer-list-1st-heading mt-5">
+              <div class="col-md-12">
+                  <h5 class="text-light text-capitalize">address :</h5>
+              </div>
+          </div>
+          <div class="row mb-4 footer-list-1st-row">
+              <div class="col-md-4 text-capitalize">
+                  <ul>
+                      <li>35 High street Cheshunt, Waltham Cross</li>
+                      <li>EN80BS, UK.</li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <ul>
+                      <li>Mobile Number: 01992 641133</li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <ul>
+                      <li>E-mail: maithaikitchen@hotmail.com</li>
+                  </ul>
+              </div>
+          </div>
+          <br>
+          <div style="border-bottom: 1px dotted gray;"></div>
+
+          <!-- After Footers One Section -->
+          <div class="row mt-5 footer-list-2nd-row mb-5">
+              <div class="col-md-4 business-hour" id="time-table-bookmark">
+                  <h5 class="text-capitalize mb-3">opening time:</h5>
+                  <ul>
+                      <li>
+                          <span>Sunday - Saturday (Everyday)</span>
+                      </li>
+                      <li>
+                          <span>Lunch Time</span>
+                          <div class="dotted-dateline ml-3 mr-3"></div>
+                          <span>12pm - 3pm</span>
+                      </li>
+                      <li>
+                          <span>Dinner Time</span>
+                          <div class="dotted-dateline ml-3 mr-3"></div>
+                          <span>5pm - 10pm</span>
+                      </li>
+                      <li>
+                          <span>(All the time Based on UK TIM, BST)</span>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class="col-md-4 business-hour" id="time-table-bookmark">
+                  <h5 class="text-capitalize mb-3">delivery time slot:</h5>
+                  <ul>
+                      <li>
+                          <span>Everyday</span>
+                          <div class="dotted-dateline ml-3 mr-3"></div>
+                          <span>5pm - 10pm</span>
+                      </li>
+                      <li>
+                          <span>(All the time Based on UK TIM, BST)</span>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- The Footers Business Card's  -->
+              <div class="col-md-4">
+                  <h5 class="text-capitalize mb-3">Payment Methods:</h5>
+
+                  <ul class="d-flex business-logo-section">
+                      <li class="business-logo">
+                          <img class="paypal" src="assets/logo/paypal.png" alt="">
+                      </li>
+                      <li class="business-logo">
+                          <img class="visa" src="assets/logo/visa.png" alt="">
+                      </li>
+                      <li class="business-logo">
+                          <img class="master" src="assets/logo/master.png" alt="">
+                      </li>
+                  </ul>
+              </div>
+
+          </div>
+
+          <div style="border-bottom: 1px dotted gray;"></div>
+
+          <div class="row mt-5">
+              <div class="col-md-12 text-center">
+                  <span class="text-muted">
+                    <small>&copy; Copyright 2020, Mai Thai Kitchen. All Rights Reserved</small>
+                  </span>
+              </div>
+          </div>
+
       </div>
-    </div>
+  </div>
 
     <!------- BOTTOM tomato FOOTER -------->
     <div id="bottom-footer" class="p-2">
-      <div class="container">
-        <div class="row">
-          <!-- Footer App Logo -->
-          <div class="col-md-4">
-            <div class="logo">
-              <img src="assets/logo/logo.png" alt="">
+        <div class="container">
+            <div class="row">
+                <!-- Footer App Logo -->
+                <div class="col-md-4">
+                    <div class="logo">
+                        <img src="assets/logo/logo.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Footer SOCIAL ICONS -->
+                <div class="col-md-4 footer-social-icons" style="display: inline-flex; justify-content: center;">
+                    <div class="d-flex mt-4">
+                        <a href="" class="ml-4">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="" class="ml-4">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="" class="ml-4">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="" class="ml-4">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR-CODE Section -->
+                <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
+                    <img class="img img-fluid img-thumbnail" src="assets/logo/qr-code.png" alt="QR-CODE">
+                </div>
             </div>
-          </div>
-
-          <!-- Footer SOCIAL ICONS -->
-          <div class="col-md-4 footer-social-icons" style="display: inline-flex; justify-content: center;">
-            <div class="d-flex mt-4">
-              <a href="" class="ml-4">
-                <i class="fab fa-twitter"></i>
-              </a>
-
-              <a href="" class="ml-4">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-
-              <a href="" class="ml-4">
-                <i class="fab fa-instagram"></i>
-              </a>
-
-              <a href="" class="ml-4">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- QR-CODE Section -->
-          <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
-            <img class="img img-fluid img-thumbnail" src="assets/logo/qr-code.png" alt="QR-CODE">
-          </div>
         </div>
-      </div>
     </div>
-  </footer>
+</footer>
 </body>
 
 <!-- JS, Popper.js, and jQuery -->
@@ -779,6 +959,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <script src="js/collapse_button.js" defer></script>
+<script src="js/collapse_button.js" defer></script>
 
 </html>
