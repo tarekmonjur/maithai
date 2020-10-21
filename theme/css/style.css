@@ -447,16 +447,18 @@ div.col-jumbo-one{
     text-align: center;
 }
 
-/***************OFFERS FOOD**************/
-div.row.carousel-item {
-    max-height: 44vh;
+/*************** FOOD MENU Food-Menu **************/
+div.food-menu-carousel {
+    max-height: 48vh;
 }
 img.img-offer{
     width: 44vh;
 }
-div.indian-list, div.junk-list,div.fast-list{
-    position: relative;
-    bottom: 28rem;
+div.food-menu-list{
+    position: sticky;
+    /* bottom: 24rem; */
+    bottom: 10rem;
+    margin-top: 2rem;
 }
 ul.offer-list-ul{
     font-size: 14px;
@@ -578,6 +580,7 @@ svg.svg-inline--fa.fa-phone.fa-w-16:hover,
 svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
     text-shadow: 5px 5px 10px #e97979;
     border: 5px solid;
+    padding: 15px;
 }
 
  /**********************FOOTER***********************/
@@ -835,11 +838,6 @@ div.dotted-dateline{
         height: 380px;
     }
 
-    /**Food Menu Tab**/
-    div.indian-list{
-        margin-top: 0;
-    }
-
     /**The Special Food Offer Section**/
     /*** Special Offers Section Title ****/
     section.special-food-menu div.carousel-title h1{
@@ -910,13 +908,8 @@ div.dotted-dateline{
         justify-content: center !important;
     }
 
-    div.indian-list, div.junk-list,div.fast-list{
-        top: 2rem;
-        text-align: center;
-    }
-
     div.row.carousel-item {
-        min-height: 100vh;
+        min-height: 80vh;
         max-height: 135vh !important;
     }
     img.img-offer{
@@ -1033,6 +1026,10 @@ div.dotted-dateline{
     .search-dropdown-menu{
         width: 81% !important;
     }
+
+    div.food-menu-list{
+        margin-top: 12rem;
+    }
 }
 
 /***iPhone 6,7,8 type Mobiles Screen***/
@@ -1058,6 +1055,11 @@ div.dotted-dateline{
     a.mr-5.carousel-control-next {
         right: -5%
     }
+
+    div.food-menu-list{
+        margin-top: 2rem;
+        bottom: 2rem;
+    }
 }
 
 /********* iPhone 5/SE/5s World Smallest **********/
@@ -1075,6 +1077,11 @@ div.dotted-dateline{
     }
     a.mr-5.carousel-control-next {
         right: -10%
+    }
+
+    div.food-menu-list{
+        margin-top: 4rem;
+        bottom: 2rem;
     }
 }
 
@@ -1096,6 +1103,18 @@ div.dotted-dateline{
         transform: translate(-48rem, -13.8rem) !important;
         width: 80% !important;
     }
+    div.food-menu-list{
+        margin-top: 5rem;
+    }
+    a.mr-5.carousel-control-next.menu-btn {
+        right: -12% !important;
+    }
+    a.ml-5.carousel-control-prev.menu-btn {
+        left: -12% !important;
+    }
+    .food-menu-carousel ul li.list-group-item{
+        font-size: 10px;
+    }
 }
 
 /***** For The Minimal Screen ****/
@@ -1108,10 +1127,6 @@ div.dotted-dateline{
     }
     img.img-offer{
         width: 60vh;
-    }
-    div.indian-list, div.junk-list, div.fast-list {
-        position: relative;
-        bottom: 25rem !important;
     }
     a.ml-5.carousel-control-prev {
         left: 0;

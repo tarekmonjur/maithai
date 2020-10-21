@@ -38,15 +38,18 @@ section#food-list div.food-list-body div.select-input select{
     border: none;
     background: none;
     font-size: 15px;
+}
+section#food-list div.food-list-body div.select-input select{
     width: 100%;
 }
+
 section#food-list div.food-list-body input[type="text"]{
     width: 190px;
 }
-section#food-list div.food-list-body button{
-    width: 20px;
+section#food-list div.food-list-body button.btn-list-order{
+    width: 100px;
     padding-left: 10px;
-    Padding-right: 20px;
+    Padding-right: 10px;
 }
 div.search-input,
 section#food-list div.food-list-body div.select-input{
@@ -89,6 +92,13 @@ div#accordion-4 .card-body{
     padding: 1rem;
 }
 
+/** Button of search in left Side Aside Section **/
+button.btn-food-search.left-side{
+    width: 20px;
+    padding-left: 10px;
+    Padding-right: 20px;
+}
+
 /**----Checkbox Of Filtering----**/
 div.checkbox-list h6{
     font-size: 18px;
@@ -96,6 +106,10 @@ div.checkbox-list h6{
 div.checkbox-list li span{
     font-size: 16px;
     letter-spacing: 0.5px;
+}
+div.checkbox-list li.checkbox{
+    margin-left: 1rem;
+    list-style: none;
 }
 
 /****----Right Sides List Card----****/
