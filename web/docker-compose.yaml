@@ -13,7 +13,7 @@ services:
       - ./www:/var/www/html/
       - ./.docker/apache/maithai.apache.conf:/usr/local/apache2/conf/maithai.apache.conf
     ports:
-      - 8081:80
+      - 8181:80
     links:
       - php-fpm
     networks:
