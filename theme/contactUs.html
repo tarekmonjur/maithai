@@ -162,8 +162,8 @@
                 <!-- Describe About Restaurant TextArea -->
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <textarea name="description" id="description" cols="" rows="10"
-                            placeholder="Your Message..." class="form-control"></textarea>
+                        <textarea name="description" id="description" cols="" rows="10" placeholder="Your Message..."
+                            class="form-control"></textarea>
                     </div>
                 </div>
 
@@ -228,16 +228,17 @@
     </section>
     <br>
 
-    <!----------------- Added Google Map API with JavaScript --------------->
-    <section id="googleMap">
-        <div id="map" style="height: 500px; width: 100%;"></div>
-    </section>
+    <!------------------------ Google Map API ----------------------->
+    <div id="googleMap" class="map-container">
+        <div id="map" style="height: 500px; width: 100%; overflow: hidden !important;"></div>
+    </div>
 
-    <script>
-        function initMap(){
+    <!-- Map Initializing with javascript -->
+    <script type="text/javascript">
+        function initMap() {
             var location = {
-              lat: 51.709474,
-              lng: -0.036383
+                lat: 51.709474,
+                lng: -0.036383
             };
 
             var map = new google.maps.Map(document.getElementById("map"), {
@@ -251,9 +252,6 @@
             });
         }
     </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDonl0Rh0ucFXyteZ1xg6zSX0XcJQuEes8&callback=initMap"
-      type="text/javascript"></script>
-
 
     <!-------------- FOOTER AREA ----------------->
     <footer class="footer text-light">
@@ -298,13 +296,13 @@
                     </div>
                     <div class="col-md-4">
                         <ul>
-                            <li>Mobile Number: 01992 641133</li>
+                            <li>Phone: 01992 641133</li>
                             <li>E-mail: maithaikitchen@hotmail.com</li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <ul>
-                            <li>Company Number: 12333551</li>
+                            <li>Company Registration Number: 12333551</li>
                             <li>VAT: 340075044</li>
                         </ul>
                     </div>
@@ -330,14 +328,11 @@
                                 <div class="dotted-dateline ml-3 mr-3"></div>
                                 <span>5pm - 10pm</span>
                             </li>
-                            <li>
-                                <span>(All the time Based on UK TIM, BST)</span>
-                            </li>
                         </ul>
                     </div>
 
                     <div class="col-md-4 business-hour" id="time-table-bookmark">
-                        <h5 class="text-capitalize mb-3">delivery time slot:</h5>
+                        <h5 class="text-capitalize mb-3">delivery time:</h5>
                         <ul>
                             <li>
                                 <span>Everyday</span>
@@ -413,7 +408,8 @@
 
                     <!-- QR-CODE Section -->
                     <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
-                        <img class="img img-fluid img-qr-code img-thumbnail" src="assets/logo/qr-code.png" alt="QR-CODE">
+                        <img class="img img-fluid img-qr-code img-thumbnail" src="assets/logo/qr-code.png"
+                            alt="QR-CODE">
                     </div>
                 </div>
             </div>
@@ -434,5 +430,13 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+
+<!--*********** FOR GOOOGLE MAP API ************-->
+<script async defer src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<!-- With Google Map API_Key -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDonl0Rh0ucFXyteZ1xg6zSX0XcJQuEes8&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap"></script>
+
 
 </html>
