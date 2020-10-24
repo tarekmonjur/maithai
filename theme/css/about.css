@@ -11,6 +11,12 @@
     box-shadow: none;
 }
 
+/**Common Font Color On headline for content text**/
+.headline-p{
+    color: #cf3d27;
+    /* font-family: 'Quicksand', sans-serif; */
+}
+
 section#about-cover .jumbotron{
     background: url('../assets/img/aboutUsCover.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -29,7 +35,7 @@ div.about-text-section div.about-cover{
 }
 
 /********ABOut Content********/
-section#about-content h1{   
+section#about-content h1, h3{   
     color: #cf3d27;
     font-weight: lighter;
     font-family: 'Quicksand', sans-serif;
@@ -37,6 +43,7 @@ section#about-content h1{
 section#about-content p{
     padding: 0 10px;
     font-size: 14px;
+    font-weight: lighter;
 }
 
 /*******About Content 2nd*********/
@@ -191,10 +198,10 @@ button.btn.btn-lg.text-light.text-uppercas:hover{
     section#about-content-2nd img{
         margin-top: 2rem;
     }
-    section#about-founders h1{
+    section#about-founders h1, h3{
         font-size: 2rem;
     }
-    section#about-content h1{
+    section#about-content h1, h3{
         font-size: 2rem;
     }
     div.col-md-4{
@@ -231,10 +238,10 @@ button.btn.btn-lg.text-light.text-uppercas:hover{
     }
 
     section#about-content p{
-        font-size: 13px;
+        font-size: 12px;
     }
     .founders-some-talk-text{
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 

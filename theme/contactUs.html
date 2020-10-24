@@ -8,10 +8,12 @@
     <link rel="icon" href="assets/logo/logo.png">
 
     <!-- CSS only -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/css/tether.min.css">
+
+    <!-- Bootstrap (4.5.2) -->
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
 
     <!-- Style.css -->
     <link rel="stylesheet" href="css/style.css">
@@ -241,11 +243,13 @@
                 lng: -0.036383
             };
 
+            //Initialized map with latLng...
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 20,
                 center: location
             });
 
+            //Fixed Marker for map on direction..
             var marker = new google.maps.Marker({
                 position: location,
                 map: map
@@ -418,18 +422,18 @@
 </body>
 
 <!-- JS, Popper.js, and jQuery -->
+<!-- FontAwesome 5 -->
 <script src="/assets/fontAwesome/js/all.min.js"></script>
 <script src="/assets/fontAwesome/js/fontawesome.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+
+<!-- Bootstrap jQuery (3.5.1) -->
+<script src="assets/bootstrap/jquery.min.js"></script>
+
+<!-- Bootstrap Popper.js (1.16.1) -->
+<script src="assets/bootstrap/popper.min.js"></script>
+
+<!-- Bootstrap bootstrap.min.js (4.5.2) -->
+<script src="assets/bootstrap/bootstrap.min.js"></script>
 
 <!--*********** FOR GOOOGLE MAP API ************-->
 <script async defer src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
