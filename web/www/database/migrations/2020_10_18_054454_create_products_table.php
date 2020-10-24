@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->decimal('vat_percent', 5, 2)->default(0);
             $table->boolean('is_stock')->default(0);
             $table->boolean('is_new')->default(0);
+            $table->boolean('is_package')->default(0);
             $table->boolean('is_active')->default(0);
             $table->integer('created_by')->default(0);
             $table->integer('updated_by')->default(0);

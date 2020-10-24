@@ -21,7 +21,6 @@ class CreateOrdersDetailsTable extends Migration
             $table->string('offer_name', 100)->nullable();
             $table->string('product_name', 100);
             $table->string('product_code', 45);
-            $table->string('product_type')->nullable();
             $table->string('product_variant')->nullable();
             $table->string('product_unit')->nullable();
             $table->decimal('product_price', 8,2);

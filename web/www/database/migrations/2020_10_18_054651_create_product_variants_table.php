@@ -16,9 +16,10 @@ class CreateProductVariantsTable extends Migration
         Schema::create('product_variants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('product_id');
-            $table->integer('type_variant_id');
+            $table->integer('variant_type_id');
             $table->decimal('additional_price', 8, 2)->default(0);
             $table->integer('qty')->default(0);
+            $table->boolean('is_optional')->default(0);
             $table->integer('created_by')->default(0);
             $table->integer('updated_by')->default(0);
             $table->timestamps();

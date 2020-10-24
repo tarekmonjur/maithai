@@ -18,7 +18,7 @@ class CreateUserDetailsTable extends Migration
             $table->integer('user_id');
             $table->integer('user_type_id')->default(0);
             $table->integer('user_service_type_id')->default(0);
-            $table->integer('user_status_type_id')->default(0);
+            $table->integer('user_status_id')->default(0);
             $table->string('first_name', 45)->index();
             $table->string('last_name', 45)->nullable();
             $table->string('email', 45)->nullable()->unique();
