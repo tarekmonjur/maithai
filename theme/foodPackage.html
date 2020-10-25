@@ -97,7 +97,7 @@
             <a class="nav-link" href="index.html">home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="foodList.html">food list</a>
+            <a class="nav-link" href="foodMenu.html">food menu</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active-now" href="#">food package <span class="sr-only">(current)</span></a>
@@ -213,7 +213,7 @@
 
       <!------- The Main Food List and Food Search, Filtering Section ----------->
       <div class="food-list-body row">
-        <div class="filter-item col-md-3 col-sm-4 col-xs-12">
+        <div class="filter-item-food-package col-md-3 col-sm-4 col-xs-12">
           <div class="forms">
             <!------- Food Search Bar ------->
             <div class="form-control search-input mb-3">
@@ -221,7 +221,7 @@
               <button class="btn-food-search left-side"><i class="fas fa-search"></i></button>
             </div>
             <!------ Select Catagories Bar ------->
-            <div class="form-control select-input mb-4">
+            <!-- <div class="form-control select-input mb-4">
               <select name="parent" id="select">
                 <option value="1">Sort by: Popularity</option>
                 <option value="2">Top Rated</option>
@@ -229,20 +229,24 @@
                 <option value="4">Cost</option>
                 <option value="5">Latest</option>
               </select>
-            </div>
+            </div> -->
           </div>
 
           <!----------- Collapse Bar ----------->
+          <div class="food-menu-title mb-2">
+            <h3 class="text-light">Food Menu</h3>
+          </div>
+
           <div id="accordion" class="mb-2">
             <div class="card">
-              <div class="card-header" id="headingOne">
+              <div class="card-header food-package" id="headingOne">
                 <h5 class="mb-0">
                   <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
                     <span>
                       <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
                     </span>
-                    <span class="ml-1"> filter by cuisines</span>
+                    <span class="ml-1">stir fried dishes</span>
                   </h6>
                 </h5>
               </div>
@@ -253,48 +257,38 @@
                   <div class="checkbox-list">
                     <ul>
                       <li class="checkbox">
-                        <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">juices</span>
+                        <input type="checkbox" value="pad graprao">
+                        <span class="text-capitalize ml-2">pad graprao</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">korean</span>
+                        <input type="checkbox" value="pad priew wan">
+                        <span class="text-capitalize ml-2">pad priew wan</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">chineese</span>
+                        <input type="checkbox" value="pad nam man hol">
+                        <span class="text-capitalize ml-2">pad nam man hol</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="indian">
-                        <span class="text-capitalize ml-2">indian</span>
+                        <input type="checkbox" value="pad med mamuang">
+                        <span class="text-capitalize ml-2">pad med mamuang</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">thai</span>
+                        <input type="checkbox" value="pad khing">
+                        <span class="text-capitalize ml-2">pad khing</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">junk</span>
+                        <input type="checkbox" value="pad pak (v)">
+                        <span class="text-capitalize ml-2">pad pak (v)</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="fast">
-                        <span class="text-capitalize ml-2">fast</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="bangladeshi">
-                        <span class="text-capitalize ml-2">bangladeshi</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="karela">
-                        <span class="text-capitalize ml-2">karela</span>
+                        <input type="checkbox" value="pad kratiem prik thai">
+                        <span class="text-capitalize ml-2">pad kratiem prik thai</span>
                       </li>
                     </ul>
                   </div>
@@ -307,14 +301,14 @@
           <!---------------------- 2nd Collapse Bar --------------------------->
           <div id="accordion-2" class="mb-2">
             <div class="card">
-              <div class="card-header" id="headingOne">
+              <div class="card-header food-package" id="headingOne">
                 <h5 class="mb-0">
                   <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
                     <span>
                       <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
-                    <span class="ml-1"> filter by Food package</span>
+                    <span class="ml-1">duck dishes</span>
                   </h6>
                 </h5>
               </div>
@@ -325,48 +319,13 @@
                   <div class="checkbox-list">
                     <ul>
                       <li class="checkbox">
-                        <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">juices</span>
+                        <input type="checkbox" value="tamarind duck">
+                        <span class="text-capitalize ml-2">tamarind duck</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">korean</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">chineese</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="indian">
-                        <span class="text-capitalize ml-2">indian</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">thai</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">junk</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="fast">
-                        <span class="text-capitalize ml-2">fast</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="bangladeshi">
-                        <span class="text-capitalize ml-2">bangladeshi</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="karela">
-                        <span class="text-capitalize ml-2">karela</span>
+                        <input type="checkbox" value="pad kee maow duck">
+                        <span class="text-capitalize ml-2">pad kee maow duck</span>
                       </li>
                     </ul>
                   </div>
@@ -378,14 +337,14 @@
           <!--------------------- 3rd Collapse Bar ---------------------->
           <div id="accordion-3" class="mb-2">
             <div class="card">
-              <div class="card-header" id="headingOne">
+              <div class="card-header food-package" id="headingOne">
                 <h5 class="mb-0">
                   <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="false" aria-controls="collapseThree">
                     <span>
                       <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
-                    <span class="ml-1"> filter by catagories</span>
+                    <span class="ml-1">noodle dishes</span>
                   </h6>
                 </h5>
               </div>
@@ -396,48 +355,23 @@
                   <div class="checkbox-list">
                     <ul>
                       <li class="checkbox">
-                        <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">juices</span>
+                        <input type="checkbox" value="pad thai">
+                        <span class="text-capitalize ml-2">pad thai</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">korean</span>
+                        <input type="checkbox" value="pad see-ew">
+                        <span class="text-capitalize ml-2">pad see-ew</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">chineese</span>
+                        <input type="checkbox" value="pad kee maow">
+                        <span class="text-capitalize ml-2">pad kee maow</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="indian">
-                        <span class="text-capitalize ml-2">indian</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">thai</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">junk</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="fast">
-                        <span class="text-capitalize ml-2">fast</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="bangladeshi">
-                        <span class="text-capitalize ml-2">bangladeshi</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="karela">
-                        <span class="text-capitalize ml-2">karela</span>
+                        <input type="checkbox" value="pad sen mee">
+                        <span class="text-capitalize ml-2">pad sen mee</span>
                       </li>
                     </ul>
                   </div>
@@ -449,14 +383,14 @@
           <!------------------- 4th Collapse Bar ------------------------->
           <div id="accordion-4" class="mb-2">
             <div class="card">
-              <div class="card-header" id="headingOne">
+              <div class="card-header food-package" id="headingOne">
                 <h5 class="mb-0">
                   <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="false" aria-controls="collapseFour">
                     <span>
                       <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
                     </span>
-                    <span class="ml-1">Filter by price</span>
+                    <span class="ml-1">Rice</span>
                   </h6>
                 </h5>
               </div>
@@ -467,38 +401,23 @@
                   <div class="checkbox-list">
                     <ul>
                       <li class="checkbox">
-                        <input type="checkbox" value="juices">
-                        <span class="text-capitalize ml-2">$10 - $50</span>
+                        <input type="checkbox" value="steamed jesmine rice">
+                        <span class="text-capitalize ml-2">steamed jesmine rice</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="korean">
-                        <span class="text-capitalize ml-2">$60 - $70</span>
+                        <input type="checkbox" value="egg fried rice">
+                        <span class="text-capitalize ml-2">egg fried rice</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="chineese">
-                        <span class="text-capitalize ml-2">$33 - $55</span>
+                        <input type="checkbox" value="kao pad prik pao">
+                        <span class="text-capitalize ml-2">kao pad prik pao</span>
                       </li>
 
                       <li class="checkbox">
-                        <input type="checkbox" value="indian">
-                        <span class="text-capitalize ml-2">$30 - $45</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="thai">
-                        <span class="text-capitalize ml-2">$100 - $300</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="junk">
-                        <span class="text-capitalize ml-2">$200 - $400</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="fast">
-                        <span class="text-capitalize ml-2">$90 - $120</span>
+                        <input type="checkbox" value="kao pad supparot">
+                        <span class="text-capitalize ml-2">kao pad supparot</span>
                       </li>
                     </ul>
                   </div>
@@ -506,6 +425,257 @@
               </div>
             </div>
           </div>
+
+          <!------------------- 5th Collapse Bar ------------------------->
+          <div id="accordion-5" class="mb-2">
+            <div class="card">
+              <div class="card-header food-package" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-5" data-toggle="collapse" data-target="#collapseFive"
+                    aria-expanded="false" aria-controls="collapseFive">
+                    <span>
+                      <img class="collapse-img-5" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">starters</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseFive" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-5">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="chicken satay (n)">
+                        <span class="text-capitalize ml-2">chicken satay (n)</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="vegetable spring rolls">
+                        <span class="text-capitalize ml-2">vegetable spring rolls</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="thai fish cakes (n)">
+                        <span class="text-capitalize ml-2">thai fish cakes (n)</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="tempura prawns">
+                        <span class="text-capitalize ml-2">tempura prawns</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="prawns on toast">
+                        <span class="text-capitalize ml-2">prawns on toast</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="dumplings (dim sum)">
+                        <span class="text-capitalize ml-2">dumplings (dim sum)</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="spare ribs">
+                        <span class="text-capitalize ml-2">spare ribs</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="vagetable tempura (v)">
+                        <span class="text-capitalize ml-2">vagetable tempura (v)</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="mix platter (n)">
+                        <span class="text-capitalize ml-2">mix platter (n)</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!------------------- 6th Collapse Bar ------------------------->
+          <div id="accordion-6" class="mb-2">
+            <div class="card">
+              <div class="card-header food-package" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-6" data-toggle="collapse" data-target="#collapseSix"
+                    aria-expanded="false" aria-controls="collapseSix">
+                    <span>
+                      <img class="collapse-img-6" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">soups</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseSix" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-6">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="tom yum">
+                        <span class="text-capitalize ml-2">tom yum</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="tom kha">
+                        <span class="text-capitalize ml-2">tom kha</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!------------------- 7th Collapse Bar ------------------------->
+          <div id="accordion-7" class="mb-2">
+            <div class="card">
+              <div class="card-header food-package" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-7" data-toggle="collapse" data-target="#collapseSeven"
+                    aria-expanded="false" aria-controls="collapseSeven">
+                    <span>
+                      <img class="collapse-img-7" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">thai salads</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseSeven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-7">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="larb gai">
+                        <span class="text-capitalize ml-2">larb gai</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="yum talay">
+                        <span class="text-capitalize ml-2">yum talay</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="yum nua">
+                        <span class="text-capitalize ml-2">yum nua</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!------------------- 8th Collapse Bar ------------------------->
+          <div id="accordion-8" class="mb-2">
+            <div class="card">
+              <div class="card-header food-package" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-8" data-toggle="collapse" data-target="#collapseEight"
+                    aria-expanded="false" aria-controls="collapseEight">
+                    <span>
+                      <img class="collapse-img-8" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">thai curries</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseEight" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-8">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="green curry">
+                        <span class="text-capitalize ml-2">green curry</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="red curry">
+                        <span class="text-capitalize ml-2">red curry</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="kao pad prik pao">
+                        <span class="text-capitalize ml-2">kao pad prik pao</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="panang">
+                        <span class="text-capitalize ml-2">panang</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="duck curry">
+                        <span class="text-capitalize ml-2">duck curry</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="massaman (n)">
+                        <span class="text-capitalize ml-2">massaman (n)</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="jungle curry">
+                        <span class="text-capitalize ml-2">jungle curry</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!------------------- 9th Collapse Bar ------------------------->
+          <div id="accordion-9" class="mb-2">
+            <div class="card">
+              <div class="card-header food-package" id="headingOne">
+                <h5 class="mb-0">
+                  <h6 class="text-capitalize toggle-click-9" data-toggle="collapse" data-target="#collapseNine"
+                    aria-expanded="false" aria-controls="collapseNine">
+                    <span>
+                      <img class="collapse-img-9" src="assets/icons/plus_collapse.png" alt="+" width="20">
+                    </span>
+                    <span class="ml-1">scafood and fish</span>
+                  </h6>
+                </h5>
+              </div>
+
+              <div id="collapseNine" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-9">
+                <div class="card-body">
+                  <!----- Food Filtering Area with Checkboxes ----->
+                  <div class="checkbox-list">
+                    <ul>
+                      <li class="checkbox">
+                        <input type="checkbox" value="pla priew wan">
+                        <span class="text-capitalize ml-2">pla priew wan</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="pla chu chee">
+                        <span class="text-capitalize ml-2">pla chu chee</span>
+                      </li>
+
+                      <li class="checkbox">
+                        <input type="checkbox" value="pad talay prik pao">
+                        <span class="text-capitalize ml-2">pad talay prik pao</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END of Left Side Bar -->
 
         </div>
         <!--END of the Left Side Section-->
