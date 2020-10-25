@@ -17,7 +17,7 @@ class CreateVariantTypesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('variant_id')->default(0);
             $table->string('name', 45)->unique();
-            $table->boolean('is_active')->default(0);
+            $table->boolean('is_active')->default(1);
             $table->integer('created_by')->default(0);
             $table->integer('updated_by')->default(0);
             $table->timestamps();

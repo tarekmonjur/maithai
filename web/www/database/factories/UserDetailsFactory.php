@@ -15,7 +15,7 @@ $factory->define(UserDetails::class, function (Faker $faker) {
         'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         'mobile_no' => $faker->unique()->phoneNumber,
-        'designation' => $faker->jobTitle(),
+        'designation' => $faker->jobTitle,
         'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'joining_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'f_name' => $faker->name('male'),

@@ -5,6 +5,8 @@ use App\Models\User;
 use App\Models\UserDetails;
 use App\Models\Customer;
 use App\Models\CustomerDetails;
+use App\Models\Category;
+use App\Models\SubCategory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -39,7 +41,11 @@ class DatabaseSeeder extends Seeder
         $this->call(VariantSeeder::class);
         $this->call(VariantTypeSeeder::class);
 
-
+        factory(Category::class, 10)
+            ->create()
+            ->each(function ($category) {
+                factory(SubCategory::class, 5)->create(['category_id' => $category->id]);
+            });
 
     }
 }
