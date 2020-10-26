@@ -158,7 +158,7 @@ div.checkbox-list li span{
 div.checkbox-list li.checkbox{
     /* margin-left: 1rem; */
     list-style: none;
-    background: rgb(210 36 42);
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
     color: #fff;
     margin-bottom: 5px;
     padding: 10px;

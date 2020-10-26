@@ -15,3 +15,5 @@ web/www/Homestead.json
 web/www/Homestead.yaml
 web/www/npm-debug.log
 web/www/yarn-error.log
+
+theme/.DS_Store
