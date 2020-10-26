@@ -95,6 +95,7 @@ header{
 }
 header img{
     width: 80px;
+    height: 80px;
 }
 
 .leftHeaderItem{
@@ -760,6 +761,7 @@ div.dotted-dateline{
     }
     header img{
         width: 60px;
+        height: 64px;
     }
     
     /***NavBar POsition In Mobile ***/
