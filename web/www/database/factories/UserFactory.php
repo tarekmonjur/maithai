@@ -23,7 +23,7 @@ $factory->define(User::class, function (Faker $faker) {
         'role_id' => 0,
         'access_token' => Str::uuid(),
         'username' => $faker->unique()->username,
-        'password' => bcrypt(123456),
+        'password' => '123456',
         'remember_token' => Str::random(10),
     ];
 });

@@ -21,7 +21,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const FRONTEND_HOME = '/home';
+    public const BACKEND_HOME = '/maithai';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -46,7 +47,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        $this->mapAdminRoutes();
+        $this->mapBackendRoutes();
     }
 
     /**
@@ -79,16 +80,16 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Define the "admin" routes for the application.
+     * Define the "backend" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
      *
      * @return void
      */
-    protected function mapAdminRoutes()
+    protected function mapBackendRoutes()
     {
         Route::middleware('web')
             ->namespace($this->namespace)
-            ->group(base_path('routes/admin.php'));
+            ->group(base_path('routes/backend.php'));
     }
 }
