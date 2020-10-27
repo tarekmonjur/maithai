@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/abcd', function () {
-    return view('welcome');
+Route::prefix('/')->namespace('Frontend')->group(function(){
+    Route::get('/', 'HomeController@index');
+    Route::get('/food-orders', 'HomeController@foodOrder');
+    Route::get('/food-package', 'HomeController@foodPackage');
+    Route::get('/about', 'HomeController@about');
+    Route::get('/contact', 'HomeController@contact');
+    Route::get('/terms-policy', 'HomeController@termsPolicy');
 });
