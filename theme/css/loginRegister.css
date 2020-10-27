@@ -60,6 +60,15 @@ a.login-btn:hover{
     color: #000;
 }
 
+/**---- Customized the bootstrap default input bar Colors ---**/
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #f3d1cb;
+    outline: 0;
+    box-shadow: none;
+}
+
 /**The Media Quries for Phone Screen Confortable**/
 /**iPhone 6,7,8 or Uppper Screen Comfortable**/
 @media only screen and (max-width: 720px){
