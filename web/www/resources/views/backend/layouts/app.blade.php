@@ -7,8 +7,8 @@
     <title>{{$title}}</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
-    <!-- IonIcons -->
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('backend/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
@@ -24,7 +24,7 @@ to get the desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed accent-danger text-sm">
 <div class="wrapper">
     <!-- Navbar -->
     @include('backend.layouts.common.navbar')
@@ -37,18 +37,12 @@ to get the desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Main content -->
-        <div class="content">
+        <div class="content" style="padding-top: 1rem">
             @yield('main_content')
         </div>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
     @include('backend.layouts.common.footer')
@@ -60,12 +54,12 @@ to get the desired effect
 <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
 <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{asset('backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE -->
 <script src="{{asset('backend/js/adminlte.js')}}"></script>
 
-<!-------- OPTIONAL SCRIPTS ------->
-<script src="{{asset('backend/plugins/chart.js/Chart.min.js')}}"></script>
-<script src="{{asset('backend/js/demo.js')}}"></script>
-<script src="{{asset('backend/js/dashboard3.js')}}"></script>
+@stack('script')
+
 </body>
 </html>

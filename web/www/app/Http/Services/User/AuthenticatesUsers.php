@@ -138,7 +138,7 @@ trait AuthenticatesUsers
     protected function sendFailedLoginResponse(Request $request)
     {
         throw ValidationException::withMessages([
-            $this->username() => [trans('auth.failed')],
+            $this->accessError() => [trans('auth.failed')],
         ]);
     }
 
@@ -150,6 +150,14 @@ trait AuthenticatesUsers
     public function username()
     {
         return 'username';
+    }
+
+    /**
+     * @return string
+     */
+    public function accessError()
+    {
+        return 'unauthenticated';
     }
 
     /**

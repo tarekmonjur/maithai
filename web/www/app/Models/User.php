@@ -37,7 +37,15 @@ class User extends Authenticatable
     //     'email_verified_at' => 'datetime',
     // ];
 
+    protected $guarded = [
+        'password'
+    ];
+
     public function setPasswordAttribute($value){
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function details() {
+        return $this->hasOne(UserDetails::class, 'user_id', 'id');
     }
 }
