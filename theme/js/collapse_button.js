@@ -31,12 +31,12 @@
 
     // image.attr("src", "assets/icons/minus_collapse.png");
 
-    function makeChangeWithToggle(toggle_click, image){
-        toggle_click.click(function(){
-            $(this).attr("aria-expanded", function(index, attr){
+    function makeChangeWithToggle(toggle_click, image) {
+        toggle_click.click(function () {
+            $(this).attr("aria-expanded", function (index, attr) {
                 return attr === "true" ? image.attr("src", "assets/icons/plus_collapse.png") : image.attr("src", "assets/icons/minus_collapse.png");
             });
-        }); 
+        });
     }
 
     makeChangeWithToggle(toggle_click_1, image_1);
@@ -52,37 +52,67 @@
 
     ///Shopping-bag/cart's Collapse Item...
     ///The JavaScript's jQuery...
-     $shopping_cart = $('.shopping-cart');
-     $close_btn = $('.shopping-car-close-btn');
-     $close_arrow = $('.shoppingCartButton');
-     $open_btn = $('.sticky-open-btn');
+    $shopping_cart = $('.shopping-cart');
+    $close_btn = $('.shopping-car-close-btn');
+    $close_arrow = $('.shoppingCartButton');
+    $open_btn = $('.sticky-open-btn');
 
-     $close_btn.click(function () {
-         $shopping_cart.css({
-             right: '-50rem'
-         });
-         $open_btn.css({
-             display: 'block'
-         });
-     });
-     $close_arrow.click(function () {
-         $shopping_cart.css({
-             right: '-50rem'
-         });
-         $open_btn.css({
-             display: 'block'
-         });
-     });
+    $close_btn.click(function () {
+        $shopping_cart.css({
+            right: '-50rem'
+        });
+        $open_btn.css({
+            display: 'block'
+        });
+    });
+    $close_arrow.click(function () {
+        $shopping_cart.css({
+            right: '-50rem'
+        });
+        $open_btn.css({
+            display: 'block'
+        });
+    });
 
-     //For Opening Drawer with this button...
-     $open_btn.click(function () {
-         $shopping_cart.css({
-             right: '0rem'
-         });
-         $open_btn.css({
-             display: 'none'
-         });
-     });
+    //For Opening Drawer with this button...
+    $open_btn.click(function () {
+        $shopping_cart.css({
+            right: '0rem'
+        });
+        $open_btn.css({
+            display: 'none'
+        });
+    });
+
+    ///Collapse Shopping-Cart's Special Code Arrow Up/Down Button Control...
+    //Done Some CSS with jQuery Help....
+    $arrow_up = $('.special-code-arrow-up');
+    $arrow_down = $('.special-code-arrow-down');
+    $special_code_toggle = $('.toggle-special-code');
+
+    ///The Default Arrow Down Will Desapear..
+    $arrow_down.css({display: 'none'});
+
+    $special_code_toggle.click(function () {
+        $(this).attr("aria-expanded", function (index, attr) {
+            if (attr === "true") {
+                $arrow_up.css({
+                    display: 'inline'
+                });
+                $arrow_down.css({
+                    display: 'none'
+                })
+            } else {
+                $arrow_up.css({
+                    display: 'none'
+                });
+                $arrow_down.css({
+                    display: 'inline'
+                })
+            }
+        });
+    });
+
 
 })(jQuery);
 
