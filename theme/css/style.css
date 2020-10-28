@@ -243,7 +243,7 @@ section.stickyHeader{
     display: block;
     cursor: pointer;
     position: fixed;
-    width: 80px;
+    width: 75px;
     max-height: 100px;
     background: #F5FCEB;
     right: 0;
@@ -319,6 +319,7 @@ div.right-header-item{
     border: 0;
     color: #fff;
     border-radius: 5px;
+    border: 2px solid tomato;
 }
 
 div.cart-content{
@@ -335,6 +336,7 @@ div.content-item{
     transform: translate(-50%, -50%);
 }
 
+/** If got the icon on content bag is empty **/
 div.cart-content i{
     font-size: 8rem;
     /* color: rgb(210, 35, 42); */
@@ -344,15 +346,25 @@ div.cart-content i{
     background: rgb(175,112,21);
     background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
 }
+/** If Empty bag have Image instead of Icon **/
+div.cart-content img{
+    padding: 50px;
+    border-radius: 1rem;
+    /* background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%); */
+    height: 18rem;
+    width: 18rem;
+}
+
 div.cart-content div.shopping-title p{
     text-align: center;
     font-size: 17px;
-    color: rgb(199, 199, 199);
+    color: tomato !important;
     display: table;
     width: 100%;
     margin-top: 1rem;
 }
 
+/**** Shopping carts Footer Section ****/
 div.cart-footer{
     background: #EE3522;
     margin: 0;
@@ -361,7 +373,42 @@ div.cart-footer{
     width: 100%;
     bottom: 0px;
     color: #fff;
-    height: 60px;
+    /* height: 60px; */
+}
+
+/***---- Special Code Section of Shopping-Cart Footer Area ----***/
+.svg-inline--fa.fa-chevron-circle-up.fa-w-16,
+.svg-inline--fa.fa-chevron-circle-down.fa-w-16{
+    font-size: 20px;
+    color: #fff;
+}
+.special-code-card{
+   display: grid;
+   justify-items: center;
+}
+.special-code-title {
+    color: #fff;
+}
+input.special-input{
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+    border: 0;
+    border: 2px solid orangered;
+}
+input.special-go{
+    font-size: 15px;
+    text-transform: uppercase;
+    background: tomato;
+    outline: none;
+    border: none;
+    border: 2px solid orangered;
+    color: white;
+    padding: 0px 20px;
+}
+input.special-go:hover{
+    background: orangered;
+    border: 2px solid #fff;
 }
 
 /*****-------- Shopping Cart Arrow Close Button ------*****/
@@ -376,7 +423,7 @@ div.cart-footer{
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     color: #fff;
-    background-color: rgb(210, 35, 42);
+    background-color:tomato;
     border: 1px solid rgba(0, 0, 0, .1);
 }
 

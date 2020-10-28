@@ -99,6 +99,7 @@
         <section class="stickyHeader sticky-open-btn">
             <!-- Item Couter with Icon SVG -->
             <div class="shopping-badget-items-counter">
+                <!-- The Shopping Bag Icon -->
                 <svg version="1.1" id="Calque_1" x="0px" y="0px" style="fill:#FDD670; stroke:#FDD670;" width="16px"
                     height="24px" viewBox="0 0 100 160.13">
                     <polygon points="11.052,154.666 21.987,143.115 35.409,154.666"></polygon>
@@ -116,7 +117,7 @@
                 <span class="dollar">$</span>
                 <span class="price">1200</span>
             </div>
-        </section>
+        </section><!--END of The Drawer Opening Button-->
 
         <!-- Shopping Cart Header -->
         <div class="cart-header d-flex">
@@ -138,9 +139,9 @@
                     close
                 </button>
             </div>
-        </div>
+        </div><!--END of Shopping-Cart Header-->
 
-        <!-- Shopping cart Content -->
+        <!-- Shopping cart Content (When Bag Is Empty!) -->
         <div class="cart-content">
             <div class="content-item">
                 <img src="assets/logo/shopping-beg-1.png" alt="">
@@ -149,11 +150,39 @@
                     <p class="text-muted">Your shopping bag is empty!</p>
                 </div>
             </div>
-        </div>
+        </div><!--END of Shopping-Cart Content-->
 
         <!-- Shopping Cart Footer -->
-        <div class="cart-footer">Footer</div>
-    </div>
+        <div class="cart-footer">
+
+            <div class="accordion shopping-special-code" id="accordionExample">
+                <div class="special-code-card">
+                  <div id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-block text-left toggle-special-code" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <span class="special-code-arrow-up">
+                            <i class="fa fa-chevron-circle-up mr-2" aria-hidden="true"></i>
+                        </span>
+                        <span class="special-code-arrow-down">
+                            <i class="fa fa-chevron-circle-down mr-2" aria-hidden="false"></i>
+                        </span>
+                        <span class="special-code-title">Have a special code?</span>
+                      </button>
+                    </h2>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <form action="" method="" class="special-code-form">
+                            <input type="text" placeholder="Special Code" name="special-code" class="special-input">
+                            <input type="submit" name="special-go" value="Go" class="special-go">
+                        </form>
+                    </div>
+                  </div>
+                </div>
+            </div><!---END of Accordion for Speicial Code Send-->
+        </div><!--END of Shopping-Cart's Footer-->
+    </div><!--END of Shopping Cart Drawer-->
 
 
 
