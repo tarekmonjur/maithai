@@ -238,6 +238,87 @@ nav li.nav-item .active-now{
     background: rgb(210, 35, 42);
 }
 
+/******---- shopping cart CSS ---******/
+div.shopping-cart{
+    position: fixed;
+    /* height: 660px; */
+    width: 400px;
+    background: white;
+    box-sizing: border-box;
+    box-shadow: -2px 0 12px 0 rgba(143,143,143,.38);
+    transition: all 300ms;
+    z-index: 2000;
+    right: 0rem;
+}
+div.cart-header{
+    background: rgb(175,112,21);
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+    margin: 0;
+    padding: 1rem;
+    color: #fff;
+    box-shadow: 0px 1px 3px #000000c4;
+    height: 60px;
+}
+.shopping-car-close-btn{
+    background: orangered;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+}
+
+div.cart-content{
+    padding: 1rem;
+    display: grid;
+    justify-items: center;
+    height: 585px;
+}
+
+div.content-item{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.cart-content i{
+    font-size: 8rem;
+    /* color: rgb(210, 35, 42); */
+    color: #EE3522;
+    padding: 50px;
+    border-radius: 100%;
+    background: rgb(175,112,21);
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+}
+div.cart-content div.shopping-title p{
+    text-align: center;
+    font-size: 17px;
+    color: rgb(199, 199, 199);
+    display: table;
+    width: 100%;
+    margin-top: 1rem;
+}
+div.left-header-item{
+    float: left;
+}
+div.left-header-item i{
+    font-size: 23px;
+}
+div.right-header-item{
+    float: right;
+    margin-left: 14rem;
+}
+
+div.cart-footer{
+    background: #EE3522;
+    margin: 0;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    color: #fff;
+}
+
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
 section#home-cover .jumbotron,
