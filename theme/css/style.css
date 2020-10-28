@@ -238,17 +238,59 @@ nav li.nav-item .active-now{
     background: rgb(210, 35, 42);
 }
 
-/******---- shopping cart CSS ---******/
+/****------- Shopping Cart Opening Bar --------****/
+section.stickyHeader{
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    width: 80px;
+    max-height: 100px;
+    background: #F5FCEB;
+    right: 0;
+    top: calc(110px + 30%);
+    box-shadow: 0 0 16px -1px rgba(0, 0, 0, .75);
+    display: block;
+    transition: .1s ease-in-out;
+    overflow: unset;
+    opacity: .8;
+}
+section.stickyHeader:hover{
+    opacity: 1;
+}
+.shopping-badget-items-counter {
+    display: grid;
+    justify-items: center;
+    background: rgb(210, 35, 42);
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.shopping-badget-total {
+    text-align: center;
+    color: rgb(210, 35, 42);
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+p.shopping-cart-items {
+    font-size: 14px;
+}
+
+/******---------- shopping cart CSS -----------******/
 div.shopping-cart{
     position: fixed;
-    /* height: 660px; */
-    width: 400px;
+    height: 100%;
+    width: 500px;
     background: white;
     box-sizing: border-box;
     box-shadow: -2px 0 12px 0 rgba(143,143,143,.38);
     transition: all 300ms;
     z-index: 2000;
-    right: 0rem;
+    top: 0;
+    right: -50rem;
+    overflow: unset;
 }
 div.cart-header{
     background: rgb(175,112,21);
@@ -259,6 +301,18 @@ div.cart-header{
     box-shadow: 0px 1px 3px #000000c4;
     height: 60px;
 }
+div.left-header-item{
+    float: left;
+}
+div.left-header-item i{
+    font-size: 23px;
+}
+div.right-header-item{
+   position: absolute;
+   right: 1rem;
+}
+
+/***Shopping Cart Headers Close Button**/
 .shopping-car-close-btn{
     background: orangered;
     outline: 0;
@@ -298,16 +352,6 @@ div.cart-content div.shopping-title p{
     width: 100%;
     margin-top: 1rem;
 }
-div.left-header-item{
-    float: left;
-}
-div.left-header-item i{
-    font-size: 23px;
-}
-div.right-header-item{
-    float: right;
-    margin-left: 14rem;
-}
 
 div.cart-footer{
     background: #EE3522;
@@ -317,6 +361,53 @@ div.cart-footer{
     width: 100%;
     bottom: 0px;
     color: #fff;
+    height: 60px;
+}
+
+/*****-------- Shopping Cart Arrow Close Button ------*****/
+.shoppingCartButton {
+    cursor: pointer;
+    position: absolute;
+    left: -16px;
+    top: 45%;
+    margin: auto;
+    height: 70px;
+    width: 16px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    color: #fff;
+    background-color: rgb(210, 35, 42);
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.shoppingCartButton:before {
+    content: "";
+    width: 15px;
+    height: 4px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    -ms-transform: rotate(65deg);
+    -webkit-transform: rotate(65deg);
+    -moz-transform: rotate(65deg);
+    -o-transform: rotate(65deg);
+    transform: rotate(65deg);
+    margin-top: 26px;
+}
+
+.shoppingCartButton:after {
+    content: "";
+    width: 15px;
+    height: 4px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    -ms-transform: rotate(-65deg);
+    -webkit-transform: rotate(-65deg);
+    -moz-transform: rotate(-65deg);
+    -o-transform: rotate(-65deg);
+    transform: rotate(-65deg);
+    margin-top: 38px;
 }
 
 /*************Section Of Page Banner**************/

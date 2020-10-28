@@ -1,6 +1,7 @@
 ////Showing the Collapse Button with condition base...
 (function ($) {
 
+    ///Collapse For Food Menu.. (Food Order & Food Package)...
     var image_1 = $('.collapse-img-1');
     var toggle_click_1 = $('.toggle-click-1');
 
@@ -48,6 +49,40 @@
     makeChangeWithToggle(toggle_click_8, image_8);
     makeChangeWithToggle(toggle_click_9, image_9);
 
+
+    ///Shopping-bag/cart's Collapse Item...
+    ///The JavaScript's jQuery...
+     $shopping_cart = $('.shopping-cart');
+     $close_btn = $('.shopping-car-close-btn');
+     $close_arrow = $('.shoppingCartButton');
+     $open_btn = $('.sticky-open-btn');
+
+     $close_btn.click(function () {
+         $shopping_cart.css({
+             right: '-50rem'
+         });
+         $open_btn.css({
+             display: 'block'
+         });
+     });
+     $close_arrow.click(function () {
+         $shopping_cart.css({
+             right: '-50rem'
+         });
+         $open_btn.css({
+             display: 'block'
+         });
+     });
+
+     //For Opening Drawer with this button...
+     $open_btn.click(function () {
+         $shopping_cart.css({
+             right: '0rem'
+         });
+         $open_btn.css({
+             display: 'none'
+         });
+     });
 
 })(jQuery);
 
