@@ -430,6 +430,14 @@ div.content-title{
     height: 30px !important;
     margin: 0 !important;
 }
+/* Cart Items Nav */
+div.content-title.items-nav{
+    text-align: center;
+    background: rgb(230, 230, 230);
+    box-shadow: 0px 1px 3px lightgray;
+    font-size: 14px;
+    padding-top: 3px;
+}
 
 div.cart-content .counter-left-btn,
 .counter-right-btn {
@@ -442,8 +450,6 @@ div.cart-content .counter-left-btn,
     font-size: 13px;
     /* color: #fff; */
     font-weight: bold;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 div.cart-content div.row{
@@ -509,6 +515,18 @@ input.special-go:hover{
     border: 2px solid #fff;
 }
 
+/**-- Footer Place Order --**/
+.place-order-footer {
+    background: oldlace;
+    border-radius: 5px;
+    width: 100%;
+}
+.place-order-footer a{
+    width: 100%;
+}
+.place-order-footer a:hover{
+    background: tomato !important;
+}
 
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
