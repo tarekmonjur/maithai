@@ -139,18 +139,73 @@
                     close
                 </button>
             </div>
-        </div><!--END of Shopping-Cart Header-->
+        </div>
+        <!--END of Shopping-Cart Header-->
 
         <!-- Shopping cart Content (When Bag Is Empty!) -->
-        <div class="cart-content">
-            <div class="content-item">
+        <!-- <div class="cart-content-empty">
+            <div class="content-item-empty">
                 <img src="assets/logo/shopping-beg-1.png" alt="">
 
-                <div class="shopping-title text-capitalize">
+                <div class="shopping-title-empty text-capitalize">
                     <p class="text-muted">Your shopping bag is empty!</p>
                 </div>
             </div>
-        </div><!--END of Shopping-Cart Content-->
+        </div> -->
+
+        <!-- Shopping cart Content/Body (When Bag Is Not-Empty!) -->
+        <div class="cart-content">
+            <div class="row content-title">
+                <div class="col-md-12 body-heading-title">
+                    <p>Your delivery items</p>
+                </div>
+            </div>
+            
+            <!-- Delivered Items Here (DEMO) -->
+            <div class="row">
+                <div class="col-md-3 delivery-counter">
+                    <button type="button" class="counter-left-btn">
+                        <span><</span>
+                    </button>
+                    <span class="counter-num">1</span>
+                    <button type="button" class="counter-right-btn">
+                        <span>></span>
+                    </button>
+                </div>
+                <div class="col-md-3 delivery-img">
+                    <img src="assets/img/gellary/ma1.jpg" alt="maiThai-1">
+                </div>
+                <div class="col-md-3 delivery-name">
+                    <h6>Thai Italian Masala</h6>
+                </div>
+                <div class="col-md-3 delivery-price">
+                    <span class="text-danger font-weight-bold">$40</span>
+                    <span class="text-muted"><del>$70</del></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 delivery-counter">
+                    <button type="button" class="counter-left-btn">
+                        <span><</span>
+                    </button>
+                    <span class="counter-num">2</span>
+                    <button type="button" class="counter-right-btn">
+                        <span>></span>
+                    </button>
+                </div>
+                <div class="col-md-3 delivery-img">
+                    <img src="assets/img/gellary/ma1.jpg" alt="maiThai-1">
+                </div>
+                <div class="col-md-3 delivery-name">
+                    <h6>Petty Rice</h6>
+                </div>
+                <div class="col-md-3 delivery-price">
+                    <span class="text-danger font-weight-bold">$120</span>
+                    <span class="text-muted"><del>$150</del></span>
+                </div>
+            </div>
+        </div>
 
         <!-- Shopping Cart Footer -->
         <div class="cart-footer">
