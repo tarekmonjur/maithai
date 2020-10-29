@@ -278,7 +278,7 @@ p.shopping-cart-items {
     font-size: 14px;
 }
 
-/******---------- shopping cart CSS -----------******/
+/******---------- shopping cart/bag CSS -----------******/
 div.shopping-cart{
     position: fixed;
     height: 100%;
@@ -292,6 +292,8 @@ div.shopping-cart{
     right: -50rem;
     overflow: unset;
 }
+
+/**-- Shopping Cart Header --**/
 div.cart-header{
     background: rgb(175,112,21);
     background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
@@ -312,7 +314,7 @@ div.right-header-item{
    right: 1rem;
 }
 
-/***Shopping Cart Headers Close Button**/
+/** Shopping Cart Headers Close Button **/
 .shopping-car-close-btn{
     background: orangered;
     outline: 0;
@@ -322,96 +324,7 @@ div.right-header-item{
     border: 2px solid tomato;
 }
 
-div.cart-content{
-    padding: 1rem;
-    display: grid;
-    justify-items: center;
-    height: 585px;
-}
-
-div.content-item{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/** If got the icon on content bag is empty **/
-div.cart-content i{
-    font-size: 8rem;
-    /* color: rgb(210, 35, 42); */
-    color: #EE3522;
-    padding: 50px;
-    border-radius: 100%;
-    background: rgb(175,112,21);
-    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
-}
-/** If Empty bag have Image instead of Icon **/
-div.cart-content img{
-    padding: 50px;
-    border-radius: 1rem;
-    /* background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%); */
-    height: 18rem;
-    width: 18rem;
-}
-
-div.cart-content div.shopping-title p{
-    text-align: center;
-    font-size: 17px;
-    color: tomato !important;
-    display: table;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-/**** Shopping carts Footer Section ****/
-div.cart-footer{
-    background: #EE3522;
-    margin: 0;
-    padding: 1rem;
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    color: #fff;
-    /* height: 60px; */
-}
-
-/***---- Special Code Section of Shopping-Cart Footer Area ----***/
-.svg-inline--fa.fa-chevron-circle-up.fa-w-16,
-.svg-inline--fa.fa-chevron-circle-down.fa-w-16{
-    font-size: 20px;
-    color: #fff;
-}
-.special-code-card{
-   display: grid;
-   justify-items: center;
-}
-.special-code-title {
-    color: #fff;
-}
-input.special-input{
-    text-align: center;
-    font-size: 15px;
-    outline: none;
-    border: 0;
-    border: 2px solid orangered;
-}
-input.special-go{
-    font-size: 15px;
-    text-transform: uppercase;
-    background: tomato;
-    outline: none;
-    border: none;
-    border: 2px solid orangered;
-    color: white;
-    padding: 0px 20px;
-}
-input.special-go:hover{
-    background: orangered;
-    border: 2px solid #fff;
-}
-
-/*****-------- Shopping Cart Arrow Close Button ------*****/
+/*****-- Shopping Cart Arrow Close Button --*****/
 .shoppingCartButton {
     cursor: pointer;
     position: absolute;
@@ -456,6 +369,146 @@ input.special-go:hover{
     transform: rotate(-65deg);
     margin-top: 38px;
 }
+
+/**-- Shopping Cart Content/Body --**/
+/* (2) Section of this Shpping Cart Body */
+/* 1. Empty Shopping Bag */
+div.cart-content-empty{
+    padding: 1rem;
+    display: grid;
+    justify-items: center;
+}
+
+div.content-item-empty{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** If got the icon on content bag is empty **/
+div.cart-content-empty i{
+    font-size: 8rem;
+    /* color: rgb(210, 35, 42); */
+    color: #EE3522;
+    padding: 50px;
+    border-radius: 100%;
+    background: rgb(175,112,21);
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+}
+/** If Empty bag have Image instead of Icon **/
+div.cart-content-empty img{
+    padding: 50px;
+    border-radius: 1rem;
+    /* background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%); */
+    height: 18rem;
+    width: 18rem;
+}
+
+div.cart-content-empty div.shopping-title-empty p{
+    text-align: center;
+    font-size: 17px;
+    color: tomato !important;
+    display: table;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/** Shopping Cart Body 2nd Template **/
+/* 2. Bag With Cart items */
+.cart-content {
+    overflow: scroll;
+    scroll-behavior: smooth;
+    height: 83%;
+}
+div.cart-content div.body-heading-title{
+        background: tomato;
+        color: #fff;
+        padding: 0.2rem 2rem;
+}
+div.content-title{
+    height: 30px !important;
+    margin: 0 !important;
+}
+
+div.cart-content .counter-left-btn,
+.counter-right-btn {
+    background: none;
+    border: none;
+    /* background: tomato; */
+    padding: 10px;
+    padding: 5px 10px;
+    border-radius: 100%;
+    font-size: 13px;
+    /* color: #fff; */
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+div.cart-content div.row{
+    height: 66px;
+    border-bottom: 1px solid lightgray;
+    margin: 5px;
+}
+div.cart-content div.delivery-img img{
+    width: 58px;
+    height: 58px;
+}
+div.delivery-counter, div.delivery-name, div.delivery-price{
+    padding-top: 0.8rem;
+    padding-bottom: 0.2rem;
+}
+
+/**-- Shopping carts Footer Section --**/
+div.cart-footer{
+    background: #EE3522;
+    margin: 0;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    color: #fff;
+    /* height: 60px; */
+}
+
+/***-- Special Code Section of Shopping-Cart Footer Area --***/
+.svg-inline--fa.fa-chevron-circle-up.fa-w-16,
+.svg-inline--fa.fa-chevron-circle-down.fa-w-16,
+.fa.fa-chevron-circle-up.mr-2,
+.fa.fa-chevron-circle-down.mr-2{
+    font-size: 20px;
+    color: #fff;
+}
+.special-code-card{
+   display: grid;
+   justify-items: center;
+}
+.special-code-title {
+    color: #fff;
+}
+input.special-input{
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+    border: 0;
+    border: 2px solid orangered;
+}
+input.special-go{
+    font-size: 15px;
+    text-transform: uppercase;
+    background: tomato;
+    outline: none;
+    border: none;
+    border: 2px solid orangered;
+    color: white;
+    padding: 0px 20px;
+}
+input.special-go:hover{
+    background: orangered;
+    border: 2px solid #fff;
+}
+
 
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
