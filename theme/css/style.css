@@ -528,6 +528,11 @@ input.special-go:hover{
     background: tomato !important;
 }
 
+.place-order-footer .svg-inline--fa.fa-cart-arrow-down.fa-w-18,
+.place-order-footer fa-cart-arrow-down{
+   font-size: 18px;
+}
+
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
 section#home-cover .jumbotron,
