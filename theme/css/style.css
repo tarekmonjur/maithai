@@ -553,7 +553,7 @@ section#home-cover .jumbotron::after{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: url('../assets/img/fast-food.jpg') no-repeat fixed;
+	background: url('../assets/img/home_thai.jpg') no-repeat fixed;
 	background-size: cover;
 	opacity: .3;
 	animation: asad 25s linear infinite;
@@ -792,7 +792,8 @@ a.mr-5.carousel-control-next {
 
 /*************SPECIAL FOOD MENU*****************/
 section.special-food-menu{
-    background: url('../assets/img/coverA.jpg') no-repeat center center fixed;
+    background: url('../assets/img/coverB.jpg') no-repeat center center fixed;
+    background-size: cover;
     padding: 0;
 }
 div.dark-bg-opacity{
@@ -1320,6 +1321,10 @@ div.dotted-dateline{
     div.footer-list-1st-row,
     div.footer-list-2nd-row{
         text-align: center;
+    }
+
+    section.stickyHeader{
+        display: none !important;
     }
 }
 
