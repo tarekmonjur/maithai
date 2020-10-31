@@ -354,6 +354,13 @@ div.filter-item-food-package{
     .grid-card-img {
         max-height: 250px;
     }
+    .filter-item-food-package {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+    }
+    .filter-item.left-aside {
+        padding-bottom: 1rem;
+    }
 }
 
 @media only screen and (max-width: 1024px){
