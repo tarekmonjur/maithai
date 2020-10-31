@@ -92,13 +92,13 @@
 
                     <ul class="d-flex business-logo-section">
                         <li class="business-logo">
-                            <img class="paypal" src="assets/logo/paypal.png" alt="">
+                            <img class="paypal" src="{{asset('frontend/logo/paypal.png')}}" alt="">
                         </li>
                         <li class="business-logo">
-                            <img class="visa" src="assets/logo/visa.png" alt="">
+                            <img class="visa" src="{{asset('frontend/logo/visa.png')}}" alt="">
                         </li>
                         <li class="business-logo">
-                            <img class="master" src="assets/logo/master.png" alt="">
+                            <img class="master" src="{{asset('frontend/logo/master.png')}}" alt="">
                         </li>
                     </ul>
                 </div>
@@ -125,7 +125,7 @@
                 <!-- Footer App Logo -->
                 <div class="col-md-4">
                     <div class="logo">
-                        <img src="assets/logo/logo.png" alt="">
+                        <img src="{{asset('frontend/logo/logo.png')}}" alt="">
                     </div>
                 </div>
 
@@ -152,7 +152,7 @@
 
                 <!-- QR-CODE Section -->
                 <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
-                    <img class="img img-fluid img-qr-code img-thumbnail" src="assets/logo/qr-code.png"
+                    <img class="img img-fluid img-qr-code img-thumbnail" src="{{asset('frontend/logo/qr-code.png')}}"
                          alt="QR-CODE">
                 </div>
             </div>

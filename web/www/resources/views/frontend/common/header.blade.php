@@ -2,7 +2,7 @@
     <div class="container">
         <!----Left Side Of Header---->
         <div class="leftHeaderItem">
-            <img src="assets/logo/logo.png" alt="Mai Thai" />
+            <img src="{{asset('frontend/logo/logo.png')}}" alt="Mai Thai" />
         </div>
 
         <!----Right Side Of Header---->
@@ -55,7 +55,7 @@
 
             <!-- QR-Code Section -->
             <div class="qr-code">
-                <img class="img img-thumbnail img-qr-code img-fluid" src="assets/logo/qr-code.png" alt="QR-CODE">
+                <img class="img img-thumbnail img-qr-code img-fluid" src="{{asset('frontend/logo/qr-code.png')}}" alt="QR-CODE">
             </div>
         </div>
     </div>
