@@ -27,9 +27,17 @@ Route::prefix($route_base_path)->namespace('Backend\Auth')->group(function() use
     Route::post('password/reset', 'ResetPasswordController@reset');
 });
 
-/********** ......Backend Admin Dashboard Routes....... *****************/
+/********** ......Backend Dashboard Routes....... *****************/
 Route::prefix($route_base_path)->namespace('Backend')->group(function() use ($route_base_path){
     Route::get('/','DashboardController@index');
+//    Route::get('/settings','DashboardController@settings');
+//    Route::put('/settings','DashboardController@updateSettings');
+});
+
+
+/********** ......Backend Category Routes....... *****************/
+Route::prefix($route_base_path.'/categories')->namespace('Backend')->group(function() use ($route_base_path){
+    Route::get('/','CategoryController@index');
 //    Route::get('/settings','DashboardController@settings');
 //    Route::put('/settings','DashboardController@updateSettings');
 });
