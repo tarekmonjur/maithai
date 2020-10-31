@@ -94,7 +94,7 @@
 <ul class="search-dropdown-menu" style="display: none;">
     <li class="search-item mt-2"><a href="#">
             <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">
             </div>
             <div class="nameAndPrice">
                 <div class="name">Big 8</div>
@@ -105,7 +105,7 @@
 
     <li class="search-item"><a href="#">
             <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">
             </div>
 
             <div class="nameAndPrice">
@@ -117,7 +117,7 @@
 
     <li class="search-item"><a href="#">
             <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">
             </div>
 
             <div class="nameAndPrice">
@@ -129,7 +129,7 @@
 
     <li class="search-item"><a href="#">
             <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">
             </div>
 
             <div class="nameAndPrice">
@@ -141,7 +141,7 @@
 
     <li class="search-item mb-2"><a href="#">
             <div class="image">
-                <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
+                <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">
             </div>
 
             <div class="nameAndPrice">
@@ -202,7 +202,7 @@
 
         <!-- Aside RightSide -->
         <aside class="col-md-6">
-            <img src="assets/img/mai.png" alt="PIZZAAA" class="img img-fluid" style="min-height: 380px">
+            <img src="{{asset('frontend/img/mai.png')}}" alt="PIZZAAA" class="img img-fluid" style="min-height: 380px">
         </aside>
     </div>
 </section>
@@ -223,7 +223,7 @@
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
                 <div class="cart-top-banner"></div>
-                <img src="assets/img/gellary/ma7.jpg" class="card-img-top cart-img food-style-cart" alt="...">
+                <img src="{{asset('frontend/img/gellary/ma7.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">big 8</h5>
                     <p class="text-danger mb-2 font-weight-bold">$800.00</p>
@@ -242,7 +242,7 @@
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
                 <div class="cart-top-banner"></div>
-                <img src="assets/img/gellary/ma8.jpg" class="card-img-top cart-img food-style-cart" alt="...">
+                <img src="{{asset('frontend/img/gellary/ma8.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">triple treat meal</h5>
                     <p class="text-danger mb-2 font-weight-bold">$999.00</p>
@@ -260,7 +260,7 @@
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
                 <div class="cart-top-banner"></div>
-                <img src="assets/img/gellary/ma9.jpg" class="card-img-top cart-img food-style-cart" alt="...">
+                <img src="{{asset('frontend/img/gellary/ma9.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Rice Combo</h5>
                     <p class="text-danger mb-2 font-weight-bold">$899.00</p>
@@ -282,7 +282,7 @@
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
                 <div class="cart-top-banner"></div>
-                <img src="assets/img/gellary/ma10.jpg" class="card-img-top cart-img food-style-cart" alt="...">
+                <img src="{{asset('frontend/img/gellary/ma10.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Zinger Combo</h5>
                     <p class="text-danger mb-2 font-weight-bold">$800.00</p>
@@ -301,7 +301,7 @@
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
                 <div class="cart-top-banner"></div>
-                <img src="assets/img/gellary/ma5.jpg" class="card-img-top cart-img food-style-cart" alt="...">
+                <img src="{{asset('frontend/img/gellary/ma5.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Zing N Fries Meal</h5>
                     <p class="text-danger mb-2 font-weight-bold">$999.00</p>
@@ -319,7 +319,7 @@
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
                 <div class="cart-top-banner"></div>
-                <img src="assets/img/gellary/ma6.jpg" class="card-img-top cart-img food-style-cart" alt="...">
+                <img src="{{asset('frontend/img/gellary/ma6.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Stay at Home Bucket</h5>
                     <p class="text-danger mb-2 font-weight-bold">$899.00</p>
@@ -350,7 +350,7 @@
         <div class="carousel-inner container">
             <div class="row carousel-item food-menu-carousel active">
                 <div class="col-md-6 carousel-image">
-                    <img src="assets/img/gellary/ma8.jpg"
+                    <img src="{{asset('frontend/img/gellary/ma8.jpg')}}"
                          class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
@@ -377,7 +377,7 @@
             <!-- Fast Food List -->
             <div class="row carousel-item food-menu-carousel fast-food-row">
                 <div class="col-md-6 carousel-image">
-                    <img src="assets/img/gellary/ma9.jpg"
+                    <img src="{{asset('frontend/img/gellary/ma9.jpg')}}"
                          class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
@@ -404,7 +404,7 @@
             <!-- Junk Food List -->
             <div class="row carousel-item food-menu-carousel">
                 <div class="col-md-6 carousel-image">
-                    <img src="assets/img/gellary/ma7.jpg"
+                    <img src="{{asset('frontend/img/gellary/ma7.jpg')}}"
                          class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
@@ -432,7 +432,7 @@
             <!-- Chineese Food List -->
             <div class="row carousel-item fast-food-row food-menu-carousel">
                 <div class="col-md-6 carousel-image">
-                    <img src="assets/img/gellary/ma6.jpg"
+                    <img src="{{asset('frontend/img/gellary/ma6.jpg')}}"
                          class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
@@ -460,7 +460,7 @@
             <!-- Italian Food List -->
             <div class="row carousel-item fast-food-row food-menu-carousel">
                 <div class="col-md-6 carousel-image">
-                    <img src="assets/img/gellary/ma5.jpg"
+                    <img src="{{asset('frontend/img/gellary/ma5.jpg')}}"
                          class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
@@ -514,7 +514,7 @@
                     <div class="d-flex justify-content-center cards-group">
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/card1.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai2.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai2.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Food Paradise</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -525,7 +525,7 @@
 
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/card2.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai3.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai3.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Vanilla Food</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -536,7 +536,7 @@
 
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/card3.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai4.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai4.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Food Basera</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -546,7 +546,7 @@
                         </div>
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/card4.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai5.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai5.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Thai Food</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -561,7 +561,7 @@
                     <div class="d-flex justify-content-center cards-group">
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/card5.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai6.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai6.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Taj Mahal Food</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -572,7 +572,7 @@
 
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/card6.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai5.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai5.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Indian Biriyani</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -583,7 +583,7 @@
 
                         <div class="card ml-2 mr-2 special-card">
                             <!-- <img src="assets/img/kacchi.jpg" class="card-img-top card-img" alt="..."> -->
-                            <img src="assets/img/mai4.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/mai4.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Green Bawarchi</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -592,7 +592,7 @@
                             </div>
                         </div>
                         <div class="card ml-2 mr-2 special-card">
-                            <img src="assets/img/gellary/ma8.jpg" class="card-img-top card-img" alt="...">
+                            <img src="{{asset('frontend/img/gellary/ma8.jpg')}}" class="card-img-top card-img" alt="...">
                             <div class="card-body">
                                 <h3 class="card-title">Chineese</h3>
                                 <p class="card-text text-muted">This is a wider card with supporting text below as a
@@ -692,43 +692,43 @@
 
                 <ul>
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma1.jpg" alt="Img 1" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma1.jpg')}}" alt="Img 1" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma2.jpg" alt="Img 2" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma2.jpg')}}" alt="Img 2" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma3.jpg" alt="Img 3" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma3.jpg')}}" alt="Img 3" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma4.jpg" alt="Img 4" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma4.jpg')}}" alt="Img 4" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma5.jpg" alt="Img 5" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma5.jpg')}}" alt="Img 5" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma6.jpg" alt="Img 6" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma6.jpg')}}" alt="Img 6" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma7.jpg" alt="Img 7" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma7.jpg')}}" alt="Img 7" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma8.jpg" alt="Img 8" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma8.jpg')}}" alt="Img 8" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma9.jpg" alt="Img 9" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma9.jpg')}}" alt="Img 9" />
                     </li>
 
                     <li>
-                        <img class="img-fluid" src="assets/img/gellary/ma10.jpg" alt="Img 10" />
+                        <img class="img-fluid" src="{{asset('frontend/img/gellary/ma10.jpg')}}" alt="Img 10" />
                     </li>
                 </ul>
             </div>
@@ -745,7 +745,7 @@
             <!-- Col-1 -->
             <div class="col-md-3 col-xs-12 col-md-offset-1 col-md-pull-8 mr-5">
                 <div class="newsletters-phone">
-                    <img src="assets/logo/mobile.png" alt="Mobilee">
+                    <img src="{{asset('frontend/logo/mobile.png')}}" alt="Mobilee">
                 </div>
             </div>
             <!-- Col-2 -->
@@ -757,11 +757,11 @@
 
                     <!-- Buttons For Android, Apple, Microsoft -->
                     <div class="d-flex mt-4">
-                        <a href="https://apps.apple.com/in/app/mai-thai/id1524480953"><img src="assets/logo/apple-badge.png" alt="Download on app store"
-                                                                                           class="img img-fluid"></a>
+                        <a href="https://apps.apple.com/in/app/mai-thai/id1524480953">
+                        <img src="{{asset('frontend/logo/apple-badge.png')}}" alt="Download on app store" class="img img-fluid"></a>
 
-                        <a href="https://play.google.com/store/apps/details?id=com.eposhybrid.maithai&gl=GB" class="ml-4"><img src="assets/logo/google-play-badge.png"
-                                                                                                                               alt="Get it on Google Play" class="img img-fluid"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.eposhybrid.maithai&gl=GB" class="ml-4">
+                        <img src="{{asset('frontend/logo/google-play-badge.png')}}" alt="Get it on Google Play" class="img img-fluid"></a>
 
                         <!-- <a href="#" class="ml-4"><img src="assets/logo/windows-badge.png"
                                 alt="Download from windows phone store" class="img img-fluid"></a> -->

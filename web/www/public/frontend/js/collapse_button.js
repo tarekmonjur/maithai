@@ -33,7 +33,7 @@
     function makeChangeWithToggle(toggle_click, image){
         toggle_click.click(function(){
             $(this).attr("aria-expanded", function(index, attr){
-                return attr === "true" ? image.attr("src", "assets/icons/plus_collapse.png") : image.attr("src", "assets/icons/minus_collapse.png");
+                return attr === "true" ? image.attr("src", "{{asset('frontend/icons/plus_collapse.png')}}") : image.attr("src", "{{asset('frontend/icons/minus_collapse.png')}}");
             });
         }); 
     }

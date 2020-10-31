@@ -55,7 +55,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <img src="assets/img/mai.png" alt="" class="img img-fluid img-thumbnail" style="height: 280px; width: 450px;">
+                    <img src="{{asset('frontend/img/mai.png')}}" alt="" class="img img-fluid img-thumbnail" style="height: 280px; width: 450px;">
                 </div>
             </div>
             <br>
@@ -153,7 +153,7 @@
                     <!-- Col-1 -->
                     <div class="col-md-4">
                         <div class="image middle">
-                            <img src="assets/img/founder.jpg" alt="" class="img img-fluid img-thumbnail">
+                            <img src="{{asset('frontend/img/founder.jpg')}}" alt="" class="img img-fluid img-thumbnail">
 
                             <!-------------The Image-Content Area------------->
                             <!-- Founders Hover Social Icons Here -->
