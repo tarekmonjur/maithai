@@ -1326,6 +1326,46 @@ div.dotted-dateline{
     section.stickyHeader{
         display: none !important;
     }
+
+    /** Manage the Shopping cart Items list **/
+    div.content-title.items-nav div{
+        width: unset !important;
+    }
+
+    div.delivery-counter, 
+    div.delivery-img,
+    div.delivery-name, 
+    div.delivery-price{
+        width: unset !important;
+        margin-left: -20px;
+    }
+    div.delivery-name h6 {
+        font-size: 14px;
+    }
+    div.delivery-price span {
+        font-size: 14px;
+    }
+    div.cart-content div.delivery-img img {
+        width: 50px;
+        height: 50px;
+    }
+    div.content-title, div.content-items-list{
+        display: flex;
+        flex-direction: column;
+    }
+    div.delivery-price {
+        align-self: flex-end;
+    }
+    div.delivery-counter {
+        align-self: flex-start;
+    }
+    div.delivery-img{
+        align-self: flex-start;
+    }
+    div.delivery-name {
+        align-self: center;
+    }
+
 }
 
 /**The Median Mobile Screens Width About Search Bar Relative Items Section*/
@@ -1389,6 +1429,16 @@ div.dotted-dateline{
     div.food-menu-list{
         margin-top: 4rem;
         bottom: 2rem;
+    }
+    div.delivery-name h6 {
+        font-size: 13px;
+    }
+    div.delivery-price span {
+        font-size: 13px;
+    }
+    div.cart-content div.delivery-img img {
+        width: 40px;
+        height: 40px;
     }
 }
 
