@@ -1,3 +1,239 @@
-.sdfsf{
-  color: red;
+/**The Main Style CSS for website**/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/************* Global CSS Styles Variables *************/
+/*****----- Colors Global Variables ----*****/
+$maithai_common: rgb(210, 35, 42);
+$maithai_gradient: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+
+$navbar_dark: rgb(0 0 0 / 80%);
+$button_tomato: rgb(255, 99, 71);
+$common_white: #fff;
+$cream_white: rgb(211, 211, 211);
+$darkest_gray: darkslategray;
+$footer_dark: #181818;
+
+/*****----- Sizes Global Variables ----*****/
+$logo_img_size: 80px;
+$headers_gap: 10px;
+
+*{
+    font-family: 'Lato', sans-serif;
 }
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    div, header, section, footer, aside, article{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
+        margin: 0;
+        padding: 0;
+    }
+    .jumbotron{
+        border-radius: 0 !important;
+    }
+}
+
+/**-----------BUTTON----------**/
+.btn-custom {
+    font-size: 18px;
+    border-radius: 0 !important;
+    margin-bottom: 5.5px;
+    background: $button_tomato !important;
+    color: $common_white;
+    height: 43px;
+    border: 2px solid $button_tomato;
+
+    &:hover{
+        background: none !important;
+        border: 2px solid $button_tomato;
+    }
+}
+a.bookmark-text{
+    text-decoration: none;
+    color: $footer_dark;
+
+    &:hover{
+        text-decoration: none;
+        color: $button_tomato;
+    }
+}
+
+/**---- Cart Styles ----**/
+.cart-img{
+    height: 300px;
+}
+.card-img{
+    height: 280px;
+}
+.cart-top-banner{
+    height: 70px;
+    width: 25px;
+    position: absolute;
+    background: $button_tomato;
+    left: 17rem;
+    float: right;
+    box-shadow: 5px 5px 20px;
+}
+.card-title{
+    font-family: 'Baloo 2', cursive;
+}
+h3.card-title {
+    color: $button_tomato;
+}
+
+/**------Text Shadow-------**/
+.text-shadow{
+    text-shadow: 2px 2px 5px;
+}
+
+/**-------Bedge Of Notification Number------**/
+span.badge-light{
+    color: $common_white;
+    margin-left: -13px !important;
+    background: $button_tomato;
+    border-radius: 100%;
+}
+
+/******------- QR-CODE ------********/
+.img-qr-code{
+    padding: 0;
+}
+
+/***------- Customising CSS such bootstrap staff ------***/
+header{
+    background: $maithai_common;
+    padding: $headers_gap;
+
+    img{
+        width: $logo_img_size;
+        height: $logo_img_size;
+    }
+
+    .leftHeaderItem{
+        float: left;
+    }
+    .rightHeaderItem{
+        float: right;
+        display: grid;
+    }
+    .topMenu{
+        display: inline-flex;
+        justify-content: flex-end;
+
+        li{
+            list-style-type: none;
+            display: inline;
+            padding-left: 20px;
+
+            a{
+                color: $cream_white;
+                /* font-weight: bold; */
+                font-size: 13px;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+
+                &:hover{
+                    color: $common_white;
+                    border-bottom: 2px solid red;
+                }
+            }
+        }
+    }
+}
+
+.top-contact{
+    display: flex;  
+    justify-content: flex-end;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: $common_white; 
+
+    div{
+        padding-left: $headers_gap;
+    }
+
+    .top-contact>div.phone-num-bar>.fa-phone-alt,
+    .top-contact>div.cart-bar>.fa-shopping-cart,
+    .top-contact>div.buisness-hour>.fa-clock,
+    svg.svg-inline--fa.fa-phone-alt.fa-w-16.icon,
+    svg.svg-inline--fa.fa-shopping-cart.fa-w-18,
+    svg.svg-inline--fa.fa-clock.fa-w-16{
+            color: $maithai_common;
+            background: $common_white;
+            padding: 10px;
+            /* width: 10px; */
+            border-radius: 100%;
+            border: 2px solid $button_tomato;
+            transition: 0.5s;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.5s;
+            margin-right: 3px;
+
+            &:hover{
+                transform: rotate(360deg);
+            }
+    }
+
+    div.num, div.carts-section, div.time-table{
+        display: none;
+        cursor: pointer;
+        color: $darkest_gray;
+        background: $common_white;
+        padding: 7px 10px;
+        border-radius: 20px;
+        border: 2px solid $button_tomato;
+        font-size: 14px;
+        transition: 1s ease-in-out;
+    }
+
+    div.phone-num-bar{
+        &:hover,
+        &:focus{
+            & > div.num{
+                display: inline-flex;
+            }
+        }
+    }
+    div.cart-bar{
+        &:hover,
+        &:focus{
+            & > div.carts-section{
+                display: inline-flex;
+            }
+        }
+    }
+    div.business-hour{
+        &:hover,
+        &:focus{
+            & > div.time-table{
+                display: inline-flex;
+            }
+        }
+    }
+
+    button.btn-custom-outline{
+        background: $common_white;
+
+        &:hover{
+            border: 1px solid $common_white;
+            background: $maithai_common;
+            color: $common_white;
+        }
+    }    
+
+}
+
+/**---- Style.css At -> 195 Line ---**/

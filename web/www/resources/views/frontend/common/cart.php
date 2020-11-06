@@ -56,7 +56,7 @@
         <!-- Shopping cart Content (When Bag Is Empty!) -->
         <div class="cart-content-empty">
             <div class="content-item-empty">
-                <img src="assets/logo/shopping-beg-1.png" alt="">
+                <img src="{{asset('frontend/logo/shopping-beg-1.png')}}" alt="">
 
                 <div class="shopping-title-empty text-capitalize">
                     <p class="text-muted">Your shopping bag is empty!</p>
@@ -131,13 +131,13 @@
         <!-- Shopping Cart Footer -->
         <div class="cart-footer">
             <!-- The Collapse Accordion -->
-            <div class="accordion shopping-special-code" id="accordionExample">
+            <div class="accordion shopping-special-code" id="shoppingExample">
                 <div class="special-code-card">
-                    <div id="headingOne">
+                    <div id="shoppingHeading">
                         <h2 class="mb-0">
                             <button class="btn btn-block text-left toggle-special-code" type="button"
-                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
-                                aria-controls="collapseOne">
+                                data-toggle="collapse" data-target="#collapseCart" aria-expanded="false"
+                                aria-controls="collapseCart">
                                 <span class="special-code-arrow-up">
                                     <i class="fa fa-chevron-circle-up mr-2" aria-hidden="true"></i>
                                 </span>
@@ -149,7 +149,7 @@
                         </h2>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseCart" class="collapse" aria-labelledby="shoppingHeading" data-parent="#shoppingExample">
                         <div class="card-body">
                             <form action="" method="" class="special-code-form">
                                 <input type="text" placeholder="Special Code" name="special-code" class="special-input">

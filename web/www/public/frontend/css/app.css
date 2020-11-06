@@ -1,4 +1,253 @@
-.sdfsf {
-  color: red;
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);@import url(https://fonts.googleapis.com/css2?family=Baloo+2&display=swap);@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);/**The Main Style CSS for website**/
+
+/************* Global CSS Styles Variables *************/
+
+/*****----- Colors Global Variables ----*****/
+
+/*****----- Sizes Global Variables ----*****/
+
+* {
+  font-family: "Lato", sans-serif;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body div,
+body header,
+body section,
+body footer,
+body aside,
+body article {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body ul,
+body li,
+body a,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body span {
+  margin: 0;
+  padding: 0;
+}
+
+body .jumbotron {
+  border-radius: 0 !important;
+}
+
+/**-----------BUTTON----------**/
+
+.btn-custom {
+  font-size: 18px;
+  border-radius: 0 !important;
+  margin-bottom: 5.5px;
+  background: tomato !important;
+  color: #fff;
+  height: 43px;
+  border: 2px solid tomato;
+}
+
+.btn-custom:hover {
+  background: none !important;
+  border: 2px solid tomato;
+}
+
+a.bookmark-text {
+  text-decoration: none;
+  color: #181818;
+}
+
+a.bookmark-text:hover {
+  text-decoration: none;
+  color: tomato;
+}
+
+/**---- Cart Styles ----**/
+
+.cart-img {
+  height: 300px;
+}
+
+.card-img {
+  height: 280px;
+}
+
+.cart-top-banner {
+  height: 70px;
+  width: 25px;
+  position: absolute;
+  background: tomato;
+  left: 17rem;
+  float: right;
+  box-shadow: 5px 5px 20px;
+}
+
+.card-title {
+  font-family: "Baloo 2", cursive;
+}
+
+h3.card-title {
+  color: tomato;
+}
+
+/**------Text Shadow-------**/
+
+.text-shadow {
+  text-shadow: 2px 2px 5px;
+}
+
+/**-------Bedge Of Notification Number------**/
+
+span.badge-light {
+  color: #fff;
+  margin-left: -13px !important;
+  background: tomato;
+  border-radius: 100%;
+}
+
+/******------- QR-CODE ------********/
+
+.img-qr-code {
+  padding: 0;
+}
+
+/***------- Customising CSS such bootstrap staff ------***/
+
+header {
+  background: #d2232a;
+  padding: 10px;
+}
+
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+header .leftHeaderItem {
+  float: left;
+}
+
+header .rightHeaderItem {
+  float: right;
+  display: grid;
+}
+
+header .topMenu {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+header .topMenu li {
+  list-style-type: none;
+  display: inline;
+  padding-left: 20px;
+}
+
+header .topMenu li a {
+  color: lightgray;
+  /* font-weight: bold; */
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+header .topMenu li a:hover {
+  color: #fff;
+  border-bottom: 2px solid red;
+}
+
+.top-contact {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.top-contact div {
+  padding-left: 10px;
+}
+
+.top-contact .top-contact > div.phone-num-bar > .fa-phone-alt,
+.top-contact .top-contact > div.cart-bar > .fa-shopping-cart,
+.top-contact .top-contact > div.buisness-hour > .fa-clock,
+.top-contact svg.svg-inline--fa.fa-phone-alt.fa-w-16.icon,
+.top-contact svg.svg-inline--fa.fa-shopping-cart.fa-w-18,
+.top-contact svg.svg-inline--fa.fa-clock.fa-w-16 {
+  color: #d2232a;
+  background: #fff;
+  padding: 10px;
+  /* width: 10px; */
+  border-radius: 100%;
+  border: 2px solid tomato;
+  transition: 0.5s;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-right: 3px;
+}
+
+.top-contact .top-contact > div.phone-num-bar > .fa-phone-alt:hover,
+.top-contact .top-contact > div.cart-bar > .fa-shopping-cart:hover,
+.top-contact .top-contact > div.buisness-hour > .fa-clock:hover,
+.top-contact svg.svg-inline--fa.fa-phone-alt.fa-w-16.icon:hover,
+.top-contact svg.svg-inline--fa.fa-shopping-cart.fa-w-18:hover,
+.top-contact svg.svg-inline--fa.fa-clock.fa-w-16:hover {
+  transform: rotate(360deg);
+}
+
+.top-contact div.num,
+.top-contact div.carts-section,
+.top-contact div.time-table {
+  display: none;
+  cursor: pointer;
+  color: darkslategray;
+  background: #fff;
+  padding: 7px 10px;
+  border-radius: 20px;
+  border: 2px solid tomato;
+  font-size: 14px;
+  transition: 1s ease-in-out;
+}
+
+.top-contact div.phone-num-bar:hover > div.num,
+.top-contact div.phone-num-bar:focus > div.num {
+  display: inline-flex;
+}
+
+.top-contact div.cart-bar:hover > div.carts-section,
+.top-contact div.cart-bar:focus > div.carts-section {
+  display: inline-flex;
+}
+
+.top-contact div.business-hour:hover > div.time-table,
+.top-contact div.business-hour:focus > div.time-table {
+  display: inline-flex;
+}
+
+.top-contact button.btn-custom-outline {
+  background: #fff;
+}
+
+.top-contact button.btn-custom-outline:hover {
+  border: 1px solid #fff;
+  background: #d2232a;
+  color: #fff;
+}
+
+/**---- Style.css At -> 195 Line ---**/
 

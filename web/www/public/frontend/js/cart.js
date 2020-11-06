@@ -1,8 +1,5 @@
 ////Showing the Collapse Button with condition base...
 (function ($) {
-
-    alert('I am Connected here!');
-
     ///Shopping-bag/cart's Collapse Item...
     ///The JavaScript's jQuery...
     $shopping_cart = $('.shopping-cart');
@@ -78,8 +75,8 @@
     x.addListener(myQueryFunction) // Attach listener function on state changes
 
     function myQueryFunction(x) {
-        if (x.matches) { // If media query matches
-            //If Yes...
+        if (x.matches) { // If media query matches...
+            //If Yes...(Then Make Behavier of shopping_cart_drawer)
             $desktop_shopping_bag.css({ display: 'none' });
             $desktop_cart_hovered.css({display: 'none'});
             $mobile_shopping_bag.click(function(){
