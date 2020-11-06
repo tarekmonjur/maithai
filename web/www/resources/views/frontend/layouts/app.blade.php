@@ -31,6 +31,9 @@
 <!-------------- FOOTER AREA ---------------->
 @include('frontend.common.footer')
 
+<!------------ Shopping cart Drawer ---------->
+@include('frontend.common.cart')
+
 </body>
 
 <!-- JS, Popper.js, and jQuery -->
@@ -46,6 +49,9 @@
 
 <!-- Bootstrap bootstrap.min.js (4.5.2) -->
 <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+
+<!-- Shopping Cart Custom JS -->
+<script src="{{asset('frontend/js/cart.js')}}"></script>
 
 @stack('script')
 
