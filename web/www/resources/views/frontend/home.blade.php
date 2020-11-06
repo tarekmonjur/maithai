@@ -222,7 +222,7 @@
     <div class="row mb-5 mt-5 top-sales-food">
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma7.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">big 8</h5>
@@ -241,7 +241,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma8.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">triple treat meal</h5>
@@ -259,7 +259,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma9.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Rice Combo</h5>
@@ -281,7 +281,7 @@
     <div class="row mb-5">
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma10.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Zinger Combo</h5>
@@ -300,7 +300,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma5.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Zing N Fries Meal</h5>
@@ -318,7 +318,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma6.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Stay at Home Bucket</h5>
