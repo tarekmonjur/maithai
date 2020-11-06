@@ -1,0 +1,210 @@
+/**** Using for common features ****/
+@use "app";
+
+/*************Section Of Page Banner**************/
+/*--------Landing Page--------*/
+section#home-cover, section#home-cover-2{
+    .jumbotron{
+        width: 100%;
+	    height: 600px;
+	    background-color: app.$common_dark;
+	    position: relative;
+        overflow: hidden;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+section#home-cover{
+    .jumbotron{
+        &::after{
+            content: "";
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        width: 100%;
+	        height: 100%;
+	        background: url('images/home_thai.jpg') no-repeat fixed;
+	        background-size: cover;
+	        opacity: .3;
+	        animation: asad 25s linear infinite;
+        }
+    }
+}
+
+section#home-cover-2{
+    .jumbotron{
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/coverA.jpg') no-repeat fixed;
+            background-size: cover;
+            opacity: .3;
+            animation: asad 25s linear infinite;
+        }
+    }
+}
+
+@keyframes asad{
+	50%{
+		transform: scale(2);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.dark-bg{
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width: 100%;
+	max-width: 800px;
+	text-align: center;
+	padding: 0 40px;
+	box-sizing: border-box;
+    overflow: unset;
+}
+
+div.carousel.slide{
+    &:hover{
+        & > a.carousel-control-prev.home-slide-prev,
+        & > a.carousel-control-next.home-slide-next{
+            visibility: visible;
+        }
+    }
+}
+
+div#intro-section{
+    .intro-title{
+        color: app.$common_white;
+        font-family: app.$lato_google;
+        font-size: 56px;
+        font-weight: 600;
+        /* text-transform: uppercase; */
+        padding-bottom: 0;
+    }
+
+    .intro-title{
+        small.small{
+            color: app.$maithai_common;
+        }
+    }
+    .intro-info{
+        color: app.$common_white;
+    }
+
+}
+
+div#intro{
+    .about-btn, .order-btn{
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 12px 32px;
+        border-radius: 50px;
+        transition: 0.5s;
+        line-height: 1;
+        color: app.$common_white;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+        border: 2px solid app.$button_tomato;
+        text-decoration: none;
+
+        &:hover{
+            background: app.$button_tomato;
+        }
+    }
+}
+
+/**********Form Input Control***********/
+div.search-food{
+    .form-control{
+        display: inline !important;
+        width: 60% !important;
+        font-size: 18px;
+        border-radius: 0 !important;
+        border: none !important;
+        outline: none !important;
+        height: 43px;
+    }
+}
+
+
+/*******The Search Items DropDown Controling******/
+.search-dropdown-menu {
+    position: absolute;
+/*    top: 82.8rem !important;*/
+    top: 50rem !important;
+    left: 50% !important;
+/*    transform: translate(-64%, -50rem);*/
+    transform: translate(-64%, -17.2rem);
+    width: 433px !important;
+    z-index: 1000;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: app.$common_white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+/*    border: 1px solid rgba(0,0,0,.15);*/
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    max-height: 330px;
+    overflow: auto;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/**DropDown Search Menu's Image, Name, Price**/
+img.search-bar-image{
+    width: 50px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+ul.search-dropdown-menu{
+    li.search-item{
+        a{
+            display: inline-flex;
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    li.search-item{
+        .name{
+            color: black;
+            font-size: 18px;
+        }
+    }
+
+    li.search-item{
+        .price{
+            color: red;
+            font-weight: bold;
+        }
+    }
+}
+
+/**Home Sections Slider control Buttons**/
+a.carousel-control-prev.home-slide-prev {
+    left: 10%;
+    visibility: hidden;
+}
+a.carousel-control-next.home-slide-next {
+    right: 10%;
+    visibility: hidden;
+}

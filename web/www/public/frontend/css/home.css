@@ -845,3 +845,204 @@ div.rounded-contact-icon svg.svg-inline--fa.fa-envelope.fa-w-16:hover {
 
 /******---- Finished At 886 NO. Line (Before Start Footer) ----******/
 
+/**** Using for common features ****/
+
+/*************Section Of Page Banner**************/
+
+/*--------Landing Page--------*/
+
+section#home-cover .jumbotron,
+section#home-cover-2 .jumbotron {
+  width: 100%;
+  height: 600px;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+section#home-cover .jumbotron::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/home_thai.jpg?ee88776bb60647c33b1bb12e808eeef3) no-repeat fixed;
+  background-size: cover;
+  opacity: 0.3;
+  -webkit-animation: asad 25s linear infinite;
+          animation: asad 25s linear infinite;
+}
+
+section#home-cover-2 .jumbotron::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/coverA.jpg?54f3b71d66b0d4d36e91412c894ed282) no-repeat fixed;
+  background-size: cover;
+  opacity: 0.3;
+  -webkit-animation: asad 25s linear infinite;
+          animation: asad 25s linear infinite;
+}
+
+@-webkit-keyframes asad {
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes asad {
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dark-bg {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  overflow: unset;
+}
+
+div.carousel.slide:hover > a.carousel-control-prev.home-slide-prev,
+div.carousel.slide:hover > a.carousel-control-next.home-slide-next {
+  visibility: visible;
+}
+
+div#intro-section .intro-title {
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  padding-bottom: 0;
+}
+
+div#intro-section .intro-title small.small {
+  color: #d2232a;
+}
+
+div#intro-section .intro-info {
+  color: #fff;
+}
+
+div#intro .about-btn,
+div#intro .order-btn {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 2px solid tomato;
+  text-decoration: none;
+}
+
+div#intro .about-btn:hover,
+div#intro .order-btn:hover {
+  background: tomato;
+}
+
+/**********Form Input Control***********/
+
+div.search-food .form-control {
+  display: inline !important;
+  width: 60% !important;
+  font-size: 18px;
+  border-radius: 0 !important;
+  border: none !important;
+  outline: none !important;
+  height: 43px;
+}
+
+/*******The Search Items DropDown Controling******/
+
+.search-dropdown-menu {
+  position: absolute;
+  /*    top: 82.8rem !important;*/
+  top: 50rem !important;
+  left: 50% !important;
+  /*    transform: translate(-64%, -50rem);*/
+  transform: translate(-64%, -17.2rem);
+  width: 433px !important;
+  z-index: 1000;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  /*    border: 1px solid rgba(0,0,0,.15);*/
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  max-height: 330px;
+  overflow: auto;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/**DropDown Search Menu's Image, Name, Price**/
+
+img.search-bar-image {
+  width: 50px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+ul.search-dropdown-menu li.search-item a {
+  display: inline-flex;
+  width: 100%;
+  margin: 0;
+}
+
+ul.search-dropdown-menu li.search-item .name {
+  color: black;
+  font-size: 18px;
+}
+
+ul.search-dropdown-menu li.search-item .price {
+  color: red;
+  font-weight: bold;
+}
+
+/**Home Sections Slider control Buttons**/
+
+a.carousel-control-prev.home-slide-prev {
+  left: 10%;
+  visibility: hidden;
+}
+
+a.carousel-control-next.home-slide-next {
+  right: 10%;
+  visibility: hidden;
+}
+

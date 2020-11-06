@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @push('style')
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/gellarySlider.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/home.css')}}">
 @endpush
 
 @section('main_content')

@@ -7,15 +7,9 @@
     <link rel="icon" href="{{asset('frontend/logo/logo.png')}}">
 
     <!-- CSS only -->
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="{{asset('frontend/fontAwesome/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/fontAwesome/css/fontawesome.min.css')}}">
-
-    <!-- Bootstrap (4.5.2) -->
-    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
-
     <!-- Style.css, Custom CSS Here -->
-    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('frontend/css/app.css')}}">
     @stack('style')
 </head>
 

@@ -1,7 +1,18 @@
 /**The Main Style CSS for website**/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/**---- Font Awesome ----**/
+@import "fontAwesome/css/all.min.css";
+@import "fontAwesome/css/fontawesome.min.css";
+
+/**---- Bootstrap (4.5.2) ----**/
+@import "bootstrap/bootstrap.min.css";
+
+@mixin google-font($family) {
+    @import url('https://fonts.googleapis.com/css2?family=#{$family}=swap');
+}
+
+@include google-font("Montserrat&display");
+@include google-font("Baloo+2&display");
+@include google-font("Lato&display");
 
 /************* Global CSS Styles Variables *************/
 /*****----- Colors Global Variables ----*****/
@@ -9,18 +20,36 @@ $maithai_common: rgb(210, 35, 42);
 $maithai_gradient: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
 
 $navbar_dark: rgb(0 0 0 / 80%);
+$navbar_text: #fff;
+$navbar_shadow: #000000c4;
+$cart_nav_bg: rgb(230, 230, 230);
+
 $button_tomato: rgb(255, 99, 71);
+$shopping_close_btn: orangered;
+$orange_red: orangered;
+$contact_icon: #EE3522;
+
 $common_white: #fff;
+$milky_white: #F5FCEB;
 $cream_white: rgb(211, 211, 211);
+
 $darkest_gray: darkslategray;
+$common_dark: #000;
 $footer_dark: #181818;
 
 /*****----- Sizes Global Variables ----*****/
 $logo_img_size: 80px;
 $headers_gap: 10px;
 
+$cart_content_img: 58px;
+
+/****----- Fonts -----*****/
+$lato_google: 'Lato', sans-serif;
+
+
+/*****---- Styles ----*****/
 *{
-    font-family: 'Lato', sans-serif;
+    font-family: $lato_google;
 }
 
 body{
@@ -236,4 +265,552 @@ header{
 
 }
 
-/**---- Style.css At -> 195 Line ---**/
+/***New Added Here to solve problem***/
+.phone-num-bar, .cart-bar, .buisness-hour{
+    height: 40px;
+    display: inline-flex;
+}
+span.badge.badge-light {
+    height: $headers_gap + $headers_gap;
+    width: $headers_gap + $headers_gap;
+}
+
+div.cart-bar{
+    &:hover{
+        & > div.cart-section{
+            display: inline-block;
+        }
+    }
+}
+
+/**--------Cart Bedges Hover Effect-------**/
+/* .top-contact>div.cart-bar:hover > span.badge-light{
+    visibility: hidden;
+} */
+
+/**************Nav Bar***************/
+nav{
+    background: $navbar_dark;
+    color: $navbar_text;
+    box-shadow: 0px 1px 3px $navbar_shadow;
+
+    .navbar{
+        padding: 0;
+        min-height: 60px;
+    }
+
+    li.nav-item{
+        a{
+            color: $cream_white !important;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 20px 25px !important;
+
+            &:hover{
+                background: $maithai_common;
+                color: $common_white !important;
+            }
+        }
+
+        .active-now{
+            background: $maithai_common;
+        }
+    }
+}
+
+/****------- Shopping Cart Opening Bar --------****/
+section.stickyHeader{
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    width: 75px;
+    max-height: 100px;
+    background: $milky_white;
+    right: 0;
+    top: calc(110px + 30%);
+    box-shadow: 0 0 16px -1px $navbar_dark;
+    display: block;
+    transition: .1s ease-in-out;
+    overflow: unset;
+    opacity: .8;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+.shopping-badget-items-counter {
+    display: grid;
+    justify-items: center;
+    background: $maithai_common;
+    color: $common_white;
+    padding: 5px;
+    text-align: center;
+}
+.shopping-badget-total {
+    text-align: center;
+    color: $maithai_common;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+p.shopping-cart-items {
+    font-size: 14px;
+}
+
+/******---------- shopping cart/bag CSS -----------******/
+div.shopping-cart{
+    position: fixed;
+    height: 100%;
+    width: 500px;
+    background: $common_white;
+    box-sizing: border-box;
+    box-shadow: -2px 0 12px 0 rgba(143,143,143,.38);
+    transition: all 300ms;
+    z-index: 2000;
+    top: 0;
+    right: -50rem;
+    overflow: unset;
+}
+
+/**-- Shopping Cart Header --**/
+div.cart-header{
+    background: $maithai_gradient;
+    margin: 0;
+    padding: 1rem;
+    color: $common_white;
+    box-shadow: 0px 1px 3px $navbar_shadow;
+    height: 60px;
+}
+div.left-header-item{
+    float: left;
+}
+div.left-header-item i{
+    font-size: 23px;
+}
+div.right-header-item{
+   position: absolute;
+   right: 1rem;
+}
+
+/** Shopping Cart Headers Close Button **/
+.shopping-car-close-btn{
+    background: $shopping_close_btn;
+    outline: 0;
+    border: 0;
+    color: $common_white;
+    border-radius: 5px;
+    border: 2px solid $button_tomato;
+}
+
+/*****-- Shopping Cart Arrow Close Button --*****/
+.shoppingCartButton {
+    cursor: pointer;
+    position: absolute;
+    left: -16px;
+    top: 45%;
+    margin: auto;
+    height: 70px;
+    width: 16px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    color: $common_white;
+    background-color: $button_tomato;
+    border: 1px solid $footer_dark;
+
+    &:before{
+        content: "";
+        width: 15px;
+        height: 4px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        -ms-transform: rotate(65deg);
+        -webkit-transform: rotate(65deg);
+        -moz-transform: rotate(65deg);
+        -o-transform: rotate(65deg);
+        transform: rotate(65deg);
+        margin-top: 26px;
+    }
+
+    &:after{
+        content: "";
+        width: 15px;
+        height: 4px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        -ms-transform: rotate(-65deg);
+        -webkit-transform: rotate(-65deg);
+        -moz-transform: rotate(-65deg);
+        -o-transform: rotate(-65deg);
+        transform: rotate(-65deg);
+        margin-top: 38px;
+    }
+}
+
+/**-- Shopping Cart Content/Body --**/
+/* (2) Section of this Shpping Cart Body */
+/* 1. Empty Shopping Bag */
+div.cart-content-empty{
+    padding: 1rem;
+    display: grid;
+    justify-items: center;
+}
+
+div.content-item-empty{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** If got the icon on content bag is empty **/
+div.cart-content-empty{
+    i{
+        font-size: 8rem;
+        /* color: rgb(210, 35, 42); */
+        color: #EE3522;
+        padding: 50px;
+        border-radius: 100%;
+        background: rgb(175,112,21);
+        background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+    }
+
+    img{
+        padding: 50px;
+        border-radius: 1rem;
+        /* background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%); */
+        height: 18rem;
+        width: 18rem;
+    }
+
+    div.shopping-title-exmpty{
+        p{
+            text-align: center;
+            font-size: 17px;
+            color: $button_tomato !important;
+            display: table;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+}
+
+/** Shopping Cart Body 2nd Template **/
+/* 2. Bag With Cart items */
+div.cart-content {
+    overflow: scroll;
+    scroll-behavior: smooth;
+    height: 83%;
+
+    div.body-heading-title{
+        background: $button_tomato;
+        color: $common_white;
+        padding: 0.2rem 2rem;
+    }
+}
+div.content-title{
+    height: 30px !important;
+    margin: 0 !important;
+}
+
+/* Cart Items Nav */
+div.content-title.items-nav{
+    text-align: center;
+    background: $cart_nav_bg;
+    box-shadow: 0px 1px 3px $cream_white;
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+div.cart-content{
+    .counter-left-btn,
+    .counter-right-btn {
+        background: none;
+        border: none;
+        /* background: tomato; */
+        padding: 10px;
+        padding: 5px 10px;
+        border-radius: 100%;
+        font-size: 13px;
+        /* color: #fff; */
+        font-weight: bold;
+    }
+
+    div.row{
+        height: 66px;
+        border-bottom: 1px solid $cream_white;
+        margin: 5px;
+    }
+
+    div.delivery-img{
+        img{
+            width: $cart_content_img;
+            height: $cart_content_img;
+        }
+    }
+}
+
+div.delivery-counter, div.delivery-name, div.delivery-price{
+    padding-top: 0.8rem;
+    padding-bottom: 0.2rem;
+}
+
+/**-- Shopping carts Footer Section --**/
+div.cart-footer{
+    background: $maithai_common;
+    margin: 0;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    color: $common_white;
+    /* height: 60px; */
+}
+
+/***-- Special Code Section of Shopping-Cart Footer Area --***/
+.svg-inline--fa.fa-chevron-circle-up.fa-w-16,
+.svg-inline--fa.fa-chevron-circle-down.fa-w-16,
+.fa.fa-chevron-circle-up.mr-2,
+.fa.fa-chevron-circle-down.mr-2{
+    font-size: 20px;
+    color: $common_white;
+}
+.special-code-card{
+   display: grid;
+   justify-items: center;
+}
+.special-code-title {
+    color: $common_white;
+}
+input.special-input{
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+    border: 0;
+    border: 2px solid $shopping_close_btn;
+}
+
+input.special-go{
+    font-size: 15px;
+    text-transform: uppercase;
+    background: $button_tomato;
+    outline: none;
+    border: none;
+    border: 2px solid $shopping_close_btn;
+    color: $common_white;
+    padding: 0px 20px;
+
+    &:hover{
+        background: $shopping_close_btn;
+        border: 2px solid $common_white;
+    }
+}
+
+/**-- Footer Place Order --**/
+.place-order-footer {
+    background: oldlace;
+    border-radius: 5px;
+    width: 100%;
+
+    a{
+        width: 100%;
+
+        &:hover{
+            background: $button_tomato !important;
+        }
+    }
+
+    .svg-inline--fa.fa-cart-arrow-down.fa-w-18{
+        font-size: 18px;
+    }
+    .fa-cart-arrow-down{
+        font-size: 18px;
+    }
+}
+
+/***********Sections Jumbotron-One***********/
+.jumbo-one{
+    margin: 0 !important;
+
+    .rounded-icon{
+        background: $common_white;
+        color: $maithai_common;
+        /* padding: 20%; */
+        border-radius: 100%;
+        font-size: 50px;
+        width: 100px;
+        padding: 10px;
+        height: 100px;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        margin: auto;
+
+        &:hover{
+            text-shadow: 5px 5px 10px #808080;
+            border: 5px solid;
+        }
+    }
+
+    p{
+        color: dimgray;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+div.col-jumbo-one{
+    /*padding-left: 5rem;*/
+    justify-content: center;
+    margin: auto;
+}
+
+
+/*************** FOOD MENU Food-Menu **************/
+div.food-menu-carousel {
+    max-height: 48vh;
+}
+img.img-offer{
+    width: 44vh;
+}
+div.food-menu-list{
+    position: sticky;
+    /* bottom: 24rem; */
+    bottom: 10rem;
+    margin-top: 2rem;
+}
+ul.offer-list-ul{
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: bold;
+} 
+a.ml-5.carousel-control-prev,
+a.mr-5.carousel-control-next{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: $maithai_common;
+    color: $common_white;
+    transition: all 0.6s;
+    font-size: 20px;
+    font-weight: bold;
+}
+a.ml-5.carousel-control-prev {
+    left: 6%;
+}
+a.mr-5.carousel-control-next {
+    right: 6%;
+}
+
+
+/*************SPECIAL FOOD MENU*****************/
+    section.special-food-menu{
+        background: url('images/coverB.jpg') no-repeat center center fixed;
+        background-size: cover;
+        padding: 0;
+    }
+    div.dark-bg-opacity{
+        background: rgb(0 0 0 / 60%);
+        height: 100%;
+        padding: 4rem;
+        width: 100%;
+    }
+    div.carousel-title{
+        h1{
+            font-weight: 300 !important;
+            font-size: 3rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+    div.special-card {
+        height: auto;
+        width: 265px;
+        max-height: 70vh;
+    }
+    div.card.ml-4.special-card {
+        border-radius: 8px;
+    }
+    div.card{
+        img.card-img-top.card-img{
+            min-height: 250px;
+        }
+    }
+    div.card{
+        p.card-text.text-muted{
+            font-size: 14.5px;
+        }
+    }
+    /*The Next and the Previous Button for Carousel*/
+    /* .carousel-control-next:hover,
+    .carousel-control-prev:hover {
+        color: #fff;
+        text-decoration: none;
+        outline: 0;
+        opacity: .9;
+        background: rgb(0 0 0 / 0.5);
+        border-radius: 8px;
+    } */
+    a.carousel-control-prev,
+    a.carousel-control-next{
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        border-radius: 50px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        background-color: $maithai_common;
+        color: #fff;
+        transition: all 0.6s;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    a.carousel-control-prev {
+        left: 6%;
+    }
+    a.carousel-control-next{
+        right: 6%;
+    }
+
+
+/*******************CONTACT US*********************/
+section.contact-jumbo{
+    background: none !important;
+}
+div.rounded-contact-icon{
+    i, 
+    svg.svg-inline--fa.fa-map-marker-alt.fa-w-12,
+    svg.svg-inline--fa.fa-phone.fa-w-16,
+    svg.svg-inline--fa.fa-envelope.fa-w-16
+    {
+        font-size: 40px;
+        display: inline-block;
+        margin-bottom: 10px;
+        color: $contact_icon;
+        /* line-height: 31px; */
+        background: #eee;
+        padding: 20px;
+        border-radius: 100px;
+        width: 80px;
+        height: 80px;
+        transition: 0.4s ease-in-out;
+
+        &:hover{
+            text-shadow: 5px 5px 10px #e97979;
+            border: 5px solid;
+            padding: 15px;
+        }
+    }
+}
+
+/******---- Finished At 886 NO. Line (Before Start Footer) ----******/

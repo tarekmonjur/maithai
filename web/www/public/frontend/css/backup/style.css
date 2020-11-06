@@ -295,7 +295,6 @@ div.shopping-cart{
 
 /**-- Shopping Cart Header --**/
 div.cart-header{
-    background: rgb(175,112,21);
     background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
     margin: 0;
     padding: 1rem;
@@ -416,7 +415,7 @@ div.cart-content-empty div.shopping-title-empty p{
 
 /** Shopping Cart Body 2nd Template **/
 /* 2. Bag With Cart items */
-.cart-content {
+div.cart-content {
     overflow: scroll;
     scroll-behavior: smooth;
     height: 83%;
@@ -529,7 +528,7 @@ input.special-go:hover{
 }
 
 .place-order-footer .svg-inline--fa.fa-cart-arrow-down.fa-w-18,
-.place-order-footer fa-cart-arrow-down{
+.place-order-footer .fa-cart-arrow-down{
    font-size: 18px;
 }
 
