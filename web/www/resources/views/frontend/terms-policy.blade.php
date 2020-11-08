@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @push('style')
-    <link rel="stylesheet" href="{{asset('frontend/css/termsPolicy.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/about.css')}}">
 @endpush
 
 @section('main_content')

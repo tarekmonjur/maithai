@@ -1,0 +1,39 @@
+@use "app";
+
+/*** Form Style When Focus-In ***/
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #f3d1cb;
+    outline: 0;
+    box-shadow: none;
+}
+
+/**Common Font Color On headline for content text**/
+.headline-p{
+    color: app.$maithai_common;
+    /* font-family: 'Quicksand', sans-serif; */
+}
+
+section#about-cover{
+    .jumbotron{
+        background: url('images/aboutUsCover.jpg') no-repeat center center fixed;
+        background-size: cover;
+        height: 80vh;
+    }
+}
+div.about-text-section{
+    float: left; 
+    margin-left: 5rem; 
+    margin-top: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+div.about-text-section div.about-cover{
+    line-height: 30px;
+}
+
+div{
+    overflow: unset !important;
+}

@@ -137,7 +137,6 @@ div.search-food{
     }
 }
 
-
 /*******The Search Items DropDown Controling******/
 .search-dropdown-menu {
     position: absolute;
@@ -199,6 +198,40 @@ ul.search-dropdown-menu{
     }
 }
 
+@media only screen and (max-width: 530px){
+    .search-dropdown-menu{
+        width: 81% !important;
+    }
+}
+/***iPhone 6,7,8 type Mobiles Screen***/
+@media only screen and (max-width: 380px){
+    .search-dropdown-menu{
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -16.2rem) !important;
+        width: 79% !important;
+    }
+}
+
+/***iPad Pro type tab Screen***/
+@media only screen and (max-width: 1024px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -15.8rem);
+    }
+}
+@media only screen and (max-width: 768px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -17rem);
+    }
+}
+/*****Galaxy Fold New Smallest Screen Ever****/
+@media only screen and (max-width: 280px){
+    .search-dropdown-menu{
+        transform: translate(-48rem, -13.8rem) !important;
+        width: 80% !important;
+    }
+}
+
 /**Home Sections Slider control Buttons**/
 a.carousel-control-prev.home-slide-prev {
     left: 10%;
@@ -207,4 +240,123 @@ a.carousel-control-prev.home-slide-prev {
 a.carousel-control-next.home-slide-next {
     right: 10%;
     visibility: hidden;
+}
+
+
+.slideGellary.hi-slide {
+    margin-top: 3rem;
+}
+
+.hi-slide {
+    position: relative;
+    /* width: 754px;
+    height: 292px; */
+    /* width: 1000px;
+    height: 440px; */
+    width: 900px;
+    height: 380px;
+    margin: 115px auto 0;
+}
+
+.hi-slide{
+    .hi-next,
+    .hi-prev {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        border-radius: 50px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #d2232a;
+        color: #fff;
+        transition: all 0.6s;
+        font-size: 20px;
+        font-weight: bold;
+
+        &:hover{
+            opacity: .9;
+            color: #fff;
+        }
+    }
+
+    .hi-prev {
+        left: -20rem;
+    }
+    .hi-next {
+        right: -20rem;
+    }
+
+    & > {
+        ul {
+            list-style: none;
+            position: relative;
+            width: 754px;
+            height: 292px;
+            margin: 0;
+            padding: 0;
+
+            & > {
+                li{
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 0;
+                    left: 377px;
+                    top: 146px;
+                    width: 0;
+                    height: 0;
+                    margin: 0;
+                    padding: 0;
+                    border: 3px solid #fff;
+                    background-color: #333;
+                    cursor: pointer;
+
+
+                    & > {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            background-position: center;
+                        }
+                    }   
+                }
+            }
+        }
+    }   
+}
+
+@media only screen and (max-width: 1366px){
+    .hi-slide{
+        .hi-prev {
+            left: -8rem;
+        }
+        .hi-next {
+            right: -8rem;
+        }
+
+        .hi-next, .hi-prev{
+            width: 30px;
+            height: 30px;
+            font-size: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .hi-slide{
+        .hi-next{
+            right: 20rem !important;
+        }
+        .hi-prev {
+            left: 20rem !important;
+        }
+        .hi-next, .hi-prev{
+            top: 90% !important;
+            width: 30px !important;
+            height: 30px !important;
+            font-size: 10px !important;
+        }
+    }
 }
