@@ -137,6 +137,62 @@ div.search-food{
     }
 }
 
+
+/**The Media Quries for Mobile View**/
+/**iPhone 6,7,8 and Upper Screen Confortable**/
+@media only screen and (max-width: 720px){
+    
+    section.food-list-home-banner{
+        max-height: 44vh;
+    }
+    section.food-list-home-banner{
+        .dark-bg {
+            top: 30% !important;
+        }
+    }
+     /**Home-Cover Section**/
+     div#intro-section{
+        .intro-title{
+            font-size: 50px;
+        }
+        .food-list-intro{
+            font-size: 1.8rem !important;
+        }
+    }
+    div.search-food{
+        .form-control{
+            width: 100% !important;
+            margin-bottom: 1rem;
+        }
+
+        .btn-custom{
+            width: 100%;
+        }
+    }
+    div#intro{
+        .about-btn,
+        .order-btn{
+            width: 100%;
+            border-radius: 10px;
+            margin-left: 0 !important;
+        }
+    }
+    
+    /**Home Slide Intro 2nd Page Title**/
+    .home-slide-intro-2,
+    .home-slide-intro-3{
+        font-size: 30px !important;
+    }
+}
+
+@media only screen and (max-width: 1366px){
+    section.food-list-home-banner{
+        .dark-bg{
+            top: 25%;
+        }
+    }
+}
+
 /*******The Search Items DropDown Controling******/
 .search-dropdown-menu {
     position: absolute;
@@ -198,11 +254,21 @@ ul.search-dropdown-menu{
     }
 }
 
+
+@media only screen and (max-width: 720px){
+    .search-dropdown-menu {
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -17rem) !important;
+    }
+}
+
 @media only screen and (max-width: 530px){
     .search-dropdown-menu{
         width: 81% !important;
     }
 }
+
 /***iPhone 6,7,8 type Mobiles Screen***/
 @media only screen and (max-width: 380px){
     .search-dropdown-menu{
@@ -219,11 +285,13 @@ ul.search-dropdown-menu{
         transform: translate(-64%, -15.8rem);
     }
 }
+
 @media only screen and (max-width: 768px){
     .search-dropdown-menu{
         transform: translate(-64%, -17rem);
     }
 }
+
 /*****Galaxy Fold New Smallest Screen Ever****/
 @media only screen and (max-width: 280px){
     .search-dropdown-menu{

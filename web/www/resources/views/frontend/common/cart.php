@@ -56,7 +56,7 @@
         <!-- Shopping cart Content (When Bag Is Empty!) -->
         <div class="cart-content-empty">
             <div class="content-item-empty">
-                <img src="{{asset('frontend/logo/shopping-beg-1.png')}}" alt="">
+                <img src="{{asset('frontend/logo/shopping-beg-1.png')}}" alt="No Items!!!">
 
                 <div class="shopping-title-empty text-capitalize">
                     <p class="text-muted">Your shopping bag is empty!</p>

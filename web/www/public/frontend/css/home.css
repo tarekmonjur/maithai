@@ -510,10 +510,9 @@ div.content-item-empty {
 div.cart-content-empty i {
   font-size: 8rem;
   /* color: rgb(210, 35, 42); */
-  color: #EE3522;
+  color: #d2232a;
   padding: 50px;
   border-radius: 100%;
-  background: #af7015;
   background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
 }
 
@@ -525,7 +524,7 @@ div.cart-content-empty img {
   width: 18rem;
 }
 
-div.cart-content-empty div.shopping-title-exmpty p {
+div.cart-content-empty div.shopping-title-empty p {
   text-align: center;
   font-size: 17px;
   color: tomato !important;
@@ -1260,7 +1259,7 @@ footer div.dotted-dateline {
   /**Top Footer**/
 
   div.business-hour ul li {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 
   .newsletters-phone {
@@ -2046,6 +2045,15 @@ div.filter-item-food-package {
     margin-bottom: 3rem;
   }
 
+  div.left-aside.filter-item {
+    padding-bottom: 1rem;
+  }
+
+  .filter-item-food-package {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+
   div.list-area ul li.all-food-list {
     display: grid !important;
   }
@@ -2112,6 +2120,17 @@ div.filter-item-food-package {
 
   .grid-card-img {
     max-height: 250px;
+  }
+}
+
+/***iPhone 6,7,8 type Mobiles Screen***/
+
+@media only screen and (max-width: 380px) {
+  .search-dropdown-menu {
+    top: 54rem !important;
+    left: 50rem !important;
+    transform: translate(-47.5rem, -16.2rem) !important;
+    width: 79% !important;
   }
 }
 
@@ -2526,6 +2545,12 @@ a.login-btn:hover {
   }
 }
 
+.btn.focus,
+.btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
 /**** Using for common features ****/
 
 /*************Section Of Page Banner**************/
@@ -2662,6 +2687,59 @@ div.search-food .form-control {
   height: 43px;
 }
 
+/**The Media Quries for Mobile View**/
+
+/**iPhone 6,7,8 and Upper Screen Confortable**/
+
+@media only screen and (max-width: 720px) {
+  section.food-list-home-banner {
+    max-height: 44vh;
+  }
+
+  section.food-list-home-banner .dark-bg {
+    top: 30% !important;
+  }
+
+  /**Home-Cover Section**/
+
+  div#intro-section .intro-title {
+    font-size: 50px;
+  }
+
+  div#intro-section .food-list-intro {
+    font-size: 1.8rem !important;
+  }
+
+  div.search-food .form-control {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  div.search-food .btn-custom {
+    width: 100%;
+  }
+
+  div#intro .about-btn,
+  div#intro .order-btn {
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 0 !important;
+  }
+
+  /**Home Slide Intro 2nd Page Title**/
+
+  .home-slide-intro-2,
+  .home-slide-intro-3 {
+    font-size: 30px !important;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  section.food-list-home-banner .dark-bg {
+    top: 25%;
+  }
+}
+
 /*******The Search Items DropDown Controling******/
 
 .search-dropdown-menu {
@@ -2713,6 +2791,14 @@ ul.search-dropdown-menu li.search-item .name {
 ul.search-dropdown-menu li.search-item .price {
   color: red;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 720px) {
+  .search-dropdown-menu {
+    top: 54rem !important;
+    left: 50rem !important;
+    transform: translate(-47.5rem, -17rem) !important;
+  }
 }
 
 @media only screen and (max-width: 530px) {

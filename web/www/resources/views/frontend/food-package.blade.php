@@ -11,7 +11,7 @@
         <div class="dark-bg">
             <div id="intro">
                 <div id="intro-section" class="mb-4">
-                    <h5 class="intro-title text-uppercase mb-4">find foods from food list</h5>
+                    <h5 class="intro-title food-list-intro text-uppercase mb-4">find foods from food list</h5>
                 </div>
 
                 <div id="search-food" class="search-food mb-5">

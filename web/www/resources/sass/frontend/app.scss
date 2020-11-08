@@ -495,11 +495,10 @@ div.cart-content-empty{
     i{
         font-size: 8rem;
         /* color: rgb(210, 35, 42); */
-        color: #EE3522;
+        color: $maithai_common;
         padding: 50px;
         border-radius: 100%;
-        background: rgb(175,112,21);
-        background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+        background: $maithai_gradient;
     }
 
     img{
@@ -510,7 +509,7 @@ div.cart-content-empty{
         width: 18rem;
     }
 
-    div.shopping-title-exmpty{
+    div.shopping-title-empty{
         p{
             text-align: center;
             font-size: 17px;
@@ -1230,7 +1229,7 @@ div.rounded-contact-icon{
     div.business-hour{
         ul{
             li{
-                font-size: 11px;
+                font-size: 11px !important;
             }
         }
     }
@@ -1963,6 +1962,13 @@ div.filter-item-food-package{
     .checkbox-list.mt-3{
         margin-bottom: 3rem;
     }
+    div.left-aside.filter-item{
+        padding-bottom: 1rem;
+    }
+    .filter-item-food-package {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+    }
     div.list-area{
         ul{
             li.all-food-list{
@@ -2034,6 +2040,17 @@ div.filter-item-food-package{
 }
 
 
+/***iPhone 6,7,8 type Mobiles Screen***/
+@media only screen and (max-width: 380px){
+    .search-dropdown-menu{
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -16.2rem) !important;
+        width: 79% !important;
+    }
+}
+
+
 @media only screen and (max-width: 1024px){
     .search-dropdown-menu-food-list{
         transform: translate(-64%, -25.8rem);
@@ -2067,10 +2084,7 @@ div.filter-item-food-package{
     }
 }
 
-
 /*******----- About Us -----******/
-
-
 /********ABOut Content********/
 section#about-content{
     h1, h3{   
@@ -2429,4 +2443,9 @@ button[type="submit"].login-btn, a.login-btn{
         justify-items: center;
         border-right: 0;
     }
+}
+
+.btn.focus, .btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
 }

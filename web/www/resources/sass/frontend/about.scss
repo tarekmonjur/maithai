@@ -37,3 +37,15 @@ div.about-text-section div.about-cover{
 div{
     overflow: unset !important;
 }
+
+/**Media Queries for Mobile View**/
+/**iPhone 6,7,8 to Uppper Screens Confortable**/
+@media only screen and (max-width: 720px){
+    div.about-text-section{
+        float: unset;
+        margin-left: 0;
+        position: unset;
+        margin-top: 13rem;
+        
+    }
+}

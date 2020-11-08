@@ -13,7 +13,7 @@
         <div class="dark-bg">
             <div id="intro">
                 <div id="intro-section" class="mb-4">
-                    <h5 class="intro-title text-uppercase mb-4">stock food grid combo</h5>
+                    <h5 class="intro-title food-list-intro text-uppercase mb-4">stock food grid combo</h5>
                 </div>
 
                 <div class="search-food mb-5">
