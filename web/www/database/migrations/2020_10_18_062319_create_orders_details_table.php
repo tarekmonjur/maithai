@@ -15,8 +15,8 @@ class CreateOrdersDetailsTable extends Migration
     {
         Schema::create('orders_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id');
-            $table->integer('product_id');
+            $table->integer('order_id')->index();
+            $table->integer('product_id')->index();
             $table->integer('offer_id')->default(0);
             $table->string('offer_name', 100)->nullable();
             $table->string('product_name', 100);

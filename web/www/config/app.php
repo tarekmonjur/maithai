@@ -2,6 +2,14 @@
 
 return [
 
+    'frontend_home' => env('FRONTEND_HOME', 'pos'),
+
+    'backend_home' => env('BACKEND_HOME', 'pos'),
+
+    'backend_is_paginate' => env('BACKEND_IS_PAGINATE', false),
+
+    'backend_per_page' => env('BACKEND_PER_PAGE', 25),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

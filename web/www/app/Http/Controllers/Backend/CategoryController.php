@@ -29,7 +29,6 @@ class CategoryController extends BackendController
     public function index()
     {
         $data =  $this->getDataModel();
-        dd($data);
         return view('backend.category.index')->with($data);
     }
 

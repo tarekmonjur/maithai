@@ -11,7 +11,7 @@
 |
 */
 
-$route_base_path = env('APP_NAME');
+$route_base_path = config('app.backend_home');
 
 /********** ......Backend Auth Routes....... *****************/
 Route::prefix($route_base_path)->namespace('Backend\Auth')->group(function() use ($route_base_path){

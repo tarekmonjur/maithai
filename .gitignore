@@ -19,3 +19,4 @@ web/www/yarn-error.log
 .DS_Store
 /theme/.DS_Store
 **/.DS_Store
+theme/.vscode

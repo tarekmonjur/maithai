@@ -3,20 +3,42 @@
 namespace App\Http\Services;
 
 use App\Models\Category;
-use Illuminate\Database\Eloquent\Builder;
 
 trait CategoryService
 {
 
-    public function getData() {
-        $categories = Category::withCount(['subCategory', 'product'])->with('subCategory', 'product')->get();
-        $results = $categories;
-        return $results;
+    private $columns = [
+        'sl', 'name', 'slug', 'status', 'created', 'updated', 'action',
+    ];
+
+    protected function getColumns()
+    {
+        $columns = [];
+        foreach ($this->columns as $value) {
+            $columns[$value] = trans('backend/category.'.$value);
+        }
+        return $columns;
     }
 
-    public function getDataModel() {
+    protected function getData()
+    {
+//        dd(Category::with('subCategories')->inRandomOrder()->first());
+        $categories = Category::withCount(['subCategories', 'products'])
+            ->with(['subCategories']);
+        if (config('app.backend_is_paginate')) {
+            $categories = $categories->paginate(config('app.backend_per_page'));
+        } else {
+            $categories = $categories->get();
+        }
+        return $categories;
+    }
+
+    protected function getDataModel()
+    {
         $data['title'] = trans('backend/category.title');
-        $data['categories'] = $this->getData();
+        $data['results'] = $this->getData()->toArray();
+        $data['columns'] = $this->getColumns();
+        dd($data);
         return $data;
     }
 

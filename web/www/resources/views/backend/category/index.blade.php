@@ -1,9 +1,7 @@
 @extends('backend.layouts.app')
 
-@push('script')
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+@push('style')
+@include('backend.layouts.common.datatable-style')
 @endpush
 
 @section('main_content')
@@ -61,22 +59,5 @@
 @endsection
 
 @push('script')
-    <!-- DataTables -->
-    <script src="{{asset('backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-    <script>
-      $(function () {
-        $('#table').DataTable({
-          "paging": true,
-          "lengthChange": true,
-          "searching": true,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false,
-          "responsive": true,
-        });
-      });
-    </script>
+@include('backend.layouts.common.datatable-script')
 @endpush

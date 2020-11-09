@@ -10,7 +10,7 @@ $factory->define(Customer::class, function (Faker $faker) {
     return [
         'access_token' => Str::uuid(),
         'username' => $faker->unique()->username,
-        'password' => bcrypt(123456),
+        'password' => '123456',
         'remember_token' => Str::random(10),
         'referral_code' => $faker->unique()->randomNumber(),
         'email_verified' => 1,
