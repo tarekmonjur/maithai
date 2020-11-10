@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="col-md-3 delivery-img">
-                    <img src="assets/img/gellary/ma1.jpg" alt="maiThai-1">
+                    <img src="{{asset('frontend/img/gellary/ma1.jpg')}}" alt="maiThai-1">
                 </div>
 
                 <div class="col-md-3 delivery-name">
@@ -116,7 +116,7 @@
                     </button>
                 </div>
                 <div class="col-md-3 delivery-img">
-                    <img src="assets/img/gellary/ma1.jpg" alt="maiThai-1">
+                    <img src="{{asset('frontend/img/gellary/ma1.jpg')}}" alt="maiThai-1">
                 </div>
                 <div class="col-md-3 delivery-name">
                     <h6>Green Vagetable</h6>

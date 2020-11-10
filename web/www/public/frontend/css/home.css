@@ -2805,6 +2805,10 @@ ul.search-dropdown-menu li.search-item .price {
   .search-dropdown-menu {
     width: 81% !important;
   }
+
+  .search-dropdown-menu-food-list {
+    width: 79% !important;
+  }
 }
 
 /***iPhone 6,7,8 type Mobiles Screen***/
@@ -2814,6 +2818,10 @@ ul.search-dropdown-menu li.search-item .price {
     top: 54rem !important;
     left: 50rem !important;
     transform: translate(-47.5rem, -16.2rem) !important;
+    width: 79% !important;
+  }
+
+  .search-dropdown-menu-food-list {
     width: 79% !important;
   }
 }
