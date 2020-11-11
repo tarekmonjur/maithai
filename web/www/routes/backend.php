@@ -11,10 +11,10 @@
 |
 */
 
-$route_base_path = config('app.backend_home');
+$route_base_path = config('app.backend_home', 'pos');
 
 /********** ......Backend Auth Routes....... *****************/
-Route::prefix($route_base_path)->namespace('Backend\Auth')->group(function() use ($route_base_path){
+Route::prefix('')->namespace('Backend\Auth')->group(function() use ($route_base_path){
     //Login Routes...
     Route::get('login', 'LoginController@showLoginForm')->name($route_base_path.'.login');
     Route::post('login', 'LoginController@login')->name($route_base_path.'.login');
@@ -28,16 +28,16 @@ Route::prefix($route_base_path)->namespace('Backend\Auth')->group(function() use
 });
 
 /********** ......Backend Dashboard Routes....... *****************/
-Route::prefix($route_base_path)->namespace('Backend')->group(function() use ($route_base_path){
-    Route::get('/','DashboardController@index');
+Route::prefix('')->namespace('Backend')->group(function() use ($route_base_path){
+    Route::get('/','DashboardController@index')->name($route_base_path.'.home');
 //    Route::get('/settings','DashboardController@settings');
 //    Route::put('/settings','DashboardController@updateSettings');
 });
 
 
 /********** ......Backend Category Routes....... *****************/
-Route::prefix($route_base_path.'/categories')->namespace('Backend')->group(function() use ($route_base_path){
-    Route::get('/','CategoryController@index');
+Route::prefix('/categories')->namespace('Backend')->group(function() use ($route_base_path){
+    Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
 //    Route::get('/settings','DashboardController@settings');
 //    Route::put('/settings','DashboardController@updateSettings');
 });

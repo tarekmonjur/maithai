@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+require("laravel-mix-vue3");
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,7 +12,6 @@ const mix = require('laravel-mix');
  */
 
 // mix.js('resources/js/app.js', 'public/js')
-//     .sass('resources/sass/app.scss', 'public/css');
+//    .sass('resources/sass/app.scss', 'public/css');
 
-
-mix.sass('resources/sass/frontend/app.scss', 'public/frontend/css');
+mix.vue3('resources/assets/backend/js/categories.js', 'public/backend/js');

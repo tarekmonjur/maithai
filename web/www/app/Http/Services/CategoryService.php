@@ -8,14 +8,21 @@ trait CategoryService
 {
 
     private $columns = [
-        'sl', 'name', 'slug', 'status', 'created', 'updated', 'action',
+        'sl' => 100,
+        'name' => 0,
+        'slug' => 0,
+        'status' => 0,
+        'created' => 0,
+        'updated' => 0,
+        'action' => 100,
     ];
 
     protected function getColumns()
     {
         $columns = [];
-        foreach ($this->columns as $value) {
-            $columns[$value] = trans('backend/category.'.$value);
+        foreach ($this->columns as $key => $value) {
+            $columns[$key]['name'] = trans('backend/category.'.$key);
+            $columns[$key]['width'] = $value;
         }
         return $columns;
     }

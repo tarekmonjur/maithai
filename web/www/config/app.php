@@ -2,7 +2,7 @@
 
 return [
 
-    'frontend_home' => env('FRONTEND_HOME', 'pos'),
+    'frontend_home' => env('FRONTEND_HOME', 'home'),
 
     'backend_home' => env('BACKEND_HOME', 'pos'),
 

@@ -29,7 +29,9 @@ class CategoryController extends BackendController
     public function index()
     {
         $data =  $this->getDataModel();
-        return view('backend.category.index')->with($data);
+        $data['scripts'] = ['categories'];
+        $data['styles'] = [];
+        return view('backend.layouts.main')->with($data);
     }
 
 }

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Request;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (Request::has('access_token') || Request::hasHeader('access_token')) {
+            Request::offsetSet('guard', 'customer');
+        }
         $this->registerPolicies();
 
         //

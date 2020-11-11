@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+$route_base_path = 'api';
+/********** ...... Category API ....... *****************/
+Route::prefix('/categories')->namespace('Api')->group(function() use ($route_base_path){
+    Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
+});

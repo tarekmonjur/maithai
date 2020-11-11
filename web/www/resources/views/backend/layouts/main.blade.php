@@ -1,21 +1,19 @@
 @extends('backend.layouts.app')
 
 @push('style')
-@include('backend.layouts.common.datatable-style')
-@foreach($csss as $css)
-    <style href="{{asset('backend/css/'.$css.'.css')}}"></style>
+@foreach($styles as $style)
+    <style href="{{asset('backend/css/'.$style.'.css')}}"></style>
 @endforeach
 @endpush
 
 @section('main_content')
 <div id="main_content" class="container-fluid">
-    <categories-component></categories-component>
+    <main-conent-component></main-conent-component>
 </div>
 @endsection
 
 @push('script')
-@include('backend.layouts.common.datatable-script')
-    @foreach($jss as $js)
-        <script src="{{asset('backend/js/'.$js.'.js')}}"></script>
+    @foreach($scripts as $script)
+        <script src="{{asset('backend/js/'.$script.'.js')}}"></script>
     @endforeach
 @endpush

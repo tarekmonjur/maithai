@@ -17,7 +17,7 @@ down:
 	docker-compose down
 
 composer:
-	docker-compose exec php-fpm bash -c "composer"
+	docker-compose exec php-fpm bash -c "composer $(cmd)"
 
 composer-update:
 	docker-compose exec php-fpm bash -c "composer update"
@@ -42,3 +42,6 @@ permissions:
 
 scheduler:
 	docker-compose exe php-fpm bash -c "artisan schedule:run >> /dev/null 2>&1"
+
+phpunit:
+	docker-compose exec php-fpm bash -c "./vendor/bin/phpunit ${option}"
