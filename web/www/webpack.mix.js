@@ -17,4 +17,5 @@ const mix = require('laravel-mix');
 
 mix.sass('resources/sass/frontend/app.scss', 'public/frontend/css')
 .sass('resources/sass/frontend/home.scss', 'public/frontend/css')
-.sass('resources/sass/frontend/about.scss', 'public/frontend/css');
+.sass('resources/sass/frontend/about.scss', 'public/frontend/css')
+.sass('resources/sass/frontend/policy.scss', 'public/frontend/css');
