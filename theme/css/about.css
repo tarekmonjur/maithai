@@ -49,6 +49,11 @@ div.about-text-section{
     transform: translate(0, -50%);
     z-index: 999;
 }
+
+div.about-text-section p{
+    font-weight: bold;
+}
+
 div.about-text-section div.about-cover{
     line-height: 30px;
 }

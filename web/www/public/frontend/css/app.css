@@ -2171,13 +2171,16 @@ div.filter-item-food-package {
 /********ABOut Content********/
 
 section#about-content h1,
-section#about-content h3 {
+section#about-content h3,
+section#policy-content h1,
+section#policy-content h3 {
   color: #d2232a;
   font-weight: lighter;
   font-family: "Quicksand", sans-serif;
 }
 
-section#about-content p {
+section#about-content p,
+section#policy-content p {
   padding: 0 10px;
   font-size: 14px;
   font-weight: lighter;
@@ -2348,16 +2351,20 @@ button.btn.btn-lg.text-light.text-uppercase:hover {
     margin-top: 13rem;
   }
 
-  section#about-content {
+  section#about-content,
+  section#policy-content {
     margin-bottom: 0 !important;
   }
 
   section#about-content h1,
-  section#about-content h3 {
+  section#about-content h3,
+  section#policy-content h1,
+  section#policy-content h3 {
     font-size: 2rem;
   }
 
-  section#about-content p {
+  section#about-content p,
+  section#policy-content p {
     font-size: 12px;
   }
 

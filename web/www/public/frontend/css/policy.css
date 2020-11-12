@@ -2575,7 +2575,7 @@ a.login-btn:hover {
   /* font-family: 'Quicksand', sans-serif; */
 }
 
-section#about-cover .jumbotron {
+section#policy-cover .jumbotron {
   width: 100%;
   height: 600px;
   background-color: #000;
@@ -2586,19 +2586,19 @@ section#about-cover .jumbotron {
   height: 80vh;
 }
 
-section#about-cover .jumbotron::after {
+section#policy-cover .jumbotron::after {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(/images/aboutCover.jpg?69746ca4b0f6a7d0110eb8c6b2f24c41) no-repeat fixed;
+  background: url(/images/policyCover.jpg?f0fd5498957d089790367e0fa7d9ca87) no-repeat fixed;
   background-size: cover;
   opacity: 0.5;
 }
 
-div.about-text-section {
+div.policy-text-section {
   float: left;
   margin-left: 5rem;
   /* margin-top: 3rem; */
@@ -2608,7 +2608,7 @@ div.about-text-section {
   z-index: 999;
 }
 
-div.about-text-section div.about-cover {
+div.policy-text-section div.policy-cover {
   line-height: 30px;
 }
 
@@ -2621,14 +2621,14 @@ div {
 /**iPhone 6,7,8 to Uppper Screens Confortable**/
 
 @media only screen and (max-width: 720px) {
-  div.about-text-section {
+  div.policy-text-section {
     float: unset;
     margin-left: 0;
     position: unset;
     margin-top: 13rem;
   }
 
-  section#about-cover .jumbotron::after {
+  section#policy-cover .jumbotron::after {
     opacity: 0.3;
   }
 }

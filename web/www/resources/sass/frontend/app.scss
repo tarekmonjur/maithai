@@ -2086,7 +2086,7 @@ div.filter-item-food-package{
 
 /*******----- About Us -----******/
 /********ABOut Content********/
-section#about-content{
+section#about-content, section#policy-content{
     h1, h3{   
         color: $maithai_common;
         font-weight: lighter;
@@ -2262,7 +2262,7 @@ button.btn.btn-lg.text-light.text-uppercase {
         margin-top: 13rem;
         
     }
-    section#about-content{
+    section#about-content, section#policy-content{
         margin-bottom: 0 !important;
 
         h1, h3{
