@@ -1,7 +1,10 @@
 <?php
 
 return [
-    'title' => 'Menu List',
+    'add' => 'Add Menu',
+    'view' => 'View Menu',
+    'list' => 'Menu List',
+
     'sl' => 'SL',
     'name' => 'Menu Name',
     'slug' => 'Slug',

@@ -24,9 +24,20 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (Request::has('access_token') || Request::hasHeader('access_token')) {
+        if (Request::has('access_token') || Request::hasHeader('access-token')) {
+            if (Request::hasHeader('access-token')) {
+                Request::offsetSet('access_token', Request::header('access-token'));
+            }
             Request::offsetSet('guard', 'customer');
         }
+
+        if (Request::has('api_token') || Request::hasHeader('api-token')) {
+            if (Request::hasHeader('api-token')) {
+                Request::offsetSet('api_token', Request::header('api-token'));
+            }
+            Request::offsetSet('guard', 'user');
+        }
+
         $this->registerPolicies();
 
         //

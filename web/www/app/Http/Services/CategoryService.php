@@ -6,7 +6,7 @@ use App\Models\Category;
 
 trait CategoryService
 {
-
+    private $title;
     private $columns = [
         'sl' => 100,
         'name' => 0,
@@ -16,6 +16,28 @@ trait CategoryService
         'updated' => 0,
         'action' => 100,
     ];
+    private $data = [];
+
+    protected function setTitle($key)
+    {
+        $this->title = $key;
+        return $this;
+    }
+
+    protected function getTitle($key = null)
+    {
+        $key = $key ?? $this->title;
+        $title = trans('backend/category.'.$key);
+        $this->data['title'] = $title;
+        return $title;
+    }
+
+    protected function init()
+    {
+        $this->getTitle();
+        $this->getColumns();
+        return $this->data;
+    }
 
     protected function getColumns()
     {
@@ -24,6 +46,7 @@ trait CategoryService
             $columns[$key]['name'] = trans('backend/category.'.$key);
             $columns[$key]['width'] = $value;
         }
+        $this->data['columns'] = $columns;
         return $columns;
     }
 
@@ -42,11 +65,9 @@ trait CategoryService
 
     protected function getDataModel()
     {
-        $data['title'] = trans('backend/category.title');
-        $data['results'] = $this->getData()->toArray();
-        $data['columns'] = $this->getColumns();
-        dd($data);
-        return $data;
+        $this->init();
+        $this->data['results'] = $this->getData()->toArray();
+        return $this->data;
     }
 
 }

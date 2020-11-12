@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\View;
 
 class ApiController extends Controller
 {
-    protected $guard = 'user';
+    protected $guard = 'web';
 
     public function __construct() {
-        $this->guard = Request::input('guard');
+        Request::input('guard') ? $this->guard = Request::input('guard') : null;
     }
 
 }

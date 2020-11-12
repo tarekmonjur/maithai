@@ -17,7 +17,7 @@ class CategoryTest extends TestCase
     public function testGetCategories()
     {
         $user = User::find(1);
-        $response = $this->actingAs($user, 'api')->getJson('/api/categories');
+        $response = $this->actingAs($user, 'user')->getJson('/api/categories');
         $response->dump();
         $response->assertStatus(200);
     }

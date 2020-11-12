@@ -18,7 +18,7 @@ class CategoryController extends ApiController
 
     public function index()
     {
-        $data = $this->getData();
-        return $this->jsonResponse($data);
+        $data = $this->setTitle('list')->getDataModel();
+        return $this->jsonResponse($data['results'], $data['title']);
     }
 }

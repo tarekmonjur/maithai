@@ -16,16 +16,14 @@ trait CommonService
      * @param string $status
      * @param number $code
      * @param string $message
-     * @param string $title
      * @return \Illuminate\Http\JsonResponse
      * @author Tarek Monjur
      */
-    protected function jsonResponse($results, $status = 'success', $code = 200, $message = '', $title = ''){
-        $jsonData['results'] = $results;
+    protected function jsonResponse($results = null, $message = '', $status = 'success', $code = 200){
         $jsonData['status'] = $status;
         $jsonData['code'] = $code;
-        $jsonData['title'] = $title;
         $jsonData['message'] = $message;
+        $jsonData['results'] = $results;
         return response()->json($jsonData,$code);
     }
 }
