@@ -6,7 +6,7 @@
 section#home-cover, section#home-cover-2{
     .jumbotron{
         width: 100%;
-	    height: 600px;
+	    height: 650px;
 	    background-color: app.$common_dark;
 	    position: relative;
         overflow: hidden;
@@ -115,11 +115,11 @@ div#intro{
         color: app.$common_white;
         -webkit-animation-delay: 0.8s;
         animation-delay: 0.8s;
-        border: 2px solid app.$button_tomato;
+        border: 2px solid app.$card_border;
         text-decoration: none;
 
         &:hover{
-            background: app.$button_tomato;
+            background: app.$maithai_gradient;
         }
     }
 }
@@ -175,6 +175,8 @@ div.search-food{
             width: 100%;
             border-radius: 10px;
             margin-left: 0 !important;
+            background: app.$maithai_gradient;
+            border: 0;
         }
     }
     
