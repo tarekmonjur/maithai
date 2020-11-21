@@ -748,6 +748,14 @@ div.col-jumbo-one{
     text-align: center;
 }
 
+
+/** Welcome Card home **/
+.welcome-card-home{
+    border: 0;
+    border-radius: 2px;
+    border-bottom: 2px solid #d22429;
+}
+
 /*************** FOOD MENU Food-Menu **************/
 div.food-menu-carousel {
     max-height: 48vh;
@@ -790,6 +798,14 @@ a.mr-5.carousel-control-next {
     right: 6%;
 }
 
+/** Special Food Card **/
+.special-food-card{
+    border: 0;
+    border-radius: 2px;
+    border-bottom: 2px solid #d22429;
+    text-align: center;
+}
+
 /*************SPECIAL FOOD MENU*****************/
 section.special-food-menu{
     background: url('../assets/img/coverB.jpg') no-repeat center center fixed;
@@ -811,6 +827,10 @@ div.special-card {
     height: auto;
     width: 265px;
     max-height: 70vh;
+    border: 0;
+    text-align: center;
+    border-bottom: 3px solid #d22429;
+}
 }
 div.card.ml-4.special-card {
     border-radius: 8px;
@@ -1116,6 +1136,7 @@ div.dotted-dateline{
     }
     div.card{
         width: auto !important;
+        margin-bottom: 2rem;
     }
     aside.col-md-6 img{
         min-height: 300px !important;
@@ -1134,6 +1155,7 @@ div.dotted-dateline{
     .card.special-food-card {
         min-height: 535px;
         margin: auto;
+        margin-bottom: 2rem;
     }
 
     /**Cart Image Size of Our Food Styles Section**/
