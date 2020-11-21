@@ -621,17 +621,17 @@ div#intro .about-btn, div#intro .order-btn{
     letter-spacing: 1px;
     display: inline-block;
     padding: 12px 32px;
-    border-radius: 50px;
+    /* border-radius: 50px; */
     transition: 0.5s;
     line-height: 1;
     color: #fff;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
-    border: 2px solid rgb(255, 99, 71);
+    border: 2px solid #b37622;
     text-decoration: none;
 }
 div#intro .about-btn:hover, .order-btn:hover{
-    background: rgb(255, 99, 71);
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
 }
 
 /*--------ContentArea--------*/
@@ -753,7 +753,7 @@ div.col-jumbo-one{
 .welcome-card-home{
     border: 0;
     border-radius: 2px;
-    border-bottom: 2px solid #d22429;
+    border-bottom: 2px solid #caa570;
 }
 
 /*************** FOOD MENU Food-Menu **************/
@@ -802,7 +802,7 @@ a.mr-5.carousel-control-next {
 .special-food-card{
     border: 0;
     border-radius: 2px;
-    border-bottom: 2px solid #d22429;
+    border-bottom: 2px solid #caa570;
     text-align: center;
 }
 
@@ -829,9 +829,9 @@ div.special-card {
     max-height: 70vh;
     border: 0;
     text-align: center;
-    border-bottom: 3px solid #d22429;
+    border-bottom: 3px solid #caa570;
 }
-}
+
 div.card.ml-4.special-card {
     border-radius: 8px;
 }
