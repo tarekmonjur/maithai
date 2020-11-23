@@ -31,14 +31,15 @@ ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
     font-size: 18px;
     border-radius: 0 !important;
     margin-bottom: 5.5px;
-    background: rgb(255, 99, 71) !important;
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%) !important;
     color: #fff;
     height: 43px;
-    border: 2px solid tomato;
+    /* border: 2px solid #efa034; */
+    border: 2px solid;
 }
 .btn-custom:hover{
     background: none !important;
-    border: 2px solid tomato;
+    border: 2px solid #efa034;
 }
 a.bookmark-text{
     text-decoration: none;
@@ -67,6 +68,7 @@ a.bookmark-text:hover{
 }
 .card-title{
     font-family: 'Baloo 2', cursive;
+    color: #df9329;
 }
 h3.card-title {
     color: tomato;
@@ -79,7 +81,7 @@ h3.card-title {
 span.badge-light{
     color: #fff;
     margin-left: -13px !important;
-    background: tomato;
+    background: #efa034;
     border-radius: 100%;
 }
 
@@ -144,12 +146,12 @@ header img{
 svg.svg-inline--fa.fa-phone-alt.fa-w-16.icon,
 svg.svg-inline--fa.fa-shopping-cart.fa-w-18,
 svg.svg-inline--fa.fa-clock.fa-w-16{
-    color: #d2232a;
+    color: #efa034;
     background: #fff;
     padding: 10px;
     /* width: 10px; */
     border-radius: 100%;
-    border: 2px solid rgb(255, 99, 71);
+    border: 2px solid #efa034;
     transition: 0.5s;
     width: 40px;
     height: 40px;
@@ -171,7 +173,7 @@ div.num, div.carts-section, div.time-table{
     background: #fff;
     padding: 7px 10px;
     border-radius: 20px;
-    border: 2px solid tomato;
+    border: 2px solid #efa034;
     font-size: 14px;
     transition: 1s ease-in-out;
 }
@@ -222,9 +224,10 @@ nav{
 .navbar{
     padding: 0;
     min-height: 60px;
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
 }
 nav li.nav-item a{
-    color: rgb(211, 211, 211) !important;
+    color: #fff !important;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: normal;
@@ -720,7 +723,7 @@ a.carousel-control-next.home-slide-next {
 }
 .jumbo-one .rounded-icon{
     background: #fff;
-    color: #d2232a;
+    color: #efa034;
     /* padding: 20%; */
     border-radius: 100%;
     font-size: 50px;
@@ -769,10 +772,14 @@ div.food-menu-list{
     bottom: 10rem;
     margin-top: 2rem;
 }
+div.food-menu-list h1{
+    color: #df9329;
+}
 ul.offer-list-ul{
     font-size: 14px;
     text-transform: capitalize;
     font-weight: bold;
+    color: #df9329;
 } 
 a.ml-5.carousel-control-prev,
 a.mr-5.carousel-control-next{
@@ -887,7 +894,7 @@ svg.svg-inline--fa.fa-envelope.fa-w-16
     font-size: 40px;
     display: inline-block;
     margin-bottom: 10px;
-    color: #EE3522;
+    color: #df9329;
     /* line-height: 31px; */
     background: #eee;
     padding: 20px;
