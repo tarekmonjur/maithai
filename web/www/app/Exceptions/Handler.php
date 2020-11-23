@@ -2,11 +2,15 @@
 
 namespace App\Exceptions;
 
+use App\Http\Services\CommonService;
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    use CommonService;
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -51,5 +55,19 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
+    }
+
+    /**
+     * Convert an authentication exception into a response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Auth\AuthenticationException  $exception
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        return $request->expectsJson()
+            ? $this->jsonResponse(null, $exception->getMessage().'('.$exception->guards()[0].')', 'error', 401)
+            : redirect()->guest($exception->redirectTo() ?? route('login'));
     }
 }

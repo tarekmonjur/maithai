@@ -62,7 +62,7 @@
             </div>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route(env('APP_NAME').'.logout')}}" class="nav-link">Logout</a>
+            <a href="{{route(config('app.backend_home').'.logout')}}" class="nav-link">Logout</a>
         </li>
     </ul>
 </nav>

@@ -1,41 +1,106 @@
-.login-logo a { color: orangered!important; }
-.login-logo img { display: block; margin: auto; max-width: 30%!important; }
+.login-logo a {
+  color: orangered !important;
+}
+
+.login-logo img {
+  display: block;
+  margin: auto;
+  max-width: 30% !important;
+}
 
 /*btn theme*/
+
 .btn-theme {
-    color: #ffffff;
-    background-color: tomato;
-    border-color: #dc3545;
-    box-shadow: none;
+  color: #ffffff;
+  background-color: tomato;
+  border-color: #dc3545;
+  box-shadow: none;
 }
 
 .btn-theme:hover {
-    color: #ffffff;
-    background-color: orangered;
-    border-color: #dc3545;
+  color: #ffffff;
+  background-color: orangered;
+  border-color: #dc3545;
 }
 
-.btn-theme:focus, .btn-theme.focus {
-    color: #ffffff;
-    background-color: #dc3545;
-    border-color: darkred;
-    box-shadow: none, 0 0 0 0 #dc3545;
+.btn-theme:focus,
+.btn-theme .focus {
+  color: #ffffff;
+  background-color: #dc3545;
+  border-color: darkred;
+  box-shadow: none, 0 0 0 0 #dc3545;
 }
 
-.btn-theme.disabled, .btn-theme:disabled {
-    color: #ffffff;
-    background-color: tomato;
-    border-color: orangered;
+.btn-theme:disabled,
+.btn-theme .disabled {
+  color: #ffffff;
+  background-color: tomato;
+  border-color: orangered;
 }
 
-.btn-theme:not(:disabled):not(.disabled):active, .btn-theme:not(:disabled):not(.disabled).active,
-.show > .btn-theme.dropdown-toggle {
-    color: #ffffff;
-    background-color: tomato;
-    border-color: #dc3545;
+.btn-theme:not(:disabled):not(.disabled):active,
+.btn-theme .show > .btn-theme.dropdown-toggle {
+  color: #ffffff;
+  background-color: tomato;
+  border-color: #dc3545;
 }
 
-.btn-theme:not(:disabled):not(.disabled):active:focus, .btn-theme:not(:disabled):not(.disabled).active:focus,
-.show > .btn-theme.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0 #dc3545;
+.btn-theme:not(:disabled):not(.disabled):active:focus,
+.btn-theme .show > .btn-theme.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 #dc3545;
 }
+
+#main_content .card {
+  margin-bottom: 0px;
+}
+
+#main_content .card .card-header img {
+  vertical-align: top;
+  width: 30px;
+}
+
+#main_content .card .card-body .card {
+  box-shadow: none;
+}
+
+#main_content .card .card-body .card .input-group-text {
+  min-width: 160px;
+}
+
+#main_content .card .card-body .card > * input {
+  border: 1px solid #be9653;
+  height: calc(2rem + 1px);
+}
+
+#main_content .card .card-body .card > * select {
+  color: #ffffff;
+  background-color: #be9653;
+}
+
+#main_content .card .card-body .card img {
+  width: 28px;
+}
+
+#main_content .card .card-body .card .input-group-text {
+  padding: 0rem 1rem;
+  color: #ffffff;
+  background-color: #be9653;
+  border: 1px solid #be9653;
+}
+
+#main_content .card .card-body .card label {
+  margin: 0px;
+}
+
+#main_content .card .card-body .card .btn {
+  font-size: 1rem;
+  padding: 0.1rem 0.4rem;
+}
+
+#main_content .card .card-body table thead tr th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  background: lightgray;
+}
+

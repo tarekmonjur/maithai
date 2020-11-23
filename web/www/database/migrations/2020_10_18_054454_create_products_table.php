@@ -16,8 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('brand_id')->default(0);
-            $table->integer('type_id')->default(0);
-            $table->integer('category_id')->default(0);
+            $table->integer('category_id')->index();
             $table->integer('sub_category_id')->default(0);
             $table->integer('unit_id')->default(0);
             $table->string('name', 100)->index()->unique();
@@ -30,6 +29,7 @@ class CreateProductsTable extends Migration
             $table->boolean('is_new')->default(0);
             $table->boolean('is_package')->default(0);
             $table->boolean('is_active')->default(0);
+            $table->string('description')->nullable();
             $table->integer('created_by')->default(0);
             $table->integer('updated_by')->default(0);
             $table->timestamps();

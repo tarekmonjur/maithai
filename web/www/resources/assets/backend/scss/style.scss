@@ -1,0 +1,129 @@
+.login-logo {
+    a {
+        color: orangered!important;
+    }
+    img {
+        display: block; margin: auto; max-width: 30%!important;
+    }
+}
+
+$theme-color: #ffffff;
+$theme-bg-color: #dc3545;
+$theme-bg-color2: #be9653;
+
+$btn-color: #ffffff;
+$btn-bg-color: tomato;
+$btn-border-color: #dc3545;
+
+$btn-hover-color: #ffffff;
+$btn-hover-bg-color: orangered;
+$btn-hover-border-color: #dc3545;
+
+$btn-focus-color: #ffffff;
+$btn-focus-bg-color: #dc3545;
+$btn-focus-border-color: darkred;
+
+
+/*btn theme*/
+.btn-theme {
+    color: $btn-color;
+    background-color: $btn-bg-color;
+    border-color: $btn-border-color;
+    box-shadow: none;
+
+    &:hover {
+        color: $btn-hover-color;
+        background-color: $btn-hover-bg-color;
+        border-color: $btn-hover-border-color ;
+    }
+
+    &:focus, .focus {
+        color: $btn-focus-color;
+        background-color: $btn-focus-bg-color;
+        border-color: $btn-focus-border-color;
+        box-shadow: none, 0 0 0 0 #dc3545;
+    }
+
+    &:disabled, .disabled {
+        color: $btn-color;
+        background-color: $btn-bg-color;
+        border-color: $btn-hover-bg-color;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    .show > .btn-theme.dropdown-toggle {
+        color: #ffffff;
+        background-color: tomato;
+        border-color: #dc3545;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus,
+    .show > .btn-theme.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0 #dc3545;
+    }
+}
+
+#main_content {
+    .card {
+        margin-bottom: 0px;
+        .card-header {
+            img {
+                vertical-align: top;
+                width: 30px;
+            }
+        }
+
+        .card-body {
+            .card {
+                box-shadow: none;
+
+                .input-group-text {
+                    min-width: 160px;
+                }
+
+                > * input {
+                    border: 1px solid rgba($theme-bg-color2, 95);
+                    height: calc(2rem + 1px);
+                }
+
+                > * select {
+                    //font-size: .8rem;
+                    color: $theme-color;
+                    background-color: $theme-bg-color2;
+                }
+
+                img {
+                    width: 28px;
+                }
+
+                .input-group-text {
+                    padding: 0rem 1rem;
+                    color: $theme-color;
+                    background-color: rgba($theme-bg-color2, 80);
+                    border: 1px solid rgba($theme-bg-color2, 95);
+                }
+
+                label {
+                    margin: 0px;
+                }
+
+                .btn {
+                    font-size: 1rem;
+                    padding: .1rem .4rem;
+                }
+            }
+
+            table {
+                thead {
+                    tr {
+                        th {
+                            position: sticky;
+                            top: -1px;
+                            background: lightgray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

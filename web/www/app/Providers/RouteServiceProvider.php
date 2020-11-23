@@ -22,7 +22,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const FRONTEND_HOME = '/home';
-    public const BACKEND_HOME = '/maithai';
+    public const BACKEND_HOME = '/pos';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -74,9 +74,9 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware(['web', 'api'])
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
     }
 
     /**
@@ -88,7 +88,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapBackendRoutes()
     {
-        Route::middleware('web')
+        Route::prefix(config('app.backend_home', 'pos'))
+            ->middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/backend.php'));
     }

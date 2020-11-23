@@ -23,7 +23,7 @@ class CreateUserDetailsTable extends Migration
             $table->string('last_name', 45)->nullable();
             $table->string('email', 45)->nullable()->unique();
             $table->string('mobile_no', 25)->nullable()->unique();
-            $table->string('designation', 45)->nullable();
+            $table->string('designation', 100)->nullable();
             $table->enum('gender', ['male', 'female', 'other'])->default('other');
             $table->date('date_of_birth')->nullable();
             $table->date('joining_date')->nullable();
