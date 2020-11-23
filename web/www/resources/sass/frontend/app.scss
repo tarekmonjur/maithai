@@ -34,6 +34,7 @@ $contact_icon: #EE3522;
 $common_white: #fff;
 $milky_white: #F5FCEB;
 $cream_white: rgb(211, 211, 211);
+$card_border: rgb(175,112,21);
 
 $darkest_gray: darkslategray;
 $common_dark: #000;
@@ -690,6 +691,12 @@ div.col-jumbo-one{
     margin: auto;
 }
 
+/** Welcome Card Home **/
+.welcome-card-home{
+    border: 0;
+    border-radius: 2px;
+    border-bottom: 2px solid #caa570;
+}
 
 /*************** FOOD MENU Food-Menu **************/
 div.food-menu-carousel {
@@ -733,6 +740,13 @@ a.mr-5.carousel-control-next {
     right: 6%;
 }
 
+/** Special Food Card **/
+.special-food-card{
+    border: 0;
+    border-radius: 2px;
+    border-bottom: 2px solid #caa570;
+    text-align: center;
+}
 
 /*************SPECIAL FOOD MENU*****************/
     section.special-food-menu{
@@ -757,6 +771,9 @@ a.mr-5.carousel-control-next {
         height: auto;
         width: 265px;
         max-height: 70vh;
+        border: 0;
+        text-align: center;
+        border-bottom: 3px solid $card_border;
     }
     div.card.ml-4.special-card {
         border-radius: 8px;
@@ -1134,6 +1151,7 @@ div.rounded-contact-icon{
     }
     div.card{
         width: auto !important;
+        margin-bottom: 2rem;
     }
     aside.col-md-6{
         img{
@@ -1154,6 +1172,7 @@ div.rounded-contact-icon{
     .card.special-food-card {
         min-height: 535px;
         margin: auto;
+        margin-bottom: 2rem;
     }
 
     /**Cart Image Size of Our Food Styles Section**/

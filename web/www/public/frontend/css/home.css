@@ -712,6 +712,14 @@ div.col-jumbo-one {
   margin: auto;
 }
 
+/** Welcome Card Home **/
+
+.welcome-card-home {
+  border: 0;
+  border-radius: 2px;
+  border-bottom: 2px solid #caa570;
+}
+
 /*************** FOOD MENU Food-Menu **************/
 
 div.food-menu-carousel {
@@ -762,6 +770,15 @@ a.mr-5.carousel-control-next {
   right: 6%;
 }
 
+/** Special Food Card **/
+
+.special-food-card {
+  border: 0;
+  border-radius: 2px;
+  border-bottom: 2px solid #caa570;
+  text-align: center;
+}
+
 /*************SPECIAL FOOD MENU*****************/
 
 section.special-food-menu {
@@ -787,6 +804,9 @@ div.special-card {
   height: auto;
   width: 265px;
   max-height: 70vh;
+  border: 0;
+  text-align: center;
+  border-bottom: 3px solid #af7015;
 }
 
 div.card.ml-4.special-card {
@@ -1164,6 +1184,7 @@ footer div.dotted-dateline {
 
   div.card {
     width: auto !important;
+    margin-bottom: 2rem;
   }
 
   aside.col-md-6 img {
@@ -1186,6 +1207,7 @@ footer div.dotted-dateline {
   .card.special-food-card {
     min-height: 535px;
     margin: auto;
+    margin-bottom: 2rem;
   }
 
   /**Cart Image Size of Our Food Styles Section**/
@@ -2567,7 +2589,7 @@ a.login-btn:hover {
 section#home-cover .jumbotron,
 section#home-cover-2 .jumbotron {
   width: 100%;
-  height: 600px;
+  height: 650px;
   background-color: #000;
   position: relative;
   overflow: hidden;
@@ -2673,13 +2695,13 @@ div#intro .order-btn {
   color: #fff;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid tomato;
+  border: 2px solid #af7015;
   text-decoration: none;
 }
 
 div#intro .about-btn:hover,
 div#intro .order-btn:hover {
-  background: tomato;
+  background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
 }
 
 /**********Form Input Control***********/
@@ -2731,6 +2753,8 @@ div.search-food .form-control {
     width: 100%;
     border-radius: 10px;
     margin-left: 0 !important;
+    background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
+    border: 0;
   }
 
   /**Home Slide Intro 2nd Page Title**/
