@@ -115,7 +115,7 @@
     <br>
 
     <!-------------- Google Map API ---------->
-    <div id="googleMap" class="map-container">
+    <div id="googleMap" class="map-container" style="overflow: hidden !important;">
         <div id="map" style="height: 500px; width: 100%; overflow: hidden !important;"></div>
     </div>
 

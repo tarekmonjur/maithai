@@ -1,7 +1,8 @@
 @extends('frontend.layouts.app')
 
 @push('style')
-<link rel="stylesheet" href="{{asset('frontend/css/foodList.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('frontend/css/foodList.css')}}"> -->
+<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/home.css')}}">
 @endpush
 
 @section('main_content')
@@ -12,7 +13,7 @@
         <div class="dark-bg">
             <div id="intro">
                 <div id="intro-section" class="mb-4">
-                    <h5 class="intro-title text-uppercase mb-4">stock food grid combo</h5>
+                    <h5 class="intro-title food-list-intro text-uppercase mb-4">stock food grid combo</h5>
                 </div>
 
                 <div class="search-food mb-5">
@@ -29,7 +30,7 @@
 
 
     <!--------- The Search Collapse DropDown Bar For Home Carousel ------->
-    <ul class="search-dropdown-menu" style="display: none;">
+    <ul class="search-dropdown-menu-food-list" style="display: none;">
         <li class="search-item mt-2"><a href="#">
                 <div class="image">
                     <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">

@@ -295,7 +295,6 @@ div.shopping-cart{
 
 /**-- Shopping Cart Header --**/
 div.cart-header{
-    background: rgb(175,112,21);
     background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
     margin: 0;
     padding: 1rem;
@@ -416,7 +415,7 @@ div.cart-content-empty div.shopping-title-empty p{
 
 /** Shopping Cart Body 2nd Template **/
 /* 2. Bag With Cart items */
-.cart-content {
+div.cart-content {
     overflow: scroll;
     scroll-behavior: smooth;
     height: 83%;
@@ -529,7 +528,7 @@ input.special-go:hover{
 }
 
 .place-order-footer .svg-inline--fa.fa-cart-arrow-down.fa-w-18,
-.place-order-footer fa-cart-arrow-down{
+.place-order-footer .fa-cart-arrow-down{
    font-size: 18px;
 }
 
@@ -553,7 +552,7 @@ section#home-cover .jumbotron::after{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: url('../img/home_thai.jpg') no-repeat fixed;
+	background: url('../assets/img/home_thai.jpg') no-repeat fixed;
 	background-size: cover;
 	opacity: .3;
 	animation: asad 25s linear infinite;
@@ -565,7 +564,7 @@ section#home-cover-2 .jumbotron::after{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: url('../img/coverA.jpg') no-repeat fixed;
+	background: url('../assets/img/coverA.jpg') no-repeat fixed;
 	background-size: cover;
 	opacity: .3;
 	animation: asad 25s linear infinite;
@@ -792,7 +791,7 @@ a.mr-5.carousel-control-next {
 
 /*************SPECIAL FOOD MENU*****************/
 section.special-food-menu{
-    background: url('../img/coverB.jpg') no-repeat center center fixed;
+    background: url('../assets/img/coverB.jpg') no-repeat center center fixed;
     background-size: cover;
     padding: 0;
 }
@@ -1326,6 +1325,46 @@ div.dotted-dateline{
     section.stickyHeader{
         display: none !important;
     }
+
+    /** Manage the Shopping cart Items list **/
+    div.content-title.items-nav div{
+        width: unset !important;
+    }
+
+    div.delivery-counter, 
+    div.delivery-img,
+    div.delivery-name, 
+    div.delivery-price{
+        width: unset !important;
+        margin-left: -20px;
+    }
+    div.delivery-name h6 {
+        font-size: 14px;
+    }
+    div.delivery-price span {
+        font-size: 14px;
+    }
+    div.cart-content div.delivery-img img {
+        width: 50px;
+        height: 50px;
+    }
+    div.content-title, div.content-items-list{
+        display: flex;
+        flex-direction: column;
+    }
+    div.delivery-price {
+        align-self: flex-end;
+    }
+    div.delivery-counter {
+        align-self: flex-start;
+    }
+    div.delivery-img{
+        align-self: flex-start;
+    }
+    div.delivery-name {
+        align-self: center;
+    }
+
 }
 
 /**The Median Mobile Screens Width About Search Bar Relative Items Section*/
@@ -1389,6 +1428,16 @@ div.dotted-dateline{
     div.food-menu-list{
         margin-top: 4rem;
         bottom: 2rem;
+    }
+    div.delivery-name h6 {
+        font-size: 13px;
+    }
+    div.delivery-price span {
+        font-size: 13px;
+    }
+    div.cart-content div.delivery-img img {
+        width: 40px;
+        height: 40px;
     }
 }
 

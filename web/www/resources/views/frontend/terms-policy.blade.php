@@ -1,16 +1,16 @@
 @extends('frontend.layouts.app')
 
 @push('style')
-    <link rel="stylesheet" href="{{asset('frontend/css/termsPolicy.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/policy.css')}}">
 @endpush
 
 @section('main_content')
 
     <!------------- SECTION of Banners Page ----------------->
-    <section id="about-cover">
+    <section id="policy-cover">
         <div class="jumbotron">
-            <div class="about-text-section">
-                <div class="about-cover text-light text-capitalize text-center">
+            <div class="policy-text-section">
+                <div class="policy-cover text-light text-capitalize text-center">
                     <h1 class="display-3">terms<br>policy</h1>
                     <p>MaiThai is an online portal.</p>
                     <p>Ordering Food & Delivery from restaurants of choice.</p>
@@ -24,7 +24,7 @@
     </section>
 
     <!--------------- All Terms and The Policies ---------------->
-    <section id="about-content" class="mb-5 mt-5">
+    <section id="policy-content" class="mb-5 mt-5">
         <div class="container text-center">
             <h3 class="text-capitalize text-center mb-4">General</h3>
 

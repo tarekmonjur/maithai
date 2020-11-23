@@ -1,0 +1,439 @@
+/**** Using for common features ****/
+@use "app";
+
+/*************Section Of Page Banner**************/
+/*--------Landing Page--------*/
+section#home-cover, section#home-cover-2{
+    .jumbotron{
+        width: 100%;
+	    height: 650px;
+	    background-color: app.$common_dark;
+	    position: relative;
+        overflow: hidden;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+section#home-cover{
+    .jumbotron{
+        &::after{
+            content: "";
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        width: 100%;
+	        height: 100%;
+	        background: url('images/home_thai.jpg') no-repeat fixed;
+	        background-size: cover;
+	        opacity: .3;
+	        animation: asad 25s linear infinite;
+        }
+    }
+}
+
+section#home-cover-2{
+    .jumbotron{
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/coverA.jpg') no-repeat fixed;
+            background-size: cover;
+            opacity: .3;
+            animation: asad 25s linear infinite;
+        }
+    }
+}
+
+@keyframes asad{
+	50%{
+		transform: scale(2);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.dark-bg{
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width: 100%;
+	max-width: 800px;
+	text-align: center;
+	padding: 0 40px;
+	box-sizing: border-box;
+    overflow: unset;
+}
+
+div.carousel.slide{
+    &:hover{
+        & > a.carousel-control-prev.home-slide-prev,
+        & > a.carousel-control-next.home-slide-next{
+            visibility: visible;
+        }
+    }
+}
+
+div#intro-section{
+    .intro-title{
+        color: app.$common_white;
+        font-family: app.$lato_google;
+        font-size: 56px;
+        font-weight: 600;
+        /* text-transform: uppercase; */
+        padding-bottom: 0;
+    }
+
+    .intro-title{
+        small.small{
+            color: app.$maithai_common;
+        }
+    }
+    .intro-info{
+        color: app.$common_white;
+    }
+
+}
+
+div#intro{
+    .about-btn, .order-btn{
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 12px 32px;
+        border-radius: 50px;
+        transition: 0.5s;
+        line-height: 1;
+        color: app.$common_white;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+        border: 2px solid app.$card_border;
+        text-decoration: none;
+
+        &:hover{
+            background: app.$maithai_gradient;
+        }
+    }
+}
+
+/**********Form Input Control***********/
+div.search-food{
+    .form-control{
+        display: inline !important;
+        width: 60% !important;
+        font-size: 18px;
+        border-radius: 0 !important;
+        border: none !important;
+        outline: none !important;
+        height: 43px;
+    }
+}
+
+
+/**The Media Quries for Mobile View**/
+/**iPhone 6,7,8 and Upper Screen Confortable**/
+@media only screen and (max-width: 720px){
+    
+    section.food-list-home-banner{
+        max-height: 44vh;
+    }
+    section.food-list-home-banner{
+        .dark-bg {
+            top: 30% !important;
+        }
+    }
+     /**Home-Cover Section**/
+     div#intro-section{
+        .intro-title{
+            font-size: 50px;
+        }
+        .food-list-intro{
+            font-size: 1.8rem !important;
+        }
+    }
+    div.search-food{
+        .form-control{
+            width: 100% !important;
+            margin-bottom: 1rem;
+        }
+
+        .btn-custom{
+            width: 100%;
+        }
+    }
+    div#intro{
+        .about-btn,
+        .order-btn{
+            width: 100%;
+            border-radius: 10px;
+            margin-left: 0 !important;
+            background: app.$maithai_gradient;
+            border: 0;
+        }
+    }
+    
+    /**Home Slide Intro 2nd Page Title**/
+    .home-slide-intro-2,
+    .home-slide-intro-3{
+        font-size: 30px !important;
+    }
+}
+
+@media only screen and (max-width: 1366px){
+    section.food-list-home-banner{
+        .dark-bg{
+            top: 25%;
+        }
+    }
+}
+
+/*******The Search Items DropDown Controling******/
+.search-dropdown-menu {
+    position: absolute;
+/*    top: 82.8rem !important;*/
+    top: 50rem !important;
+    left: 50% !important;
+/*    transform: translate(-64%, -50rem);*/
+    transform: translate(-64%, -17.2rem);
+    width: 433px !important;
+    z-index: 1000;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: app.$common_white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+/*    border: 1px solid rgba(0,0,0,.15);*/
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    max-height: 330px;
+    overflow: auto;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/**DropDown Search Menu's Image, Name, Price**/
+img.search-bar-image{
+    width: 50px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+ul.search-dropdown-menu{
+    li.search-item{
+        a{
+            display: inline-flex;
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    li.search-item{
+        .name{
+            color: black;
+            font-size: 18px;
+        }
+    }
+
+    li.search-item{
+        .price{
+            color: red;
+            font-weight: bold;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 720px){
+    .search-dropdown-menu {
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -17rem) !important;
+    }
+}
+
+@media only screen and (max-width: 530px){
+    .search-dropdown-menu{
+        width: 81% !important;
+    }
+    .search-dropdown-menu-food-list{
+        width: 79% !important;
+    }
+}
+
+/***iPhone 6,7,8 type Mobiles Screen***/
+@media only screen and (max-width: 380px){
+    .search-dropdown-menu{
+        top: 54rem !important;
+        left: 50rem !important;
+        transform: translate(-47.5rem, -16.2rem) !important;
+        width: 79% !important;
+    }
+    
+    .search-dropdown-menu-food-list{
+        width: 79% !important;
+    }
+}
+
+/***iPad Pro type tab Screen***/
+@media only screen and (max-width: 1024px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -15.8rem);
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .search-dropdown-menu{
+        transform: translate(-64%, -17rem);
+    }
+}
+
+/*****Galaxy Fold New Smallest Screen Ever****/
+@media only screen and (max-width: 280px){
+    .search-dropdown-menu{
+        transform: translate(-48rem, -13.8rem) !important;
+        width: 80% !important;
+    }
+}
+
+/**Home Sections Slider control Buttons**/
+a.carousel-control-prev.home-slide-prev {
+    left: 10%;
+    visibility: hidden;
+}
+a.carousel-control-next.home-slide-next {
+    right: 10%;
+    visibility: hidden;
+}
+
+
+.slideGellary.hi-slide {
+    margin-top: 3rem;
+}
+
+.hi-slide {
+    position: relative;
+    /* width: 754px;
+    height: 292px; */
+    /* width: 1000px;
+    height: 440px; */
+    width: 900px;
+    height: 380px;
+    margin: 115px auto 0;
+}
+
+.hi-slide{
+    .hi-next,
+    .hi-prev {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        border-radius: 50px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #d2232a;
+        color: #fff;
+        transition: all 0.6s;
+        font-size: 20px;
+        font-weight: bold;
+
+        &:hover{
+            opacity: .9;
+            color: #fff;
+        }
+    }
+
+    .hi-prev {
+        left: -20rem;
+    }
+    .hi-next {
+        right: -20rem;
+    }
+
+    & > {
+        ul {
+            list-style: none;
+            position: relative;
+            width: 754px;
+            height: 292px;
+            margin: 0;
+            padding: 0;
+
+            & > {
+                li{
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 0;
+                    left: 377px;
+                    top: 146px;
+                    width: 0;
+                    height: 0;
+                    margin: 0;
+                    padding: 0;
+                    border: 3px solid #fff;
+                    background-color: #333;
+                    cursor: pointer;
+
+
+                    & > {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            background-position: center;
+                        }
+                    }   
+                }
+            }
+        }
+    }   
+}
+
+@media only screen and (max-width: 1366px){
+    .hi-slide{
+        .hi-prev {
+            left: -8rem;
+        }
+        .hi-next {
+            right: -8rem;
+        }
+
+        .hi-next, .hi-prev{
+            width: 30px;
+            height: 30px;
+            font-size: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .hi-slide{
+        .hi-next{
+            right: 20rem !important;
+        }
+        .hi-prev {
+            left: 20rem !important;
+        }
+        .hi-next, .hi-prev{
+            top: 90% !important;
+            width: 30px !important;
+            height: 30px !important;
+            font-size: 10px !important;
+        }
+    }
+}

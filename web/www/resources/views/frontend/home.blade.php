@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @push('style')
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/gellarySlider.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/home.css')}}">
 @endpush
 
 @section('main_content')
@@ -20,13 +20,17 @@
                     <div class="dark-bg">
                         <div id="intro">
                             <div id="intro-section" class="mb-4">
-                                <h1 class="intro-title text-uppercase mb-4">
+                                <!-- <h1 class="intro-title text-uppercase mb-4">
                                     mai thai
                                     <br>
                                     <span>
-                                            <small class="small">kitchen</small>
-                                        </span>
-                                </h1>
+                                        <small class="small">kitchen</small>
+                                    </span>
+                                </h1> -->
+
+                                 <!-- MaiThai Kitchen Logo -->
+                                 <img class="mb-4 img img-fluid" src="{{asset('frontend/logo/mai-thai-home-logo.png')}}" alt="MaiThai Kitchen" height="150" width="170">
+
                                 <h5 class="intro-info text-capitalize mb-3">find the best food, cafes & cuisine.
                                 </h5>
                             </div>
@@ -41,8 +45,10 @@
                                 </button>
                             </div>
 
+
                             <a href="aboutUs.html" class="about-btn mt-4">About The Restaurant</a>
                             <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            <a href="contactUs.html" class="order-btn mt-4 ml-3">Find Us!</a>
                         </div>
                     </div>
                 </div>
@@ -56,19 +62,19 @@
                     <div class="dark-bg">
                         <div id="intro">
                             <div id="intro-section" class="mb-4">
-                                <h1 class="intro-title home-slide-intro-2 mb-4"
-                                    style="font-weight: 500; font-size: 50px;">
-                                        <span style="font-weight: lighter;">
-                                            "Short of screaming-hot Thai food,
-                                        </span>
+                                <h1 class="intro-title home-slide-intro-2 mb-4" style="font-weight: 500; font-size: 50px;">
+                                    <span style="font-weight: lighter;">
+                                        "Short of screaming-hot Thai food,
+                                    </span>
                                     <span class="text-light" style="font-weight: bold;">
-                                            everything can be suitable for kids too"
-                                        </span>
+                                        everything can be suitable for kids too"
+                                    </span>
                                 </h1>
                             </div>
 
                             <a href="aboutUs.html" class="about-btn mt-4">About The Restaurant</a>
                             <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            <a href="contactUs.html" class="order-btn mt-4 ml-3">Find Us!</a>
                         </div>
                     </div>
                 </div>
@@ -181,12 +187,11 @@
     <div class="mt-5 row">
         <!-- Aside LeftSide -->
         <aside class="col-md-6 text-center">
-            <div class="card" style="width: 33rem; min-height: 380px;">
+            <div class="card welcome-card-home" style="width: 33rem; min-height: 380px;">
                 <div class="card-body">
                     <h1 class="card-title text-capitalize m-4" style="color: tomato;">welcome to MAITHAI</h1>
                     <h6 class="card-subtitle mb-2">Get Best, Feel Happy!</h6>
-                    <p class="card-text text-muted"
-                       style="font-size: 13px; word-spacing: 2px; letter-spacing: 0.5px; ">Mai Thai Delivers
+                    <p class="card-text text-muted" style="font-size: 13px; word-spacing: 2px; letter-spacing: 0.5px; ">Mai Thai Delivers
                         Deliciously Authentic Thai Mai Kitchen & an atmosphere that is friendly and fun for the
                         whole family. Our authentic Thai Mai Menu balances elements of sweet and sour, salt and
                         spice to bring the best Thai Flavours
@@ -213,8 +218,7 @@
 <section class="container mt-5">
     <div class="text-center mb-4 d-block">
         <h1 style="color: tomato; text-align: center;" class="text-shadow our-food-style-title">Our Food Styles</h1>
-        <div class="underline mt-2"
-             style="border-bottom: 4px solid tomato; width: 5rem; position: absolute; left: 50%; transform: translate(-50%, 0); ">
+        <div class="underline mt-2" style="border-bottom: 4px solid tomato; width: 5rem; position: absolute; left: 50%; transform: translate(-50%, 0); ">
         </div>
     </div>
 
@@ -222,7 +226,7 @@
     <div class="row mb-5 mt-5 top-sales-food">
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma7.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">big 8</h5>
@@ -241,7 +245,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma8.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">triple treat meal</h5>
@@ -259,7 +263,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma9.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Rice Combo</h5>
@@ -281,7 +285,7 @@
     <div class="row mb-5">
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma10.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Zinger Combo</h5>
@@ -300,7 +304,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma5.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Zing N Fries Meal</h5>
@@ -318,7 +322,7 @@
         <!-- COL -->
         <div class="col-md-4">
             <div class="card special-food-card" style="width: 20rem;">
-                <div class="cart-top-banner"></div>
+                <!-- <div class="cart-top-banner"></div> -->
                 <img src="{{asset('frontend/img/gellary/ma6.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Stay at Home Bucket</h5>
@@ -342,16 +346,14 @@
 <section class="mt-5 mb-5">
     <div class="text-center mb-5 d-block">
         <h1 style="color: tomato; text-align: center;" class="text-shadow food-menu-title">Food Menu</h1>
-        <div class="underline mt-2"
-             style="border-bottom: 4px solid tomato; width: 5rem; position: absolute; left: 50%; transform: translate(-50%, 0); ">
+        <div class="underline mt-2" style="border-bottom: 4px solid tomato; width: 5rem; position: absolute; left: 50%; transform: translate(-50%, 0); ">
         </div>
     </div>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner container">
             <div class="row carousel-item food-menu-carousel active">
                 <div class="col-md-6 carousel-image">
-                    <img src="{{asset('frontend/img/gellary/ma8.jpg')}}"
-                         class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
+                    <img src="{{asset('frontend/img/gellary/ma8.jpg')}}" class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
                     <h1 class="text-uppercase display-2 text-shadow">Indian</h1>
@@ -377,8 +379,7 @@
             <!-- Fast Food List -->
             <div class="row carousel-item food-menu-carousel fast-food-row">
                 <div class="col-md-6 carousel-image">
-                    <img src="{{asset('frontend/img/gellary/ma9.jpg')}}"
-                         class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
+                    <img src="{{asset('frontend/img/gellary/ma9.jpg')}}" class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
                     <h1 class="text-uppercase display-2 text-shadow">Fast</h1>
@@ -404,8 +405,7 @@
             <!-- Junk Food List -->
             <div class="row carousel-item food-menu-carousel">
                 <div class="col-md-6 carousel-image">
-                    <img src="{{asset('frontend/img/gellary/ma7.jpg')}}"
-                         class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
+                    <img src="{{asset('frontend/img/gellary/ma7.jpg')}}" class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
                     <h1 class="text-uppercase display-2 text-shadow">Thai</h1>
@@ -432,8 +432,7 @@
             <!-- Chineese Food List -->
             <div class="row carousel-item fast-food-row food-menu-carousel">
                 <div class="col-md-6 carousel-image">
-                    <img src="{{asset('frontend/img/gellary/ma6.jpg')}}"
-                         class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
+                    <img src="{{asset('frontend/img/gellary/ma6.jpg')}}" class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
                     <h1 class="text-uppercase display-2 text-shadow">Chinese</h1>
@@ -460,8 +459,7 @@
             <!-- Italian Food List -->
             <div class="row carousel-item fast-food-row food-menu-carousel">
                 <div class="col-md-6 carousel-image">
-                    <img src="{{asset('frontend/img/gellary/ma5.jpg')}}"
-                         class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
+                    <img src="{{asset('frontend/img/gellary/ma5.jpg')}}" class="d-block img img-fluid img-offer food-image img-thumbnail" alt="...">
                 </div>
                 <div class="col-md-6 float-right text-dark food-menu-list">
                     <h1 class="text-uppercase display-2 text-shadow">Italian</h1>
@@ -486,13 +484,11 @@
             </div>
         </div>
         <!-- The Arrow Buttons For Next Previous -->
-        <a class="ml-5 carousel-control-prev menu-btn" href="#carouselExampleControls" role="button"
-           data-slide="prev">
+        <a class="ml-5 carousel-control-prev menu-btn" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="mr-5 carousel-control-next menu-btn" href="#carouselExampleControls" role="button"
-           data-slide="next">
+        <a class="mr-5 carousel-control-next menu-btn" href="#carouselExampleControls" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
@@ -604,13 +600,11 @@
                 </div>
             </div>
             <!-- Carousel Buttons To Control -->
-            <a class="carousel-control-prev offer-slide" href="#carouselExampleIndicators" role="button"
-               data-slide="prev">
+            <a class="carousel-control-prev offer-slide" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next offer-slide" href="#carouselExampleIndicators" role="button"
-               data-slide="next">
+            <a class="carousel-control-next offer-slide" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -626,8 +620,7 @@
             <div class="col-md-12 text-center mb-5 d-block">
                 <h2 class="text-capitalize contact-us-title">contact us</h2>
                 <p class="text-capitalize">for any queries or concerns</p>
-                <div class="underline mt-3 m-auto"
-                     style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>
+                <div class="underline mt-3 m-auto" style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>
             </div>
         </div>
         <!-- 2nd Row -->
@@ -673,8 +666,7 @@
             <div class="col-md-12 text-center mb-5 d-block" style="margin-bottom: 0 !important">
                 <h2 class="text-capitalize gellary-title">Gallery</h2>
                 <p class="text-capitalize">check gallery for our most popular dishes</p>
-                <div class="underline mt-3 m-auto"
-                     style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>
+                <div class="underline mt-3 m-auto" style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>
             </div>
         </div>
         <!-- 2nd Row  The Popular Gellary Section of here-->
@@ -758,10 +750,10 @@
                     <!-- Buttons For Android, Apple, Microsoft -->
                     <div class="d-flex mt-4">
                         <a href="https://apps.apple.com/in/app/mai-thai/id1524480953">
-                        <img src="{{asset('frontend/logo/apple-badge.png')}}" alt="Download on app store" class="img img-fluid"></a>
+                            <img src="{{asset('frontend/logo/apple-badge.png')}}" alt="Download on app store" class="img img-fluid"></a>
 
                         <a href="https://play.google.com/store/apps/details?id=com.eposhybrid.maithai&gl=GB" class="ml-4">
-                        <img src="{{asset('frontend/logo/google-play-badge.png')}}" alt="Get it on Google Play" class="img img-fluid"></a>
+                            <img src="{{asset('frontend/logo/google-play-badge.png')}}" alt="Get it on Google Play" class="img img-fluid"></a>
 
                         <!-- <a href="#" class="ml-4"><img src="assets/logo/windows-badge.png"
                                 alt="Download from windows phone store" class="img img-fluid"></a> -->
@@ -782,6 +774,6 @@
 <script type="text/javascript" src="{{asset('frontend/js/jquery.hislide.js')}}"></script>
 
 <script>
-  $('.slideGellary').hiSlide();
+    $('.slideGellary').hiSlide();
 </script>
 @endpush

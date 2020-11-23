@@ -20,3 +20,4 @@ web/www/yarn-error.log
 /theme/.DS_Store
 **/.DS_Store
 theme/.vscode
+web/www/public/frontend/css/
