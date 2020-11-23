@@ -28,10 +28,10 @@ class CategoryController extends BackendController
 
     public function index()
     {
-        $data = $this->setTitle('list')->init();
-        $data['scripts'] = ['categories'];
-        $data['styles'] = [];
-        return view('backend.layouts.main')->with($data);
+        $this->setTitle();
+        $this->data['scripts'] = ['category'];
+        $this->data['styles'] = [];
+        return view('backend.layouts.main')->with($this->data);
     }
 
 }

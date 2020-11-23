@@ -15,5 +15,6 @@ return [
 
     'previous' => '&laquo; Previous',
     'next' => 'Next &raquo;',
+    'info' => 'show :record record from :total',
 
 ];

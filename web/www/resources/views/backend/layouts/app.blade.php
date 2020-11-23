@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('backend/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -60,6 +61,10 @@ to get the desired effect
 <script src="{{asset('backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE -->
 <script src="{{asset('backend/js/adminlte.js')}}"></script>
+<script>
+    window._baseURL = '{{ url('/') }}';
+    window._assetURL = '{{ asset('/backend') }}';
+</script>
 
 @stack('script')
 

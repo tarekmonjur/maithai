@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
-$route_base_path = 'api';
-/********** ...... Category API ....... *****************/
-Route::prefix('/categories')->namespace('Api')->group(function() use ($route_base_path){
-    Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
+
+Route::namespace('Api')->group(function(){
+    $route_base_path = 'api';
+
+    /********** ...... Localization API ....... *****************/
+    Route::get('/lang', 'ApiController@lang')->name($route_base_path.'.lang');
+
+    /********** ...... Category API ....... *****************/
+    Route::prefix('/categories')->group(function() use ($route_base_path){
+        Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
+    });
+
 });

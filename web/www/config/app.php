@@ -6,9 +6,9 @@ return [
 
     'backend_home' => env('BACKEND_HOME', 'pos'),
 
-    'backend_is_paginate' => env('BACKEND_IS_PAGINATE', false),
+    'backend_is_paginate' => env('BACKEND_IS_PAGINATE', true),
 
-    'backend_per_page' => env('BACKEND_PER_PAGE', 25),
+    'backend_per_page' => env('BACKEND_PER_PAGE', 3),
 
     /*
     |--------------------------------------------------------------------------

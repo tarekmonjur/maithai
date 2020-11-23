@@ -1,4 +1,9 @@
 <?php
+/**
+ * CategoryService
+ * @author : Tarek Monjur
+ * @email : tarekmonjur@gmail.com
+ */
 
 namespace App\Http\Services;
 
@@ -6,48 +11,27 @@ use App\Models\Category;
 
 trait CategoryService
 {
-    private $title;
+    use CommonService;
+
+    private $trans_prefix = 'category.';
+    private $trans_key = 'list';
     private $columns = [
         'sl' => 100,
         'name' => 0,
+        'products_count' => 0,
         'slug' => 0,
-        'status' => 0,
+        'is_active' => 0,
         'created' => 0,
         'updated' => 0,
         'action' => 100,
     ];
     private $data = [];
 
-    protected function setTitle($key)
+    protected function initData()
     {
-        $this->title = $key;
+        $this->setTitle();
+        $this->setColumns();
         return $this;
-    }
-
-    protected function getTitle($key = null)
-    {
-        $key = $key ?? $this->title;
-        $title = trans('backend/category.'.$key);
-        $this->data['title'] = $title;
-        return $title;
-    }
-
-    protected function init()
-    {
-        $this->getTitle();
-        $this->getColumns();
-        return $this->data;
-    }
-
-    protected function getColumns()
-    {
-        $columns = [];
-        foreach ($this->columns as $key => $value) {
-            $columns[$key]['name'] = trans('backend/category.'.$key);
-            $columns[$key]['width'] = $value;
-        }
-        $this->data['columns'] = $columns;
-        return $columns;
     }
 
     protected function getData()
@@ -65,8 +49,18 @@ trait CategoryService
 
     protected function getDataModel()
     {
-        $this->init();
-        $this->data['results'] = $this->getData()->toArray();
+        $results = $this->getData()->toArray();
+        if (config('app.backend_is_paginate')) {
+            foreach($results as $key => $result) {
+                if ($key !== 'data') {
+                    $this->data[$key] = $results[$key];
+                }
+            }
+            $this->data['results'] = $results['data'];
+        } else {
+            $this->data['results'] = $results;
+        }
+
         return $this->data;
     }
 
