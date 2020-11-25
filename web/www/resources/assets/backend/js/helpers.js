@@ -14,7 +14,8 @@ export default {
     },
     async setLang(force = false) {
         if (force || window.localStorage.getItem('lang') === null) {
-            const result = await this.makeApiRequest(`/lang`, 'GET',{force});
+            const payload = {params: {force}};
+            const result = await this.makeApiRequest(`/lang`, 'GET', payload);
             if (result.code === 200) {
                 window.localStorage.setItem('lang', JSON.stringify(result.results));
             }
@@ -47,5 +48,44 @@ export default {
             console.log(err.message);
         }
         return data;
+    },
+    getPages(data) {
+        const show_pages = [];
+        let start_pages = 0;
+        let end_pages = 0;
+        let pages = 3;
+        const total_page = data.last_page;
+        const current_page = data.current_page;
+        pages = total_page > pages ? pages : total_page;
+
+        if (current_page <= 1 || pages === total_page) {
+            start_pages = 1;
+            end_pages = pages;
+        }
+        else if (current_page === pages) {
+            start_pages = Math.ceil(pages / 2);
+            end_pages = start_pages + pages - 1;
+        }
+        else {
+            start_pages = current_page - ( current_page < pages ? pages - current_page : current_page - pages );
+            start_pages = start_pages <= 0 ? 1 : start_pages;
+            end_pages = start_pages + pages - 1;
+        }
+
+        if (start_pages <= 0) {
+            start_pages = 1;
+            end_pages = pages - 1;
+        }
+
+        if (end_pages > total_page) {
+            end_pages = total_page;
+            start_pages = end_pages - ( pages - 1);
+        }
+
+        for(start_pages; start_pages <= end_pages; start_pages++){
+            show_pages.push(start_pages);
+        }
+
+        return show_pages;
     }
 };

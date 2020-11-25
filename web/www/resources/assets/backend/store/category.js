@@ -23,58 +23,44 @@ export default {
         },
         errors: {},
         formData: {},
-        alert: null,
+        modal_id: null,
+        alert: 'abd',
         loading: false,
-        langKey: 'category',
+        lang_key: 'category',
+        buttons: {
+            add: {
+              type: 'modal',
+              modal_id: 'add',
+              link: null,
+            },
+            // add: null,
+            edit: {
+                type: 'modal',
+                modal_id: 'edit',
+                link: null,
+            },
+        },
     },
     getters: {
-        tableTitle: state => _.capitalize(state.data.title) || helpers.getLang(`${state.langKey}.list`),
+        defaultName: state => helpers.getLang(`${state.lang_key}.default`),
+        filterButtonName: state => helpers.getLang(`${state.lang_key}.filter`),
+        addButtonName: state => helpers.getLang(`${state.lang_key}.add`),
+        editButtonName: state => helpers.getLang(`${state.lang_key}.edit`),
+        saveButtonName: state => helpers.getLang(`${state.lang_key}.save`),
+        submitButtonName: state => helpers.getLang(`${state.lang_key}.submit`),
+        updateButtonName: state => helpers.getLang(`${state.lang_key}.update`),
+        tableTitle: state => _.capitalize(state.data.title) || helpers.getLang(`${state.lang_key}.list`),
         tableColumns: state => state.data.columns || [],
         tableData: state => state.data.results || [],
-        addButtonName: state => helpers.getLang(`${state.langKey}.add`),
-        filterButtonName: state => helpers.getLang(`${state.langKey}.filter`),
         nextPage: state => helpers.getLang(`pagination.next`),
+        nextPageUrl: state => state.data.next_page_url,
         previousPage: state => helpers.getLang(`pagination.previous`),
-        pageInfo: state => helpers.getLang(`pagination.info`, {'record': 123, 'total': 657575}),
-        pages: state => {
-            const show_pages = [];
-            let start_pages = 0;
-            let end_pages = 0;
-            let pages = 3;
-            const total_page = state.data.last_page;
-            const current_page = state.data.current_page;
-            pages = total_page > pages ? pages : total_page;
-
-            if (current_page <= 1 || pages === total_page) {
-                start_pages = 1;
-                end_pages = pages;
-            }
-            else if (current_page === pages) {
-                start_pages = Math.ceil(pages / 2);
-                end_pages = start_pages + pages - 1;
-            }
-            else {
-                start_pages = current_page - ( current_page < pages ? pages - current_page : current_page - pages );
-                start_pages = start_pages <= 0 ? 1 : start_pages;
-                end_pages = start_pages + pages - 1;
-            }
-
-            if (start_pages <= 0) {
-                start_pages = 1;
-                end_pages = pages - 1;
-            }
-
-            if (end_pages > total_page) {
-                end_pages = total_page;
-                start_pages = end_pages - ( pages - 1);
-            }
-
-            for(start_pages; start_pages <= end_pages; start_pages++){
-                show_pages.push(start_pages);
-            }
-
-            return show_pages;
-        }
+        previousPageUrl: state => state.data.prev_page_url,
+        pageInfo: state => helpers.getLang(`pagination.info`, {
+            'record': state.data.per_page,
+            'total': state.data.total
+        }),
+        getPages: state => helpers.getPages(state.data),
     },
     actions: {
         async init(context) {
@@ -83,6 +69,9 @@ export default {
         },
         async getData(context, payload) {
             await Methods.getDataAction(context, payload);
+        },
+        async addButton(context, modal_id) {
+            context.commit('setModalId', modal_id);
         }
     },
     mutations: {
@@ -91,6 +80,9 @@ export default {
         },
         setAlert(state, data) {
             state.alert = data;
+        },
+        setModalId(state, modal_id) {
+            state.modal_id = modal_id;
         }
     }
 }

@@ -17,7 +17,7 @@
 import {mapGetters} from "vuex";
 
 export default {
-        name: "tableBodyComponent",
+        name: "table-body.component",
         computed: {
             ...mapGetters([
                 'tableColumns',

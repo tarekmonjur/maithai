@@ -1,5 +1,5 @@
 <template>
-    <div class="collapse row justify-content-center" id="collapseExample">
+    <div class="collapse row justify-content-center" id="tableFilter">
         <div class="card col-10">
             <form action="">
                 <div class="form-row">

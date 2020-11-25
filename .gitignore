@@ -20,4 +20,7 @@ web/www/yarn-error.log
 /theme/.DS_Store
 **/.DS_Store
 theme/.vscode
+web/www/public/mix-manifest.json
 web/www/public/frontend/css/
+web/www/public/backend/css/style.css
+web/www/public/backend/js/category.js
