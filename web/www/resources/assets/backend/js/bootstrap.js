@@ -1,7 +1,15 @@
 window.Vue = require('vue');
 window.Vuex = require('vuex');
 window._ = require('lodash');
-window.$ = window.jQuery = require('./jquery.min');
+
+if (window.jQuery) {
+    window.$ = window.jQuery;
+} else if (window.$) {
+    window.jQuery = window.$;
+} else {
+    window.$ = window.jQuery = require('./jquery.min');
+}
+
 window.baseURL = window._baseURL || '';
 window.assetURL = window._assetURL || '';
 window.apiPrefix = '/api'
@@ -10,7 +18,9 @@ window.axios = require('axios');
 window.axios.defaults.baseURL = baseURL+apiPrefix;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('access_token');
-window.axios.defaults.validateStatus = function (status) { return status < 599; };
+window.axios.defaults.validateStatus = function (status) {
+    return status < 599;
+};
 
 (function(){
     window.heights = {};
@@ -33,6 +43,14 @@ window.axios.defaults.validateStatus = function (status) { return status < 599; 
 })();
 
 
+// const devtools = {
+//     install(app) {
+//         if (process.env.NODE_ENV === 'development' && window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
+//             window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app;
+//         }
+//     },
+// };
+// window.devtools = devtools;
 
 // let token = document.head.querySelector('meta[name="csrf-token"]');
 //

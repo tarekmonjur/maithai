@@ -6,6 +6,7 @@ use App\Http\Services\CommonService;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -54,6 +55,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+//        dd($exception->getMessage(), $this->isHttpException($exception) ? $exception->getStatusCode() : 500);
         return parent::render($request, $exception);
     }
 
@@ -69,5 +71,22 @@ class Handler extends ExceptionHandler
         return $request->expectsJson()
             ? $this->jsonResponse(null, $exception->getMessage().'('.$exception->guards()[0].')', 'error', 401)
             : redirect()->guest($exception->redirectTo() ?? route('login'));
+    }
+
+    /**
+     * Convert a validation exception into a JSON response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Validation\ValidationException  $exception
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function invalidJson($request, ValidationException $exception)
+    {
+        return $this->jsonResponse(
+            $exception->errors(),
+            trans('validation.invalid') ?: $exception->getMessage(),
+            'error',
+            $exception->status
+        );
     }
 }

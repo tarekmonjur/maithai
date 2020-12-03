@@ -8,6 +8,14 @@
   max-width: 30% !important;
 }
 
+button {
+  width: auto !important;
+}
+
+.close:hover {
+  background-color: transparent !important;
+}
+
 /*btn theme*/
 
 .btn-theme {
@@ -63,16 +71,17 @@
   box-shadow: none;
 }
 
-#main_content .card .card-body .card .input-group-text {
-  min-width: 160px;
-}
-
 #main_content .card .card-body .card > * input {
   border: 1px solid #be9653;
   height: calc(2rem + 1px);
 }
 
 #main_content .card .card-body .card > * select {
+  border: 1px solid #be9653;
+  height: calc(2rem + 1px);
+}
+
+#main_content .card .card-body .card > * select > option {
   color: #ffffff;
   background-color: #be9653;
 }
@@ -101,6 +110,35 @@
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
-  background: lightgray;
+}
+
+#main_content .card .card-body .actions img {
+  width: 30px;
+}
+
+#main_content #calendar-div {
+  background-color: transparent !important;
+}
+
+#main_content #calendar-div > div {
+  border: none;
+  padding: 0px;
+}
+
+#main_content .datepicker {
+  padding: 0px;
+  border: 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+#main_content .datepicker .input {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #be9653;
+  height: calc(1.9rem + 1px) !important;
+  padding: 12px 10px 10px 35px !important;
+}
+
+#main_content .datepicker svg {
+  top: 7px !important;
 }
 

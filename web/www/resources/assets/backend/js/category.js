@@ -1,14 +1,25 @@
 require('./bootstrap');
 import helpers from './helpers';
-import MainContentComponent from './../components/category.component';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import MainContentComponent from './../components/category/category.component';
 import categoryStore from './../store/category';
 
 const store = Vuex.createStore(categoryStore);
 const app = Vue.createApp(MainContentComponent, {helpers});
+// app.use(window.devtools);
+const options = {
+    confirmButtonColor: '#41b882',
+    cancelButtonColor: '#ff7674',
+};
+app.use(VueSweetalert2, options);
 app.mixin({
     methods: {
-        ...helpers
+        ...helpers,
     }
 });
+
 app.use(store);
 app.mount('#main_content');
+
+
