@@ -230,11 +230,11 @@
                 <img src="{{asset('frontend/img/gellary/ma7.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">big 8</h5>
-                    <p class="text-danger mb-2 font-weight-bold">$800.00</p>
+                    <!-- <p class="text-danger mb-2 font-weight-bold">$800.00</p>
                     <p class="text-muted mb-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugit blanditiis libero
                         debitis!
-                    </p>
+                    </p> -->
                     <a href="#" class="btn btn-custom">
                         <i class="fas fa-plus-circle"></i>
                         <span class="text-capitalize">add cart</span>
@@ -249,10 +249,10 @@
                 <img src="{{asset('frontend/img/gellary/ma8.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">triple treat meal</h5>
-                    <p class="text-danger mb-2 font-weight-bold">$999.00</p>
+                    <!-- <p class="text-danger mb-2 font-weight-bold">$999.00</p>
                     <p class="text-muted mb-2">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum omnis id, ut cumque.
-                    </p>
+                    </p> -->
                     <a href="#" class="btn btn-custom">
                         <i class="fas fa-plus-circle"></i>
                         <span class="text-capitalize">add cart</span>
@@ -267,11 +267,11 @@
                 <img src="{{asset('frontend/img/gellary/ma9.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Rice Combo</h5>
-                    <p class="text-danger mb-2 font-weight-bold">$899.00</p>
+                    <!-- <p class="text-danger mb-2 font-weight-bold">$899.00</p>
                     <p class="text-muted mb-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente tenetur repellendus
                         necessitatibus.
-                    </p>
+                    </p> -->
                     <a href="#" class="btn btn-custom">
                         <i class="fas fa-plus-circle"></i>
                         <span class="text-capitalize">add cart</span>
@@ -289,11 +289,11 @@
                 <img src="{{asset('frontend/img/gellary/ma10.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Buddy Zinger Combo</h5>
-                    <p class="text-danger mb-2 font-weight-bold">$800.00</p>
+                    <!-- <p class="text-danger mb-2 font-weight-bold">$800.00</p>
                     <p class="text-muted mb-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugit blanditiis libero
                         debitis!
-                    </p>
+                    </p> -->
                     <a href="#" class="btn btn-custom">
                         <i class="fas fa-plus-circle"></i>
                         <span class="text-capitalize">add cart</span>
@@ -308,10 +308,10 @@
                 <img src="{{asset('frontend/img/gellary/ma5.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Zing N Fries Meal</h5>
-                    <p class="text-danger mb-2 font-weight-bold">$999.00</p>
+                    <!-- <p class="text-danger mb-2 font-weight-bold">$999.00</p>
                     <p class="text-muted mb-2">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum omnis id, ut cumque.
-                    </p>
+                    </p> -->
                     <a href="#" class="btn btn-custom">
                         <i class="fas fa-plus-circle"></i>
                         <span class="text-capitalize">add cart</span>
@@ -326,11 +326,11 @@
                 <img src="{{asset('frontend/img/gellary/ma6.jpg')}}" class="card-img-top cart-img food-style-cart" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase font-weight-bold">Stay at Home Bucket</h5>
-                    <p class="text-danger mb-2 font-weight-bold">$899.00</p>
+                    <!-- <p class="text-danger mb-2 font-weight-bold">$899.00</p>
                     <p class="text-muted mb-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente tenetur repellendus
                         necessitatibus.
-                    </p>
+                    </p> -->
                     <a href="#" class="btn btn-custom">
                         <i class="fas fa-plus-circle"></i>
                         <span class="text-capitalize">add cart</span>

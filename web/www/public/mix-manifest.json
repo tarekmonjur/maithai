@@ -2,7 +2,7 @@
     "/backend/js/category.js": "/backend/js/category.js",
     "/backend/css/style.css": "/backend/css/style.css",
     "/frontend/css/app.css": "/frontend/css/app.css",
+    "/frontend/css/home.css": "/frontend/css/home.css",
     "/frontend/css/about.css": "/frontend/css/about.css",
-    "/frontend/css/policy.css": "/frontend/css/policy.css",
-    "/frontend/css/home.css": "/frontend/css/home.css"
+    "/frontend/css/policy.css": "/frontend/css/policy.css"
 }

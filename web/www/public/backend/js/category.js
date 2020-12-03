@@ -45100,7 +45100,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/macbookpro/Devbox/maithai/web/www/resources/assets/backend/js/category.js */"./resources/assets/backend/js/category.js");
+module.exports = __webpack_require__(/*! /Users/asadanik/Documents/Repositories/WORK/maithai/web/www/resources/assets/backend/js/category.js */"./resources/assets/backend/js/category.js");
 
 
 /***/ })
