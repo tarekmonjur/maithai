@@ -8,38 +8,7 @@
                 <div class="card-body">
                     <table-filter-component></table-filter-component>
                     <table-body-component>
-                        <tr v-for="row in tableData">
-                            <td >{{row.id}}</td>
-                            <td >{{row.name}}</td>
-                            <td >{{row.products_count}}</td>
-                            <td >{{row.slug}}</td>
-                            <td >{{helpers.isActive(row.is_active)}}</td>
-                            <td v-html="helpers.created(row)"></td>
-                            <td v-html="helpers.updated(row)"></td>
-                            <td>
-                                <div class="d-flex actions">
-                                    <div class="flex-fill">
-                                        <a v-if="buttons.edit"
-                                           :href="buttons.edit.type === 'link' ? buttons.add.link : 'javascript:void(0)'"
-                                           :data-toggle="buttons.edit.type"
-                                           :data-target="buttons.edit.type === 'modal'? '#'+buttons.edit.modal_id : false"
-                                           v-on:click.prevent="addButton()">
-                                            <img :src="this.asset('/img/pencil.png')" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="View.">
-                                            <img :src="this.asset('/img/seo.png')" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Delete.">
-                                            <img :src="this.asset('/img/trash.png')" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                        <list-component></list-component>
                     </table-body-component>
                 </div>
                 <div class="card-footer">
@@ -49,13 +18,12 @@
         </div>
     </div>
 
-    <modal-component
-        v-if="modal_id"
-        :id="modal_id">
-        <form-component></form-component>
+    <modal-component>
+        <view-component v-if="modal.id === 'view'"></view-component>
+        <form-component v-else></form-component>
     </modal-component>
 
-
+    <alert-component></alert-component>
 </template>
 
 <script>
@@ -66,24 +34,28 @@
     import TableHeaderComponent from './../common/table-header.component';
     import ModalComponent from './../common/modal.component';
     import FormComponent from './form.component';
+    import ViewComponent from './view.component';
+    import ListComponent from './list.component';
+    import AlertComponent from './../common/alert.component';
 
     export default {
         name: "MainContentComponent",
         props: ['helpers'],
         components: {
+            AlertComponent,
+            ListComponent,
+            ViewComponent,
             FormComponent,
             ModalComponent,
             TableFilterComponent,
             TableHeaderComponent,
             TableBodyComponent,
-            TablePaginationComponent
+            TablePaginationComponent,
         },
         computed: {
-            ...mapState(['buttons', 'modal_id']),
-            ...mapGetters(['tableData']),
-            modalId() {
-                return _.get(this.buttons, 'add.modal_id', null);
-            },
+            ...mapState([
+                'modal',
+            ]),
         },
         created() {
             this.$store.dispatch('init');
@@ -92,6 +64,13 @@
             console.log('mounted', this.$store.state);
         },
         methods: {
+
+        },
+        beforeUpdate() {
+            console.log('before category');
+        },
+        updated() {
+            console.log('category');
         }
     }
 </script>

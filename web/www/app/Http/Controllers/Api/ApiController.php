@@ -16,8 +16,11 @@ class ApiController extends Controller
 
     protected $guard = 'web';
 
+    protected $upload_path;
+
     public function __construct() {
         FRequest::has('guard') ? $this->guard = FRequest::input('guard') : null;
+        $this->upload_path = config('app.upload_path');
     }
 
     public function lang(Request $request)

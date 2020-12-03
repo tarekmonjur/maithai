@@ -18,7 +18,9 @@ window.axios = require('axios');
 window.axios.defaults.baseURL = baseURL+apiPrefix;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('access_token');
-window.axios.defaults.validateStatus = function (status) { return status < 599; };
+window.axios.defaults.validateStatus = function (status) {
+    return status < 599;
+};
 
 (function(){
     window.heights = {};

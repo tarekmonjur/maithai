@@ -7,6 +7,14 @@
     }
 }
 
+button {
+    width: auto!important;
+}
+
+.close:hover {
+    background-color: transparent!important;
+}
+
 $theme-color: #ffffff;
 $theme-bg-color: #dc3545;
 $theme-bg-color2: #be9653;
@@ -77,19 +85,19 @@ $btn-focus-border-color: darkred;
             .card {
                 box-shadow: none;
 
-                .input-group-text {
-                    min-width: 160px;
-                }
-
                 > * input {
                     border: 1px solid rgba($theme-bg-color2, 95);
                     height: calc(2rem + 1px);
                 }
 
                 > * select {
-                    //font-size: .8rem;
-                    color: $theme-color;
-                    background-color: $theme-bg-color2;
+                    border: 1px solid rgba($theme-bg-color2, 95);
+                    height: calc(2rem + 1px);
+                    > option {
+                        //font-size: .8rem;
+                        color: $theme-color;
+                        background-color: $theme-bg-color2;
+                    }
                 }
 
                 img {
@@ -119,11 +127,41 @@ $btn-focus-border-color: darkred;
                         th {
                             position: sticky;
                             top: -1px;
-                            background: lightgray;
                         }
                     }
                 }
             }
+
+            .actions {
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    #calendar-div {
+        background-color: transparent!important;
+
+        > div {
+            border: none;
+            padding: 0px;
+        }
+    }
+    .datepicker {
+        padding: 0px;
+        border: 0px;
+        border-radius: 0px 5px 5px 0px;
+
+        .input {
+            border-radius: 0px 5px 5px 0px;
+            border: 1px solid rgba($theme-bg-color2, 95);
+            height: calc(1.9rem + 1px) !important;
+            padding: 12px 10px 10px 35px !important;
+        }
+
+        svg {
+            top: 7px !important;
         }
     }
 }

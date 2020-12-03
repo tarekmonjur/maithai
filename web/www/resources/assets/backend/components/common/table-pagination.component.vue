@@ -36,7 +36,7 @@ export default {
     },
     methods: {
         getData(url, params = {}) {
-            this.$store.dispatch('getData', {url, params});
+            this.$store.dispatch('getListData', {url, params});
         },
     }
 }

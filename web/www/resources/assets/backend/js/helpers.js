@@ -1,15 +1,21 @@
 export default {
-    asset (path) {
+    asset(path) {
         const asset_path = window.assetURL || '';
         return asset_path + path;
     },
-    isActive (value) {
+    toSlug(value) {
+        return value.toLowerCase()
+            .replace(/-+/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9-]/g, '');
+    },
+    isActive(value) {
         return value ? 'Active' : 'Inactive';
     },
-    created (values) {
-        // return `${values.created_at} <br> ${values.created_by}`;
+    created(values) {
+        return `${values.created_at} <br> ${values.created_by}`;
     },
-    updated (values) {
+    updated(values) {
         return `${values.updated_at} <br> ${values.updated_by}`;
     },
     async setLang(force = false) {
@@ -41,6 +47,7 @@ export default {
                 params: _.get(payload, 'params', null),
                 data: _.get(payload, 'data', null),
                 responseType: 'json',
+                headers: _.get(payload, 'headers', {}),
             });
             data = result.data;
             // return data;
@@ -87,5 +94,28 @@ export default {
         }
 
         return show_pages;
-    }
+    },
+    async getDataAction(payload) {
+        const url = _.get(payload, 'url', '');
+        const params = _.get(payload, 'params', {});
+        const result = await this.makeApiRequest(url, 'GET', {params});
+        return result;
+    },
+    async postDataAction(payload) {
+        const url = _.get(payload, 'url', '');
+        const method = _.get(payload, 'method', '');
+
+        if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
+            const data = _.get(payload, 'data', {});
+            const formData = new FormData();
+            _.forEach(data, (value, key) => {
+                formData.append(key, value || '');
+            });
+            formData.delete('id');
+            _.set(payload, 'data', formData);
+        }
+        console.log(payload);
+        const result = await this.makeApiRequest(url, method, payload);
+        return result;
+    },
 };

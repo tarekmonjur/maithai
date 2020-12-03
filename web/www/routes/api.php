@@ -27,7 +27,10 @@ Route::namespace('Api')->group(function(){
 
     /********** ...... Category API ....... *****************/
     Route::prefix('/categories')->group(function() use ($route_base_path){
-        Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
+        Route::get('/','CategoryController@index')->name($route_base_path.'.categories.index');
+        Route::get('/{id_slug}','CategoryController@show')->name($route_base_path.'.categories.show');
+        Route::post('','CategoryController@store')->name($route_base_path.'.categories.store');
+        Route::put('/{id}','CategoryController@update')->name($route_base_path.'.categories.update');
     });
 
 });
