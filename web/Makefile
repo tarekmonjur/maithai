@@ -34,7 +34,7 @@ laravel-install:
 artisan:
 	docker-compose exec php-fpm bash -c "php artisan $(cmd)"
 	sudo chmod -R 775 $(CURDIR)/www/$(path)
-	sudo chown -R ${USER}:${USER} $(CURDIR)/www/$(path)
+	#sudo chown -R ${USER}:${USER} $(CURDIR)/www/$(path)
 
 permission:
 	sudo chmod -R ${num} $(CURDIR)/www/$(path)
