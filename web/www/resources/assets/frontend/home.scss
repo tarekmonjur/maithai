@@ -1,6 +1,12 @@
 /**** Using for common features ****/
 @use "app";
 
+.subcription{
+    h2 {
+        color: app.$theme-color;
+    }
+}
+
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
 section#home-cover, section#home-cover-2{
@@ -92,7 +98,7 @@ div#intro-section{
 
     .intro-title{
         small.small{
-            color: app.$maithai_common;
+            color: app.$theme-color2;
         }
     }
     .intro-info{
@@ -109,7 +115,6 @@ div#intro{
         letter-spacing: 1px;
         display: inline-block;
         padding: 12px 32px;
-        border-radius: 50px;
         transition: 0.5s;
         line-height: 1;
         color: app.$common_white;
@@ -119,7 +124,7 @@ div#intro{
         text-decoration: none;
 
         &:hover{
-            background: app.$maithai_gradient;
+            background: app.$theme-bg-gradient;
         }
     }
 }
@@ -173,9 +178,8 @@ div.search-food{
         .about-btn,
         .order-btn{
             width: 100%;
-            border-radius: 10px;
             margin-left: 0 !important;
-            background: app.$maithai_gradient;
+            background: app.$theme-bg-gradient;
             border: 0;
         }
     }
@@ -402,6 +406,19 @@ a.carousel-control-next.home-slide-next {
             }
         }
     }   
+}
+
+/** Welcome Card Home **/
+.welcome-card-home{
+    border: 0;
+    border-radius: 2px;
+    border-bottom: 2px solid #caa570;
+    width: 33rem;
+    min-height: 380px;
+
+    & h1, h6 {
+        color: app.$theme-color;
+    }
 }
 
 @media only screen and (max-width: 1366px){

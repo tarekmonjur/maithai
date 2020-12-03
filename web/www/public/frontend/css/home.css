@@ -71,21 +71,26 @@ body .jumbotron {
   border-radius: 0 !important;
 }
 
+.section-title {
+  color: #efa034;
+  text-align: center;
+}
+
 /**-----------BUTTON----------**/
 
 .btn-custom {
   font-size: 18px;
   border-radius: 0 !important;
   margin-bottom: 5.5px;
-  background: tomato !important;
+  background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%) !important;
   color: #fff;
   height: 43px;
-  border: 2px solid tomato;
+  border: 2px solid #fff;
 }
 
 .btn-custom:hover {
   background: none !important;
-  border: 2px solid tomato;
+  border: 2px solid #efa034;
 }
 
 a.bookmark-text {
@@ -123,13 +128,13 @@ a.bookmark-text:hover {
 }
 
 h3.card-title {
-  color: tomato;
+  color: #efa034;
 }
 
 /**------Text Shadow-------**/
 
 .text-shadow {
-  text-shadow: 2px 2px 5px;
+  text-shadow: 1px 1px 2px;
 }
 
 /**-------Bedge Of Notification Number------**/
@@ -213,12 +218,12 @@ header .topMenu li a:hover {
 .top-contact > div.buisness-hour > .fa-phone-alt,
 .top-contact > div.buisness-hour > .fa-shopping-cart,
 .top-contact > div.buisness-hour > .fa-clock {
-  color: #d2232a;
+  color: #efa034;
   background: #fff;
   padding: 10px;
   /* width: 10px; */
   border-radius: 100%;
-  border: 2px solid tomato;
+  border: 2px solid #efa034;
   transition: 0.5s;
   width: 40px;
   height: 40px;
@@ -269,7 +274,7 @@ div.time-table {
   background: #fff;
   padding: 7px 10px;
   border-radius: 20px;
-  border: 2px solid tomato;
+  border: 2px solid #efa034;
   font-size: 14px;
   transition: 1s ease-in-out;
 }
@@ -326,13 +331,13 @@ div.cart-bar:hover > div.cart-section {
 /**************Nav Bar***************/
 
 nav {
-  background: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
   color: #fff;
   box-shadow: 0px 1px 3px #000000c4;
 }
 
 nav li.nav-item a {
-  color: lightgray !important;
+  color: #fff !important;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: normal;
@@ -364,7 +369,7 @@ section.stickyHeader {
   background: #F5FCEB;
   right: 0;
   top: calc(110px + 30%);
-  box-shadow: 0 0 16px -1px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 16px -1px linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
   display: block;
   transition: 0.1s ease-in-out;
   overflow: unset;
@@ -683,7 +688,7 @@ input.special-go:hover {
 
 .jumbo-one .rounded-icon {
   background: #fff;
-  color: #d2232a;
+  color: #efa034;
   /* padding: 20%; */
   border-radius: 100%;
   font-size: 50px;
@@ -701,7 +706,7 @@ input.special-go:hover {
 }
 
 .jumbo-one p {
-  color: dimgray;
+  color: tomato;
   margin-top: 20px;
   text-align: center;
 }
@@ -710,14 +715,6 @@ div.col-jumbo-one {
   /*padding-left: 5rem;*/
   justify-content: center;
   margin: auto;
-}
-
-/** Welcome Card Home **/
-
-.welcome-card-home {
-  border: 0;
-  border-radius: 2px;
-  border-bottom: 2px solid #caa570;
 }
 
 /*************** FOOD MENU Food-Menu **************/
@@ -738,10 +735,15 @@ div.food-menu-list {
   margin-top: 2rem;
 }
 
+div.food-menu-list h1 {
+  color: #efa034;
+}
+
 ul.offer-list-ul {
   font-size: 14px;
   text-transform: capitalize;
   font-weight: bold;
+  color: tomato;
 }
 
 a.ml-5.carousel-control-prev,
@@ -872,7 +874,7 @@ div.rounded-contact-icon svg.svg-inline--fa.fa-envelope.fa-w-16 {
   font-size: 40px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #EE3522;
+  color: #efa034;
   /* line-height: 31px; */
   background: #eee;
   padding: 20px;
@@ -886,7 +888,7 @@ div.rounded-contact-icon i:hover,
 div.rounded-contact-icon svg.svg-inline--fa.fa-map-marker-alt.fa-w-12:hover,
 div.rounded-contact-icon svg.svg-inline--fa.fa-phone.fa-w-16:hover,
 div.rounded-contact-icon svg.svg-inline--fa.fa-envelope.fa-w-16:hover {
-  text-shadow: 5px 5px 10px #e97979;
+  text-shadow: 2px 2px 3px #805a01;
   border: 5px solid;
   padding: 15px;
 }
@@ -1142,7 +1144,6 @@ footer div.dotted-dateline {
   div#intro .about-btn,
   div#intro .order-btn {
     width: 100%;
-    border-radius: 10px;
     margin-left: 0 !important;
   }
 
@@ -1988,7 +1989,7 @@ div.pagination {
 /**********FOOD GRID PAGE's Styles**********/
 
 h5.card-title {
-  color: #d2232a;
+  color: #efa034;
 }
 
 div.grid-area div.grid-body ul li {
@@ -2582,6 +2583,10 @@ a.login-btn:hover {
 
 /**** Using for common features ****/
 
+.subcription h2 {
+  color: #efa034;
+}
+
 /*************Section Of Page Banner**************/
 
 /*--------Landing Page--------*/
@@ -2689,7 +2694,6 @@ div#intro .order-btn {
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 32px;
-  border-radius: 50px;
   transition: 0.5s;
   line-height: 1;
   color: #fff;
@@ -2751,7 +2755,6 @@ div.search-food .form-control {
   div#intro .about-btn,
   div#intro .order-btn {
     width: 100%;
-    border-radius: 10px;
     margin-left: 0 !important;
     background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
     border: 0;
@@ -2967,6 +2970,21 @@ a.carousel-control-next.home-slide-next {
   width: 100%;
   height: 100%;
   background-position: center;
+}
+
+/** Welcome Card Home **/
+
+.welcome-card-home {
+  border: 0;
+  border-radius: 2px;
+  border-bottom: 2px solid #caa570;
+  width: 33rem;
+  min-height: 380px;
+}
+
+.welcome-card-home h1,
+.welcome-card-home h6 {
+  color: #efa034;
 }
 
 @media only screen and (max-width: 1366px) {

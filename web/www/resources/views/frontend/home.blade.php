@@ -5,7 +5,7 @@
 
 @section('main_content')
 <!------------- SECTION of Banners Page ----------------->
-<div id="homeCarouselIndicators" class="carousel slide" data-ride="carousel">
+<div id="homeCarouselIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
     <ol class="carousel-indicators">
         <li data-target="#homeCarouselIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#homeCarouselIndicators" data-slide-to="1"></li>
@@ -187,9 +187,9 @@
     <div class="mt-5 row">
         <!-- Aside LeftSide -->
         <aside class="col-md-6 text-center">
-            <div class="card welcome-card-home" style="width: 33rem; min-height: 380px;">
+            <div class="card welcome-card-home">
                 <div class="card-body">
-                    <h1 class="card-title text-capitalize m-4" style="color: tomato;">welcome to MAITHAI</h1>
+                    <h1 class="card-title text-capitalize m-4">welcome to MAITHAI</h1>
                     <h6 class="card-subtitle mb-2">Get Best, Feel Happy!</h6>
                     <p class="card-text text-muted" style="font-size: 13px; word-spacing: 2px; letter-spacing: 0.5px; ">Mai Thai Delivers
                         Deliciously Authentic Thai Mai Kitchen & an atmosphere that is friendly and fun for the
@@ -217,7 +217,7 @@
 <!-------------- Food Content ----------------->
 <section class="container mt-5">
     <div class="text-center mb-4 d-block">
-        <h1 style="color: tomato; text-align: center;" class="text-shadow our-food-style-title">Our Food Styles</h1>
+        <h1 class="text-shadow section-title">Our Food Styles</h1>
         <div class="underline mt-2" style="border-bottom: 4px solid tomato; width: 5rem; position: absolute; left: 50%; transform: translate(-50%, 0); ">
         </div>
     </div>
@@ -345,7 +345,7 @@
 <!----------- FOOD OFFERS Tab ------------->
 <section class="mt-5 mb-5">
     <div class="text-center mb-5 d-block">
-        <h1 style="color: tomato; text-align: center;" class="text-shadow food-menu-title">Food Menu</h1>
+        <h1 class="text-shadow section-title">Food Menu</h1>
         <div class="underline mt-2" style="border-bottom: 4px solid tomato; width: 5rem; position: absolute; left: 50%; transform: translate(-50%, 0); ">
         </div>
     </div>
@@ -618,7 +618,7 @@
         <!-- 1st Row -->
         <div class="row">
             <div class="col-md-12 text-center mb-5 d-block">
-                <h2 class="text-capitalize contact-us-title">contact us</h2>
+                <h2 class="text-capitalize contact-us-title section-title">contact us</h2>
                 <p class="text-capitalize">for any queries or concerns</p>
                 <div class="underline mt-3 m-auto" style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>
             </div>
@@ -664,7 +664,7 @@
         <!-- 1st Row -->
         <div class="row">
             <div class="col-md-12 text-center mb-5 d-block" style="margin-bottom: 0 !important">
-                <h2 class="text-capitalize gellary-title">Gallery</h2>
+                <h2 class="text-capitalize gellary-title section-title">Gallery</h2>
                 <p class="text-capitalize">check gallery for our most popular dishes</p>
                 <div class="underline mt-3 m-auto" style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>
             </div>
@@ -743,7 +743,7 @@
             <!-- Col-2 -->
             <div class="col-md-8 col-xs-12 col-md-push-4 ml-4">
                 <div class="mt-5 subcription-to-phone-only">
-                    <h2 style="color: #ff6347;">The Best MAITHAI Delivery App!</h2>
+                    <h2>The Best MAITHAI Delivery App!</h2>
                     <h5 class="mt-4">Download our free iOS, Windows phone and Android App and order food online the
                         fastest way possible.</h5>
 
