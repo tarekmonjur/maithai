@@ -21,7 +21,7 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'role_id' => 0,
-        'access_token' => Str::uuid(),
+        'api_token' => Str::uuid(),
         'username' => $faker->unique()->username,
         'password' => '123456',
         'remember_token' => Str::random(10),

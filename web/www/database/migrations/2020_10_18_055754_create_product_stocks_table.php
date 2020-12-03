@@ -15,7 +15,7 @@ class CreateProductStocksTable extends Migration
     {
         Schema::create('product_stocks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('product_id');
+            $table->integer('product_id')->index();
             $table->enum('stock_type', ['product', 'sales', 'purchase']);
             $table->integer('previous_stock')->default(0);
             $table->integer('change_stock')->default(0);

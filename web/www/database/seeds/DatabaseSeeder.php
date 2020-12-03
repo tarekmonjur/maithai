@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 use App\Models\User;
 use App\Models\UserDetails;
 use App\Models\Customer;
 use App\Models\CustomerDetails;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\Product;
+use App\Models\ProductVariant;
+use App\Models\ProductStock;
 
 class DatabaseSeeder extends Seeder
 {
@@ -45,6 +49,14 @@ class DatabaseSeeder extends Seeder
             ->create()
             ->each(function ($category) {
                 factory(SubCategory::class, 5)->create(['category_id' => $category->id]);
+            });
+
+        factory(Product::class, 50)
+            ->create()
+            ->each(function ($product){
+                $qty = rand(1,9);
+                factory(ProductVariant::class, 3)->create(['product_id' => $product->id, 'qty' => $qty]);
+                factory(ProductStock::class)->create(['product_id' => $product->id, 'current_stock' => $qty * 3]);
             });
 
     }

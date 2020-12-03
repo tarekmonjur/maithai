@@ -15,7 +15,7 @@ class CreateShippingDetailsTable extends Migration
     {
         Schema::create('shipping_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id');
+            $table->integer('order_id')->index();
             $table->string('full_name', 45);
             $table->string('email', 45);
             $table->string('mobile', 25);

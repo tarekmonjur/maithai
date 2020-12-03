@@ -26,7 +26,7 @@
             </div>
             @enderror
 
-            <form action="{{route(env('APP_NAME').'.login')}}" method="post">
+            <form action="{{route(config('app.backend_home').'.login')}}" method="post">
                 {{csrf_field()}}
                 <div class="input-group mb-3">
                     <input type="text" name="username" class="form-control" placeholder="Username">

@@ -2,6 +2,14 @@
 
 return [
 
+    'frontend_home' => env('FRONTEND_HOME', 'home'),
+
+    'backend_home' => env('BACKEND_HOME', 'pos'),
+
+    'backend_is_paginate' => env('BACKEND_IS_PAGINATE', true),
+
+    'backend_per_page' => env('BACKEND_PER_PAGE', 3),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -54,7 +62,9 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'asset_url' => env('ASSET_URL', 'http://localhost:8181'),
+
+    'upload_path' => public_path(env('UPLOAD_PATH', 'files/')),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +185,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -225,6 +237,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

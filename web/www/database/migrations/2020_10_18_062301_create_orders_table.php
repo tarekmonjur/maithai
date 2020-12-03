@@ -15,9 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('customer_id');
-            $table->string('invoice_no', 45);
-            $table->string('transaction_no', 45);
+            $table->integer('customer_id')->index();
+            $table->string('invoice_no', 45)->unique();
+            $table->string('transaction_no', 45)->nullable()->unique();
             $table->enum('payment_type', ['cash', 'card'])->default('cash');
             $table->enum('payment_status', ['pending', 'due', 'completed'])->default('pending');
             $table->enum('status', ['pending', 'accepted', 'delivered', 'completed', 'cancel'])->default('pending');
