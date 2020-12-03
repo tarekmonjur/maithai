@@ -18,11 +18,17 @@
 
 /************* Global CSS Styles Variables *************/
 /*****----- Colors Global Variables ----*****/
-$maithai_common: rgb(210, 35, 42);
-$maithai_gradient: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+$theme-color: #efa034;
+$theme-bg-color: #efa034;
+$theme-bg-gradient: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
 
-$navbar_dark: rgb(0 0 0 / 80%);
-$navbar_text: #fff;
+$theme-color2: rgb(210, 35, 42);
+$theme-bg-color2: rgb(210, 35, 42);
+
+$maithai_common: rgb(210, 35, 42);
+
+$navbar-bg: $theme-bg-gradient;
+$navbar-color: #fff;
 $navbar_shadow: #000000c4;
 $cart_nav_bg: rgb(230, 230, 230);
 
@@ -82,19 +88,24 @@ body{
     }
 }
 
+.section-title{
+    color: $theme-color;
+    text-align: center;
+}
+
 /**-----------BUTTON----------**/
 .btn-custom {
     font-size: 18px;
     border-radius: 0 !important;
     margin-bottom: 5.5px;
-    background: $button_tomato !important;
+    background: $theme-bg-gradient !important;
     color: $common_white;
     height: 43px;
-    border: 2px solid $button_tomato;
+    border: 2px solid $common_white;
 
     &:hover{
         background: none !important;
-        border: 2px solid $button_tomato;
+        border: 2px solid $theme-color;
     }
 }
 a.bookmark-text{
@@ -127,12 +138,12 @@ a.bookmark-text{
     font-family: 'Baloo 2', cursive;
 }
 h3.card-title {
-    color: $button_tomato;
+    color: $theme-color;
 }
 
 /**------Text Shadow-------**/
 .text-shadow{
-    text-shadow: 2px 2px 5px;
+    text-shadow: 1px 1px 2px;
 }
 
 /**-------Bedge Of Notification Number------**/
@@ -150,7 +161,7 @@ span.badge-light{
 
 /***------- Customising CSS such bootstrap staff ------***/
 header{
-    background: $maithai_common;
+    background: $theme-bg-color2;
     padding: $headers_gap !important;
 
     img{
@@ -203,12 +214,12 @@ header{
 
     & > div.phone-num-bar, & > div.cart-bar, & > div.buisness-hour{
         & > .fa-phone-alt, & > .fa-shopping-cart, & > .fa-clock{
-            color: $maithai_common;
+            color: $theme-color;
             background: $common_white;
             padding: 10px;
             /* width: 10px; */
             border-radius: 100%;
-            border: 2px solid $button_tomato;
+            border: 2px solid $theme-color;
             transition: 0.5s;
             width: 40px;
             height: 40px;
@@ -227,7 +238,7 @@ header{
     svg.svg-inline--fa.fa-phone-alt.fa-w-16.icon,
     svg.svg-inline--fa.fa-shopping-cart.fa-w-18,
     svg.svg-inline--fa.fa-clock.fa-w-16{
-        color: $maithai_common;
+        color: $theme-color2;
         background: $common_white;
         padding: 10px;
         /* width: 10px; */
@@ -251,7 +262,7 @@ div.num, div.carts-section, div.time-table{
     background: $common_white;
     padding: 7px 10px;
     border-radius: 20px;
-    border: 2px solid $button_tomato;
+    border: 2px solid $theme-color;
     font-size: 14px;
     transition: 1s ease-in-out;
 }
@@ -286,7 +297,7 @@ button.btn-custom-outline{
 
     &:hover{
         border: 1px solid $common_white;
-        background: $maithai_common;
+        background: $theme-bg-color2;
         color: $common_white;
     }
 }  
@@ -316,26 +327,26 @@ div.cart-bar{
 
 /**************Nav Bar***************/
 nav{
-    background: $navbar_dark;
-    color: $navbar_text;
+    background: $navbar-bg;
+    color: $navbar-color;
     box-shadow: 0px 1px 3px $navbar_shadow;
 
     li.nav-item{
         a{
-            color: $cream_white !important;
+            color: $navbar-color !important;
             text-transform: uppercase;
             font-size: 14px;
             font-weight: normal;
             padding: 20px 25px !important;
 
             &:hover{
-                background: $maithai_common;
+                background: $theme-bg-color2;
                 color: $common_white !important;
             }
         }
 
         .active-now{
-            background: $maithai_common;
+            background: $theme-bg-color2;
         }
     }
 }
@@ -354,7 +365,7 @@ section.stickyHeader{
     background: $milky_white;
     right: 0;
     top: calc(110px + 30%);
-    box-shadow: 0 0 16px -1px $navbar_dark;
+    box-shadow: 0 0 16px -1px $navbar-bg;
     display: block;
     transition: .1s ease-in-out;
     overflow: unset;
@@ -367,14 +378,14 @@ section.stickyHeader{
 .shopping-badget-items-counter {
     display: grid;
     justify-items: center;
-    background: $maithai_common;
+    background: $theme-bg-color2;
     color: $common_white;
     padding: 5px;
     text-align: center;
 }
 .shopping-badget-total {
     text-align: center;
-    color: $maithai_common;
+    color: $theme-color2;
     font-size: 14px;
     font-weight: bold;
     padding-bottom: 2px;
@@ -401,7 +412,7 @@ div.shopping-cart{
 
 /**-- Shopping Cart Header --**/
 div.cart-header{
-    background: $maithai_gradient;
+    background: $theme-bg-gradient;
     margin: 0;
     padding: 1rem;
     color: $common_white;
@@ -496,10 +507,10 @@ div.cart-content-empty{
     i{
         font-size: 8rem;
         /* color: rgb(210, 35, 42); */
-        color: $maithai_common;
+        color: $theme-color2;
         padding: 50px;
         border-radius: 100%;
-        background: $maithai_gradient;
+        background: $theme-bg-gradient;
     }
 
     img{
@@ -584,7 +595,7 @@ div.delivery-counter, div.delivery-name, div.delivery-price{
 
 /**-- Shopping carts Footer Section --**/
 div.cart-footer{
-    background: $maithai_common;
+    background: $theme-bg-color2;
     margin: 0;
     padding: 1rem;
     position: absolute;
@@ -661,7 +672,7 @@ input.special-go{
 
     .rounded-icon{
         background: $common_white;
-        color: $maithai_common;
+        color: $theme-color;
         /* padding: 20%; */
         border-radius: 100%;
         font-size: 50px;
@@ -679,7 +690,7 @@ input.special-go{
     }
 
     p{
-        color: dimgray;
+        color: tomato;
         margin-top: 20px;
         text-align: center;
     }
@@ -689,13 +700,6 @@ div.col-jumbo-one{
     /*padding-left: 5rem;*/
     justify-content: center;
     margin: auto;
-}
-
-/** Welcome Card Home **/
-.welcome-card-home{
-    border: 0;
-    border-radius: 2px;
-    border-bottom: 2px solid #caa570;
 }
 
 /*************** FOOD MENU Food-Menu **************/
@@ -710,11 +714,16 @@ div.food-menu-list{
     /* bottom: 24rem; */
     bottom: 10rem;
     margin-top: 2rem;
+
+    h1 {
+        color: $theme-color;
+    }
 }
 ul.offer-list-ul{
     font-size: 14px;
     text-transform: capitalize;
     font-weight: bold;
+    color: tomato;
 } 
 a.ml-5.carousel-control-prev,
 a.mr-5.carousel-control-next{
@@ -727,7 +736,7 @@ a.mr-5.carousel-control-next{
     line-height: 40px;
     text-align: center;
     cursor: pointer;
-    background-color: $maithai_common;
+    background-color: $theme-bg-color2;
     color: $common_white;
     transition: all 0.6s;
     font-size: 20px;
@@ -809,7 +818,7 @@ a.mr-5.carousel-control-next {
         line-height: 40px;
         text-align: center;
         cursor: pointer;
-        background-color: $maithai_common;
+        background-color: $theme-bg-color2;
         color: #fff;
         transition: all 0.6s;
         font-size: 20px;
@@ -836,7 +845,7 @@ div.rounded-contact-icon{
         font-size: 40px;
         display: inline-block;
         margin-bottom: 10px;
-        color: $contact_icon;
+        color: $theme-color;
         /* line-height: 31px; */
         background: #eee;
         padding: 20px;
@@ -846,7 +855,7 @@ div.rounded-contact-icon{
         transition: 0.4s ease-in-out;
 
         &:hover{
-            text-shadow: 5px 5px 10px #e97979;
+            text-shadow: 2px 2px 3px #805a01;
             border: 5px solid;
             padding: 15px;
         }
@@ -867,7 +876,7 @@ div.rounded-contact-icon{
     background: $footer_dark !important;
  }
  div#bottom-footer{
-    background: $maithai_common !important;
+    background: $theme-bg-color2 !important;
 
     img{
         width: $logo_img_size;
@@ -946,7 +955,7 @@ div.rounded-contact-icon{
 
                 &:hover{
                     text-decoration: none;
-                    color: $maithai_common;
+                    color: $theme-color2;
                 }
             }
         }
@@ -1111,7 +1120,6 @@ div.rounded-contact-icon{
         .about-btn,
         .order-btn{
             width: 100%;
-            border-radius: 10px;
             margin-left: 0 !important;
         }
     }
@@ -1898,7 +1906,7 @@ div.pagination{
 
 /**********FOOD GRID PAGE's Styles**********/
 h5.card-title {
-    color: #d2232a;
+    color: $theme-color;
 }
 div.grid-area{
     div.grid-body{
@@ -2107,7 +2115,7 @@ div.filter-item-food-package{
 /********ABOut Content********/
 section#about-content, section#policy-content{
     h1, h3{   
-        color: $maithai_common;
+        color: $theme-color2;
         font-weight: lighter;
         font-family: 'Quicksand', sans-serif;
     }
@@ -2147,13 +2155,13 @@ section#about-founders{
     }
     h1{
         font-family: 'Quicksand', sans-serif;
-        color: $maithai_common;
+        color: $theme-color2;
     }
     div.row{
         h5{
             font-family: 'Quicksand', sans-serif;
             font-weight: bold;
-            color: $maithai_common;
+            color: $theme-color2;
             margin-top: 1rem;
             margin-bottom: 0.5rem;
         }
@@ -2251,7 +2259,7 @@ section#about-founders{
             transition: transform 0.4s 0.05s, color 0.1s;
         }
         &:hover{
-            color: $maithai_common;
+            color: $theme-color2;
         }
     }
 
@@ -2379,7 +2387,7 @@ div.form-label{
     h1{
         font-size: 27px;
         font-family: 'Quicksand', sans-serif;
-        color: $maithai_common;
+        color: $theme-color2;
         font-weight: bold;
     }
     p{
