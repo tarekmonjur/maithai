@@ -97,7 +97,7 @@
 
 
 <!--------- The Search Collapse DropDown Bar For Home Carousel ------->
-<ul class="search-dropdown-menu" style="display: none;">
+<ul class="search-dropdown-menu" style="display: block;">
     <li class="search-item mt-2"><a href="#">
             <div class="image">
                 <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">

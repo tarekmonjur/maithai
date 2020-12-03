@@ -704,7 +704,7 @@
 
                     <div class="col mb-4">
                         <div class="card h-100 food-order-card">
-                            <img src="{{asset('frontend/img/coverA.jpg')}}" class="card-img-top grid-card-img" alt="...">
+                            <img src="{{asset('frontend/img/food-basera.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">

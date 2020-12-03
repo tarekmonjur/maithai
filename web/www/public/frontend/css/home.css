@@ -1708,7 +1708,7 @@ section.food-list-home-banner div#intro-section .intro-title {
   position: absolute;
   width: 88.8% !important;
   /* top: 82.8rem !important; */
-  top: 50rem !important;
+  top: 51rem !important;
   left: 50% !important;
   /* transform: translate(-64%, -50rem); */
   transform: translate(-64%, -24.3rem);
@@ -2197,7 +2197,7 @@ div.filter-item-food-package {
   }
 
   .search-dropdown-menu-food-list {
-    transform: translate(-64%, -27.3rem);
+    transform: translate(-64%, -27.5rem);
   }
 }
 
@@ -2664,7 +2664,7 @@ section#home-cover-2 .jumbotron::after {
 
 .dark-bg {
   position: absolute;
-  top: 48%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
