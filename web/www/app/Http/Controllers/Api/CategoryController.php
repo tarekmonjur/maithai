@@ -82,11 +82,13 @@ class CategoryController extends ApiController
                 }
             }
 
-            $result = $category->save();
-
-            return $this->jsonResponse($result, $this->getTrans('success_msg'));
+            if ($category->save()) {
+                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+            } else {
+                return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
+            }
         } catch (\Exception $e) {
-            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error');
+            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
         }
     }
 
@@ -120,16 +122,37 @@ class CategoryController extends ApiController
                     }
 
                     $upload = Image::make($request->image);
-                    $upload->save($upload_path.$upload_name);
+                    $upload->save($full_upload_path);
                     $category->image = $upload_name;
                 }
             }
 
-            $result = $category->save();
-
-            return $this->jsonResponse($result, $this->getTrans('success_msg'));
+           if ($category->save()) {
+               return $this->jsonResponse(null, $this->getTrans('success_msg'));
+           } else {
+               return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
+           }
         } catch (\Exception $e) {
-            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error');
+            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $result = Category::find($id)->delete();
+            if ($result) {
+                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+            }
+
+            $result = SubCategory::find($id)->delete();
+            if ($result) {
+                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+            }
+
+            return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
+        } catch (\Exception $e) {
+            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
         }
     }
 

@@ -13,7 +13,7 @@ export default {
         errors: {},
         modal: {},
         alert: {},
-        loading: false,
+        loading: {},
         lang_key: 'category',
         buttons: {
             add: {
@@ -77,7 +77,11 @@ export default {
                 ...context.state.filterData,
                 ..._.get(payload, 'params', {}),
             });
-            _.set(payload, 'url', context.state.url);
+
+            if (_.isEmpty(_.get(payload, 'url'))) {
+                _.set(payload, 'url', context.state.url);
+            }
+
             const result = await helpers.getDataAction(payload);
 
             if (result && result.code === 200) {
@@ -94,6 +98,7 @@ export default {
         },
         async addButtonAction(context, payload) {
             context.commit('setModal', payload);
+            context.commit('setLoading', {modal: true});
             const requestPayload = {};
             _.set(requestPayload, 'url', context.state.url);
             _.set(requestPayload, 'params', {
@@ -111,13 +116,14 @@ export default {
                     errors: {}
                 });
             }
+            context.commit('setLoading', {modal: false});
         },
         async editButtonAction(context, payload) {
             await context.dispatch('addButtonAction', payload.modal);
+            context.commit('setLoading', {modal: true});
             const requestPayload = {};
             _.set(requestPayload, 'url', context.state.url+'/'+payload.id);
             _.set(requestPayload, 'params', {
-                columns: 'id,name,slug',
                 sublist: false,
             });
             const result = await helpers.getDataAction(requestPayload);
@@ -130,8 +136,10 @@ export default {
                     errors: {}
                 });
             }
+            context.commit('setLoading', {modal: false});
         },
         async viewButtonAction(context, payload) {
+            context.commit('setLoading', {modal: true});
             context.commit('setModal', payload.modal);
             const requestPayload = {};
             _.set(requestPayload, 'url', context.state.url+'/'+payload.id);
@@ -145,11 +153,21 @@ export default {
                     errors: {}
                 });
             }
+            context.commit('setLoading', {modal: false});
         },
         async deleteButtonAction(context, payload) {
-            alert(payload.id);
+            const requestPayload = {};
+            _.set(requestPayload, 'url', context.state.url+'/'+payload.id);
+            const result = await helpers.deleteDataAction(requestPayload);
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+            });
+            if (result && result.code === 200) {
+                await context.dispatch('getListData');
+            }
         },
         async modalButtonAction(context, payload) {
+            context.commit('setLoading', {button: true});
             const requestPayload = {
                 url: context.state.url,
                 method: 'GET',
@@ -159,31 +177,32 @@ export default {
             const edit_modal_id = _.get(context.state.buttons, 'edit.modal_id', '');
 
             if (modal_id === add_modal_id || modal_id === edit_modal_id) {
-                if (modal_id === edit_modal_id) {
-                    requestPayload.method = 'PUT';
-                    requestPayload.url = requestPayload.url+'/'+_.get(context.state, 'formInput.id', 0);
-                } else {
-                    requestPayload.method = 'POST';
-                }
+                requestPayload.method = 'POST';
                 requestPayload.data = context.state.formInput;
                 requestPayload.headers = {'Content-Type': 'multipart/form-data'};
+
+                if (modal_id === edit_modal_id) {
+                    requestPayload.data._method = 'PUT';
+                    requestPayload.url = requestPayload.url+'/'+_.get(context.state, 'formInput.id', 0);
+                }
             }
 
             const result = await helpers.postDataAction(requestPayload);
 
             if (result && result.code === 200) {
-                await context.dispatch('getListData');
                 context.commit('setErrorsAlert', {
                     alert: _.pick(result, ['code', 'message', 'status']),
                     errors: {}
                 });
-                context.dispatch('clearDataAction', modal_id);
+                await context.dispatch('getListData');
+                await context.dispatch('clearDataAction', modal_id);
             } else {
                 context.commit('setErrorsAlert', {
                     alert: _.pick(result, ['code', 'message', 'status']),
                     errors: result.results
                 });
             }
+            context.commit('setLoading', {button: false});
         },
         async clearDataAction(context, modal_id) {
             $('#'+modal_id).modal('hide');
@@ -206,6 +225,12 @@ export default {
         },
         setModal(state, modal) {
             state.modal = modal;
+        },
+        setLoading(state, loading) {
+            state.loading = {
+                ...state.loading,
+                ...loading,
+            };
         },
         setFilterData(state, filters) {
             state.filterData = filters;

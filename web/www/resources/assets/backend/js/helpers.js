@@ -114,8 +114,12 @@ export default {
             formData.delete('id');
             _.set(payload, 'data', formData);
         }
-        console.log(payload);
         const result = await this.makeApiRequest(url, method, payload);
+        return result;
+    },
+    async deleteDataAction(payload) {
+        const url = _.get(payload, 'url', '');
+        const result = await this.makeApiRequest(url, 'DELETE');
         return result;
     },
 };

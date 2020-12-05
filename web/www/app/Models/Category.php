@@ -14,4 +14,12 @@ class Category extends Model
     public function products() {
         return $this->hasMany(Product::class, 'category_id', 'id');
     }
+
+    public function getImageAttribute($value) {
+        if (!empty($value)) {
+            $upload_path = config('app.asset_path')."category/";
+            return "{$upload_path}{$value}";
+        }
+        return $value;
+    }
 }
