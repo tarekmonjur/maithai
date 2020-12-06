@@ -24,9 +24,30 @@ export default {
             const button = _.get(this.buttons, 'delete', null);
 
             if (_.get(button, 'type') === 'modal') {
-                this.$store.dispatch('deleteButtonAction', {
-                    id: this.id,
-                });
+                this.$swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.$store.dispatch('deleteButtonAction', {
+                            id: this.id,
+                        });
+                    } else {
+                        this.$swal({
+                            title: 'Cancelled',
+                            text: 'Your data is safe.',
+                            icon: 'error',
+                            timer: 1500,
+                            showConfirmButton: false,
+                        })
+                    }
+                })
+
             }
             else if (_.get(button, 'type') === 'link') {
                 window.location.href = _.get(button, 'id_link', '');

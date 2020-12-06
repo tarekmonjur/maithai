@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <td>{{lang(`image`)}}</td>
-            <td>{{showData.image}}</td>
+            <td><img :src="showData.image" alt="" width="60"></td>
         </tr>
         <tr>
             <td>{{lang(`slug`)}}</td>

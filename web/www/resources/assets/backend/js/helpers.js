@@ -13,10 +13,17 @@ export default {
         return value ? 'Active' : 'Inactive';
     },
     created(values) {
-        return `${values.created_at} <br> ${values.created_by}`;
+        return `${values.created_at}
+            <br>
+            ${this.getFullName(_.get(values, 'created_by.details', {}))}`;
     },
     updated(values) {
-        return `${values.updated_at} <br> ${values.updated_by}`;
+        return `${values.updated_at}
+            <br>
+            ${this.getFullName(_.get(values, 'updated_by.details', {}))}`;
+    },
+    getFullName(value) {
+        return `${value.first_name || ''} ${value.last_name || ''}`;
     },
     async setLang(force = false) {
         if (force || window.localStorage.getItem('lang') === null) {
@@ -114,8 +121,12 @@ export default {
             formData.delete('id');
             _.set(payload, 'data', formData);
         }
-        console.log(payload);
         const result = await this.makeApiRequest(url, method, payload);
+        return result;
+    },
+    async deleteDataAction(payload) {
+        const url = _.get(payload, 'url', '');
+        const result = await this.makeApiRequest(url, 'DELETE');
         return result;
     },
 };

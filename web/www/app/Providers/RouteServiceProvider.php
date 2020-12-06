@@ -22,7 +22,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const FRONTEND_HOME = '/home';
-    public const BACKEND_HOME = '/pos';
+    public const BACKEND_HOME = '/pos/dashboard';
 
     /**
      * Define your route model bindings, pattern filters, etc.

@@ -1,12 +1,14 @@
 <template>
     <tr v-for="row in tableData">
-        <td >{{row.id}}</td>
-        <td >{{row.name}}</td>
-        <td >{{row.products_count}}</td>
-        <td >{{row.sub_categories_count}}</td>
-        <td >{{row.slug}}</td>
-        <td >{{this.isActive(row.is_active)}}</td>
-        <td >{{row.image}}</td>
+        <td>{{row.id}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.products_count}}</td>
+        <td>{{row.sub_categories_count}}</td>
+        <td>{{row.slug}}</td>
+        <td>{{this.isActive(row.is_active)}}</td>
+        <td>
+            <img :src="row.image" alt="" width="60">
+        </td>
         <td v-html="this.created(row)"></td>
         <td v-html="this.updated(row)"></td>
         <td>

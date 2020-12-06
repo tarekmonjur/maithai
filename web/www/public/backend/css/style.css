@@ -16,6 +16,18 @@ button {
   background-color: transparent !important;
 }
 
+.navbar {
+  background-color: #dc3545 !important;
+}
+
+.main-sidebar .brand-link {
+  background: #dc3545 !important;
+}
+
+.main-sidebar .sidebar .nav-sidebar .nav-item .nav-link.active {
+  background: #dc3545 !important;
+}
+
 /*btn theme*/
 
 .btn-theme {
