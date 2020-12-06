@@ -8,11 +8,15 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <slot></slot>
+                <div class="modal-body bg-gray-light">
+                    <loading-component v-if="loading.modal"></loading-component>
+                    <slot v-else></slot>
                 </div>
                 <div class="modal-footer" v-if="modal.button">
-                    <button type="button" class="btn btn-theme" @click.prevent.enter="buttonAction()">{{modal.button}}</button>
+                    <button type="button" :disabled="loading.button" class="btn btn-theme" @click.prevent.enter="buttonAction()">
+                        <loading-component v-if="loading.button"></loading-component>
+                        {{modal.button}}
+                    </button>
                 </div>
             </div>
         </div>
@@ -21,13 +25,16 @@
 
 <script>
 import {mapState} from 'vuex';
+import LoadingComponent from '../common/loading.component';
 
 export default {
     name: "modal.component",
     props: ['id'],
+    components: {LoadingComponent},
     computed: {
         ...mapState([
             'modal',
+            'loading'
         ]),
     },
     methods: {

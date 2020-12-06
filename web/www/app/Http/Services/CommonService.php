@@ -21,8 +21,9 @@ trait CommonService
      */
     protected function jsonResponse($results = null, $message = '', $status = 'success', $code = 200)
     {
-        $code = $code > 0 && $code < 599 ? $code : 500;
         $jsonData['status'] = $status;
+        $code = intval($code);
+        $code = ($status === 'error') ? ($code > 0 && $code < 599) ? $code : 500 : $code;
         $jsonData['code'] = $code;
         $jsonData['message'] = $message;
         $jsonData['results'] = $results;

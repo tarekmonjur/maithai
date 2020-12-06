@@ -64,6 +64,8 @@ return [
 
     'asset_url' => env('ASSET_URL', 'http://localhost:8181'),
 
+    'asset_path' => env('ASSET_URL', 'http://localhost:8181').'/'.env('UPLOAD_PATH', 'files/'),
+
     'upload_path' => public_path(env('UPLOAD_PATH', 'files/')),
 
     /*

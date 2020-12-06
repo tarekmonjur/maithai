@@ -80,7 +80,6 @@ trait CategoryService
 
     protected function getData()
     {
-//        dd(Category::with('subCategories')->inRandomOrder()->first());
         $sub_list = $this->getSubList();
         $categories = Category::withCount(['subCategories', 'products']);
 
@@ -89,7 +88,21 @@ trait CategoryService
         }
 
         if ($sub_list) {
-            $categories = $categories->with(['subCategories','products']);
+            $relations = null;
+            if (!empty($this->getId()) || !empty($this->getSlug())) {
+                $relations = ['subCategories','products'];
+                $categories = $categories->with(['subCategories','products']);
+            } else {
+                $relations = ['subCategories'];
+            }
+
+            if ($this->authUser && $this->authUser->getTable() === 'users') {
+                $relations = array_merge($relations, ['createdBy', 'updatedBy']);
+            }
+
+            if (!empty($relations)) {
+                $categories = $categories->with($relations);
+            }
         }
 
         if (!empty($this->getId())) {
