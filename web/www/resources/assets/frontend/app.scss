@@ -86,6 +86,10 @@ body{
     .jumbotron{
         border-radius: 0 !important;
     }
+
+    hr{
+        background-color: $theme-color;
+    }
 }
 
 .section-title{
@@ -1647,7 +1651,7 @@ section.food-list-home-banner{
     position: absolute;
     width: 88.8% !important;
     /* top: 82.8rem !important; */
-    top: 50rem !important;
+    top: 51rem !important;
     left: 50% !important;
     /* transform: translate(-64%, -50rem); */
     transform: translate(-64%, -24.3rem);
@@ -1703,8 +1707,8 @@ img.search-bar-image{
 
 section#food-list{
     div.food-list-header{
-        h2{
-            color: tomato;
+        h3{
+            color: $theme-color;
         }
     }
 
@@ -1819,7 +1823,7 @@ div.checkbox-list{
 
 /****----Right Sides List Card----****/
 div.list-area div.list-img{
-    border: 2px solid lightgray;
+    border: 2px solid $theme-color;
     border-radius: 5px;
     padding: 10px;
 }
@@ -1842,6 +1846,10 @@ div.list-area div.list-body{
             }
 
         }
+    }
+
+    h5{
+        color: $theme-color;
     }
 }
 
@@ -1879,7 +1887,7 @@ div.list-area{
 
     ul{
         li.all-food-list{
-            border-bottom: 1px solid rgb(211, 211, 211);
+            border-bottom: 1px solid $theme-color;
             padding-bottom: 2rem;
         }
     }
@@ -1967,6 +1975,10 @@ div.filter-item-food-package{
     background: $food_menu_gradiend;
     padding-top: 1rem;
     border-radius: 5px;
+}
+
+.food-order-card{
+    border: 0;
 }
 
 
@@ -2107,7 +2119,7 @@ div.filter-item-food-package{
     }
 
     .search-dropdown-menu-food-list {
-        transform: translate(-64%, -27.3rem);
+        transform: translate(-64%, -27.5rem);
     }
 }
 

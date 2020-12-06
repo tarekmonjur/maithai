@@ -95,7 +95,7 @@
 <section id="food-list" class="mt-5 mb-5">
     <div class="container">
         <div class="food-list-header">
-            <h3 class="text-capitalize text-danger">food grids, combo food catagories</h3>
+            <h3 class="text-capitalize">food grids, combo food catagories</h3>
         </div>
         <hr>
 
@@ -568,8 +568,8 @@
                 <!------- Food Grid Cards With Row & Cols --------->
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/wideCard1.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/wideCard1.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -595,8 +595,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/wideCard2.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/wideCard2.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -622,8 +622,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/wideCard3.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/wideCard3.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -649,8 +649,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/2.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/2.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -676,8 +676,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/1.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/1.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -703,8 +703,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/coverA.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/food-basera.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -730,8 +730,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/cover2.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/cover2.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -757,8 +757,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/cover3.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/cover3.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">
@@ -784,8 +784,8 @@
                     </div>
 
                     <div class="col mb-4">
-                        <div class="card h-100">
-                            <img src="{{asset('frontend/img/cover1.jpg')}}" class="card-img-top img-thumbnail grid-card-img" alt="...">
+                        <div class="card h-100 food-order-card">
+                            <img src="{{asset('frontend/img/cover1.jpg')}}" class="card-img-top grid-card-img" alt="...">
                             <div class="card-body grid-body">
                                 <h5 class="card-title">Eagle Boys Village Plaza</h5>
                                 <ul class="list-body-mini-list">

@@ -71,6 +71,10 @@ body .jumbotron {
   border-radius: 0 !important;
 }
 
+body hr {
+  background-color: #efa034;
+}
+
 .section-title {
   color: #efa034;
   text-align: center;
@@ -1704,7 +1708,7 @@ section.food-list-home-banner div#intro-section .intro-title {
   position: absolute;
   width: 88.8% !important;
   /* top: 82.8rem !important; */
-  top: 50rem !important;
+  top: 51rem !important;
   left: 50% !important;
   /* transform: translate(-64%, -50rem); */
   transform: translate(-64%, -24.3rem);
@@ -1752,8 +1756,8 @@ img.search-bar-image {
   margin-right: 1rem;
 }
 
-section#food-list div.food-list-header h2 {
-  color: tomato;
+section#food-list div.food-list-header h3 {
+  color: #efa034;
 }
 
 section#food-list div.food-list-body input[type=text],
@@ -1910,7 +1914,7 @@ div.checkbox-list li.checkbox {
 /****----Right Sides List Card----****/
 
 div.list-area div.list-img {
-  border: 2px solid lightgray;
+  border: 2px solid #efa034;
   border-radius: 5px;
   padding: 10px;
 }
@@ -1932,6 +1936,10 @@ div.list-area div.list-body ul li a {
 
 div.list-area div.list-body ul li:first-child {
   padding: 0;
+}
+
+div.list-area div.list-body h5 {
+  color: #efa034;
 }
 
 /********* Foood Package List Image Size ******/
@@ -1965,7 +1973,7 @@ div.list-area div.list-footer button.btn-list-order:active {
 }
 
 div.list-area ul li.all-food-list {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #efa034;
   padding-bottom: 2rem;
 }
 
@@ -2045,6 +2053,10 @@ div.filter-item-food-package {
   background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
   padding-top: 1rem;
   border-radius: 5px;
+}
+
+.food-order-card {
+  border: 0;
 }
 
 /**The Media Quries for Mobile View**/
@@ -2185,7 +2197,7 @@ div.filter-item-food-package {
   }
 
   .search-dropdown-menu-food-list {
-    transform: translate(-64%, -27.3rem);
+    transform: translate(-64%, -27.5rem);
   }
 }
 
@@ -2652,7 +2664,7 @@ section#home-cover-2 .jumbotron::after {
 
 .dark-bg {
   position: absolute;
-  top: 48%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;

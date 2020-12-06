@@ -94,7 +94,7 @@
 <section id="food-list" class="mt-5 mb-5">
     <div class="container">
         <div class="food-list-header">
-            <h3 class="text-capitalize text-danger">all food list to chooce by flat order some parcentage off</h3>
+            <h3 class="text-capitalize">all food list to chooce by flat order some parcentage off</h3>
         </div>
         <hr>
 
