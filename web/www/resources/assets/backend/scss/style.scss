@@ -15,9 +15,15 @@ button {
     background-color: transparent!important;
 }
 
-$theme-color: #ffffff;
-$theme-bg-color: #dc3545;
-$theme-bg-color2: #be9653;
+$color1: #ffffff;
+$color2: #dc3545;
+$color3: #be9653;
+
+$theme-color: $color1;
+$theme-bg-color: $color2;
+
+$theme-filter-color: $color1;
+$theme-filter-bg-color: $color3;
 
 $btn-color: #ffffff;
 $btn-bg-color: tomato;
@@ -30,6 +36,28 @@ $btn-hover-border-color: #dc3545;
 $btn-focus-color: #ffffff;
 $btn-focus-bg-color: #dc3545;
 $btn-focus-border-color: darkred;
+
+
+.navbar {
+    background-color: $theme-bg-color!important;
+}
+
+.main-sidebar {
+    .brand-link {
+        background: $theme-bg-color!important;
+    }
+    .sidebar {
+        .nav-sidebar {
+            .nav-item {
+                .nav-link {
+                    &.active {
+                        background: $theme-bg-color!important;
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 /*btn theme*/
@@ -86,17 +114,17 @@ $btn-focus-border-color: darkred;
                 box-shadow: none;
 
                 > * input {
-                    border: 1px solid rgba($theme-bg-color2, 95);
+                    border: 1px solid rgba($theme-filter-bg-color, 95);
                     height: calc(2rem + 1px);
                 }
 
                 > * select {
-                    border: 1px solid rgba($theme-bg-color2, 95);
+                    border: 1px solid rgba($theme-filter-bg-color, 95);
                     height: calc(2rem + 1px);
                     > option {
                         //font-size: .8rem;
-                        color: $theme-color;
-                        background-color: $theme-bg-color2;
+                        color: $theme-filter-color;
+                        background-color: $theme-filter-bg-color;
                     }
                 }
 
@@ -106,9 +134,9 @@ $btn-focus-border-color: darkred;
 
                 .input-group-text {
                     padding: 0rem 1rem;
-                    color: $theme-color;
-                    background-color: rgba($theme-bg-color2, 80);
-                    border: 1px solid rgba($theme-bg-color2, 95);
+                    color: $theme-filter-color;
+                    background-color: rgba($theme-filter-bg-color, 80);
+                    border: 1px solid rgba($theme-filter-bg-color, 95);
                 }
 
                 label {
@@ -156,7 +184,7 @@ $btn-focus-border-color: darkred;
 
         .input {
             border-radius: 0px 5px 5px 0px;
-            border: 1px solid rgba($theme-bg-color2, 95);
+            border: 1px solid rgba($theme-filter-bg-color, 95);
             height: calc(1.9rem + 1px) !important;
             padding: 12px 10px 10px 35px !important;
         }

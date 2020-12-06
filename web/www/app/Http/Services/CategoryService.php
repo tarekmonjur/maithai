@@ -88,10 +88,20 @@ trait CategoryService
         }
 
         if ($sub_list) {
+            $relations = null;
             if (!empty($this->getId()) || !empty($this->getSlug())) {
+                $relations = ['subCategories','products'];
                 $categories = $categories->with(['subCategories','products']);
             } else {
-                $categories = $categories->with(['subCategories']);
+                $relations = ['subCategories'];
+            }
+
+            if ($this->authUser && $this->authUser->getTable() === 'users') {
+                $relations = array_merge($relations, ['createdBy', 'updatedBy']);
+            }
+
+            if (!empty($relations)) {
+                $categories = $categories->with($relations);
             }
         }
 

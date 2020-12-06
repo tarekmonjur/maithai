@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\CommonService;
+use App\Http\Services\User\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request as FRequest;
@@ -18,9 +19,17 @@ class ApiController extends Controller
 
     protected $upload_path;
 
+    protected $authUser;
+
     public function __construct() {
         FRequest::has('guard') ? $this->guard = FRequest::input('guard') : null;
         $this->upload_path = config('app.upload_path');
+        $this->middleware(function($request, $next) {
+//            dd(Auth::guard($this->guard));
+            $this->authUser = Auth::guard($this->guard)->user();
+//            dd($this->authUser->getTable());
+            return $next($request);
+        });
     }
 
     public function lang(Request $request)

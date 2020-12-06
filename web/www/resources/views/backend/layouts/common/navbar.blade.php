@@ -1,23 +1,23 @@
-<nav class="main-header navbar navbar-expand navbar-dark navbar-danger text-sm">
+<nav class="main-header navbar navbar-expand navbar-dark text-sm">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Dashboard</a>
+            <a href="{{route(config('app.backend_home').'.dashboard')}}" class="nav-link">{{ __('menu.dashboard')}}</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Point of Sales</a>
+            <a href="{{route(config('app.backend_home'))}}" class="nav-link">@lang('menu.pos')</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Orders</a>
+            <a href="{{route(config('app.backend_home').'.orders')}}" class="nav-link">@lang('menu.orders')</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Sales</a>
+            <a href="{{route(config('app.backend_home').'.sales')}}" class="nav-link">@lang('menu.sales')</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Settings</a>
+            <a href="{{route(config('app.backend_home').'.settings')}}" class="nav-link">@lang('menu.settings')</a>
         </li>
     </ul>
 
@@ -62,7 +62,7 @@
             </div>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route(config('app.backend_home').'.logout')}}" class="nav-link">Logout</a>
+            <a href="{{route(config('app.backend_home').'.logout')}}" class="nav-link">@lang('menu.logout')</a>
         </li>
     </ul>
 </nav>

@@ -70,6 +70,7 @@ class CategoryController extends ApiController
             $category->name = $request->name;
             $category->slug = $request->slug;
             $category->description = $request->description;
+            $category->created_by = $this->authUser->id;
 
             if ($request->hasFile('image')) {
                 $upload_path = $this->upload_path;
@@ -110,6 +111,7 @@ class CategoryController extends ApiController
             $category->name = $request->name;
             $category->slug = $request->slug;
             $category->description = $request->description;
+            $category->updated_by = $this->authUser->id;
 
             if ($request->hasFile('image')) {
                 $upload_path = $this->upload_path;

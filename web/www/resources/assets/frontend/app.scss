@@ -202,11 +202,11 @@ header{
 }
 
 .top-contact{
-    display: flex;  
+    display: flex;
     justify-content: flex-end;
     font-size: 15px;
     text-transform: capitalize;
-    color: $common_white; 
+    color: $common_white;
 
     div{
         padding-left: $headers_gap;
@@ -300,7 +300,7 @@ button.btn-custom-outline{
         background: $theme-bg-color2;
         color: $common_white;
     }
-}  
+}
 
 /***New Added Here to solve problem***/
 .phone-num-bar, .cart-bar, .buisness-hour{
@@ -724,7 +724,7 @@ ul.offer-list-ul{
     text-transform: capitalize;
     font-weight: bold;
     color: tomato;
-} 
+}
 a.ml-5.carousel-control-prev,
 a.mr-5.carousel-control-next{
     position: absolute;
@@ -837,7 +837,7 @@ section.contact-jumbo{
     background: none !important;
 }
 div.rounded-contact-icon{
-    i, 
+    i,
     svg.svg-inline--fa.fa-map-marker-alt.fa-w-12,
     svg.svg-inline--fa.fa-phone.fa-w-16,
     svg.svg-inline--fa.fa-envelope.fa-w-16
@@ -1038,8 +1038,8 @@ div.rounded-contact-icon{
 /**---iPhone 6,7,8 or Higher Screen Comportable ---**/
 @media only screen and (max-width: 720px){
     /**All Sections Title Text Style, Font-size**/
-    .our-food-style-title, 
-    .food-menu-title, 
+    .our-food-style-title,
+    .food-menu-title,
     .contact-us-title,
     .gellary-title{
         font-size: 30px;
@@ -1094,7 +1094,7 @@ div.rounded-contact-icon{
             height: 64px;
         }
     }
-    
+
     /***NavBar POsition In Mobile ***/
     .sticky-top{
         position: unset;
@@ -1123,7 +1123,7 @@ div.rounded-contact-icon{
             margin-left: 0 !important;
         }
     }
-    
+
     /**Home Slide Intro 2nd Page Title**/
     .home-slide-intro-2,
     .home-slide-intro-3{
@@ -1148,7 +1148,7 @@ div.rounded-contact-icon{
         p{
             margin-top: 10px;
             margin-bottom: 2rem;
-            font-size: 10px;
+            font-size: 14px;
         }
     }
 
@@ -1296,7 +1296,7 @@ div.rounded-contact-icon{
     a.mr-5.carousel-control-next.menu-btn.menu-btn{
         top: 24.5rem;
     }
-    a.ml-5.carousel-control-prev.menu-btn, 
+    a.ml-5.carousel-control-prev.menu-btn,
     a.mr-5.carousel-control-next.menu-btn{
         top: 24.5rem ;
     }
@@ -1320,7 +1320,7 @@ div.rounded-contact-icon{
     li.list-group-item {
         font-size: 12px;
     }
-    
+
     /**Home Sections Slider control Buttons**/
     a.carousel-control-prev.home-slide-prev {
         display: none;
@@ -1345,7 +1345,7 @@ div.rounded-contact-icon{
     }
 
 
-   /**Footers Sections (Row's) Items**/ 
+   /**Footers Sections (Row's) Items**/
     footer{
         div.footer-list-1st-heading{
             h5 {
@@ -1415,9 +1415,9 @@ div.rounded-contact-icon{
         }
     }
 
-    div.delivery-counter, 
+    div.delivery-counter,
     div.delivery-img,
-    div.delivery-name, 
+    div.delivery-name,
     div.delivery-price{
         width: unset !important;
         margin-left: -20px;
@@ -1611,7 +1611,7 @@ div.rounded-contact-icon{
         right: -10rem !important;
     }
 }
-	
+
 /**********----====== [Food Order & Food Package] ====----*********/
 /************CSS for Food List Section***********/
 section.food-list-home-banner{
@@ -1840,7 +1840,7 @@ div.list-area div.list-body{
             &:first-child{
                 padding: 0;
             }
-            
+
         }
     }
 }
@@ -1948,7 +1948,7 @@ div.grid-area{
             &:focus{
                 background: none !important;
                 color: darkslategray;
-            }   
+            }
         }
     }
 }
@@ -2049,7 +2049,7 @@ div.filter-item-food-package{
     h3.text-capitalize.text-danger {
         font-size: 20px;
     }
-    
+
     .search-dropdown-menu-food-list {
         top: 54rem !important;
         left: 50rem !important;
@@ -2114,7 +2114,7 @@ div.filter-item-food-package{
 /*******----- About Us -----******/
 /********ABOut Content********/
 section#about-content, section#policy-content{
-    h1, h3{   
+    h1, h3{
         color: $theme-color2;
         font-weight: lighter;
         font-family: 'Quicksand', sans-serif;
@@ -2124,7 +2124,7 @@ section#about-content, section#policy-content{
         font-size: 14px;
         font-weight: lighter;
     }
-    
+
 }
 /*******About Content 2nd*********/
 section#about-content-2nd{
@@ -2287,7 +2287,7 @@ button.btn.btn-lg.text-light.text-uppercase {
         margin-left: 0;
         position: unset;
         margin-top: 13rem;
-        
+
     }
     section#about-content, section#policy-content{
         margin-bottom: 0 !important;
@@ -2336,13 +2336,13 @@ button.btn.btn-lg.text-light.text-uppercase {
         div.row div.underline-hr{
             margin: auto;
         }
-    
+
     }
     div.col-md-4{
         display: grid;
         justify-items: center;
     }
-    
+
     .contact-title{
         font-size: 25px;
     }
@@ -2394,7 +2394,7 @@ div.form-label{
         font-family: 'Quicksand', sans-serif;
     }
 }
-button[type="submit"].login-btn, 
+button[type="submit"].login-btn,
 a.register-btn,
 a.login-btn{
     width: 100%;

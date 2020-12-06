@@ -41161,11 +41161,19 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   created(values) {
-    return `${values.created_at} <br> ${values.created_by}`;
+    return `${values.created_at}
+            <br>
+            ${this.getFullName(_.get(values, 'created_by.details', {}))}`;
   },
 
   updated(values) {
-    return `${values.updated_at} <br> ${values.updated_by}`;
+    return `${values.updated_at}
+            <br>
+            ${this.getFullName(_.get(values, 'updated_by.details', {}))}`;
+  },
+
+  getFullName(value) {
+    return `${value.first_name || ''} ${value.last_name || ''}`;
   },
 
   async setLang(force = false) {
