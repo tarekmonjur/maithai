@@ -11,9 +11,9 @@
                 <!-- Top Menu -->
                 <div class="topMenu">
                     <ul>
-                        <li><a href="contactUs.html" class="text-capitalize">request call back</a></li>
-                        <li><a href="register.html" class="text-capitalize">register</a></li>
-                        <li><a href="loginRegister.html" class="text-capitalize">login</a></li>
+                        <li><a href="{{url('/contact')}}" class="text-capitalize">request call back</a></li>
+                        <li><a href="{{url('/signup')}}" class="text-capitalize">register</a></li>
+                        <li><a href="{{url('/login')}}" class="text-capitalize">login</a></li>
                     </ul>
                 </div>
                 <!-- Phone Contact -->

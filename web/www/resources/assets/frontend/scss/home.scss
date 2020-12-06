@@ -1,9 +1,7 @@
-/**** Using for common features ****/
-@use "app";
 
 .subcription{
     h2 {
-        color: app.$theme-color;
+        color: $theme-color;
     }
 }
 
@@ -13,7 +11,7 @@ section#home-cover, section#home-cover-2{
     .jumbotron{
         width: 100%;
 	    height: 650px;
-	    background-color: app.$common_dark;
+	    background-color: $common_dark;
 	    position: relative;
         overflow: hidden;
         border-radius: 0 !important;
@@ -88,8 +86,8 @@ div.carousel.slide{
 
 div#intro-section{
     .intro-title{
-        color: app.$common_white;
-        font-family: app.$lato_google;
+        color: $common_white;
+        font-family: $lato_google;
         font-size: 56px;
         font-weight: 600;
         /* text-transform: uppercase; */
@@ -98,11 +96,11 @@ div#intro-section{
 
     .intro-title{
         small.small{
-            color: app.$theme-color2;
+            color: $theme-color2;
         }
     }
     .intro-info{
-        color: app.$common_white;
+        color: $common_white;
     }
 
 }
@@ -117,14 +115,14 @@ div#intro{
         padding: 12px 32px;
         transition: 0.5s;
         line-height: 1;
-        color: app.$common_white;
+        color: $common_white;
         -webkit-animation-delay: 0.8s;
         animation-delay: 0.8s;
-        border: 2px solid app.$card_border;
+        border: 2px solid $card_border;
         text-decoration: none;
 
         &:hover{
-            background: app.$theme-bg-gradient;
+            background: $theme-bg-gradient;
         }
     }
 }
@@ -146,7 +144,7 @@ div.search-food{
 /**The Media Quries for Mobile View**/
 /**iPhone 6,7,8 and Upper Screen Confortable**/
 @media only screen and (max-width: 720px){
-    
+
     section.food-list-home-banner{
         max-height: 44vh;
     }
@@ -179,11 +177,11 @@ div.search-food{
         .order-btn{
             width: 100%;
             margin-left: 0 !important;
-            background: app.$theme-bg-gradient;
+            background: $theme-bg-gradient;
             border: 0;
         }
     }
-    
+
     /**Home Slide Intro 2nd Page Title**/
     .home-slide-intro-2,
     .home-slide-intro-3{
@@ -214,7 +212,7 @@ div.search-food{
     font-size: 14px;
     text-align: left;
     list-style: none;
-    background-color: app.$common_white;
+    background-color: $common_white;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
 /*    border: 1px solid rgba(0,0,0,.15);*/
@@ -247,7 +245,7 @@ ul.search-dropdown-menu{
 
     li.search-item{
         .name{
-            color: black;
+            color: $theme-color;
             font-size: 18px;
         }
     }
@@ -286,7 +284,7 @@ ul.search-dropdown-menu{
         transform: translate(-47.5rem, -16.2rem) !important;
         width: 79% !important;
     }
-    
+
     .search-dropdown-menu-food-list{
         width: 79% !important;
     }
@@ -401,11 +399,11 @@ a.carousel-control-next.home-slide-next {
                             height: 100%;
                             background-position: center;
                         }
-                    }   
+                    }
                 }
             }
         }
-    }   
+    }
 }
 
 /** Welcome Card Home **/
@@ -417,7 +415,7 @@ a.carousel-control-next.home-slide-next {
     min-height: 380px;
 
     & h1, h6 {
-        color: app.$theme-color;
+        color: $theme-color;
     }
 }
 

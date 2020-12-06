@@ -1,4 +1,4 @@
-@use "app";
+
 
 /*** Form Style When Focus-In ***/
 .form-control:focus {
@@ -11,7 +11,7 @@
 
 /**Common Font Color On headline for content text**/
 .headline-p{
-    color: app.$theme-color2;
+    color: $theme-color2;
     /* font-family: 'Quicksand', sans-serif; */
 }
 
@@ -35,13 +35,13 @@ section#policy-cover{
             height: 100%;
             background: url('images/policyCover.jpg') no-repeat fixed;
             background-size: cover;
-            opacity: .5;   
+            opacity: .5;
         }
     }
 }
 div.policy-text-section{
-    float: left; 
-    margin-left: 5rem; 
+    float: left;
+    margin-left: 5rem;
     /* margin-top: 3rem; */
     position: absolute;
     top: 50%;
@@ -53,9 +53,9 @@ div.policy-text-section{
     }
 }
 
-div{
-    overflow: unset !important;
-}
+//div{
+//    overflow: unset !important;
+//}
 
 /**Media Queries for Mobile View**/
 /**iPhone 6,7,8 to Uppper Screens Confortable**/

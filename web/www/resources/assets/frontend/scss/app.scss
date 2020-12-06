@@ -1,7 +1,7 @@
 /**The Main Style CSS for website**/
 /**---- Font Awesome ----**/
 @import "fontAwesome/css/all.min.css";
-@import "fontAwesome/css/fontawesome.min.css";
+//@import "fontAwesome/css/fontawesome.min.css";
 
 /**---- Bootstrap (4.5.2) ----**/
 @import "bootstrap/bootstrap.min.css";
@@ -17,51 +17,11 @@
 @include google-font("Quicksand:wght@300&display");
 
 /************* Global CSS Styles Variables *************/
-/*****----- Colors Global Variables ----*****/
-$theme-color: #efa034;
-$theme-bg-color: #efa034;
-$theme-bg-gradient: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+@import "variable";
 
-$theme-color2: rgb(210, 35, 42);
-$theme-bg-color2: rgb(210, 35, 42);
-
-$maithai_common: rgb(210, 35, 42);
-
-$navbar-bg: $theme-bg-gradient;
-$navbar-color: #fff;
-$navbar_shadow: #000000c4;
-$cart_nav_bg: rgb(230, 230, 230);
-
-$button_tomato: rgb(255, 99, 71);
-$shopping_close_btn: orangered;
-$orange_red: orangered;
-$contact_icon: #EE3522;
-
-$common_white: #fff;
-$milky_white: #F5FCEB;
-$cream_white: rgb(211, 211, 211);
-$card_border: rgb(175,112,21);
-
-$darkest_gray: darkslategray;
-$common_dark: #000;
-$footer_dark: #181818;
-
-/****---- Food Order & Food List Variables ----****/
-$food_menu_tomato: #ff6347;
-$food_menu_gradiend: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
-$food_menu_common: rgb(210, 35, 42);
-
-/*****----- Sizes Global Variables ----*****/
-$logo_img_size: 80px;
-$headers_gap: 10px;
-
-$cart_content_img: 58px;
-$cart_delivery_image: 50px;
-
-/****----- Fonts -----*****/
-$lato_google: 'Lato', sans-serif;
-
-
+@import "home";
+@import "about";
+@import "policy";
 
 
 /*****---- Styles ----*****/
@@ -2127,7 +2087,7 @@ div.filter-item-food-package{
 /********ABOut Content********/
 section#about-content, section#policy-content{
     h1, h3{
-        color: $theme-color2;
+        color: $theme-color;
         font-weight: lighter;
         font-family: 'Quicksand', sans-serif;
     }
@@ -2167,7 +2127,7 @@ section#about-founders{
     }
     h1{
         font-family: 'Quicksand', sans-serif;
-        color: $theme-color2;
+        color: $theme-color;
     }
     div.row{
         h5{
@@ -2287,6 +2247,10 @@ button.btn.btn-lg.text-light.text-uppercase {
     }
 }
 
+.contact-title{
+    color: $theme-color;
+}
+
 /**Media Queries for Mobile View**/
 /**iPhone 6,7,8 to Uppper Screens Confortable**/
 @media only screen and (max-width: 720px){
@@ -2357,6 +2321,7 @@ button.btn.btn-lg.text-light.text-uppercase {
 
     .contact-title{
         font-size: 25px;
+        color: $theme-color;
     }
 
     .founders-some-talk-text{

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @push('style')
-    <link rel="stylesheet" href="{{asset('frontend/css/policy.css')}}">
+
 @endpush
 
 @section('main_content')
@@ -12,14 +12,13 @@
             <div class="policy-text-section">
                 <div class="policy-cover text-light text-capitalize text-center">
                     <h1 class="display-3">terms<br>policy</h1>
-                    <p>MaiThai is an online portal.</p>
+                    <p>MaiThai Kitchen is a Restaurant.</p>
                     <p>Ordering Food & Delivery from restaurants of choice.</p>
                     <p>Table booking & Restaurants.</p>
                     <p>Deals & Discounts</p>
                     <p>Party Halls online booking</p>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 

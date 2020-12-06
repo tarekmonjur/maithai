@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @push('style')
-    <link rel="stylesheet" href="{{asset('frontend/css/about.css')}}">
+
 @endpush
 
 @section('main_content')
@@ -12,7 +12,7 @@
             <form action="">
                 <div class="row mb-5">
                     <div class="col-md-12 text-center mt-5 d-block">
-                        <h2 class="text-capitalize contact-title">To Get contact with MaiThai add your message...</h2>
+                        <h2 class="text-capitalize contact-title">To Get contact with MaiThai Kitchen add your message.</h2>
                         <p class="text-capitalize">come & contact with us</p>
                         <div class="underline mt-3 m-auto"
                              style="border-bottom: 4px solid tomato; width: 5rem; padding-top: 15px;"></div>

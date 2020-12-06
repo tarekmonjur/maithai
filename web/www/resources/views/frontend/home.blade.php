@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @push('style')
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/home.css')}}">
+
 @endpush
 
 @section('main_content')
@@ -46,9 +46,9 @@
                             </div>
 
 
-                            <a href="aboutUs.html" class="about-btn mt-4">About The Restaurant</a>
-                            <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Food Online!</a>
-                            <a href="contactUs.html" class="order-btn mt-4 ml-3">Find Us!</a>
+                            <a href="{{url('/about')}}" class="about-btn mt-4">About The Restaurant</a>
+                            <a href="{{url('/food-orders')}}" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            <a href="{{url('/contact')}}" class="order-btn mt-4 ml-3">Find Us!</a>
                         </div>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
                                 </h1>
                             </div>
 
-                            <a href="aboutUs.html" class="about-btn mt-4">About The Restaurant</a>
-                            <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Food Online!</a>
-                            <a href="contactUs.html" class="order-btn mt-4 ml-3">Find Us!</a>
+                            <a href="{{url('/about')}}" class="about-btn mt-4">About The Restaurant</a>
+                            <a href="{{url('/food-orders')}}" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                            <a href="{{url('/contact')}}" class="order-btn mt-4 ml-3">Find Us!</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
 
 
 <!--------- The Search Collapse DropDown Bar For Home Carousel ------->
-<ul class="search-dropdown-menu" style="display: block;">
+<ul class="search-dropdown-menu" style="display: none;">
     <li class="search-item mt-2"><a href="#">
             <div class="image">
                 <img src="{{asset('frontend/img/card1.jpg')}}" alt="card1" class="search-bar-image">
@@ -189,7 +189,7 @@
         <aside class="col-md-6 text-center">
             <div class="card welcome-card-home">
                 <div class="card-body">
-                    <h1 class="card-title text-capitalize m-4">welcome to MAITHAI</h1>
+                    <h1 class="card-title text-capitalize m-4">welcome to MAITHAI KITCHEN</h1>
                     <h6 class="card-subtitle mb-2">Get Best, Feel Happy!</h6>
                     <p class="card-text text-muted" style="font-size: 13px; word-spacing: 2px; letter-spacing: 0.5px; ">Mai Thai Delivers
                         Deliciously Authentic Thai Mai Kitchen & an atmosphere that is friendly and fun for the
@@ -743,7 +743,7 @@
             <!-- Col-2 -->
             <div class="col-md-8 col-xs-12 col-md-push-4 ml-4">
                 <div class="mt-5 subcription-to-phone-only">
-                    <h2>The Best MAITHAI Delivery App!</h2>
+                    <h2>The Best MAITHAI KITCHEN Delivery App!</h2>
                     <h5 class="mt-4">Download our free iOS, Windows phone and Android App and order food online the
                         fastest way possible.</h5>
 

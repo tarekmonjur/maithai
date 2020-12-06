@@ -5,36 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MaiThai Kitchen | Home</title>
     <link rel="icon" href="{{asset('frontend/logo/logo.png')}}">
-
     <!-- CSS only -->
-    <!-- Style.css, Custom CSS Here -->
-    <!-- <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}"> -->
     <link rel="stylesheet" href="{{asset('frontend/css/app.css')}}">
     @stack('style')
 </head>
 
 <body>
 <!--------------- HEADER ------------------>
-@include('frontend.common.header')
+@include('frontend.layouts.common.header')
 
 <!-------------------- NAVBAR -------------->
-@include('frontend.common.navbar')
+@include('frontend.layouts.common.navbar')
 
 @yield('main_content')
 
 <!-------------- FOOTER AREA ---------------->
-@include('frontend.common.footer')
+@include('frontend.layouts.common.footer')
 
 <!------------ Shopping cart Drawer ---------->
-@include('frontend.common.cart')
+@include('frontend.layouts.common.cart')
 
 </body>
 
 <!-- JS, Popper.js, and jQuery -->
-<!-- FontAwesome 5 -->
-<script src="{{asset('frontend/fontAwesome/js/all.min.js')}}"></script>
-<script src="{{asset('frontend/fontAwesome/js/fontawesome.min.js')}}"></script>
-
 <!-- Bootstrap jQuery (3.5.1) -->
 <script src="{{asset('frontend/js/jquery.min.js')}}"></script>
 
