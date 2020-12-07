@@ -6,8 +6,8 @@ import actions from './actions';
 
 export default {
     state: {
-        url: '/categories',
-        lang_key: 'category',
+        url: '/units',
+        lang_key: 'unit',
         ...state,
         buttons: {
             add: {
@@ -39,25 +39,6 @@ export default {
         ...actions,
         async addButtonAction(context, payload) {
             context.commit('setModal', payload);
-            context.commit('setLoading', {modal: true});
-            const requestPayload = {};
-            _.set(requestPayload, 'url', context.state.url);
-            _.set(requestPayload, 'params', {
-                columns: 'id,name',
-                sublist: false,
-                paginate: false,
-            });
-            let result = await helpers.getDataAction(requestPayload);
-
-            if (result && result.code === 200) {
-                context.commit('setFormData', {categories: result.results});
-            } else {
-                context.commit('setErrorsAlert',  {
-                    alert: _.pick(result, ['code', 'message', 'status']),
-                    errors: {}
-                });
-            }
-            context.commit('setLoading', {modal: false});
         },
         async editButtonAction(context, payload) {
             await context.dispatch('addButtonAction', payload.modal);
@@ -92,10 +73,9 @@ export default {
             if (modal_id === add_modal_id || modal_id === edit_modal_id) {
                 requestPayload.method = 'POST';
                 requestPayload.data = context.state.formInput;
-                requestPayload.headers = {'Content-Type': 'multipart/form-data'};
 
                 if (modal_id === edit_modal_id) {
-                    requestPayload.data._method = 'PUT';
+                    requestPayload.method = 'PUT';
                     requestPayload.url = requestPayload.url+'/'+_.get(context.state, 'formInput.id', 0);
                 }
             }

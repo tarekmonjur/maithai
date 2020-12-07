@@ -7,18 +7,18 @@
 
 namespace App\Http\Services;
 
-use App\Models\Category;
+use App\Models\Unit;
 use Carbon\Carbon;
 
-trait CategoryService
+trait UnitService
 {
     use DataModelService;
 
     private $id = null;
     private $slug = null;
-    private $columns = ['id','name','slug'];
+    private $columns = ['id','name'];
     private $sub_list = true;
-    private $trans_prefix = 'category.';
+    private $trans_prefix = 'unit.';
     private $trans_key = 'list';
     private $paginate = true;
     // columns config for table view
@@ -26,10 +26,7 @@ trait CategoryService
         'sl' => 100,
         'name' => 0,
         'products_count' => 0,
-        'sub_categories_count' => 0,
-        'slug' => 0,
         'is_active' => 0,
-        'image' => 0,
         'created' => 0,
         'updated' => 0,
         'action' => 100,
@@ -39,7 +36,7 @@ trait CategoryService
             'name' => 'name',
             'label' => '',
             'type' => 'text',
-            'value' => '',
+            'value' => null,
         ],
         [
             'name' => 'is_active',
@@ -93,15 +90,16 @@ trait CategoryService
     protected function getData()
     {
         $sub_list = $this->getSubList();
-        $categories = Category::withCount(['subCategories', 'products']);
+        $units = Unit::withCount(['products']);
 
         if ($columns = $this->getColumns()) {
-            $categories = $categories->select($columns);
+            $units = $units->select($columns);
         }
 
         if ($sub_list) {
-            $relations = ['subCategories'];
-            if (!empty($this->getId()) || !empty($this->getSlug())) {
+            $relations = [];
+
+            if (!empty($this->getId())) {
                 array_push($relations, 'products');
             }
 
@@ -110,33 +108,28 @@ trait CategoryService
             }
 
             if (!empty($relations)) {
-                $categories = $categories->with($relations);
+                $units = $units->with($relations);
             }
         }
 
         if (!empty($this->getId())) {
-            return $categories->find($this->getId());
-        }
-        else if (!empty($this->getSlug())) {
-            return $categories->where('slug', $this->getSlug())
-                ->get();
+            return $units->find($this->getId());
         } else {
-            $categories = $this->generateFilters($categories);
+            $units = $this->generateFilters($units);
 
             if ($this->getPaginate()) {
-                $categories = $categories->paginate(config('app.backend_per_page'));
+                $units = $units->paginate(config('app.backend_per_page'));
             } else {
-                $categories = $categories->get();
+                $units = $units->get();
             }
-            return $categories;
+            return $units;
         }
     }
 
     protected function getDataModel()
     {
         $results = $this->getData()->toArray();
-        if ((empty($this->getId()) && empty($this->getSlug())) &&
-            $this->getPaginate()) {
+        if (empty($this->getId()) && $this->getPaginate()) {
             foreach($results as $key => $result) {
                 if ($key !== 'data') {
                     $this->data['metadata'][$key] = $results[$key];

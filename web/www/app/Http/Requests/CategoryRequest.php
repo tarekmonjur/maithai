@@ -33,12 +33,12 @@ class CategoryRequest extends FormRequest
             $tableName = (new Category())->getTable();
         }
 
-        if($id = $this->segment(3)){
-            $name = ['required', 'min:3', 'max:100', 'unique:'.$tableName.',name,'.$id];
+        if ($id = $this->segment(3)) {
+            $name = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',name,'.$id];
             $slug = ['required', 'min:3', 'max:100', 'alpha_dash', 'unique:'.$tableName.',slug,'.$id];
-        }else{
+        } else {
             $name = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',name'];
-            $slug = ['required', 'min:3', 'max:45', 'alpha_dash', 'unique:'.$tableName.',slug'];
+            $slug = ['required', 'min:3', 'max:100', 'alpha_dash', 'unique:'.$tableName.',slug'];
         }
 
         return [

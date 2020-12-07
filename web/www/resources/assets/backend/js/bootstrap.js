@@ -31,10 +31,14 @@ window.axios.defaults.validateStatus = function (status) {
             body: $('body').height(),
             header: $('.main-header').outerHeight(),
             footer: $('.main-footer').outerHeight(),
+            mainContent: function () {
+                return this.body - this.header - this.footer;
+            },
             content: function () {
                 return this.body - this.header - this.footer - 30;
             }
         };
+        // $('.card').css('min-height', heights.mainContent());
         $('.card-body').css('max-height', heights.content());
         OverlayScrollbars($('.card-body'), { height: heights.content()});
         // console.log({heights}, heights.content());

@@ -37,7 +37,7 @@ Route::prefix('')->namespace('Backend')->group(function() use ($route_base_path)
     Route::get('/customers','CategoryController@index')->name($route_base_path.'.customers');
     Route::get('/products','CategoryController@index')->name($route_base_path.'.products');
     Route::get('/variants','CategoryController@index')->name($route_base_path.'.variants');
-    Route::get('/units','CategoryController@index')->name($route_base_path.'.units');
+    Route::get('/units','UnitController@index')->name($route_base_path.'.units');
     Route::get('/offers','CategoryController@index')->name($route_base_path.'.offers');
     Route::get('/users','CategoryController@index')->name($route_base_path.'.users');
     Route::get('/settings','CategoryController@index')->name($route_base_path.'.settings');

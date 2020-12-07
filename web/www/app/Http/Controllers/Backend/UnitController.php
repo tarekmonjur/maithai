@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Services\CategoryService;
+use App\Http\Services\UnitService;
 
-class CategoryController extends BackendController
+class UnitController extends BackendController
 {
-    use CategoryService;
+    use UnitService;
     /*
     |--------------------------------------------------------------------------
-    | Product Category Controller
+    | Product Unit Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Product Category Manage
+    | @Description : Product Unit Manage
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
@@ -28,7 +28,7 @@ class CategoryController extends BackendController
         $this->setTitle();
         $this->setColumnsConfig();
         $this->setFiltersConfig();
-        $this->data['scripts'] = ['category'];
+        $this->data['scripts'] = ['unit'];
         $this->data['styles'] = [];
         return view('backend.layouts.main')->with($this->data);
     }

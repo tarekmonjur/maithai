@@ -68,6 +68,7 @@ class CategoryController extends ApiController
             }
 
             $category->name = $request->name;
+            $category->is_active = $request->is_active ?? 1;
             $category->slug = $request->slug;
             $category->description = $request->description;
             $category->created_by = $this->authUser->id;
@@ -109,6 +110,7 @@ class CategoryController extends ApiController
             }
 
             $category->name = $request->name;
+            $category->is_active = $request->is_active;
             $category->slug = $request->slug;
             $category->description = $request->description;
             $category->updated_by = $this->authUser->id;

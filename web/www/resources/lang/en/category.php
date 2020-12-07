@@ -32,8 +32,11 @@ return [
     'action' => 'Action',
 
     // filters
+    'status' => 'Menu Status',
     'active' => 'Active Menu',
     'inactive' => 'Inactive Menu',
+    'from_date' => 'From Date',
+    'to_date' => 'To Date',
 
     'parent_category' => 'Main Menu',
 

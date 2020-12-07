@@ -34,4 +34,13 @@ Route::namespace('Api')->group(function(){
         Route::delete('/{id}','CategoryController@destroy')->name($route_base_path.'.categories.destroy');
     });
 
+    /********** ...... Category API ....... *****************/
+    Route::prefix('/units')->group(function() use ($route_base_path){
+        Route::get('/','UnitController@index')->name($route_base_path.'.units.index');
+        Route::get('/{id}','UnitController@show')->name($route_base_path.'.units.show');
+        Route::post('','UnitController@store')->name($route_base_path.'.units.store');
+        Route::put('/{id}','UnitController@update')->name($route_base_path.'.units.update');
+        Route::delete('/{id}','UnitController@destroy')->name($route_base_path.'.units.destroy');
+    });
+
 });

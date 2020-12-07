@@ -8,6 +8,8 @@
 namespace App\Http\Services;
 
 
+use Carbon\Carbon;
+
 trait DataModelService
 {
 
@@ -129,9 +131,13 @@ trait DataModelService
     {
         $filters = $filters ?? $this->filtersConfig;
         $filters_config = [];
+
         foreach($filters as $filter) {
-            $filter['label'] = $this->getTrans($filter['name']);
-            if ($filter['options']) {
+            $filter['label'] = !empty($filter['label']) ?
+                $this->getTrans($filter['label']) :
+                $this->getTrans($filter['name']);
+
+            if (isset($filter['options'])) {
                 $options = [];
                 foreach($filter['options'] as $key => $value) {
                     $options[] = [
@@ -141,8 +147,18 @@ trait DataModelService
                 }
                 $filter['options'] = $options;
             }
+
+            if ($filter['type'] === 'date' && is_int($filter['value'])) {
+                if ($filter['value'] !== 0) {
+                    $filter['value'] = Carbon::parse()->addMonths($filter['value']);
+                } else {
+                    $filter['value'] = Carbon::now();
+                }
+            }
+
             $filters_config[] = $filter;
         }
+
         $this->data['filters_config'] = $filters_config;
         return $this;
     }
