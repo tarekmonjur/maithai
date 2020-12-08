@@ -29,15 +29,22 @@ Route::prefix('')->namespace('Backend\Auth')->group(function() use ($route_base_
 
 /********** ......Backend Dashboard Routes....... *****************/
 Route::prefix('')->namespace('Backend')->group(function() use ($route_base_path){
-    Route::get('/','DashboardController@index')->name($route_base_path.'.home');
-//    Route::get('/settings','DashboardController@settings');
-//    Route::put('/settings','DashboardController@updateSettings');
+    Route::get('/','DashboardController@index')->name($route_base_path);
+    Route::get('/dashboard','DashboardController@index')->name($route_base_path.'.dashboard');
+    Route::get('/categories','CategoryController@index')->name($route_base_path.'.categories');
+    Route::get('/orders','CategoryController@index')->name($route_base_path.'.orders');
+    Route::get('/sales','CategoryController@index')->name($route_base_path.'.sales');
+    Route::get('/customers','CategoryController@index')->name($route_base_path.'.customers');
+    Route::get('/products','CategoryController@index')->name($route_base_path.'.products');
+    Route::get('/variants','CategoryController@index')->name($route_base_path.'.variants');
+    Route::get('/units','CategoryController@index')->name($route_base_path.'.units');
+    Route::get('/offers','CategoryController@index')->name($route_base_path.'.offers');
+    Route::get('/users','CategoryController@index')->name($route_base_path.'.users');
+    Route::get('/settings','CategoryController@index')->name($route_base_path.'.settings');
 });
 
 
 /********** ......Backend Category Routes....... *****************/
-Route::prefix('/categories')->namespace('Backend')->group(function() use ($route_base_path){
-    Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
-//    Route::get('/settings','DashboardController@settings');
-//    Route::put('/settings','DashboardController@updateSettings');
-});
+//Route::prefix('/categories')->namespace('Backend')->group(function() use ($route_base_path){
+//    Route::get('/','CategoryController@index')->name($route_base_path.'.categories');
+//});

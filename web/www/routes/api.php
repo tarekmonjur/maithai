@@ -31,6 +31,7 @@ Route::namespace('Api')->group(function(){
         Route::get('/{id_slug}','CategoryController@show')->name($route_base_path.'.categories.show');
         Route::post('','CategoryController@store')->name($route_base_path.'.categories.store');
         Route::put('/{id}','CategoryController@update')->name($route_base_path.'.categories.update');
+        Route::delete('/{id}','CategoryController@destroy')->name($route_base_path.'.categories.destroy');
     });
 
 });

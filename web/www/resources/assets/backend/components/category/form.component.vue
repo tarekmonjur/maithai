@@ -55,6 +55,12 @@
                     <div class="invalid-feedback" v-if="errors.image">{{errors.image}}</div>
                 </div>
             </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <br>
+                    <img :src="formInput['image']" alt="" width="60">
+                </div>
+            </div>
         </div>
         <div class="form-row">
             <div class="col">
@@ -64,8 +70,7 @@
                         id="description"
                         v-model="formInput['description']"
                         :class="{'is-invalid' : errors.description}"
-                        class="form-control form-control-sm">
-                    </textarea>
+                        class="form-control form-control-sm"></textarea>
                     <div class="invalid-feedback" v-if="errors.description">{{errors.description}}</div>
                 </div>
             </div>
