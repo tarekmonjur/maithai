@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{$title}}</title>
+    <title>{{$title ?? config('app.name')}}</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- overlayScrollbars -->
@@ -66,6 +66,12 @@ to get the desired effect
     window._assetURL = '{{ asset('/backend') }}';
     window._columns = '{!! json_encode($columns_config??[]) !!}';
     window._filters = '{!! json_encode($filters_config??[]) !!}';
+
+    var current_url = '{{url()->current()}}';
+    $(document).ready(function(){
+        $(".nav-link[href='"+current_url+"']").addClass('active');
+        $(".nav-link[href='"+current_url+"']").parents('li.has-treeview').addClass('menu-open');
+    });
 </script>
 
 @stack('script')

@@ -39,25 +39,6 @@ export default {
         ...actions,
         async addButtonAction(context, payload) {
             context.commit('setModal', payload);
-            context.commit('setLoading', {modal: true});
-            const requestPayload = {};
-            _.set(requestPayload, 'url', context.state.url);
-            _.set(requestPayload, 'params', {
-                columns: 'id,name',
-                sublist: false,
-                paginate: false,
-            });
-            let result = await helpers.getDataAction(requestPayload);
-
-            if (result && result.code === 200) {
-                context.commit('setFormData', {categories: result.results});
-            } else {
-                context.commit('setErrorsAlert',  {
-                    alert: _.pick(result, ['code', 'message', 'status']),
-                    errors: {}
-                });
-            }
-            context.commit('setLoading', {modal: false});
         },
         async editButtonAction(context, payload) {
             await context.dispatch('addButtonAction', payload.modal);

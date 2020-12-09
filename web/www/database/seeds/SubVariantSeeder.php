@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\VariantType;
+use App\Models\SubVariant;
 use Illuminate\Support\Facades\DB;
 
-class VariantTypeSeeder extends Seeder
+class SubVariantSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class VariantTypeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table((new VariantType)->getTable())->insert([
+        DB::table((new SubVariant)->getTable())->insert([
             ['variant_id' => 1, 'name' => 'white'],
             ['variant_id' => 1, 'name' => 'Blue'],
             ['variant_id' => 1, 'name' => 'Red'],

@@ -13,16 +13,25 @@ export default {
         return value ? 'Active' : 'Inactive';
     },
     created(values) {
-        return `${values.created_at}
+        if (_.isEmpty(values)) {
+            return '';
+        }
+        return `${values.created_at || ''}
             <br>
             ${this.getFullName(_.get(values, 'created_by.details', {}))}`;
     },
     updated(values) {
-        return `${values.updated_at}
+        if (_.isEmpty(values)) {
+            return '';
+        }
+        return `${values.updated_at || ''}
             <br>
             ${this.getFullName(_.get(values, 'updated_by.details', {}))}`;
     },
     getFullName(value) {
+        if (_.isEmpty(value)) {
+            return '';
+        }
         return `${value.first_name || ''} ${value.last_name || ''}`;
     },
     async setLang(force = false) {

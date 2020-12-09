@@ -52,7 +52,13 @@ $btn-focus-border-color: darkred;
                 .nav-link {
                     &.active {
                         background: $theme-bg-color!important;
+                        color: $theme-color!important;
                     }
+                }
+            }
+            .menu-open {
+                & > a {
+                    background: $theme-filter-bg-color!important;
                 }
             }
         }

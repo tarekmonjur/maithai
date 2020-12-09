@@ -25,8 +25,8 @@ class CreateOffersTable extends Migration
             $table->date('end_date')->nullable();
             $table->boolean('is_active')->default(1);
             $table->boolean('is_highlight')->default(0);
-            $table->string('image', 100)->nullable();
-            $table->string('description')->nullable();
+            $table->string('image', 200)->nullable();
+            $table->text('description')->nullable();
             $table->integer('created_by')->default(0);
             $table->integer('updated_by')->default(0);
             $table->timestamps();

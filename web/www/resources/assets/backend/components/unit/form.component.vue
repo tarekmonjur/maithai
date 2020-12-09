@@ -52,13 +52,6 @@ export default {
         lang(key) {
             return this.getLang(`${this.lang_key}.${key}`);
         },
-        slug() {
-           _.set(
-               this.formInput,
-               'slug',
-               this.toSlug(_.get(this.formInput, 'name', ''))
-               );
-        },
         filesBrowse(event) {
             const files_name = event.target.name;
             const files = event.target.files;

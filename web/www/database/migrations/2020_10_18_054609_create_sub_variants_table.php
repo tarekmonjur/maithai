@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVariantTypesTable extends Migration
+class CreateSubVariantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateVariantTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('variant_types', function (Blueprint $table) {
+        Schema::create('sub_variants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('variant_id')->default(0);
             $table->string('name', 45)->unique();
+            $table->string('image', 100)->nullable();
             $table->boolean('is_active')->default(1);
+            $table->text('description')->nullable();
             $table->integer('created_by')->default(0);
             $table->integer('updated_by')->default(0);
             $table->timestamps();

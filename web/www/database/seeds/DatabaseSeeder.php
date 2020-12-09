@@ -42,8 +42,9 @@ class DatabaseSeeder extends Seeder
                 factory(CustomerDetails::class)->create(['customer_id' => $customer->id]);
             });
 
+        $this->call(UnitSeeder::class);
         $this->call(VariantSeeder::class);
-        $this->call(VariantTypeSeeder::class);
+        $this->call(SubVariantSeeder::class);
 
         factory(Category::class, 10)
             ->create()

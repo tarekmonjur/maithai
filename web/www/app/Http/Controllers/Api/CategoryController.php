@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Services\CategoryService;
 use App\Models\Category;
-use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -60,13 +59,7 @@ class CategoryController extends ApiController
     public function store(CategoryRequest $request)
     {
         try {
-            if ($request->has('parent_category') && !empty($request->parent_category)) {
-                $category = new SubCategory();
-                $category->category_id = $request->parent_category;
-            } else {
-                $category = new Category();
-            }
-
+            $category = new Category();
             $category->name = $request->name;
             $category->is_active = $request->is_active ?? 1;
             $category->slug = $request->slug;
@@ -98,13 +91,7 @@ class CategoryController extends ApiController
     public function update(CategoryRequest $request)
     {
         try {
-            if ($request->has('parent_category') && !empty($request->parent_category)) {
-                $category = SubCategory::find($request->id);
-                $category->category_id = $request->parent_category;
-            } else {
-                $category = Category::find($request->id);
-            }
-
+            $category = Category::find($request->id);
             if (!$category) {
                 return $this->jsonResponse('', $this->getTrans('warning_msg'));
             }
@@ -145,11 +132,6 @@ class CategoryController extends ApiController
     {
         try {
             $result = Category::find($id)->delete();
-            if ($result) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
-            }
-
-            $result = SubCategory::find($id)->delete();
             if ($result) {
                 return $this->jsonResponse(null, $this->getTrans('success_msg'));
             }

@@ -26,6 +26,11 @@ button {
 
 .main-sidebar .sidebar .nav-sidebar .nav-item .nav-link.active {
   background: #dc3545 !important;
+  color: #ffffff !important;
+}
+
+.main-sidebar .sidebar .nav-sidebar .menu-open > a {
+  background: #be9653 !important;
 }
 
 /*btn theme*/

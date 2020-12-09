@@ -3,20 +3,6 @@
         <div class="form-row">
             <div class="col">
                 <div class="form-group">
-                    <label for="parent_category">{{lang('parent_category')}} :</label>
-                    <select
-                        class="form-control form-control-sm"
-                        v-model="formInput['parent_category']"
-                        id="parent_category">
-                        <option v-for="category in categories" :value="category.id">{{category.name}}</option>
-                    </select>
-                    <div class="invalid-feedback" v-if="errors.parent_category">{{errors.parent_category}}</div>
-                </div>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col">
-                <div class="form-group">
                     <label for="name">{{lang('name')}} : <span class="text-danger">*</span></label>
                     <input
                         type="text"
@@ -102,9 +88,6 @@ export default {
             'formInput',
             'errors',
         ]),
-        categories: function() {
-            return _.get(this.$store.state.formData, 'categories.results');
-        },
     },
     methods: {
         lang(key) {

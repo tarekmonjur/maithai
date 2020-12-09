@@ -27,11 +27,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         $this->request->set("slug", $this->toSlug($this->request->get('name')));
-        if ($this->request->has('parent_category') && !empty($this->request->get('parent_category'))) {
-            $tableName = (new SubCategory())->getTable();
-        } else {
-            $tableName = (new Category())->getTable();
-        }
+        $tableName = (new Category())->getTable();
 
         if ($id = $this->segment(3)) {
             $name = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',name,'.$id];
@@ -42,7 +38,6 @@ class CategoryRequest extends FormRequest
         }
 
         return [
-            'parent_category' => 'nullable|numeric',
             'name' => $name,
             'slug' => $slug,
             'description' => 'nullable|max:255'
