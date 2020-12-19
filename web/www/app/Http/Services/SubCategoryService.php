@@ -72,6 +72,9 @@ trait SubCategoryService
         if (empty($filters)) {
             return $dbModel;
         }
+        if (isset($filters['category_id']) && !empty($filters['category_id'])) {
+            $dbModel = $dbModel->where('category_id', $filters['category_id']);
+        }
         if (isset($filters['name']) && !empty($filters['name'])) {
             $dbModel = $dbModel->where('name', 'like', '%'.$filters['name'].'%');
         }

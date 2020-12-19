@@ -20,7 +20,7 @@ export default {
             'buttons',
             'addButtonName',
             'saveButtonName',
-        ])
+        ]),
     },
     methods: {
         buttonAction() {

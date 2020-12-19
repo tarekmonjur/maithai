@@ -12077,8 +12077,8 @@ __webpack_require__.r(__webpack_exports__);
     },
 
     columnSize: function () {
-      let column = 12 / (this.filtersWithoutDate.length || 0);
-      return column < 3 ? 3 : column;
+      let column = Math.round(12 / (this.filtersWithoutDate.length || 0));
+      return column < 4 ? 4 : column;
     },
 
     filtersDate() {
@@ -12191,7 +12191,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "view-button.component",
-  props: ['id'],
+  props: ['id', 'action'],
   computed: { ...Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['buttons', 'viewTitle'])
   },
   methods: {
@@ -12603,29 +12603,26 @@ const _withId = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["withScopeI
 Object(vue__WEBPACK_IMPORTED_MODULE_0__["pushScopeId"])("data-v-1a6af33c");
 
 const _hoisted_1 = {
-  class: "modal-dialog modal-lg modal-dialog-scrollable"
-};
-const _hoisted_2 = {
   class: "modal-content"
 };
-const _hoisted_3 = {
+const _hoisted_2 = {
   class: "modal-header"
 };
-const _hoisted_4 = {
+const _hoisted_3 = {
   class: "modal-title",
   id: "modalLabel"
 };
 
-const _hoisted_5 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("span", {
+const _hoisted_4 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("span", {
   "aria-hidden": "true"
 }, "×", -1
 /* HOISTED */
 );
 
-const _hoisted_6 = {
+const _hoisted_5 = {
   class: "modal-body bg-gray-light"
 };
-const _hoisted_7 = {
+const _hoisted_6 = {
   key: 0,
   class: "modal-footer"
 };
@@ -12643,7 +12640,9 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
     "data-keyboard": "false",
     "aria-labelledby": "modalLabel",
     "aria-hidden": "true"
-  }, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_3, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", _hoisted_4, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.modal.title), 1
+  }, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
+    class: ["modal-dialog modal-dialog-scrollable", _ctx.modal.size || 'modal-lg']
+  }, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", _hoisted_3, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.modal.title), 1
   /* TEXT */
   ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("button", {
     type: "button",
@@ -12651,11 +12650,11 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
     onClick: _cache[1] || (_cache[1] = $event => $options.clearData()),
     "data-dismiss": "modal",
     "aria-label": "Close"
-  }, [_hoisted_5])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_6, [_ctx.loading.modal ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])(_component_loading_component, {
+  }, [_hoisted_4])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_5, [_ctx.loading.modal ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])(_component_loading_component, {
     key: 0
   })) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["renderSlot"])(_ctx.$slots, "default", {
     key: 1
-  })]), _ctx.modal.button ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_7, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("button", {
+  })]), _ctx.modal.button ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_6, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("button", {
     type: "button",
     disabled: _ctx.loading.button,
     class: "btn btn-theme",
@@ -12666,7 +12665,9 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   /* TEXT */
   )], 8
   /* PROPS */
-  , ["disabled"])])) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)])])], 8
+  , ["disabled"])])) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)])], 2
+  /* CLASS */
+  )], 8
   /* PROPS */
   , ["id"])) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true);
 });
@@ -13018,10 +13019,10 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js?!./node_modules/vue-loader/dist/index.js?!./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"buttonAction\":\"options\"}":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/dist/templateLoader.js??ref--6!./node_modules/vue-loader/dist??ref--30-0!./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","buttonAction":"options"} ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js?!./node_modules/vue-loader/dist/index.js?!./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"action\":\"props\",\"buttonAction\":\"options\"}":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/dist/templateLoader.js??ref--6!./node_modules/vue-loader/dist??ref--30-0!./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","action":"props","buttonAction":"options"} ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40673,12 +40674,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","buttonAction":"options"} */ "./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"buttonAction\":\"options\"}");
+/* harmony import */ var _view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_action_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","action":"props","buttonAction":"options"} */ "./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"action\":\"props\",\"buttonAction\":\"options\"}");
 /* harmony import */ var _view_button_component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-button.component.vue?vue&type=script&lang=js */ "./resources/assets/backend/components/common/view-button.component.vue?vue&type=script&lang=js");
 /* empty/unused harmony star reexport */
 
 
-_view_button_component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].render = _view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__["render"]
+_view_button_component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].render = _view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_action_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__["render"]
 _view_button_component_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].__scopeId = "data-v-401f89cf"
 /* hot reload */
 if (false) {}
@@ -40705,17 +40706,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"buttonAction\":\"options\"}":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","buttonAction":"options"} ***!
-  \*************************************************************************************************************************************************************************/
+/***/ "./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"action\":\"props\",\"buttonAction\":\"options\"}":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","action":"props","buttonAction":"options"} ***!
+  \******************************************************************************************************************************************************************************************/
 /*! exports provided: render */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ref_6_node_modules_vue_loader_dist_index_js_ref_30_0_view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib!../../../../../node_modules/vue-loader/dist/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/dist??ref--30-0!./view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","buttonAction":"options"} */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js?!./node_modules/vue-loader/dist/index.js?!./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"buttonAction\":\"options\"}");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ref_6_node_modules_vue_loader_dist_index_js_ref_30_0_view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ref_6_node_modules_vue_loader_dist_index_js_ref_30_0_view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_action_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib!../../../../../node_modules/vue-loader/dist/templateLoader.js??ref--6!../../../../../node_modules/vue-loader/dist??ref--30-0!./view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={"id":"props","action":"props","buttonAction":"options"} */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js?!./node_modules/vue-loader/dist/index.js?!./resources/assets/backend/components/common/view-button.component.vue?vue&type=template&id=401f89cf&scoped=true&bindings={\"id\":\"props\",\"action\":\"props\",\"buttonAction\":\"options\"}");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ref_6_node_modules_vue_loader_dist_index_js_ref_30_0_view_button_component_vue_vue_type_template_id_401f89cf_scoped_true_bindings_id_props_action_props_buttonAction_options___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 
 
@@ -41062,6 +41063,18 @@ __webpack_require__.r(__webpack_exports__);
 
   isActive(value) {
     return value ? 'Active' : 'Inactive';
+  },
+
+  isPackage(value) {
+    return value ? 'Yes' : 'No';
+  },
+
+  isNew(value) {
+    return value ? 'Yes' : 'No';
+  },
+
+  isStock(value) {
+    return value ? 'Available' : 'Not available';
   },
 
   created(values) {

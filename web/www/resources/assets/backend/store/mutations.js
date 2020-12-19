@@ -27,7 +27,16 @@ export default {
             ...payload,
         };
     },
-    setFormInput(state, data) {
-        state.formInput = _.get(data, 'results', {});
+    setFormInput(state, payload) {
+        state.formInput = {
+            ...state.formInput,
+            ...payload,
+        };
     },
+    clearFormData(state) {
+        state.formData = {};
+    },
+    clearFormInput(state) {
+        state.formInput = {};
+    }
 }

@@ -2492,8 +2492,6 @@ div.checkbox-list li.checkbox {
 
 div.list-area div.list-img {
   border: 2px solid #efa034;
-  border-radius: 5px;
-  padding: 10px;
 }
 
 div.list-area div.list-body {
@@ -2522,8 +2520,8 @@ div.list-area div.list-body h5 {
 /********* Foood Package List Image Size ******/
 
 .list-img img {
-  width: 80px;
-  height: 80px;
+  width: 145px;
+  height: 145px;
 }
 
 /*The LIst Footer*/

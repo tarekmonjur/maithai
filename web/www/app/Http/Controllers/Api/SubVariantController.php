@@ -34,8 +34,12 @@ class SubVariantController extends ApiController
     public function index(Request $request)
     {
         try {
+            $filters = $request->all();
+            if (!empty($request->id)) {
+                $filters['variant_id'] = $request->id;
+            }
             $this->setTitle()
-                ->setFilters($request->all())
+                ->setFilters($filters)
                 ->getDataModel();
             return $this->jsonResponse($this->data, $this->data['title']);
         } catch (\Exception $e) {

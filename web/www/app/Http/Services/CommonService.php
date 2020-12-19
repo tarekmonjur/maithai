@@ -23,7 +23,7 @@ trait CommonService
     {
         $jsonData['status'] = $status;
         $code = intval($code);
-        $code = ($status === 'error') ? ($code > 0 && $code < 599) ? $code : 500 : $code;
+        $code = ($status === 'error') ? ($code > 100 && $code < 599) ? $code : 500 : $code;
         $jsonData['code'] = $code;
         $jsonData['message'] = $message;
         $jsonData['results'] = $results;

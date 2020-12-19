@@ -14,10 +14,14 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('customer_id')->default(0);
+            $table->integer('id', 'true');
+            $table->integer('customer_id')->default(-1);
             $table->string('invoice_no', 45)->unique();
             $table->string('transaction_no', 45)->nullable()->unique();
+            $table->smallInteger('table_no')->default(0);
+            $table->integer('offer_id')->default(0);
+            $table->string('offer_name', 100)->nullable();
+            $table->string('coupon_code', 45)->nullable();
             $table->enum('type', ['pos', 'online'])->default('pos');
             $table->enum('payment_type', ['cash', 'card'])->default('cash');
             $table->enum('status', ['completed'])->default('completed');
@@ -30,6 +34,8 @@ class CreateSalesTable extends Migration
             $table->decimal('total_sub_vat_amount', 8,2);
             $table->decimal('discount_percent', 8,2);
             $table->decimal('discount_amount', 8,2);
+            $table->decimal('total_discount_percent', 8,2);
+            $table->decimal('total_discount_amount', 8,2);
             $table->decimal('vat_percent', 8,2);
             $table->decimal('vat_amount', 8,2);
             $table->decimal('delivery_fee', 8,2);

@@ -118,7 +118,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route(config('app.backend_home').'.units')}}" class="nav-link">
                         <i class="nav-icon fas fa-cash-register"></i>
                         <p>@lang('menu.units')</p>
                     </a>

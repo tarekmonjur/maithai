@@ -70,7 +70,7 @@ export default {
             const result = await helpers.getDataAction(requestPayload);
 
             if (result && result.code === 200) {
-                context.commit('setFormInput', result.results);
+                context.commit('setFormInput', _.get(result.results, 'results', {}));
             } else {
                 context.commit('setErrorsAlert',  {
                     alert: _.pick(result, ['code', 'message', 'status']),

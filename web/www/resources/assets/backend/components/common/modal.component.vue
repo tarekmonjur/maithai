@@ -1,6 +1,6 @@
 <template>
     <div v-if="modal.id" class="modal fade" :id="modal.id" data-backdrop="static" data-keyboard="false" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable" :class="modal.size || 'modal-lg'">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="modalLabel">{{modal.title}}</h4>

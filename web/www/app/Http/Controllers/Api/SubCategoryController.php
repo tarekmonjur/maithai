@@ -33,8 +33,12 @@ class SubCategoryController extends ApiController
     public function index(Request $request)
     {
         try {
+            $filters = $request->all();
+            if (!empty($request->id_slug)) {
+                $filters['category_id'] = $request->id_slug;
+            }
             $this->setTitle()
-                ->setFilters($request->all())
+                ->setFilters($filters)
                 ->getDataModel();
             return $this->jsonResponse($this->data, $this->data['title']);
         } catch (\Exception $e) {

@@ -28,7 +28,10 @@ Route::namespace('Api')->group(function(){
     /********** ...... Category API ....... *****************/
     Route::prefix('/categories')->group(function() use ($route_base_path){
         Route::get('/','CategoryController@index')->name($route_base_path.'.categories.index');
-        Route::get('/{id_slug}','CategoryController@show')->name($route_base_path.'.categories.show');
+        Route::prefix('/{id_slug}')->group(function () use ($route_base_path){
+            Route::get('/','CategoryController@show')->name($route_base_path.'.categories.show');
+            Route::get('/subcategories','SubCategoryController@index')->name($route_base_path.'.categories.subcategories.index');
+        });
         Route::post('','CategoryController@store')->name($route_base_path.'.categories.store');
         Route::put('/{id}','CategoryController@update')->name($route_base_path.'.categories.update');
         Route::delete('/{id}','CategoryController@destroy')->name($route_base_path.'.categories.destroy');
@@ -55,7 +58,10 @@ Route::namespace('Api')->group(function(){
     /********** ...... Variant API ....... *****************/
     Route::prefix('/variants')->group(function() use ($route_base_path){
         Route::get('/','VariantController@index')->name($route_base_path.'.variants.index');
-        Route::get('/{id}','VariantController@show')->name($route_base_path.'.variants.show');
+        Route::prefix('/{id}')->group(function () use ($route_base_path){
+            Route::get('/','VariantController@show')->name($route_base_path.'.variants.show');
+            Route::get('/subvariants','SubVariantController@index')->name($route_base_path.'.variants.subvariants.index');
+        });
         Route::post('','VariantController@store')->name($route_base_path.'.variants.store');
         Route::put('/{id}','VariantController@update')->name($route_base_path.'.variants.update');
         Route::delete('/{id}','VariantController@destroy')->name($route_base_path.'.variants.destroy');
@@ -68,6 +74,24 @@ Route::namespace('Api')->group(function(){
         Route::post('','SubVariantController@store')->name($route_base_path.'.subvariants.store');
         Route::put('/{id}','SubVariantController@update')->name($route_base_path.'.subvariants.update');
         Route::delete('/{id}','SubVariantController@destroy')->name($route_base_path.'.subvariants.destroy');
+    });
+
+    /********** ...... Product API ....... *****************/
+    Route::prefix('/products')->group(function() use ($route_base_path){
+        Route::get('/','ProductController@index')->name($route_base_path.'.product.index');
+        Route::get('/{id_slug}','ProductController@show')->name($route_base_path.'.product.show');
+        Route::post('','ProductController@store')->name($route_base_path.'.product.store');
+        Route::put('/{id}','ProductController@update')->name($route_base_path.'.product.update');
+        Route::delete('/{id}','ProductController@destroy')->name($route_base_path.'.product.destroy');
+    });
+
+    /********** ...... SKU API ....... *****************/
+    Route::prefix('/skus')->group(function() use ($route_base_path){
+        Route::get('/','SkuController@index')->name($route_base_path.'.sku.index');
+        Route::get('/{id}','SkuController@show')->name($route_base_path.'.sku.show');
+        Route::post('','SkuController@store')->name($route_base_path.'.sku.store');
+        Route::put('/{id}','SkuController@update')->name($route_base_path.'.sku.update');
+        Route::delete('/{id}','SkuController@destroy')->name($route_base_path.'.sku.destroy');
     });
 
 });

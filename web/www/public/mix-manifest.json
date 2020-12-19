@@ -1,9 +1,3 @@
 {
-    "/backend/js/category.js": "/backend/js/category.js",
-    "/backend/js/sub_category.js": "/backend/js/sub_category.js",
-    "/backend/js/sub_variant.js": "/backend/js/sub_variant.js",
-    "/backend/js/unit.js": "/backend/js/unit.js",
-    "/backend/js/variant.js": "/backend/js/variant.js",
-    "/frontend/css/app.css": "/frontend/css/app.css",
-    "/backend/css/style.css": "/backend/css/style.css"
+    "/backend/js/product.js": "/backend/js/product.js"
 }

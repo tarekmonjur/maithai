@@ -14,10 +14,10 @@ class CreateShippingDetailsTable extends Migration
     public function up()
     {
         Schema::create('shipping_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 'true');
             $table->integer('order_id')->index();
             $table->string('full_name', 45);
-            $table->string('email', 45);
+            $table->string('email', 45)->nullable();
             $table->string('mobile', 25);
             $table->string('city', 25)->nullable();
             $table->string('state', 25)->nullable();

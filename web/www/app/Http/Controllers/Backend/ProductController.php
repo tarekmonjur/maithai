@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Services\CategoryService;
+use App\Http\Services\ProductService;
+use App\Models\Category;
 
 class ProductController extends BackendController
 {
-//    use CategoryService;
+    use ProductService;
     /*
     |--------------------------------------------------------------------------
-    | Product Category Controller
+    | Product Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Product Category Manage
+    | @Description : Product Manage
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
@@ -25,10 +26,12 @@ class ProductController extends BackendController
 
     public function index()
     {
-//        $this->setTitle();
-//        $this->setColumnsConfig();
-//        $this->setFiltersConfig();
-        $this->data['scripts'] = [];
+        $this->setTitle();
+        $this->setColumnsConfig();
+        $this->setFiltersConfig();
+        $categories = Category::select('id as value', 'name as label')->get()->toArray();
+        $this->setFiltersConfigData('category_id', $categories);
+        $this->data['scripts'] = ['product'];
         $this->data['styles'] = [];
         return view('backend.layouts.main')->with($this->data);
     }

@@ -71,6 +71,9 @@ trait SubVariantService
         if (empty($filters)) {
             return $dbModel;
         }
+        if (isset($filters['variant_id']) && !empty($filters['variant_id'])) {
+            $dbModel = $dbModel->where('variant_id', $filters['variant_id']);
+        }
         if (isset($filters['name']) && !empty($filters['name'])) {
             $dbModel = $dbModel->where('name', 'like', '%'.$filters['name'].'%');
         }

@@ -13,7 +13,5 @@ $factory->define(ProductVariant::class, function (Faker $faker) {
         'variant_id' => $variant->id,
         'sub_variant_id' => $variant->subVariants[rand(0,2)]->id,
         'additional_price' => $faker->numberBetween(10, 100),
-        'qty' => $faker->randomDigit(),
-        'is_optional' => $faker->boolean
     ];
 });

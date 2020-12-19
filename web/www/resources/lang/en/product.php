@@ -1,0 +1,83 @@
+<?php
+
+return [
+    'default' => 'Food',
+    'add' => 'Add New Food',
+    'edit' => 'Edit Food',
+    'filter' => 'Filter Food',
+    'view' => 'View Food',
+    'list' => 'Food List',
+    'save' => 'Save Food',
+    'submit' => 'Submit Food',
+    'update' => 'Update Food',
+
+    //view fields
+    'field_name' => 'Food Field Name',
+    'field_value' => 'Food Field Value',
+
+    // columns
+    'id' => 'ID',
+    'sl' => 'SL',
+    'name' => 'Food Name',
+    'code' => 'Food Code',
+    'barcode' => 'Food Barcode',
+    'sorting' => 'Sorting Food',
+    'unit' => 'Unit',
+    'regular_price' => 'Regular Price',
+    'special_price' => 'Special Price',
+    'vat_percent' => 'Vat Percent',
+    'category' => 'Menu',
+    'categories' => 'Menus',
+    'sub_category' => 'Sub Menu',
+    'sub_categories' => 'Sub Menus',
+    'sub_categories_count' => 'Sub Menus Count',
+    'products' => 'Foods',
+    'products_count' => 'Foods Count',
+    'slug' => 'Slug',
+    'status' => 'Status',
+    'package' => 'Package',
+    'new' => 'New',
+    'image' => 'Image',
+    'description' => 'Description',
+    'created' => 'Created',
+    'updated' => 'Updated',
+    'action' => 'Action',
+
+    'stock' => 'Stock',
+    'stocks' => 'Stocks',
+    'sku' => 'SKU',
+    'skus' => 'SKUs',
+    'sku_name' => 'SKU Name',
+    'sku_code' => 'SKU Code',
+
+    'variant' => 'Variant',
+    'variants' => 'Variants',
+    'sub_variant' => 'Sub Variant',
+    'sub_variants' => 'Sub Variants',
+    'additional_price' => 'Additional Price',
+    'qty' => 'Quantity',
+    'optional' => 'Optional',
+    'is_optional' => 'Is Optional',
+
+    // filters & form
+    'product_status' => 'Food Status',
+    'active' => 'Active Food',
+    'inactive' => 'Inactive Food',
+    'from_date' => 'From Date',
+    'to_date' => 'To Date',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'category_id' => 'Menu Name',
+    'available' => 'Available',
+    'not_available' => 'Not Available',
+    'is_active' => 'Is Active',
+    'is_package' => 'Is Package',
+    'is_new' => 'Is New',
+    'is_stock' => 'Is Stock',
+    'stock&sku' => 'Stock & SKU',
+
+
+    'success_msg' => 'Food successfully saved',
+    'error_msg' => 'Food not saved. Try again..!',
+    'warning_msg' => 'Food not found. Try again..!'
+];

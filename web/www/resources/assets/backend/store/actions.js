@@ -5,6 +5,7 @@ export default {
         await helpers.setLang(true);
         await context.dispatch('getListData');
     },
+
     async getListData(context, payload) {
         payload = _.isEmpty(payload) ? {} : payload;
         _.set(payload, 'params', {
@@ -27,9 +28,11 @@ export default {
             });
         }
     },
+
     async filterButtonAction(context, payload) {
         context.commit('setFilterData', payload);
     },
+
     async viewButtonAction(context, payload) {
         context.commit('setLoading', {modal: true});
         context.commit('setModal', payload.modal);
@@ -47,6 +50,7 @@ export default {
         }
         context.commit('setLoading', {modal: false});
     },
+
     async deleteButtonAction(context, payload) {
         const requestPayload = {};
         _.set(requestPayload, 'url', context.state.url+'/'+payload.id);
@@ -58,11 +62,144 @@ export default {
             await context.dispatch('getListData');
         }
     },
+
     async clearDataAction(context, modal_id) {
         $('#'+modal_id).modal('hide');
         context.commit('setModal', {});
-        context.commit('setFormData', {});
-        context.commit('setFormInput', {});
+        context.commit('setLoading', {modal: null, button: null});
+        // context.commit('clearFormData', {});
+        context.commit('clearFormInput', {});
         context.commit('setErrorsAlert', {});
+    },
+
+    async getCategories(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'categories'))) {
+            return _.get(context.state.formData, 'categories');
+        }
+
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/categories');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                categories: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+
+    async getSubCategories(context, payload) {
+        const requestPayload = {};
+        _.set(requestPayload, 'url', `/categories/${payload.id}/subcategories`);
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                sub_categories: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+
+    async getUnits(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'units'))) {
+            return _.get(context.state.formData, 'units');
+        }
+
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/units');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                units: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+
+    async getVariants(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'variants'))) {
+            return _.get(context.state.formData, 'variants');
+        }
+
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/variants');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                variants: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+
+    async getSkus(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'skus'))) {
+            return _.get(context.state.formData, 'skus');
+        }
+
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/skus');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                skus: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
     },
 }

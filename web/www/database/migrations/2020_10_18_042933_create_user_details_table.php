@@ -14,11 +14,11 @@ class CreateUserDetailsTable extends Migration
     public function up()
     {
         Schema::create('user_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 'true');
             $table->integer('user_id');
-            $table->integer('user_type_id')->default(0);
-            $table->integer('user_service_type_id')->default(0);
-            $table->integer('user_status_id')->default(0);
+            $table->integer('user_type_id')->nullable();
+            $table->integer('user_service_type_id')->nullable();
+            $table->integer('user_status_id')->nullable();
             $table->string('first_name', 45)->index();
             $table->string('last_name', 45)->nullable();
             $table->string('email', 45)->nullable()->unique();
@@ -32,9 +32,9 @@ class CreateUserDetailsTable extends Migration
             $table->string('m_name', 45)->nullable();
             $table->string('present_address')->nullable();
             $table->string('permanent_address')->nullable();
-            $table->decimal('salary', 8, 2)->default(0);
-            $table->integer('created_by')->default(0);
-            $table->integer('updated_by')->default(0);
+            $table->decimal('salary', 8, 2)->nullable()->default(0);
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

@@ -14,14 +14,12 @@ class CreateProductStocksTable extends Migration
     public function up()
     {
         Schema::create('product_stocks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 'true');
             $table->integer('product_id')->index();
-            $table->enum('stock_type', ['product', 'sales', 'purchase']);
-            $table->integer('previous_stock')->default(0);
-            $table->integer('change_stock')->default(0);
-            $table->integer('current_stock')->default(0);
-            $table->integer('created_by')->default(0);
-            $table->integer('updated_by')->default(0);
+            $table->integer('sku_id')->nullable();
+            $table->smallInteger('stock')->nullable()->default(0);
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

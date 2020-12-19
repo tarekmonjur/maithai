@@ -171,6 +171,12 @@ trait DataModelService
         return $this->data['filters_config'];
     }
 
+    protected function setFilter($key, $value)
+    {
+        $this->data['filters'][$key] = $value;
+        return $this;
+    }
+
     protected function setFilters($filters)
     {
         $filters['columns'] = $this->setColumns($filters['columns'] ?? null)->getColumns();

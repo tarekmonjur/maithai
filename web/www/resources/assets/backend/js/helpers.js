@@ -12,6 +12,15 @@ export default {
     isActive(value) {
         return value ? 'Active' : 'Inactive';
     },
+    isPackage(value) {
+        return value ? 'Yes' : 'No';
+    },
+    isNew(value) {
+        return value ? 'Yes' : 'No';
+    },
+    isStock(value) {
+        return value ? 'Available' : 'Not available';
+    },
     created(values) {
         if (_.isEmpty(values)) {
             return '';
@@ -117,19 +126,46 @@ export default {
         const result = await this.makeApiRequest(url, 'GET', {params});
         return result;
     },
+    async transformToFormData(data) {
+        const formData = new FormData();
+        _.forEach(data, (value, key) => {
+            if (typeof value === 'boolean') {
+                value = value ? 1 : 0;
+            }
+            if (key !== 'image' && _.isObject(value)) {
+                for (const k in value) {
+                    if (value.hasOwnProperty(k)) {
+                        if (_.isObject(value[k])) {
+                            for (const kk in value[k]) {
+                                if (value[k].hasOwnProperty(kk)) {
+                                    console.log(`${key}[${k}][${kk}]`, value[k][kk]);
+                                    formData.append(`${key}[${k}][${kk}]`, value[k][kk]);
+                                }
+                            }
+                        } else {
+                            console.log(`${key}[${k}]`, value[k]);
+                            formData.append(`${key}[${k}]`, value[k]);
+                        }
+                    }
+                }
+            } else {
+                formData.append(key, value || null);
+            }
+        }); 
+        formData.delete('id');
+        return formData;
+    },
     async postDataAction(payload) {
         const url = _.get(payload, 'url', '');
         const method = _.get(payload, 'method', '');
 
         if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
-            const data = _.get(payload, 'data', {});
-            const formData = new FormData();
-            _.forEach(data, (value, key) => {
-                formData.append(key, value || '');
-            });
-            formData.delete('id');
+            const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
+            const formData = await this.transformToFormData(data);
+            console.log(formData);
             _.set(payload, 'data', formData);
         }
+
         const result = await this.makeApiRequest(url, method, payload);
         return result;
     },

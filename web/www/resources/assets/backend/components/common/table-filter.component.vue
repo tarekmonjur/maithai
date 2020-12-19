@@ -80,8 +80,8 @@ export default {
           return 'abcd';
         },
         columnSize: function() {
-            let column = 12 / (this.filtersWithoutDate.length || 0);
-            return column < 3 ? 3 : column;
+            let column = Math.round(12 / (this.filtersWithoutDate.length || 0));
+            return column < 4 ? 4 : column;
         },
         filtersDate() {
             return _.compact(
