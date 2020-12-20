@@ -246,6 +246,7 @@
                                     :btn="{icon: 'trash'}"
                                     :action="(btn) => this.deleteVariant(index)">
                                 </button-component>
+                                <input type="hidden" v-model="formInput['variants'][index]['id']">
                             </td>
                         </tr>
                     </tbody>
@@ -292,6 +293,7 @@
                                 :btn="{icon: 'trash'}"
                                 :action="(btn) => this.deleteStock(index)">
                             </button-component>
+                            <input type="hidden" v-model="formInput['stocks'][index]['id']">
                         </td>
                     </tr>
                     </tbody>
@@ -401,6 +403,12 @@ export default {
         },
         deleteVariant(index) {
             if (_.has(this.formInput, `variants.${index}`)) {
+                if (_.get(this.formInput, `variants.${index}.id`, null)) {
+                    if (!this.formInput['delete_variants'] || _.isEmpty(this.formInput['delete_variants'])) {
+                        this.formInput['delete_variants'] = [];
+                    }
+                    this.formInput['delete_variants'].push({id: _.get(this.formInput, `variants.${index}.id`, null)});
+                }
                 this.formInput['variants'].splice(index, 1);
                 this.subVariants.splice(index, 1);
                 this.updateStock();
@@ -422,6 +430,12 @@ export default {
         },
         deleteStock(index) {
             if (_.has(this.formInput, `stocks.${index}`)) {
+                if (_.get(this.formInput, `stocks.${index}.id`, null)) {
+                    if (!this.formInput['delete_stocks'] || _.isEmpty(this.formInput['delete_stocks'])) {
+                        this.formInput['delete_stocks'] = [];
+                    }
+                    this.formInput['delete_stocks'].push({id: _.get(this.formInput, `stocks.${index}.id`, null)});
+                }
                 this.formInput['stocks'].splice(index, 1);
                 this.updateStock();
             }

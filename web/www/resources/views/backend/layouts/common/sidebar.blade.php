@@ -48,28 +48,11 @@
                         <p>@lang('menu.customers')</p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{route(config('app.backend_home').'.products')}}" class="nav-link">
                         <i class="nav-icon fas fa-hamburger"></i>
-                        <p>
-                            @lang('menu.product')
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                        <p>@lang('menu.product')</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route(config('app.backend_home').'.products')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route(config('app.backend_home').'.products')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">

@@ -131,6 +131,7 @@ export default {
         _.forEach(data, (value, key) => {
             if (typeof value === 'boolean') {
                 value = value ? 1 : 0;
+                console.log({value});
             }
             if (key !== 'image' && _.isObject(value)) {
                 for (const k in value) {
@@ -138,20 +139,20 @@ export default {
                         if (_.isObject(value[k])) {
                             for (const kk in value[k]) {
                                 if (value[k].hasOwnProperty(kk)) {
-                                    console.log(`${key}[${k}][${kk}]`, value[k][kk]);
+                                    // console.log(`${key}[${k}][${kk}]`, value[k][kk]);
                                     formData.append(`${key}[${k}][${kk}]`, value[k][kk]);
                                 }
                             }
                         } else {
-                            console.log(`${key}[${k}]`, value[k]);
+                            // console.log(`${key}[${k}]`, value[k]);
                             formData.append(`${key}[${k}]`, value[k]);
                         }
                     }
                 }
             } else {
-                formData.append(key, value || null);
+                formData.append(key, value);
             }
-        }); 
+        });
         formData.delete('id');
         return formData;
     },
@@ -161,8 +162,8 @@ export default {
 
         if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
             const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
+            console.log(data);
             const formData = await this.transformToFormData(data);
-            console.log(formData);
             _.set(payload, 'data', formData);
         }
 

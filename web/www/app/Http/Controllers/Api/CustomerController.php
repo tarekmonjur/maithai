@@ -3,31 +3,31 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\ProductRequest;
-use App\Http\Services\ProductService;
+use App\Http\Services\CustomerService;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-class ProductController extends ApiController
+class CustomerController extends ApiController
 {
     /*
     |--------------------------------------------------------------------------
-    | Product API Controller
+    | Customer API Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Product Manage
+    | @Description : Customer Manage
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
     */
 
-    use ProductService;
+    use CustomerService;
 
     public function __construct()
     {
         parent::__construct();
         $this->middleware('auth:'.$this->guard, ['except' => [], 'only' => []]);
-        $this->upload_path = $this->upload_path.'product/';
+        $this->upload_path = $this->upload_path.'customer/';
     }
 
     public function index(Request $request)
@@ -46,7 +46,7 @@ class ProductController extends ApiController
     {
         try {
             $this->setTitle('view')
-                ->setIdSlug($request->id_slug)
+                ->setIdSlug($request->id)
                 ->setSubList($request->sublist)
                 ->setColumns($request->columns)
                 ->getDataModel();

@@ -94,4 +94,13 @@ Route::namespace('Api')->group(function(){
         Route::delete('/{id}','SkuController@destroy')->name($route_base_path.'.sku.destroy');
     });
 
+    /********** ...... Customer API ....... *****************/
+    Route::prefix('/customers')->group(function() use ($route_base_path){
+        Route::get('/','CustomerController@index')->name($route_base_path.'.customer.index');
+        Route::get('/{id}','CustomerController@show')->name($route_base_path.'.customer.show');
+        Route::post('','CustomerController@store')->name($route_base_path.'.customer.store');
+        Route::put('/{id}','CustomerController@update')->name($route_base_path.'.customer.update');
+        Route::delete('/{id}','CustomerController@destroy')->name($route_base_path.'.customer.destroy');
+    });
+
 });

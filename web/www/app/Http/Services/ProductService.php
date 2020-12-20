@@ -8,6 +8,8 @@
 namespace App\Http\Services;
 
 use App\Models\Product;
+use App\Models\ProductStock;
+use App\Models\ProductVariant;
 use Carbon\Carbon;
 
 trait ProductService
@@ -234,6 +236,127 @@ trait ProductService
 
         $result = Product::latest()->first('id');
         return $result->id + 1 ?? 0;
+    }
+
+    protected function insertProductVariants($product_id, $variants = array())
+    {
+        if (empty($product_id) || empty($variants)) {
+            return null;
+        }
+
+        $insertData = [];
+        foreach($variants as $variant) {
+            if (!empty($variant['id']) || empty($variant['variant_id'])) {
+                continue;
+            }
+
+            $insertData[] = [
+                'product_id' => $product_id,
+                'variant_id' => $variant['variant_id'],
+                'sub_variant_id' => !empty($variant['sub_variant_id']) ?? null,
+                'additional_price' => !empty($variant['additional_price']) ?? null,
+                'created_at' => Carbon::now(),
+            ];
+        }
+
+        if (!empty($insertData)) {
+            ProductVariant::insert($insertData);
+        }
+    }
+
+    protected function updateProductVariants($product_id, $variants = array())
+    {
+        if (empty($product_id) || empty($variants)) {
+            return null;
+        }
+
+        foreach($variants as $variant) {
+            if (empty($variant['id']) || empty($variant['variant_id'])) {
+                continue;
+            }
+
+            $productVariant = ProductVariant::find($variant['id']);
+            if ($productVariant) {
+                $productVariant->product_id = $product_id;
+                $productVariant->variant_id = $variant['variant_id'];
+                $productVariant->sub_variant_id = $variant['sub_variant_id'];
+                $productVariant->additional_price = $variant['additional_price'];
+                $productVariant->save();
+            }
+        }
+    }
+
+    protected function deleteProductVariants($product_id, $variants = array()) {
+        if (empty($product_id) || empty($variants)) {
+            return null;
+        }
+
+        foreach($variants as $variant) {
+            if (empty($variant['id'])) {
+                continue;
+            }
+            ProductVariant::where('id', $variant['id'])->delete();
+        }
+    }
+
+    protected function insertProductStocks($product_id, $stocks = array())
+    {
+        if (empty($product_id) || empty($stocks)) {
+            return null;
+        }
+
+        $insertData = [];
+        foreach($stocks as $stock) {
+            if (!empty($stock['id']) || empty($stock['sku_id'])) {
+                continue;
+            }
+
+            $insertData[] = [
+                'product_id' => $product_id,
+                'sku_id' => $stock['sku_id'],
+                'stock' => !empty($stock['stock']) ?? null,
+                'created_at' => Carbon::now(),
+            ];
+        }
+
+        if (!empty($insertData)) {
+            ProductStock::insert($insertData);
+        }
+    }
+
+    protected function updateProductStocks($product_id, $stocks = array())
+    {
+        if (empty($product_id) || empty($stocks)) {
+            return null;
+        }
+
+        foreach($stocks as $stock) {
+            if (empty($stock['id']) || empty($stock['sku_id'])) {
+                continue;
+            }
+
+            $productStock = ProductStock::find($stock['id']);
+            if ($productStock) {
+                $productStock->product_id = $product_id;
+                $productStock->sku_id = $stock['sku_id'];
+                $productStock->stock = $stock['stock'];
+                $productStock->save();
+            }
+        }
+    }
+
+    protected function deleteProductStocks($product_id, $stocks = array())
+    {
+        if (empty($product_id) || empty($stocks)) {
+            return null;
+        }
+
+        foreach($stocks as $stock) {
+            if (empty($stock['id'])) {
+                continue;
+            }
+            ProductStock::where('id', $stock['id'])->delete();
+        }
     }
 
 }
