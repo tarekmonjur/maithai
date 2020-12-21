@@ -28,18 +28,33 @@ return [
     'referral_code' => 'Referral Code',
     'is_active' => 'Status',
     'is_membership' => 'Membership',
-    'email_verified' => 'Verified',
+    'email_verified' => 'Email Verified',
+    'city' => 'City',
+    'state' => 'State',
+    'zip_code' => 'Zip Code',
+    'address' => 'Address',
     'created' => 'Created',
     'updated' => 'Updated',
     'action' => 'Action',
 
-    // filters
+    // filters & form
     'status' => 'Customer Status',
     'active' => 'Active Customer',
     'inactive' => 'Inactive Customer',
     'from_date' => 'From Date',
     'to_date' => 'To Date',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'name' => 'Customer Name',
+    'verified' => 'Verified',
+    'unverified' => 'Unverified',
+    'password' => 'Password',
+    'retype_password' => 'Retype Password',
+    'male' => 'Male',
+    'female' => 'Female',
+    'other' => 'Other',
 
+    // alert
     'success_msg' => 'Customer successfully saved',
     'error_msg' => 'Customer not saved. Try again..!',
     'warning_msg' => 'Customer not found. Try again..!'

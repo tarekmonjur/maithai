@@ -40,7 +40,7 @@ trait CustomerService
     ];
     private $filtersConfig = [
         [
-            'name' => 'full_name',
+            'name' => 'name',
             'label' => '',
             'type' => 'text',
             'value' => '',
@@ -73,6 +73,15 @@ trait CustomerService
             'options' => [
                 '1' => 'yes',
                 '0' => 'no'
+            ]
+        ],
+        [
+            'name' => 'email_verified',
+            'label' => '',
+            'type' => 'select',
+            'options' => [
+                '1' => 'verified',
+                '0' => 'unverified'
             ]
         ],
         [

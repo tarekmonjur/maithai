@@ -21,6 +21,12 @@ export default {
     isStock(value) {
         return value ? 'Available' : 'Not available';
     },
+    isMembership(value) {
+        return value ? 'Yes' : 'No';
+    },
+    isVerified(value) {
+        return value ? 'Verified' : 'Unverified';
+    },
     created(values) {
         if (_.isEmpty(values)) {
             return '';

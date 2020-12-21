@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\ProductRequest;
+use App\Http\Requests\CustomerRequest;
 use App\Http\Services\CustomerService;
-use App\Models\Product;
+use App\Models\Customer;
+use App\Models\CustomerDetails;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -56,10 +57,10 @@ class CustomerController extends ApiController
         }
     }
 
-    public function store(ProductRequest $request)
+    public function store(CustomerRequest $request)
     {
         try {
-            $product = new Product();
+            $product = new Customer();
             $product->name = $request->name;
             $product->code = $this->getProductCode($request->code);
             $product->code = $this->getProductBarcode($request->barcode);
@@ -96,11 +97,10 @@ class CustomerController extends ApiController
     }
 
 
-    public function update(ProductRequest $request)
+    public function update(CustomerRequest $request)
     {
-//        dd($request->all());
         try {
-            $product = Product::find($request->id);
+            $product = Customer::find($request->id);
             if (!$product) {
                 return $this->jsonResponse('', $this->getTrans('warning_msg'));
             }

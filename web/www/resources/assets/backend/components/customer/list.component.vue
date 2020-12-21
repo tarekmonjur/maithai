@@ -2,18 +2,18 @@
     <tr v-for="row in tableData">
         <td>{{row.id}}</td>
         <td>{{row.username}}</td>
-        <td>{{row.first_name}}</td>
-        <td>{{row.last_name}}</td>
-        <td>{{row.email}}</td>
-        <td>{{row.mobile_no}}</td>
+        <td>{{row.details && row.details.first_name}}</td>
+        <td>{{row.details && row.details.last_name}}</td>
+        <td>{{row.details && row.details.email}}</td>
+        <td>{{row.details && row.details.mobile_no}}</td>
         <td>
-            <img :src="row.photo" alt="" width="60">
+            <img :src="row.details && row.details.photo" alt="" width="60">
         </td>
-        <td>{{row.gender}}</td>
+        <td>{{row.details && row.details.gender}}</td>
         <td>{{row.referral_code}}</td>
-        <td>{{this.isActive(row.is_membership)}}</td>
+        <td>{{this.isMembership(row.is_membership)}}</td>
         <td>{{this.isActive(row.is_active)}}</td>
-        <td>{{this.isActive(row.email_verified)}}</td>
+        <td>{{this.isVerified(row.email_verified)}}</td>
         <td>
             <div class="d-flex actions">
                 <div class="flex-fill">
@@ -22,9 +22,9 @@
                 <div class="flex-fill">
                     <view-button-component :id="row.id"></view-button-component>
                 </div>
-                <div class="flex-fill">
-                    <delete-button-component :id="row.id"></delete-button-component>
-                </div>
+<!--                <div class="flex-fill">-->
+<!--                    <delete-button-component :id="row.id"></delete-button-component>-->
+<!--                </div>-->
             </div>
         </td>
     </tr>
