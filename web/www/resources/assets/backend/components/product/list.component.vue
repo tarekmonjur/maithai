@@ -4,7 +4,7 @@
         <td>{{row.name}}</td>
         <td>{{row.code}}</td>
         <td>{{row.barcode}}</td>
-        <td>{{row.sorting}}</td>
+        <td>{{row.sort}}</td>
         <td><img :src="row.image" alt="" width="60"></td>
         <td>{{row.unit && row.unit.name}}</td>
         <td>{{row.category && row.category.name}}</td>

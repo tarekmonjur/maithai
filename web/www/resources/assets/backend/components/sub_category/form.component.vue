@@ -14,6 +14,18 @@
                     <div class="invalid-feedback" v-if="errors.category_id">{{errors.category_id}}</div>
                 </div>
             </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="sorting">{{lang('sorting')}} : </label>
+                <input
+                    type="text"
+                    id="sorting"
+                    v-model="formInput['sort']"
+                    :class="{'is-invalid' : errors.sort}"
+                    class="form-control form-control-sm" />
+                <div class="invalid-feedback" v-if="errors.sort">{{errors.sort}}</div>
+              </div>
+            </div>
         </div>
         <div class="form-row">
             <div class="col">

@@ -19,12 +19,12 @@ require("laravel-mix-vue3");
 // mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
 
 
-// mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/sub_category.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/unit.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/variant.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/sub_variant.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/product.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/sub_category.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/unit.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/variant.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/sub_variant.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/product.js', 'public/backend/js');
 mix.vue3('resources/assets/backend/js/customer.js', 'public/backend/js');
 
 

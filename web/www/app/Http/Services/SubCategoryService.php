@@ -25,6 +25,7 @@ trait SubCategoryService
     private $columnsConfig = [
         'sl' => 100,
         'name' => 0,
+        'sorting' => 0,
         'category' => 0,
         'products_count' => 0,
         'slug' => 0,
@@ -125,6 +126,7 @@ trait SubCategoryService
                 ->get();
         } else {
             $categories = $this->generateFilters($categories);
+            $categories->orderBy('sort');
 
             if ($this->getPaginate()) {
                 $categories = $categories->paginate(config('app.backend_per_page'));
@@ -151,6 +153,16 @@ trait SubCategoryService
         }
 
         return $this->data;
+    }
+
+    protected function getSortNumber($sort = null)
+    {
+        if (!empty($sort) && is_numeric($sort)) {
+            return intval($sort);
+        }
+
+        $result = SubCategory::orderByDesc('sort')->first('sort');
+        return $result ? $result->sort + 1 : 0;
     }
 
 }

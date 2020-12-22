@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -14035,7 +14035,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
     /* TEXT */
     ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.barcode), 1
     /* TEXT */
-    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.sorting), 1
+    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.sort), 1
     /* TEXT */
     ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
       src: row.image,
@@ -14214,7 +14214,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
     /* TEXT */
     )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`sorting`)), 1
     /* TEXT */
-    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.sorting), 1
+    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.sort), 1
     /* TEXT */
     )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`regular_price`)), 1
     /* TEXT */
@@ -42006,6 +42006,14 @@ __webpack_require__.r(__webpack_exports__);
     return value ? 'Available' : 'Not available';
   },
 
+  isMembership(value) {
+    return value ? 'Yes' : 'No';
+  },
+
+  isVerified(value) {
+    return value ? 'Verified' : 'Unverified';
+  },
+
   created(values) {
     if (_.isEmpty(values)) {
       return '';
@@ -46571,14 +46579,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1:
+/***/ 6:
 /*!******************************************************!*\
   !*** multi ./resources/assets/backend/js/product.js ***!
   \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/monjur/DevBox/maithai/web/www/resources/assets/backend/js/product.js */"./resources/assets/backend/js/product.js");
+module.exports = __webpack_require__(/*! /Users/macbookpro/Devbox/maithai/web/www/resources/assets/backend/js/product.js */"./resources/assets/backend/js/product.js");
 
 
 /***/ })

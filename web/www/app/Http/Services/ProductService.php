@@ -182,8 +182,8 @@ trait ProductService
                 ->get();
         } else {
             $product = $this->generateFilters($product);
-            $product->orderByDesc('created_at');
-            $product->orderByDesc('updated_at');
+            $product->orderBy('sort');
+//            $product->orderByDesc('created_at');
 
             if ($this->getPaginate()) {
                 $product = $product->paginate(config('app.backend_per_page'));
@@ -234,8 +234,8 @@ trait ProductService
             return intval($sort);
         }
 
-        $result = Product::latest()->first('id');
-        return $result->id + 1 ?? 0;
+        $result = Product::orderByDesc('sort')->first('sort');
+        return $result ? $result->sort + 1 : 0;
     }
 
     protected function insertProductVariants($product_id, $variants = array())

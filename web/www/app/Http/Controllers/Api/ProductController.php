@@ -98,7 +98,6 @@ class ProductController extends ApiController
 
     public function update(ProductRequest $request)
     {
-//        dd($request->all());
         try {
             $product = Product::find($request->id);
             if (!$product) {
@@ -135,7 +134,6 @@ class ProductController extends ApiController
                $this->insertProductStocks($product->id, $request->stocks);
                $this->updateProductStocks($product->id, $request->stocks);
                $this->deleteProductStocks($product->id, $request->delete_stocks);
-//               dd($request->variants, $request->delete_variants, $request->stocks, $request->delete_stocks);
                return $this->jsonResponse(null, $this->getTrans('success_msg'));
            } else {
                return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');

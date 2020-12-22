@@ -19,6 +19,7 @@ return [
     'id' => 'ID',
     'sl' => 'SL',
     'name' => 'Menu Name',
+    'sorting' => 'Sorting',
     'products' => 'Foods',
     'products_count' => 'Foods Count',
     'sub_categories' => 'Sub Menus',

@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td>{{lang(`sorting`)}}</td>
-            <td>{{showData.sorting}}</td>
+            <td>{{showData.sort}}</td>
         </tr>
         <tr>
             <td>{{lang(`regular_price`)}}</td>

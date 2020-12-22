@@ -8,6 +8,10 @@
             <td>{{lang(`category`)}}</td>
             <td>{{showData.category.name}}</td>
         </tr>
+      <tr>
+        <td>{{lang(`sorting`)}}</td>
+        <td>{{showData.sort}}</td>
+      </tr>
         <tr>
             <td>{{lang(`name`)}}</td>
             <td>{{showData.name}}</td>

@@ -8,6 +8,10 @@
             <td>{{lang(`name`)}}</td>
             <td>{{showData.name}}</td>
         </tr>
+      <tr>
+        <td>{{lang(`sorting`)}}</td>
+        <td>{{showData.sort}}</td>
+      </tr>
         <tr>
             <td>{{lang(`image`)}}</td>
             <td><img :src="showData.image" alt="" width="60"></td>

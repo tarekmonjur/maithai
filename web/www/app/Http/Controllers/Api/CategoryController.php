@@ -61,6 +61,7 @@ class CategoryController extends ApiController
         try {
             $category = new Category();
             $category->name = $request->name;
+            $category->sort = $this->getSortNumber($request->sort);
             $category->is_active = $request->is_active ?? 1;
             $category->slug = $request->slug;
             $category->description = $request->description;
@@ -97,6 +98,7 @@ class CategoryController extends ApiController
             }
 
             $category->name = $request->name;
+            $category->sort = $this->getSortNumber($request->sort);
             $category->is_active = $request->is_active;
             $category->slug = $request->slug;
             $category->description = $request->description;

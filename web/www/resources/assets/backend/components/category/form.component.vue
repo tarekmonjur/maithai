@@ -48,6 +48,18 @@
                 </div>
             </div>
             <div class="col">
+              <div class="form-group">
+                <label for="sorting">{{lang('sorting')}} : </label>
+                <input
+                    type="text"
+                    id="sorting"
+                    v-model="formInput['sort']"
+                    :class="{'is-invalid' : errors.sort}"
+                    class="form-control form-control-sm" />
+                <div class="invalid-feedback" v-if="errors.sort">{{errors.sort}}</div>
+              </div>
+            </div>
+            <div class="col">
                 <div class="form-group">
                     <label for="is_active">{{lang('is_active')}} :</label>
                     <select

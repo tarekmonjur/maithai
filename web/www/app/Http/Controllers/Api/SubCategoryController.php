@@ -66,6 +66,7 @@ class SubCategoryController extends ApiController
             $category = new SubCategory();
             $category->category_id = $request->category_id;
             $category->name = $request->name;
+            $category->sort = $this->getSortNumber($request->sort);
             $category->is_active = $request->is_active ?? 1;
             $category->slug = $request->slug;
             $category->description = $request->description;
@@ -103,6 +104,7 @@ class SubCategoryController extends ApiController
 
             $category->category_id = $request->category_id;
             $category->name = $request->name;
+            $category->sort = $this->getSortNumber($request->sort);
             $category->is_active = $request->is_active;
             $category->slug = $request->slug;
             $category->description = $request->description;
