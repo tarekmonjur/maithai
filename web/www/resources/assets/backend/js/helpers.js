@@ -181,4 +181,78 @@ export default {
         const result = await this.makeApiRequest(url, 'DELETE');
         return result;
     },
+    async makeOrderItem(product) {
+        if (_.isEmpty(product)) {
+            return null;
+        }
+        let variants = [];
+        if (!_.isEmpty(_.get(product, 'variants', null))) {
+            variants = _.map(product.variants, variant => {
+                return {
+                    id: variant.id,
+                    additional_price: variant.additional_price,
+                    variant: `${_.get(variant, 'variant.name', '')} - ${_.get(variant, 'sub_variant.name', '')}`,
+                    is_added: false,
+                }
+            });
+        }
+        const product_price = product.special_price && +product.special_price > 0 ?
+          +product.special_price : +product.regular_price;
+        const vat_amount = product.vat_percent && product.vat_percent > 0 ?
+          (product_price * product.vat_percent) / 100 : 0;
+        let discount_percent = 0;
+        let discount_amount = 0;
+        if (_.get(product, 'offer')) {
+            discount_percent = _.get(product, 'offer.discount_type', null) === 'percent' ?
+              _.get(product, 'offer.discount', null) : null;
+            discount_amount = _.get(product, 'offer.discount_type', null) === 'amount' ?
+              _.get(product, 'offer.discount', null) : null;
+            
+            if (discount_percent && !discount_amount) {
+                discount_amount = (product_price * discount_percent) / 100;
+            } else {
+                discount_percent = (discount_amount * 100) / product_price;
+            }
+        }
+        const price = (product_price + vat_amount) - discount_amount;
+        return {
+            product_id: product.id,
+            offer_id: _.get(product, 'offer.id', null),
+            offer_name: _.get(product, 'offer.name', null),
+            product_name: product.name,
+            product_code: product.code,
+            product_barcode: product.barcode,
+            product_unit: _.get(product, 'unit.name', null),
+            product_variant: variants,
+            product_price: +product_price,
+            product_qty: 1,
+            discount_percent: +discount_percent,
+            discount_amount: +discount_amount,
+            vat_percent: +product.vat_percent,
+            vat_amount: +vat_amount,
+            price: +price,
+            sub_total: +price,
+            lock_item: false,
+        }
+    },
+    async updateOrderItem(item, qty=null) {
+        if (_.isEmpty(item)) {
+            return null;
+        }
+        let product_qty = +item.product_qty;
+        product_qty = qty ? +item.product_qty + qty : +item.product_qty;
+        product_qty = +product_qty;
+        
+        let product_price = +item.product_price;
+        let vat_amount = +item.vat_amount;
+        let discount_amount = +item.discount_amount;
+        let price = (product_price + vat_amount) - discount_amount;
+        price = +price;
+        return {
+            ...item,
+            product_qty,
+            price,
+            sub_total: price * product_qty
+        }
+    },
 };

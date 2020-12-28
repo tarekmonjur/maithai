@@ -1,5 +1,5 @@
 <template>
-    <div class="collapse row justify-content-center" id="tableFilter">
+    <div class="collapse row justify-content-center pt-3" id="tableFilter">
         <div class="card col-10">
             <div class="form-row">
                 <div :class="'form-group col-md-'+columnSize" v-for="(filter, index) in filtersWithoutDate" :key="index">
@@ -52,7 +52,7 @@ export default {
     name: "table-filter.component",
     components: {Datepicker},
     data() {
-        const filters = this.$store.getters.filters;
+        const filters = this.$store.getters.tableFilters;
         const from_date = _.get(
             _.filter(filters, item => item.name === 'from_date' ? item : null),
             '[0].value',
@@ -74,7 +74,7 @@ export default {
     computed: {
         ...mapGetters([
             'filterButtonName',
-            'filters'
+            'tableFilters'
         ]),
         toDate() {
           return 'abcd';
@@ -86,7 +86,7 @@ export default {
         filtersDate() {
             return _.compact(
                 _.map(
-                    this.filters,
+                    this.tableFilters,
                     item => item.type === 'date' ? item : false
                 )
             );
@@ -94,7 +94,7 @@ export default {
         filtersWithoutDate() {
             return _.compact(
                 _.map(
-                    this.filters,
+                    this.tableFilters,
                     item => item.type !== 'date' ? item : false
                 )
             );

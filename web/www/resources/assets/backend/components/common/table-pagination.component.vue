@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex">
-        <div class="flex-fill" v-html="pageInfo"></div>
+        <div class="flex-fill" v-if="pageInfo" v-html="pageInfo"></div>
         <div class="flex-fill">
             <nav aria-label="Page navigation">
                 <ul class="pagination pagination-sm justify-content-end" style="margin-bottom: 0px">

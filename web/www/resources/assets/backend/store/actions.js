@@ -71,6 +71,45 @@ export default {
         context.commit('clearFormInput', {});
         context.commit('setErrorsAlert', {});
     },
+    
+    async getCustomers(context, payload = {}) {
+        _.set(payload, 'url', '/customers');
+        _.set(payload, 'params', {
+            sublist: _.get(payload, 'sublist', true),
+            paginate: _.get(payload, 'paginate', false),
+        });
+        const result = await helpers.getDataAction(payload);
+        
+        if (result && result.code === 200) {
+            context.commit('setCustomers', result.results);
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+    
+    async getProducts(context, payload = {}) {
+        _.set(payload, 'url', '/products');
+        _.set(payload, 'params', {
+            columns: _.get(payload, 'params.columns', 'id,name,code,barcode'),
+            sublist: _.get(payload, 'sublist', false),
+            paginate: _.get(payload, 'paginate', false),
+        });
+        const result = await helpers.getDataAction(payload);
+        
+        if (result && result.code === 200) {
+            context.commit('setProducts', result.results);
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
 
     async getCategories(context) {
         if (!_.isEmpty(_.get(context.state.formData, 'categories'))) {

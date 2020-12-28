@@ -1,6 +1,7 @@
 {
     "/backend/js/category.js": "/backend/js/category.js",
     "/backend/js/customer.js": "/backend/js/customer.js",
+    "/backend/js/pos.js": "/backend/js/pos.js",
     "/backend/js/product.js": "/backend/js/product.js",
     "/backend/js/sub_category.js": "/backend/js/sub_category.js",
     "/backend/js/sub_variant.js": "/backend/js/sub_variant.js",

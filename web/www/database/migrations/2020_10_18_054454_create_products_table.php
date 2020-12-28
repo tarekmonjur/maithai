@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('slug', 160)->index()->unique();
             $table->string('image', 200)->nullable();
             $table->integer('sort')->nullable();
+            $table->decimal('original_price', 8, 2)->nullable()->default(0);
             $table->decimal('regular_price', 8, 2)->nullable()->default(0);
             $table->decimal('special_price', 8, 2)->nullable()->default(0);
             $table->decimal('vat_percent', 5, 2)->nullable()->default(0);

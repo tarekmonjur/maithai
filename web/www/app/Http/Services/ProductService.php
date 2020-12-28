@@ -18,7 +18,7 @@ trait ProductService
 
     private $id = null;
     private $slug = null;
-    private $columns = ['id','name','slug','code'];
+    private $columns = ['id','name','slug','code','barcode','image','regular_price','special_price'];
     private $sub_list = true;
     private $trans_prefix = 'product.';
     private $trans_key = 'list';
@@ -131,6 +131,9 @@ trait ProductService
         }
         if (isset($filters['category_id'])) {
             $dbModel = $dbModel->where('category_id', (int)$filters['category_id']);
+        }
+        if (isset($filters['sub_category_id'])) {
+            $dbModel = $dbModel->where('sub_category_id', (int)$filters['sub_category_id']);
         }
         if (isset($filters['is_active'])) {
             $dbModel = $dbModel->where('is_active', (int)$filters['is_active']);

@@ -8,10 +8,19 @@
             <a href="{{route(config('app.backend_home').'.dashboard')}}" class="nav-link">{{ __('menu.dashboard')}}</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route(config('app.backend_home'))}}" class="nav-link">@lang('menu.pos')</a>
+            <a href="{{route(config('app.backend_home').'.pos')}}" class="nav-link">@lang('menu.pos')</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route(config('app.backend_home').'.orders')}}" class="nav-link">@lang('menu.orders')</a>
+            <a href="{{route(config('app.backend_home').'.orders', ['source' => 'online'])}}" class="nav-link">
+                @lang('menu.online_orders')
+                &nbsp;<span class="badge badge-warning navbar-badge">15</span>
+            </a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{route(config('app.backend_home').'.orders', ['source' => 'pos'])}}" class="nav-link">
+                @lang('menu.pos_orders')
+                &nbsp;<span class="badge badge-warning navbar-badge">15</span>
+            </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{route(config('app.backend_home').'.sales')}}" class="nav-link">@lang('menu.sales')</a>
@@ -38,7 +47,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge">15</span>
+                &nbsp;<span class="badge badge-warning navbar-badge">15</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">15 Notifications</span>

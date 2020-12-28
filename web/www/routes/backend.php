@@ -43,6 +43,7 @@ Route::prefix('')->namespace('Backend')->group(function() use ($route_base_path)
     Route::get('/offers','OfferController@index')->name($route_base_path.'.offers');
     Route::get('/users','UserController@index')->name($route_base_path.'.users');
     Route::get('/settings','SettingsController@index')->name($route_base_path.'.settings');
+    Route::get('/pos','PosController@index')->name($route_base_path.'.pos');
 });
 
 

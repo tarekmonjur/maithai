@@ -167,6 +167,12 @@ $btn-focus-border-color: darkred;
                 }
             }
 
+            .table {
+                td, th {
+                    padding: .4rem!important;
+                }
+            }
+
             .actions {
                 img {
                     width: 30px;

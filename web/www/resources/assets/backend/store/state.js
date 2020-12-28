@@ -1,7 +1,9 @@
 export default {
     listData: {},
     columns: {},
+    columns_config: {},
     filters: {},
+    filters_config: {},
     showData: {},
     filterData: {},
     formData: {},

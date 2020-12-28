@@ -141,7 +141,7 @@ export default {
         },
 
         async modalButtonAction(context, payload) {
-            // context.commit('setLoading', {button: true});
+            context.commit('setLoading', {button: true});
             const requestPayload = {
                 url: context.state.url,
                 method: 'GET',

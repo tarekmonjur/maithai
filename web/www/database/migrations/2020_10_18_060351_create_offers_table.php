@@ -17,10 +17,10 @@ class CreateOffersTable extends Migration
             $table->integer('id', 'true');
             $table->string('name', 100)->unique();
             $table->string('slug', 160)->unique();
+            $table->enum('offer_type', ['product', 'coupon'])->default('product');
             $table->string('coupon_code', 45)->nullable()->unique();
-            $table->enum('type', ['product', 'coupon'])->default('product');
-            $table->decimal('percent', 5, 2)->nullable()->default(0);
-            $table->decimal('amount', 8, 2)->nullable()->default(0);
+            $table->enum('discount_type', ['percent', 'amount'])->default('product');
+            $table->decimal('discount', 8, 2)->nullable()->default(0);
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->boolean('is_active')->nullable()->default(1);

@@ -5,7 +5,7 @@
                 <div class="card-header bg-light" style="line-height: 1.8rem">
                     <table-header-component></table-header-component>
                 </div>
-                <div class="card-body">
+                <div class="card-body table-responsive p-0">
                     <table-filter-component></table-filter-component>
                     <table-body-component>
                         <list-component></list-component>

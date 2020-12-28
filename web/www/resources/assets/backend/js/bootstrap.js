@@ -26,22 +26,27 @@ window.axios.defaults.validateStatus = function (status) {
     window.heights = {};
     $(function(){
         const heights = {
+            padding: 18,
             scroll: $(document).height(),
             window: $(window).height(),
             body: $('body').height(),
             header: $('.main-header').outerHeight(),
             footer: $('.main-footer').outerHeight(),
             mainContent: function () {
-                return this.body - this.header - this.footer;
+                return this.body - (this.header + this.footer);
             },
             content: function () {
-                return this.body - this.header - this.footer - 30;
+                return this.window - (this.header + this.footer + this.padding);
+            },
+            pos_content: function () {
+                return this.window - (this.header + this.footer + this.padding);
             }
         };
-        // $('.card').css('min-height', heights.mainContent());
-        $('.card-body').css('max-height', heights.content());
-        OverlayScrollbars($('.card-body'), { height: heights.content()});
-        // console.log({heights}, heights.content());
+        //// $('.card').css('min-height', heights.mainContent());
+        $('.card').css('max-height', heights.content());
+        //// OverlayScrollbars($('.card-body'), { height: heights.content()});
+        //// OverlayScrollbars($('.pos'), { height: heights.content()});
+        console.log({heights});
         window.heights = heights;
     });
 })();

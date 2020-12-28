@@ -8,7 +8,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">--}}
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('backend/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
@@ -27,7 +27,7 @@ to get the desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed accent-danger text-sm">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed accent-danger text-sm @if(isset($sidebar_collapse) && $sidebar_collapse === true) sidebar-collapse @endif">
 <div class="wrapper">
     <!-- Navbar -->
     @include('backend.layouts.common.navbar')
@@ -40,7 +40,7 @@ to get the desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Main content -->
-        <div class="content" style="padding-top: 1rem">
+        <div class="content" style="padding: .5rem 0 0">
             @yield('main_content')
         </div>
         <!-- /.content -->
@@ -58,14 +58,14 @@ to get the desired effect
 <!-- Bootstrap -->
 <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="{{asset('backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+{{--<script src="{{asset('backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>--}}
 <!-- AdminLTE -->
 <script src="{{asset('backend/js/adminlte.min.js')}}"></script>
 <script>
     window._baseURL = '{{ url('/') }}';
     window._assetURL = '{{ asset('/backend') }}';
-    window._columns = '{!! json_encode($columns_config??[]) !!}';
-    window._filters = '{!! json_encode($filters_config??[]) !!}';
+    window._columns_config = '{!! json_encode($columns_config??[]) !!}';
+    window._filters_config = '{!! json_encode($filters_config??[]) !!}';
 
     var current_url = '{{url()->current()}}';
     $(document).ready(function(){
