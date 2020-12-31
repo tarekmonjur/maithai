@@ -130,6 +130,11 @@ button {
   background: #6c757d linear-gradient(180deg, #828a91, #6c757d) repeat-x !important;
 }
 
+#main_content .card .card-body .table td,
+#main_content .card .card-body .table th {
+  padding: 0.4rem !important;
+}
+
 #main_content .card .card-body .actions img {
   width: 30px;
 }

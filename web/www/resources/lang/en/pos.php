@@ -42,6 +42,7 @@ return [
     'invoice' => 'Invoice',
     'card' => 'Card',
     'cash' => 'Cash',
+    'none' => 'None',
     'have_coupon_code' => 'Have Coupon code?',
     'delivery_fee' => 'Delivery Fee',
     'processing_fee' => 'Processing Fee',

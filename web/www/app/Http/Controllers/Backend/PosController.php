@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Services\ProductService;
-use App\Models\Category;
 
 class PosController extends BackendController
 {
-    use ProductService;
     /*
     |--------------------------------------------------------------------------
     | Pos Controller
@@ -26,9 +23,7 @@ class PosController extends BackendController
 
     public function index()
     {
-        $this->setTitle();
-        $this->setColumnsConfig();
-        $this->setFiltersConfig();
+        $this->data['title'] = 'POS';
         $this->data['scripts'] = ['pos'];
         $this->data['styles'] = [];
         $this->data['sidebar_collapse'] = true;

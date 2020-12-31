@@ -94,6 +94,10 @@
                             <input type="radio" id="cash" v-model="formInput['payment_type']" class="form-check-input" value="cash">
                             <label for="cash" class="form-check-label">{{this.lang('cash')}}</label>
                           </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="none" v-model="formInput['payment_type']" class="form-check-input" value="none">
+                            <label for="card" class="form-check-label">{{this.lang('none')}}</label>
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -169,16 +173,25 @@
           <div class="card-footer">
             <div class="d-flex justify-content-between">
               <button type="button" class="btn btn-primary"
+                      :disabled="totalSubTotal <= 0 || loading_order.save || loading_order.btn_disabled"
                       @click.prevent="saveOrderAction" @keyup.enter="saveOrderAction">
-                {{this.lang('save_order')}}
+                  <loading-component :size="loading_order.save ? 'small': ''">
+                      {{this.lang('save_order')}}
+                  </loading-component>
               </button>
               <button type="button" class="btn btn-success"
+                      :disabled="totalSubTotal <= 0 || loading_order.complete || loading_order.btn_disabled"
                       @click.prevent="completeOrderAction" @keyup.enter="completeOrderAction">
-                {{this.lang('complete_order')}}
+                  <loading-component :size="loading_order.complete ? 'small': ''">
+                      {{this.lang('complete_order')}}
+                  </loading-component>
               </button>
               <button type="button" class="btn btn-danger"
+                      :disabled="totalSubTotal <= 0 || loading_order.clear || loading_order.btn_disabled"
                       @click.prevent="clearOrderAction" @keyup.enter="clearOrderAction">
-                {{this.lang('clear_order')}}
+                  <loading-component :size="loading_order.clear ? 'small': ''">
+                      {{this.lang('clear_order')}}
+                  </loading-component>
               </button>
             </div>
           </div>
@@ -277,6 +290,7 @@ export default {
       }
     },
     saveOrderAction() {
+      this.loading_order['save'] = true;
       this.$swal({
         title: this.getLang('common.are_you_sure'),
         text: this.getLang('common.save_your_order_as_draft'),
@@ -289,12 +303,17 @@ export default {
         reverseButtons: false,
       }).then((result) => {
         if (result.isConfirmed) {
-          // this.$store.dispatch('deleteButtonAction', {
-          //   id: this.id,
-          // });
+          this.$store.dispatch('orderAction', {
+            order_status: 'pending',
+            button_action: 'save'
+          });
         } else if (result.isDenied) {
-
+          this.$store.dispatch('orderAction', {
+            order_status: 'pending',
+            button_action: 'save_print'
+          });
         } else {
+          this.loading_order['save'] = false;
           this.$swal({
             title: this.getLang('common.cancelled'),
             text: this.getLang('common.your_order_is_safe'),
@@ -306,6 +325,7 @@ export default {
       });
     },
     completeOrderAction() {
+      this.loading_order['complete'] = true;
       this.$swal({
         title: this.getLang('common.are_you_sure'),
         text: this.getLang('common.complete_your_order'),
@@ -318,12 +338,17 @@ export default {
         reverseButtons: false,
       }).then((result) => {
         if (result.isConfirmed) {
-          // this.$store.dispatch('deleteButtonAction', {
-          //   id: this.id,
-          // });
+          this.$store.dispatch('orderAction', {
+            order_status: 'completed',
+            button_action: 'complete'
+          });
         } else if (result.isDenied) {
-
+          this.$store.dispatch('orderAction', {
+            order_status: 'completed',
+            button_action: 'complete_print'
+          });
         } else {
+          this.loading_order['complete'] = false;
           this.$swal({
             title: this.getLang('common.cancelled'),
             text: this.getLang('common.your_order_is_safe'),
@@ -335,6 +360,7 @@ export default {
       });
     },
     clearOrderAction() {
+      this.loading_order['clear'] = true;
       this.$swal({
         title: this.getLang('common.are_you_sure'),
         text: this.getLang('common.you_wont_be_able_to_revert_this'),
@@ -344,6 +370,7 @@ export default {
         cancelButtonText: this.getLang('common.no_cancel'),
         reverseButtons: true
       }).then((result) => {
+        this.loading_order['clear'] = false;
         if (result.isConfirmed) {
           this.$store.commit('clearFormInput');
         } else {

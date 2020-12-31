@@ -16,7 +16,7 @@ require("laravel-mix-vue3");
 
 
 // mix.sass('resources/assets/frontend/scss/app.scss', 'public/frontend/css')
-// mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
+mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
 
 
 mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');

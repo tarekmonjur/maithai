@@ -94,16 +94,12 @@ export default {
   components: {
     LoadingComponent
   },
-  data() {
-    return {
-      filterData: {}
-    }
-  },
   computed: {
     ...mapState([
       'lang_key',
       'formInput',
       'loading_item',
+      'filterData'
     ]),
     ...mapGetters([
       'products',

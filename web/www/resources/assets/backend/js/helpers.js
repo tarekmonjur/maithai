@@ -78,7 +78,9 @@ export default {
                 params: _.get(payload, 'params', null),
                 data: _.get(payload, 'data', null),
                 responseType: 'json',
-                headers: _.get(payload, 'headers', {}),
+                headers: _.get(payload, 'headers', {
+                    'Content-Type': 'Application/json'
+                }),
             });
             data = result.data;
             // return data;
@@ -204,9 +206,9 @@ export default {
         let discount_amount = 0;
         if (_.get(product, 'offer')) {
             discount_percent = _.get(product, 'offer.discount_type', null) === 'percent' ?
-              _.get(product, 'offer.discount', null) : null;
+              _.get(product, 'offer.discount', null) : 0;
             discount_amount = _.get(product, 'offer.discount_type', null) === 'amount' ?
-              _.get(product, 'offer.discount', null) : null;
+              _.get(product, 'offer.discount', null) : 0;
             
             if (discount_percent && !discount_amount) {
                 discount_amount = (product_price * discount_percent) / 100;
@@ -232,7 +234,7 @@ export default {
             vat_amount: +vat_amount,
             price: +price,
             sub_total: +price,
-            lock_item: false,
+            item_lock: false,
         }
     },
     async updateOrderItem(item, qty=null) {

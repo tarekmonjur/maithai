@@ -103,4 +103,13 @@ Route::namespace('Api')->group(function(){
         Route::delete('/{id}','CustomerController@destroy')->name($route_base_path.'.customer.destroy');
     });
 
+    /********** ...... Order API ....... *****************/
+    Route::prefix('/orders')->group(function() use ($route_base_path){
+        Route::get('/','OrderController@index')->name($route_base_path.'.order.index');
+        Route::get('/{id}','OrderController@show')->name($route_base_path.'.order.show');
+        Route::post('','OrderController@store')->name($route_base_path.'.order.store');
+        Route::put('/{id}','OrderController@update')->name($route_base_path.'.order.update');
+        Route::delete('/{id}','OrderController@destroy')->name($route_base_path.'.order.destroy');
+    });
+
 });
