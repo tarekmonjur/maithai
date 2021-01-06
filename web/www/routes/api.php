@@ -112,4 +112,13 @@ Route::namespace('Api')->group(function(){
         Route::delete('/{id}','OrderController@destroy')->name($route_base_path.'.order.destroy');
     });
 
+    /********** ...... Table API ....... *****************/
+    Route::prefix('/tables')->group(function() use ($route_base_path){
+        Route::get('/','TableController@index')->name($route_base_path.'.table.index');
+        Route::get('/{id}','TableController@show')->name($route_base_path.'.table.show');
+        Route::post('','TableController@store')->name($route_base_path.'.table.store');
+        Route::put('/{id}','TableController@update')->name($route_base_path.'.table.update');
+        Route::delete('/{id}','TableController@destroy')->name($route_base_path.'.table.destroy');
+    });
+
 });

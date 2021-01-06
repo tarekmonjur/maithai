@@ -25,7 +25,7 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         $tableName = (new Order())->getTable();
-        if ($this->request->get('status') === 'completed'){
+        if ($this->request->get('order_status') === 'completed'){
             $payment_type = ['required', 'in:cash,card'];
         } else {
             $payment_type = ['required'];

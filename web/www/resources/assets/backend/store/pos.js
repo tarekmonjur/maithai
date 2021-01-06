@@ -4,11 +4,20 @@ import getters from './getters';
 import mutations from './mutations';
 import actions from './actions';
 
+const defaultInput = {
+  type: 'sales',
+  source: 'pos',
+  payment_type: 'none',
+  customer_id: "-1",
+};
+
 export default {
     state: {
         url: '/orders',
         lang_key: 'pos',
         ...state,
+        formInput: defaultInput,
+        print_bill: false,
         loading_list: {button: false},
         loading_item: {button: false},
         loading_order: {
@@ -18,9 +27,11 @@ export default {
             complete: false,
             clear: false,
             btn_disabled: false,
+            print_bill: false,
         },
         products: {},
         customers: {},
+        tables: {},
     },
     getters: {
         ...getters,
@@ -30,6 +41,9 @@ export default {
         },
         customers(state) {
             return _.get(state.customers, 'results', []) || [];
+        },
+        tables(state) {
+          return _.get(state.tables, 'results', []) || [];
         },
         categories(state) {
             return _.get(state.formData, 'categories.results', []) || [];
@@ -45,25 +59,22 @@ export default {
     actions: {
         ...actions,
         async init(context) {
+            if (_.get(window, '_context.request.id')) {
+                context.dispatch('editOrderAction', { id: _.get(window, '_context.request.id',0) });
+            }
             await helpers.setLang(true);
         },
-        async initList(context) {
-            await context.dispatch('getListData');
-            await context.dispatch('getCategories');
+        initList(context) {
+            context.dispatch('getListData');
+            context.dispatch('getCategories');
         },
         async initItem(context) {
             context.commit('setLoadingItem', {button: true});
-            await actions.getProducts(context);
+            await actions.getProducts(context, {params: {columns: 'id,name,code,barcode'}});
             context.commit('setLoadingItem', {button: false});
         },
         async initOrder(context) {
             context.commit('setLoadingOrder', {customer: true});
-            context.commit('setFormInput', {
-                type: 'sales',
-                source: 'pos',
-                payment_type: 'card',
-                customer_id: "-1",
-            });
             await actions.getCustomers(context);
             context.commit('setLoadingOrder', {customer: false});
         },
@@ -90,10 +101,39 @@ export default {
             await actions.getListData(context, payload)
             context.commit('setLoadingList', {button: false});
         },
+        async editOrderAction(context, payload) {
+            const id = _.get(payload, 'id');
+            if (id) {
+                // context.commit('setLoadingItem', {button: true});
+                // context.commit('setLoadingOrder', {customer: true});
+                const requestPayload = {};
+                _.set(requestPayload, 'url', context.state.url+'/'+id);
+                _.set(requestPayload, 'params', {
+                    sublist: true,
+                });
+                const result = await helpers.getDataAction(requestPayload);
+    
+                if (result && result.code === 200) {
+                    const order = _.get(result.results, 'results', {});
+                    _.set(order, 'items', _.get(order, 'order_details', []));
+                    _.unset(order, 'order_details');
+                    console.log({order});
+                    context.commit('setFormInput', order);
+                } else {
+                    context.commit('setErrorsAlert',  {
+                        alert: _.pick(result, ['code', 'message', 'status']),
+                        errors: {}
+                    });
+                }
+                // context.commit('setLoadingItem', {button: false});
+                // context.commit('setLoadingOrder', {customer: false});
+            }
+        },
         async addOrderItem(context, payload) {
             context.commit('setLoadingItem', {button: true});
+            context.commit('setOrder', {});
             const items = _.get(context.state.formInput, 'items', []);
-            const hasItemIndex = _.findIndex(items, i => i.product_id === payload.product_id && i.lock_item === false);
+            const hasItemIndex = _.findIndex(items, i => i.product_id === payload.product_id && i.item_lock === false);
             if (hasItemIndex > -1) {
                 const item = await helpers.updateOrderItem(_.get(items, hasItemIndex, null), 1);
                 if (item) {
@@ -123,8 +163,8 @@ export default {
             }
             context.commit('setLoadingItem', {button: false});
         },
-        async orderAction(context, payload) {
-            context.commit('setLoadingOrder', {save: true, btn_disabled: true});
+        async saveOrderAction(context, payload) {
+            context.commit('setLoadingOrder', {[payload.button_action]: true, btn_disabled: true});
             const requestPayload = {
                 url: context.state.url,
                 method: 'POST',
@@ -147,23 +187,26 @@ export default {
                     alert: _.pick(result, ['code', 'message', 'status']),
                     errors: {}
                 });
+                context.commit('setFormInput', _.get(result, 'results'));
+                context.commit('setPrintBill', true);
             } else {
                 context.commit('setErrorsAlert', {
                     alert: _.pick(result, ['code', 'message', 'status']),
                     errors: result.results
                 });
             }
-            context.commit('setLoadingOrder', {save: false, btn_disabled: false});
+            context.commit('setLoadingOrder', {[payload.button_action]: false, btn_disabled: false});
+        },
+        async printBillAction(context, payload) {
+          if (payload.id) {
+            await context.dispatch('viewButtonAction', payload);
+          }
+          context.commit('setPrintBill', false);
+          context.commit('setLoadingOrder', {print_bill: false, btn_disabled: false});
         },
     },
     mutations: {
         ...mutations,
-        setProducts(state, payload) {
-            state.products = payload;
-        },
-        setCustomers(state, payload) {
-            state.customers = payload;
-        },
         setLoadingList(state, loading) {
             state.loading_list = {
                 ...state.loading_list,
@@ -181,6 +224,13 @@ export default {
                 ...state.loading_order,
                 ...loading,
             };
+        },
+        setPrintBill(state, payload) {
+            state.print_bill = payload;
+        },
+        clearOrder(state, payload) {
+          state.formInput = defaultInput;
+          state.print_bill = false;
         },
     }
 }

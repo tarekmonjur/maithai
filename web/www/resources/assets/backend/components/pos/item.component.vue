@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12 pl-0">
         <div class="card pos">
-          <div class="card-header border-0">
+          <div class="card-header border-0 p-2">
             <h3 class="card-title">{{this.lang('line_items')}}</h3>
             <div class="card-tools col-8">
               <div class="input-group input-group-sm">
@@ -20,7 +20,7 @@
                         @keyup.enter="addItemAction()"
                         :disabled="loading_item.button"
                         class="btn btn-sm btn-theme">
-                  <loading-component :size="loading_item.button ? 'small': ''">
+                  <loading-component :loader="loading_item.button">
                     <i class="fas fa-search"></i>
                   </loading-component>
                 </button>
@@ -50,17 +50,37 @@
                 <td>{{formInput['items'][index]['product_name']}}</td>
                 <td>{{formInput['items'][index]['product_unit']}}</td>
                 <td>
-                  <input type="number" class="col-10" v-model="formInput['items'][index]['product_price']" @keyup="updateItem(index)" @change.lazy="updateItem(index)">
+                  <input type="number"
+                         class="col-10"
+                         min="0"
+                         v-model="formInput['items'][index]['product_price']"
+                         @keyup="updateItem(index)"
+                         @change.lazy="updateItem(index)">
                 </td>
                 <td>
-                  <input type="number" class="col-6" v-model="formInput['items'][index]['product_qty']" @keyup="updateItem(index)" @change.lazy="updateItem(index)">
+                  <input type="number"
+                         class="col-6"
+                         min="0"
+                         v-model="formInput['items'][index]['product_qty']"
+                         @keyup="updateItem(index)"
+                         @change.lazy="updateItem(index)">
                 </td>
                 <td>
-                  <input type="number" class="col-6" v-model="formInput['items'][index]['discount_amount']" @keyup="updateItem(index)" @change.lazy="updateItem(index)">
+                  <input type="number"
+                         min="0"
+                         class="col-6"
+                         v-model="formInput['items'][index]['discount_amount']"
+                         @keyup="updateItem(index)"
+                         @change.lazy="updateItem(index)">
                   {{formInput['items'][index]['discount_percent']}}<strong>%</strong>
                 </td>
                 <td>
-                  <input type="number" class="col-5" v-model="formInput['items'][index]['vat_amount']" @keyup="updateItem(index)" @change.lazy="updateItem(index)">
+                  <input type="number"
+                         min="0"
+                         class="col-5"
+                         v-model="formInput['items'][index]['vat_amount']"
+                         @keyup="updateItem(index)"
+                         @change.lazy="updateItem(index)">
                   {{formInput['items'][index]['vat_percent']}}<strong>%</strong>
                 </td>
                 <td>{{formInput['items'][index]['sub_total']}}</td>

@@ -10,6 +10,8 @@ if (window.jQuery) {
     window.$ = window.jQuery = require('./jquery.min');
 }
 
+window._context = (window._context && JSON.parse(atob(window._context))) || [];
+window._posURL = window._posURL || '';
 window.baseURL = window._baseURL || '';
 window.assetURL = window._assetURL || '';
 window.apiPrefix = '/api'

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Services\CustomerService;
+use App\Http\Services\Customer\CustomerService;
 
 class CustomerController extends BackendController
 {

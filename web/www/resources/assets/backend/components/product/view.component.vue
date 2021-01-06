@@ -21,6 +21,10 @@
             <td>{{showData.sort}}</td>
         </tr>
         <tr>
+            <td>{{lang(`original_price`)}}</td>
+            <td>{{showData.original_price}}</td>
+        </tr>
+        <tr>
             <td>{{lang(`regular_price`)}}</td>
             <td>{{showData.regular_price}}</td>
         </tr>

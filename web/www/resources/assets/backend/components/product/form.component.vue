@@ -110,6 +110,18 @@
         <div class="form-row">
             <div class="col">
                 <div class="form-group">
+                    <label for="regular_price">{{lang('original_price')}} : <span class="text-danger">*</span></label>
+                    <input
+                        type="number"
+                        id="original_price"
+                        v-model="formInput['original_price']"
+                        :class="{'is-invalid' : errors.original_price}"
+                        class="form-control form-control-sm" />
+                    <div class="invalid-feedback" v-if="errors.original_price">{{errors.original_price}}</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
                     <label for="regular_price">{{lang('regular_price')}} : <span class="text-danger">*</span></label>
                     <input
                         type="number"

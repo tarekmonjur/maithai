@@ -38,5 +38,14 @@ export default {
     },
     clearFormInput(state) {
         state.formInput = {};
-    }
+    },
+    setProducts(state, payload) {
+        state.products = payload;
+    },
+    setCustomers(state, payload) {
+        state.customers = payload;
+    },
+    setTables(state, payload) {
+        state.tables = payload;
+    },
 }

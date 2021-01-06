@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Services\SkuService;
 
-class PosController extends BackendController
+class SkuController extends BackendController
 {
+    use SkuService;
     /*
     |--------------------------------------------------------------------------
-    | Pos Controller
+    | Product SkuService Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Pos Manage
+    | @Description : Product SkuService Manage
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
@@ -23,10 +25,11 @@ class PosController extends BackendController
 
     public function index()
     {
-        $this->data['title'] = 'POS';
-        $this->data['scripts'] = ['pos'];
+        $this->setTitle();
+        $this->setColumnsConfig();
+        $this->setFiltersConfig();
+        $this->data['scripts'] = ['sku'];
         $this->data['styles'] = [];
-        $this->data['sidebar_collapse'] = true;
         return view('backend.layouts.main')->with($this->data);
     }
 

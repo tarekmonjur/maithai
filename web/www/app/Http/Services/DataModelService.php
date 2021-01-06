@@ -190,4 +190,16 @@ trait DataModelService
     {
         return $this->data['filters'] ?? [];
     }
+
+    protected function setFiltersConfigData($key, $data) {
+        $filters = $this->getFiltersConfig();
+        if ($key) {
+            foreach($filters as $index => $filter) {
+                if ($filter['name'] === $key) {
+                    $filters[$index]['options'] = $data;
+                }
+            }
+        }
+        $this->data['filters_config'] = $filters;
+    }
 }

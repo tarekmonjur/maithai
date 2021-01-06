@@ -19,12 +19,12 @@ export default {
     fieldName: state => helpers.getLang(`${state.lang_key}.field_name`),
     fieldValue: state => helpers.getLang(`${state.lang_key}.field_value`),
 
-    tableColumns: state => (window._columns_config && JSON.parse(window._columns_config)) || state.columns_config,
+    tableColumns: state => (window._columns_config && JSON.parse(atob(window._columns_config))) || state.columns_config,
     tableData: state => state.listData.results || [],
     showData: state => state.showData.results || {},
     nextPageUrl: state => state.listData.metadata ? state.listData.metadata.next_page_url : '',
     previousPageUrl: state => state.listData.metadata ? state.listData.metadata.prev_page_url : '',
     getPages: state => state.listData.metadata ? helpers.getPages(state.listData.metadata) : {},
     buttons: state => state.buttons || {},
-    tableFilters: state => (window._filters_config && JSON.parse(window._filters_config)) ||  state.filters_config,
+    tableFilters: state => (window._filters_config && JSON.parse(atob(window._filters_config))) ||  state.filters_config,
 }

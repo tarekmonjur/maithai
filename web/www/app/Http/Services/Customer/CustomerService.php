@@ -5,8 +5,9 @@
  * @email : tarekmonjur@gmail.com
  */
 
-namespace App\Http\Services;
+namespace App\Http\Services\Customer;
 
+use App\Http\Services\DataModelService;
 use App\Models\Customer;
 use App\Models\CustomerDetails;
 use Carbon\Carbon;
@@ -24,7 +25,7 @@ trait CustomerService
     private $paginate = true;
     // columns config for table view
     private $columnsConfig = [
-        'sl' => 100,
+        'sl' => 50,
         'username' => 0,
         'first_name' => 0,
         'last_name' => 0,

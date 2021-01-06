@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\CustomerRequest;
-use App\Http\Services\CustomerService;
+use App\Http\Services\Customer\CustomerService;
 use App\Models\Customer;
 use App\Models\CustomerDetails;
 use Illuminate\Http\Request;

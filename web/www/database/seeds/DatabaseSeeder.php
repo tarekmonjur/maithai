@@ -12,6 +12,7 @@ use App\Models\Product;
 use App\Models\ProductVariant;
 use App\Models\ProductStock;
 use App\Models\Sku;
+use App\Models\Table;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
 //         factory(App\Models\User::class, 2)->create();
 //         factory(App\Models\UserDetails::class, 2)->create();
 
+        $this->call(SettingsSeeder::class);
         $this->call(UserTypeSeeder::class);
         $this->call(UserStatusSeeder::class);
         $this->call(UserServiceTypeSeeder::class);
@@ -68,6 +70,7 @@ class DatabaseSeeder extends Seeder
             });
 
         factory(Sku::class, 25)->create();
+        factory(Table::class, 30)->create();
 
         factory(Product::class, 50)
             ->create()

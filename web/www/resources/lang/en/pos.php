@@ -51,6 +51,10 @@ return [
     'due' => 'Due',
     'table_no' => 'Table No',
     'select_table_no' => 'Select Table No',
+    'order_source' => 'Order Source',
+    'table' => 'Table',
+    'online' => 'Online',
+    'pos' => 'POS',
 
     'category' => 'Menu',
     'subcategory' => 'Sub Menu',
@@ -60,6 +64,7 @@ return [
     'save_order' => 'Save Order',
     'complete_order' => 'Complete Order',
     'clear_order' => 'Clear Order',
+    'print_bill' => 'Print Bill',
 
     'success_msg' => 'Food successfully saved',
     'error_msg' => 'Food not saved. Try again..!',

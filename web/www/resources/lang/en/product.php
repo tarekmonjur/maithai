@@ -23,6 +23,7 @@ return [
     'barcode' => 'Food Barcode',
     'sorting' => 'Sorting Food',
     'unit' => 'Unit',
+    'original_price' => 'Original Price',
     'regular_price' => 'Regular Price',
     'special_price' => 'Special Price',
     'vat_percent' => 'Vat Percent',

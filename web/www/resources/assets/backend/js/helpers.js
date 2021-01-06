@@ -69,6 +69,9 @@ export default {
         }
         return trans;
     },
+    getContext(key) {
+        return _.get(window, `_context.${key}`,null);
+    },
     async makeApiRequest(url, method, payload = {}) {
         let data = null;
         try {
@@ -198,10 +201,15 @@ export default {
                 }
             });
         }
-        const product_price = product.special_price && +product.special_price > 0 ?
+        
+        let product_price = product.special_price && +product.special_price > 0 ?
           +product.special_price : +product.regular_price;
-        const vat_amount = product.vat_percent && product.vat_percent > 0 ?
+        product_price = +parseFloat(product_price).toFixed(2) || 0.00;
+        
+        let vat_amount = product.vat_percent && product.vat_percent > 0 ?
           (product_price * product.vat_percent) / 100 : 0;
+        vat_amount = +parseFloat(vat_amount).toFixed(2) || 0.00;
+        
         let discount_percent = 0;
         let discount_amount = 0;
         if (_.get(product, 'offer')) {
@@ -216,7 +224,11 @@ export default {
                 discount_percent = (discount_amount * 100) / product_price;
             }
         }
-        const price = (product_price + vat_amount) - discount_amount;
+        discount_percent = +parseFloat(discount_percent).toFixed(2) || 0.00;
+        discount_amount = +parseFloat(discount_amount).toFixed(2) || 0.00;
+        
+        let price = (product_price + vat_amount) - discount_amount;
+        price = +parseFloat(price).toFixed(2) || 0.00;
         return {
             product_id: product.id,
             offer_id: _.get(product, 'offer.id', null),
@@ -245,16 +257,35 @@ export default {
         product_qty = qty ? +item.product_qty + qty : +item.product_qty;
         product_qty = +product_qty;
         
-        let product_price = +item.product_price;
-        let vat_amount = +item.vat_amount;
-        let discount_amount = +item.discount_amount;
+        let product_price = +parseFloat(item.product_price).toFixed(2) || 0.00;
+        let vat_amount = +parseFloat(item.vat_amount).toFixed(2) || 0.00;
+        let vat_percent = +parseFloat((vat_amount * 100) / product_price).toFixed(2) || 0.00;
+        
+        let discount_amount = +parseFloat(item.discount_amount).toFixed(2) || 0.00;
+        let discount_percent = +parseFloat((discount_amount * 100) / product_price).toFixed(2) || 0.00;
+        console.log({product_price, vat_amount, discount_amount});
         let price = (product_price + vat_amount) - discount_amount;
-        price = +price;
+        price = +parseFloat(price).toFixed(2);
         return {
             ...item,
+            vat_percent,
+            discount_percent,
             product_qty,
             price,
             sub_total: price * product_qty
         }
+    },
+    printInvoice(elem){
+        var win = window.open('', '');
+        var content = '<html><head><title>Invoice</title>' +
+          '<link rel="stylesheet" type="text/css" href="'+window.assetURL+'/css/adminlte.min.css" />'+
+          '<link rel="stylesheet" type="text/css" href="'+window.assetURL+'/css/style.css" /></head>';
+        content += "<body onload=\"window.print(); setTimeout(function(){window.close();}, 1000)\">";
+        content += document.getElementById(elem).innerHTML ;
+        content += "</body>";
+        content += "</html>";
+        win.document.write(content);
+        win.document.close();
+        return true;
     },
 };

@@ -13,6 +13,14 @@
 @endsection
 
 @push('script')
+    <script type="text/javascript">
+      window._posURL = '{{ url(config('app.backend_home', 'pos')) }}';
+      window._baseURL = '{{ url('/') }}';
+      window._assetURL = '{{ asset('/backend') }}';
+      window._columns_config = '{!! base64_encode(json_encode($columns_config??[])) !!}';
+      window._filters_config = '{!! base64_encode(json_encode($filters_config??[])) !!}';
+      window._context = '{{ base64_encode(json_encode($context??[])) }}';
+    </script>
     @foreach($scripts as $script)
         <script src="{{asset('backend/js/'.$script.'.js')}}"></script>
     @endforeach

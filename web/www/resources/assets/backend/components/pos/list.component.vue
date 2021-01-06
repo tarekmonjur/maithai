@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <div class="card pos">
-          <div class="card-header border-0">
+          <div class="card-header border-0 p-2">
             <h3 class="card-title">{{this.lang('products')}}</h3>
             <div class="card-tools col-10">
               <div class="input-group input-group-sm">
@@ -23,7 +23,7 @@
                           @keyup.enter="this.filterAction()"
                           :disabled="loading_list.button"
                           class="btn btn-sm btn-theme">
-                    <loading-component :size="loading_list.button ? 'small': ''">
+                    <loading-component :loader="loading_list.button">
                       <i class="fas fa-search"></i>
                     </loading-component>
                   </button>

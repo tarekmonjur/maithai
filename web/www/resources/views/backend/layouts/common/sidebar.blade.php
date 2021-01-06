@@ -106,51 +106,29 @@
                         <p>@lang('menu.units')</p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-cart-arrow-down"></i>
-                        <p>
-                            @lang('menu.offers')
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                <li class="nav-item">
+                    <a href="{{route(config('app.backend_home').'.skus')}}" class="nav-link">
+                        <i class="nav-icon fas fa-warehouse"></i>
+                        <p>@lang('menu.skus')</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route(config('app.backend_home').'.offers')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route(config('app.backend_home').'.offers')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="nav-item has-treeview">
+                <li class="nav-item">
+                    <a href="{{route(config('app.backend_home').'.offers')}}" class="nav-link">
+                        <i class="nav-icon fas fa-cart-arrow-down"></i>
+                        <p>@lang('menu.offers')</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route(config('app.backend_home').'.tables')}}" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>@lang('menu.tables')</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users-cog"></i>
-                        <p>
-                            @lang('menu.users')
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
+                        <p>@lang('menu.users')</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route(config('app.backend_home').'.users')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route(config('app.backend_home').'.users')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="{{route(config('app.backend_home').'.settings')}}" class="nav-link">

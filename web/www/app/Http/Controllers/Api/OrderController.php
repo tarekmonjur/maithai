@@ -7,6 +7,7 @@ use App\Http\Services\OrderService;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends ApiController
 {
@@ -57,67 +58,73 @@ class OrderController extends ApiController
 
     public function store(OrderRequest $request)
     {
-        try {
-            if ($request->status === 'completed' && $request->payment_type === 'none') {
-                // set validate msg here...
-            }
-            $this->makeOrder($request);
+//        try {
+            $order_result = $this->makeOrder($request);
+            DB::beginTransaction();
             $order = new Order();
-            if ($customer_id = intval($request->customer_id)) {
-                $order->customer_id = $customer_id;
-            } else if ($customer_id = intval($request->input('customer.id'))) {
-                $order->customer_id = $customer_id;
-            } else {
-                $order->customer_id = $this->authUser->id;
-            }
-
-            $order->invoice_no = $this->getInvoiceNo($request->type);
-            $order->table_id = $request->table_id ?? 0;
-            $order->table_no = $request->table_no ?? $this->getTableNo($request->table_id);
-            $offer = $this->getOfferByCode($request->coupon_code);
-            if ($offer) {
-                $order->offer_id = $offer->id ?? 0;
-                $order->offer_name = $offer->name;
-                $order->coupon_code = $offer->coupon_code;
-            }
-            $order->type = $request->type ?? 'sales';
-            $order->source = $request->source ?? 'pos';
-            $order->payment_type = $request->payment_type ?? 'none';
-            $order->payment_status = $request->payment_status ?? 'pending';
-            $order->status = $request->order_status ?? 'pending';
-            $order->created_by = $this->authUser->id;
-
+            $order->setRawAttributes($order_result);
+            $order->offsetUnset('items');
+            $order->created_by = $this->authUser && $this->authUser->getTable() === 'users' ? $this->authUser->id : 0;
             if ($order->save()) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+                $items = $order_result['items'];
+                foreach($items as $key => $value) {
+                    $items[$key]['order_id'] = $order->id;
+                    $items[$key]['product_variant'] = !empty($value['product_variant']) && is_array($value['product_variant']) ?
+                        json_encode($value['product_variant']) : null;
+                    $items[$key]['product_stock'] = !empty($value['product_stock']) && is_array($value['product_stock']) ?
+                        json_encode($value['product_stock']) : null;
+                }
+                $items = $order->orderDetails()->createMany($items);
+                $order->setAttribute('items', $items);
+                DB::commit();
+                return $this->jsonResponse($order->getAttributes(), $this->getTrans('success_msg'));
             } else {
+                DB::rollBack();
                 return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
             }
-        } catch (\Exception $e) {
-            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
-        }
+//        } catch (\Exception $e) {
+//            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
+//        }
     }
-
 
     public function update(OrderRequest $request)
     {
         try {
-            $sku = Sku::find($request->id);
-            if (!$sku) {
+            $order = Order::find($request->id);
+            if (!$order) {
                 return $this->jsonResponse('', $this->getTrans('warning_msg'));
             }
 
-            $sku->name = $request->name;
-            $sku->code = $request->code;
-            $sku->location = $request->location;
-            $sku->description = $request->description;
-            $sku->is_active = $request->is_active;
-            $sku->updated_by = $this->authUser->id;
+            $order_result = $this->makeOrder($request);
+            DB::beginTransaction();
+            $order->setRawAttributes($order_result);
+            $order->offsetUnset('items');
+            $order->created_by = $this->authUser && $this->authUser->getTable() === 'users' ? $this->authUser->id : 0;
 
-           if ($sku->save()) {
-               return $this->jsonResponse(null, $this->getTrans('success_msg'));
-           } else {
-               return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
-           }
+            if ($order->save()) {
+                $items = [];
+                $existing_items = [];
+                foreach($order_result['items'] as $item) {
+                    $item['product_variant'] = !empty($item['product_variant']) && is_array($item['product_variant']) ?
+                        json_encode($item['product_variant']) : null;
+                    $item['product_stock'] = !empty($item['product_stock']) && is_array($item['product_stock']) ?
+                        json_encode($item['product_stock']) : null;
+                    $items[] = $item;
+                    if (isset($item['id'])) {
+                        $existing_items[] = $item['id'];
+                    }
+                }
+                if (!empty($existing_items)) {
+                    OrderDetails::destroy($existing_items);
+                }
+                $items = $order->orderDetails()->createMany($items);
+                $order->setAttribute('items', $items);
+                DB::commit();
+                return $this->jsonResponse($order->getAttributes(), $this->getTrans('success_msg'));
+            } else {
+                DB::rollBack();
+                return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
+            }
         } catch (\Exception $e) {
             return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
         }
@@ -126,7 +133,7 @@ class OrderController extends ApiController
     public function destroy($id)
     {
         try {
-            $result = Sku::find($id)->delete();
+            $result = Order::find($id)->delete();
             if ($result) {
                 return $this->jsonResponse(null, $this->getTrans('success_msg'));
             }

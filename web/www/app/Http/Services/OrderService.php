@@ -20,43 +20,86 @@ trait OrderService
 
     private $id = null;
     private $slug = null;
-    private $columns = ['id','name', 'code'];
+    private $columns = ['id','invoice_no'];
     private $sub_list = true;
-    private $trans_prefix = 'sku.';
+    private $trans_prefix = 'order.';
     private $trans_key = 'list';
     private $paginate = true;
     // columns config for table view
     private $columnsConfig = [
-        'sl' => 100,
-        'name' => 0,
-        'code' => 0,
-        'products_count' => 0,
-        'location' => 0,
-        'is_active' => 0,
-        'created' => 0,
-        'updated' => 0,
+        'sl' => 50,
+        'invoice_no' => 0,
+        'type' => 0,
+        'source' => 0,
+        'customer' => 0,
+        'transaction_no' => 0,
+        'payment' => 0,
+        'status' => 0,
+        'table' => 0,
+        'total_items' => 0,
+        'total_qty' => 0,
+        'sub_total' => 0,
+        'offer' => 0,
+        'discount' => 0,
+        'vat' => 0,
+        'fee' => 0,
+        'payable_amount' => 0,
+        'pay_amount' => 0,
+        'due_amount' => 0,
         'action' => 100,
     ];
     private $filtersConfig = [
         [
-            'name' => 'name',
+            'name' => 'invoice_no',
             'label' => '',
             'type' => 'text',
             'value' => null,
         ],
         [
-            'name' => 'code',
-            'label' => '',
-            'type' => 'text',
-            'value' => null,
+            'name' => 'customer_id',
+            'label' => 'customer',
+            'type' => 'select2',
+            'options' => null,
         ],
         [
-            'name' => 'is_active',
-            'label' => 'status',
+            'name' => 'payment_status',
+            'label' => '',
             'type' => 'select',
             'options' => [
-                '1' => 'active',
-                '0' => 'inactive'
+                'pending' => 'pending',
+                'due' => 'due',
+                'completed' => 'completed',
+            ],
+        ],
+        [
+            'name' => 'type',
+            'label' => 'order_type',
+            'type' => 'select',
+            'options' => [
+                'sales' => 'sales',
+                'purchase' => 'purchase'
+            ],
+        ],
+        [
+            'name' => 'source',
+            'label' => 'order_source',
+            'type' => 'select',
+            'options' => [
+                'pos' => 'pos',
+                'online' => 'online'
+            ]
+        ],
+        [
+            'name' => 'status',
+            'label' => 'order_status',
+            'type' => 'select',
+            'options' => [
+                'placed' => 'placed',
+                'pending' => 'pending',
+                'accepted' => 'accepted',
+                'delivered' => 'delivered',
+                'completed' => 'completed',
+                'cancel' => 'cancel',
             ]
         ],
         [
@@ -81,14 +124,23 @@ trait OrderService
         if (empty($filters)) {
             return $dbModel;
         }
-        if (isset($filters['name']) && !empty($filters['name'])) {
-            $dbModel = $dbModel->where('name', 'like', '%'.$filters['name'].'%');
+        if (isset($filters['customer_id'])) {
+            $dbModel = $dbModel->where('customer_id', (int)$filters['customer_id']);
         }
-        if (isset($filters['code']) && !empty($filters['code'])) {
-            $dbModel = $dbModel->where('code', 'like', '%'.$filters['code'].'%');
+        if (isset($filters['invoice_no']) && !empty($filters['invoice_no'])) {
+            $dbModel = $dbModel->where('invoice_no', 'like', '%'.$filters['invoice_no'].'%');
         }
-        if (isset($filters['is_active'])) {
-            $dbModel = $dbModel->where('is_active', (int)$filters['is_active']);
+        if (isset($filters['payment_status']) && !empty($filters['payment_status'])) {
+            $dbModel = $dbModel->where('payment_status', $filters['payment_status']);
+        }
+        if (isset($filters['type']) && !empty($filters['type'])) {
+            $dbModel = $dbModel->where('type', $filters['type']);
+        }
+        if (isset($filters['source']) && !empty($filters['source'])) {
+            $dbModel = $dbModel->where('source', $filters['source']);
+        }
+        if (isset($filters['status']) && !empty($filters['status'])) {
+            $dbModel = $dbModel->where('status', $filters['status']);
         }
         if (isset($filters['from_date']) && !empty($filters['from_date'])) {
             $from_date = Carbon::parse($filters['from_date'])->format('Y-m-d');
@@ -104,18 +156,17 @@ trait OrderService
 
     protected function getData()
     {
-        $sub_list = $this->getSubList();
-        $sku = Sku::withCount('productStocks');
+        $order = Order::withCount('orderDetails');
 
         if ($columns = $this->getColumns()) {
-            $sku = $sku->select($columns);
+            $order = $order->select($columns);
         }
 
-        if ($sub_list) {
-            $relations = [];
+        if ($this->getSubList()) {
+            $relations = ['customer'];
 
             if (!empty($this->getId())) {
-                array_push($relations, 'productStocks');
+                array_push($relations, 'table', 'offer', 'orderDetails');
             }
 
             if ($this->authUser && $this->authUser->getTable() === 'users') {
@@ -123,21 +174,22 @@ trait OrderService
             }
 
             if (!empty($relations)) {
-                $sku = $sku->with($relations);
+                $order = $order->with($relations);
             }
         }
 
         if (!empty($this->getId())) {
-            return $sku->find($this->getId());
+            return $order->find($this->getId());
         } else {
-            $sku = $this->generateFilters($sku);
+            $order = $this->generateFilters($order);
+            $order = $order->orderByDesc('created_at');
 
             if ($this->getPaginate()) {
-                $sku = $sku->paginate(config('app.backend_per_page'));
+                $order = $order->paginate(config('app.backend_per_page'));
             } else {
-                $sku = $sku->get();
+                $order = $order->get();
             }
-            return $sku;
+            return $order;
         }
     }
 
@@ -211,6 +263,7 @@ trait OrderService
         $vat_percent = $product->vat_percent;
         $vat_amount = $vat_percent && $vat_percent > 0 ?
             ($product_price * $vat_percent) / 100 : 0;
+        $vat_amount = round($vat_amount, 2);
         $discount_percent = 0;
         $discount_amount = 0;
 
@@ -220,13 +273,40 @@ trait OrderService
             $discount_amount = $product->offer->discount_type === 'amount' ?
                 $product->offer->discount : 0;
             if ($discount_percent && !$discount_amount) {
-                $discount_amount = ($product_price * $discount_percent) / 100;
+                $discount_amount = round(($product_price * $discount_percent) / 100, 2);
             } else {
-                $discount_percent = ($discount_amount * 100) / $product_price;
+                $discount_percent = round(($discount_amount * 100) / $product_price, 2);
             }
         }
 
-        $price = ($product_price + $vat_amount) - $discount_amount;
+        $product_variants = [];
+        if ($product->variants && !empty($product->variants)) {
+            foreach($product->variants as $variant) {
+                $variant_name = $variant->variant ? $variant->variant->name : '';
+                $sub_variant_name = $variant->subvariant ? $variant->subvariant->name : '';
+                $product_variants[] = [
+                  'id' => $variant->id,
+                  'additional_price' => $variant->additional_price,
+                  'variant' => $variant_name.'-'.$sub_variant_name,
+                  'is_added' => false,
+                ];
+            }
+        }
+
+        $product_stocks = [];
+        if ($product->stocks && !empty($product->stocks)) {
+            foreach($product->stocks as $stock) {
+                $sku_name = $stock->sku ? $stock->sku->name : '';
+                $product_stocks[] = [
+                    'id' => $stock->id,
+                    'stock' => $stock->stock,
+                    'sku' => $sku_name,
+                    'is_added' => false,
+                ];
+            }
+        }
+
+        $price = round(($product_price + $vat_amount) - $discount_amount, 2);
         $item = [
             'order_id' => null,
             'product_id' => $product->id,
@@ -236,8 +316,8 @@ trait OrderService
             'product_code' => $product->name,
             'product_barcode' => $product->name,
             'product_unit' => $product->unit ? $product->unit->name : null,
-            'product_variant' => '',
-            'product_stock' => '',
+            'product_variant' => $product_variants,
+            'product_stock' => $product_stocks,
             'product_price' => $product_price,
             'product_qty' => 1,
             'discount_percent' => $discount_percent,
@@ -259,6 +339,18 @@ trait OrderService
             return $order;
         }
 
+        if ($request->id) {
+            $order['id'] = $request->id;
+        }
+
+        if ($customer_id = intval($request->customer_id)) {
+            $order['customer_id'] = $customer_id;
+        } else if ($customer_id = intval($request->input('customer.id'))) {
+            $order['customer_id'] = $customer_id;
+        } else {
+            $order['customer_id'] = $this->authUser ? $this->authUser->id : -1;
+        }
+
         $total_qty = 0;
         $total_sub_total_amount = 0;
         $total_sub_discount_percent = 0;
@@ -268,8 +360,18 @@ trait OrderService
 
         foreach($request->items as $item) {
             if ($request->order_source !== 'pos') {
-                $item = $this->makeItem($item['product_id']);
+                $new_item = $this->makeItem($item['product_id']);
+                if (!empty(intval($item['id']))) {
+                    $new_item['id'] = (int) $item['id'];
+                }
+                $item = $new_item;
+                // manage variants and stocks here...
             }
+
+//            if ($request->id) {
+//                $item['order_id'] = $request->id;
+//            }
+
             if (!empty($item)) {
                 $order['items'][] = $item;
                 $total_qty = $total_qty + $item['product_qty'] ?? 0;
@@ -282,23 +384,26 @@ trait OrderService
         }
 
         $order['invoice_no'] = $this->getInvoiceNo($request->type);
-        $table_id = $request->table_id ?? 0;
-        $table_no = $request->table_no ?? $this->getTableNo($request->table_id);
-        $discount_percent = 0;
-        $discount_amount = 0;
-        $vat_percent = 0;
-        $vat_amount = 0;
-        $delivery_fee = 0;
-        $processing_fee = 0;
+        $order['table_id'] = $request->table_id;
+        $order['table_no'] = $request->table_no ?? $this->getTableNo($request->table_id);
 
         if ($request->order_source !== 'pos') {
+            $discount_percent = 0;
+            $discount_amount = 0;
             $offer = $this->getOfferByCode($request->coupon_code);
             if ($offer) {
-                $offer_id = $offer->id ?? 0;
+                $offer_id = $offer->id;
                 $offer_name = $offer->name;
                 $coupon_code = $offer->coupon_code;
-                $discount_percent = 0;
-                $discount_amount = 0;
+                $discount_percent = $offer->discount_type === 'percent' ?
+                    $offer->discount : 0;
+                $discount_amount = $offer->discount_type === 'amount' ?
+                    $offer->discount : 0;
+                if (!empty($discount_percent) && empty($discount_amount)) {
+                    $discount_amount = round(($total_sub_total_amount * $discount_percent) / 100, 2);
+                } else {
+                    $discount_percent = round(($discount_amount * 100) / $total_sub_total_amount, 2);
+                }
             }
             $vat_percent = 0;
             $vat_amount = 0;
@@ -312,7 +417,7 @@ trait OrderService
             $due_amount = $total_payable_amount;
             $total_pay_amount = 0;
         } else {
-            $offer_id = $request->offer_id ?? 0;
+            $offer_id = $request->offer_id;
             $offer_name = $request->offer_name;
             $coupon_code = $request->coupon_code;
             $discount_percent = $request->discount_percent;
@@ -330,14 +435,34 @@ trait OrderService
             $due_amount = $total_payable_amount - $total_pay_amount;
         }
 
-        $order_type = $request->type ?? 'sales';
-        $order_source = $request->source ?? 'pos';
-        $payment_type = $request->payment_type ?? 'none';
         $payment_status = $request->payment_type !== 'none' ?
             $due_amount <= 0 ? 'completed' : 'due'
             : 'pending';
         $order_status = $request->order_status ?? $payment_status === 'completed' ?? 'pending';
 
+        $order['offer_id'] = $offer_id;
+        $order['offer_name'] = $offer_name;
+        $order['coupon_code'] = $coupon_code;
+        $order['type'] = $request->type ?? 'sales';
+        $order['source'] = $request->source ?? 'pos';
+        $order['payment_type'] = $request->payment_type ?? 'none';
+        $order['payment_status'] = $payment_status;
+        $order['status'] = $order_status;
+        $order['total_qty'] = $total_qty;
+        $order['total_sub_total_amount'] = round($total_sub_total_amount, 2);
+        $order['total_sub_discount_percent'] = round($total_sub_discount_percent, 2);
+        $order['total_sub_discount_amount'] = round($total_sub_discount_amount, 2);
+        $order['total_sub_vat_percent'] = round($total_sub_vat_percent, 2);
+        $order['total_sub_vat_amount'] = round($total_sub_vat_amount, 2);
+        $order['discount_percent'] = round($discount_percent, 2);
+        $order['discount_amount'] = round($discount_amount, 2);
+        $order['vat_percent'] = round($vat_percent, 2);
+        $order['vat_amount'] = round($vat_amount, 2);
+        $order['delivery_fee'] = round($delivery_fee, 2);
+        $order['processing_fee'] = round($processing_fee, 2);
+        $order['total_payable_amount'] = round($total_payable_amount, 2);
+        $order['due_amount'] = round($due_amount, 2);
+        $order['total_pay_amount'] = round($total_pay_amount, 2);
         return $order;
     }
 

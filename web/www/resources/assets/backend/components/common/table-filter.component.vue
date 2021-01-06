@@ -1,5 +1,5 @@
 <template>
-    <div class="collapse row justify-content-center pt-3" id="tableFilter">
+    <div class="collapse row justify-content-center pt-3 m-0" id="tableFilter">
         <div class="card col-10">
             <div class="form-row">
                 <div :class="'form-group col-md-'+columnSize" v-for="(filter, index) in filtersWithoutDate" :key="index">
@@ -7,11 +7,24 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">{{filter.label}}</div>
                         </div>
-                        <input v-if="filter.type === 'text'" type="text" v-model.lazy.trim="filterData[filter.name]" class="form-control">
-                        <select v-if="filter.type === 'select'" v-model.lazy="filterData[filter.name]" class="form-control form-control-sm">
+                        <input
+                          v-if="filter.type === 'text'"
+                          type="text" v-model.lazy.trim="filterData[filter.name]"
+                          class="form-control">
+                        <select
+                            v-if="filter.type === 'select'"
+                            v-model.lazy="filterData[filter.name]"
+                            class="form-control form-control-sm">
                             <option selected value="">...Select All...</option>
                             <option v-for="option in filter.options" :value="option.value">{{option.label}}</option>
                         </select>
+                        <Select2
+                            v-if="filter.type === 'select2'"
+                            v-model.lazy="filterData[filter.name]"
+                            style="padding: 0; border: 0; border-radius: 0;"
+                            class="form-control"
+                            :options="filter.options"
+                            :settings="{allowClear: true}"/>
                     </div>
                 </div>
             </div>
@@ -34,9 +47,15 @@
                     </div>
                 </div>
                 <div class="form-group col-md-2">
-                    <button type="submit" class="btn btn-theme btn-sm" @click.prevent="filterButton()">
-                        <img :src="this.asset('/img/search.png')" alt="">
-                        {{filterButtonName}}
+                    <button
+                        type="submit"
+                        class="btn btn-theme btn-sm"
+                        :disabled="loading.filter"
+                        @click.prevent="filterButton()">
+                            <img :src="this.asset('/img/search.png')" alt="">
+                            <loading-component :loader="loading.filter" size="small">
+                              {{filterButtonName}}
+                            </loading-component>
                     </button>
                 </div>
             </div>
@@ -45,14 +64,21 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
+import {mapState, mapGetters} from 'vuex';
 import Datepicker from 'vuejs3-datepicker';
+import Select2 from 'vue3-select2-component';
+import LoadingComponent from '../common/loading.component';
 
 export default {
     name: "table-filter.component",
-    components: {Datepicker},
+    components: {
+      Datepicker,
+      Select2,
+      LoadingComponent
+    },
     data() {
         const filters = this.$store.getters.tableFilters;
+        const filterData = this.$store.state.filterData;
         const from_date = _.get(
             _.filter(filters, item => item.name === 'from_date' ? item : null),
             '[0].value',
@@ -66,12 +92,14 @@ export default {
 
       return {
           filterData: {
+              ...filterData,
               from_date,
               to_date,
           },
       }
     },
     computed: {
+        ...mapState(['loading']),
         ...mapGetters([
             'filterButtonName',
             'tableFilters'

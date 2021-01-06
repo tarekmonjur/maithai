@@ -68,6 +68,7 @@ class ProductController extends ApiController
             $product->category_id = !empty($request->category_id) ?? null;
             $product->sub_category_id = !empty($request->sub_category_id) ?? null;
             $product->sort = $this->getSortNumber($request->sort);
+            $product->original_price = $request->original_price ?? 0;
             $product->regular_price = $request->regular_price ?? 0;
             $product->special_price = $request->special_price ?? 0;
             $product->vat_percent = $request->vat_percent ?? 0;
@@ -112,6 +113,7 @@ class ProductController extends ApiController
             $product->category_id = !empty($request->category_id) ?? null;
             $product->sub_category_id = !empty($request->sub_category_id) ?? null;
             $product->sort = $this->getSortNumber($request->sort);
+            $product->original_price = $request->original_price ?? 0;
             $product->regular_price = $request->regular_price ?? 0;
             $product->special_price = $request->special_price ?? 0;
             $product->vat_percent = $request->vat_percent ?? 0;

@@ -9,6 +9,7 @@
         <td>{{row.unit && row.unit.name}}</td>
         <td>{{row.category && row.category.name}}</td>
         <td>{{row.sub_category && row.sub_category.name}}</td>
+        <td>{{row.original_price}}</td>
         <td>{{row.regular_price}}</td>
         <td>{{row.special_price}}</td>
         <td>{{row.vat_percent}}</td>

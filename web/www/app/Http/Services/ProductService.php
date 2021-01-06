@@ -25,7 +25,7 @@ trait ProductService
     private $paginate = true;
     // columns config for table view
     private $columnsConfig = [
-        'sl' => 100,
+        'sl' => 50,
         'name' => 0,
         'code' => 0,
         'barcode' => 0,
@@ -34,6 +34,7 @@ trait ProductService
         'unit' => 0,
         'category' => 0,
         'sub_category' => 0,
+        'original_price' => 0,
         'regular_price' => 0,
         'special_price' => 0,
         'vat_percent' => 0,
@@ -101,18 +102,6 @@ trait ProductService
     ];
     private $filters = [];
     private $data = [];
-
-    protected function setFiltersConfigData($key, $data) {
-        $filters = $this->getFiltersConfig();
-        if ($key) {
-            foreach($filters as $index => $filter) {
-                if ($filter['name'] === $key) {
-                    $filters[$index]['options'] = $data;
-                }
-            }
-        }
-        $this->data['filters_config'] = $filters;
-    }
 
     protected function generateFilters($dbModel)
     {

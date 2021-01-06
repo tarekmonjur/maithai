@@ -62,11 +62,6 @@ to get the desired effect
 <!-- AdminLTE -->
 <script src="{{asset('backend/js/adminlte.min.js')}}"></script>
 <script>
-    window._baseURL = '{{ url('/') }}';
-    window._assetURL = '{{ asset('/backend') }}';
-    window._columns_config = '{!! json_encode($columns_config??[]) !!}';
-    window._filters_config = '{!! json_encode($filters_config??[]) !!}';
-
     var current_url = '{{url()->current()}}';
     $(document).ready(function(){
         $(".nav-link[href='"+current_url+"']").addClass('active');

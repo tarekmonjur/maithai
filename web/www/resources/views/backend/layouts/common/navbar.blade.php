@@ -8,7 +8,7 @@
             <a href="{{route(config('app.backend_home').'.dashboard')}}" class="nav-link">{{ __('menu.dashboard')}}</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route(config('app.backend_home').'.pos')}}" class="nav-link">@lang('menu.pos')</a>
+            <a href="{{route(config('app.backend_home').'.orders.create')}}" class="nav-link">@lang('menu.pos')</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{route(config('app.backend_home').'.orders', ['source' => 'online'])}}" class="nav-link">

@@ -2,12 +2,16 @@ import helpers from "../js/helpers";
 
 export default {
     async init(context) {
+        if (_.get(window, '_context.request.query')) {
+            context.dispatch('filterButtonAction', _.get(window, '_context.request.query',{}));
+        }
         await helpers.setLang(true);
         await context.dispatch('getListData');
     },
 
     async getListData(context, payload) {
         payload = _.isEmpty(payload) ? {} : payload;
+        console.log(context.state.filterData);
         _.set(payload, 'params', {
             ...context.state.filterData,
             ..._.get(payload, 'params', {}),
@@ -27,9 +31,11 @@ export default {
                 errors: {}
             });
         }
+        context.commit('setLoading', {filter: false});
     },
 
     async filterButtonAction(context, payload) {
+        context.commit('setLoading', {filter: true});
         context.commit('setFilterData', payload);
     },
 
@@ -75,6 +81,7 @@ export default {
     async getCustomers(context, payload = {}) {
         _.set(payload, 'url', '/customers');
         _.set(payload, 'params', {
+            columns: _.get(payload, 'params.columns', null),
             sublist: _.get(payload, 'sublist', true),
             paginate: _.get(payload, 'paginate', false),
         });
@@ -94,7 +101,7 @@ export default {
     async getProducts(context, payload = {}) {
         _.set(payload, 'url', '/products');
         _.set(payload, 'params', {
-            columns: _.get(payload, 'params.columns', 'id,name,code,barcode'),
+            columns: _.get(payload, 'params.columns', null),
             sublist: _.get(payload, 'sublist', false),
             paginate: _.get(payload, 'paginate', false),
         });
@@ -102,6 +109,26 @@ export default {
         
         if (result && result.code === 200) {
             context.commit('setProducts', result.results);
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+    
+    async getTables(context, payload = {}) {
+        _.set(payload, 'url', '/tables');
+        _.set(payload, 'params', {
+            columns: _.get(payload, 'params.columns', null),
+            sublist: _.get(payload, 'sublist', false),
+            paginate: _.get(payload, 'paginate', false),
+        });
+        const result = await helpers.getDataAction(payload);
+        
+        if (result && result.code === 200) {
+            context.commit('setTables', result.results);
         } else {
             context.commit('setErrorsAlert',  {
                 alert: _.pick(result, ['code', 'message', 'status']),

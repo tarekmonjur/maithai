@@ -26,6 +26,7 @@ class CreateSettingsTable extends Migration
             $table->decimal('referral_bonus', 10, 2)->nullable()->default(0);
             $table->decimal('delivery_fee', 10, 2)->nullable()->default(0);
             $table->decimal('processing_fee', 10, 2)->nullable()->default(0);
+            $table->decimal('vat_percent', 8, 2)->nullable()->default(0);
             $table->string('logo', 100)->nullable();
             $table->string('qrcode', 100)->nullable();
             $table->text('opening_time')->nullable();

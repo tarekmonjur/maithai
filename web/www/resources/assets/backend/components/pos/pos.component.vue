@@ -4,6 +4,9 @@
     <item-component></item-component>
     <order-component></order-component>
   </div>
+  <modal-component>
+    <invoice-component v-if="modal.id === 'invoice'"></invoice-component>
+  </modal-component>
   <alert-component></alert-component>
 </template>
 
@@ -13,6 +16,8 @@ import AlertComponent from './../common/alert.component';
 import ListComponent from './list.component';
 import ItemComponent from './item.component';
 import OrderComponent from './order.component';
+import InvoiceComponent from './../common/invoice.component';
+import ModalComponent from './../common/modal.component';
 
 export default {
   name: "MainContentComponent",
@@ -21,11 +26,14 @@ export default {
     AlertComponent,
     ListComponent,
     ItemComponent,
-    OrderComponent
+    OrderComponent,
+    InvoiceComponent,
+    ModalComponent
   },
   computed: {
     ...mapState([
       'lang_key',
+      'modal',
     ]),
   },
   created() {
