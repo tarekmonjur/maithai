@@ -6,6 +6,7 @@ use App\Http\Requests\OrderRequest;
 use App\Http\Services\OrderService;
 use App\Models\Order;
 use App\Models\OrderDetails;
+use App\Models\ShippingDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -60,12 +61,18 @@ class OrderController extends ApiController
     {
 //        try {
             $order_result = $this->makeOrder($request);
+            if (empty($order_result)) {
+                return $this->jsonResponse(null, $this->getTrans('warning_msg'));
+            }
             DB::beginTransaction();
             $order = new Order();
             $order->setRawAttributes($order_result);
             $order->offsetUnset('items');
+            $order->offsetUnset('shipping_details');
             $order->created_by = $this->authUser && $this->authUser->getTable() === 'users' ? $this->authUser->id : 0;
             if ($order->save()) {
+                $shipping = $this->upsertShippingDetails($order->id, $order_result['shipping_details']);
+                $order->setAttribute('shipping_details', $shipping);
                 $items = $order_result['items'];
                 foreach($items as $key => $value) {
                     $items[$key]['order_id'] = $order->id;
@@ -92,16 +99,18 @@ class OrderController extends ApiController
         try {
             $order = Order::find($request->id);
             if (!$order) {
-                return $this->jsonResponse('', $this->getTrans('warning_msg'));
+                return $this->jsonResponse(null, $this->getTrans('warning_msg'));
             }
 
             $order_result = $this->makeOrder($request);
             DB::beginTransaction();
             $order->setRawAttributes($order_result);
             $order->offsetUnset('items');
+            $order->offsetUnset('shipping_details');
             $order->created_by = $this->authUser && $this->authUser->getTable() === 'users' ? $this->authUser->id : 0;
-
             if ($order->save()) {
+                $shipping = $this->upsertShippingDetails($order->id, $order_result['shipping_details']);
+                $order->setAttribute('shipping_details', $shipping);
                 $items = [];
                 $existing_items = [];
                 foreach($order_result['items'] as $item) {
@@ -142,6 +151,27 @@ class OrderController extends ApiController
         } catch (\Exception $e) {
             return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
         }
+    }
+
+    protected function upsertShippingDetails($order_id, $shipping_details)
+    {
+        if (!empty($shipping_details)) {
+            if (!empty($shipping_details['id'])) {
+                $shipping_id = $shipping_details['id'];
+                $shipping = ShippingDetails::find($shipping_id);
+                if (!$shipping) {
+                    $shipping = new ShippingDetails;
+                }
+            } else {
+                $shipping = new ShippingDetails;
+            }
+
+            $shipping_details['order_id'] = $order_id;
+            $shipping->setRawAttributes($shipping_details);
+            $shipping->save();
+            return $shipping;
+        }
+        return null;
     }
 
 }

@@ -37,15 +37,6 @@ $btn-focus-color: #ffffff;
 $btn-focus-bg-color: #dc3545;
 $btn-focus-border-color: darkred;
 
-#tableFilter{
-    .select2 {
-        width: 100%!important;
-        .select2-selection {
-            border-radius: 0px 4px 4px 0px;
-            border: 1px solid $color3;
-        }
-    }
-}
 
 .navbar {
     background-color: $theme-bg-color!important;
@@ -212,6 +203,30 @@ $btn-focus-border-color: darkred;
 
         svg {
             top: 7px !important;
+        }
+    }
+
+    label {
+        margin: 0px!important;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+}
+
+#form{
+    .select2-container{
+        width: 100%!important;
+    }
+}
+
+#tableFilter{
+    .select2 {
+        width: 100%!important;
+        .select2-selection {
+            border-radius: 0px 4px 4px 0px;
+            border: 1px solid $color3;
         }
     }
 }

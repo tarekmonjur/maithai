@@ -11,7 +11,7 @@
                   <option value="sales">{{ this.lang('sales') }}</option>
                   <option value="purchase">{{ this.lang('purchase') }}</option>
                 </select>
-                <Select2 v-model="this.formInput['customer_id']"
+                <Select2 v-model="formInput['customer_id']"
                          style="padding: 0; border: 0; border-radius: 0"
                          class="form-control"
                          :options="customersSelect2"
@@ -24,10 +24,13 @@
                     <i class="fas fa-search"></i>
                   </loading-component>
                 </button>
-                <button type="submit"
+                <a href="javascript:void(0)"
+                        data-toggle="modal"
+                        data-target="#shipping"
+                        @click.prevent="showShippingForm()"
                         class="btn btn-sm btn-theme ml-1">
                   <i class="fas fa-plus"></i>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -40,7 +43,10 @@
                     <address>
                       {{ customerDetails['first_name'] }} {{ customerDetails['last_name'] }} <br>
                       {{ customerDetails['mobile_no'] }} <br>
-                      {{ customerDetails['email'] }}
+                      {{ customerDetails['email'] }} <br>
+                      {{ customerDetails['city'] }}, {{ customerDetails['state'] }},
+                      {{ customerDetails['zip_code'] }} <br>
+                      {{ customerDetails['address'] }}
                     </address>
                   </small>
                 </h6>
@@ -58,9 +64,12 @@
                   {{ this.lang('ship_to') }} <br>
                   <small>
                     <address>
-                      {{ customerDetails['city'] }}, {{ customerDetails['state'] }},
-                      {{ customerDetails['zip_code'] }} <br>
-                      {{ customerDetails['address'] }}
+                      {{ shippingDetails['full_name'] }} <br>
+                      {{ shippingDetails['mobile_no'] }} <br>
+                      {{ shippingDetails['email'] }} <br>
+                      {{ shippingDetails['city'] }}, {{ shippingDetails['state'] }},
+                      {{ shippingDetails['zip_code'] }} <br>
+                      {{ shippingDetails['address'] }}
                     </address>
                   </small>
                 </h6>
@@ -87,7 +96,9 @@
                           <div class="form-check form-check-inline">
                             <input type="radio" id="online"
                                    v-model="formInput['source']"
-                                   @click="addCustomer()"
+                                   data-toggle="modal"
+                                   data-target="#shipping"
+                                   @click="showShippingForm()"
                                    class="form-check-input" value="online">
                             <label for="online"
                                    class="form-check-label">{{ this.lang('online') }}</label>
@@ -107,12 +118,11 @@
                       <td>
                         <div class="input-group input-group-sm">
                           <Select2
-                            v-model="formInput['table_no']"
-                            id="table_no"
-                            name="table_no"
+                            v-model="formInput['table_id']"
                             style="padding: 0; border: 0; border-radius: 0"
                             class="form-control"
                             :options="tableSelect2"
+                            @select="($event) => { formInput['table_no'] = $event.text }"
                             :settings="{placeholder: this.lang('select_table_no'), allowClear: true}"/>
                         </div>
                       </td>
@@ -308,6 +318,9 @@ export default {
       }
       return _.get(this.formInput, 'customer.details', {});
     },
+    shippingDetails(){
+      return _.get(this.formInput, 'shipping_details', {});
+    },
     vatAmount() {
       const vat_percent = +this.formInput['vat_percent'] || 0;
       const vat_amount = this.totalSubTotal * vat_percent / 100;
@@ -363,9 +376,6 @@ export default {
       if (_.isEmpty(this.tables)) {
         this.$store.dispatch('getTables');
       }
-    },
-    addCustomer() {
-
     },
     saveOrderAction() {
       this.$swal({
@@ -455,7 +465,14 @@ export default {
           button: this.lang('print_invoice'),
         }
       });
-    }
+    },
+    showShippingForm() {
+      this.$store.commit('setModal', {
+          id: 'shipping',
+          title: this.lang('add_shipping_details'),
+          button: this.lang('submit'),
+        });
+    },
   },
 }
 </script>

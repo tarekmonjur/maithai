@@ -8,7 +8,8 @@ const defaultInput = {
   type: 'sales',
   source: 'pos',
   payment_type: 'none',
-  customer_id: "-1",
+  customer_id: -1,
+  shipping_details: {},
 };
 
 export default {
@@ -17,6 +18,7 @@ export default {
         lang_key: 'pos',
         ...state,
         formInput: defaultInput,
+        shippingDetails: {},
         print_bill: false,
         loading_list: {button: false},
         loading_item: {button: false},
@@ -54,10 +56,15 @@ export default {
         totalSubTotal(state){
             return state.formInput.items ?
               state.formInput.items.reduce((sum, item) => sum + +item.sub_total, 0) : 0;
-        }
+        },
     },
     actions: {
         ...actions,
+        clearDataAction(context, modal_id) {
+          $('#'+modal_id).modal('hide');
+          context.commit('setModal', {});
+          context.commit('setLoading', {modal: null, button: null});
+        },
         async init(context) {
             if (_.get(window, '_context.request.id')) {
                 context.dispatch('editOrderAction', { id: _.get(window, '_context.request.id',0) });
@@ -76,6 +83,7 @@ export default {
         async initOrder(context) {
             context.commit('setLoadingOrder', {customer: true});
             await actions.getCustomers(context);
+            await actions.getTables(context);
             context.commit('setLoadingOrder', {customer: false});
         },
         async getCategories(context, payload) {
@@ -117,8 +125,8 @@ export default {
                     const order = _.get(result.results, 'results', {});
                     _.set(order, 'items', _.get(order, 'order_details', []));
                     _.unset(order, 'order_details');
-                    console.log({order});
-                    context.commit('setFormInput', order);
+                    context.commit('setShippingDetails', {..._.get(order, 'shipping_details', {})});
+                    context.commit('setFormInput', {...order});
                 } else {
                     context.commit('setErrorsAlert',  {
                         alert: _.pick(result, ['code', 'message', 'status']),
@@ -131,7 +139,7 @@ export default {
         },
         async addOrderItem(context, payload) {
             context.commit('setLoadingItem', {button: true});
-            context.commit('setOrder', {});
+            context.commit('setPrintBill', false);
             const items = _.get(context.state.formInput, 'items', []);
             const hasItemIndex = _.findIndex(items, i => i.product_id === payload.product_id && i.item_lock === false);
             if (hasItemIndex > -1) {
@@ -171,7 +179,7 @@ export default {
                 data: {
                     ...context.state.formInput,
                     order_status: payload.order_status,
-                    order_source: 'pos'
+                    order_source: 'pos',
                 },
             };
     
@@ -188,6 +196,7 @@ export default {
                     errors: {}
                 });
                 context.commit('setFormInput', _.get(result, 'results'));
+                context.commit('setShippingDetails', _.get(result, 'results.shipping_details', {}) || {});
                 context.commit('setPrintBill', true);
             } else {
                 context.commit('setErrorsAlert', {
@@ -203,6 +212,23 @@ export default {
           }
           context.commit('setPrintBill', false);
           context.commit('setLoadingOrder', {print_bill: false, btn_disabled: false});
+        },
+        async modalButtonAction(context, payload) {
+          context.commit('setLoading', {button: true});
+          const requestPayload = {
+            url: context.state.url,
+            method: 'GET',
+          };
+          const modal_id = _.get(context.state.modal, 'id', '');
+          const add_modal_id = _.get(context.state.buttons, 'add.modal_id', '');
+          const edit_modal_id = _.get(context.state.buttons, 'edit.modal_id', '');
+          
+          if (modal_id === 'shipping') {
+            console.log({shipping_details: {...context.state.shippingDetails}});
+            context.commit('setFormInput', {shipping_details: {...context.state.shippingDetails}});
+            await context.dispatch('clearDataAction', modal_id);
+          }
+          context.commit('setLoading', {button: false});
         },
     },
     mutations: {
@@ -231,6 +257,9 @@ export default {
         clearOrder(state, payload) {
           state.formInput = defaultInput;
           state.print_bill = false;
+        },
+        setShippingDetails(state, payload) {
+          state.shippingDetails = payload;
         },
     }
 }

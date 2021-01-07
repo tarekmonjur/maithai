@@ -2,6 +2,7 @@
 
 return [
     'default' => 'Pos',
+    'submit' => 'Submit',
     'id' => 'ID',
     'sl' => 'SL',
     'product' => 'Food',
@@ -65,6 +66,8 @@ return [
     'complete_order' => 'Complete Order',
     'clear_order' => 'Clear Order',
     'print_bill' => 'Print Bill',
+    'add_shipping_details' => 'Add Shipping Details',
+    'take_shipping_details_from_customer' => 'Take Shipping Details From Customer',
 
     'success_msg' => 'Food successfully saved',
     'error_msg' => 'Food not saved. Try again..!',

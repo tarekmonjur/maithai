@@ -6,6 +6,7 @@
   </div>
   <modal-component>
     <invoice-component v-if="modal.id === 'invoice'"></invoice-component>
+    <shipping-form-component v-else-if="modal.id === 'shipping'"></shipping-form-component>
   </modal-component>
   <alert-component></alert-component>
 </template>
@@ -18,6 +19,7 @@ import ItemComponent from './item.component';
 import OrderComponent from './order.component';
 import InvoiceComponent from './../common/invoice.component';
 import ModalComponent from './../common/modal.component';
+import ShippingFormComponent from './shipping-form.component';
 
 export default {
   name: "MainContentComponent",
@@ -28,7 +30,8 @@ export default {
     ItemComponent,
     OrderComponent,
     InvoiceComponent,
-    ModalComponent
+    ModalComponent,
+    ShippingFormComponent,
   },
   computed: {
     ...mapState([

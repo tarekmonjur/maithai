@@ -163,7 +163,7 @@ trait OrderService
         }
 
         if ($this->getSubList()) {
-            $relations = ['customer'];
+            $relations = ['customer', 'shippingDetails'];
 
             if (!empty($this->getId())) {
                 array_push($relations, 'table', 'offer', 'orderDetails');
@@ -226,7 +226,8 @@ trait OrderService
     {
         $table_no = null;
         if (!empty($id)) {
-            $table_no = Table::find($id)->first('table_no');
+            $table = Table::find($id)->first('table_no');
+            $table_no = $table ? $table->table_no : null;
         }
         return $table_no;
     }
@@ -332,6 +333,23 @@ trait OrderService
         return $item;
     }
 
+    protected function makeShippingDetails($request)
+    {
+        $shippingDetails = [];
+        if (!empty($request->input('shipping_details.full_name')) &&
+            !empty($request->input('shipping_details.mobile_no'))) {
+            $shippingDetails['id'] = $request->input('shipping_details.id');
+            $shippingDetails['full_name'] = $request->input('shipping_details.full_name');
+            $shippingDetails['email'] = $request->input('shipping_details.email');
+            $shippingDetails['mobile_no'] = $request->input('shipping_details.mobile_no');
+            $shippingDetails['city'] = $request->input('shipping_details.city');
+            $shippingDetails['state'] = $request->input('shipping_details.state');
+            $shippingDetails['zip_code'] = $request->input('shipping_details.zip_code');
+            $shippingDetails['address'] = $request->input('shipping_details.address');
+        }
+        return $shippingDetails;
+    }
+
     protected function makeOrder($request)
     {
         $order = [];
@@ -351,6 +369,8 @@ trait OrderService
             $order['customer_id'] = $this->authUser ? $this->authUser->id : -1;
         }
 
+        $order['shipping_details'] = $this->makeShippingDetails($request);
+
         $total_qty = 0;
         $total_sub_total_amount = 0;
         $total_sub_discount_percent = 0;
@@ -367,10 +387,6 @@ trait OrderService
                 $item = $new_item;
                 // manage variants and stocks here...
             }
-
-//            if ($request->id) {
-//                $item['order_id'] = $request->id;
-//            }
 
             if (!empty($item)) {
                 $order['items'][] = $item;

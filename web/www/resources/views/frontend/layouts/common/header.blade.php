@@ -5,6 +5,16 @@
             <img src="{{asset('frontend/logo/logo.png')}}" alt="Mai Thai" />
         </div>
 
+        <div class="float-left">
+            <div style="margin: auto;padding: 5px 50px 0px;text-align: center;">
+                <h5 style="color:white">
+                    We are still working on our website.<br>
+                    For place an order please<br>
+                    Call: 01992641133
+                </h5>
+            </div>
+        </div>
+
         <!----Right Side Of Header---->
         <div class="d-flex rightHeaderItem">
             <div class="items mr-4 rightHeaderItem">
@@ -23,7 +33,7 @@
                         <div class="num">call: <span class="font-weight-bold">0199 2641 133</span></div>
                     </div>
                     <!-- Charts Total -->
-                    <div class="ml-3 cart-bar">
+                    <div class="cart-bar">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge badge-light">4</span>
                         <div class="carts-section text-uppercase">
@@ -40,7 +50,7 @@
                         </div>
                     </div>
                     <!-- Clock for Opening and closing time -->
-                    <div class="ml-3 buisness-hour">
+                    <div class="buisness-hour">
                         <i class="far fa-clock"></i>
                         <div class="time-table">
                             <a href="#time-table-bookmark" class="bookmark-text">

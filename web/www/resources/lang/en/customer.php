@@ -19,6 +19,7 @@ return [
     'id' => 'ID',
     'sl' => 'SL',
     'username' => 'User Name',
+    'full_name' => 'Full Name',
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
     'email' => 'Email Address',

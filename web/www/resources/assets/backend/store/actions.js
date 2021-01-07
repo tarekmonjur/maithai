@@ -73,7 +73,6 @@ export default {
         $('#'+modal_id).modal('hide');
         context.commit('setModal', {});
         context.commit('setLoading', {modal: null, button: null});
-        // context.commit('clearFormData', {});
         context.commit('clearFormInput', {});
         context.commit('setErrorsAlert', {});
     },

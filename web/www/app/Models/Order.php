@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $guarded = ['items'];
+    protected $guarded = ['items', 'shipping_details'];
 
     public function orderDetails() {
         return $this->hasMany(OrderDetails::class, 'order_id', 'id');
+    }
+
+    public function shippingDetails() {
+        return $this->hasOne(ShippingDetails::class, 'order_id', 'id');
     }
 
     public function customer() {

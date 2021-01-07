@@ -18,11 +18,11 @@ class CreateShippingDetailsTable extends Migration
             $table->integer('order_id')->index();
             $table->string('full_name', 45);
             $table->string('email', 45)->nullable();
-            $table->string('mobile', 25);
+            $table->string('mobile_no', 25);
             $table->string('city', 25)->nullable();
             $table->string('state', 25)->nullable();
             $table->string('zip_code', 25)->nullable();
-            $table->string('address', 25)->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

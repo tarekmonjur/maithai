@@ -48,7 +48,7 @@ export default {
         }
     },
     updated() {
-        console.log(this.modal);
+        console.log('update modal..', this.modal);
     }
 }
 </script>
