@@ -11,10 +11,10 @@ class TableController extends ApiController
 {
     /*
     |--------------------------------------------------------------------------
-    | Product Sku API Controller
+    | Table API Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Product Sku Manage
+    | @Description : Table Manage
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
@@ -57,15 +57,13 @@ class TableController extends ApiController
     public function store(TableRequest $request)
     {
         try {
-            $sku = new Table();
-            $sku->name = $request->name;
-            $sku->code = $request->code;
-            $sku->location = $request->location;
-            $sku->description = $request->description;
-            $sku->is_active = $request->is_active ?? 1;
-            $sku->created_by = $this->authUser->id;
+            $table = new Table();
+            $table->table_no = $request->table_no;
+            $table->description = $request->description;
+            $table->is_active = $request->is_active ?? 1;
+            $table->created_by = $this->authUser->id;
 
-            if ($sku->save()) {
+            if ($table->save()) {
                 return $this->jsonResponse(null, $this->getTrans('success_msg'));
             } else {
                 return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
@@ -79,19 +77,17 @@ class TableController extends ApiController
     public function update(TableRequest $request)
     {
         try {
-            $sku = Table::find($request->id);
-            if (!$sku) {
+            $table = Table::find($request->id);
+            if (!$table) {
                 return $this->jsonResponse('', $this->getTrans('warning_msg'));
             }
 
-            $sku->name = $request->name;
-            $sku->code = $request->code;
-            $sku->location = $request->location;
-            $sku->description = $request->description;
-            $sku->is_active = $request->is_active;
-            $sku->updated_by = $this->authUser->id;
+            $table->table_no = $request->table_no;
+            $table->description = $request->description;
+            $table->is_active = $request->is_active ?? 1;
+            $table->created_by = $this->authUser->id;
 
-           if ($sku->save()) {
+           if ($table->save()) {
                return $this->jsonResponse(null, $this->getTrans('success_msg'));
            } else {
                return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
@@ -106,7 +102,7 @@ class TableController extends ApiController
         try {
             $result = Table::find($id)->delete();
             if ($result) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+                return $this->jsonResponse(null, $this->getTrans('delete_msg'));
             }
 
             return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');

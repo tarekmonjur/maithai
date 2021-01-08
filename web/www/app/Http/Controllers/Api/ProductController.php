@@ -150,7 +150,7 @@ class ProductController extends ApiController
         try {
             $result = Product::find($id)->delete();
             if ($result) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+                return $this->jsonResponse(null, $this->getTrans('delete_msg'));
             }
 
             return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');

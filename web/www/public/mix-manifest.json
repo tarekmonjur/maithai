@@ -1,4 +1,5 @@
 {
-    "/backend/js/pos.js": "/backend/js/pos.js",
+    "/backend/js/sku.js": "/backend/js/sku.js",
+    "/backend/js/table.js": "/backend/js/table.js",
     "/backend/css/style.css": "/backend/css/style.css"
 }

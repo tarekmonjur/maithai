@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -12012,7 +12012,7 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   updated() {
-    console.log(this.modal);
+    console.log('update modal..', this.modal);
   }
 
 });
@@ -13162,7 +13162,7 @@ const _hoisted_4 = {
   class: "form-group"
 };
 const _hoisted_5 = {
-  for: "name"
+  for: "table_no"
 };
 
 const _hoisted_6 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("span", {
@@ -13176,24 +13176,37 @@ const _hoisted_7 = {
   class: "invalid-feedback"
 };
 const _hoisted_8 = {
-  class: "form-row"
-};
-const _hoisted_9 = {
   class: "col"
 };
-const _hoisted_10 = {
+const _hoisted_9 = {
   class: "form-group"
 };
-const _hoisted_11 = {
+const _hoisted_10 = {
   for: "is_active"
 };
-const _hoisted_12 = {
+const _hoisted_11 = {
   value: "1"
 };
-const _hoisted_13 = {
+const _hoisted_12 = {
   value: "0"
 };
+const _hoisted_13 = {
+  key: 0,
+  class: "invalid-feedback"
+};
 const _hoisted_14 = {
+  class: "form-row"
+};
+const _hoisted_15 = {
+  class: "col"
+};
+const _hoisted_16 = {
+  class: "form-group"
+};
+const _hoisted_17 = {
+  for: "description"
+};
+const _hoisted_18 = {
   key: 0,
   class: "invalid-feedback"
 };
@@ -13201,33 +13214,43 @@ const _hoisted_14 = {
 Object(vue__WEBPACK_IMPORTED_MODULE_0__["popScopeId"])();
 
 const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("form", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_3, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_4, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("label", _hoisted_5, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createTextVNode"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('name')) + " : ", 1
+  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("form", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_3, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_4, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("label", _hoisted_5, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createTextVNode"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('table_no')) + " : ", 1
   /* TEXT */
   ), _hoisted_6]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["withDirectives"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("input", {
     type: "text",
-    id: "name",
+    id: "table_no",
     onKeyup: _cache[1] || (_cache[1] = (...args) => this.slug(...args)),
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => _ctx.formInput['name'] = $event),
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => _ctx.formInput['table_no'] = $event),
     class: [{
-      'is-invalid': _ctx.errors.name
+      'is-invalid': _ctx.errors.table_no
     }, "form-control form-control-sm"]
   }, null, 34
   /* CLASS, HYDRATE_EVENTS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__["vModelText"], _ctx.formInput['name']]]), _ctx.errors.name ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_7, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.errors.name), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__["vModelText"], _ctx.formInput['table_no']]]), _ctx.errors.table_no ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_7, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.errors.table_no), 1
   /* TEXT */
-  )) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_8, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_9, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_10, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("label", _hoisted_11, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('is_active')) + " :", 1
+  )) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_8, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_9, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("label", _hoisted_10, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('is_active')) + " :", 1
   /* TEXT */
   ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["withDirectives"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("select", {
     class: "form-control form-control-sm",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => _ctx.formInput['is_active'] = $event),
     id: "is_active"
-  }, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("option", _hoisted_12, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('active')), 1
+  }, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("option", _hoisted_11, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('active')), 1
   /* TEXT */
-  ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("option", _hoisted_13, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('inactive')), 1
+  ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("option", _hoisted_12, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('inactive')), 1
   /* TEXT */
   )], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__["vModelSelect"], _ctx.formInput['is_active']]]), _ctx.errors.is_active ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_14, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.errors.is_active), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__["vModelSelect"], _ctx.formInput['is_active']]]), _ctx.errors.is_active ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_13, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.errors.is_active), 1
+  /* TEXT */
+  )) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_14, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_15, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_16, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("label", _hoisted_17, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang('description')) + " :", 1
+  /* TEXT */
+  ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["withDirectives"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("textarea", {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => _ctx.formInput['description'] = $event),
+    class: "form-control form-control-sm",
+    id: "description"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__["vModelText"], _ctx.formInput['description']]]), _ctx.errors.description ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("div", _hoisted_18, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.errors.description), 1
   /* TEXT */
   )) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)])])])]);
 });
@@ -13276,9 +13299,9 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(true), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])(vue__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["renderList"])(_ctx.tableData, row => {
     return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.id), 1
     /* TEXT */
-    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.name), 1
+    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.table_no), 1
     /* TEXT */
-    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.products_count), 1
+    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(row.description), 1
     /* TEXT */
     ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(this.isActive(row.is_active)), 1
     /* TEXT */
@@ -13402,14 +13425,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const _withId = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["withScopeId"])("data-v-6cfc0242");
 
-Object(vue__WEBPACK_IMPORTED_MODULE_0__["pushScopeId"])("data-v-6cfc0242");
-
-const _hoisted_1 = {
-  key: 0
-};
-
-Object(vue__WEBPACK_IMPORTED_MODULE_0__["popScopeId"])();
-
 const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_table_view_component = Object(vue__WEBPACK_IMPORTED_MODULE_0__["resolveComponent"])("table-view-component");
 
@@ -13418,23 +13433,19 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
     /* TEXT */
     ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.id), 1
     /* TEXT */
-    )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`name`)), 1
+    )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`table_no`)), 1
     /* TEXT */
-    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.name), 1
+    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.table_no), 1
     /* TEXT */
     )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`is_active`)), 1
     /* TEXT */
     ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(this.isActive(_ctx.showData.is_active)), 1
     /* TEXT */
-    )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`products`)) + " (" + Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.products_count) + ")", 1
+    )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`description`)), 1
     /* TEXT */
-    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, [(Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(true), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])(vue__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["renderList"])(_ctx.showData.products, (product, index) => {
-      return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("span", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createTextVNode"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(product.name) + ",  ", 1
-      /* TEXT */
-      ), index + 1 % 10 === 0 ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("br", _hoisted_1)) : Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])("v-if", true)]);
-    }), 256
-    /* UNKEYED_FRAGMENT */
-    ))])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`created`)), 1
+    ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.showData.description), 1
+    /* TEXT */
+    )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("tr", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", null, Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])($options.lang(`created`)), 1
     /* TEXT */
     ), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("td", {
       innerHTML: this.created(_ctx.showData)
@@ -63185,8 +63196,7 @@ __webpack_require__.r(__webpack_exports__);
     context.commit('setLoading', {
       modal: null,
       button: null
-    }); // context.commit('clearFormData', {});
-
+    });
     context.commit('clearFormInput', {});
     context.commit('setErrorsAlert', {});
   },
@@ -63195,6 +63205,7 @@ __webpack_require__.r(__webpack_exports__);
     _.set(payload, 'url', '/customers');
 
     _.set(payload, 'params', {
+      columns: _.get(payload, 'params.columns', null),
       sublist: _.get(payload, 'sublist', true),
       paginate: _.get(payload, 'paginate', false)
     });
@@ -63217,7 +63228,7 @@ __webpack_require__.r(__webpack_exports__);
     _.set(payload, 'url', '/products');
 
     _.set(payload, 'params', {
-      columns: _.get(payload, 'params.columns', 'id,name,code,barcode'),
+      columns: _.get(payload, 'params.columns', null),
       sublist: _.get(payload, 'sublist', false),
       paginate: _.get(payload, 'paginate', false)
     });
@@ -63226,6 +63237,29 @@ __webpack_require__.r(__webpack_exports__);
 
     if (result && result.code === 200) {
       context.commit('setProducts', result.results);
+    } else {
+      context.commit('setErrorsAlert', {
+        alert: _.pick(result, ['code', 'message', 'status']),
+        errors: {}
+      });
+    }
+
+    return result.results;
+  },
+
+  async getTables(context, payload = {}) {
+    _.set(payload, 'url', '/tables');
+
+    _.set(payload, 'params', {
+      columns: _.get(payload, 'params.columns', null),
+      sublist: _.get(payload, 'sublist', false),
+      paginate: _.get(payload, 'paginate', false)
+    });
+
+    const result = await _js_helpers__WEBPACK_IMPORTED_MODULE_0__["default"].getDataAction(payload);
+
+    if (result && result.code === 200) {
+      context.commit('setTables', result.results);
     } else {
       context.commit('setErrorsAlert', {
         alert: _.pick(result, ['code', 'message', 'status']),
@@ -63487,6 +63521,18 @@ __webpack_require__.r(__webpack_exports__);
 
   clearFormInput(state) {
     state.formInput = {};
+  },
+
+  setProducts(state, payload) {
+    state.products = payload;
+  },
+
+  setCustomers(state, payload) {
+    state.customers = payload;
+  },
+
+  setTables(state, payload) {
+    state.tables = payload;
   }
 
 });
@@ -63657,7 +63703,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 11:
+/***/ 2:
 /*!****************************************************!*\
   !*** multi ./resources/assets/backend/js/table.js ***!
   \****************************************************/

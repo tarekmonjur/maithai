@@ -28,13 +28,16 @@ class SkuRequest extends FormRequest
 
         if ($id = $this->segment(3)) {
             $name = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',name,'.$id];
+            $code = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',code,'.$id];
         } else {
             $name = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',name'];
+            $code = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',code'];
         }
 
         return [
             'name' => $name,
-            'description' => 'nullable|max:255'
+            'code' => $code,
+            'location' => 'nullable|max:255'
         ];
     }
 }

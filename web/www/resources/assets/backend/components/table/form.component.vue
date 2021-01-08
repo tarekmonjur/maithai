@@ -3,19 +3,17 @@
         <div class="form-row">
             <div class="col">
                 <div class="form-group">
-                    <label for="name">{{lang('name')}} : <span class="text-danger">*</span></label>
+                    <label for="table_no">{{lang('table_no')}} : <span class="text-danger">*</span></label>
                     <input
                         type="text"
-                        id="name"
+                        id="table_no"
                         @keyup="this.slug"
-                        v-model="formInput['name']"
-                        :class="{'is-invalid' : errors.name}"
+                        v-model="formInput['table_no']"
+                        :class="{'is-invalid' : errors.table_no}"
                         class="form-control form-control-sm" />
-                    <div class="invalid-feedback" v-if="errors.name">{{errors.name}}</div>
+                    <div class="invalid-feedback" v-if="errors.table_no">{{errors.table_no}}</div>
                 </div>
             </div>
-        </div>
-        <div class="form-row">
             <div class="col">
                 <div class="form-group">
                     <label for="is_active">{{lang('is_active')}} :</label>
@@ -27,6 +25,19 @@
                         <option value="0">{{lang('inactive')}}</option>
                     </select>
                     <div class="invalid-feedback" v-if="errors.is_active">{{errors.is_active}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="description">{{lang('description')}} :</label>
+                    <textarea
+                        v-model="formInput['description']"
+                        class="form-control form-control-sm"
+                        id="description">
+                    </textarea>
+                    <div class="invalid-feedback" v-if="errors.description">{{errors.description}}</div>
                 </div>
             </div>
         </div>

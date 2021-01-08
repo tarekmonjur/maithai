@@ -1,6 +1,6 @@
 <?php
 /**
- * CategoryService
+ * TableService
  * @author : Tarek Monjur
  * @email : tarekmonjur@gmail.com
  */
@@ -16,7 +16,7 @@ trait TableService
 
     private $id = null;
     private $slug = null;
-    private $columns = ['id','name', 'code'];
+    private $columns = ['id','table_no', 'description'];
     private $sub_list = true;
     private $trans_prefix = 'table.';
     private $trans_key = 'list';
@@ -25,8 +25,7 @@ trait TableService
     private $columnsConfig = [
         'sl' => 100,
         'table_no' => 0,
-        'table_place' => 0,
-        'table_qrcode' => 0,
+        'description' => 0,
         'is_active' => 0,
         'created' => 0,
         'updated' => 0,
@@ -99,10 +98,6 @@ trait TableService
 
         if ($sub_list) {
             $relations = [];
-
-            if (!empty($this->getId())) {
-                array_push($relations);
-            }
 
             if ($this->authUser && $this->authUser->getTable() === 'users') {
                 $relations = array_merge($relations, ['createdBy', 'updatedBy']);

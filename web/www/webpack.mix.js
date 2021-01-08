@@ -26,9 +26,9 @@ mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
 // mix.vue3('resources/assets/backend/js/sub_variant.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/product.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/customer.js', 'public/backend/js');
-mix.vue3('resources/assets/backend/js/pos.js', 'public/backend/js');
+// mix.vue3('resources/assets/backend/js/pos.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/order.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/sku.js', 'public/backend/js');
-// mix.vue3('resources/assets/backend/js/table.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/sku.js', 'public/backend/js');
+mix.vue3('resources/assets/backend/js/table.js', 'public/backend/js');
 
 

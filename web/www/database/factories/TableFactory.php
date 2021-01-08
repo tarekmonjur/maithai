@@ -8,7 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Table::class, function (Faker $faker) {
     return [
         'table_no' => uniqid('T'),
-        'table_place' => $faker->word,
-        'table_qrcode' => $faker->uuid,
+        'description' => $faker->sentences(),
     ];
 });

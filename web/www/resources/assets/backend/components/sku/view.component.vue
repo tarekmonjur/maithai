@@ -1,29 +1,52 @@
 <template>
     <table-view-component>
         <tr>
-            <td>{{lang(`id`)}}</td>
-            <td>{{showData.id}}</td>
+            <td>{{ lang(`id`) }}</td>
+            <td>{{ showData.id }}</td>
         </tr>
         <tr>
-            <td>{{lang(`name`)}}</td>
-            <td>{{showData.name}}</td>
+            <td>{{ lang(`name`) }}</td>
+            <td>{{ showData.name }}</td>
         </tr>
         <tr>
-            <td>{{lang(`is_active`)}}</td>
-            <td>{{this.isActive(showData.is_active)}}</td>
+            <td>{{ lang(`code`) }}</td>
+            <td>{{ showData.code }}</td>
         </tr>
         <tr>
-            <td>{{lang(`products`)}} ({{showData.products_count}})</td>
+            <td>{{ lang(`is_active`) }}</td>
+            <td>{{ this.isActive(showData.is_active) }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang(`location`) }}</td>
+            <td>{{ showData.location }}</td>
+        </tr>
+        <tr>
+            <td>{{ lang(`product_stocks`) }} ({{ showData.product_stocks_count }})</td>
             <td>
-                <span v-for="(product, index) in showData.products">{{product.name}},&nbsp; <br v-if="index+1 % 10 === 0"></span>
+                <table class="table table-broder">
+                    <thead class="bg-gray">
+                    <tr>
+                        <td>{{ lang('product_name') }}</td>
+                        <td>{{ lang('product_code') }}</td>
+                        <td>{{ lang('stocks') }}</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="stock in showData.product_stocks">
+                        <td>{{ stock.product && stock.product.name }}</td>
+                        <td>{{ stock.product && stock.product.code }}</td>
+                        <td>{{ stock.stock }}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
         <tr>
-            <td>{{lang(`created`)}}</td>
+            <td>{{ lang(`created`) }}</td>
             <td v-html="this.created(showData)"></td>
         </tr>
         <tr>
-            <td>{{lang(`updated`)}}</td>
+            <td>{{ lang(`updated`) }}</td>
             <td v-html="this.updated(showData)"></td>
         </tr>
     </table-view-component>
@@ -55,5 +78,7 @@ export default {
 </script>
 
 <style scoped>
-    tr td:first-child {font-weight: bold}
+tr td:first-child {
+    font-weight: bold
+}
 </style>

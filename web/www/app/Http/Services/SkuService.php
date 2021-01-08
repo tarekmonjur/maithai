@@ -127,6 +127,7 @@ trait SkuService
             return $sku->find($this->getId());
         } else {
             $sku = $this->generateFilters($sku);
+            $sku = $sku->orderByDesc('created_at');
 
             if ($this->getPaginate()) {
                 $sku = $sku->paginate(config('app.backend_per_page'));

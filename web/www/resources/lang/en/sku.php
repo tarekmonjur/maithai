@@ -14,15 +14,20 @@ return [
     //view fields
     'field_name' => 'SKU Field Name',
     'field_value' => 'SKU Field Value',
+    'product_name' => 'Food Name',
+    'product_code' => 'Food Code',
+    'product_stocks' => 'Food Stocks',
+    'stocks' => 'Stocks',
 
     // columns
     'id' => 'ID',
     'sl' => 'SL',
     'name' => 'SKU Name',
+    'code' => 'SKU Code',
     'products' => 'Foods',
     'products_count' => 'Foods Count',
     'is_active' => 'Status',
-    'description' => 'Description',
+    'location' => 'Location',
     'created' => 'Created',
     'updated' => 'Updated',
     'action' => 'Action',
@@ -36,5 +41,6 @@ return [
 
     'success_msg' => 'SKU successfully saved',
     'error_msg' => 'SKU not saved. Try again..!',
-    'warning_msg' => 'SKU not found. Try again..!'
+    'warning_msg' => 'SKU not found. Try again..!',
+    'delete_msg' => 'SKU successfully deleted.'
 ];

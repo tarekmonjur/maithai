@@ -59,7 +59,7 @@ class OrderController extends ApiController
 
     public function store(OrderRequest $request)
     {
-//        try {
+        try {
             $order_result = $this->makeOrder($request);
             if (empty($order_result)) {
                 return $this->jsonResponse(null, $this->getTrans('warning_msg'));
@@ -89,9 +89,9 @@ class OrderController extends ApiController
                 DB::rollBack();
                 return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
             }
-//        } catch (\Exception $e) {
-//            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
-//        }
+        } catch (\Exception $e) {
+            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
+        }
     }
 
     public function update(OrderRequest $request)
@@ -144,7 +144,7 @@ class OrderController extends ApiController
         try {
             $result = Order::find($id)->delete();
             if ($result) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+                return $this->jsonResponse(null, $this->getTrans('delete_msg'));
             }
 
             return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');

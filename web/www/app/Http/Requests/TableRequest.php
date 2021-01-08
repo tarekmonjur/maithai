@@ -27,13 +27,13 @@ class TableRequest extends FormRequest
         $tableName = (new Table())->getTable();
 
         if ($id = $this->segment(3)) {
-            $name = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',name,'.$id];
+            $table_no = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',table_no,'.$id];
         } else {
-            $name = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',name'];
+            $table_no = ['required', 'min:2', 'max:45', 'unique:'.$tableName.',table_no'];
         }
 
         return [
-            'name' => $name,
+            'table_no' => $table_no,
             'description' => 'nullable|max:255'
         ];
     }

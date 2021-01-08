@@ -5,18 +5,16 @@
             <td>{{showData.id}}</td>
         </tr>
         <tr>
-            <td>{{lang(`name`)}}</td>
-            <td>{{showData.name}}</td>
+            <td>{{lang(`table_no`)}}</td>
+            <td>{{showData.table_no}}</td>
         </tr>
         <tr>
             <td>{{lang(`is_active`)}}</td>
             <td>{{this.isActive(showData.is_active)}}</td>
         </tr>
         <tr>
-            <td>{{lang(`products`)}} ({{showData.products_count}})</td>
-            <td>
-                <span v-for="(product, index) in showData.products">{{product.name}},&nbsp; <br v-if="index+1 % 10 === 0"></span>
-            </td>
+            <td>{{lang(`description`)}}</td>
+            <td>{{showData.description}}</td>
         </tr>
         <tr>
             <td>{{lang(`created`)}}</td>

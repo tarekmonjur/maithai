@@ -1,8 +1,8 @@
 <template>
     <tr v-for="row in tableData">
         <td>{{row.id}}</td>
-        <td>{{row.name}}</td>
-        <td>{{row.products_count}}</td>
+        <td>{{row.table_no}}</td>
+        <td>{{row.description}}</td>
         <td>{{this.isActive(row.is_active)}}</td>
         <td v-html="this.created(row)"></td>
         <td v-html="this.updated(row)"></td>

@@ -61,7 +61,6 @@ class SkuController extends ApiController
             $sku->name = $request->name;
             $sku->code = $request->code;
             $sku->location = $request->location;
-            $sku->description = $request->description;
             $sku->is_active = $request->is_active ?? 1;
             $sku->created_by = $this->authUser->id;
 
@@ -87,7 +86,6 @@ class SkuController extends ApiController
             $sku->name = $request->name;
             $sku->code = $request->code;
             $sku->location = $request->location;
-            $sku->description = $request->description;
             $sku->is_active = $request->is_active;
             $sku->updated_by = $this->authUser->id;
 
@@ -106,7 +104,7 @@ class SkuController extends ApiController
         try {
             $result = Sku::find($id)->delete();
             if ($result) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+                return $this->jsonResponse(null, $this->getTrans('delete_msg'));
             }
 
             return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');

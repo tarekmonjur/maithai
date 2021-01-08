@@ -132,7 +132,7 @@ class VariantController extends ApiController
         try {
             $result = Variant::find($id)->delete();
             if ($result) {
-                return $this->jsonResponse(null, $this->getTrans('success_msg'));
+                return $this->jsonResponse(null, $this->getTrans('delete_msg'));
             }
 
             return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
