@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{$title ?? config('app.name')}}</title>
+    <link rel="icon" href="{{asset('files/logo.png')}}">
+    <link rel="shortcut icon" href="{{asset('files/logo.png')}}">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- overlayScrollbars -->

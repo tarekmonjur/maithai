@@ -6,8 +6,8 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
     <title>MaiThai Kitchen | Home</title>
-    <link rel="icon" href="{{asset('frontend/logo/logo.png')}}">
-    <link rel="shortcut icon" href="{{asset('frontend/logo/logo.png')}}">
+    <link rel="icon" href="{{asset('files/logo.png')}}">
+    <link rel="shortcut icon" href="{{asset('files/logo.png')}}">
     <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/app.css')}}">
     @stack('style')

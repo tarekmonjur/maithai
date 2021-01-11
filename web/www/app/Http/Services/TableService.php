@@ -21,6 +21,7 @@ trait TableService
     private $trans_prefix = 'table.';
     private $trans_key = 'list';
     private $paginate = true;
+    private $limit = null;
     // columns config for table view
     private $columnsConfig = [
         'sl' => 100,

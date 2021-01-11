@@ -162,70 +162,14 @@ div.search-food .form-control {
   height: 43px;
 }
 
-/**The Media Quries for Mobile View**/
-
-/**iPhone 6,7,8 and Upper Screen Confortable**/
-
-@media only screen and (max-width: 720px) {
-  section.food-list-home-banner {
-    max-height: 44vh;
-  }
-
-  section.food-list-home-banner .dark-bg {
-    top: 30% !important;
-  }
-
-  /**Home-Cover Section**/
-
-  div#intro-section .intro-title {
-    font-size: 50px;
-  }
-
-  div#intro-section .food-list-intro {
-    font-size: 1.8rem !important;
-  }
-
-  div.search-food .form-control {
-    width: 100% !important;
-    margin-bottom: 1rem;
-  }
-
-  div.search-food .btn-custom {
-    width: 100%;
-  }
-
-  div#intro .about-btn,
-  div#intro .order-btn {
-    width: 100%;
-    margin-left: 0 !important;
-    background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
-    border: 0;
-  }
-
-  /**Home Slide Intro 2nd Page Title**/
-
-  .home-slide-intro-2,
-  .home-slide-intro-3 {
-    font-size: 30px !important;
-  }
-}
-
-@media only screen and (max-width: 1366px) {
-  section.food-list-home-banner .dark-bg {
-    top: 25%;
-  }
-}
-
 /*******The Search Items DropDown Controling******/
 
 .search-dropdown-menu {
   position: absolute;
-  /*    top: 82.8rem !important;*/
-  top: 50rem !important;
-  left: 50% !important;
-  /*    transform: translate(-64%, -50rem);*/
+  top: 141% !important;
+  left: 50.5% !important;
   transform: translate(-64%, -17.2rem);
-  width: 433px !important;
+  width: 434px !important;
   z-index: 1000;
   display: inline-block;
   float: left;
@@ -267,62 +211,6 @@ ul.search-dropdown-menu li.search-item .name {
 ul.search-dropdown-menu li.search-item .price {
   color: red;
   font-weight: bold;
-}
-
-@media only screen and (max-width: 720px) {
-  .search-dropdown-menu {
-    top: 54rem !important;
-    left: 50rem !important;
-    transform: translate(-47.5rem, -17rem) !important;
-  }
-}
-
-@media only screen and (max-width: 530px) {
-  .search-dropdown-menu {
-    width: 81% !important;
-  }
-
-  .search-dropdown-menu-food-list {
-    width: 79% !important;
-  }
-}
-
-/***iPhone 6,7,8 type Mobiles Screen***/
-
-@media only screen and (max-width: 380px) {
-  .search-dropdown-menu {
-    top: 54rem !important;
-    left: 50rem !important;
-    transform: translate(-47.5rem, -16.2rem) !important;
-    width: 79% !important;
-  }
-
-  .search-dropdown-menu-food-list {
-    width: 79% !important;
-  }
-}
-
-/***iPad Pro type tab Screen***/
-
-@media only screen and (max-width: 1024px) {
-  .search-dropdown-menu {
-    transform: translate(-64%, -15.8rem);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .search-dropdown-menu {
-    transform: translate(-64%, -17rem);
-  }
-}
-
-/*****Galaxy Fold New Smallest Screen Ever****/
-
-@media only screen and (max-width: 280px) {
-  .search-dropdown-menu {
-    transform: translate(-48rem, -13.8rem) !important;
-    width: 80% !important;
-  }
 }
 
 /**Home Sections Slider control Buttons**/
@@ -427,6 +315,139 @@ a.carousel-control-next.home-slide-next {
 .welcome-card-home h1,
 .welcome-card-home h6 {
   color: #efa034;
+}
+
+@media only screen and (max-width: 1366px) {
+  section.food-list-home-banner .dark-bg {
+    top: 25%;
+  }
+}
+
+/***iPad Pro type tab Screen***/
+
+@media only screen and (max-width: 1024px) {
+  .search-dropdown-menu {
+    transform: translate(-64%, -15.8rem);
+    top: 135% !important;
+  }
+}
+
+/**The Media Quries for Mobile View**/
+
+/**iPhone 6,7,8 and Upper Screen Confortable**/
+
+@media only screen and (max-width: 720px) {
+  section.food-list-home-banner {
+    max-height: 44vh;
+  }
+
+  section.food-list-home-banner .dark-bg {
+    top: 30% !important;
+  }
+
+  /**Home-Cover Section**/
+
+  div#intro-section .intro-title {
+    font-size: 50px;
+  }
+
+  div#intro-section .food-list-intro {
+    font-size: 1.8rem !important;
+  }
+
+  div.search-food .form-control {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  div.search-food .btn-custom {
+    width: 100%;
+  }
+
+  div#intro .about-btn,
+  div#intro .order-btn {
+    width: 100%;
+    margin-left: 0 !important;
+    background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
+    border: 0;
+  }
+
+  /**Home Slide Intro 2nd Page Title**/
+
+  .home-slide-intro-2,
+  .home-slide-intro-3 {
+    font-size: 30px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-dropdown-menu {
+    transform: translate(-64%, -17rem);
+    top: 140.5% !important;
+    width: 54.5% !important;
+    left: 50.5% !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .search-dropdown-menu {
+    top: 95.5% !important;
+    left: 50rem !important;
+    transform: translate(-47.5rem, -17rem) !important;
+    width: 89% !important;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .search-dropdown-menu {
+    width: 85% !important;
+  }
+
+  .search-dropdown-menu-food-list {
+    width: 78.5% !important;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .search-dropdown-menu {
+    transform: translate(-64%, -17rem);
+    top: 95.5% !important;
+    width: 81% !important;
+  }
+}
+
+/***iPhone 6,7,8 type Mobiles Screen***/
+
+@media only screen and (max-width: 380px) {
+  .search-dropdown-menu {
+    top: 93.5% !important;
+    transform: translate(-47.5rem, -16.2rem) !important;
+    width: 78.5% !important;
+  }
+
+  .search-dropdown-menu-food-list {
+    width: 79% !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .search-dropdown-menu {
+    top: 93.5% !important;
+    width: 75% !important;
+  }
+
+  .search-dropdown-menu-food-list {
+    width: 75% !important;
+  }
+}
+
+/*****Galaxy Fold New Smallest Screen Ever****/
+
+@media only screen and (max-width: 280px) {
+  .search-dropdown-menu {
+    transform: translate(-48rem, -13.8rem) !important;
+    width: 80% !important;
+  }
 }
 
 @media only screen and (max-width: 1366px) {
@@ -2375,15 +2396,7 @@ div.search-input {
 
 /*****The Parent Menu Collapse****/
 
-div#accordion .card-header,
-div#accordion-2 .card-header,
-div#accordion-3 .card-header,
-div#accordion-4 .card-header,
-div#accordion-5 .card-header,
-div#accordion-6 .card-header,
-div#accordion-7 .card-header,
-div#accordion-8 .card-header,
-div#accordion-9 .card-header {
+div.accordion .card-header {
   /* padding: 0 !important; */
   margin-bottom: 0;
   /* background: rgb(206 171 120); */
@@ -2392,15 +2405,7 @@ div#accordion-9 .card-header {
   color: #fff;
 }
 
-div#accordion .card-header.food-package,
-div#accordion-2 .card-header.food-package,
-div#accordion-3 .card-header.food-package,
-div#accordion-4 .card-header.food-package,
-div#accordion-5 .card-header.food-package,
-div#accordion-6 .card-header.food-package,
-div#accordion-7 .card-header.food-package,
-div#accordion-8 .card-header.food-package,
-div#accordion-9 .card-header.food-package {
+div.accordion .card-header.food-package {
   /* padding: 0 !important; */
   margin-bottom: 0;
   background: #d2242a;
@@ -2408,53 +2413,21 @@ div#accordion-9 .card-header.food-package {
   color: #fff;
 }
 
-div#accordion .card,
-div#accordion-2 .card,
-div#accordion-3 .card,
-div#accordion-4 .card,
-div#accordion-5 .card,
-div#accordion-6 .card,
-div#accordion-7 .card,
-div#accordion-8 .card,
-div#accordion-9 .card {
+div.accordion .card {
   border: 0 !important;
 }
 
-div#accordion h6.text-capitalize,
-div#accordion-2 h6.text-capitalize,
-div#accordion-3 h6.text-capitalize,
-div#accordion-4 h6.text-capitalize,
-div#accordion-5 h6.text-capitalize,
-div#accordion-6 h6.text-capitalize,
-div#accordion-7 h6.text-capitalize,
-div#accordion-8 h6.text-capitalize,
-div#accordion-9 h6.text-capitalize {
+div.accordion h6.text-capitalize {
   cursor: default;
   font-weight: bold;
   font-size: 18px;
 }
 
-div#accordion img,
-div#accordion-2 img,
-div#accordion-3 img,
-div#accordion-4 img,
-div#accordion-5 img,
-div#accordion-6 img,
-div#accordion-7 img,
-div#accordion-8 img,
-div#accordion-9 img {
+div.accordion img {
   cursor: pointer;
 }
 
-div#accordion .card-body,
-div#accordion-2 .card-body,
-div#accordion-3 .card-body,
-div#accordion-4 .card-body,
-div#accordion-5 .card-body,
-div#accordion-6 .card-body,
-div#accordion-7 .card-body,
-div#accordion-8 .card-body,
-div#accordion-9 .card-body {
+div.accordion .card-body {
   padding: 5px;
   padding-bottom: 0;
 }
@@ -2733,14 +2706,13 @@ div.filter-item-food-package {
   }
 }
 
-/***iPhone 6,7,8 type Mobiles Screen***/
+@media only screen and (max-width: 1366px) {
+  section.food-list-home-banner .dark-bg {
+    top: 25%;
+  }
 
-@media only screen and (max-width: 380px) {
-  .search-dropdown-menu {
-    top: 54rem !important;
-    left: 50rem !important;
-    transform: translate(-47.5rem, -16.2rem) !important;
-    width: 79% !important;
+  .search-dropdown-menu-food-list {
+    transform: translate(-64%, -27.5rem);
   }
 }
 
@@ -2763,16 +2735,6 @@ div.filter-item-food-package {
 @media only screen and (max-width: 280px) {
   .search-dropdown-menu-food-list {
     transform: translate(-47.5rem, -21rem) !important;
-  }
-}
-
-@media only screen and (max-width: 1366px) {
-  section.food-list-home-banner .dark-bg {
-    top: 25%;
-  }
-
-  .search-dropdown-menu-food-list {
-    transform: translate(-64%, -27.5rem);
   }
 }
 
@@ -3171,5 +3133,19 @@ a.login-btn:hover {
 .btn:focus {
   outline: 0 !important;
   box-shadow: none !important;
+}
+
+.title-underline {
+  border-bottom: 4px solid tomato;
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 20px !important;
+  }
 }
 

@@ -142,7 +142,6 @@ export default {
         _.forEach(data, (value, key) => {
             if (typeof value === 'boolean') {
                 value = value ? 1 : 0;
-                console.log({value});
             }
             if (key !== 'image' && _.isObject(value)) {
                 for (const k in value) {
@@ -172,8 +171,8 @@ export default {
         const method = _.get(payload, 'method', '');
 
         if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
-            const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
-            console.log(data);
+            // const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
+            const data = _.get(payload, 'data', {});
             const formData = await this.transformToFormData(data);
             _.set(payload, 'data', formData);
         }

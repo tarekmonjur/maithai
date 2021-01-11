@@ -23,6 +23,7 @@ trait ProductService
     private $trans_prefix = 'product.';
     private $trans_key = 'list';
     private $paginate = true;
+    private $limit = null;
     // columns config for table view
     private $columnsConfig = [
         'sl' => 50,
@@ -119,10 +120,20 @@ trait ProductService
             $dbModel = $dbModel->where('barcode', 'like', '%'.$filters['barcode'].'%');
         }
         if (isset($filters['category_id'])) {
-            $dbModel = $dbModel->where('category_id', (int)$filters['category_id']);
+            if (is_array($filters['category_id'])) {
+                $dbModel = $dbModel->whereIn('category_id', $filters['category_id']);
+            } else {
+                $dbModel = $dbModel->where('category_id', (int)$filters['category_id']);
+
+            }
         }
         if (isset($filters['sub_category_id'])) {
-            $dbModel = $dbModel->where('sub_category_id', (int)$filters['sub_category_id']);
+            if (is_array($filters['sub_category_id'])) {
+                $dbModel = $dbModel->whereIn('sub_category_id', $filters['sub_category_id']);
+            } else {
+                $dbModel = $dbModel->where('sub_category_id', (int)$filters['sub_category_id']);
+
+            }
         }
         if (isset($filters['is_active'])) {
             $dbModel = $dbModel->where('is_active', (int)$filters['is_active']);
@@ -174,12 +185,18 @@ trait ProductService
                 ->get();
         } else {
             $product = $this->generateFilters($product);
-            $product->orderBy('sort');
-//            $product->orderByDesc('created_at');
+            $product->orderBy('sort', 'asc');
 
             if ($this->getPaginate()) {
-                $product = $product->paginate(config('app.backend_per_page'));
+                $per_page_limit = config('app.backend_per_page');
+                if ($limit = $this->getLimit()) {
+                    $per_page_limit = $limit;
+                }
+                $product = $product->paginate($per_page_limit);
             } else {
+                if ($limit = $this->getLimit()) {
+                    $product = $product->limit($limit);
+                }
                 $product = $product->get();
             }
             return $product;

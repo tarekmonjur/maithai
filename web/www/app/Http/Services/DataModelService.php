@@ -107,6 +107,24 @@ trait DataModelService
         return $this->columns;
     }
 
+    protected function setLimit($limit = null)
+    {
+        $limit = $limit ?? $this->limit;
+        if (!is_numeric($limit)) {
+            $limit = intval($limit);
+        }
+        $this->limit = $limit;
+        return $this;
+    }
+
+    protected function getLimit($limit = null)
+    {
+        if ($limit) {
+            $this->setLimit($limit);
+        }
+        return $this->limit;
+    }
+
     protected function setColumnsConfig(array $columns = null)
     {
         $columns = $columns ?? $this->columnsConfig;
@@ -182,6 +200,7 @@ trait DataModelService
         $filters['columns'] = $this->setColumns($filters['columns'] ?? null)->getColumns();
         $filters['sublist'] = $this->getSubList($filters['sublist'] ?? null);
         $filters['paginate'] = $this->getPaginate($filters['paginate'] ?? null);
+        $filters['limit'] = $this->getLimit($filters['limit'] ?? null);
         $this->data['filters'] = $filters;
         return $this;
     }

@@ -301,7 +301,7 @@ nav{
             text-transform: uppercase;
             font-size: 14px;
             font-weight: normal;
-            padding: 20px 25px !important;
+            padding: 20px 25px!important;
 
             &:hover{
                 background: $theme-bg-color2;
@@ -1715,9 +1715,7 @@ div.search-input{
 }
 
 /*****The Parent Menu Collapse****/
-div#accordion, div#accordion-2, div#accordion-3,
-div#accordion-4, div#accordion-5, div#accordion-6,
-div#accordion-7, div#accordion-8, div#accordion-9{
+div.accordion{
     .card-header{
          /* padding: 0 !important; */
         margin-bottom: 0;
@@ -2038,14 +2036,15 @@ div.filter-item-food-package{
     }
 }
 
+@media only screen and (max-width: 1366px){
+    section.food-list-home-banner{
+        .dark-bg{
+            top: 25%;
+        }
+    }
 
-/***iPhone 6,7,8 type Mobiles Screen***/
-@media only screen and (max-width: 380px){
-    .search-dropdown-menu{
-        top: 54rem !important;
-        left: 50rem !important;
-        transform: translate(-47.5rem, -16.2rem) !important;
-        width: 79% !important;
+    .search-dropdown-menu-food-list {
+        transform: translate(-64%, -27.5rem);
     }
 }
 
@@ -2067,19 +2066,6 @@ div.filter-item-food-package{
 @media only screen and (max-width: 280px){
     .search-dropdown-menu-food-list{
         transform: translate(-47.5rem, -21rem) !important;
-    }
-}
-
-
-@media only screen and (max-width: 1366px){
-    section.food-list-home-banner{
-        .dark-bg{
-            top: 25%;
-        }
-    }
-
-    .search-dropdown-menu-food-list {
-        transform: translate(-64%, -27.5rem);
     }
 }
 
@@ -2452,4 +2438,18 @@ button[type="submit"].login-btn, a.login-btn{
 .btn.focus, .btn:focus {
     outline: 0 !important;
     box-shadow: none !important;
+}
+
+.title-underline {
+    border-bottom: 4px solid tomato;
+    width: 5rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 20px!important;
+    }
 }

@@ -5,13 +5,13 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination pagination-sm justify-content-end" style="margin-bottom: 0px">
                     <li class="page-item" :class="previousPageUrl ? '' : 'disabled'">
-                        <a class="page-link" href="#" v-on:click="this.getData(previousPageUrl)" v-html="previousPage"></a>
+                        <a class="page-link" href="javascript:void(0)" v-on:click="this.getData(previousPageUrl)" v-html="previousPage"></a>
                     </li>
                     <li class="page-item" v-for="page in getPages">
-                        <a class="page-link" href="#" v-on:click="this.getData(null, {page})">{{page}}</a>
+                        <a class="page-link" href="javascript:void(0)" v-on:click="this.getData(null, {page})">{{page}}</a>
                     </li>
                     <li class="page-item" :class="nextPageUrl ? '' : 'disabled'">
-                        <a class="page-link" href="#" v-on:click="this.getData(nextPageUrl)" v-html="nextPage"></a>
+                        <a class="page-link" href="javascript:void(0)" v-on:click="this.getData(nextPageUrl)" v-html="nextPage"></a>
                     </li>
                 </ul>
             </nav>

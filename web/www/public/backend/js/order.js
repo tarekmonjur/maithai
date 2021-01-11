@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -12042,7 +12042,7 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   updated() {
-    console.log(this.modal);
+    console.log('update modal..', this.modal);
   }
 
 });
@@ -59630,9 +59630,6 @@ __webpack_require__.r(__webpack_exports__);
     _.forEach(data, (value, key) => {
       if (typeof value === 'boolean') {
         value = value ? 1 : 0;
-        console.log({
-          value
-        });
       }
 
       if (key !== 'image' && _.isObject(value)) {
@@ -59666,8 +59663,9 @@ __webpack_require__.r(__webpack_exports__);
     const method = _.get(payload, 'method', '');
 
     if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
-      const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
-      console.log(data);
+      // const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
+      const data = _.get(payload, 'data', {});
+
       const formData = await this.transformToFormData(data);
 
       _.set(payload, 'data', formData);
@@ -63646,8 +63644,7 @@ __webpack_require__.r(__webpack_exports__);
     context.commit('setLoading', {
       modal: null,
       button: null
-    }); // context.commit('clearFormData', {});
-
+    });
     context.commit('clearFormInput', {});
     context.commit('setErrorsAlert', {});
   },
@@ -63656,6 +63653,7 @@ __webpack_require__.r(__webpack_exports__);
     _.set(payload, 'url', '/customers');
 
     _.set(payload, 'params', {
+      columns: _.get(payload, 'params.columns', null),
       sublist: _.get(payload, 'sublist', true),
       paginate: _.get(payload, 'paginate', false)
     });
@@ -63678,7 +63676,7 @@ __webpack_require__.r(__webpack_exports__);
     _.set(payload, 'url', '/products');
 
     _.set(payload, 'params', {
-      columns: _.get(payload, 'params.columns', 'id,name,code,barcode'),
+      columns: _.get(payload, 'params.columns', null),
       sublist: _.get(payload, 'sublist', false),
       paginate: _.get(payload, 'paginate', false)
     });
@@ -63687,6 +63685,29 @@ __webpack_require__.r(__webpack_exports__);
 
     if (result && result.code === 200) {
       context.commit('setProducts', result.results);
+    } else {
+      context.commit('setErrorsAlert', {
+        alert: _.pick(result, ['code', 'message', 'status']),
+        errors: {}
+      });
+    }
+
+    return result.results;
+  },
+
+  async getTables(context, payload = {}) {
+    _.set(payload, 'url', '/tables');
+
+    _.set(payload, 'params', {
+      columns: _.get(payload, 'params.columns', null),
+      sublist: _.get(payload, 'sublist', false),
+      paginate: _.get(payload, 'paginate', false)
+    });
+
+    const result = await _js_helpers__WEBPACK_IMPORTED_MODULE_0__["default"].getDataAction(payload);
+
+    if (result && result.code === 200) {
+      context.commit('setTables', result.results);
     } else {
       context.commit('setErrorsAlert', {
         alert: _.pick(result, ['code', 'message', 'status']),
@@ -63948,6 +63969,18 @@ __webpack_require__.r(__webpack_exports__);
 
   clearFormInput(state) {
     state.formInput = {};
+  },
+
+  setProducts(state, payload) {
+    state.products = payload;
+  },
+
+  setCustomers(state, payload) {
+    state.customers = payload;
+  },
+
+  setTables(state, payload) {
+    state.tables = payload;
   }
 
 });
@@ -64058,7 +64091,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9:
+/***/ 10:
 /*!****************************************************!*\
   !*** multi ./resources/assets/backend/js/order.js ***!
   \****************************************************/

@@ -319,7 +319,10 @@ export default {
       return _.get(this.formInput, 'customer.details', {});
     },
     shippingDetails(){
-      return _.get(this.formInput, 'shipping_details', {});
+        if(!_.isEmpty(_.get(this.formInput, 'shipping_details'))) {
+            return _.get(this.formInput, 'shipping_details', {});
+        }
+        return {};
     },
     vatAmount() {
       const vat_percent = +this.formInput['vat_percent'] || 0;

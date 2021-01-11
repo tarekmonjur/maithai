@@ -21,6 +21,7 @@ trait SubVariantService
     private $trans_prefix = 'subvariant.';
     private $trans_key = 'list';
     private $paginate = true;
+    private $limit = null;
     // columns config for table view
     private $columnsConfig = [
         'sl' => 100,

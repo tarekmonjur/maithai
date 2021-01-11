@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -59245,9 +59245,6 @@ __webpack_require__.r(__webpack_exports__);
     _.forEach(data, (value, key) => {
       if (typeof value === 'boolean') {
         value = value ? 1 : 0;
-        console.log({
-          value
-        });
       }
 
       if (key !== 'image' && _.isObject(value)) {
@@ -59281,8 +59278,9 @@ __webpack_require__.r(__webpack_exports__);
     const method = _.get(payload, 'method', '');
 
     if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
-      const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
-      console.log(data);
+      // const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
+      const data = _.get(payload, 'data', {});
+
       const formData = await this.transformToFormData(data);
 
       _.set(payload, 'data', formData);
@@ -63768,7 +63766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1:
+/***/ 11:
 /*!**************************************************!*\
   !*** multi ./resources/assets/backend/js/sku.js ***!
   \**************************************************/

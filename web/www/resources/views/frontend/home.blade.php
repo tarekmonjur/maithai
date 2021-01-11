@@ -658,7 +658,7 @@
 <hr>
 <br>
 
-<!--------------- Gellary Section ---------------->
+<!--------------- Gallery Section ---------------->
 <section class="jumbotron contact-jumbo mb-4">
     <div class="">
         <!-- 1st Row -->

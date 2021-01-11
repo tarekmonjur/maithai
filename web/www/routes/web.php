@@ -36,8 +36,8 @@ Route::prefix('/')->namespace('Frontend\Auth')->group(function(){
 
 Route::prefix('/')->namespace('Frontend')->group(function(){
     Route::get('/', 'HomeController@index');
-    Route::get('/food-orders', 'HomeController@foodOrder');
-    Route::get('/food-package', 'HomeController@foodPackage');
+    Route::get('/food-orders', 'HomeController@product');
+    Route::get('/food-package', 'HomeController@package');
     Route::get('/about', 'HomeController@about');
     Route::get('/contact', 'HomeController@contact');
     Route::get('/terms-policy', 'HomeController@termsPolicy');
