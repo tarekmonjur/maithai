@@ -7,13 +7,16 @@ if (window.jQuery) {
 } else if (window.$) {
     window.jQuery = window.$;
 } else {
-    window.$ = window.jQuery = require('./jquery.min');
+    // window.$ = window.jQuery = require('./jquery.min');
+    window.$ = window.jQuery = require('jquery');
 }
-// window.Popper = require('popper.js').default;
+window.Bootstrap = require('bootstrap');
+window.Popper = require('popper.js').default;
 
-window._context = (window._context && JSON.parse(atob(window._context))) || [];
+window.context = (window._context && JSON.parse(atob(window._context))) || [];
 window.baseURL = window._baseURL || '';
 window.asset = window._asset || '';
+window.assetPath = window._assetPath || '';
 window.assetURL = window._assetURL || '';
 window.apiPrefix = '/api'
 
@@ -27,8 +30,12 @@ window.axios.defaults.validateStatus = function (status) {
 
 (function(){
     window.heights = {};
-    $(function(){
-    
+    // $(function(){});
+    const current_url = window.current_url;
+    $(document).ready(function(){
+        $(".nav-link[href='"+current_url+"']").addClass('active-now');
+        $(".nav-link[href='"+current_url+"']").parent().addClass('active');
+        require('./cart');
     });
 })();
 

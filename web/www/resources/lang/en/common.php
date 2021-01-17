@@ -18,4 +18,11 @@ return [
     'yes_complete' => "Yes, complete!",
     'complete_your_order' => "Complete your order!",
     'complete_&_print' => "Complete & print!",
+
+    'yes_clear' => "Yes, clear!",
+    'clear_your_cart_as_empty' => "Clear your cart as empty.",
+    'your_cart_is_safe' => "Your cart is safe.",
+
+    'place_your_order_now' => 'Place your order now.',
+    'yes_order' => "Yes, order!",
 ];

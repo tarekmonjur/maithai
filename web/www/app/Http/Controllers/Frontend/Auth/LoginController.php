@@ -36,6 +36,6 @@ class LoginController extends FrontendController
     public function __construct()
     {
         parent::__construct();
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:customer')->except('logout');
     }
 }

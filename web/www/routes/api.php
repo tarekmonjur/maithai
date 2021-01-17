@@ -24,6 +24,7 @@ Route::namespace('Api')->group(function(){
 
     /********** ...... Localization API ....... *****************/
     Route::get('/lang', 'ApiController@lang')->name($route_base_path.'.lang');
+    Route::post('/send-contact-message', 'ApiController@sendContactMessage')->name($route_base_path.'.send.contact.message');
 
     /********** ...... Category API ....... *****************/
     Route::prefix('/categories')->group(function() use ($route_base_path){

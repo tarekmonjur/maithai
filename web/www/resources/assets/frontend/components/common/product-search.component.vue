@@ -1,11 +1,7 @@
 <template>
     <ul :class="className">
         <li v-if="searchProduct.loader" class="search-item p-2">
-            <div class="text-center">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
+            <loader-component :loader="searchProduct.loader" size="large"></loader-component>
         </li>
         <li class="search-item mt-2" v-else-if="searchProduct.data.length > 0" v-for="(product, index) in searchProduct.data">
             <a href="#">
@@ -27,11 +23,15 @@
 </template>
 
 <script>
+import LoaderComponent from './../common/loading.component';
 import {mapState} from 'vuex';
 
 export default {
     name: "product-search.component",
     props: ['className'],
+    components: {
+        LoaderComponent
+    },
     computed: {
         ...mapState(['searchProduct'])
     }

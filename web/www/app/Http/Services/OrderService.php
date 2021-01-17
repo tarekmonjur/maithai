@@ -248,7 +248,7 @@ trait OrderService
         return $offer;
     }
 
-    protected function makeItem($product_id)
+    protected function makeItem($product_id, $qty = 1)
     {
         if (!$product_id) {
             return [];
@@ -257,8 +257,12 @@ trait OrderService
         $productController = new ProductController();
         $request = new Request;
         $request->id_slug = $product_id;
-//        dd($product->show($re)->getOriginalContent());
-        $product = $productController->show($request)->getOriginalContent();
+//        dd($productController->show($request)->getData());
+        $product = $productController->show($request)->getData();
+        $product = $product->results ? $product->results->results : null;
+        if (!$product) {
+            return [];
+        }
 
         $product_price = $product->special_price && $product->special_price > 0 ?
             $product->special_price : $product->regular_price;
@@ -285,7 +289,7 @@ trait OrderService
         if ($product->variants && !empty($product->variants)) {
             foreach($product->variants as $variant) {
                 $variant_name = $variant->variant ? $variant->variant->name : '';
-                $sub_variant_name = $variant->subvariant ? $variant->subvariant->name : '';
+                $sub_variant_name = $variant->sub_variant ? $variant->sub_variant->name : '';
                 $product_variants[] = [
                   'id' => $variant->id,
                   'additional_price' => $variant->additional_price,
@@ -321,13 +325,13 @@ trait OrderService
             'product_variant' => $product_variants,
             'product_stock' => $product_stocks,
             'product_price' => $product_price,
-            'product_qty' => 1,
+            'product_qty' => $qty,
             'discount_percent' => $discount_percent,
             'discount_amount' => $discount_amount,
             'vat_percent' => $vat_percent,
             'vat_amount' => $vat_amount,
             'price' => $price,
-            'sub_total' => $price,
+            'sub_total' => $qty * $price,
             'item_lock' => false,
         ];
 
@@ -381,8 +385,8 @@ trait OrderService
 
         foreach($request->items as $item) {
             if ($request->order_source !== 'pos') {
-                $new_item = $this->makeItem($item['product_id']);
-                if (!empty(intval($item['id']))) {
+                $new_item = $this->makeItem($item['product_id'], $item['product_qty']);
+                if (isset($item['id']) && !empty(intval($item['id']))) {
                     $new_item['id'] = (int) $item['id'];
                 }
                 $item = $new_item;
@@ -457,9 +461,9 @@ trait OrderService
             : 'pending';
         $order_status = $request->order_status ?? $payment_status === 'completed' ?? 'pending';
 
-        $order['offer_id'] = $offer_id;
-        $order['offer_name'] = $offer_name;
-        $order['coupon_code'] = $coupon_code;
+        $order['offer_id'] = $offer_id ?? null;
+        $order['offer_name'] = $offer_name ?? null;
+        $order['coupon_code'] = $coupon_code ?? null;
         $order['type'] = $request->type ?? 'sales';
         $order['source'] = $request->source ?? 'pos';
         $order['payment_type'] = $request->payment_type ?? 'none';

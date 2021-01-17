@@ -12,24 +12,127 @@ class SettingsSeeder extends Seeder
      */
     public function run()
     {
-        Settings::create([
-            'name' => config('app.name'),
-            'title' => config('app.title', 'Ecommerce & POS'),
-            'phone' => '01780292737',
-            'mobile' => '01832308565',
-            'email' => 'tarekmonjur@gmail.com',
-            'registration_number' => '1234567890',
-            'vat_number' => '123456',
-            'support_email' => 'info@tarekmonjur.com',
-            'referral_bonus' => '50',
-            'delivery_fee' => '100',
-            'processing_fee' => '50',
-            'vat_percent' => '2',
-            'logo' => '',
-            'qrcode' => '',
-            'opening_time' => '',
-            'delivery_time' => '',
-            'address' => '',
+        Settings::insert([
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'name',
+                'value' => config('app.name'),
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'title',
+                'value' => config('app.title', 'Ecommerce & POS'),
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'phone',
+                'value' => '01992 641133',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'mobile',
+                'value' => '01992 641133',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'email',
+                'value' => 'maithaikitchen@hotmail.com',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'registration_number',
+                'value' => '12333551',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'vat_number',
+                'value' => '340075044',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'referral_bonus',
+                'value' => '50',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'delivery_fee',
+                'value' => '50',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'processing_fee',
+                'value' => '50',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'text',
+                'name' => 'vat_percent',
+                'value' => '2',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'textarea',
+                'name' => 'opening_time',
+                'value' => '',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'textarea',
+                'name' => 'delivery_time',
+                'value' => '',
+            ],
+            [
+                'key' => 'app',
+                'type' => 'textarea',
+                'name' => 'address',
+                'value' => '',
+            ],
+            [
+                'key' => 'logo',
+                'type' => 'file',
+                'name' => 'logo',
+                'value' => 'logo.png',
+            ],
+            [
+                'key' => 'logo',
+                'type' => 'file',
+                'name' => 'qrcode',
+                'value' => 'qrcode.png',
+            ],
+            [
+                'key' => 'email',
+                'type' => 'email',
+                'name' => 'support_email',
+                'value' => 'info@tarekmonjur.com',
+            ],
+            [
+                'key' => 'email',
+                'type' => 'text',
+                'name' => 'email_server',
+                'value' => '',
+            ],
+            [
+                'key' => 'email',
+                'type' => 'text',
+                'name' => 'email_username',
+                'value' => '',
+            ],
+            [
+                'key' => 'email',
+                'type' => 'password',
+                'name' => 'email_password',
+                'value' => '',
+            ],
         ]);
     }
 }

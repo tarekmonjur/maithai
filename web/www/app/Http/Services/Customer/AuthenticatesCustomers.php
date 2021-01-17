@@ -21,7 +21,9 @@ trait AuthenticatesCustomers
     {
         $data = [];
         $data['title'] = 'Login';
-        return view('frontend.auth.login', $data);
+        $data['styles'] = [];
+        $data['scripts'] = ['login'];
+        return view('frontend.layouts.app', $data);
     }
 
     /**

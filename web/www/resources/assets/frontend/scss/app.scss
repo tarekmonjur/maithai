@@ -416,7 +416,7 @@ div.right-header-item{
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     color: $common_white;
-    background-color: $button_tomato;
+    background-color: $theme-color;
     border: 1px solid $footer_dark;
 
     &:before{
@@ -502,7 +502,7 @@ div.cart-content-empty{
 div.cart-content {
     overflow: scroll;
     scroll-behavior: smooth;
-    height: 83%;
+    height: 80%;
 
     div.body-heading-title{
         background: $button_tomato;
@@ -539,7 +539,7 @@ div.cart-content{
     }
 
     div.row{
-        height: 66px;
+        //height: 66px;
         border-bottom: 1px solid $cream_white;
         margin: 5px;
     }
@@ -603,30 +603,35 @@ input.special-go{
     padding: 0px 20px;
 
     &:hover{
-        background: $shopping_close_btn;
+        background: $theme-color;
         border: 2px solid $common_white;
     }
 }
 
 /**-- Footer Place Order --**/
 .place-order-footer {
-    background: oldlace;
     border-radius: 5px;
     width: 100%;
-
-    a{
+    a, button{
         width: 100%;
-
+        background: #ffffff;
+        color: tomato;
         &:hover{
-            background: $button_tomato !important;
+            color: white;
+            background: $theme-color;
         }
     }
-
     .svg-inline--fa.fa-cart-arrow-down.fa-w-18{
         font-size: 18px;
     }
     .fa-cart-arrow-down{
         font-size: 18px;
+    }
+    .btn-outline{
+        border-color: $theme-color2;
+    }
+    .btn-outline.disabled, .btn-outline:disabled {
+        background-color: white;
     }
 }
 
@@ -919,7 +924,7 @@ div.rounded-contact-icon{
 
                 &:hover{
                     text-decoration: none;
-                    color: $theme-color2;
+                    color: $theme-color;
                 }
             }
         }
@@ -1412,7 +1417,7 @@ div.rounded-contact-icon{
     }
     div.content-title, div.content-items-list{
         display: flex;
-        flex-direction: column;
+        //flex-direction: column;
     }
     div.delivery-counter {
         align-self: flex-start;
@@ -2230,6 +2235,7 @@ button.btn.btn-lg.text-light.text-uppercase {
     &:hover{
         background: none;
         border: 1px solid $button_tomato;
+        color: $button_tomato!important;
     }
 }
 

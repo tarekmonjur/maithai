@@ -70,7 +70,7 @@
 
 <script>
 export default {
-name: "gallery.component"
+    name: "gallery.component"
 }
 </script>
 

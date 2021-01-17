@@ -21,6 +21,11 @@ mix.sass('resources/assets/frontend/scss/app.scss', 'public/frontend/css')
 mix.vue3('resources/assets/frontend/js/home.js', 'public/frontend/js');
 mix.vue3('resources/assets/frontend/js/product.js', 'public/frontend/js');
 mix.vue3('resources/assets/frontend/js/package.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/login.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/signup.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/about.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/contact.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/policy.js', 'public/frontend/js');
 
 // mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/sub_category.js', 'public/backend/js');

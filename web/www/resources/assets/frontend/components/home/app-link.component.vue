@@ -35,7 +35,7 @@
 
 <script>
 export default {
-name: "app-link.component"
+    name: "app-link.component"
 }
 </script>
 

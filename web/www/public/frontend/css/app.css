@@ -1067,7 +1067,7 @@ div.right-header-item {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   color: #fff;
-  background-color: tomato;
+  background-color: #efa034;
   border: 1px solid #181818;
 }
 
@@ -1147,7 +1147,7 @@ div.cart-content-empty div.shopping-title-empty p {
 div.cart-content {
   overflow: scroll;
   scroll-behavior: smooth;
-  height: 83%;
+  height: 80%;
 }
 
 div.cart-content div.body-heading-title {
@@ -1185,7 +1185,6 @@ div.cart-content .counter-right-btn {
 }
 
 div.cart-content div.row {
-  height: 66px;
   border-bottom: 1px solid lightgray;
   margin: 5px;
 }
@@ -1254,24 +1253,28 @@ input.special-go {
 }
 
 input.special-go:hover {
-  background: orangered;
+  background: #efa034;
   border: 2px solid #fff;
 }
 
 /**-- Footer Place Order --**/
 
 .place-order-footer {
-  background: oldlace;
   border-radius: 5px;
   width: 100%;
 }
 
-.place-order-footer a {
+.place-order-footer a,
+.place-order-footer button {
   width: 100%;
+  background: #ffffff;
+  color: tomato;
 }
 
-.place-order-footer a:hover {
-  background: tomato !important;
+.place-order-footer a:hover,
+.place-order-footer button:hover {
+  color: white;
+  background: #efa034;
 }
 
 .place-order-footer .svg-inline--fa.fa-cart-arrow-down.fa-w-18 {
@@ -1280,6 +1283,15 @@ input.special-go:hover {
 
 .place-order-footer .fa-cart-arrow-down {
   font-size: 18px;
+}
+
+.place-order-footer .btn-outline {
+  border-color: #d2232a;
+}
+
+.place-order-footer .btn-outline.disabled,
+.place-order-footer .btn-outline:disabled {
+  background-color: white;
 }
 
 /***********Sections Jumbotron-One***********/
@@ -1589,7 +1601,7 @@ footer ul.footer-top-menu li a {
 
 footer ul.footer-top-menu li a:hover {
   text-decoration: none;
-  color: #d2232a;
+  color: #efa034;
 }
 
 footer div.footer-list-1st-heading h5 {
@@ -2079,7 +2091,6 @@ footer div.dotted-dateline {
   div.content-title,
   div.content-items-list {
     display: flex;
-    flex-direction: column;
   }
 
   div.delivery-counter {
@@ -2904,6 +2915,7 @@ button.btn.btn-lg.text-light.text-uppercase {
 button.btn.btn-lg.text-light.text-uppercase:hover {
   background: none;
   border: 1px solid tomato;
+  color: tomato !important;
 }
 
 .contact-title {

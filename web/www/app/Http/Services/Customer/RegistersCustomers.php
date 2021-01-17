@@ -18,7 +18,11 @@ trait RegistersCustomers
      */
     public function showRegistrationForm()
     {
-        return view('frontend.auth.register');
+        $data = [];
+        $data['title'] = 'Signup';
+        $data['styles'] = [];
+        $data['scripts'] = ['signup'];
+        return view('frontend.layouts.app', $data);
     }
 
     /**

@@ -5,44 +5,33 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
-    <title>MaiThai Kitchen | Home</title>
+    <title>{{$context['settings']['name']}} | {{$title}}</title>
     <link rel="icon" href="{{asset('files/logo.png')}}">
     <link rel="shortcut icon" href="{{asset('files/logo.png')}}">
     <!-- CSS only -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/app.css')}}">
-    @stack('style')
+    @foreach($styles as $style)
+        <style href="{{asset('frontend/css/'.$style.'.css')}}"></style>
+    @endforeach
 </head>
 
 <body>
-<!--------------- HEADER ------------------>
-@include('frontend.layouts.common.header')
-
-<!-------------------- NAVBAR -------------->
-@include('frontend.layouts.common.navbar')
-
-@yield('main_content')
-
-<!-------------- FOOTER AREA ---------------->
-@include('frontend.layouts.common.footer')
-
-<!------------ Shopping cart Drawer ---------->
-@include('frontend.layouts.common.cart')
-
+    <div id="app">
+        <main-component></main-component>
+    </div>
 </body>
 
-<!-- JS, Popper.js, and jQuery -->
-<!-- Bootstrap jQuery (3.5.1) -->
-<script type="text/javascript" src="{{asset('frontend/js/jquery.min.js')}}"></script>
+<script type="text/javascript">
+  window._baseURL = '{{ url('/') }}';
+  window._asset = '{{ asset('/') }}';
+  window._assetPath = '{{ asset(config('app.asset_path')) }}';
+  window._assetURL = '{{ asset('frontend/') }}';
+  window._context = '{{ base64_encode(json_encode($context??[])) }}';
+  window.current_url = '{{url()->current()}}';
+</script>
 
-<!-- Bootstrap Popper.js (1.16.1) -->
-<script type="text/javascript" src="{{asset('frontend/js/popper.min.js')}}"></script>
-
-<!-- Bootstrap bootstrap.min.js (4.5.2) -->
-<script type="text/javascript" src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-
-<!-- Shopping Cart Custom JS -->
-<script type="text/javascript" src="{{asset('frontend/js/cart.js')}}"></script>
-
-@stack('script')
+@foreach($scripts as $script)
+    <script src="{{asset('frontend/js/'.$script.'.js')}}"></script>
+@endforeach
 
 </html>

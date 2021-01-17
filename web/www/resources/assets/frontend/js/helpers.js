@@ -1,13 +1,17 @@
 export default {
-    url(path) {
+    url(path = '') {
         const url_path = window.baseURL || '';
         return url_path + path;
     },
-    asset(path) {
+    asset(path = '') {
         const asset_path = window.asset || '';
         return asset_path + path;
     },
-    assetUrl(path) {
+    assetPath(path = '') {
+        const asset_path = window.assetPath || '';
+        return asset_path + path;
+    },
+    assetUrl(path = '') {
         const asset_path = window.assetURL || '';
         return asset_path + path;
     },
@@ -59,7 +63,7 @@ export default {
     },
     async setLang(force = false) {
         if (force || window.localStorage.getItem('lang') === null) {
-            const payload = {params: {force}};
+            const payload = {params: {force, frontend: true}};
             const result = await this.makeApiRequest(`/lang`, 'GET', payload);
             if (result.code === 200) {
                 window.localStorage.setItem('lang', JSON.stringify(result.results));
@@ -77,8 +81,11 @@ export default {
         }
         return trans;
     },
+    trans(key, values = null) {
+        return this.getLang(`frontend.${key}`);
+    },
     getContext(key) {
-        return _.get(window, `_context.${key}`,null);
+        return _.get(window, `context.${key}`,null);
     },
     getPages(data) {
         if (data.total <= 0) {
@@ -259,12 +266,12 @@ export default {
             item_lock: false,
         }
     },
-    async updateOrderItem(item, qty=null) {
+    async updateOrderItem(item, qty= null, qty_replace = false) {
         if (_.isEmpty(item)) {
             return null;
         }
-        let product_qty = +item.product_qty;
-        product_qty = qty ? +item.product_qty + qty : +item.product_qty;
+
+        let product_qty = qty ? qty_replace ? qty : +item.product_qty + qty : +item.product_qty;
         product_qty = +product_qty;
         
         let product_price = +parseFloat(item.product_price).toFixed(2) || 0.00;
@@ -273,7 +280,6 @@ export default {
         
         let discount_amount = +parseFloat(item.discount_amount).toFixed(2) || 0.00;
         let discount_percent = +parseFloat((discount_amount * 100) / product_price).toFixed(2) || 0.00;
-        console.log({product_price, vat_amount, discount_amount});
         let price = (product_price + vat_amount) - discount_amount;
         price = +parseFloat(price).toFixed(2);
         return {
@@ -297,5 +303,40 @@ export default {
         win.document.write(content);
         win.document.close();
         return true;
+    },
+    getTotalPrice(shoppingCart){
+        return shoppingCart.items ?
+          shoppingCart.items.reduce((sum, item) => sum + +item.product_price, 0) : 0;
+    },
+    getTotalQty(shoppingCart){
+        return shoppingCart.items ?
+          shoppingCart.items.reduce((sum, item) => sum + +item.product_qty, 0) : 0;
+    },
+    getTotalDiscount(shoppingCart){
+        return shoppingCart.items ?
+          shoppingCart.items.reduce((sum, item) => sum + +item.discount_amount, 0) : 0;
+    },
+    getTotalVat(shoppingCart){
+        return shoppingCart.items ?
+          shoppingCart.items.reduce((sum, item) => sum + +item.vat_amount, 0) : 0;
+    },
+    getTotalSubTotal(shoppingCart){
+        return shoppingCart.items ?
+          shoppingCart.items.reduce((sum, item) => sum + +item.sub_total, 0) : 0;
+    },
+    //
+    getVatAmount(shoppingCart) {
+        const vat_percent = +this.getContext('settings')['vat_percent'] || 0;
+        const vat_amount = this.getTotalSubTotal(shoppingCart) * vat_percent / 100;
+        return +parseFloat(vat_amount).toFixed(2);
+    },
+    getTotalAmount(shoppingCart) {
+        const settings = this.getContext('settings');
+        const vat_amount = this.getVatAmount(shoppingCart);
+        const delivery_fee = +settings['delivery_fee'] || 0;
+        const processing_fee = +settings['processing_fee'] || 0;
+        const sub_total = this.getTotalSubTotal(shoppingCart);
+        const total_amount = sub_total + vat_amount + delivery_fee + processing_fee;
+        return +parseFloat(total_amount).toFixed(2);
     },
 };

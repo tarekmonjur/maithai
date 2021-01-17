@@ -16,10 +16,15 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugit blanditiis libero
                             debitis!
                         </p> -->
-                        <a href="#" class="btn btn-custom">
-                            <i class="fas fa-plus-circle"></i>
-                            <span class="text-capitalize">add cart</span>
-                        </a>
+                        <button
+                            :disabled="loader[index]"
+                            @click="addToCart(index, product.id)"
+                            class="btn btn-custom">
+                                <loader-component :loader="loader[index]">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span class="text-capitalize">add cart</span>
+                                </loader-component>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -29,9 +34,18 @@
 
 <script>
 import {mapState, mapGetters} from 'vuex';
+import LoaderComponent from './../common/loading.component';
 
 export default {
     name: "product-showcase.component",
+    components: {
+        LoaderComponent,
+    },
+    data() {
+      return {
+          loader: []
+      }
+    },
     computed: {
         ...mapState([
             'products'
@@ -49,9 +63,18 @@ export default {
         };
         this.$store.dispatch('getProducts', payload);
     },
-    // updated() {
-    //     console.log(this.getProducts);
-    // }
+    methods: {
+        async addToCart(index, product_id) {
+            if (product_id) {
+                this.loader[index] = true;
+                const payload = {
+                    product_id
+                }
+                await this.$store.dispatch('addItemToCart', payload);
+                this.loader[index] = false;
+            }
+        }
+    }
 }
 </script>
 

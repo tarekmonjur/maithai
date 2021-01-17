@@ -33,6 +33,7 @@ class BackendController extends Controller
     {
         $this->context['user'] = $this->authUser;
         $this->context['request'] = $this->getRequestContext();
+        $this->context['settings'] = $this->getSettings();
 //        dd($this->context);
         return $this->context;
     }

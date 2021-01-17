@@ -151,7 +151,6 @@
                 <div class="col-md-4">
                     <div class="image middle">
                         <img src="{{asset('frontend/img/founder.jpg')}}" alt="" class="img img-fluid img-thumbnail">
-
                         <!-------------The Image-Content Area------------->
                         <!-- Founders Hover Social Icons Here -->
                         <!-- <div class="image-content">
@@ -161,7 +160,6 @@
                                   <a href="#" class="icon fab fa-instagram"></a>
                                 </div>
                               </div> -->
-
                     </div>
                 </div>
 

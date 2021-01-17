@@ -25,7 +25,7 @@
 
 <script>
 export default {
-name: "delivery-showcase.component"
+    name: "delivery-showcase.component"
 }
 </script>
 

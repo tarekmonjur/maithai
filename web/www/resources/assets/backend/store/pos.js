@@ -149,7 +149,6 @@ export default {
                     context.commit('setFormInput', {items});
                 }
             } else {
-                console.log({hasItemIndex});
                 const requestPayload = {};
                 _.set(requestPayload, 'url', '/products/' + payload.product_id);
                 const result = await helpers.getDataAction(requestPayload);

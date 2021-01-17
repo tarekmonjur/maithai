@@ -5,7 +5,7 @@
             <aside class="col-md-6 text-center">
                 <div class="card welcome-card-home">
                     <div class="card-body">
-                        <h1 class="card-title text-capitalize m-4">welcome to MAITHAI KITCHEN</h1>
+                        <h1 class="card-title text-capitalize m-4">welcome to {{settings.name}}</h1>
                         <h6 class="card-subtitle mb-2">Get Best, Feel Happy!</h6>
                         <p class="card-text text-muted" style="font-size: 13px; word-spacing: 2px; letter-spacing: 0.5px; ">Mai Thai Delivers
                             Deliciously Authentic Thai Mai Kitchen & an atmosphere that is friendly and fun for the
@@ -30,8 +30,13 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-name: "welcome.component"
+    name: "welcome.component",
+    computed: {
+        ...mapState(['settings'])
+    },
 }
 </script>
 

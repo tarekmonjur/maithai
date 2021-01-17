@@ -1,6 +1,33 @@
 import helpers from "./../js/helpers";
 
 export default {
+  async init(context, payload) {
+    const settings = helpers.getContext('settings');
+    const customer = helpers.getContext('customer');
+    const request = helpers.getContext('request');
+    context.commit('setContextData', {
+      settings,
+      customer,
+      request
+    });
+    await helpers.setLang(true);
+  },
+  
+  async clearDataAction(context, modal_id) {
+    $('#'+modal_id).modal('hide');
+    context.commit('setModal', {});
+    context.commit('setFormInput', {});
+    context.commit('setLoader', {modal: null, button: null});
+    context.commit('setErrorsAlert', {});
+  },
+  
+  async modalShippingAction(context, payload) {
+    context.commit('setLoader', { button: true });
+    context.commit('setShoppingCart', { shipping_details: {...context.state.formInput} });
+    await context.dispatch('clearDataAction', _.get(context.state, 'modal.id'));
+    context.commit('setLoader', { button: false });
+  },
+  
   async getProducts(context, payload = {}) {
     _.set(payload, 'url', '/products');
     _.set(payload, 'params', {
@@ -71,4 +98,95 @@ export default {
     }
     return result.results;
   },
+  
+  async addItemToCart(context, payload = {}) {
+    const items = _.get(context.state.shoppingCart, 'items', []);
+    const hasItemIndex = _.findIndex(items, i => i.product_id === payload.product_id && i.item_lock === false);
+    if (hasItemIndex > -1) {
+      const item = await helpers.updateOrderItem(_.get(items, hasItemIndex, null), 1);
+      if (item) {
+        _.set(items, hasItemIndex, item);
+        context.commit('setShoppingCart', {items});
+      }
+    } else {
+      const requestPayload = {};
+      _.set(requestPayload, 'url', '/products/' + payload.product_id);
+      const result = await helpers.getDataAction(requestPayload);
+  
+      if (result && result.code === 200) {
+        const product = _.get(result.results, 'results', {});
+        const item = await helpers.makeOrderItem(product);
+        if (item) {
+          items.push(item);
+          context.commit('setShoppingCart', {items});
+        }
+      }
+      context.commit('setErrorsAlert', {
+        alert: {
+          ..._.pick(result, ['code', 'message', 'status']),
+          message: helpers.getLang('frontend.item_add_message')
+        },
+        errors: {}
+      });
+    }
+  },
+  
+  async deleteItemToCart(context, payload) {
+    if (_.get(context.state.shoppingCart, `items[${payload.index}]`)) {
+      const items = _.get(context.state.shoppingCart, 'items');
+      items.splice(payload.index, 1);
+      context.commit('setShoppingCart', {items});
+      // context.commit('setErrorsAlert', {
+      //   alert: {
+      //     code: 200,
+      //     status: 'success',
+      //     message: helpers.getLang('frontend.item_add_message')
+      //   },
+      //   errors: {}
+      // });
+    }
+  },
+  
+  async updateItemToCart(context, payload) {
+    if (_.get(context.state.shoppingCart, `items[${payload.index}]`)) {
+      const items = _.get(context.state.shoppingCart, 'items');
+      let item = _.get(items, payload.index);
+      item = await helpers.updateOrderItem(item, +payload.qty, true);
+      if (item) {
+        _.set(items, payload.index, item);
+        context.commit('setShoppingCart', {items});
+      }
+    }
+  },
+  
+  async placeOrder(context, payload) {
+    context.commit('setLoader', { button: true });
+    const requestPayload = {
+      url: '/orders',
+      method: 'POST',
+      data: {
+        ...context.state.shoppingCart,
+        ...payload,
+        source: 'online',
+        order_source: 'online',
+      },
+    };
+
+    const result = await helpers.postDataAction(requestPayload);
+  
+    if (result && result.code === 200) {
+      context.commit('setShoppingCart', {
+        shipping_details: {},
+        items: [],
+      });
+    }
+    
+    context.commit('setErrorsAlert', {
+      alert: _.pick(result, ['code', 'message', 'status']),
+      errors: {}
+    });
+    context.commit('setLoader', { button: false });
+  },
+  
+  
 };

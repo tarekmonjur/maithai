@@ -14,6 +14,16 @@ class Product extends Model
         return $value;
     }
 
+    public function offer() {
+        $offer_table = (new Offer)->getTable();
+        $product_offer_table = (new ProductOffer)->getTable();
+
+        return $this->hasOne(ProductOffer::class, 'product_id', 'id')
+            ->join($offer_table, $offer_table.'.id', '=', $product_offer_table.'.offer_id')
+            ->where('is_active', 1);
+
+    }
+
     public function brand() {
         return $this->belongsTo(Brand::class, 'brand_id', 'id');
     }

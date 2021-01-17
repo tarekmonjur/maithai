@@ -1,6 +1,11 @@
 {
+    "/frontend/js/about.js": "/frontend/js/about.js",
+    "/frontend/js/contact.js": "/frontend/js/contact.js",
     "/frontend/js/home.js": "/frontend/js/home.js",
+    "/frontend/js/login.js": "/frontend/js/login.js",
     "/frontend/js/package.js": "/frontend/js/package.js",
+    "/frontend/js/policy.js": "/frontend/js/policy.js",
     "/frontend/js/product.js": "/frontend/js/product.js",
+    "/frontend/js/signup.js": "/frontend/js/signup.js",
     "/frontend/css/app.css": "/frontend/css/app.css"
 }

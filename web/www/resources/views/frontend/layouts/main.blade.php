@@ -7,8 +7,8 @@
 @endpush
 
 @section('main_content')
-<div id="main_content">
-    <main-conent-component></main-conent-component>
+<div id="main">
+    <main-component></main-component>
 </div>
 @endsection
 
@@ -16,6 +16,7 @@
     <script type="text/javascript">
       window._baseURL = '{{ url('/') }}';
       window._asset = '{{ asset('/') }}';
+      window._assetPath = '{{ asset(config('app.asset_path')) }}';
       window._assetURL = '{{ asset('frontend/') }}';
       window._context = '{{ base64_encode(json_encode($context??[])) }}';
     </script>

@@ -163,7 +163,7 @@ trait ProductService
         }
 
         if ($sub_list) {
-            $relations = ['category', 'subCategory', 'brand', 'unit'];
+            $relations = ['category', 'subCategory', 'brand', 'unit', 'offer'];
             if (!empty($this->getId()) || !empty($this->getSlug())) {
                 array_push($relations, 'variants', 'stocks');
             }

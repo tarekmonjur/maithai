@@ -8,6 +8,7 @@
 namespace App\Http\Services;
 
 
+use App\Models\Settings;
 use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Request;
@@ -46,17 +47,23 @@ trait CommonService
 
     protected static function getUserInfo($userId)
     {
+        $userInfo = [];
         $user = User::with('details')->find($userId);
-        $userInfo = $user->toArray();
-        $userInfo['details']['full_name'] = $user->details->full_name;
+        if ($user) {
+            $userInfo = $user->toArray();
+            $userInfo['details']['full_name'] = $user->details->full_name;
+        }
         return $userInfo;
     }
 
     protected static function getCustomerInfo($customer_id)
     {
+        $customerInfo = [];
         $customer = Customer::with('details')->find($customer_id);
-        $customerInfo = $customer->toArray();
-        $customerInfo['details']['full_name'] = $customer->details->full_name;
+        if ($customer) {
+            $customerInfo = $customer->toArray();
+            $customerInfo['details']['full_name'] = $customer->details->full_name;
+        }
         return $customerInfo;
     }
 
@@ -75,6 +82,31 @@ trait CommonService
         $data['segments'] = Request::segments();
         $data['id'] = Request::has('id') ? Request::input('id') : intval(end($data['segments']));
         return $data;
+    }
+
+    protected function getSettings($key = null, $name = null)
+    {
+        if (!empty($name)) {
+            $settings = Settings::where('name', $name)->first();
+            if ($settings) {
+                return $settings->value;
+            }
+            return null;
+        }
+
+        if (!empty($key)) {
+            $settings = Settings::where('key', $key)
+                ->pluck('value', 'name')
+                ->toArray();
+        } else {
+            $settings = Settings::get()
+                ->pluck('value', 'name')
+                ->toArray();
+            $settings['logo'] = config('app.asset_path').$settings['logo'];
+            $settings['qrcode'] = config('app.asset_path').$settings['qrcode'];
+        }
+
+        return $settings;
     }
 
 }
