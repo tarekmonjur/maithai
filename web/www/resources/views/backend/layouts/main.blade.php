@@ -2,7 +2,7 @@
 
 @push('style')
 @foreach($styles as $style)
-    <style href="{{asset('backend/css/'.$style.'.css')}}"></style>
+    <link rel="stylesheet" href="{{asset('backend/css/'.$style.'.css')}}">
 @endforeach
 @endpush
 

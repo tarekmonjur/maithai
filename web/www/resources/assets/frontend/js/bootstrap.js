@@ -23,10 +23,30 @@ window.apiPrefix = '/api'
 window.axios = require('axios');
 window.axios.defaults.baseURL = baseURL+apiPrefix;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('access_token');
+// window.axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('access_token');
 window.axios.defaults.validateStatus = function (status) {
     return status < 599;
 };
+
+// console.log(document.cookie);
+
+window.axios.interceptors.request.use(function (config) {
+    // if(Cookies.has('myapi_auth')){
+    //     request.headers = {
+    //         Authorization: 'Bearer ' + Cookies.get('myapi_auth'),
+    //     }
+    // }
+    config.headers['access-token'] = _.get(window.context, 'customer.access_token', '')
+    return config;
+}, function (error) {
+    return Promise.reject(error);
+});
+
+// window.axios.interceptors.response.use(function (response) {
+//     return response;
+// }, function (error) {
+//     return Promise.reject(error);
+// });
 
 (function(){
     window.heights = {};

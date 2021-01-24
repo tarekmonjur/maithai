@@ -28,6 +28,7 @@
   window._assetURL = '{{ asset('frontend/') }}';
   window._context = '{{ base64_encode(json_encode($context??[])) }}';
   window.current_url = '{{url()->current()}}';
+  window._filters = '{!! base64_encode(json_encode($filters??[])) !!}';
 </script>
 
 @foreach($scripts as $script)

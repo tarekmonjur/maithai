@@ -22,5 +22,5 @@ export default {
     button: false,
     // cartButton: [],
     modal: false,
-  }
+  },
 };

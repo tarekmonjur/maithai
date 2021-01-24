@@ -7,15 +7,18 @@
         <div class="row mt-5 top-sales-food">
             <div class="col-md-4 mb-5" v-for="(product, index) in getProducts">
                 <div class="card special-food-card" style="width: 20rem;">
-<!--                     <div class="cart-top-banner"></div>-->
-                    <img :src="product.image ? product.image : this.assetUrl('/logo/logo.png')" class="card-img-top cart-img food-style-cart" alt="...">
+                    <img :src="product.image ? product.image : settings.logo" class="card-img-top cart-img food-style-cart" :alt="settings.name">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase font-weight-bold">{{product.name}}</h5>
-                        <!-- <p class="text-danger mb-2 font-weight-bold">$800.00</p>
-                        <p class="text-muted mb-2">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugit blanditiis libero
-                            debitis!
-                        </p> -->
+                        <p class="text-danger mb-2 font-weight-bold">
+                            <span v-if="product.special_price">
+                            {{settings.currency_symbol}}{{product.special_price}} /
+                            <del>{{settings.currency_symbol}}{{product.regular_price}}</del>
+                            </span>
+                            <span v-else>
+                                {{settings.currency_symbol}}{{product.regular_price}}
+                            </span>
+                        </p>
                         <button
                             :disabled="loader[index]"
                             @click="addToCart(index, product.id)"
@@ -48,7 +51,8 @@ export default {
     },
     computed: {
         ...mapState([
-            'products'
+            'products',
+            'settings'
         ]),
         ...mapGetters([
             'getProducts'
@@ -59,6 +63,7 @@ export default {
             params: {
                 limit: 12,
                 is_active: 1,
+                is_stock: 1,
             },
         };
         this.$store.dispatch('getProducts', payload);

@@ -139,6 +139,19 @@ button {
   width: 30px;
 }
 
+#main_content .card .card-body .nav-link {
+  color: #be9653;
+}
+
+#main_content .card .card-body a {
+  color: #be9653;
+}
+
+#main_content .card .card-body a.active {
+  color: tomato;
+  font-weight: bold;
+}
+
 #main_content #calendar-div {
   background-color: transparent !important;
 }

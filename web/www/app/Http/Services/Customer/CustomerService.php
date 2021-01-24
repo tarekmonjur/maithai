@@ -203,4 +203,52 @@ trait CustomerService
         return $this->data;
     }
 
+
+    protected function generateReferralCode($first_name, $id = null, $mobile_no = null)
+    {
+        if (empty($id)) {
+            $customer = Customer::orderBy('id','desc')->first();
+            if ($customer) {
+                $id = intval($customer->id) + 1;
+            } else {
+                $id = 1;
+            }
+        }
+
+        $inputString = str_replace(' ', '-', $first_name);
+        $inputString = preg_replace(['/[^A-Za-z0-9\-]/'], '', $inputString);
+        $inputStringAry = explode("-", $inputString);
+        foreach($inputStringAry as $val){
+            if(strlen($val) > 2){
+                $inputString = $val;
+                break;
+            }
+        }
+
+        if(empty($inputString)){
+            $inputString = uniqid();
+        }
+
+        $name_prefix = $inputString;
+        if(!empty($mobile_no)){
+            $row_id_prefix = substr(str_pad($id,3,"0",STR_PAD_LEFT),-3);
+            $mobile_prefix = str_shuffle(substr($mobile_no,-3));
+        }else{
+            $row_id_prefix = substr(str_pad($id,3,"0",STR_PAD_LEFT),-3);
+            $mobile_prefix = null;
+        }
+
+        $generate_referral_code = "$name_prefix$row_id_prefix$mobile_prefix";
+        return $generate_referral_code;
+    }
+
+    protected function getReferrerId($referrer_code)
+    {
+        $referral_customer = Customer::where('referral_code', $referrer_code)->first();
+        if ($referral_customer) {
+            return $referral_customer->id;
+        }
+        return null;
+    }
+
 }

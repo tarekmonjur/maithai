@@ -9,17 +9,40 @@
                                 <div class="form-label">
                                     <h1 class="text-capitalize">user login</h1>
                                 </div>
+                                <div class="text-danger" v-if="errors.unauthenticated">{{errors.unauthenticated[0]}}</div>
                                 <div class="form-group mt-4">
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input type="email"
+                                           class="form-control"
+                                           :class="{'is-invalid' : errors.username}"
+                                           v-model="formInput.username"
+                                           placeholder="Username...">
+                                    <div class="invalid-feedback" v-if="errors.username">{{errors.username}}</div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="password">
+                                    <input type="password"
+                                           class="form-control"
+                                           :class="{'is-invalid' : errors.password}"
+                                           v-model="formInput.password"
+                                           placeholder="Password...">
+                                    <div class="invalid-feedback" v-if="errors.password">{{errors.password}}</div>
                                 </div>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Remember me!</label>
-                                </div>
-                                <button type="submit" class="btn login-btn">login</button>
+<!--                                <div class="form-group form-check">-->
+<!--                                    <input type="checkbox"-->
+<!--                                           class="form-check-input"-->
+<!--                                           v-model="formInput.remember"-->
+<!--                                           value="1"-->
+<!--                                           id="remember">-->
+<!--                                    <label class="form-check-label" for="remember">Remember me!</label>-->
+<!--                                </div>-->
+                                <button
+                                    type="submit"
+                                    :disabled="loader"
+                                    @click.prevent="login()"
+                                    class="btn login-btn">
+                                    <loader-component :loader="loader">
+                                        Login
+                                    </loader-component>
+                                </button>
                             </form>
                         </div>
 
@@ -33,7 +56,7 @@
                                     </p>
                                 </div>
                                 <div class="form-group">
-                                    <a :href="this.url('/signup')" class="btn btn-lg btn-warning register-btn text-capitalize">
+                                    <a :href="this.url('/signup')" class="btn btn-custom register-btn text-capitalize">
                                         continue to register
                                     </a>
                                 </div>
@@ -47,17 +70,43 @@
 </template>
 
 <script>
-import AppComponent from './../app.component';
 import {mapState} from "vuex";
+import AppComponent from './../app.component';
+import LoaderComponent from "../common/loading.component";
 
 export default {
     name: "login.component",
     components: {
         AppComponent,
+        LoaderComponent
+    },
+    data() {
+        return {
+            loader: false,
+            formInput: {},
+        }
     },
     computed: {
-        ...mapState(['settings'])
+        ...mapState([
+            'settings',
+            'errors'
+        ])
     },
+    methods: {
+        async login() {
+            this.loader = true;
+            await this.$store.dispatch('loginAction', {
+                data: {
+                    ...this.formInput
+                }
+            });
+            this.loader = false;
+            if (_.isEmpty(this.errors)) {
+                this.formInput = {};
+                window.location.href = this.url('/my-orders');
+            }
+        }
+    }
 }
 </script>
 

@@ -11,7 +11,7 @@ export default {
 
     async getListData(context, payload) {
         payload = _.isEmpty(payload) ? {} : payload;
-        console.log(context.state.filterData);
+        // console.log(context.state.filterData);
         _.set(payload, 'params', {
             ...context.state.filterData,
             ..._.get(payload, 'params', {}),

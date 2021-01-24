@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomerDetails extends Model
 {
+    protected $guarded = [];
+
     public function getFullNameAttribute() {
         return ucfirst($this->first_name). ' '.ucfirst($this->last_name);
     }

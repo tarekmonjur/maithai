@@ -9,6 +9,7 @@ return [
     'policy' => 'Policy',
     'terms' => 'Terms',
     'terms&policy' => 'Terms & Policy',
+    'my_orders' => 'My Orders',
 
     'add_shipping_details' => 'Add shipping details',
     'submit' => 'Submit',

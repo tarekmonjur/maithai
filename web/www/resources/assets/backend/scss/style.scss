@@ -18,6 +18,7 @@ button {
 $color1: #ffffff;
 $color2: #dc3545;
 $color3: #be9653;
+$color4: tomato;
 
 $theme-color: $color1;
 $theme-bg-color: $color2;
@@ -176,6 +177,17 @@ $btn-focus-border-color: darkred;
             .actions {
                 img {
                     width: 30px;
+                }
+            }
+
+            .nav-link {
+                color: $color3;
+            }
+            a {
+                color: $color3;
+                &.active {
+                    color: $color4;
+                    font-weight: bold;
                 }
             }
         }

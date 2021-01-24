@@ -18,6 +18,14 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        if (empty($request->input('access_token'))) {
+            $request->offsetSet('access_token', session('access_token'));
+        }
+
+        if (empty($request->input('api_token'))) {
+            $request->offsetSet('api_token', session('api_token'));
+        }
+
         if (Auth::guard($guard)->check()) {
             if ($guard === 'customer') {
                 return redirect(RouteServiceProvider::FRONTEND_HOME);

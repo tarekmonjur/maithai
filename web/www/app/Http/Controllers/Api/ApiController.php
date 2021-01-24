@@ -29,12 +29,9 @@ class ApiController extends Controller
         FRequest::has('guard') ? $this->guard = FRequest::input('guard') : null;
         $this->upload_path = config('app.upload_path');
         $this->middleware(function($request, $next) {
-//            dd(Auth::guard($this->guard));
             $this->authUser = Auth::guard($this->guard)->user();
-//            dd($this->authUser->getTable());
             return $next($request);
         });
-        $this->context = $this->getContext();
     }
 
     public function lang(Request $request)
@@ -45,19 +42,7 @@ class ApiController extends Controller
         $strings = Cache::rememberForever('lang', function () use($request) {
             $lang = config('app.locale');
 
-            if ($request->get('frontend') === true) {
-                $files = [
-                    resource_path('lang/' . $lang . '/auth.php'),
-                    resource_path('lang/' . $lang . '/common.php'),
-                    resource_path('lang/' . $lang . '/frontend.php'),
-                    resource_path('lang/' . $lang . '/customer.php'),
-                    resource_path('lang/' . $lang . '/validation.php'),
-                    resource_path('lang/' . $lang . '/pagination.php'),
-                    resource_path('lang/' . $lang . '/passwords.php'),
-                ];
-            } else {
-                $files = glob(resource_path('lang/' . $lang . '/*.php'));
-            }
+            $files = glob(resource_path('lang/' . $lang . '/*.php'));
 
             $strings = [];
             foreach ($files as $file) {
@@ -72,7 +57,8 @@ class ApiController extends Controller
 
     protected function getContext()
     {
-        $this->context['user'] = $this->authUser;
+        $userInfo = $this->getUserInfo($this->authUser ? $this->authUser->id : null);
+        $this->context['user'] = $userInfo;
         $this->context['request'] = $this->getRequestContext();
         $this->context['settings'] = $this->getSettings();
         // Mail Config
@@ -94,6 +80,7 @@ class ApiController extends Controller
     public function sendContactMessage(ContactRequest $request)
     {
         try {
+            $this->getContext();
             $data = [];
             $data['name'] = ucfirst($request->first_name.' '.$request->last_name);
             $data['email'] = $request->email;

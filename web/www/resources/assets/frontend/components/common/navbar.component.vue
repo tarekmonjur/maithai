@@ -19,7 +19,8 @@
                         <a class="nav-link" :href="this.url('/food-package')">food package</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" :href="this.url('/login')">login & register</a>
+                        <a v-if="!isAuthenticated" class="nav-link" :href="this.url('/login')">login & register</a>
+                        <a v-else class="nav-link" :href="this.url('/my-orders')">My Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" :href="this.url('/about')">about us</a>
@@ -37,8 +38,15 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
     name: "navbar.component",
+    computed: {
+        ...mapGetters([
+            'isAuthenticated',
+        ])
+    }
 }
 </script>
 

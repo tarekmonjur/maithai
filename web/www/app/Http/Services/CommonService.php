@@ -7,7 +7,6 @@
 
 namespace App\Http\Services;
 
-
 use App\Models\Settings;
 use App\Models\User;
 use App\Models\Customer;

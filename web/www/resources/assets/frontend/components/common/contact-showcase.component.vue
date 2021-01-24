@@ -16,27 +16,21 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h6 class="font-weight-bold">Address</h6>
-                    <p class="text-muted">
-                        37 High street Cheshunt, Waltham Cross, EN80BS, UK
-                    </p>
+                    <p class="text-muted" v-html="settings.address"></p>
                 </div>
                 <div class="col-md-4 d-block contact-col">
                     <div class="rounded-contact-icon m-auto">
                         <i class="fas fa-phone"></i>
                     </div>
                     <h6 class="font-weight-bold">Phone Number</h6>
-                    <p class="text-muted">
-                        01992 641133
-                    </p>
+                    <p class="text-muted">{{settings.phone ? settings.phone : settings.mobile}}</p>
                 </div>
                 <div class="col-md-4 d-block contact-col">
                     <div class="rounded-contact-icon m-auto">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h6 class="font-weight-bold">Email</h6>
-                    <p class="text-muted">
-                        maithaikitchen@hotmail.com
-                    </p>
+                    <p class="text-muted">{{settings.email}}</p>
                 </div>
             </div>
         </div>
@@ -44,8 +38,15 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-    name: "contact-showcase.component"
+    name: "contact-showcase.component",
+    computed: {
+        ...mapState([
+            'settings',
+        ]),
+    }
 }
 </script>
 

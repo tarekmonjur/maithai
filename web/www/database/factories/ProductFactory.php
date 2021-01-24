@@ -21,9 +21,9 @@ $factory->define(Product::class, function (Faker $faker) {
         'special_price' => $faker->numberBetween(50, 500),
         'vat_percent' => 0,
         'stock' => $faker->numberBetween(50, 100),
-        'is_stock' => 0,
+        'is_stock' => 1,
         'is_new' => 0,
-        'is_package' => 0,
+        'is_package' => $faker->numberBetween(0,1),
         'is_active' => 1,
         'description' => $faker->sentence
     ];

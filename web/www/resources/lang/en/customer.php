@@ -56,7 +56,8 @@ return [
     'other' => 'Other',
 
     // alert
-    'success_msg' => 'Customer successfully saved',
+    'success_msg' => 'Customer successfully registered',
+    'delete_msg' => 'Customer successfully Deleted',
     'error_msg' => 'Customer not saved. Try again..!',
     'warning_msg' => 'Customer not found. Try again..!'
 ];

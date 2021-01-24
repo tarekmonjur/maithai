@@ -6,12 +6,17 @@
         <li class="search-item mt-2" v-else-if="searchProduct.data.length > 0" v-for="(product, index) in searchProduct.data">
             <a href="#">
                 <div class="image">
-                    <img :src="product.image ? product.image : this.assetUrl('/logo/logo.png')" alt="card1" class="search-bar-image">
+                    <img :src="product.image ? product.image : settings.logo" alt="card1" class="search-bar-image">
                 </div>
                 <div class="nameAndPrice">
                     <div class="name">{{product.name}}</div>
-                    <div class="price" v-if="product.special_price">{{product.special_price}}</div>
-                    <div class="price" v-else>{{product.regular_price}}</div>
+                    <div class="price" v-if="product.special_price">
+                        {{settings.currency_symbol}}
+                        {{product.special_price}}
+                        &nbsp;
+                        <del>{{settings.currency_symbol}}{{product.regular_price}}</del>
+                    </div>
+                    <div class="price" v-else>{{settings.currency_symbol}}{{product.regular_price}}</div>
                 </div>
             </a>
             <hr>
@@ -33,7 +38,10 @@ export default {
         LoaderComponent
     },
     computed: {
-        ...mapState(['searchProduct'])
+        ...mapState([
+            'searchProduct',
+            'settings'
+        ])
     }
 }
 </script>

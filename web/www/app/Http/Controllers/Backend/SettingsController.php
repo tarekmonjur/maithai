@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Services\CategoryService;
+
 
 class SettingsController extends BackendController
 {
-//    use CategoryService;
+
     /*
     |--------------------------------------------------------------------------
-    | Product Category Controller
+    | Settings Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Product Category Manage
+    | @Description : Settings Manager
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
@@ -25,12 +25,9 @@ class SettingsController extends BackendController
 
     public function index()
     {
-//        $this->setTitle();
-//        $this->setColumnsConfig();
-//        $this->setFiltersConfig();
-        $this->data['scripts'] = [];
-        $this->data['styles'] = [];
-        return view('backend.layouts.main')->with($this->data);
+        $data['scripts'] = ['settings', './../plugins/summernote/summernote-bs4.min'];
+        $data['styles'] = ['./../plugins/summernote/summernote-bs4'];
+        return view('backend.layouts.main')->with($data);
     }
 
 }

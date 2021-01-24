@@ -11,16 +11,8 @@
 |
 */
 
-/********** ......Backend Auth Routes....... *****************/
+/********** ......Frontend Auth Routes....... *****************/
 Route::prefix('/')->namespace('Frontend\Auth')->group(function(){
-    //Signup Routes...
-    Route::get('signup', 'RegisterController@showRegistrationForm');
-    Route::post('signup', 'RegisterController@register');
-
-    //Login Routes...
-    Route::get('login', 'LoginController@showLoginForm')->name('login');
-    Route::post('login', 'LoginController@login')->name('login');
-    Route::get('logout', 'LoginController@logout')->name('logout');
 
     //Password Reset Routes...
     Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm');
@@ -35,10 +27,15 @@ Route::prefix('/')->namespace('Frontend\Auth')->group(function(){
 
 
 Route::prefix('/')->namespace('Frontend')->group(function(){
-    Route::get('/', 'HomeController@index');
-    Route::get('/food-orders', 'HomeController@product');
-    Route::get('/food-package', 'HomeController@package');
-    Route::get('/about', 'HomeController@about');
-    Route::get('/contact', 'HomeController@contact');
-    Route::get('/terms-policy', 'HomeController@termsPolicy');
+    Route::get('/', 'WebController@index');
+    Route::get('/food-orders', 'WebController@product');
+    Route::get('/food-package', 'WebController@package');
+    Route::get('/about', 'WebController@about');
+    Route::get('/contact', 'WebController@contact');
+    Route::get('/terms-policy', 'WebController@termsPolicy');
+    Route::get('/signup', 'WebController@showRegistration');
+    Route::get('/login', 'WebController@showLogin')->name('login');
+    Route::get('/logout', 'WebController@logout');
+
+    Route::get('/my-orders', 'DashboardController@myOrder');
 });

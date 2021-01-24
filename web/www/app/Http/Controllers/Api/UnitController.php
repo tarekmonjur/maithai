@@ -24,8 +24,8 @@ class UnitController extends ApiController
 
     public function __construct()
     {
+        $this->middleware('auth:user,web');
         parent::__construct();
-        $this->middleware('auth:'.$this->guard, ['except' => [], 'only' => []]);
     }
 
     public function index(Request $request)

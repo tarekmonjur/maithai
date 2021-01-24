@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 
 trait OrderService
 {
-    use DataModelService;
+    use DataModelService, CommonService;
 
     private $id = null;
     private $slug = null;
@@ -55,12 +55,14 @@ trait OrderService
             'label' => '',
             'type' => 'text',
             'value' => null,
+            'frontend' => true,
         ],
         [
             'name' => 'customer_id',
             'label' => 'customer',
             'type' => 'select2',
             'options' => null,
+            'frontend' => false,
         ],
         [
             'name' => 'payment_status',
@@ -71,6 +73,7 @@ trait OrderService
                 'due' => 'due',
                 'completed' => 'completed',
             ],
+            'frontend' => true,
         ],
         [
             'name' => 'type',
@@ -80,6 +83,7 @@ trait OrderService
                 'sales' => 'sales',
                 'purchase' => 'purchase'
             ],
+            'frontend' => false,
         ],
         [
             'name' => 'source',
@@ -88,7 +92,8 @@ trait OrderService
             'options' => [
                 'pos' => 'pos',
                 'online' => 'online'
-            ]
+            ],
+            'frontend' => false,
         ],
         [
             'name' => 'status',
@@ -101,19 +106,22 @@ trait OrderService
                 'delivered' => 'delivered',
                 'completed' => 'completed',
                 'cancel' => 'cancel',
-            ]
+            ],
+            'frontend' => true,
         ],
         [
             'name' => 'from_date',
             'label' => '',
             'type' => 'date',
             'value' => '',
+            'frontend' => false,
         ],
         [
             'name' => 'to_date',
             'label' => '',
             'type' => 'date',
             'value' => 0, // months
+            'frontend' => false,
         ],
     ];
     private $filters = [];
@@ -211,16 +219,18 @@ trait OrderService
         return $this->data;
     }
 
-    protected function getInvoiceNo($type = null)
-    {
-        if (empty($type)) {
-            $type = 'O';
-        } else if ($type === 'sales') {
-            $type = 'S';
-        } else if ($type === 'purchase') {
-            $type = 'P';
+    protected function generateInvoiceNumber(){
+        $invoice = Order::orderBy('id','desc')->first();
+        $invoice_no_length = 12;
+        if($invoice) {
+            $remove_zero = str_replace(0,'',$invoice->invoice_no);
+            $increment_invoice_no = intval($remove_zero) + 1;
+            $need_zero = $invoice_no_length - strlen($increment_invoice_no);
+            $invoice_no = str_repeat(0,$need_zero).$increment_invoice_no;
+        }else{
+            $invoice_no =  str_repeat(0,$invoice_no_length-1).'1';
         }
-        return uniqid($type);
+        return $invoice_no;
     }
 
     protected function getTableNo($id = null)
@@ -404,7 +414,7 @@ trait OrderService
             }
         }
 
-        $order['invoice_no'] = $this->getInvoiceNo($request->type);
+        $order['invoice_no'] = $this->generateInvoiceNumber();
         $order['table_id'] = $request->table_id;
         $order['table_no'] = $request->table_no ?? $this->getTableNo($request->table_id);
 

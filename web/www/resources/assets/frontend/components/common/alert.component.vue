@@ -27,7 +27,7 @@ export default {
                 title: _.capitalize(alert.status)+'...!',
                 text: alert.message,
                 showConfirmButton: false,
-                timer: 2000,
+                timer: 3000,
             });
         }
     }

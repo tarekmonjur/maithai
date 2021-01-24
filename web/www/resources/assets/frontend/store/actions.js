@@ -188,5 +188,47 @@ export default {
     context.commit('setLoader', { button: false });
   },
   
+  async getOrders(context, payload = {}) {
+    _.set(payload, 'url', '/orders');
+    _.set(payload, 'params', {
+      ..._.get(payload, 'params', {}),
+      columns: _.get(payload, 'params.columns', null),
+      sublist: _.get(payload, 'params.sublist', false),
+      paginate: _.get(payload, 'params.paginate', true),
+    });
+    
+    const result = await helpers.getDataAction(payload);
+    
+    if (result && result.code === 200) {
+      context.commit('setOrders', result.results);
+    } else {
+      context.commit('setErrorsAlert',  {
+        alert: _.pick(result, ['code', 'message', 'status']),
+        errors: {}
+      });
+    }
+    return result.results;
+  },
+  
+  async getOrder(context, payload = {}) {
+    _.set(payload, 'url', '/orders/'+payload.id);
+    _.set(payload, 'params', {
+      ..._.get(payload, 'params', {}),
+      sublist: _.get(payload, 'params.sublist', true),
+    });
+    
+    const result = await helpers.getDataAction(payload);
+    
+    if (result && result.code === 200) {
+      context.commit('setOrder', result.results);
+    } else {
+      context.commit('setErrorsAlert',  {
+        alert: _.pick(result, ['code', 'message', 'status']),
+        errors: {}
+      });
+    }
+    return result.results;
+  },
+  
   
 };

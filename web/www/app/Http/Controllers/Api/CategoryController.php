@@ -25,8 +25,8 @@ class CategoryController extends ApiController
 
     public function __construct()
     {
+        $this->middleware('auth:user,web', ['except' => ['index', 'show']]);
         parent::__construct();
-        $this->middleware('auth:'.$this->guard, ['except' => [], 'only' => []]);
         $this->upload_path = $this->upload_path.'category/';
     }
 

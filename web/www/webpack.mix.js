@@ -15,8 +15,8 @@ require("laravel-mix-vue3");
 //    .sass('resources/sass/app.scss', 'public/css');
 
 
-mix.sass('resources/assets/frontend/scss/app.scss', 'public/frontend/css')
-// mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
+// mix.sass('resources/assets/frontend/scss/app.scss', 'public/frontend/css')
+mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
 
 mix.vue3('resources/assets/frontend/js/home.js', 'public/frontend/js');
 mix.vue3('resources/assets/frontend/js/product.js', 'public/frontend/js');
@@ -26,6 +26,7 @@ mix.vue3('resources/assets/frontend/js/signup.js', 'public/frontend/js');
 mix.vue3('resources/assets/frontend/js/about.js', 'public/frontend/js');
 mix.vue3('resources/assets/frontend/js/contact.js', 'public/frontend/js');
 mix.vue3('resources/assets/frontend/js/policy.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/my_order.js', 'public/frontend/js');
 
 // mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/sub_category.js', 'public/backend/js');
@@ -38,5 +39,6 @@ mix.vue3('resources/assets/frontend/js/policy.js', 'public/frontend/js');
 // mix.vue3('resources/assets/backend/js/order.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/sku.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/table.js', 'public/backend/js');
+// mix.vue3('resources/assets/backend/js/settings.js', 'public/backend/js');
 
 

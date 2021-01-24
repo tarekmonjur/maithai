@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Frontend\Auth;
+namespace App\Http\Controllers\Api\Auth;
 
-use App\Http\Controllers\Frontend\FrontendController;
-use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Services\Customer\AuthenticatesCustomers;
+use App\Providers\RouteServiceProvider;
 
-class LoginController extends FrontendController
+class CustomerLoginController extends ApiController
 {
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ class LoginController extends FrontendController
      */
     public function __construct()
     {
+        $this->middleware('auth:customer')->only('logout');
         parent::__construct();
-        $this->middleware('guest:customer')->except('logout');
     }
 }

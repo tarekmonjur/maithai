@@ -26,6 +26,13 @@ Route::namespace('Api')->group(function(){
     Route::get('/lang', 'ApiController@lang')->name($route_base_path.'.lang');
     Route::post('/send-contact-message', 'ApiController@sendContactMessage')->name($route_base_path.'.send.contact.message');
 
+    /********** ...... Auth API ....... *****************/
+    Route::namespace('Auth')->prefix('/')->group(function() use ($route_base_path){
+        /********** ...... Customer Auth API ....... *****************/
+        Route::post('/login','CustomerLoginController@login')->name($route_base_path.'.customer.login');
+        Route::get('/logout','CustomerLoginController@logout')->name($route_base_path.'.customer.logout');
+    });
+
     /********** ...... Category API ....... *****************/
     Route::prefix('/categories')->group(function() use ($route_base_path){
         Route::get('/','CategoryController@index')->name($route_base_path.'.categories.index');
@@ -120,6 +127,12 @@ Route::namespace('Api')->group(function(){
         Route::post('','TableController@store')->name($route_base_path.'.table.store');
         Route::put('/{id}','TableController@update')->name($route_base_path.'.table.update');
         Route::delete('/{id}','TableController@destroy')->name($route_base_path.'.table.destroy');
+    });
+
+    /********** ...... Settings API ....... *****************/
+    Route::prefix('/settings')->group(function() use ($route_base_path){
+        Route::get('/','SettingsController@index')->name($route_base_path.'.settings.index');
+        Route::put('/{key}','SettingsController@update')->name($route_base_path.'.settings.update');
     });
 
 });

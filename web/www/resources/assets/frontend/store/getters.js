@@ -1,6 +1,11 @@
 import helpers from "../js/helpers";
 
 export default {
+  isAuthenticated(state) {
+    return !_.isEmpty(state.customer) &&
+      _.has(state.customer, 'access_token') &&
+      !_.isEmpty(_.get(state.customer, 'access_token'));
+  },
   getProducts(state) {
     return _.get(state, 'products.results', {});
   },

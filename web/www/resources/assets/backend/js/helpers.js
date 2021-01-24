@@ -1,7 +1,15 @@
 export default {
+    baseUrl(path) {
+        const url = window.baseURL || '';
+        return url + path;
+    },
     asset(path) {
         const asset_path = window.assetURL || '';
         return asset_path + path;
+    },
+    assetUrl(path) {
+        const url = window.baseURL+'/files/';
+        return url + path;
     },
     toSlug(value) {
         return value.toLowerCase()
@@ -137,29 +145,36 @@ export default {
         const result = await this.makeApiRequest(url, 'GET', {params});
         return result;
     },
-    async transformToFormData(data) {
+    async transformToFormData(data, file_Keys) {
+        const fileKeys = ['image', 'logo', 'photo', ...file_Keys];
+        
         const formData = new FormData();
         _.forEach(data, (value, key) => {
             if (typeof value === 'boolean') {
                 value = value ? 1 : 0;
             }
-            if (key !== 'image' && _.isObject(value)) {
+            if (!fileKeys.includes(key) && _.isObject(value)) {
                 for (const k in value) {
                     if (value.hasOwnProperty(k)) {
-                        if (_.isObject(value[k])) {
-                            for (const kk in value[k]) {
-                                if (value[k].hasOwnProperty(kk)) {
-                                    // console.log(`${key}[${k}][${kk}]`, value[k][kk]);
-                                    formData.append(`${key}[${k}][${kk}]`, value[k][kk]);
-                                }
-                            }
-                        } else {
-                            // console.log(`${key}[${k}]`, value[k]);
+                        if (fileKeys.includes(k)) {
                             formData.append(`${key}[${k}]`, value[k]);
+                        } else {
+                            if (_.isObject(value[k])) {
+                                for (const kk in value[k]) {
+                                    if (value[k].hasOwnProperty(kk)) {
+                                        // console.log(`${key}[${k}][${kk}]`, value[k][kk]);
+                                        formData.append(`${key}[${k}][${kk}]`, value[k][kk]);
+                                    }
+                                }
+                            } else {
+                                // console.log(`${key}[${k}]`, value[k]);
+                                formData.append(`${key}[${k}]`, value[k]);
+                            }
                         }
                     }
                 }
             } else {
+                // console.log({key, value});
                 formData.append(key, value);
             }
         });
@@ -168,12 +183,13 @@ export default {
     },
     async postDataAction(payload) {
         const url = _.get(payload, 'url', '');
-        const method = _.get(payload, 'method', '');
+        const method = _.get(payload, 'method', 'POST');
 
         if (_.get(payload, 'headers.Content-Type') === 'multipart/form-data') {
             // const data = JSON.parse(JSON.stringify(_.get(payload, 'data', {})));
             const data = _.get(payload, 'data', {});
-            const formData = await this.transformToFormData(data);
+            const file_Keys = _.get(payload, 'file_keys', []);
+            const formData = await this.transformToFormData(data, file_Keys);
             _.set(payload, 'data', formData);
         }
 

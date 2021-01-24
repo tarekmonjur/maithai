@@ -50,11 +50,23 @@ body{
     hr{
         background-color: $theme-color;
     }
+
+    a {
+        color: $button_tomato;
+        &:hover {
+            color: $theme-color;
+        }
+    }
 }
 
 .section-title{
     color: $theme-color;
     text-align: center;
+}
+
+.bg-gray-light {
+    background-color: #f2f4f5;
+    color: #1f2d3d!important;
 }
 
 /**-----------BUTTON----------**/
@@ -1000,6 +1012,51 @@ div.rounded-contact-icon{
         margin-bottom: 10px;
     }
 
+ }
+
+ #order {
+     .card {
+         border: 0px;
+         .card-header {
+             color: white;
+             background: $food_menu_gradiend;
+             i {
+                 vertical-align: middle;
+                 font-size: 1.4rem;
+             }
+             img {
+                 width: 28px;
+             }
+             a {
+                 color: white;
+             }
+         }
+         .card-body {
+            border: 1px solid $theme-color;
+             #tableFilter {
+                 .input-group-text {
+                     background: #c89852;
+                     border: 1px solid #c89852;
+                     color: white;
+                 }
+             }
+             img {
+                 width: 28px;
+             }
+             .table {
+                 th {
+                     font-size: 15px;
+                 }
+                 td {
+                     font-size: 14px;
+                 }
+             }
+         }
+         .card-footer {
+             background: $food_menu_gradiend;
+             color: white;
+         }
+     }
  }
 
 
@@ -2323,12 +2380,12 @@ button.btn.btn-lg.text-light.text-uppercase {
 
 /****----- Login/Register Page -----*****/
 
-div.form-row{
-    border: 5px solid lightgray;
+div.formContainer{
+    border: 3px solid $theme-color;
     margin: 2rem;
     padding: 40px 10px;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px lightgray;
+    box-shadow: 1px 1px 2px $theme-color;
 }
 div.login-section{
     width: 30rem;
@@ -2356,7 +2413,7 @@ div.form-label{
     h1{
         font-size: 27px;
         font-family: 'Quicksand', sans-serif;
-        color: $theme-color2;
+        color: $theme-color;
         font-weight: bold;
     }
     p{
@@ -2398,7 +2455,7 @@ button[type="submit"].login-btn, a.login-btn{
 /**The Media Quries for Phone Screen Confortable**/
 /**iPhone 6,7,8 or Uppper Screen Comfortable**/
 @media only screen and (max-width: 720px){
-    div.form-row{
+    div.formContainer{
         margin: 0;
         border-radius: 0;
         border: 0;
@@ -2457,5 +2514,162 @@ button[type="submit"].login-btn, a.login-btn{
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
         padding: 20px!important;
+    }
+}
+
+
+.invoice {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    position: relative;
+}
+
+.invoice-title {
+    margin-top: 0;
+}
+
+@media print {
+    .d-print-none {
+        display: none !important;
+    }
+    .d-print-inline {
+        display: inline !important;
+    }
+    .d-print-inline-block {
+        display: inline-block !important;
+    }
+    .d-print-block {
+        display: block !important;
+    }
+    .d-print-table {
+        display: table !important;
+    }
+    .d-print-table-row {
+        display: table-row !important;
+    }
+    .d-print-table-cell {
+        display: table-cell !important;
+    }
+    .d-print-flex {
+        display: -ms-flexbox !important;
+        display: flex !important;
+    }
+    .d-print-inline-flex {
+        display: -ms-inline-flexbox !important;
+        display: inline-flex !important;
+    }
+}
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+    a:not(.btn) {
+        text-decoration: underline;
+    }
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #adb5bd;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    @page {
+        size: a3;
+    }
+    body {
+        min-width: 992px !important;
+    }
+    .container {
+        min-width: 992px !important;
+    }
+    .navbar {
+        display: none;
+    }
+    .badge {
+        border: 1px solid #000;
+    }
+    .table {
+        border-collapse: collapse !important;
+    }
+    .table td,
+    .table th {
+        background-color: #ffffff !important;
+    }
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6 !important;
+    }
+    .table-dark {
+        color: inherit;
+    }
+    .table-dark th,
+    .table-dark td,
+    .table-dark thead th,
+    .table-dark tbody + tbody {
+        border-color: #dee2e6;
+    }
+    .table .thead-dark th {
+        color: inherit;
+        border-color: #dee2e6;
+    }
+}
+
+@media print {
+    .no-print, .main-sidebar,
+    .main-header,
+    .content-header {
+        display: none !important;
+    }
+    .content-wrapper,
+    .main-footer {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        margin-left: 0 !important;
+        min-height: 0 !important;
+    }
+    .layout-fixed .content-wrapper {
+        padding-top: 0 !important;
+    }
+    .invoice {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .invoice-col {
+        float: left;
+        width: 33.3333333%;
+    }
+    .table-responsive {
+        overflow: auto;
+    }
+    .table-responsive > .table tr th,
+    .table-responsive > .table tr td {
+        white-space: normal !important;
     }
 }

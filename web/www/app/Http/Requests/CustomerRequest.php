@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\Customer;
+use App\Models\CustomerDetails;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CustomerRequest extends FormRequest
@@ -25,25 +26,30 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         $tableName = (new Customer())->getTable();
+        $tableName2 = (new CustomerDetails())->getTable();
+        $segments = $this->segments();
 
-        if ($id = $this->segment(3)) {
+        if (is_integer(intval(end($segments)))) {
+            $id = end($segments);
             $username = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',username,'.$id];
-            $referral_code = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',referral_code,'.$id];
+            $email = ['nullable', 'email', 'min:3', 'max:45', 'unique:'.$tableName2.',email,'.$id];
+            $mobile_no = ['nullable', 'min:3', 'max:45', 'unique:'.$tableName2.',mobile_no,'.$id];
         } else {
             $username = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',username'];
-            $referral_code = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',referral_code'];
+            $email = ['nullable', 'email', 'min:3', 'max:45', 'unique:'.$tableName2.',email'];
+            $mobile_no = ['nullable', 'min:3', 'max:45', 'unique:'.$tableName2.',mobile_no'];
         }
 
         return [
             'username' => $username,
-            'password' => 'required|min:3|max:45',
-            'retype_password' => 'required|min:3|max:45|confirmed:password',
-            'referral_code' => $referral_code,
-            'first_name' => 'required|min:3|max:45',
-            'last_name' => 'nullable|min:3|max:45',
-            'email' => 'nullable|email|min:3|max:45',
-            'mobile_no' => 'nullable|min:3|max:45',
+            'password' => 'required|min:6|max:45',
+            'retype_password' => 'required|min:6|max:45|same:password',
+            'first_name' => 'required|alpha|min:3|max:45',
+            'last_name' => 'nullable|alpha|min:3|max:45',
+            'email' => $email,
+            'mobile_no' => $mobile_no,
             'gender' => 'nullable|in:male,female,other',
+            'address' => 'nullable|max:255',
         ];
     }
 }

@@ -673,9 +673,22 @@ body hr {
   background-color: #efa034;
 }
 
+body a {
+  color: tomato;
+}
+
+body a:hover {
+  color: #efa034;
+}
+
 .section-title {
   color: #efa034;
   text-align: center;
+}
+
+.bg-gray-light {
+  background-color: #f2f4f5;
+  color: #1f2d3d !important;
 }
 
 /**-----------BUTTON----------**/
@@ -1664,6 +1677,55 @@ footer div.dotted-dateline {
   border-bottom: 1px dotted lightgray;
   width: 100px;
   margin-bottom: 10px;
+}
+
+#order .card {
+  border: 0px;
+}
+
+#order .card .card-header {
+  color: white;
+  background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
+}
+
+#order .card .card-header i {
+  vertical-align: middle;
+  font-size: 1.4rem;
+}
+
+#order .card .card-header img {
+  width: 28px;
+}
+
+#order .card .card-header a {
+  color: white;
+}
+
+#order .card .card-body {
+  border: 1px solid #efa034;
+}
+
+#order .card .card-body #tableFilter .input-group-text {
+  background: #c89852;
+  border: 1px solid #c89852;
+  color: white;
+}
+
+#order .card .card-body img {
+  width: 28px;
+}
+
+#order .card .card-body .table th {
+  font-size: 15px;
+}
+
+#order .card .card-body .table td {
+  font-size: 14px;
+}
+
+#order .card .card-footer {
+  background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
+  color: white;
 }
 
 /*****The Media Queries for this way****/
@@ -3010,12 +3072,12 @@ button.btn.btn-lg.text-light.text-uppercase:hover {
 
 /****----- Login/Register Page -----*****/
 
-div.form-row {
-  border: 5px solid lightgray;
+div.formContainer {
+  border: 3px solid #efa034;
   margin: 2rem;
   padding: 40px 10px;
   border-radius: 5px;
-  box-shadow: 2px 2px 5px lightgray;
+  box-shadow: 1px 1px 2px #efa034;
 }
 
 div.login-section {
@@ -3046,7 +3108,7 @@ div.register-section-2 {
 div.form-label h1 {
   font-size: 27px;
   font-family: "Quicksand", sans-serif;
-  color: #d2232a;
+  color: #efa034;
   font-weight: bold;
 }
 
@@ -3093,7 +3155,7 @@ a.login-btn:hover {
 /**iPhone 6,7,8 or Uppper Screen Comfortable**/
 
 @media only screen and (max-width: 720px) {
-  div.form-row {
+  div.formContainer {
     margin: 0;
     border-radius: 0;
     border: 0;
@@ -3158,6 +3220,193 @@ a.login-btn:hover {
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding: 20px !important;
+  }
+}
+
+.invoice {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  position: relative;
+}
+
+.invoice-title {
+  margin-top: 0;
+}
+
+@media print {
+  .d-print-none {
+    display: none !important;
+  }
+
+  .d-print-inline {
+    display: inline !important;
+  }
+
+  .d-print-inline-block {
+    display: inline-block !important;
+  }
+
+  .d-print-block {
+    display: block !important;
+  }
+
+  .d-print-table {
+    display: table !important;
+  }
+
+  .d-print-table-row {
+    display: table-row !important;
+  }
+
+  .d-print-table-cell {
+    display: table-cell !important;
+  }
+
+  .d-print-flex {
+    display: flex !important;
+  }
+
+  .d-print-inline-flex {
+    display: inline-flex !important;
+  }
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #adb5bd;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+@page {
+    size: a3;
+}
+
+  body {
+    min-width: 992px !important;
+  }
+
+  .container {
+    min-width: 992px !important;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .badge {
+    border: 1px solid #000;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+
+  .table td,
+  .table th {
+    background-color: #ffffff !important;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6 !important;
+  }
+
+  .table-dark {
+    color: inherit;
+  }
+
+  .table-dark th,
+  .table-dark td,
+  .table-dark thead th,
+  .table-dark tbody + tbody {
+    border-color: #dee2e6;
+  }
+
+  .table .thead-dark th {
+    color: inherit;
+    border-color: #dee2e6;
+  }
+}
+
+@media print {
+  .no-print,
+  .main-sidebar,
+  .main-header,
+  .content-header {
+    display: none !important;
+  }
+
+  .content-wrapper,
+  .main-footer {
+    transform: translate(0, 0);
+    margin-left: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .layout-fixed .content-wrapper {
+    padding-top: 0 !important;
+  }
+
+  .invoice {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .invoice-col {
+    float: left;
+    width: 33.3333333%;
+  }
+
+  .table-responsive {
+    overflow: auto;
+  }
+
+  .table-responsive > .table tr th,
+  .table-responsive > .table tr td {
+    white-space: normal !important;
   }
 }
 

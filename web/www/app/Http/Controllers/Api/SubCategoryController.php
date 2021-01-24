@@ -25,8 +25,8 @@ class SubCategoryController extends ApiController
 
     public function __construct()
     {
+        $this->middleware('auth:user,web');
         parent::__construct();
-        $this->middleware('auth:'.$this->guard, ['except' => [], 'only' => []]);
         $this->upload_path = $this->upload_path.'category/';
     }
 

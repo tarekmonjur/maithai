@@ -156,12 +156,13 @@ export default {
         return result;
     },
     async transformToFormData(data) {
+        const fileKeys = ['image', 'logo', 'photo'];
         const formData = new FormData();
         _.forEach(data, (value, key) => {
             if (typeof value === 'boolean') {
                 value = value ? 1 : 0;
             }
-            if (key !== 'image' && _.isObject(value)) {
+            if (!fileKeys.includes(key) && _.isObject(value)) {
                 for (const k in value) {
                     if (value.hasOwnProperty(k)) {
                         if (_.isObject(value[k])) {
@@ -294,8 +295,7 @@ export default {
     printInvoice(elem){
         var win = window.open('', '');
         var content = '<html><head><title>Invoice</title>' +
-          '<link rel="stylesheet" type="text/css" href="'+window.assetURL+'/css/adminlte.min.css" />'+
-          '<link rel="stylesheet" type="text/css" href="'+window.assetURL+'/css/style.css" /></head>';
+          '<link rel="stylesheet" type="text/css" href="'+window.assetURL+'/css/app.css" /></head>';
         content += "<body onload=\"window.print(); setTimeout(function(){window.close();}, 1000)\">";
         content += document.getElementById(elem).innerHTML ;
         content += "</body>";
@@ -339,4 +339,34 @@ export default {
         const total_amount = sub_total + vat_amount + delivery_fee + processing_fee;
         return +parseFloat(total_amount).toFixed(2);
     },
+    statusBadgeClass(value) {
+        if (value === 'none') {
+            return 'badge-secondary';
+        }
+        else if (value === 'cash' || value === 'card') {
+            return 'badge-info';
+        }
+        else if (value === 'pending') {
+            return 'badge-warning';
+        }
+        else if (value === 'due') {
+            return 'badge-warning';
+        }
+        else if (value === 'completed') {
+            return 'badge-success';
+        }
+        else if (value === 'placed') {
+            return 'badge-secondary';
+        }
+        else if (value === 'accepted') {
+            return 'badge-info';
+        }
+        else if (value === 'delivered') {
+            return 'badge-primary';
+        }
+        else if (value === 'cancel') {
+            return 'badge-danger';
+        }
+        return 'badge-secondary';
+    }
 };

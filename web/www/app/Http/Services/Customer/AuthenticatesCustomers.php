@@ -2,29 +2,18 @@
 
 namespace App\Http\Services\Customer;
 
+use App\Http\Services\CommonService;
+use App\Models\Customer;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesCustomers
 {
-    use RedirectsUsers, ThrottlesLogins;
-
-    /**
-     * Show the application's login form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showLoginForm()
-    {
-        $data = [];
-        $data['title'] = 'Login';
-        $data['styles'] = [];
-        $data['scripts'] = ['login'];
-        return view('frontend.layouts.app', $data);
-    }
+    use RedirectsUsers, ThrottlesLogins, CommonService;
 
     /**
      * Handle a login request to the application.
@@ -48,8 +37,8 @@ trait AuthenticatesCustomers
             return $this->sendLockoutResponse($request);
         }
 
-        if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
+        if ($customer = $this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request, $customer);
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
@@ -84,9 +73,15 @@ trait AuthenticatesCustomers
      */
     protected function attemptLogin(Request $request)
     {
-        return $this->guard()->attempt(
-            $this->credentials($request), $request->filled('remember')
-        );
+        $credentials = $this->credentials($request);
+        if ($customer = Customer::where($this->username(), $credentials[$this->username()])->first()) {
+            $auth = Hash::check($credentials['password'], $customer->password);
+            if ($auth && $customer) {
+                $customer->enrollAccessToken();
+                return $customer;
+            }
+        }
+        return false;
     }
 
     /**
@@ -104,17 +99,17 @@ trait AuthenticatesCustomers
     /**
      * Send the response after the user was authenticated.
      *
+     * @param  Customer  $customer
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    protected function sendLoginResponse(Request $request)
+    protected function sendLoginResponse(Request $request, Customer $customer)
     {
         $request->session()->regenerate();
 
         $this->clearLoginAttempts($request);
 
-        return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->intended($this->redirectPath());
+        return $this->authenticated($request, $customer);
     }
 
     /**
@@ -124,9 +119,10 @@ trait AuthenticatesCustomers
      * @param  mixed  $user
      * @return mixed
      */
-    protected function authenticated(Request $request, $user)
+    protected function authenticated(Request $request, $customer)
     {
-        $request->session()->flash('success','Welcome '.$user->fullname);
+        $request->session()->put('access_token', $customer->access_token);
+        return $this->jsonResponse($customer, trans('auth.login'));
     }
 
     /**
@@ -166,28 +162,29 @@ trait AuthenticatesCustomers
      * Log the user out of the application.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return
      */
     public function logout(Request $request)
     {
-        $this->guard()->logout();
+
+        if ($this->authUser) {
+            Customer::where('id', $this->authUser->id)
+                ->update(['access_token' => null]);
+        }
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return $this->loggedOut($request) ?: $this->redirectPath();
-    }
+        if (session()->has('access_token')) {
+            session()->forget('access_token');
+        }
 
-    /**
-     * The user has logged out of the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return mixed
-     */
-    protected function loggedOut(Request $request)
-    {
-        return redirect()->intended($this->redirectPath());
+        if ($request->wantsJson() || $request->isJson() || $request->expectsJson()) {
+            return $this->jsonResponse('', trans('auth.logout'));
+        }
+
+        return redirect()->route('login');
     }
 
     /**
@@ -197,6 +194,6 @@ trait AuthenticatesCustomers
      */
     protected function guard()
     {
-        return Auth::guard('web');
+        return Auth::guard('customer');
     }
 }

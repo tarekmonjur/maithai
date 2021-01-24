@@ -20,7 +20,7 @@
                 </p>
             </div>
             <div class="total shopping-badget-total">
-                <span class="dollar">$</span>
+                <span class="dollar">{{settings.currency_symbol}}</span>
                 <span class="price">{{totalSubTotal}}</span>
             </div>
         </section>
@@ -92,9 +92,9 @@
                     <span>{{item.product_unit}}</span>
                 </div>
                 <div class="col-2 single-item">
-                    <span class="text-danger">${{item.product_price}}</span>
+                    <span class="text-danger">{{settings.currency_symbol}}{{item.product_price}}</span>
                     <span class="text-muted" v-if="item.discount_amount">
-                        <del>${{item.product_price+item.discount_amount}}</del>
+                        <del>{{settings.currency_symbol}}{{item.product_price+item.discount_amount}}</del>
                     </span>
                 </div>
                 <div class="col-2 single-item">
@@ -105,22 +105,22 @@
                            :value="item.product_qty">
                 </div>
                 <div class="col-1 single-item">
-                    <span class="text-danger">${{item.discount_amount}}</span>
+                    <span class="text-danger">{{settings.currency_symbol}}{{item.discount_amount}}</span>
                 </div>
                 <div class="col-1 single-item">
-                    <span class="text-danger">${{item.vat_amount}}</span>
+                    <span class="text-danger">{{settings.currency_symbol}}{{item.vat_amount}}</span>
                 </div>
                 <div class="col-2 single-item">
-                    <span class="text-danger">${{item.sub_total}}</span>
+                    <span class="text-danger">{{settings.currency_symbol}}{{item.sub_total}}</span>
                 </div>
             </div>
             <div class="row content-items-list border-top">
                 <div class="col-4 single-item"><strong>Total</strong></div>
-                <div class="col-2 single-item"><strong>${{totalPrice}}</strong></div>
+                <div class="col-2 single-item"><strong>{{settings.currency_symbol}}{{totalPrice}}</strong></div>
                 <div class="col-2 single-item"><strong>{{totalQty}}</strong></div>
-                <div class="col-1 single-item"><strong>${{totalDiscount}}</strong></div>
-                <div class="col-1 single-item"><strong>${{totalVat}}</strong></div>
-                <div class="col-2 single-item"><strong>${{totalSubTotal}}</strong></div>
+                <div class="col-1 single-item"><strong>{{settings.currency_symbol}}{{totalDiscount}}</strong></div>
+                <div class="col-1 single-item"><strong>{{settings.currency_symbol}}{{totalVat}}</strong></div>
+                <div class="col-2 single-item"><strong>{{settings.currency_symbol}}{{totalSubTotal}}</strong></div>
             </div>
             <div class="row">
                 <div class="col p-1 pt-2">
@@ -138,23 +138,23 @@
                 <div class="col p-1 pt-2">
                     <div class="row content-items-list border-0 pt-0">
                         <div class="col-9 single-item border-bottom"><strong>Sub Total Amount</strong></div>
-                        <div class="col-3 single-item border-bottom">{{totalSubTotal}}</div>
+                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{totalSubTotal}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
                         <div class="col-9 single-item border-bottom"><strong>Processing Fee</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings['processing_fee']}}</div>
+                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{settings['processing_fee']}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
                         <div class="col-9 single-item border-bottom"><strong>Delivery Fee</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings['delivery_fee']}}</div>
+                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{settings['delivery_fee']}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
                         <div class="col-9 single-item border-bottom"><strong>Vat ({{settings['vat_percent']}}%)</strong></div>
-                        <div class="col-3 single-item border-bottom">{{vatAmount}}</div>
+                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{vatAmount}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
                         <div class="col-9 single-item border-bottom"><strong>Payable Amount</strong></div>
-                        <div class="col-3 single-item border-bottom">{{totalAmount}}</div>
+                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{totalAmount}}</div>
                     </div>
                 </div>
             </div>

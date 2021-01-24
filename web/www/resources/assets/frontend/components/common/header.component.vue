@@ -5,37 +5,43 @@
                 <img :src="settings.logo" :alt="settings.name" />
             </div>
 
-            <div class="temp-root">
-                <h5 class="temp-text">
-                    We are still working on our website.<br>
-                    For place an order please<br>
-                    Call: 01992641133
-                </h5>
+<!--            <div class="temp-root">-->
+<!--                <h5 class="temp-text">-->
+<!--                    We are still working on our website.<br>-->
+<!--                    For place an order please<br>-->
+<!--                    Call: {{settings.phone ? settings.phone : settings.mobile}}-->
+<!--                </h5>-->
 
-                <div class="pl-3">
-                    <img :src="this.assetUrl('/logo/temp-img.jpg')" alt="Temp Image" />
-                    <p class="temp-text-p">
-                        <a href="https://www.just-eat.co.uk/" target="_blank" class="temp-text-a">
-                            YOU CAN ALSO PLACE<br>
-                            ORDER IN JUST EAT.
-                        </a>
-                    </p>
-                </div>
-            </div>
+<!--                <div class="pl-3">-->
+<!--                    <img :src="this.assetUrl('/logo/temp-img.jpg')" alt="Temp Image" />-->
+<!--                    <p class="temp-text-p">-->
+<!--                        <a href="https://www.just-eat.co.uk/" target="_blank" class="temp-text-a">-->
+<!--                            YOU CAN ALSO PLACE<br>-->
+<!--                            ORDER IN JUST EAT.-->
+<!--                        </a>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="d-flex rightHeaderItem">
                 <div class="items mr-4 rightHeaderItem">
                     <div class="topMenu">
                         <ul>
                             <li><a :href="this.url('/contact')" class="text-capitalize">request call back</a></li>
-                            <li><a :href="this.url('/signup')" class="text-capitalize">register</a></li>
-                            <li><a :href="this.url('/login')" class="text-capitalize">login</a></li>
+                            <li>
+                                <a v-if="!isAuthenticated" :href="this.url('/signup')" class="text-capitalize">register</a>
+                                <a v-else :href="this.url('/my-orders')" class="text-capitalize">My Orders</a>
+                            </li>
+                            <li>
+                                <a v-if="!isAuthenticated" :href="this.url('/login')" class="text-capitalize">login</a>
+                                <a v-else :href="this.url('/logout')" class="text-capitalize">Logout</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="mt-3 top-contact">
                         <div class="phone-num-bar">
                             <i class="fas fa-phone-alt icon"></i>
-                            <div class="num">call: <span class="font-weight-bold">{{settings.phone_no}}</span></div>
+                            <div class="num">call: <span class="font-weight-bold">{{settings.phone ? settings.phone : settings.mobile}}</span></div>
                         </div>
                         <div class="cart-bar">
                             <i class="fas fa-shopping-cart"></i>
@@ -44,7 +50,7 @@
                                 <span class="text-uppercase font-weight-bold">
                                     total items: <span class="text-danger font-weight-bold">{{totalItems}}</span>
                                     <span class="ml-2 mr-2"> | </span>
-                                    total amount: <span class="text-danger font-weight-bold">${{totalSubTotal}}</span>
+                                    total amount: <span class="text-danger font-weight-bold">{{settings.currency_symbol}}{{totalSubTotal}}</span>
                                 </span>
 
                             </div>
@@ -54,7 +60,7 @@
                             <div class="time-table">
                                 <a href="#time-table-bookmark" class="bookmark-text">
                                     <span class="text-uppercase font-weight-bold">
-                                        opening time & delivery timeslot
+                                        opening & delivery timeslot
                                     </span>
                                 </a>
                             </div>
@@ -79,12 +85,13 @@ export default {
     computed: {
         ...mapState([
             'settings',
-            'customer'
+            'customer',
         ]),
         ...mapGetters([
+            'isAuthenticated',
             'totalItems',
             'totalSubTotal'
-        ])
+        ]),
     }
 }
 </script>
