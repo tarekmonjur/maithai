@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'role_id' => 0,
+        'role_id' => null,
         'api_token' => Str::uuid(),
         'username' => $faker->unique()->username,
         'password' => '123456',

@@ -1,5 +1,5 @@
 <template>
-     <table id="table" class="table table-bordered table-hover">
+     <table class="table table-head-fixed table-bordered table-hover">
         <thead class="bg-gradient-gray">
             <tr>
                 <th v-for="column in tableColumns" :width="column.width">{{column.name}}</th>

@@ -1,8 +1,12 @@
 {
-    "/backend/js/category.js": "/backend/js/category.js",
-    "/backend/css/style.css": "/backend/css/style.css",
-    "/frontend/css/app.css": "/frontend/css/app.css",
-    "/frontend/css/home.css": "/frontend/css/home.css",
-    "/frontend/css/about.css": "/frontend/css/about.css",
-    "/frontend/css/policy.css": "/frontend/css/policy.css"
+    "/frontend/js/about.js": "/frontend/js/about.js",
+    "/frontend/js/contact.js": "/frontend/js/contact.js",
+    "/frontend/js/home.js": "/frontend/js/home.js",
+    "/frontend/js/login.js": "/frontend/js/login.js",
+    "/frontend/js/my_order.js": "/frontend/js/my_order.js",
+    "/frontend/js/package.js": "/frontend/js/package.js",
+    "/frontend/js/policy.js": "/frontend/js/policy.js",
+    "/frontend/js/product.js": "/frontend/js/product.js",
+    "/frontend/js/signup.js": "/frontend/js/signup.js",
+    "/backend/css/style.css": "/backend/css/style.css"
 }

@@ -26,6 +26,11 @@ button {
 
 .main-sidebar .sidebar .nav-sidebar .nav-item .nav-link.active {
   background: #dc3545 !important;
+  color: #ffffff !important;
+}
+
+.main-sidebar .sidebar .nav-sidebar .menu-open > a {
+  background: #be9653 !important;
 }
 
 /*btn theme*/
@@ -125,8 +130,26 @@ button {
   background: #6c757d linear-gradient(180deg, #828a91, #6c757d) repeat-x !important;
 }
 
+#main_content .card .card-body .table td,
+#main_content .card .card-body .table th {
+  padding: 0.4rem !important;
+}
+
 #main_content .card .card-body .actions img {
   width: 30px;
+}
+
+#main_content .card .card-body .nav-link {
+  color: #be9653;
+}
+
+#main_content .card .card-body a {
+  color: #be9653;
+}
+
+#main_content .card .card-body a.active {
+  color: tomato;
+  font-weight: bold;
 }
 
 #main_content #calendar-div {
@@ -153,5 +176,26 @@ button {
 
 #main_content .datepicker svg {
   top: 7px !important;
+}
+
+#main_content label {
+  margin: 0px !important;
+}
+
+#main_content .form-group {
+  margin-bottom: 0.5rem;
+}
+
+#form .select2-container {
+  width: 100% !important;
+}
+
+#tableFilter .select2 {
+  width: 100% !important;
+}
+
+#tableFilter .select2 .select2-selection {
+  border-radius: 0px 4px 4px 0px;
+  border: 1px solid #be9653;
 }
 

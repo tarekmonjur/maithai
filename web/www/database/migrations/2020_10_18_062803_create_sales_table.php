@@ -14,10 +14,15 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('customer_id')->default(0);
+            $table->integer('id', 'true');
+            $table->integer('customer_id')->default(-1);
             $table->string('invoice_no', 45)->unique();
             $table->string('transaction_no', 45)->nullable()->unique();
+            $table->integer('table_id')->nullable();
+            $table->string('table_no', 45)->nullable()->default(0);
+            $table->integer('offer_id')->default(0);
+            $table->string('offer_name', 100)->nullable();
+            $table->string('coupon_code', 45)->nullable();
             $table->enum('type', ['pos', 'online'])->default('pos');
             $table->enum('payment_type', ['cash', 'card'])->default('cash');
             $table->enum('status', ['completed'])->default('completed');

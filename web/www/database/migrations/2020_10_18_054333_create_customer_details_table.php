@@ -14,7 +14,7 @@ class CreateCustomerDetailsTable extends Migration
     public function up()
     {
         Schema::create('customer_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 'true');
             $table->integer('customer_id');
             $table->string('first_name', 45)->index();
             $table->string('last_name', 45)->nullable();

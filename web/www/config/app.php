@@ -8,7 +8,7 @@ return [
 
     'backend_is_paginate' => env('BACKEND_IS_PAGINATE', true),
 
-    'backend_per_page' => env('BACKEND_PER_PAGE', 3),
+    'backend_per_page' => env('BACKEND_PER_PAGE', 10),
 
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'MaiThai Kitchen'),
 
     /*
     |--------------------------------------------------------------------------

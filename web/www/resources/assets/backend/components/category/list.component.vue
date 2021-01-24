@@ -2,6 +2,7 @@
     <tr v-for="row in tableData">
         <td>{{row.id}}</td>
         <td>{{row.name}}</td>
+        <td>{{row.sort}}</td>
         <td>{{row.products_count}}</td>
         <td>{{row.sub_categories_count}}</td>
         <td>{{row.slug}}</td>

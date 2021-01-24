@@ -13,7 +13,7 @@ import {mapGetters} from 'vuex';
 
 export default {
     name: "view-button.component",
-    props: ['id'],
+    props: ['id', 'action'],
     computed: {
         ...mapGetters([
             'buttons',

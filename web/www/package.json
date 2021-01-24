@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "vue-sweetalert2": "^4.1.1",
+        "vue3-select2-component": "^0.1.6",
         "vuejs3-datepicker": "0.0.6",
         "vuex": "^4.0.0-rc.1"
     }

@@ -8,6 +8,10 @@
             <td>{{lang(`name`)}}</td>
             <td>{{showData.name}}</td>
         </tr>
+      <tr>
+        <td>{{lang(`sorting`)}}</td>
+        <td>{{showData.sort}}</td>
+      </tr>
         <tr>
             <td>{{lang(`image`)}}</td>
             <td><img :src="showData.image" alt="" width="60"></td>
@@ -21,8 +25,10 @@
             <td>{{this.isActive(showData.is_active)}}</td>
         </tr>
         <tr>
-            <td>{{lang(`products_count`)}}</td>
-            <td>{{showData.products_count}}</td>
+            <td>{{lang(`products`)}} ({{showData.products_count}})</td>
+            <td>
+                <span v-for="product in showData.products">{{product.name}},&nbsp;</span>
+            </td>
         </tr>
         <tr>
             <td>{{lang(`sub_categories`)}} ({{showData.sub_categories_count}})</td>

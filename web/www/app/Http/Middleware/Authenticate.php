@@ -3,9 +3,31 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Closure;
 
 class Authenticate extends Middleware
 {
+    protected $auth_guards;
+
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string[]  ...$guards
+     * @return mixed
+     *
+     * @throws \Illuminate\Auth\AuthenticationException
+     */
+    public function handle($request, Closure $next, ...$guards)
+    {
+        $this->auth_guards = $guards;
+
+        $this->authenticate($request, $guards);
+
+        return $next($request);
+    }
+
     /**
      * Get the path the user should be redirected to when they are not authenticated.
      *
@@ -18,7 +40,12 @@ class Authenticate extends Middleware
             // do something for api call
         }
 
-        if (! $request->expectsJson()) {
+        if (!$request->expectsJson()) {
+            if (is_array($this->auth_guards) && !empty($this->auth_guards)) {
+                if ($this->auth_guards[0] === 'customer') {
+                    return route('login');
+                }
+            }
             return route(config('app.backend_home').'.login');
         }
     }

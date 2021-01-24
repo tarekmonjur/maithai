@@ -19,6 +19,7 @@ return [
     'id' => 'ID',
     'sl' => 'SL',
     'name' => 'Menu Name',
+    'sorting' => 'Sorting',
     'products' => 'Foods',
     'products_count' => 'Foods Count',
     'sub_categories' => 'Sub Menus',
@@ -32,8 +33,11 @@ return [
     'action' => 'Action',
 
     // filters
+    'status' => 'Menu Status',
     'active' => 'Active Menu',
     'inactive' => 'Inactive Menu',
+    'from_date' => 'From Date',
+    'to_date' => 'To Date',
 
     'parent_category' => 'Main Menu',
 
