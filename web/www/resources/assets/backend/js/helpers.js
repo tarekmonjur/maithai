@@ -303,4 +303,34 @@ export default {
         win.document.close();
         return true;
     },
+    statusBadgeClass(value) {
+        if (value === 'none') {
+            return 'badge-secondary';
+        }
+        else if (value === 'cash' || value === 'card') {
+            return 'badge-info';
+        }
+        else if (value === 'pending') {
+            return 'badge-warning';
+        }
+        else if (value === 'due') {
+            return 'badge-warning';
+        }
+        else if (value === 'completed') {
+            return 'badge-success';
+        }
+        else if (value === 'placed') {
+            return 'badge-secondary';
+        }
+        else if (value === 'accepted') {
+            return 'badge-info';
+        }
+        else if (value === 'delivered') {
+            return 'badge-primary';
+        }
+        else if (value === 'cancel') {
+            return 'badge-danger';
+        }
+        return 'badge-secondary';
+    }
 };

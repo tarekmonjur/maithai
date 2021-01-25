@@ -37,6 +37,7 @@ return [
     'registration_number' => 'Registration Number',
     'logo' => 'Logo',
     'qrcode' => 'QR Code',
+    'currency_symbol' => 'Currency Symbol',
 
     'success_msg' => 'Settings successfully saved',
     'error_msg' => 'Settings not saved. Try again..!',

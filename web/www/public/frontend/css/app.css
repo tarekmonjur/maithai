@@ -3225,7 +3225,6 @@ a.login-btn:hover {
 
 .invoice {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   position: relative;
 }
 
@@ -3391,7 +3390,6 @@ a.login-btn:hover {
   .invoice {
     border: 0;
     margin: 0;
-    padding: 0;
     width: 100%;
   }
 
@@ -3408,5 +3406,16 @@ a.login-btn:hover {
   .table-responsive > .table tr td {
     white-space: normal !important;
   }
+}
+
+.table td,
+.table th {
+  border-top: 1px solid #efa034;
+  border-bottom: 1px solid #efa034;
+}
+
+.table thead th {
+  border-top: 2px solid #efa034;
+  border-bottom: 2px solid #efa034;
 }
 

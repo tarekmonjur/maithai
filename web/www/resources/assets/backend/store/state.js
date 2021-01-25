@@ -1,4 +1,7 @@
 export default {
+    settings: {},
+    user: {},
+    request: {},
     listData: {},
     columns: {},
     columns_config: {},

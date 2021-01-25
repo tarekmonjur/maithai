@@ -60,9 +60,9 @@
                                 </td>
                                 <td>{{row.order_details_count}}</td>
                                 <td>{{row.total_qty}}</td>
-                                <td>{{row.total_payable_amount}}</td>
-                                <td>{{row.total_pay_amount}}</td>
-                                <td>{{row.due_amount}}</td>
+                                <td>{{settings.currency_symbol}}{{row.total_payable_amount}}</td>
+                                <td>{{settings.currency_symbol}}{{row.total_pay_amount}}</td>
+                                <td>{{settings.currency_symbol}}{{row.due_amount}}</td>
                             </tr>
                         </table-body-component>
                     </div>
@@ -109,6 +109,7 @@ export default {
     },
     computed: {
         ...mapState([
+            'settings',
             'modal',
         ]),
         ...mapGetters([

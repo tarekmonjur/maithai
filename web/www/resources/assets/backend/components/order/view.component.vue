@@ -177,7 +177,7 @@ export default {
     },
   },
   updated() {
-    console.log('view..');
+    // console.log('view..');
   }
 }
 </script>

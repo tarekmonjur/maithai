@@ -1,4 +1,16 @@
 {
+    "/backend/js/category.js": "/backend/js/category.js",
+    "/backend/js/customer.js": "/backend/js/customer.js",
+    "/backend/js/order.js": "/backend/js/order.js",
+    "/backend/js/pos.js": "/backend/js/pos.js",
+    "/backend/js/product.js": "/backend/js/product.js",
+    "/backend/js/settings.js": "/backend/js/settings.js",
+    "/backend/js/sku.js": "/backend/js/sku.js",
+    "/backend/js/sub_category.js": "/backend/js/sub_category.js",
+    "/backend/js/sub_variant.js": "/backend/js/sub_variant.js",
+    "/backend/js/table.js": "/backend/js/table.js",
+    "/backend/js/unit.js": "/backend/js/unit.js",
+    "/backend/js/variant.js": "/backend/js/variant.js",
     "/frontend/js/about.js": "/frontend/js/about.js",
     "/frontend/js/contact.js": "/frontend/js/contact.js",
     "/frontend/js/home.js": "/frontend/js/home.js",
@@ -8,5 +20,6 @@
     "/frontend/js/policy.js": "/frontend/js/policy.js",
     "/frontend/js/product.js": "/frontend/js/product.js",
     "/frontend/js/signup.js": "/frontend/js/signup.js",
+    "/frontend/css/app.css": "/frontend/css/app.css",
     "/backend/css/style.css": "/backend/css/style.css"
 }

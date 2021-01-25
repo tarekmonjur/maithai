@@ -5,6 +5,14 @@ export default {
         if (_.get(window, '_context.request.query')) {
             context.dispatch('filterButtonAction', _.get(window, '_context.request.query',{}));
         }
+        const settings = helpers.getContext('settings');
+        const customer = helpers.getContext('customer');
+        const request = helpers.getContext('request');
+        context.commit('setContextData', {
+            settings,
+            customer,
+            request
+        });
         await helpers.setLang(true);
         await context.dispatch('getListData');
     },

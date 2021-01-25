@@ -137,24 +137,24 @@
                 </div>
                 <div class="col p-1 pt-2">
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Sub Total Amount</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{totalSubTotal}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Sub Total Amount</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{totalSubTotal}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Processing Fee</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{settings['processing_fee']}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Processing Fee</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{settings['processing_fee']}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Delivery Fee</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{settings['delivery_fee']}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Delivery Fee</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{settings['delivery_fee']}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Vat ({{settings['vat_percent']}}%)</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{vatAmount}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Vat ({{settings['vat_percent']}}%)</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{vatAmount}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Payable Amount</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{totalAmount}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Payable Amount</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{totalAmount}}</div>
                     </div>
                 </div>
             </div>
@@ -207,6 +207,7 @@
                     </div>
                     <div class="col pl-0">
                         <a class="btn btn-outline text-capitalize"
+                           @click.prevent="myShipping()"
                            :class="!totalItems ? 'disabled': ''">
                             <span class="mr-2">
                                 <i class="fa fa-shipping-fast" aria-hidden="true"></i>
@@ -250,11 +251,13 @@ export default {
     computed: {
         ...mapState([
             'settings',
+            'customer',
             'shoppingCart',
             'modal',
             'loader',
         ]),
         ...mapGetters([
+            'isAuthenticated',
             'totalItems',
             'totalPrice',
             'totalQty',
@@ -274,6 +277,9 @@ export default {
         if (window.localStorage.getItem('shoppingCart')) {
             const shoppingCart = JSON.parse(atob(window.localStorage.getItem('shoppingCart')));
             this.$store.commit('setShoppingCart', shoppingCart);
+            if (this.isAuthenticated) {
+                this.$store.commit('setShoppingCart', { shipping_details: {...this.customer.details} });
+            }
         }
     },
     methods: {
@@ -322,6 +328,13 @@ export default {
             this.$store.commit('setFormInput', {
                 ...this.shoppingCart.shipping_details
             });
+        },
+        myShipping() {
+            if (this.isAuthenticated) {
+                this.$store.commit('setShoppingCart', { shipping_details: {...this.customer.details} });
+            } else {
+                window.location.href = this.url('/login');
+            }
         },
         placeOrder() {
             this.$swal({

@@ -44,7 +44,7 @@
               <tbody>
               <tr v-for="(item, index) in formInput['items']">
                 <td>
-                  <a href="javascript:void(0)" @click.prevent="deleteItem(index)"><i class="fa fa-trash-alt"></i></a>
+                  <a href="javascript:void(0)" @click.prevent="deleteItem(index)"><i class="text-danger fa fa-trash-alt"></i></a>
                   {{sl = index+1}}
                 </td>
                 <td>{{formInput['items'][index]['product_name']}}</td>

@@ -61,7 +61,7 @@
             this.$store.dispatch('init');
         },
         mounted() {
-            console.log('mounted', this.$store.state);
+            // console.log('mounted', this.$store.state);
         },
         methods: {
 

@@ -1,4 +1,9 @@
 export default {
+    setContextData(state, payload) {
+        state.settings = payload.settings;
+        state.user = payload.user;
+        state.request = payload.request;
+    },
     setListData(state, data) {
         state.listData = _.get(data, 'results', {});
     },

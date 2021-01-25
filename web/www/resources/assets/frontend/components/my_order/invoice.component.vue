@@ -1,9 +1,15 @@
 <template>
     <section id="print_invoice" class="invoice p-2">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
+                <img :src="settings.logo" :alt="settings.name" style="float: left; width: 60px; margin-right: 15px">
+                <h4 class="page-header">
+                    <strong>{{settings.name}}</strong><br>
+                    <small>{{settings.title}}</small>
+                </h4>
+            </div>
+            <div class="col-6">
                 <h3 class="page-header">
-                    MaiThai Kitchen
                     <small class="float-right">Date: {{orderData.created_at}}</small>
                 </h3>
             </div>
@@ -11,32 +17,38 @@
 
         <div class="row invoice-info">
             <div class="col-sm-4 invoice-col">
-                {{this.lang('form')}}
                 <address>
-                    <strong>MaiThai, Inc.</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    {{this.lang('mobile_no')}}: (804) 123-5432<br>
-                    {{this.lang('email')}}: info@almasaeedstudio.com
+                    <span v-html="settings.address"></span><br>
+                    {{this.lang('mobile_no')}}: {{settings.phone || settings.mobile }}<br>
+                    {{this.lang('email')}}: {{settings.email}}
                 </address>
             </div>
             <div class="col-sm-4 invoice-col">
                 {{this.lang('to')}}
                 <address>
-                    <strong>{{ customer.first_name }} {{ customer.last_name }}</strong><br>
-                    {{this.lang('mobile_no')}}: {{customer.mobile_no}}<br>
-                    {{this.lang('email')}}: {{customer.email}} <br>
-                    {{customer.city}}, {{customer.state}}, {{customer.zip_code}} <br>
-                    {{customer.address}}
+                    {{this.lang('full_name')}}: <strong>{{ shipping.first_name }} {{ shipping.last_name }}</strong><br>
+                    {{this.lang('mobile_no')}}: {{shipping.mobile_no}}<br>
+                    {{this.lang('email')}}: {{shipping.email}} <br>
+                    {{shipping.city ? shipping.city+', ' : ''}}
+                    {{shipping.state ? shipping.state+', ' : ''}}
+                    {{shipping.zip_code ? shipping.zip_code+', ': ''}} <br>
+                    {{shipping.address}}
                 </address>
             </div>
             <div class="col-sm-4 invoice-col">
                 <b>Invoice #{{orderData.invoice_no}}</b><br>
                 <br>
-                <b>{{this.lang('order_id')}}:</b> {{orderData.id}}<br>
-                <b>{{this.lang('order_type')}}:</b> {{orderData.type}}<br>
-                <b>{{this.lang('order_status')}}:</b> {{orderData.status}} <br>
-                <b>{{this.lang('payment_status')}}:</b> {{orderData.payment_status}}<br>
+                <b>{{this.lang('order_id')}}: </b> {{orderData.id}}<br>
+                <b>{{this.lang('order_status')}}: </b>
+                <span class="badge" :class="this.statusBadgeClass(orderData.status)">
+                    {{ orderData.status ? orderData.status.toUpperCase() : ''}}
+                </span>
+                <br>
+                <b>{{this.lang('payment_status')}}: </b>
+                <span class="badge" :class="this.statusBadgeClass(orderData.payment_status)">
+                    {{ orderData.payment_status ? orderData.payment_status.toUpperCase() : ''}}
+                </span>
+                <br>
             </div>
         </div>
 
@@ -61,20 +73,19 @@
                         <td>{{ index }}</td>
                         <td>
                             {{ item.product_name }} <br>
-                            {{ item.product_code }} <br>
                         </td>
-                        <td>{{ item.product_price }}</td>
+                        <td>{{settings.currency_symbol}}{{ item.product_price }}</td>
                         <td>{{ item.product_unit }}</td>
                         <td>{{ item.product_qty }}</td>
                         <td>
-                            {{ item.vat_amount }} ({{item.var_percent}}%)
+                            {{settings.currency_symbol}}{{ item.vat_amount }} ({{item.vat_percent}}%)
                         </td>
                         <td>
-                            {{ item.discount_amount }} ({{item.discount_percent}}%) <br>
+                            {{settings.currency_symbol}}{{ item.discount_amount }} ({{item.discount_percent}}%) <br>
                             {{item.offer_name}}
                         </td>
-                        <td>{{item.price}}</td>
-                        <td>{{item.sub_total}}</td>
+                        <td>{{settings.currency_symbol}}{{item.price}}</td>
+                        <td>{{settings.currency_symbol}}{{item.sub_total}}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -83,11 +94,21 @@
 
         <div class="row">
             <div class="col-6 pl-5">
-                <p class="lead">{{this.lang('payment_type')}}: <b>{{orderData.payment_type}}</b></p>
-                <p class="lead">{{this.lang('payment_status')}}: <b>{{orderData.payment_status}}</b></p>
+                <p class="lead">
+                    {{this.lang('payment_type')}} :
+                    <span class="badge" :class="this.statusBadgeClass(orderData.payment_type)">
+                    {{ orderData.payment_type ? orderData.payment_type.toUpperCase() : ''}}
+                    </span>
+                </p>
+                <p class="lead">
+                    {{this.lang('payment_status')}} :
+                    <span class="badge" :class="this.statusBadgeClass(orderData.payment_status)">
+                    {{ orderData.payment_status ? orderData.payment_status.toUpperCase() : ''}}
+                    </span>
+                </p>
                 <p class="lead">{{this.lang('transaction_no')}}: <b>{{orderData.transaction_no}}</b></p>
-                <p class="lead">{{this.lang('paid_amount')}}: <b>{{orderData.pay_amount}}</b></p>
-                <p class="lead">{{this.lang('due_amount')}}: <b>{{orderData.due_amount}}</b></p>
+                <p class="lead">{{this.lang('paid_amount')}}: <b>{{settings.currency_symbol}}{{orderData.total_pay_amount}}</b></p>
+                <p class="lead">{{this.lang('due_amount')}}: <b>{{settings.currency_symbol}}{{orderData.due_amount}}</b></p>
                 <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;"></p>
             </div>
             <div class="col-6">
@@ -95,27 +116,27 @@
                     <table class="table">
                         <tr>
                             <th style="width:50%">{{this.lang('sub_total')}}:</th>
-                            <td>{{orderData.total_sub_total_amount}}</td>
+                            <td>{{settings.currency_symbol}}{{orderData.total_sub_total_amount}}</td>
                         </tr>
                         <tr>
                             <th>{{this.lang('vat')}} ({{orderData.vat_percent}}%)</th>
-                            <td>{{orderData.vat_amount}}</td>
+                            <td>{{settings.currency_symbol}}{{orderData.vat_amount}}</td>
                         </tr>
                         <tr>
                             <th>{{this.lang('discount')}} ({{orderData.discount_percent}}%)</th>
-                            <td>{{orderData.discount_amount}}</td>
+                            <td>{{settings.currency_symbol}}{{orderData.discount_amount}}</td>
                         </tr>
                         <tr>
                             <th>{{this.lang('processing_fee')}}:</th>
-                            <td>{{orderData.processing_fee}}</td>
+                            <td>{{settings.currency_symbol}}{{orderData.processing_fee}}</td>
                         </tr>
                         <tr>
                             <th>{{this.lang('delivery_fee')}}:</th>
-                            <td>{{orderData.delivery_fee}}</td>
+                            <td>{{settings.currency_symbol}}{{orderData.delivery_fee}}</td>
                         </tr>
                         <tr>
                             <th>{{this.lang('total_amount')}}:</th>
-                            <td>{{orderData.total_payable_amount}}</td>
+                            <td>{{settings.currency_symbol}}{{orderData.total_payable_amount}}</td>
                         </tr>
                     </table>
                 </div>
@@ -136,7 +157,10 @@ export default {
         ...mapGetters([
             'orderData'
         ]),
-        customer() {
+        shipping() {
+            if (_.get(this.orderData, 'shipping_details')) {
+                return _.get(this.orderData, 'shipping_details', {});
+            }
             return _.get(this.orderData, 'customer.details', {});
         }
     },

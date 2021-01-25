@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\OrderRequest;
 use App\Http\Services\OrderService;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\ShippingDetails;
@@ -46,6 +47,9 @@ class OrderController extends ApiController
     public function show(Request $request)
     {
         try {
+            if($this->guard === 'customer' && $this->authUser->getTable() === (new Customer)->getTable()) {
+                $this->setFilter('customer_id', $this->authUser->id);
+            }
             $this->setTitle('view')
                 ->setIdSlug($request->id)
                 ->setSubList($request->sublist)
