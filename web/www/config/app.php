@@ -22,6 +22,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'MaiThai Kitchen'),
+    'title' => env('APP_TITLE', 'Ordering Food & Delivery'),
 
     /*
     |--------------------------------------------------------------------------

@@ -32,12 +32,15 @@
                         <div class="checkbox-list">
                             <ul>
                                 <li class="checkbox" v-for="(sub_category, index) in category.sub_categories">
-                                    <input
-                                        type="checkbox"
-                                        @change="filterProducts()"
-                                        v-model="filters['sub_category_id']"
-                                        :value="sub_category.id">
-                                    <span class="text-capitalize ml-2">{{sub_category.name}}</span>
+                                    <div class="cat-item">
+                                        <input
+                                            type="checkbox"
+                                            @change="filterProducts()"
+                                            v-model="filters['sub_category_id']"
+                                            :value="sub_category.id">
+                                        <span class="text-capitalize ml-2">{{sub_category.name}}</span>
+                                    </div>
+                                    <img :src="sub_category.image" :alt="sub_category.name" style="width: 100%">
                                 </li>
                             </ul>
                         </div>
@@ -96,5 +99,13 @@ export default {
 </script>
 
 <style scoped>
-
+.cat-item {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.cat-item span {
+    font-size: 18px;
+    text-align: center;
+    vertical-align: bottom;
+}
 </style>

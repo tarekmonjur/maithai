@@ -62,11 +62,11 @@ class ProductController extends ApiController
             $product = new Product();
             $product->name = $request->name;
             $product->code = $this->getProductCode($request->code);
-            $product->code = $this->getProductBarcode($request->barcode);
+            $product->barcode = $this->getProductBarcode($request->barcode);
             $product->slug = $request->slug;
-            $product->unit_id = !empty($request->unit_id) ?? null;
-            $product->category_id = !empty($request->category_id) ?? null;
-            $product->sub_category_id = !empty($request->sub_category_id) ?? null;
+            $product->unit_id = $request->unit_id;
+            $product->category_id = $request->category_id;
+            $product->sub_category_id = $request->sub_category_id;
             $product->sort = $this->getSortNumber($request->sort);
             $product->original_price = $request->original_price ?? 0;
             $product->regular_price = $request->regular_price ?? 0;
@@ -107,11 +107,11 @@ class ProductController extends ApiController
 
             $product->name = $request->name;
             $product->code = $this->getProductCode($request->code);
-            $product->code = $this->getProductBarcode($request->barcode);
+            $product->barcode = $this->getProductBarcode($request->barcode);
             $product->slug = $request->slug;
-            $product->unit_id = !empty($request->unit_id) ?? null;
-            $product->category_id = !empty($request->category_id) ?? null;
-            $product->sub_category_id = !empty($request->sub_category_id) ?? null;
+            $product->unit_id = $request->unit_id;
+            $product->category_id = $request->category_id;
+            $product->sub_category_id = $request->sub_category_id;
             $product->sort = $this->getSortNumber($request->sort);
             $product->original_price = $request->original_price ?? 0;
             $product->regular_price = $request->regular_price ?? 0;
@@ -123,7 +123,7 @@ class ProductController extends ApiController
             $product->is_active = $request->is_active ?? 1;
             $product->is_new = $request->is_new ?? 1;
             $product->description = $request->description;
-            $product->created_by = $this->authUser->id;
+            $product->updated_by = $this->authUser->id;
 
             if ($image = $this->uploadImage($request)) {
                 $product->image = $image;
@@ -177,6 +177,10 @@ class ProductController extends ApiController
             }
         }
         return null;
+    }
+
+    protected function isEmpty($value) {
+        return empty($value) || $value === 'null' || $value === null;
     }
 
 }
