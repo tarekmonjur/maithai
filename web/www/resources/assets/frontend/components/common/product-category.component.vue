@@ -78,7 +78,7 @@ export default {
     },
     methods: {
         filterProducts() {
-            console.log(this.filters);
+            // console.log(this.filters);
             this.$store.commit('setFilters', this.filters);
             const payload = {
                 params: {

@@ -59,7 +59,7 @@
             <div class="content-item-empty">
                 <img :src="this.assetUrl('/logo/shopping-beg-1.png')" alt="No Items!!!">
                 <div class="shopping-title-empty text-capitalize">
-                    <p class="text-muted">Your shopping bag is empty!</p>
+                    <p class="text-muted">Your cart is empty!</p>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="col-2 single-item">
                     <span class="text-danger">{{settings.currency_symbol}}{{item.product_price}}</span>
-                    <span class="text-muted" v-if="item.discount_amount">
+                    <span class="text-muted" v-if="item.discount_amount > 0">
                         <del>{{settings.currency_symbol}}{{item.product_price+item.discount_amount}}</del>
                     </span>
                 </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="row">
                 <div class="col p-1 pt-2">
-                    <h6 class="border-bottom pb-1">Shipping Information:</h6>
+                    <h6 class="border-bottom pb-1">Delivery Address:</h6>
                     <address>
                         {{shippingDetails.full_name}} <br>
                         {{shippingDetails.email}} <br>
@@ -202,7 +202,7 @@
                             <span class="mr-2">
                                 <i class="fa fa-shipping-fast" aria-hidden="true"></i>
                             </span>
-                            <span>Add Shipping</span>
+                            <span>Add Delivery Address</span>
                         </a>
                     </div>
                     <div class="col pl-0">
@@ -212,7 +212,7 @@
                             <span class="mr-2">
                                 <i class="fa fa-shipping-fast" aria-hidden="true"></i>
                             </span>
-                            <span>My Shipping</span>
+                            <span>My Delivery Address</span>
                         </a>
                     </div>
                 </div>
@@ -240,6 +240,7 @@ import {mapState, mapGetters} from 'vuex';
 import ModalComponent from './modal.component';
 import ShippingFormComponent from './shipping-form.component';
 import LoadingComponent from './loading.component';
+import * as Validator from "validatorjs";
 
 export default {
     name: "cart.component",
@@ -322,7 +323,7 @@ export default {
         showShippingForm() {
             this.$store.commit('setModal', {
                 id: 'Shipping',
-                title: this.trans('add_shipping_details'),
+                title: this.trans('add_delivery_address'),
                 button: this.trans('submit'),
             });
             this.$store.commit('setFormInput', {
@@ -337,22 +338,39 @@ export default {
             }
         },
         placeOrder() {
-            this.$swal({
-                title: this.getLang('common.are_you_sure'),
-                text: this.getLang('common.place_your_order_now'),
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: this.getLang('common.yes_order'),
-                cancelButtonText: this.getLang('common.no_cancel'),
-                reverseButtons: false,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    this.$store.dispatch('placeOrder', {
-                        order_status: 'placed',
-                        payment_type: 'none',
-                    });
-                }
-            });
+            const rules = {
+                full_name: 'required|min:3|max:45',
+                email: 'required|email',
+                mobile_no: 'required|max:45',
+            };
+            let validation = new Validator(this.shippingDetails, rules);
+            if (validation.fails()) {
+                this.showShippingForm();
+                this.$store.commit('setErrorsAlert',  {
+                    alert: null,
+                    errors: validation.errors.all()
+                });
+                setTimeout(function() {
+                    $('#Shipping').modal();
+                }, 300);
+            } else {
+                this.$swal({
+                    title: this.getLang('common.are_you_sure'),
+                    text: this.getLang('common.place_your_order_now'),
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: this.getLang('common.yes_order'),
+                    cancelButtonText: this.getLang('common.no_cancel'),
+                    reverseButtons: false,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.$store.dispatch('placeOrder', {
+                            order_status: 'placed',
+                            payment_type: 'none',
+                        });
+                    }
+                });
+            }
         }
     }
 }

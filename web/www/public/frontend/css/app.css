@@ -34,9 +34,11 @@
 /*--------Landing Page--------*/
 
 section#home-cover .jumbotron,
-section#home-cover-2 .jumbotron {
+section#home-cover-2 .jumbotron,
+section#home-cover-3 .jumbotron,
+section#home-cover-4 .jumbotron {
   width: 100%;
-  height: 650px;
+  height: 700px;
   background-color: #000;
   position: relative;
   overflow: hidden;
@@ -51,11 +53,11 @@ section#home-cover .jumbotron::after {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(/images/home_thai.jpg?ee88776bb60647c33b1bb12e808eeef3) no-repeat fixed;
+  background: url(/images/mood-board.jpg?fa83e9a021d6e432741290a0932ab533) no-repeat fixed;
   background-size: cover;
-  opacity: 0.3;
-  -webkit-animation: asad 25s linear infinite;
-          animation: asad 25s linear infinite;
+  opacity: 0.7;
+  -webkit-animation: asad 20s linear infinite;
+          animation: asad 20s linear infinite;
 }
 
 section#home-cover-2 .jumbotron::after {
@@ -65,11 +67,39 @@ section#home-cover-2 .jumbotron::after {
   top: 0;
   width: 100%;
   height: 100%;
+  background: url(/images/maithai2.jpeg?75e9e9e33fcb81ed27978a608a2dbb9f) no-repeat fixed;
+  background-size: cover;
+  opacity: 0.7;
+  -webkit-animation: asad 20s linear infinite;
+          animation: asad 20s linear infinite;
+}
+
+section#home-cover-3 .jumbotron::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/maithai.jpeg?740749ea7dd63158f5ad68639e773694) no-repeat fixed;
+  background-size: cover;
+  opacity: 0.7;
+  -webkit-animation: asad 20s linear infinite;
+          animation: asad 20s linear infinite;
+}
+
+section#home-cover-4 .jumbotron::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: url(/images/coverA.jpg?54f3b71d66b0d4d36e91412c894ed282) no-repeat fixed;
   background-size: cover;
-  opacity: 0.3;
-  -webkit-animation: asad 25s linear infinite;
-          animation: asad 25s linear infinite;
+  opacity: 0.7;
+  -webkit-animation: asad 20s linear infinite;
+          animation: asad 20s linear infinite;
 }
 
 @-webkit-keyframes asad {
@@ -520,7 +550,7 @@ section#about-cover .jumbotron::after {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(/images/aboutCover.jpg?69746ca4b0f6a7d0110eb8c6b2f24c41) no-repeat fixed;
+  background: url(/images/mood-board.jpg?fa83e9a021d6e432741290a0932ab533) no-repeat fixed;
   background-size: cover;
   opacity: 0.5;
 }
@@ -946,7 +976,7 @@ div.cart-bar:hover > div.cart-section {
 /**************Nav Bar***************/
 
 nav {
-  background: linear-gradient(90deg, #af7015 0%, #dbb781 55%, #f29c1e 100%);
+  background-color: #c99a5a;
   color: #fff;
   box-shadow: 0px 1px 3px #000000c4;
 }
@@ -1410,8 +1440,14 @@ a.mr-5.carousel-control-next {
 
 /*************SPECIAL FOOD MENU*****************/
 
+section.special-lunch-menu {
+  background: url(/images/coverA.jpg?54f3b71d66b0d4d36e91412c894ed282) no-repeat center center fixed;
+  background-size: cover;
+  padding: 0;
+}
+
 section.special-food-menu {
-  background: url(/images/coverB.jpg?bebb945ef2220a2e662181a370742d2a) no-repeat center center fixed;
+  background: url(/images/home_thai.jpg?ee88776bb60647c33b1bb12e808eeef3) no-repeat center center fixed;
   background-size: cover;
   padding: 0;
 }
@@ -1532,7 +1568,7 @@ footer #bottom-footer{
 } */
 
 div#upper-footer {
-  background: #181818 !important;
+  background: #c99a5a !important;
 }
 
 div#bottom-footer {
@@ -2333,14 +2369,6 @@ footer div.dotted-dateline {
   a.carousel-control-next {
     right: 0;
   }
-
-  .hi-slide .hi-prev {
-    left: -10rem !important;
-  }
-
-  .hi-slide .hi-next {
-    right: -10rem !important;
-  }
 }
 
 /**********----====== [Food Order & Food Package] ====----*********/
@@ -2348,7 +2376,7 @@ footer div.dotted-dateline {
 /************CSS for Food List Section***********/
 
 section.food-list-home-banner {
-  max-height: 40vh;
+  max-height: 50vh;
 }
 
 section.food-list-home-banner .dark-bg {
@@ -2690,7 +2718,7 @@ div.filter-item-food-package {
   }
 
   section.food-list-home-banner {
-    max-height: 44vh;
+    max-height: 50vh;
   }
 
   section.food-list-home-banner .dark-bg {

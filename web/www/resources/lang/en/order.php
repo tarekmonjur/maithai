@@ -51,6 +51,9 @@ return [
     'payment_status' => 'Payment Status',
 
     // status
+    'card' => 'Card',
+    'cash' => 'Cash',
+    'none' => 'None',
     'pending' => 'pending',
     'due' => 'due',
     'completed' => 'completed',

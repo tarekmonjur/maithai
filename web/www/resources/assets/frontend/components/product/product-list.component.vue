@@ -1,7 +1,7 @@
 <template>
     <div class="grid-area col-md-9 col-sm-8 col-xs-12" id="products">
         <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-4" v-for="(product, index) in getProducts">
+            <div class="col mb-4 text-center" v-for="(product, index) in getProducts">
                 <div class="card h-100 food-order-card">
                     <img :src="product.image || settings.logo" class="card-img-top" :alt="product.name">
                     <div class="card-body grid-body">
@@ -15,7 +15,7 @@
                         <hr>
                         <div class="d-grid grid-footer text-center">
                             <div class="discount-title">
-                                <h5 class="text-danger" v-if="product.special_price">
+                                <h5 class="text-danger" v-if="+product.special_price > 0">
                                     {{settings.currency_symbol}}{{product.special_price}} /
                                     <del>{{settings.currency_symbol}}{{product.regular_price}}</del>
                                 </h5>
@@ -70,7 +70,19 @@ export default {
         ]),
     },
     created() {
-        const payload = {};
+        const url = new URL(window.location.href);
+        const paths = url.pathname.split('/');
+        const slug = paths.pop();
+        const category_id = slug.split('-').pop();
+        let ids = [];
+        if (!isNaN(parseInt(category_id))) {
+            ids.push(category_id);
+        }
+        const payload = {
+            params: {
+                sub_category_id: ids,
+            }
+        };
         this.$store.dispatch('getProducts', payload);
     },
     methods: {

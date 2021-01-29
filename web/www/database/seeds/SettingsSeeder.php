@@ -94,7 +94,7 @@ class SettingsSeeder extends Seeder
                 'key' => 'app',
                 'type' => 'text',
                 'name' => 'currency_symbol',
-                'value' => '$',
+                'value' => '£', //'$',
                 'require' => 0,
             ],
             [

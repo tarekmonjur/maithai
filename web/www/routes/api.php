@@ -117,6 +117,7 @@ Route::namespace('Api')->group(function(){
         Route::get('/{id}','OrderController@show')->name($route_base_path.'.order.show');
         Route::post('','OrderController@store')->name($route_base_path.'.order.store');
         Route::put('/{id}','OrderController@update')->name($route_base_path.'.order.update');
+        Route::put('/{id}/status','OrderController@updateStatus')->name($route_base_path.'.order.status');
         Route::delete('/{id}','OrderController@destroy')->name($route_base_path.'.order.destroy');
     });
 
@@ -127,6 +128,30 @@ Route::namespace('Api')->group(function(){
         Route::post('','TableController@store')->name($route_base_path.'.table.store');
         Route::put('/{id}','TableController@update')->name($route_base_path.'.table.update');
         Route::delete('/{id}','TableController@destroy')->name($route_base_path.'.table.destroy');
+    });
+
+    /********** ...... User API ....... *****************/
+    Route::prefix('/users')->group(function() use ($route_base_path){
+        Route::get('/','UserController@index')->name($route_base_path.'.user.index');
+        Route::get('/{id}','UserController@show')->name($route_base_path.'.user.show');
+        Route::post('','UserController@store')->name($route_base_path.'.user.store');
+        Route::put('/{id}','UserController@update')->name($route_base_path.'.user.update');
+        Route::delete('/{id}','UserController@destroy')->name($route_base_path.'.user.destroy');
+    });
+
+    /********** ...... User Type API ....... *****************/
+    Route::prefix('/user-types')->group(function() use ($route_base_path){
+        Route::get('/','UserTypeController@index')->name($route_base_path.'.userType.index');
+    });
+
+    /********** ...... User Service Type API ....... *****************/
+    Route::prefix('/user-services')->group(function() use ($route_base_path){
+        Route::get('/','UserServiceController@index')->name($route_base_path.'.userService.index');
+    });
+
+    /********** ...... User Status API ....... *****************/
+    Route::prefix('/user-status')->group(function() use ($route_base_path){
+        Route::get('/','UserStatusController@index')->name($route_base_path.'.userStatus.index');
     });
 
     /********** ...... Settings API ....... *****************/

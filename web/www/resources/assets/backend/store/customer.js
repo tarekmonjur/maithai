@@ -46,12 +46,20 @@ export default {
             const requestPayload = {};
             _.set(requestPayload, 'url', context.state.url+'/'+payload.id);
             _.set(requestPayload, 'params', {
-                sublist: false,
+                sublist: true,
             });
             const result = await helpers.getDataAction(requestPayload);
 
             if (result && result.code === 200) {
-                context.commit('setFormInput', _.get(result.results, 'results', {}));
+                const results = {..._.get(result.results, 'results', {})};
+                _.unset(results, 'details');
+                _.unset(results, 'created_by');
+                _.unset(results, 'updated_by');
+                context.commit('setFormInput', {
+                    ..._.get(result.results, 'results.details', {}),
+                    details_id: _.get(result.results, 'results.details.id', {}),
+                    ...results,
+                });
             } else {
                 context.commit('setErrorsAlert',  {
                     alert: _.pick(result, ['code', 'message', 'status']),
@@ -71,6 +79,7 @@ export default {
             const edit_modal_id = _.get(context.state.buttons, 'edit.modal_id', '');
 
             if (modal_id === add_modal_id || modal_id === edit_modal_id) {
+                console.log(context.state.formInput);
                 requestPayload.method = 'POST';
                 requestPayload.data = context.state.formInput;
                 requestPayload.headers = {'Content-Type': 'multipart/form-data'};

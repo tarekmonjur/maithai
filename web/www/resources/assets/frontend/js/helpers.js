@@ -169,17 +169,20 @@ export default {
                             for (const kk in value[k]) {
                                 if (value[k].hasOwnProperty(kk)) {
                                     // console.log(`${key}[${k}][${kk}]`, value[k][kk]);
-                                    formData.append(`${key}[${k}][${kk}]`, value[k][kk]);
+                                    let input_value = !_.isEmpty(value[k][kk]) ? value[k][kk] : '';
+                                    formData.append(`${key}[${k}][${kk}]`, input_value);
                                 }
                             }
                         } else {
                             // console.log(`${key}[${k}]`, value[k]);
-                            formData.append(`${key}[${k}]`, value[k]);
+                            let input_value = !_.isEmpty(value[k]) ? value[k] : '';
+                            formData.append(`${key}[${k}]`, input_value);
                         }
                     }
                 }
             } else {
-                formData.append(key, value);
+                let input_value = value === null || value === 'null' ? '' : value;
+                formData.append(key, input_value);
             }
         });
         formData.delete('id');

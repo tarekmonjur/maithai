@@ -53,14 +53,6 @@
               </div>
               <div class="col">
                 <h6 class="p-0 m-0 text-center">
-                  {{ this.lang('invoice') }} <br>
-                  Maithai Kitchen <br>
-                  <small>35 High Street Cheshunt, Waltham Cross
-                    EN80BS, UK.</small>
-                </h6>
-              </div>
-              <div class="col">
-                <h6 class="p-0 m-0 text-center">
                   {{ this.lang('ship_to') }} <br>
                   <small>
                     <address>
@@ -171,7 +163,7 @@
                     </tr>
                     <tr>
                       <th class="col">{{ this.lang('subtotal') }}:</th>
-                      <td class="text-right">{{ totalSubTotal }}</td>
+                      <td class="text-right">{{settings.currency_symbol}}{{ totalSubTotal }}</td>
                     </tr>
                     <tr>
                       <th class="col">
@@ -181,7 +173,7 @@
                                v-model="formInput['vat_percent']"
                                class="col-6"> <strong>%</strong>
                       </th>
-                      <td class="text-right">{{ vatAmount }}</td>
+                      <td class="text-right">{{settings.currency_symbol}}{{ vatAmount }}</td>
                     </tr>
                     <tr>
                       <th class="col">
@@ -191,11 +183,11 @@
                                v-model="formInput['discount_percent']"
                                class="col-6"> <strong>%</strong>
                       </th>
-                      <td class="text-right">{{ discountAmount }}</td>
+                      <td class="text-right">{{settings.currency_symbol}}{{ discountAmount }}</td>
                     </tr>
                     <tr>
                       <th class="col">{{ this.lang('delivery_fee') }}:</th>
-                      <td class="text-right">
+                      <td class="text-right">{{settings.currency_symbol}}
                         <input type="number"
                                min="0"
                                v-model="formInput['delivery_fee']">
@@ -203,7 +195,7 @@
                     </tr>
                     <tr>
                       <th class="col">{{ this.lang('processing_fee') }}:</th>
-                      <td class="text-right">
+                      <td class="text-right">{{settings.currency_symbol}}
                         <input type="number"
                                min="0"
                                v-model="formInput['processing_fee']">
@@ -211,23 +203,23 @@
                     </tr>
                     <tr>
                       <th class="col">{{ this.lang('total') }}:</th>
-                      <td class="text-right">{{ totalAmount }}</td>
+                      <td class="text-right">{{settings.currency_symbol}}{{ totalAmount }}</td>
                     </tr>
                     <tr>
                       <th class="col">
                         {{ this.lang('received') }}: <br>
                         <small>{{ this.lang('back') }}:</small>
                       </th>
-                      <td class="text-right">
+                      <td class="text-right">{{settings.currency_symbol}}
                         <input type="number"
                                min="0"
                                v-model="formInput['received_amount']">
-                        <small>{{ backAmount }}</small>
+                        <small>{{settings.currency_symbol}}{{ backAmount }}</small>
                       </td>
                     </tr>
                     <tr>
                       <th class="col">{{ this.lang('due') }}:</th>
-                      <td class="text-right">{{ dueAmount }}</td>
+                      <td class="text-right">{{settings.currency_symbol}}{{ dueAmount }}</td>
                     </tr>
                     </tbody>
                   </table>
@@ -285,6 +277,7 @@ export default {
   },
   computed: {
     ...mapState([
+        'settings',
       'lang_key',
       'formInput',
       'loading_order',
@@ -360,7 +353,7 @@ export default {
     this.$store.dispatch('initOrder');
   },
   updated() {
-    console.log('order...');
+    // console.log('order...');
   },
   methods: {
     lang(key) {
@@ -472,7 +465,7 @@ export default {
     showShippingForm() {
       this.$store.commit('setModal', {
           id: 'shipping',
-          title: this.lang('add_shipping_details'),
+          title: this.lang('add_delivery_Address'),
           button: this.lang('submit'),
         });
     },

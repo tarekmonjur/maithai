@@ -3,7 +3,7 @@
         <div class="form-row">
             <div class="col">
                 <div class="form-group">
-                    <label>{{getLang(lang_key+'.take_shipping_details_from_customer')}} :</label>
+                    <label>{{getLang(lang_key+'.take_delivery_address_from_customer')}} :</label>
                     <Select2 v-model="customer_id"
                         style="padding: 0px; border: 0px"
                         class="form-control form-control-sm"

@@ -12,6 +12,7 @@ return [
     'my_orders' => 'My Orders',
 
     'add_shipping_details' => 'Add shipping details',
+    'add_delivery_address' => 'Add Delivery Address',
     'submit' => 'Submit',
 
     'item_add_message' => 'Your Food item added to cart.',

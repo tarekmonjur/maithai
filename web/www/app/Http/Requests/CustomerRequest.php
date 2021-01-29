@@ -29,11 +29,22 @@ class CustomerRequest extends FormRequest
         $tableName2 = (new CustomerDetails())->getTable();
         $segments = $this->segments();
 
+        $id = null;
         if (is_integer(intval(end($segments)))) {
             $id = end($segments);
+        } else if ($this->request->get('customer_id')) {
+            $id = $this->request->get('customer_id');
+        }
+
+        $details_id = null;
+        if ($this->request->get('details_id')) {
+            $details_id = $this->request->get('details_id');
+        }
+
+        if ($id) {
             $username = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',username,'.$id];
-            $email = ['nullable', 'email', 'min:3', 'max:45', 'unique:'.$tableName2.',email,'.$id];
-            $mobile_no = ['nullable', 'min:3', 'max:45', 'unique:'.$tableName2.',mobile_no,'.$id];
+            $email = ['nullable', 'email', 'min:3', 'max:45', 'unique:'.$tableName2.',email,'.$details_id];
+            $mobile_no = ['nullable', 'min:3', 'max:45', 'unique:'.$tableName2.',mobile_no,'.$details_id];
         } else {
             $username = ['required', 'min:3', 'max:45', 'unique:'.$tableName.',username'];
             $email = ['nullable', 'email', 'min:3', 'max:45', 'unique:'.$tableName2.',email'];

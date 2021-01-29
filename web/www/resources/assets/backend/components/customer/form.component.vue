@@ -110,21 +110,21 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label for="image">{{lang('photo')}} :</label>
+                    <label for="photo">{{lang('photo')}} :</label>
                     <input
                         type="file"
-                        id="image"
-                        name="image"
+                        id="photo"
+                        name="photo"
                         @change="filesBrowse($event)"
-                        :class="{'is-invalid' : errors.image}"
+                        :class="{'is-invalid' : errors.photo}"
                         class="form-control form-control-sm" />
-                    <div class="invalid-feedback" v-if="errors.image">{{errors.image}}</div>
+                    <div class="invalid-feedback" v-if="errors.photo">{{errors.photo}}</div>
                 </div>
             </div>
             <div class="col" v-if="formInput['photo']">
                 <div class="form-group">
                     <br>
-                    <img :src="formInput['photo']" alt="" width="60">
+                    <img :src="this.photo ? this.photo : formInput['photo']" alt="" width="60">
                 </div>
             </div>
         </div>
@@ -228,6 +228,9 @@ import {mapState} from "vuex";
 
 export default {
     name: "form.component",
+    data() {
+        return {photo: null}
+    },
     computed: {
         ...mapState([
             'lang_key',
@@ -250,6 +253,11 @@ export default {
             const files_name = event.target.name;
             const files = event.target.files;
             this.formInput[files_name] = files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = (evt) => {
+                this.photo = evt.target.result;
+            }
         }
     },
 }

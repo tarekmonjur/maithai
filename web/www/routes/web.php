@@ -28,8 +28,8 @@ Route::prefix('/')->namespace('Frontend\Auth')->group(function(){
 
 Route::prefix('/')->namespace('Frontend')->group(function(){
     Route::get('/', 'WebController@index');
-    Route::get('/food-orders', 'WebController@product');
-    Route::get('/food-package', 'WebController@package');
+    Route::get('/food-orders/{slug?}', 'WebController@product');
+    Route::get('/food-package/{slug?}', 'WebController@package');
     Route::get('/about', 'WebController@about');
     Route::get('/contact', 'WebController@contact');
     Route::get('/terms-policy', 'WebController@termsPolicy');

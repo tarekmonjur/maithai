@@ -1,5 +1,5 @@
 <template>
-    <section class="container mt-5">
+    <section id="orderFoods" class="container mt-5">
         <div class="text-center mb-4 d-block">
             <h1 class="text-shadow section-title">Our Food Styles</h1>
             <div class="underline mt-2 title-underline"></div>
@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-uppercase font-weight-bold">{{product.name}}</h5>
                         <p class="text-danger mb-2 font-weight-bold">
-                            <span v-if="product.special_price">
+                            <span v-if="product.special_price > 0">
                             {{settings.currency_symbol}}{{product.special_price}} /
                             <del>{{settings.currency_symbol}}{{product.regular_price}}</del>
                             </span>
@@ -31,6 +31,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="text-right">
+            <a :href="this.url('/food-orders')">See more foods...</a>
         </div>
     </section>
 </template>

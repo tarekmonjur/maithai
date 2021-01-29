@@ -1,10 +1,10 @@
 <template>
-    <section class="mt-5 mb-5" v-if="getCategories.length > 0">
+    <section id="foodMenu" class="mt-5 mb-5" v-if="getCategories.length > 0">
         <div class="text-center mb-5 d-block">
             <h1 class="text-shadow section-title">Food Menu</h1>
             <div class="underline mt-2 title-underline"></div>
         </div>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2000">
             <div class="carousel-inner container">
                 <div class="row carousel-item food-menu-carousel" v-for="(category, index) in getCategories" :class="index === 0 ? 'active' : ''">
                     <div class="col-md-6 carousel-image">
@@ -15,11 +15,15 @@
                         <div class="d-flex offer-list" v-if="category.sub_categories">
                             <ul class="list-group list-group-flush offer-list-ul">
                                 <li class="list-group-item"
-                                    v-for="(subCategory, index) in subCategoryList1(category.sub_categories)">- {{subCategory.name}}</li>
+                                    v-for="(subCategory, index) in subCategoryList1(category.sub_categories)">
+                                    - <a :href="this.url('/food-orders/'+subCategory.slug+'-'+subCategory.id)">{{subCategory.name}}</a>
+                                </li>
                             </ul>
                             <ul class="list-group list-group-flush offer-list-ul">
                                 <li class="list-group-item"
-                                    v-for="(subCategory, index) in subCategoryList2(category.sub_categories)">- {{subCategory.name}}</li>
+                                    v-for="(subCategory, index) in subCategoryList2(category.sub_categories)">
+                                    - <a :href="this.url('/food-orders/'+subCategory.slug+'-'+subCategory.id)">{{subCategory.name}}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

@@ -303,7 +303,7 @@ div.cart-bar{
 
 /**************Nav Bar***************/
 nav{
-    background: $navbar-bg;
+    background-color: #c99a5a;
     color: $navbar-color;
     box-shadow: 0px 1px 3px $navbar_shadow;
 
@@ -739,8 +739,13 @@ a.mr-5.carousel-control-next {
 }
 
 /*************SPECIAL FOOD MENU*****************/
+    section.special-lunch-menu{
+        background: url('images/coverA.jpg') no-repeat center center fixed;
+        background-size: cover;
+        padding: 0;
+    }
     section.special-food-menu{
-        background: url('images/coverB.jpg') no-repeat center center fixed;
+        background: url('images/home_thai.jpg') no-repeat center center fixed;
         background-size: cover;
         padding: 0;
     }
@@ -854,7 +859,7 @@ div.rounded-contact-icon{
  } */
 
  div#upper-footer{
-    background: $footer_dark !important;
+    background: #c99a5a !important;
  }
  div#bottom-footer{
     background: $theme-bg-color2 !important;
@@ -1630,18 +1635,18 @@ div.rounded-contact-icon{
     a.carousel-control-next {
         right: 0;
     }
-    .hi-slide .hi-prev {
-        left: -10rem !important;
-    }
-    .hi-slide .hi-next {
-        right: -10rem !important;
-    }
+    //.hi-slide .hi-prev {
+    //    left: -10rem !important;
+    //}
+    //.hi-slide .hi-next {
+    //    right: -10rem !important;
+    //}
 }
 
 /**********----====== [Food Order & Food Package] ====----*********/
 /************CSS for Food List Section***********/
 section.food-list-home-banner{
-    max-height: 40vh;
+    max-height: 50vh;
 
     .dark-bg {
         position: absolute;
@@ -2011,7 +2016,7 @@ div.filter-item-food-package{
         }
     }
     section.food-list-home-banner{
-        max-height: 44vh;
+        max-height: 50vh;
     }
     section.food-list-home-banner{
         .dark-bg {

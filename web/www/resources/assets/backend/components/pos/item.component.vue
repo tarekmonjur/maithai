@@ -83,17 +83,17 @@
                          @change.lazy="updateItem(index)">
                   {{formInput['items'][index]['vat_percent']}}<strong>%</strong>
                 </td>
-                <td>{{formInput['items'][index]['sub_total']}}</td>
+                <td>{{settings.currency_symbol}}{{formInput['items'][index]['sub_total']}}</td>
               </tr>
               </tbody>
               <tfoot>
               <tr>
                 <th colspan="3" class="text-right">{{this.lang('total')}}: </th>
-                <th>{{totalPrice}}</th>
-                <th>{{totalQty}}</th>
-                <th>{{totalDiscount}}</th>
-                <th>{{totalVat}}</th>
-                <th>{{totalSubTotal}}</th>
+                <th>{{settings.currency_symbol}}{{totalPrice}}</th>
+                <th>{{settings.currency_symbol}}{{totalQty}}</th>
+                <th>{{settings.currency_symbol}}{{totalDiscount}}</th>
+                <th>{{settings.currency_symbol}}{{totalVat}}</th>
+                <th>{{settings.currency_symbol}}{{totalSubTotal}}</th>
               </tr>
               </tfoot>
             </table>
@@ -116,6 +116,7 @@ export default {
   },
   computed: {
     ...mapState([
+      'settings',
       'lang_key',
       'formInput',
       'loading_item',

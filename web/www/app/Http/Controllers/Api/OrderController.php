@@ -143,6 +143,24 @@ class OrderController extends ApiController
         }
     }
 
+    public function updateStatus( Request $request)
+    {
+        try {
+            $order = Order::find($request->id);
+            if (!$order) {
+                return $this->jsonResponse(null, $this->getTrans('warning_msg'));
+            }
+//            $result = Order::where('id', $request->id)->update($request->all());
+            $order->setRawAttributes($request->all());
+            if (!$order->save()) {
+                return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
+            }
+            return $this->jsonResponse($order->getAttributes(), $this->getTrans('success_msg'));
+        } catch (\Exception $e) {
+            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
+        }
+    }
+
     public function destroy($id)
     {
         try {

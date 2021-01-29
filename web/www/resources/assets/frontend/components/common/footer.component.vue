@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px dotted gray;"></div>
+                <div style="border-bottom: 1px dotted white;"></div>
 
                 <div class="row mb-2 footer-list-1st-heading mt-5">
                     <div class="col-md-12">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <br>
-                <div style="border-bottom: 1px dotted gray;"></div>
+                <div style="border-bottom: 1px dotted white;"></div>
 
                 <div class="row mt-5 footer-list-2nd-row mb-5">
                     <div class="col-md-4 business-hour" id="time-table-bookmark">
@@ -76,13 +76,11 @@
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px dotted gray;"></div>
+                <div style="border-bottom: 1px dotted white;"></div>
 
                 <div class="row mt-5">
                     <div class="col-md-12 text-center">
-                        <span class="text-muted">
-                            <small>&copy; Copyright 2020, {{settings.name}}. All Rights Reserved</small>
-                        </span>
+                        <small>&copy; Copyright 2020, {{settings.name}}. All Rights Reserved</small>
                     </div>
                 </div>
             </div>

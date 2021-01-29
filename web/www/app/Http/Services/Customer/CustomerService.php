@@ -102,18 +102,6 @@ trait CustomerService
     private $filters = [];
     private $data = [];
 
-    protected function setFiltersConfigData($key, $data) {
-        $filters = $this->getFiltersConfig();
-        if ($key) {
-            foreach($filters as $index => $filter) {
-                if ($filter['name'] === $key) {
-                    $filters[$index]['options'] = $data;
-                }
-            }
-        }
-        $this->data['filters_config'] = $filters;
-    }
-
     protected function generateFilters($dbModel)
     {
         $filters = $this->getFilters();
@@ -152,9 +140,6 @@ trait CustomerService
 
         if ($sub_list) {
             $relations = ['details'];
-//            if (!empty($this->getId()) || !empty($this->getSlug())) {
-//                array_push($relations);
-//            }
 
             if ($this->authUser && $this->authUser->getTable() === 'users') {
                 $relations = array_merge($relations, ['createdBy', 'updatedBy']);

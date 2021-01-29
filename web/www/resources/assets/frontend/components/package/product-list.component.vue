@@ -17,7 +17,7 @@
                 </div>
                 <div class="list-footer">
                     <div class="discount-title">
-                        <h5 class="text-danger" v-if="product.special_price">
+                        <h5 class="text-danger" v-if="+product.special_price > 0">
                             {{settings.currency_symbol}}{{product.special_price}} /
                             <del>{{settings.currency_symbol}}{{product.regular_price}}</del>
                         </h5>
@@ -70,7 +70,19 @@ export default {
         ]),
     },
     created() {
-        const payload = {};
+        const url = new URL(window.location.href);
+        const paths = url.pathname.split('/');
+        const slug = paths.pop();
+        const category_id = slug.split('-').pop();
+        let ids = [];
+        if (!isNaN(parseInt(category_id))) {
+            ids.push(category_id);
+        }
+        const payload = {
+            params: {
+                sub_category_id: ids,
+            }
+        };
         this.$store.dispatch('getProducts', payload);
     },
     methods: {

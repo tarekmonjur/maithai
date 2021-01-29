@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Services\CategoryService;
+use App\Http\Services\User\UserService;
 
 class UserController extends BackendController
 {
-//    use CategoryService;
+    use UserService;
     /*
     |--------------------------------------------------------------------------
-    | Product Category Controller
+    | Users Controller
     |--------------------------------------------------------------------------
     |
-    | @Description : Product Category Manage
+    | @Description : Users Manage
     | @Author : Tarek Monjur.
     | @Email  : tarekmonjur@gmail.com
     |
@@ -25,10 +25,10 @@ class UserController extends BackendController
 
     public function index()
     {
-//        $this->setTitle();
-//        $this->setColumnsConfig();
-//        $this->setFiltersConfig();
-        $this->data['scripts'] = [];
+        $this->setTitle();
+        $this->setColumnsConfig();
+        $this->setFiltersConfig();
+        $this->data['scripts'] = ['user'];
         $this->data['styles'] = [];
         return view('backend.layouts.main')->with($this->data);
     }
