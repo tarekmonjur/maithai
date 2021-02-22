@@ -103,6 +103,8 @@ trait CommonService
                 ->toArray();
             $settings['logo'] = config('app.asset_path').$settings['logo'];
             $settings['qrcode'] = config('app.asset_path').$settings['qrcode'];
+            $settings['rating_image'] = config('app.asset_path').$settings['rating_image'];
+            $settings['payment_image'] = config('app.asset_path').$settings['payment_image'];
         }
 
         return $settings;

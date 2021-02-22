@@ -28,7 +28,8 @@
                         {{errors[form.name]}}
                     </div>
                 </div>
-                <img v-if="form.type === 'file'" :src="getImage(forms[index]['value'])" width="60">
+                <img v-if="form.type === 'file' && forms[index]['img']" :src="forms[index]['img']" width="60">
+                <img v-else-if="form.type === 'file'" :src="getImage(forms[index]['value'])" width="60">
             </div>
         </div>
         <div class="form-row">
@@ -92,6 +93,11 @@ export default {
             const files_name = event.target.name;
             const files = event.target.files;
             this.forms[index][files_name] = files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = (evt) => {
+                this.forms[index]['img'] = evt.target.result;
+            }
         },
         async buttonAction() {
             for(const form of this.forms) {
@@ -111,7 +117,7 @@ export default {
             }
             if (this.tab === 'logo') {
                 _.set(payload, 'headers', {'Content-Type': 'multipart/form-data'});
-                _.set(payload, 'file_keys', ['qrcode']);
+                _.set(payload, 'file_keys', ['qrcode', 'rating_image', 'payment_image']);
             }
             const result = await this.postDataAction(payload);
             if (result && result.code === 200) {

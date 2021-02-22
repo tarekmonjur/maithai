@@ -25,4 +25,7 @@ return [
 
     'place_your_order_now' => 'Place your order now.',
     'yes_order' => "Yes, order!",
+
+    'update_your_order_status' => 'Update your order status.',
+    'yes_update' => "Yes, Update!",
 ];

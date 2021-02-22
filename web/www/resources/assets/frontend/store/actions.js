@@ -1,4 +1,5 @@
 import helpers from "./../js/helpers";
+import * as Validator from 'validatorjs';
 
 export default {
   async init(context, payload) {
@@ -23,8 +24,24 @@ export default {
   
   async modalShippingAction(context, payload) {
     context.commit('setLoader', { button: true });
-    context.commit('setShoppingCart', { shipping_details: {...context.state.formInput} });
-    await context.dispatch('clearDataAction', _.get(context.state, 'modal.id'));
+    const data = {...context.state.formInput};
+    const rules = {
+      full_name: 'required|min:3|max:45',
+      email: 'required|email',
+      mobile_no: 'required|max:45'
+    };
+    let validation = new Validator(data, rules);
+    if (validation.fails()) {
+      // console.log(validation.errors.all());
+      context.commit('setErrorsAlert',  {
+        alert: null,
+        errors: validation.errors.all()
+      });
+    } else {
+      context.commit('setShoppingCart', { shipping_details: data });
+      await context.dispatch('clearDataAction', _.get(context.state, 'modal.id'));
+    }
+    
     context.commit('setLoader', { button: false });
   },
   

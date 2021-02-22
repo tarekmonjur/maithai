@@ -23,7 +23,7 @@
 
             <!-- Aside RightSide -->
             <aside class="col-md-6">
-                <img :src="this.assetUrl('/img/mai.png')" alt="" class="img img-fluid" style="min-height: 380px">
+                <img :src="this.assetUrl('/img/mood-board.jpg')" alt="" class="img img-fluid" style="min-height: 380px">
             </aside>
         </div>
     </section>

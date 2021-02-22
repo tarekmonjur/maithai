@@ -31,9 +31,20 @@ class CustomerContact extends Mailable
      */
     public function build()
     {
+        $this->withSwiftMessage(function ($message) {
+            $message->getHeaders()
+                ->addTextHeader('Content-Type', 'text/html');
+
+            $type = $message->getHeaders()->get('Content-Type');
+            $type->setValue('text/html');
+            $message->setCharset('UTF-8');
+            $message->setEncoder(
+                new \Swift_Mime_ContentEncoder_PlainContentEncoder('8bit')
+            );
+        });
+
         return $this->from($this->data['email'])
             ->subject('New Customer Contact Message')
-            ->markdown('emails.customer-contact')
-            ->with($this->data);
+            ->markdown('emails.customer_contact', $this->data);
     }
 }

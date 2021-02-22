@@ -1,0 +1,72 @@
+<?php
+
+return [
+    'default' => 'Users',
+    'add' => 'Add New User',
+    'edit' => 'Edit User',
+    'filter' => 'Filter User',
+    'view' => 'View User',
+    'list' => 'Users List',
+    'save' => 'Save User',
+    'submit' => 'Submit User',
+    'update' => 'Update User',
+
+    //view fields
+    'field_name' => 'User Field Name',
+    'field_value' => 'User Field Value',
+
+    // columns
+    'id' => 'ID',
+    'sl' => 'SL',
+    'username' => 'User Name',
+    'full_name' => 'Full Name',
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
+    'user_type' => 'User Type',
+    'service_type' => 'Service Type',
+    'user_service_type' => 'User Service Type',
+    'user_status' => 'User Status',
+    'email' => 'Email Address',
+    'mobile_no' => 'Mobile No',
+    'photo' => 'Photo',
+    'gender' => 'Gender',
+    'designation' => 'Designation',
+    'salary' => 'Salary',
+    'date_of_birth' => 'Date of Birth',
+    'joining_date' => 'Joining Date',
+    'is_active' => 'Status',
+    'city' => 'City',
+    'state' => 'State',
+    'zip_code' => 'Zip Code',
+    'address' => 'Address',
+    'created' => 'Created',
+    'updated' => 'Updated',
+    'action' => 'Action',
+
+    // filters & form
+    'status' => 'User Status',
+    'active' => 'Active User',
+    'inactive' => 'Inactive User',
+    'from_date' => 'From Date',
+    'to_date' => 'To Date',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'name' => 'User Name',
+    'verified' => 'Verified',
+    'unverified' => 'Unverified',
+    'password' => 'Password',
+    'retype_password' => 'Retype Password',
+    'male' => 'Male',
+    'female' => 'Female',
+    'other' => 'Other',
+    'father_name' => 'Father Name',
+    'mother_name' => 'Mother Name',
+    'present_address' => 'Present Address',
+    'permanent_address' => 'Permanent Address',
+
+    // alert
+    'success_msg' => 'User successfully Saved',
+    'delete_msg' => 'User successfully Deleted',
+    'error_msg' => 'User not saved. Try again..!',
+    'warning_msg' => 'User not found. Try again..!'
+];

@@ -62,19 +62,24 @@ class ApiController extends Controller
         $this->context['request'] = $this->getRequestContext();
         $this->context['settings'] = $this->getSettings();
         // Mail Config
-        Config::set('email.host', $this->context['settings']['email_server']);
-        Config::set('email.username', $this->context['settings']['email_username']);
-        Config::set('email.password', $this->context['settings']['email_password']);
-        $email = !empty($this->context['settings']['support_email']) ?
-            $this->context['settings']['support_email'] :
-            $this->context['settings']['email'];
-        Config::set('email.from.address', $email);
-        Config::set('email.from.name', $this->context['settings']['name']);
-        Config::set('email.to.address', $email);
-        Config::set('email.to.name', $this->context['settings']['name']);
-
+        $this->setConfigs($this->context['settings']);
 //        dd($this->context);
         return $this->context;
+    }
+
+    protected function setConfigs($settings)
+    {
+        Config::set('mail.host', $settings['email_server']);
+        Config::set('mail.port', $settings['email_server_port']);
+        Config::set('mail.username', $settings['email_username']);
+        Config::set('mail.password', $settings['email_password']);
+        $email = !empty($settings['support_email']) ?
+            $settings['support_email'] :
+            $settings['email'];
+        Config::set('mail.from.address', $email);
+        Config::set('mail.from.name', $settings['name']);
+//        Config::set('mail.to.address', $email);
+//        Config::set('mail.to.name', $settings['name']);
     }
 
     public function sendContactMessage(ContactRequest $request)
@@ -85,17 +90,12 @@ class ApiController extends Controller
             $data['name'] = ucfirst($request->first_name.' '.$request->last_name);
             $data['email'] = $request->email;
             $data['message'] = $request->message;
-            $to_email = Config::get('email.to.address');
-
-            if (Mail::to($to_email)->send(new CustomerContact($data))) {
-                return $this->jsonResponse(null, trans('frontend.contact_success_msg'), 'success');
-            }
-
-            return $this->jsonResponse(null, trans('frontend.contact_error_msg'), 'error');
+            $to_email = Config::get('mail.from.address');
+            Mail::to($to_email)->send(new CustomerContact($data));
+            return $this->jsonResponse(null, trans('frontend.contact_success_msg'), 'success');
         } catch (\Exception $e) {
             return $this->jsonResponse(null, $e->getMessage(), 'error', $e->getCode());
         }
-
     }
 
 }

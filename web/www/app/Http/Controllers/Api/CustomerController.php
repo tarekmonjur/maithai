@@ -7,6 +7,7 @@ use App\Http\Services\Customer\CustomerService;
 use App\Models\Customer;
 use App\Models\CustomerDetails;
 use Carbon\Carbon;
+use Faker\Factory as Faker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -62,11 +63,16 @@ class CustomerController extends ApiController
 
     public function store(CustomerRequest $request)
     {
+        $facker = Faker::create();
         try {
             DB::beginTransaction();
             $customer = new Customer();
-            $customer->username = $request->username;
-            $customer->password = $request->password;
+            if (empty($request->username)) {
+                $customer->username = $facker->userName;
+            }
+            if (empty($request->password)) {
+                $customer->password = $facker->password(6, 10);
+            }
             $customer->referrer_id = $this->getReferrerId($request->input('referrer_code'));
             $customer->referral_code = $this->generateReferralCode($request->first_name);
             $customer->is_membership = $request->is_membership ?? 0;
@@ -108,18 +114,35 @@ class CustomerController extends ApiController
 
     public function update(CustomerRequest $request)
     {
+        $facker = Faker::create();
         try {
             DB::beginTransaction();
-            $customer = new Customer();
-            $customer->username = $request->username;
-            $customer->password = $request->password;
-            $customer->referral_code = $request->referral_code;
-            $customer->referrer_id = $request->referrer_id;
+            $customer = Customer::with('details')->find($request->id);
+            if (!$customer) {
+                return $this->jsonResponse('', $this->getTrans('warning_msg'));
+            }
+
+            if (empty($customer->username) && empty($request->username)) {
+                $customer->username = $facker->userName;
+            }
+
+            if (!empty($request->password)) {
+                $customer->password = $request->password;
+            }
+
+            if ($this->authUser && $this->guard !== 'customer') {
+                $customer->referral_code = $request->referral_code;
+                $customer->referrer_id = $this->getReferrerId($request->input('referrer_code'));
+            }
+
             $customer->is_membership = $request->is_membership ?? 0;
             $customer->is_active = $request->is_active ?? 1;
             $customer->email_verified = $request->email_verified ?? 0;
             $customer->email_verified_at = $request->email_verified_at ?? null;
-            $customer->created_by = $this->authUser->id;
+
+            if ($this->authUser && $this->guard !== 'customer') {
+                $customer->update_by = $this->authUser->id;
+            }
 
             if ($customer->save()) {
                 $details = [
@@ -136,7 +159,12 @@ class CustomerController extends ApiController
                 if ($image = $this->uploadPhoto($request)) {
                     $details['photo'] = $image;
                 }
-                $customer->details()->create($details);
+                if ($request->get('details.id')) {
+                    $details['id'] = $request->get('details.id');
+                } else {
+                    $details['id'] = $customer->details->id;
+                }
+                CustomerDetails::where('id', $details['id'])->update($details);
                 DB::commit();
                 return $this->jsonResponse(null, $this->getTrans('success_msg'));
             } else {
@@ -152,7 +180,7 @@ class CustomerController extends ApiController
     public function destroy($id)
     {
         try {
-            $result = Product::find($id)->delete();
+            $result = Customer::find($id)->delete();
             if ($result) {
                 return $this->jsonResponse(null, $this->getTrans('delete_msg'));
             }
@@ -167,15 +195,15 @@ class CustomerController extends ApiController
     {
         if ($request->hasFile('photo')) {
             $upload_path = $this->upload_path;
-            $upload_name = uniqid(Str::slug($request->first_name)).'.'.$request->image->extension();
+            $upload_name = uniqid(Str::slug($request->first_name)).'.'.$request->photo->extension();
             $full_upload_path = $upload_path.$upload_name;
 
             if ($this->makeDir($upload_path)) {
-                if (!empty($product->image) && file_exists($full_upload_path)) {
+                if (!empty($product->photo) && file_exists($full_upload_path)) {
                     unlink($full_upload_path);
                 }
 
-                $upload = Image::make($request->image);
+                $upload = Image::make($request->photo);
                 $upload->save($full_upload_path);
                 return $upload_name;
             }

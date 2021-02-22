@@ -60,9 +60,9 @@
                                 </td>
                                 <td>{{row.order_details_count}}</td>
                                 <td>{{row.total_qty}}</td>
-                                <td>{{row.total_payable_amount}}</td>
-                                <td>{{row.total_pay_amount}}</td>
-                                <td>{{row.due_amount}}</td>
+                                <td>{{settings.currency_symbol}}{{row.total_payable_amount}}</td>
+                                <td>{{settings.currency_symbol}}{{row.total_pay_amount}}</td>
+                                <td>{{settings.currency_symbol}}{{row.due_amount}}</td>
                             </tr>
                         </table-body-component>
                     </div>
@@ -99,8 +99,13 @@ export default {
         ModalComponent,
         InvoiceComponent
     },
-    created() {
-        this.$store.dispatch('getOrders');
+    mounted() {
+        const payload = {
+            params: {
+                customer_id: _.get(this.customer, 'id', 0)
+            }
+        };
+        this.$store.dispatch('getOrders', payload);
     },
     data() {
         return {
@@ -109,6 +114,8 @@ export default {
     },
     computed: {
         ...mapState([
+            'customer',
+            'settings',
             'modal',
         ]),
         ...mapGetters([

@@ -7,10 +7,10 @@
 
 /*************Section Of Page Banner**************/
 /*--------Landing Page--------*/
-section#home-cover, section#home-cover-2{
+section#home-cover, section#home-cover-2, section#home-cover-3, section#home-cover-4{
     .jumbotron{
         width: 100%;
-	    height: 650px;
+	    height: 700px;
 	    background-color: $common_dark;
 	    position: relative;
         overflow: hidden;
@@ -28,10 +28,10 @@ section#home-cover{
 	        top: 0;
 	        width: 100%;
 	        height: 100%;
-	        background: url('images/home_thai.jpg') no-repeat fixed;
+            background: url('images/mood-board.jpg') no-repeat fixed;
 	        background-size: cover;
-	        opacity: .3;
-	        animation: asad 25s linear infinite;
+	        opacity: .7;
+	        animation: asad 20s linear infinite;
         }
     }
 }
@@ -45,10 +45,44 @@ section#home-cover-2{
             top: 0;
             width: 100%;
             height: 100%;
+            background: url('images/maithai2.jpeg') no-repeat fixed;
+            background-size: cover;
+            opacity: .7;
+            animation: asad 20s linear infinite;
+        }
+    }
+}
+
+section#home-cover-3{
+    .jumbotron{
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/maithai.jpeg') no-repeat fixed;
+            background-size: cover;
+            opacity: .7;
+            animation: asad 20s linear infinite;
+        }
+    }
+}
+
+section#home-cover-4{
+    .jumbotron{
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
             background: url('images/coverA.jpg') no-repeat fixed;
             background-size: cover;
-            opacity: .3;
-            animation: asad 25s linear infinite;
+            opacity: .7;
+            animation: asad 20s linear infinite;
         }
     }
 }

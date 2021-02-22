@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'username', 'password', 'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
@@ -46,7 +46,8 @@ class User extends Authenticatable
     }
 
     public function details() {
-        return $this->hasOne(UserDetails::class, 'user_id', 'id');
+        return $this->hasOne(UserDetails::class, 'user_id', 'id')
+            ->with('type', 'service', 'status');
     }
 
     public function createdBy() {

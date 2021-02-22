@@ -303,7 +303,7 @@ div.cart-bar{
 
 /**************Nav Bar***************/
 nav{
-    background: $navbar-bg;
+    background-color: #c99a5a;
     color: $navbar-color;
     box-shadow: 0px 1px 3px $navbar_shadow;
 
@@ -739,8 +739,13 @@ a.mr-5.carousel-control-next {
 }
 
 /*************SPECIAL FOOD MENU*****************/
+    section.special-lunch-menu{
+        background: url('images/coverA.jpg') no-repeat center center fixed;
+        background-size: cover;
+        padding: 0;
+    }
     section.special-food-menu{
-        background: url('images/coverB.jpg') no-repeat center center fixed;
+        background: url('images/home_thai.jpg') no-repeat center center fixed;
         background-size: cover;
         padding: 0;
     }
@@ -854,7 +859,7 @@ div.rounded-contact-icon{
  } */
 
  div#upper-footer{
-    background: $footer_dark !important;
+    background: #c99a5a !important;
  }
  div#bottom-footer{
     background: $theme-bg-color2 !important;
@@ -1296,11 +1301,6 @@ div.rounded-contact-icon{
     }
 
     /**Bottom Foooter**/
-    div#bottom-footer{
-        div.logo{
-            display: none;
-        }
-    }
     div.col-md-4.footer-qr-code{
         justify-content: center !important;
     }
@@ -1630,18 +1630,18 @@ div.rounded-contact-icon{
     a.carousel-control-next {
         right: 0;
     }
-    .hi-slide .hi-prev {
-        left: -10rem !important;
-    }
-    .hi-slide .hi-next {
-        right: -10rem !important;
-    }
+    //.hi-slide .hi-prev {
+    //    left: -10rem !important;
+    //}
+    //.hi-slide .hi-next {
+    //    right: -10rem !important;
+    //}
 }
 
 /**********----====== [Food Order & Food Package] ====----*********/
 /************CSS for Food List Section***********/
 section.food-list-home-banner{
-    max-height: 40vh;
+    max-height: 50vh;
 
     .dark-bg {
         position: absolute;
@@ -1885,7 +1885,7 @@ div.list-area div.list-body{
 /*The LIst Footer*/
 div.list-area{
     div.list-footer{
-        margin-left: 3rem;
+        margin-left: 2rem;
 
         button.btn-list-order{
             background: $button_tomato !important;
@@ -2011,7 +2011,7 @@ div.filter-item-food-package{
         }
     }
     section.food-list-home-banner{
-        max-height: 44vh;
+        max-height: 50vh;
     }
     section.food-list-home-banner{
         .dark-bg {
@@ -2520,7 +2520,7 @@ button[type="submit"].login-btn, a.login-btn{
 
 .invoice {
     background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    //border: 1px solid $theme-color;
     position: relative;
 }
 
@@ -2658,7 +2658,6 @@ button[type="submit"].login-btn, a.login-btn{
     .invoice {
         border: 0;
         margin: 0;
-        padding: 0;
         width: 100%;
     }
     .invoice-col {
@@ -2671,5 +2670,17 @@ button[type="submit"].login-btn, a.login-btn{
     .table-responsive > .table tr th,
     .table-responsive > .table tr td {
         white-space: normal !important;
+    }
+}
+
+
+.table {
+    td, th {
+        border-top: 1px solid $theme-color;
+        border-bottom: 1px solid $theme-color;
+    }
+    thead th {
+        border-top: 2px solid $theme-color;
+        border-bottom: 2px solid $theme-color;
     }
 }

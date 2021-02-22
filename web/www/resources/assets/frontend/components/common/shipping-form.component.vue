@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <label for="email">{{lang('email')}} :</label>
+                    <label for="email">{{lang('email')}} :<span class="text-danger">*</span></label>
                     <input
                         type="text"
                         id="email"
@@ -63,7 +63,7 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label for="zip_code">{{lang('zip_code')}} :</label>
+                    <label for="zip_code">{{lang('postal_code')}} :</label>
                     <input
                         type="text"
                         id="zip_code"

@@ -68,6 +68,8 @@ return [
     'print_bill' => 'Print Bill',
     'add_shipping_details' => 'Add Shipping Details',
     'take_shipping_details_from_customer' => 'Take Shipping Details From Customer',
+    'add_delivery_Address' => 'Add Delivery Address',
+    'take_delivery_address_from_customer' => 'Take Delivery Address From Customer',
 
     'success_msg' => 'Food successfully saved',
     'error_msg' => 'Food not saved. Try again..!',

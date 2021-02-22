@@ -15,7 +15,7 @@ class AddRelationToShippingDetailsTable extends Migration
     {
         Schema::table('shipping_details', function (Blueprint $table) {
             if (Schema::hasTable('shipping_details')) {
-                $table->foreign('order_id')->references('id')->on('orders')->onDelete('restrict');
+                $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             }
         });
     }

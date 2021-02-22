@@ -4,25 +4,6 @@
             <div class="leftHeaderItem">
                 <img :src="settings.logo" :alt="settings.name" />
             </div>
-
-<!--            <div class="temp-root">-->
-<!--                <h5 class="temp-text">-->
-<!--                    We are still working on our website.<br>-->
-<!--                    For place an order please<br>-->
-<!--                    Call: {{settings.phone ? settings.phone : settings.mobile}}-->
-<!--                </h5>-->
-
-<!--                <div class="pl-3">-->
-<!--                    <img :src="this.assetUrl('/logo/temp-img.jpg')" alt="Temp Image" />-->
-<!--                    <p class="temp-text-p">-->
-<!--                        <a href="https://www.just-eat.co.uk/" target="_blank" class="temp-text-a">-->
-<!--                            YOU CAN ALSO PLACE<br>-->
-<!--                            ORDER IN JUST EAT.-->
-<!--                        </a>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-
             <div class="d-flex rightHeaderItem">
                 <div class="items mr-4 rightHeaderItem">
                     <div class="topMenu">
@@ -41,7 +22,7 @@
                     <div class="mt-3 top-contact">
                         <div class="phone-num-bar">
                             <i class="fas fa-phone-alt icon"></i>
-                            <div class="num">call: <span class="font-weight-bold">{{settings.phone ? settings.phone : settings.mobile}}</span></div>
+                            <div class="num">call: <a :href="phoneNumber" class="font-weight-bold">{{settings.phone ? settings.phone : settings.mobile}}</a></div>
                         </div>
                         <div class="cart-bar">
                             <i class="fas fa-shopping-cart"></i>
@@ -75,6 +56,51 @@
         </div>
     </header>
 
+    <header class="order-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mt-2 mb-2">
+                    <h4 class="temp-text">
+                        <a :href="phoneNumber" class="temp-text-a">
+                        Call Now to Book a Table or to Place an Order <br>
+                        <i class="fas fa-phone-alt icon"></i>&nbsp;{{settings.phone ? settings.phone : settings.mobile}}
+                        </a>
+                    </h4>
+                </div>
+
+                <div class="col-md-6 mt-2 mb-2">
+                    <div class="pl-3">
+                        <img class="mr-2" :src="this.assetUrl('/logo/temp-img.jpg')" :alt="settings.name" />
+                        <h5 class="temp-text">
+                            <a href="https://www.just-eat.co.uk/" target="_blank" class="temp-text-a">
+                                YOU CAN ALSO PLACE<br>
+                                ORDER IN JUST EAT.
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="time-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="p-3 mb-2 time-border">Opening Time</h4>
+                    <div v-html="settings.opening_time"></div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="p-3 mb-2 time-border">Delivery Time</h4>
+                    <div v-html="settings.delivery_time"></div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img :src="settings.rating_image" alt="ratting" style="width: 230px; height: 150px">
+                </div>
+            </div>
+        </div>
+    </header>
+
 </template>
 
 <script>
@@ -92,42 +118,44 @@ export default {
             'totalItems',
             'totalSubTotal'
         ]),
-    }
+        phoneNumber() {
+            return 'tel:'+(this.settings.phone ? this.settings.phone : this.settings.mobile).trim();
+        }
+    },
 }
 </script>
 
 <style scoped>
-.temp-notice > img{
-    width: 80px;
-    height: 65px;
+
+.time-header {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.time-border {
+    border-bottom: 2px solid #c99a5a;
+    text-shadow: 2px 2px 2px black
+}
+.order-header {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #c99a5a;
 }
 .temp-text {
     color: white;
-}
-.temp-text-p{
     display: inline-block;
+    vertical-align: middle;
+    text-shadow: 2px 2px 2px black
 }
 .temp-text-a{
     color: white;
+    text-shadow: 2px 2px 2px black
 }
 .temp-text-a:hover{
-    color: orange;
+    color: #d2232b;
     text-decoration: none;
-}
-
-.temp-root{
-    margin: auto;
-    padding: 5px 15px 0px;
-    text-align: center;
-    display: inline-flex;
-    position: absolute;
-}
-
-@media  screen and (max-width: 720px){
-    .temp-root{
-        position: unset;
-        padding: 15px;
-    }
+    text-shadow: 2px 2px 2px black
 }
 
 </style>

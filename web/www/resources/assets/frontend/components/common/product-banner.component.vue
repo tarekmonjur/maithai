@@ -3,7 +3,7 @@
         <div class="jumbotron">
             <div class="dark-bg">
                 <div id="intro">
-                    <div id="intro-section" class="mb-4">
+                    <div id="intro-section" class="mt-4">
                         <h5 class="intro-title food-list-intro text-uppercase mb-4">Find The Best Food.</h5>
                     </div>
 
@@ -23,6 +23,11 @@
                             <i class="fas fa-search"></i>
                             <span>Search</span>
                         </button>
+                    </div>
+
+                    <div class="mb-4">
+                        <a :href="this.url('/about')" class="about-btn mt-4">About Us!</a>
+                        <a :href="this.url('/contact')" class="order-btn mt-4 ml-3">Find Us!</a>
                     </div>
                 </div>
             </div>

@@ -59,7 +59,7 @@
             <div class="content-item-empty">
                 <img :src="this.assetUrl('/logo/shopping-beg-1.png')" alt="No Items!!!">
                 <div class="shopping-title-empty text-capitalize">
-                    <p class="text-muted">Your shopping bag is empty!</p>
+                    <p class="text-muted">Your cart is empty!</p>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="col-2 single-item">
                     <span class="text-danger">{{settings.currency_symbol}}{{item.product_price}}</span>
-                    <span class="text-muted" v-if="item.discount_amount">
+                    <span class="text-muted" v-if="item.discount_amount > 0">
                         <del>{{settings.currency_symbol}}{{item.product_price+item.discount_amount}}</del>
                     </span>
                 </div>
@@ -115,17 +115,17 @@
                 </div>
             </div>
             <div class="row content-items-list border-top">
-                <div class="col-4 single-item"><strong>Total</strong></div>
-                <div class="col-2 single-item"><strong>{{settings.currency_symbol}}{{totalPrice}}</strong></div>
-                <div class="col-2 single-item"><strong>{{totalQty}}</strong></div>
-                <div class="col-1 single-item"><strong>{{settings.currency_symbol}}{{totalDiscount}}</strong></div>
-                <div class="col-1 single-item"><strong>{{settings.currency_symbol}}{{totalVat}}</strong></div>
-                <div class="col-2 single-item"><strong>{{settings.currency_symbol}}{{totalSubTotal}}</strong></div>
+                <div class="col-4 single-item"><span>Total</span></div>
+                <div class="col-2 single-item"><span>{{settings.currency_symbol}}{{totalPrice}}</span></div>
+                <div class="col-2 single-item"><span>{{totalQty}}</span></div>
+                <div class="col-1 single-item"><span>{{settings.currency_symbol}}{{totalDiscount}}</span></div>
+                <div class="col-1 single-item"><span>{{settings.currency_symbol}}{{totalVat}}</span></div>
+                <div class="col-2 single-item"><span>{{settings.currency_symbol}}{{totalSubTotal}}</span></div>
             </div>
             <div class="row">
                 <div class="col p-1 pt-2">
-                    <h6 class="border-bottom pb-1">Shipping Information:</h6>
-                    <address>
+                    <h6 class="border-bottom pb-1">Delivery Address:</h6>
+                    <address style="font-size: 14px">
                         {{shippingDetails.full_name}} <br>
                         {{shippingDetails.email}} <br>
                         {{shippingDetails.mobile_no}} <br>
@@ -137,24 +137,24 @@
                 </div>
                 <div class="col p-1 pt-2">
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Sub Total Amount</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{totalSubTotal}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Sub Total Amount</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{totalSubTotal}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Processing Fee</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{settings['processing_fee']}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Processing Fee</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{settings['processing_fee']}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Delivery Fee</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{settings['delivery_fee']}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Delivery Fee</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{settings['delivery_fee']}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Vat ({{settings['vat_percent']}}%)</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{vatAmount}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Vat ({{settings['vat_percent']}}%)</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{vatAmount}}</div>
                     </div>
                     <div class="row content-items-list border-0 pt-0">
-                        <div class="col-9 single-item border-bottom"><strong>Payable Amount</strong></div>
-                        <div class="col-3 single-item border-bottom">{{settings.currency_symbol}}{{totalAmount}}</div>
+                        <div class="col-8 single-item border-bottom"><strong>Payable Amount</strong></div>
+                        <div class="col-4 single-item border-bottom">{{settings.currency_symbol}}{{totalAmount}}</div>
                     </div>
                 </div>
             </div>
@@ -202,16 +202,17 @@
                             <span class="mr-2">
                                 <i class="fa fa-shipping-fast" aria-hidden="true"></i>
                             </span>
-                            <span>Add Shipping</span>
+                            <span>Add Delivery Address</span>
                         </a>
                     </div>
                     <div class="col pl-0">
                         <a class="btn btn-outline text-capitalize"
+                           @click.prevent="myShipping()"
                            :class="!totalItems ? 'disabled': ''">
                             <span class="mr-2">
                                 <i class="fa fa-shipping-fast" aria-hidden="true"></i>
                             </span>
-                            <span>My Shipping</span>
+                            <span>My Delivery Address</span>
                         </a>
                     </div>
                 </div>
@@ -239,6 +240,7 @@ import {mapState, mapGetters} from 'vuex';
 import ModalComponent from './modal.component';
 import ShippingFormComponent from './shipping-form.component';
 import LoadingComponent from './loading.component';
+import * as Validator from "validatorjs";
 
 export default {
     name: "cart.component",
@@ -250,11 +252,13 @@ export default {
     computed: {
         ...mapState([
             'settings',
+            'customer',
             'shoppingCart',
             'modal',
             'loader',
         ]),
         ...mapGetters([
+            'isAuthenticated',
             'totalItems',
             'totalPrice',
             'totalQty',
@@ -274,6 +278,9 @@ export default {
         if (window.localStorage.getItem('shoppingCart')) {
             const shoppingCart = JSON.parse(atob(window.localStorage.getItem('shoppingCart')));
             this.$store.commit('setShoppingCart', shoppingCart);
+            if (this.isAuthenticated) {
+                this.$store.commit('setShoppingCart', { shipping_details: {...this.customer.details} });
+            }
         }
     },
     methods: {
@@ -316,30 +323,54 @@ export default {
         showShippingForm() {
             this.$store.commit('setModal', {
                 id: 'Shipping',
-                title: this.trans('add_shipping_details'),
+                title: this.trans('add_delivery_address'),
                 button: this.trans('submit'),
             });
             this.$store.commit('setFormInput', {
                 ...this.shoppingCart.shipping_details
             });
         },
+        myShipping() {
+            if (this.isAuthenticated) {
+                this.$store.commit('setShoppingCart', { shipping_details: {...this.customer.details} });
+            } else {
+                window.location.href = this.url('/login');
+            }
+        },
         placeOrder() {
-            this.$swal({
-                title: this.getLang('common.are_you_sure'),
-                text: this.getLang('common.place_your_order_now'),
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: this.getLang('common.yes_order'),
-                cancelButtonText: this.getLang('common.no_cancel'),
-                reverseButtons: false,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    this.$store.dispatch('placeOrder', {
-                        order_status: 'placed',
-                        payment_type: 'none',
-                    });
-                }
-            });
+            const rules = {
+                full_name: 'required|min:3|max:45',
+                email: 'required|email',
+                mobile_no: 'required|max:45',
+            };
+            let validation = new Validator(this.shippingDetails, rules);
+            if (validation.fails()) {
+                this.showShippingForm();
+                this.$store.commit('setErrorsAlert',  {
+                    alert: null,
+                    errors: validation.errors.all()
+                });
+                setTimeout(function() {
+                    $('#Shipping').modal();
+                }, 300);
+            } else {
+                this.$swal({
+                    title: this.getLang('common.are_you_sure'),
+                    text: this.getLang('common.place_your_order_now'),
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: this.getLang('common.yes_order'),
+                    cancelButtonText: this.getLang('common.no_cancel'),
+                    reverseButtons: false,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.$store.dispatch('placeOrder', {
+                            order_status: 'placed',
+                            payment_type: 'none',
+                        });
+                    }
+                });
+            }
         }
     }
 }

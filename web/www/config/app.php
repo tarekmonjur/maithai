@@ -22,6 +22,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'MaiThai Kitchen'),
+    'title' => env('APP_TITLE', 'Ordering Food & Delivery'),
 
     /*
     |--------------------------------------------------------------------------
@@ -188,6 +189,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
 
     ],
 

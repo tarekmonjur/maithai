@@ -47,6 +47,28 @@ export default {
             helpers.printInvoice('print_invoice');
             context.commit('setLoading', {button: false});
         },
+        async updateOrderAction(context, payload) {
+            const requestPayload = {
+                url: context.state.url+'/'+payload.id+'/status',
+                method: 'PUT',
+                data: payload.data,
+            };
+            const result = await helpers.postDataAction(requestPayload);
+    
+            if (result && result.code === 200) {
+                const orderListData = _.get(context.state, 'listData.results', []);
+                const order_index = _.findIndex(orderListData, (item) => item.id === payload.id);
+                const order = {
+                    ..._.get(orderListData, order_index),
+                    ...result.results
+                };
+                _.set(orderListData, order_index, order);
+            }
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
     },
     mutations: {
         ...mutations,

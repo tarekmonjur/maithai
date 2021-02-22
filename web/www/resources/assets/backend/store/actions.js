@@ -5,6 +5,14 @@ export default {
         if (_.get(window, '_context.request.query')) {
             context.dispatch('filterButtonAction', _.get(window, '_context.request.query',{}));
         }
+        const settings = helpers.getContext('settings');
+        const customer = helpers.getContext('customer');
+        const request = helpers.getContext('request');
+        context.commit('setContextData', {
+            settings,
+            customer,
+            request
+        });
         await helpers.setLang(true);
         await context.dispatch('getListData');
     },
@@ -258,6 +266,87 @@ export default {
         if (result && result.code === 200) {
             context.commit('setFormData', {
                 skus: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+    
+    async getUserTypes(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'userTypes'))) {
+            return _.get(context.state.formData, 'userTypes');
+        }
+        
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/user-types');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+        
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                userTypes: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+    
+    async getUserServices(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'userServices'))) {
+            return _.get(context.state.formData, 'userServices');
+        }
+        
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/user-services');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+        
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                userServices: result.results,
+            });
+        } else {
+            context.commit('setErrorsAlert',  {
+                alert: _.pick(result, ['code', 'message', 'status']),
+                errors: {}
+            });
+        }
+        return result.results;
+    },
+    
+    async getUserStatus(context) {
+        if (!_.isEmpty(_.get(context.state.formData, 'userStatus'))) {
+            return _.get(context.state.formData, 'userStatus');
+        }
+        
+        const requestPayload = {};
+        _.set(requestPayload, 'url', '/user-status');
+        _.set(requestPayload, 'params', {
+            columns: 'id,name',
+            sublist: false,
+            paginate: false,
+        });
+        const result = await helpers.getDataAction(requestPayload);
+        
+        if (result && result.code === 200) {
+            context.commit('setFormData', {
+                userStatus: result.results,
             });
         } else {
             context.commit('setErrorsAlert',  {

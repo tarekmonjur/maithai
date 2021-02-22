@@ -47,9 +47,9 @@
                   {{row.barcode}}
                 </td>
                 <td>
-                  {{row.original_price}}<br>
-                  {{row.regular_price}}<br>
-                  {{row.special_price}}
+                    {{settings.currency_symbol}}{{row.original_price || 0.00}}<br>
+                    {{settings.currency_symbol}}{{row.regular_price}}<br>
+                    {{settings.currency_symbol}}{{row.special_price}}
                 </td>
                 <td>
                   <img :src="row.image" alt="" width="60">
@@ -85,6 +85,7 @@ export default {
   },
   computed: {
     ...mapState([
+      'settings',
       'lang_key',
       'loading_list',
     ]),

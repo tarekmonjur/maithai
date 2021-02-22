@@ -44,7 +44,7 @@
             <div class="col" v-if="formInput['image']">
                 <div class="form-group">
                     <br>
-                    <img :src="formInput['image']" alt="" width="60">
+                    <img :src="image ? image : formInput['image']" alt="" width="60">
                 </div>
             </div>
             <div class="col">
@@ -94,6 +94,9 @@ import {mapState} from "vuex";
 
 export default {
     name: "form.component",
+    data() {
+        return {image: null}
+    },
     computed: {
         ...mapState([
             'lang_key',
@@ -116,6 +119,11 @@ export default {
             const files_name = event.target.name;
             const files = event.target.files;
             this.formInput[files_name] = files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = (evt) => {
+                this.image = evt.target.result;
+            }
         }
     },
 }

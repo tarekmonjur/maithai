@@ -88,9 +88,9 @@ export default {
                 method,
                 params: _.get(payload, 'params', null),
                 data: _.get(payload, 'data', null),
-                responseType: 'json',
+                // responseType: 'json',
                 headers: _.get(payload, 'headers', {
-                    'Content-Type': 'Application/json'
+                    'Content-Type': 'application/json'
                 }),
             });
             data = result.data;
@@ -150,6 +150,7 @@ export default {
         
         const formData = new FormData();
         _.forEach(data, (value, key) => {
+            // console.log({key, value});
             if (typeof value === 'boolean') {
                 value = value ? 1 : 0;
             }
@@ -163,19 +164,22 @@ export default {
                                 for (const kk in value[k]) {
                                     if (value[k].hasOwnProperty(kk)) {
                                         // console.log(`${key}[${k}][${kk}]`, value[k][kk]);
-                                        formData.append(`${key}[${k}][${kk}]`, value[k][kk]);
+                                        let input_value = !_.isEmpty(value[k][kk]) ? value[k][kk] : '';
+                                        formData.append(`${key}[${k}][${kk}]`, input_value);
                                     }
                                 }
                             } else {
                                 // console.log(`${key}[${k}]`, value[k]);
-                                formData.append(`${key}[${k}]`, value[k]);
+                                let input_value = !_.isEmpty(value[k]) ? value[k] : '';
+                                formData.append(`${key}[${k}]`, input_value);
                             }
                         }
                     }
                 }
             } else {
-                // console.log({key, value});
-                formData.append(key, value);
+                let input_value = value === null || value === 'null' ? '' : value;
+                // console.log({key, input_value});
+                formData.append(key, input_value);
             }
         });
         formData.delete('id');
@@ -192,6 +196,10 @@ export default {
             const formData = await this.transformToFormData(data, file_Keys);
             _.set(payload, 'data', formData);
         }
+        // else {
+        //     const data = JSON.stringify(_.get(payload, 'data', {}));
+        //     _.set(payload, 'data', data);
+        // }
 
         const result = await this.makeApiRequest(url, method, payload);
         return result;
@@ -303,4 +311,34 @@ export default {
         win.document.close();
         return true;
     },
+    statusBadgeClass(value) {
+        if (value === 'none') {
+            return 'badge-secondary';
+        }
+        else if (value === 'cash' || value === 'card') {
+            return 'badge-info';
+        }
+        else if (value === 'pending') {
+            return 'badge-warning';
+        }
+        else if (value === 'due') {
+            return 'badge-warning';
+        }
+        else if (value === 'completed') {
+            return 'badge-success';
+        }
+        else if (value === 'placed') {
+            return 'badge-secondary';
+        }
+        else if (value === 'accepted') {
+            return 'badge-info';
+        }
+        else if (value === 'delivered') {
+            return 'badge-primary';
+        }
+        else if (value === 'cancel') {
+            return 'badge-danger';
+        }
+        return 'badge-secondary';
+    }
 };

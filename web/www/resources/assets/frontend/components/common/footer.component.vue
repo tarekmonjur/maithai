@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px dotted gray;"></div>
+                <div style="border-bottom: 1px dotted white;"></div>
 
                 <div class="row mb-2 footer-list-1st-heading mt-5">
                     <div class="col-md-12">
@@ -28,15 +28,15 @@
                     </div>
                 </div>
                 <div class="row mb-4 footer-list-1st-row">
-                    <div class="col-md-4 text-capitalize">
-                        <div v-html="settings.address"></div>
-                    </div>
                     <div class="col-md-4">
-                        <ul>
-                            <li v-if="settings.phone">Phone: {{settings.phone}}</li>
-                            <li v-if="settings.mobile">Mobile: {{settings.mobile}}</li>
-                            <li v-if="settings.email">E-mail: {{settings.email}}</li>
-                        </ul>
+                        <div v-html="settings.address"></div>
+                        <div class="mt-3">
+                            <ul>
+                                <li v-if="settings.phone">Phone: {{settings.phone}}</li>
+                                <li v-if="settings.mobile">Mobile: {{settings.mobile}}</li>
+                                <li v-if="settings.email">E-mail: {{settings.email}}</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <ul>
@@ -44,9 +44,12 @@
                             <li v-if="settings.vat_number">VAT: {{settings.vat_number}}</li>
                         </ul>
                     </div>
+                    <div class="col-md-4">
+                        <img :src="settings.rating_image" alt="ratting" style="width: 230px; height: 150px">
+                    </div>
                 </div>
                 <br>
-                <div style="border-bottom: 1px dotted gray;"></div>
+                <div style="border-bottom: 1px dotted white;"></div>
 
                 <div class="row mt-5 footer-list-2nd-row mb-5">
                     <div class="col-md-4 business-hour" id="time-table-bookmark">
@@ -61,28 +64,26 @@
 
                     <div class="col-md-4">
                         <h5 class="text-capitalize mb-3">Payment Methods:</h5>
-
-                        <ul class="d-flex business-logo-section">
-                            <li class="business-logo">
-                                <img class="paypal" :src="this.assetUrl('/logo/paypal.png')" alt="">
-                            </li>
-                            <li class="business-logo">
-                                <img class="visa" :src="this.assetUrl('/logo/visa.png')" alt="">
-                            </li>
-                            <li class="business-logo">
-                                <img class="master" :src="this.assetUrl('/logo/master.png')" alt="">
-                            </li>
-                        </ul>
+                        <img :src="settings.payment_image" alt="ratting" style="max-width: 350px">
+<!--                        <ul class="d-flex business-logo-section">-->
+<!--                            <li class="business-logo">-->
+<!--                                <img class="paypal" :src="this.assetUrl('/logo/paypal.png')" alt="">-->
+<!--                            </li>-->
+<!--                            <li class="business-logo">-->
+<!--                                <img class="visa" :src="this.assetUrl('/logo/visa.png')" alt="">-->
+<!--                            </li>-->
+<!--                            <li class="business-logo">-->
+<!--                                <img class="master" :src="this.assetUrl('/logo/master.png')" alt="">-->
+<!--                            </li>-->
+<!--                        </ul>-->
                     </div>
                 </div>
 
-                <div style="border-bottom: 1px dotted gray;"></div>
+                <div style="border-bottom: 1px dotted white;"></div>
 
                 <div class="row mt-5">
                     <div class="col-md-12 text-center">
-                        <span class="text-muted">
-                            <small>&copy; Copyright 2020, {{settings.name}}. All Rights Reserved</small>
-                        </span>
+                        <small>&copy; Copyright 2020, {{settings.name}}. All Rights Reserved</small>
                     </div>
                 </div>
             </div>

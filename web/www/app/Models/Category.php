@@ -8,7 +8,8 @@ class Category extends Model
 {
     public function subCategories() {
         return $this->hasMany(SubCategory::class, 'category_id', 'id')
-            ->withCount('products');
+            ->withCount('products')
+            ->orderBy('sort');
     }
 
     public function products() {

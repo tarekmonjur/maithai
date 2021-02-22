@@ -127,7 +127,7 @@ trait ProductService
 
             }
         }
-        if (isset($filters['sub_category_id'])) {
+        if (isset($filters['sub_category_id']) && !empty($filters['sub_category_id'])) {
             if (is_array($filters['sub_category_id'])) {
                 $dbModel = $dbModel->whereIn('sub_category_id', $filters['sub_category_id']);
             } else {

@@ -43,6 +43,33 @@
         </table>
       </td>
     </tr>
+      <tr>
+          <td>{{ lang(`delivery_address`) }}</td>
+          <td>
+              <table>
+                  <tr>
+                      <th>{{ lang('full_name') }}</th>
+                      <td>{{ shipping.full_name ? shipping.full_name : shipping.first_name+' '+shipping.last_name}}</td>
+                  </tr>
+                  <tr>
+                      <th>{{ lang('mobile_no') }}</th>
+                      <td>{{ shipping.mobile_no }}</td>
+                  </tr>
+                  <tr>
+                      <th>{{ lang('email') }}</th>
+                      <td>{{ shipping.email }}</td>
+                  </tr>
+                  <tr>
+                      <th>{{ lang('postal_code') }}</th>
+                      <td>{{ shipping.zip_code }}</td>
+                  </tr>
+                  <tr>
+                      <th>{{ lang('address') }}</th>
+                      <td>{{ shipping.address }}</td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
     <tr>
       <td>{{ lang(`transaction_no`) }}</td>
       <td>{{ showData.transaction_no }}</td>
@@ -169,7 +196,13 @@ export default {
     ]),
     customer() {
       return _.get(this.showData, 'customer.details', {});
-    }
+    },
+      shipping() {
+          if (_.get(this.showData, 'shipping_details')) {
+              return _.get(this.showData, 'shipping_details', {});
+          }
+          return _.get(this.showData, 'customer.details', {});
+      }
   },
   methods: {
     lang(key) {
@@ -177,7 +210,7 @@ export default {
     },
   },
   updated() {
-    console.log('view..');
+    // console.log('view..');
   }
 }
 </script>

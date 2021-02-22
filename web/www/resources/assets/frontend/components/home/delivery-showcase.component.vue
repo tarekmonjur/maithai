@@ -8,14 +8,14 @@
                 </div>
                 <div class="col-md-3 col-jumbo-one">
                     <div class="rounded-icon"><i class="fas fa-weight"></i></div>
-                    <p>Minimum order &#163;10</p>
+                    <p>Minimum order {{settings.currency_symbol}}{{settings.minimum_order}}</p>
                 </div>
                 <div class="col-md-3 col-jumbo-one">
                     <div class="rounded-icon"><i class="far fa-credit-card"></i></div>
                     <p>Pay via Card/Cash</p>
                 </div>
                 <div class="col-md-3 col-jumbo-one">
-                    <div class="rounded-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="rounded-icon">{{settings.currency_symbol}}</div>
                     <p>Deals Discounts</p>
                 </div>
             </div>
@@ -24,8 +24,15 @@
 </template>
 
 <script>
+import {mapState} from 'vuex';
+
 export default {
-    name: "delivery-showcase.component"
+    name: "delivery-showcase.component",
+    computed: {
+        ...mapState([
+            'settings'
+        ])
+    }
 }
 </script>
 

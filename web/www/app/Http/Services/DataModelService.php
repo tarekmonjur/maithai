@@ -201,7 +201,13 @@ trait DataModelService
         $filters['sublist'] = $this->getSubList($filters['sublist'] ?? null);
         $filters['paginate'] = $this->getPaginate($filters['paginate'] ?? null);
         $filters['limit'] = $this->getLimit($filters['limit'] ?? null);
-        $this->data['filters'] = $filters;
+
+        if (!empty($this->data['filters'])) {
+            $this->data['filters'] = array_merge($this->data['filters'], $filters);
+        } else {
+            $this->data['filters'] = $filters;
+        }
+
         return $this;
     }
 

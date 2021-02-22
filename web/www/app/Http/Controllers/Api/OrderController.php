@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\OrderRequest;
 use App\Http\Services\OrderService;
+use App\Mail\CustomerOrderMail;
+use App\Mail\UserOrderMail;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\ShippingDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends ApiController
 {
@@ -46,6 +50,9 @@ class OrderController extends ApiController
     public function show(Request $request)
     {
         try {
+            if($this->guard === 'customer' && $this->authUser->getTable() === (new Customer)->getTable()) {
+                $this->setFilter('customer_id', $this->authUser->id);
+            }
             $this->setTitle('view')
                 ->setIdSlug($request->id)
                 ->setSubList($request->sublist)
@@ -84,6 +91,15 @@ class OrderController extends ApiController
                 $items = $order->orderDetails()->createMany($items);
                 $order->setAttribute('items', $items);
                 DB::commit();
+                if ($order->source === 'online') {
+                    $this->getContext();
+                    $order = Order::with(['orderDetails', 'shippingDetails', 'customer'])->find($order->id);
+                    $to_email = $order->shippingDetails ? $order->shippingDetails->email : '';
+                    if ($to_email) {
+                        Mail::to($to_email)->send(new CustomerOrderMail($order));
+                    }
+                    Mail::to(config('mail.from.address'))->send(new UserOrderMail($order));
+                }
                 return $this->jsonResponse($order->getAttributes(), $this->getTrans('success_msg'));
             } else {
                 DB::rollBack();
@@ -134,6 +150,24 @@ class OrderController extends ApiController
                 DB::rollBack();
                 return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
             }
+        } catch (\Exception $e) {
+            return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
+        }
+    }
+
+    public function updateStatus( Request $request)
+    {
+        try {
+            $order = Order::find($request->id);
+            if (!$order) {
+                return $this->jsonResponse(null, $this->getTrans('warning_msg'));
+            }
+//            $result = Order::where('id', $request->id)->update($request->all());
+            $order->setRawAttributes($request->all());
+            if (!$order->save()) {
+                return $this->jsonResponse(null, $this->getTrans('error_msg'), 'error');
+            }
+            return $this->jsonResponse($order->getAttributes(), $this->getTrans('success_msg'));
         } catch (\Exception $e) {
             return $this->jsonResponse($e->getMessage(), $this->getTrans('error_msg'), 'error', $e->getCode());
         }
