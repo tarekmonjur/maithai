@@ -9,6 +9,11 @@
     font-family: 'Baloo 2', cursive; */
     font-family: 'Lato', sans-serif;
 }
+
+:root{
+    --red:#e84118;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -556,10 +561,10 @@ section#home-cover .jumbotron::after{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: url('../assets/img/home_thai.jpg') no-repeat fixed;
+	background: url('../assets/img/mood-board.jpg') no-repeat fixed;
 	background-size: cover;
-	opacity: .3;
-	animation: asad 25s linear infinite;
+	opacity: .4;
+	/* animation: asad 25s linear infinite; */
 }
 section#home-cover-2 .jumbotron::after{
     content: "";
@@ -570,10 +575,10 @@ section#home-cover-2 .jumbotron::after{
 	height: 100%;
 	background: url('../assets/img/coverA.jpg') no-repeat fixed;
 	background-size: cover;
-	opacity: .3;
-	animation: asad 25s linear infinite;
+	opacity: .4;
+	/* animation: asad 25s linear infinite; */
 }
-
+/* 
 @keyframes asad{
 	50%{
 		transform: scale(2);
@@ -581,7 +586,7 @@ section#home-cover-2 .jumbotron::after{
 	100%{
 		transform: scale(1);
 	}
-}
+} */
 .dark-bg{
 	position: absolute;
 	top: 44%;
@@ -923,7 +928,7 @@ svg.svg-inline--fa.fa-envelope.fa-w-16:hover{
  } */
 
  div#upper-footer{
-    background: #181818 !important;
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%) !important;
  }
  div#bottom-footer{
     background: rgb(210, 35, 42) !important;
@@ -1572,3 +1577,170 @@ div.dotted-dateline{
     }
 }
 	
+
+
+/* New Thingss */
+
+.container-fluid{
+    width: 100%;
+}
+
+.show-fusion-food-home{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+
+.container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    min-height: 100vh;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+.tz-gallery img.tz-gallery-image {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+img.tz-gallery-image{
+    height: 300px;
+    width: 500px;
+}
+
+
+.tz-gallery img.tz-gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.tz-gallery img.tz-gallery-image {
+    border-radius: 4px;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+.our-food-style-title{
+    color: tomato;
+    text-align: center;
+    font-size: 30px;
+}
+.underline{
+    border-bottom: 4px solid tomato; 
+    width: 5rem; 
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%, 0);
+}
+.overflow-zero{
+    overflow: unset !important;
+}
+
+
+
+
+
+.speciality .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    text-transform: capitalize;
+}
+
+.speciality .box-container .box{
+    height:20rem;
+    flex:1 1 43rem;
+    margin:1rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.speciality .box-container .box img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.speciality .box-container .box .info{
+    position: absolute;
+    top:50%; left: 5%;
+    transform: translateY(-50%);
+}
+
+.speciality .box-container .box .info h3{
+    font-size: 3rem;
+    color:#fff;
+}
+
+.speciality .box-container .box .info p{
+    font-size: 2rem;
+    color:#eee;
+}
+
+.speciality .icons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+}
+
+.speciality .icons-container .icons{
+    margin:2rem;
+    width: 15rem;
+    text-align: center;
+}
+
+.speciality .icons-container .icons i{
+    font-size: 4rem;
+    color:var(--red);
+}
+
+.speciality .icons-container .icons h3{
+    font-size: 20px;
+    color:#333;
+    padding:1rem 0;
+    text-transform: capitalize;
+}
+
+svg.svg-inline--fa.fa-shipping-fast.fa-w-20,
+svg.svg-inline--fa.fa-tags.fa-w-20,
+svg.svg-inline--fa.fa-hand-holding-usd.fa-w-18,
+svg.svg-inline--fa.fa-headset.fa-w-16{
+    color: #f09f2a;
+    font-size: 3rem;
+}
+
+
+@media(max-width: 768px) {
+    .container.gallery-container {
+        border-radius: 0;
+    }
+
+    img.tz-gallery-image{
+        height: 200px;
+        width: 100px;
+    }
+
+    .speciality .box-container .box .info h3 {
+        font-size: 2rem;
+    }
+    .speciality .box-container .box .info p {
+        font-size: 1rem;
+    }
+}
