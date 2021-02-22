@@ -2008,10 +2008,6 @@ footer div.dotted-dateline {
 
   /**Bottom Foooter**/
 
-  div#bottom-footer div.logo {
-    display: none;
-  }
-
   div.col-md-4.footer-qr-code {
     justify-content: center !important;
   }
@@ -2601,7 +2597,7 @@ div.list-area div.list-body h5 {
 /*The LIst Footer*/
 
 div.list-area div.list-footer {
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 div.list-area div.list-footer button.btn-list-order {

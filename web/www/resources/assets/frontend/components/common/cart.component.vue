@@ -115,17 +115,17 @@
                 </div>
             </div>
             <div class="row content-items-list border-top">
-                <div class="col-4 single-item"><strong>Total</strong></div>
-                <div class="col-2 single-item"><strong>{{settings.currency_symbol}}{{totalPrice}}</strong></div>
-                <div class="col-2 single-item"><strong>{{totalQty}}</strong></div>
-                <div class="col-1 single-item"><strong>{{settings.currency_symbol}}{{totalDiscount}}</strong></div>
-                <div class="col-1 single-item"><strong>{{settings.currency_symbol}}{{totalVat}}</strong></div>
-                <div class="col-2 single-item"><strong>{{settings.currency_symbol}}{{totalSubTotal}}</strong></div>
+                <div class="col-4 single-item"><span>Total</span></div>
+                <div class="col-2 single-item"><span>{{settings.currency_symbol}}{{totalPrice}}</span></div>
+                <div class="col-2 single-item"><span>{{totalQty}}</span></div>
+                <div class="col-1 single-item"><span>{{settings.currency_symbol}}{{totalDiscount}}</span></div>
+                <div class="col-1 single-item"><span>{{settings.currency_symbol}}{{totalVat}}</span></div>
+                <div class="col-2 single-item"><span>{{settings.currency_symbol}}{{totalSubTotal}}</span></div>
             </div>
             <div class="row">
                 <div class="col p-1 pt-2">
                     <h6 class="border-bottom pb-1">Delivery Address:</h6>
-                    <address>
+                    <address style="font-size: 14px">
                         {{shippingDetails.full_name}} <br>
                         {{shippingDetails.email}} <br>
                         {{shippingDetails.mobile_no}} <br>

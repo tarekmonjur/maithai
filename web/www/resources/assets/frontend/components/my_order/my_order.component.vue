@@ -99,8 +99,13 @@ export default {
         ModalComponent,
         InvoiceComponent
     },
-    created() {
-        this.$store.dispatch('getOrders');
+    mounted() {
+        const payload = {
+            params: {
+                customer_id: _.get(this.customer, 'id', 0)
+            }
+        };
+        this.$store.dispatch('getOrders', payload);
     },
     data() {
         return {
@@ -109,6 +114,7 @@ export default {
     },
     computed: {
         ...mapState([
+            'customer',
             'settings',
             'modal',
         ]),

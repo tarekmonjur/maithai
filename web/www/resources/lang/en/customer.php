@@ -33,6 +33,7 @@ return [
     'city' => 'City',
     'state' => 'State',
     'zip_code' => 'Zip Code',
+    'postal_code' => 'Postal Code',
     'address' => 'Address',
     'created' => 'Created',
     'updated' => 'Updated',

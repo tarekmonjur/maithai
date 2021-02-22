@@ -79,6 +79,8 @@ return [
     'price' => 'Price',
     'processing_fee' => 'Processing Fee',
     'delivery_fee' => 'Delivery Fee',
+    'delivery_address' => 'Delivery Address',
+    'postal_code' => 'Postal Code',
 
     //invoice
     'invoice' => 'Invoice',

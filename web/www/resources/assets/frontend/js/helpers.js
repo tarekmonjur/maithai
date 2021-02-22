@@ -139,7 +139,7 @@ export default {
                 data: _.get(payload, 'data', null),
                 responseType: 'json',
                 headers: _.get(payload, 'headers', {
-                    'Content-Type': 'Application/json'
+                    'Content-Type': 'application/json'
                 }),
             });
             data = result.data;
@@ -198,6 +198,10 @@ export default {
             const formData = await this.transformToFormData(data);
             _.set(payload, 'data', formData);
         }
+        // else {
+        //     const data = JSON.stringify(_.get(payload, 'data', {}));
+        //     _.set(payload, 'data', data);
+        // }
 
         const result = await this.makeApiRequest(url, method, payload);
         return result;

@@ -22,7 +22,7 @@
                     <div class="mt-3 top-contact">
                         <div class="phone-num-bar">
                             <i class="fas fa-phone-alt icon"></i>
-                            <div class="num">call: <span class="font-weight-bold">{{settings.phone ? settings.phone : settings.mobile}}</span></div>
+                            <div class="num">call: <a :href="phoneNumber" class="font-weight-bold">{{settings.phone ? settings.phone : settings.mobile}}</a></div>
                         </div>
                         <div class="cart-bar">
                             <i class="fas fa-shopping-cart"></i>
@@ -60,10 +60,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-2 mb-2">
-                    <h3 class="temp-text">
-                        For place an order please<br>
-                        Call: {{settings.phone ? settings.phone : settings.mobile}}
-                    </h3>
+                    <h4 class="temp-text">
+                        <a :href="phoneNumber" class="temp-text-a">
+                        Call Now to Book a Table or to Place an Order <br>
+                        <i class="fas fa-phone-alt icon"></i>&nbsp;{{settings.phone ? settings.phone : settings.mobile}}
+                        </a>
+                    </h4>
                 </div>
 
                 <div class="col-md-6 mt-2 mb-2">
@@ -84,13 +86,16 @@
     <header class="time-header">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mb-4">
+                <div class="col-md-4 mb-4">
                     <h4 class="p-3 mb-2 time-border">Opening Time</h4>
                     <div v-html="settings.opening_time"></div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-4 mb-4">
                     <h4 class="p-3 mb-2 time-border">Delivery Time</h4>
                     <div v-html="settings.delivery_time"></div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img :src="settings.rating_image" alt="ratting" style="width: 230px; height: 150px">
                 </div>
             </div>
         </div>
@@ -113,7 +118,10 @@ export default {
             'totalItems',
             'totalSubTotal'
         ]),
-    }
+        phoneNumber() {
+            return 'tel:'+(this.settings.phone ? this.settings.phone : this.settings.mobile).trim();
+        }
+    },
 }
 </script>
 

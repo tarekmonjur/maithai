@@ -8,24 +8,30 @@
             <div class="carousel-inner container">
                 <div class="row carousel-item food-menu-carousel" v-for="(category, index) in getCategories" :class="index === 0 ? 'active' : ''">
                     <div class="col-md-6 carousel-image">
-                        <img :src="image ? image : category.image ? category.image : this.assetUrl('/logo/logo.png')"
-                             class="d-block img img-fluid img-offer food-image img-thumbnail p-0" :alt="category.name">
+                        <a :href="this.url('/food-orders/'+category.slug+'?cat='+category.id+'#products')">
+                            <img :src="image ? image : category.image ? category.image : this.assetUrl('/logo/logo.png')"
+                                 class="d-block img img-fluid img-offer food-image img-thumbnail p-0" :alt="category.name">
+                        </a>
                     </div>
                     <div class="col-md-6 float-right text-dark food-menu-list">
-                        <h1 class="text-uppercase display-2 text-shadow">{{category.name}}</h1>
+                        <h1 class="text-uppercase display-2 text-shadow">
+                            <a :href="this.url('/food-orders/'+category.slug+'?cat='+category.id+'#products')">
+                                {{category.name}}
+                            </a>
+                        </h1>
                         <div class="d-flex offer-list" v-if="category.sub_categories">
                             <ul class="list-group list-group-flush offer-list-ul">
                                 <li class="list-group-item"
                                     v-for="(subCategory, index) in subCategoryList1(category.sub_categories)">
                                     - <a @mouseover="image = subCategory.image" @mouseleave="image = null"
-                                         :href="this.url('/food-orders/'+subCategory.slug+'-'+subCategory.id)">{{subCategory.name}}</a>
+                                         :href="this.url('/food-orders/'+subCategory.slug+'?subcat='+subCategory.id+'#products')">{{subCategory.name}}</a>
                                 </li>
                             </ul>
                             <ul class="list-group list-group-flush offer-list-ul">
                                 <li class="list-group-item"
                                     v-for="(subCategory, index) in subCategoryList2(category.sub_categories)">
                                     - <a @mouseover="image = subCategory.image" @mouseleave="image = null"
-                                         :href="this.url('/food-orders/'+subCategory.slug+'-'+subCategory.id)">{{subCategory.name}}</a>
+                                         :href="this.url('/food-orders/'+subCategory.slug+'?subcat='+subCategory.id+'#products')">{{subCategory.name}}</a>
                                 </li>
                             </ul>
                         </div>

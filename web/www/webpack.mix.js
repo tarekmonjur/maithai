@@ -26,7 +26,7 @@ require("laravel-mix-vue3");
 // mix.vue3('resources/assets/frontend/js/about.js', 'public/frontend/js');
 // mix.vue3('resources/assets/frontend/js/contact.js', 'public/frontend/js');
 // mix.vue3('resources/assets/frontend/js/policy.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/my_order.js', 'public/frontend/js');
+mix.vue3('resources/assets/frontend/js/my_order.js', 'public/frontend/js');
 
 // mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/sub_category.js', 'public/backend/js');

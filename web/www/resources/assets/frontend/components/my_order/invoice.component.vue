@@ -26,7 +26,7 @@
             <div class="col-sm-4 invoice-col">
                 {{this.lang('to')}}
                 <address>
-                    {{this.lang('full_name')}}: <strong>{{ shipping.first_name }} {{ shipping.last_name }}</strong><br>
+                    {{this.lang('full_name')}}: <strong>{{ shipping.full_name ? shipping.full_name : shipping.first_name+' '+shipping.last_name}}</strong><br>
                     {{this.lang('mobile_no')}}: {{shipping.mobile_no}}<br>
                     {{this.lang('email')}}: {{shipping.email}} <br>
                     {{shipping.city ? shipping.city+', ' : ''}}

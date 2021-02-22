@@ -219,16 +219,21 @@ trait OrderService
         return $this->data;
     }
 
-    protected function generateInvoiceNumber(){
+    protected function generateInvoiceNumber($increment = 1){
         $invoice = Order::orderBy('id','desc')->first();
         $invoice_no_length = 12;
         if($invoice) {
             $remove_zero = str_replace(0,'',$invoice->invoice_no);
-            $increment_invoice_no = intval($remove_zero) + 1;
+            $increment_invoice_no = intval($remove_zero) + $increment;
             $need_zero = $invoice_no_length - strlen($increment_invoice_no);
             $invoice_no = str_repeat(0,$need_zero).$increment_invoice_no;
         }else{
             $invoice_no =  str_repeat(0,$invoice_no_length-1).'1';
+        }
+
+        if (Order::where('invoice_no', $invoice_no)->exists()) {
+            $increment = $increment+1;
+            return $this->generateInvoiceNumber($increment);
         }
         return $invoice_no;
     }

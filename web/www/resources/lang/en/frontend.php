@@ -10,6 +10,7 @@ return [
     'terms' => 'Terms',
     'terms&policy' => 'Terms & Policy',
     'my_orders' => 'My Orders',
+    'product_details' => 'Food Details',
 
     'add_shipping_details' => 'Add shipping details',
     'add_delivery_address' => 'Add Delivery Address',

@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\OrderRequest;
 use App\Http\Services\OrderService;
+use App\Mail\CustomerOrderMail;
+use App\Mail\UserOrderMail;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\ShippingDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends ApiController
 {
@@ -88,6 +91,15 @@ class OrderController extends ApiController
                 $items = $order->orderDetails()->createMany($items);
                 $order->setAttribute('items', $items);
                 DB::commit();
+                if ($order->source === 'online') {
+                    $this->getContext();
+                    $order = Order::with(['orderDetails', 'shippingDetails', 'customer'])->find($order->id);
+                    $to_email = $order->shippingDetails ? $order->shippingDetails->email : '';
+                    if ($to_email) {
+                        Mail::to($to_email)->send(new CustomerOrderMail($order));
+                    }
+                    Mail::to(config('mail.from.address'))->send(new UserOrderMail($order));
+                }
                 return $this->jsonResponse($order->getAttributes(), $this->getTrans('success_msg'));
             } else {
                 DB::rollBack();

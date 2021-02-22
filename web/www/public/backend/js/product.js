@@ -59993,7 +59993,7 @@ window.apiPrefix = '/api';
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.baseURL = baseURL + apiPrefix;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token');
+window.axios.defaults.headers.common['Accept'] = 'Application/json'; // window.axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('access_token');
 
 window.axios.defaults.validateStatus = function (status) {
   return status < 599;
@@ -60170,9 +60170,9 @@ __webpack_require__.r(__webpack_exports__);
         method,
         params: _.get(payload, 'params', null),
         data: _.get(payload, 'data', null),
-        responseType: 'json',
+        // responseType: 'json',
         headers: _.get(payload, 'headers', {
-          'Content-Type': 'Application/json'
+          'Content-Type': 'application/json'
         })
       });
       data = result.data; // return data;
@@ -60289,7 +60289,11 @@ __webpack_require__.r(__webpack_exports__);
       const formData = await this.transformToFormData(data, file_Keys);
 
       _.set(payload, 'data', formData);
-    }
+    } // else {
+    //     const data = JSON.stringify(_.get(payload, 'data', {}));
+    //     _.set(payload, 'data', data);
+    // }
+
 
     const result = await this.makeApiRequest(url, method, payload);
     return result;

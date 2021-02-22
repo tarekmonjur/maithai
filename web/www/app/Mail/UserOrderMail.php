@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CustomerContact extends Mailable
+class UserOrderMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,7 +19,7 @@ class CustomerContact extends Mailable
      * @param $data
      * @return void
      */
-    public function __construct(array $data)
+    public function __construct($data)
     {
         $this->data = $data;
     }
@@ -43,8 +43,12 @@ class CustomerContact extends Mailable
             );
         });
 
-        return $this->from($this->data['email'])
-            ->subject('New Customer Contact Message')
-            ->markdown('emails.customer_contact', $this->data);
+        $pos_url = route(config('app.backend_home', 'pos').'.login');
+        $subject = config('app.name').' Food Order';
+        $from_address = $this->data->shippingDetails ? $this->data->shippingDetails->email : config('mail.from.address');
+        return $this->from($from_address)
+            ->subject($subject)
+            ->markdown('emails.user_order')
+            ->with(['order' => $this->data, 'pos_url' => $pos_url]);
     }
 }

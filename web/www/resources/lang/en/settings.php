@@ -13,6 +13,7 @@ return [
 
     'application_settings' => 'Application Settings',
     'app_settings' => 'App Settings',
+    'order_settings' => 'Order Settings',
     'logo_settings' => 'Logo Settings',
     'email_settings' => 'Email Settings',
     'time_settings' => 'Time Settings',
@@ -37,7 +38,11 @@ return [
     'registration_number' => 'Registration Number',
     'logo' => 'Logo',
     'qrcode' => 'QR Code',
+    'rating_image' => 'Ratting',
+    'payment_image' => 'Payment',
     'currency_symbol' => 'Currency Symbol',
+    'minimum_order' => 'Minimum Order',
+    'email_server_port' => 'Email Server Port',
 
     'success_msg' => 'Settings successfully saved',
     'error_msg' => 'Settings not saved. Try again..!',

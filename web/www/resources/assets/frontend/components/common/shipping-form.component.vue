@@ -63,7 +63,7 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label for="zip_code">{{lang('zip_code')}} :</label>
+                    <label for="zip_code">{{lang('postal_code')}} :</label>
                     <input
                         type="text"
                         id="zip_code"

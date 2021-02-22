@@ -57,7 +57,7 @@ class SettingsController extends ApiController
                     if($input['type'] !== 'file') {
                         Settings::where('id', $input['id'])->update(['value' => $input['value']]);
                     } else {
-//                        dd($key, $input[$input['name']], $request->file('0.logo'), $_FILES);
+//                        dd($key, $input[$input['name']], $_FILES);
                         if ($request->hasFile($key.'.'.$input['name'])) {
                             $file = $input[$input['name']];
                             $upload_path = $this->upload_path;
@@ -71,7 +71,7 @@ class SettingsController extends ApiController
 
                                 $upload = Image::make($file);
                                 $upload->save($full_upload_path);
-                                Settings::where('id', $input['id'])->update(['value' => $upload_name]);
+                                Settings::where('name', $input['name'])->update(['value' => $upload_name]);
                             }
                         }
                     }

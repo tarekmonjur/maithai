@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('email', function() {
+    return (new App\Mail\CustomerContact([
+        'name' => '',
+        'email' => '',
+        'message' => '',
+    ]));
+});
+
 /********** ......Frontend Auth Routes....... *****************/
 Route::prefix('/')->namespace('Frontend\Auth')->group(function(){
 

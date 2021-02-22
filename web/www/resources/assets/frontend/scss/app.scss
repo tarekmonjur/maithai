@@ -1301,11 +1301,6 @@ div.rounded-contact-icon{
     }
 
     /**Bottom Foooter**/
-    div#bottom-footer{
-        div.logo{
-            display: none;
-        }
-    }
     div.col-md-4.footer-qr-code{
         justify-content: center !important;
     }
@@ -1890,7 +1885,7 @@ div.list-area div.list-body{
 /*The LIst Footer*/
 div.list-area{
     div.list-footer{
-        margin-left: 3rem;
+        margin-left: 2rem;
 
         button.btn-list-order{
             background: $button_tomato !important;

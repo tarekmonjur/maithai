@@ -7,7 +7,6 @@
                     <input
                         type="text"
                         id="name"
-                        @keyup="this.slug"
                         v-model="formInput['name']"
                         :class="{'is-invalid' : errors.name}"
                         class="form-control form-control-sm"/>
@@ -20,7 +19,6 @@
                     <input
                         type="text"
                         id="code"
-                        @keyup="this.slug"
                         v-model="formInput['code']"
                         :class="{'is-invalid' : errors.code}"
                         class="form-control form-control-sm"/>
