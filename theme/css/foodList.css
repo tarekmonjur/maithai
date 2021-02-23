@@ -1,6 +1,7 @@
 /************CSS for Food List Section***********/
 
 
+
 section#food-list div.food-list-header h2{
     color: tomato;
 }
@@ -340,6 +341,22 @@ div.filter-item-food-package{
     }
     .filter-item.left-aside {
         padding-bottom: 1rem;
+    }
+
+    .food-menu-mobile{
+        margin: 0 !important;
+        padding-bottom: 1rem;
+    }
+    .food-menu-mobile-title{
+        padding: 10px;
+        border-radius: 5px;
+        background: #fff;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .menu-container-mobile{
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

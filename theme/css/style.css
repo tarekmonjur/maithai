@@ -1037,6 +1037,244 @@ div.dotted-dateline{
     margin-bottom: 10px;
 }
 
+
+
+/* New Thingss */
+
+.container-fluid{
+    width: 100%;
+}
+
+.show-fusion-food-home{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+
+.container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    min-height: 100vh;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+.tz-gallery img.tz-gallery-image {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+img.tz-gallery-image{
+    height: 300px;
+    width: 500px;
+}
+
+.gallery-only{
+    height: 250px !important;
+}
+
+.tz-gallery img.tz-gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.tz-gallery img.tz-gallery-image {
+    border-radius: 4px;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+.our-food-style-title{
+    color: tomato;
+    text-align: center;
+    font-size: 30px;
+}
+.underline{
+    border-bottom: 4px solid tomato; 
+    width: 5rem; 
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%, 0);
+}
+.overflow-zero{
+    overflow: unset !important;
+}
+
+
+
+
+
+.speciality .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    text-transform: capitalize;
+}
+
+.speciality .box-container .box{
+    height:20rem;
+    flex:1 1 43rem;
+    margin:1rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.speciality .box-container .box img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.speciality .box-container .box .info{
+    position: absolute;
+    top:50%; left: 5%;
+    transform: translateY(-50%);
+}
+
+.speciality .box-container .box .info h3{
+    font-size: 3rem;
+    color:#fff;
+}
+
+.speciality .box-container .box .info p{
+    font-size: 2rem;
+    color:#eee;
+}
+
+.speciality .icons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+}
+
+.speciality .icons-container .icons{
+    margin:2rem;
+    width: 15rem;
+    text-align: center;
+}
+
+.speciality .icons-container .icons i{
+    font-size: 4rem;
+    color:var(--red);
+}
+
+.speciality .icons-container .icons h3{
+    font-size: 20px;
+    color:#333;
+    padding:1rem 0;
+    text-transform: capitalize;
+}
+
+svg.svg-inline--fa.fa-shipping-fast.fa-w-20,
+svg.svg-inline--fa.fa-tags.fa-w-20,
+svg.svg-inline--fa.fa-hand-holding-usd.fa-w-18,
+svg.svg-inline--fa.fa-headset.fa-w-16{
+    color: #f09f2a;
+    font-size: 3rem;
+}
+
+
+
+/* Google Map API */
+.google-map-api{
+    border:0; 
+    width: 100%;
+    height: 400px;
+}
+
+/* To Disable All Sides Margin */
+.margin-disable{
+    margin: 0 !important;
+}
+
+
+/* POPULAR DISHES for home page */
+
+.dish{
+    min-height: 100vh;
+}
+
+.dish .controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    list-style: none;
+}
+
+.dish .controls .buttons{
+    margin:1rem 2rem;
+    padding:.5rem 0;
+    border-bottom:.2rem solid #333;
+    color:#333;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dish .controls .buttons.button-active,
+.dish .controls .buttons:hover{
+    color: #df9329;
+    border-color: #df9329;
+}
+
+.dish .image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.dish .image-container .image{
+    width: 20rem;
+    margin:2rem;
+    border:1rem solid #fff;
+    box-shadow: 0 .5rem .5rem rgba(0,0,0,.3);
+}
+
+.dish .image-container .image img{
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dish .image-container .image a{
+    font-size: 2rem;
+    color:#333;
+    padding:.5rem;
+}
+
+.dish .image-container .image a:hover{
+    color: #df9329;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/************** ---------------------------------------- *************/
 /*****The Media Queries for this way****/
 /**---iPhone 6,7,8 or Higher Screen Comportable ---**/
 @media only screen and (max-width: 720px){
@@ -1403,8 +1641,8 @@ div.dotted-dateline{
     }
 
     img.home-logo-image{
-        width: 100px;
-        height: 80px;
+        width: 150px;
+        height: 120px
     }
 
 }
@@ -1576,157 +1814,15 @@ div.dotted-dateline{
         right: -10rem !important;
     }
 }
-	
-
-
-/* New Thingss */
-
-.container-fluid{
-    width: 100%;
-}
-
-.show-fusion-food-home{
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-}
-
-
-.container.gallery-container {
-    background-color: #fff;
-    color: #35373a;
-    min-height: 100vh;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
-}
-
-.tz-gallery {
-    padding: 40px;
-}
-
-.tz-gallery img.tz-gallery-image {
-    width: 100%;
-    margin-bottom: 30px;
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-}
-
-img.tz-gallery-image{
-    height: 300px;
-    width: 500px;
-}
-
-
-.tz-gallery img.tz-gallery-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-}
-
-.tz-gallery img.tz-gallery-image {
-    border-radius: 4px;
-}
-
-.baguetteBox-button {
-    background-color: transparent !important;
-}
-
-.our-food-style-title{
-    color: tomato;
-    text-align: center;
-    font-size: 30px;
-}
-.underline{
-    border-bottom: 4px solid tomato; 
-    width: 5rem; 
-    position: absolute; 
-    left: 50%; 
-    transform: translate(-50%, 0);
-}
-.overflow-zero{
-    overflow: unset !important;
-}
 
 
 
 
 
-.speciality .box-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding:2rem 0;
-    text-transform: capitalize;
-}
 
-.speciality .box-container .box{
-    height:20rem;
-    flex:1 1 43rem;
-    margin:1rem;
-    box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
-    border-radius: 1rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.speciality .box-container .box img{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-}
-
-.speciality .box-container .box .info{
-    position: absolute;
-    top:50%; left: 5%;
-    transform: translateY(-50%);
-}
-
-.speciality .box-container .box .info h3{
-    font-size: 3rem;
-    color:#fff;
-}
-
-.speciality .box-container .box .info p{
-    font-size: 2rem;
-    color:#eee;
-}
-
-.speciality .icons-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-bottom: 3rem;
-}
-
-.speciality .icons-container .icons{
-    margin:2rem;
-    width: 15rem;
-    text-align: center;
-}
-
-.speciality .icons-container .icons i{
-    font-size: 4rem;
-    color:var(--red);
-}
-
-.speciality .icons-container .icons h3{
-    font-size: 20px;
-    color:#333;
-    padding:1rem 0;
-    text-transform: capitalize;
-}
-
-svg.svg-inline--fa.fa-shipping-fast.fa-w-20,
-svg.svg-inline--fa.fa-tags.fa-w-20,
-svg.svg-inline--fa.fa-hand-holding-usd.fa-w-18,
-svg.svg-inline--fa.fa-headset.fa-w-16{
-    color: #f09f2a;
-    font-size: 3rem;
-}
-
-
+/*  */
+/***************--------------- New Media Query ------------------**************/
+/*  */
 @media(max-width: 768px) {
     .container.gallery-container {
         border-radius: 0;
@@ -1742,5 +1838,59 @@ svg.svg-inline--fa.fa-headset.fa-w-16{
     }
     .speciality .box-container .box .info p {
         font-size: 1rem;
+    }
+
+    .justify-unset{
+        justify-content: unset !important;
+    }
+
+    .our-food-style-title{
+        font-size: 17px;
+    }
+
+    .gallery-food-title{
+        background: #fff;
+        display: initial;
+        padding: 1rem;
+    }
+
+    .tz-gallery{
+        padding: 0;
+    }
+
+    .tz-gallery img.tz-gallery-image, .gallery-only {
+        width: 150px;
+        height: 100px !important;
+    }
+    div.col-md-4 {
+        margin-bottom: 0.5rem;
+    }
+
+    .width-unset{
+        width: unset;
+    }
+
+    .maithai-bg{
+        background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+        padding-top: 1rem;
+        margin-top: 0 !important;
+        padding-top: 2rem;
+    }
+    .maithai-bg-2{
+        background: rgb(210, 35, 42);
+        padding-top: 1rem;
+        margin-top: 0 !important;
+        padding-top: 2rem;
+    }
+
+    .mobile-container{
+        margin: 0;
+    }
+    .hr-disable{
+        display: none;
+    }
+
+    .dish .controls .buttons {
+        margin: 0.5rem 1rem;
     }
 }
