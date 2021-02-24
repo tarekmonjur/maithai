@@ -275,6 +275,7 @@ nav li.nav-item div.dropdown-menu{
     z-index: 9999;
 }
 
+
 /****------- Shopping Cart Opening Bar --------****/
 section.stickyHeader{
     display: block;
@@ -1363,6 +1364,11 @@ div, nav{
         position: unset;
     }
 
+    nav li.nav-item div.dropdown-menu{
+        background: rgb(210, 35, 42);
+    }
+        
+
     /**Home-Cover Section**/
     div#intro-section .intro-title{
         font-size: 50px;
@@ -1885,7 +1891,8 @@ div, nav{
     .gallery-food-title{
         background: #fff;
         display: initial;
-        padding: 1rem;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 
     .tz-gallery{
