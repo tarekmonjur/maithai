@@ -1,6 +1,23 @@
 /************CSS for Food List Section***********/
-
-
+.menu-search-section{
+    display: block;
+    justify-content: center;
+    background: rgb(255 255 255 / 70%);
+    padding: 12px;
+    margin-top: 2rem;
+}
+.btn-food-menu-search{
+    background: #efa034;
+    color: #fff;
+    margin-left: 2px;
+}
+.food-menu-search-bar{
+    width: 80%;
+    margin-left: 5%;
+}
+.food-menu-search-bar:focus{
+    border-color: #efa034;;
+}
 
 section#food-list div.food-list-header h2{
     color: tomato;
@@ -31,7 +48,7 @@ section#food-list div.food-list-body div.select-input{
 }
 
 /*****The Parent Menu Collapse****/
-div#accordion .card-header,
+/* div#accordion .card-header,
 div#accordion-2 .card-header,
 div#accordion-3 .card-header,
 div#accordion-4 .card-header,
@@ -40,9 +57,7 @@ div#accordion-6 .card-header,
 div#accordion-7 .card-header,
 div#accordion-8 .card-header,
 div#accordion-9 .card-header{
-    /* padding: 0 !important; */
     margin-bottom: 0;
-    /* background: rgb(206 171 120); */
     background: rgb(175,112,21);
     background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
     border: 0 !important;
@@ -57,7 +72,6 @@ div#accordion-6 .card-header.food-package,
 div#accordion-7 .card-header.food-package,
 div#accordion-8 .card-header.food-package,
 div#accordion-9 .card-header.food-package{
-    /* padding: 0 !important; */
     margin-bottom: 0;
     background: rgb(210 36 42);
     border: 0 !important;
@@ -111,7 +125,9 @@ div#accordion-8 .card-body,
 div#accordion-9 .card-body{
     padding: 5px;
     padding-bottom: 0;
-}
+} */
+
+
 
 /** Button of search in left Side Aside Section **/
 button.btn-food-search.left-side{
@@ -357,6 +373,15 @@ div.filter-item-food-package{
     .menu-container-mobile{
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .mobile-sticky{
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    .menu-search-section{
+        margin-top: 0;
+        background: #d22429;
     }
 }
 

@@ -266,7 +266,7 @@
 
 
     <!-------------------- NAVBAR ----------------------->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <button class="navbar-toggler m-1" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -282,6 +282,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="foodOrder.html">food order</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+
+                        <!-- DropDown Menu -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="foodMenu.html">Food Menu</a>
+                            <a class="dropdown-item" href="lunchMenu.html">Lunch Menu</a>
+                            <a class="dropdown-item" href="drinkMenu.html">Drink & Dessert Menu</a>
+                            <a class="dropdown-item" href="takeAwayMenu.html">Take Away Menu</a>
+                        </div>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
@@ -410,33 +425,10 @@
     </section>
     <br>
 
-    <!------------------------ Google Map API ----------------------->
+    <!------------------------ Google Map Embed API iFrame ----------------------->
     <div id="googleMap" class="map-container">
-        <!-- <div id="map" style="height: 500px; width: 100%; overflow: hidden !important;"></div> -->
         <iframe id="map" src="http://maps.google.com/maps?q=Mai+Thai+Kitchen,Cheshunt=15&output=embed" frameborder="0" class="google-map-api" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
-
-    <!-- Map Initializing with javascript -->
-    <script type="text/javascript">
-        function initMap() {
-            var location = {
-                lat: 51.709474,
-                lng: -0.036383
-            };
-
-            //Initialized map with latLng...
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 20,
-                center: location
-            });
-
-            //Fixed Marker for map on direction..
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
-    </script>
 
     <!-------------- FOOTER AREA ----------------->
     <footer class="footer text-light">
@@ -627,11 +619,6 @@
 
 <!-- Bootstrap bootstrap.min.js (4.5.2) -->
 <script src="assets/bootstrap/bootstrap.min.js"></script>
-
-<!--*********** FOR GOOOGLE MAP API ************-->
-<!-- With Google Map API_Key -->
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtML-Aqf_jzSjvmI719z8OKabwtrWaW9Y&callback=initMap"></script>
 
 <!-- Custom JS for FoodList DropDown CheckBar Filtering Items -->
 <!-- Also for Shopping-Carts Carousels Control -->

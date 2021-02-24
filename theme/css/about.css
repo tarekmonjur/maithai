@@ -17,6 +17,10 @@
     /* font-family: 'Quicksand', sans-serif; */
 }
 
+.contact-title{
+    color: #efa034;
+}
+
 section#about-cover .jumbotron{
     width: 100%;
 	height: 600px;

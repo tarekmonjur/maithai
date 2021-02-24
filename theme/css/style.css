@@ -32,6 +32,29 @@ ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
     border-radius: 0 !important;
 }
 /**-----------BUTTON----------**/
+
+.btn-maithai{
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 10px;
+    /* border-radius: 50px; */
+    transition: 0.5s;
+    line-height: 1;
+    color: #fff;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 2px solid #b37622;
+    text-decoration: none;
+}
+.btn-maithai:hover{
+    background: linear-gradient(90deg, rgb(175, 112, 21) 0%, rgb(219, 183, 129) 55%, rgb(242, 156, 30) 100%);
+    text-decoration: none;
+    color: #000;
+}
+
 .btn-custom {
     font-size: 18px;
     border-radius: 0 !important;
@@ -244,6 +267,12 @@ nav li.nav-item a:hover{
 }
 nav li.nav-item .active-now{
     background: rgb(210, 35, 42);
+}
+
+/* DropDown Menu Style */
+nav li.nav-item div.dropdown-menu{
+    background: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+    z-index: 9999;
 }
 
 /****------- Shopping Cart Opening Bar --------****/
@@ -1073,7 +1102,7 @@ div.dotted-dateline{
 }
 
 img.tz-gallery-image{
-    height: 300px;
+    height: 90%;
     width: 500px;
 }
 
@@ -1088,6 +1117,7 @@ img.tz-gallery-image{
 
 .tz-gallery img.tz-gallery-image {
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .baguetteBox-button {
@@ -1095,7 +1125,7 @@ img.tz-gallery-image{
 }
 
 .our-food-style-title{
-    color: tomato;
+    color: #efa034;
     text-align: center;
     font-size: 30px;
 }
@@ -1112,8 +1142,6 @@ img.tz-gallery-image{
 
 
 
-
-
 .speciality .box-container{
     display: flex;
     align-items: center;
@@ -1124,9 +1152,9 @@ img.tz-gallery-image{
 }
 
 .speciality .box-container .box{
-    height:20rem;
-    flex:1 1 43rem;
-    margin:1rem;
+    height: 15rem;
+    flex: 1 1 43rem;
+    margin: 1rem;
     box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
     border-radius: 1rem;
     overflow: hidden;
@@ -1198,12 +1226,6 @@ svg.svg-inline--fa.fa-headset.fa-w-16{
     height: 400px;
 }
 
-/* To Disable All Sides Margin */
-.margin-disable{
-    margin: 0 !important;
-}
-
-
 /* POPULAR DISHES for home page */
 
 .dish{
@@ -1268,8 +1290,14 @@ svg.svg-inline--fa.fa-headset.fa-w-16{
 
 
 
-
-
+/* To Disable All Sides Margin */
+.margin-disable{
+    margin: 0 !important;
+}
+/* No Solving NavBar DropDown Menu Problem */
+div, nav{
+    overflow: unset;
+}
 
 
 
@@ -1643,6 +1671,12 @@ svg.svg-inline--fa.fa-headset.fa-w-16{
     img.home-logo-image{
         width: 150px;
         height: 120px
+    }
+
+
+    /* On Mobile Display None */
+    .on-mobile-disable{
+        display: none;
     }
 
 }

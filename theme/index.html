@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/gellarySlider.css">
 
+
 </head>
 
 <body>
@@ -266,7 +267,7 @@
     <!--END of Shopping Cart Drawer-->
 
     <!-------------------- NAVBAR ----------------------->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <button class="navbar-toggler m-1" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -282,6 +283,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="foodOrder.html">food order</a>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+
+                        <!-- DropDown Menu -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="foodMenu.html">Food Menu</a>
+                            <a class="dropdown-item" href="lunchMenu.html">Lunch Menu</a>
+                            <a class="dropdown-item" href="drinkMenu.html">Drink & Dessert Menu</a>
+                            <a class="dropdown-item" href="takeAwayMenu.html">Take Away Menu</a>
+                        </div>
+                    </li>
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">gallery</a>
                     </li>
@@ -347,7 +365,7 @@
                                 </div>
 
                                 <a href="aboutUs.html" class="about-btn mt-4">About The Restaurant</a>
-                                <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                                <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Online!</a>
                                 <a href="contactUs.html" class="order-btn mt-4 ml-3">Find Us!</a>
                             </div>
                         </div>
@@ -374,7 +392,7 @@
                                 </div>
 
                                 <a href="aboutUs.html" class="about-btn mt-4">About The Restaurant</a>
-                                <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Food Online!</a>
+                                <a href="foodOrder.html" class="order-btn mt-4 ml-3">Order Online!</a>
                                 <a href="contactUs.html" class="order-btn mt-4 ml-3">Find Us!</a>
                             </div>
                         </div>
@@ -503,32 +521,36 @@
             <div class="box">
                 <img src="assets/img/img1.jpg" alt="">
                 <div class="info">
-                    <h3>tasty hamburger</h3>
+                    <h3>tasty fried</h3>
                     <p>upto 25% discount</p>
+                    <a href="foodMenu.html" class="btn-maithai mt-4">Food Menu</a>
                 </div>
             </div>
 
             <div class="box">
                 <img src="assets/img/img2.jpg" alt="">
                 <div class="info">
-                    <h3>fresh bearkfast</h3>
-                    <p>upto 25% discount</p>
+                    <h3>fresh lunch</h3>
+                    <p>upto 20% discount</p>
+                    <a href="lunchMenu.html" class="btn-maithai mt-4">Lunch Menu</a>
                 </div>
             </div>
 
             <div class="box">
                 <img src="assets/img/img3.jpg" alt="">
                 <div class="info">
-                    <h3>veg sandwich</h3>
+                    <h3>nice prawn</h3>
                     <p>upto 25% discount</p>
+                    <a href="drinkMenu.html" class="btn-maithai mt-4">Dessert Menu</a>
                 </div>
             </div>
 
             <div class="box">
                 <img src="assets/img/img4.jpg" alt="">
                 <div class="info">
-                    <h3>delicious pizza</h3>
-                    <p>upto 25% discount</p>
+                    <h3>delicious thai</h3>
+                    <p>upto 15% discount</p>
+                    <a href="takeAwayMenu.html" class="btn-maithai mt-4">Take Away Menu</a>
                 </div>
             </div>
 
@@ -639,13 +661,13 @@
 
                         <!-- Buttons For Android, Apple, Microsoft -->
                         <div class="d-flex mt-4">
-                            <a href="https://apps.apple.com/in/app/mai-thai/id1524480953"><img
+                            <a href="https://apps.apple.com/in/app/mai-thai/id1524480953" target="blank"><img
                                     src="assets/logo/apple-badge.png" alt="Download on app store"
                                     class="img img-fluid"></a>
 
                             <a href="https://play.google.com/store/apps/details?id=com.eposhybrid.maithai&gl=GB"
-                                class="ml-4"><img src="assets/logo/google-play-badge.png" alt="Get it on Google Play"
-                                    class="img img-fluid"></a>
+                                target="blank" class="ml-4"><img src="assets/logo/google-play-badge.png"
+                                    alt="Get it on Google Play" class="img img-fluid"></a>
 
                             <!-- <a href="#" class="ml-4"><img src="assets/logo/windows-badge.png"
                                     alt="Download from windows phone store" class="img img-fluid"></a> -->
@@ -803,19 +825,19 @@
                     <!-- Footer SOCIAL ICONS -->
                     <div class="col-md-4 footer-social-icons" style="display: inline-flex; justify-content: center;">
                         <div class="d-flex mt-4">
-                            <a href="https://www.facebook.com/mai1thaikitchen" class="ml-4">
+                            <a href="https://www.facebook.com/mai1thaikitchen" target="blank" class="ml-4">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
 
-                            <a href="https://www.instagram.com/maithaikitchencheshunt" class="ml-4">
+                            <a href="https://www.instagram.com/maithaikitchencheshunt" target="blank" class="ml-4">
                                 <i class="fab fa-instagram"></i>
                             </a>
 
-                            <a href="https://youtube.com/channel/UCDHzPwaAsL3CORkpLSf-JEQ" class="ml-4">
+                            <a href="https://youtube.com/channel/UCDHzPwaAsL3CORkpLSf-JEQ" target="blank" class="ml-4">
                                 <i class="fab fa-youtube"></i>
                             </a>
 
-                            <a href="" class="ml-4">
+                            <a href="" class="ml-4" target="blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>
