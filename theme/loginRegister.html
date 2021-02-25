@@ -262,7 +262,7 @@
 
 
   <!-------------------- NAVBAR ----------------------->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -277,8 +277,23 @@
           <li class="nav-item">
             <a class="nav-link" href="foodOrder.html">food order</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Menu
+            </a>
+
+            <!-- DropDown Menu -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="foodMenu.html">Food Menu</a>
+                <a class="dropdown-item" href="lunchMenu.html">Lunch Menu</a>
+                <a class="dropdown-item" href="drinkMenu.html">Drink & Dessert Menu</a>
+                <a class="dropdown-item" href="takeAwayMenu.html">Take Away Menu</a>
+            </div>
+        </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="foodPackage.html">food package</a>
+            <a class="nav-link" href="gallery.html">gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active-now" href="loginRegister.html">login & register <span

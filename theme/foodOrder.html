@@ -138,19 +138,19 @@
     </div>
     <!--END of Shopping-Cart Header-->
 
-     <!-- Shopping cart Content (When Bag Is Empty!) -->
-     <div class="cart-content-empty">
+    <!-- Shopping cart Content (When Bag Is Empty!) -->
+    <div class="cart-content-empty">
       <div class="content-item-empty">
-          <img src="assets/logo/shopping-beg-1.png" alt="">
+        <img src="assets/logo/shopping-beg-1.png" alt="">
 
-          <div class="shopping-title-empty text-capitalize">
-              <p class="text-muted">Your shopping bag is empty!</p>
-          </div>
+        <div class="shopping-title-empty text-capitalize">
+          <p class="text-muted">Your shopping bag is empty!</p>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <!-- Shopping cart Content/Body (When Bag Is Not-Empty!) -->
-  <!-- <div class="cart-content">
+    <!-- Shopping cart Content/Body (When Bag Is Not-Empty!) -->
+    <!-- <div class="cart-content">
       <div class="row content-title">
           <div class="col-md-12 body-heading-title">
               <p>Your delivery items</p>
@@ -248,13 +248,13 @@
       <!-- Place Order Footer -->
       <div class="place-order-footer">
         <a href="" class="btn btn-outline-danger text-capitalize">
-            <span class="mr-2">
-              <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-            </span>
-            <span>place order</span>
+          <span class="mr-2">
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+          </span>
+          <span>place order</span>
         </a>
-    </div>
-    <!-- END of Place-Order's Footer -->
+      </div>
+      <!-- END of Place-Order's Footer -->
     </div>
     <!--END of Shopping-Cart's Footer-->
   </div>
@@ -262,7 +262,7 @@
 
 
   <!-------------------- NAVBAR ----------------------->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -277,8 +277,23 @@
           <li class="nav-item">
             <a class="nav-link active-now" href="#">food order <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+
+            <!-- DropDown Menu -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="foodMenu.html">Food Menu</a>
+              <a class="dropdown-item" href="lunchMenu.html">Lunch Menu</a>
+              <a class="dropdown-item" href="drinkMenu.html">Drink & Dessert Menu</a>
+              <a class="dropdown-item" href="takeAwayMenu.html">Take Away Menu</a>
+            </div>
+          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="foodPackage.html">food package</a>
+            <a class="nav-link" href="gallery.html">gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="loginRegister.html">login & register</a>
@@ -297,840 +312,797 @@
     </div>
   </nav>
 
-  <!------------- SECTION of Banners Page ----------------->
-  <section id="home-cover" class=" food-list-home-banner">
-    <div class="jumbotron">
-      <div class="dark-bg">
-        <div id="intro">
-          <div id="intro-section" class="mb-4">
-            <h5 class="intro-title text-uppercase mb-4">stock food grid combo</h5>
-          </div>
 
-          <div class="search-food mb-5">
-            <input type="text" placeholder="Find Your Choice!" class="form-control">
-            <button type="submit" class="btn btn-danger btn-custom text-uppercase">
-              <i class="fas fa-search"></i>
-              <span> </span>
-              <span>Search</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!--------- The Search Collapse DropDown Bar ------->
-    <ul class="search-dropdown-menu" style="display: none;">
-      <li class="search-item mt-2"><a href="#">
-          <div class="image">
-            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-          </div>
-          <div class="nameAndPrice">
-            <div class="name">Big 8</div>
-            <div class="price">$800.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item"><a href="#">
-          <div class="image">
-            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-          </div>
-
-          <div class="nameAndPrice">
-            <div class="name">Pizza</div>
-            <div class="price">$700.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item"><a href="#">
-          <div class="image">
-            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-          </div>
-
-          <div class="nameAndPrice">
-            <div class="name">Fish Kabab</div>
-            <div class="price">$430.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item"><a href="#">
-          <div class="image">
-            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-          </div>
-
-          <div class="nameAndPrice">
-            <div class="name">Mutton Biriyani</div>
-            <div class="price">$860.</div>
-          </div>
-        </a></li>
-      <hr>
-
-      <li class="search-item mb-2"><a href="#">
-          <div class="image">
-            <img src="assets/img/card1.jpg" alt="card1" class="search-bar-image">
-          </div>
-
-          <div class="nameAndPrice">
-            <div class="name">Masala Pasta</div>
-            <div class="price">$600.</div>
-          </div>
-        </a></li>
-    </ul>
-  </section>
-
-  <!-------------- Food Grid Section ------------>
-  <section id="food-list" class="mt-5 mb-5">
+  <!-- Searching for Food On Food Menu -->
+  <section class="menu-search-section sticky-top mobile-sticky">
     <div class="container">
-      <div class="food-list-header">
-        <h3 class="text-capitalize text-danger">food grids, combo food catagories</h3>
-      </div>
-      <hr>
-
-      <!------- The Main Food Grid and Food Search, Filtering Section ----------->
-      <div class="food-list-body row">
-        <div class="filter-item left-aside col-md-3 col-sm-4 col-xs-12">
-          <div class="forms">
-            <!------- Food Search Bar ------->
-            <div class="form-control search-input mb-3">
-              <input type="text" placeholder="Search for...">
-              <button class="btn-food-search"><i class="fas fa-search"></i></button>
-            </div>
-
-            <!------ Select Catagories Bar ------->
-            <!-- <div class="form-control select-input mb-4">
-              <select name="parent" id="select">
-                <option value="1">Sort by: Popularity</option>
-                <option value="2">Top Rated</option>
-                <option value="3">Special Cuisins</option>
-                <option value="4">Cost</option>
-                <option value="5">Latest</option>
-              </select>
-            </div> -->
-          </div>
-
-
-          <!----------- Collapse Bar ----------->
-          <div class="food-menu-title mb-2">
-            <h3 class="text-light">Food Menu</h3>
-          </div>
-
-          <div id="accordion" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-1" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <span>
-                      <img class="collapse-img-1" src="assets/icons/minus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">stir fried dishes</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad graprao">
-                        <span class="text-capitalize ml-2">pad graprao</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad priew wan">
-                        <span class="text-capitalize ml-2">pad priew wan</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad nam man hol">
-                        <span class="text-capitalize ml-2">pad nam man hol</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad med mamuang">
-                        <span class="text-capitalize ml-2">pad med mamuang</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad khing">
-                        <span class="text-capitalize ml-2">pad khing</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad pak (v)">
-                        <span class="text-capitalize ml-2">pad pak (v)</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad kratiem prik thai">
-                        <span class="text-capitalize ml-2">pad kratiem prik thai</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!---------------------- 2nd Collapse Bar --------------------------->
-          <div id="accordion-2" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-2" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
-                    <span>
-                      <img class="collapse-img-2" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">duck dishes</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-2">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="tamarind duck">
-                        <span class="text-capitalize ml-2">tamarind duck</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad kee maow duck">
-                        <span class="text-capitalize ml-2">pad kee maow duck</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--------------------- 3rd Collapse Bar ---------------------->
-          <div id="accordion-3" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-3" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="false" aria-controls="collapseThree">
-                    <span>
-                      <img class="collapse-img-3" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">noodle dishes</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-3">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad thai">
-                        <span class="text-capitalize ml-2">pad thai</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad see-ew">
-                        <span class="text-capitalize ml-2">pad see-ew</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad kee maow">
-                        <span class="text-capitalize ml-2">pad kee maow</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad sen mee">
-                        <span class="text-capitalize ml-2">pad sen mee</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!------------------- 4th Collapse Bar ------------------------->
-          <div id="accordion-4" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-4" data-toggle="collapse" data-target="#collapseFour"
-                    aria-expanded="false" aria-controls="collapseFour">
-                    <span>
-                      <img class="collapse-img-4" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">Rice</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseFour" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-4">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="steamed jesmine rice">
-                        <span class="text-capitalize ml-2">steamed jesmine rice</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="egg fried rice">
-                        <span class="text-capitalize ml-2">egg fried rice</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="kao pad prik pao">
-                        <span class="text-capitalize ml-2">kao pad prik pao</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="kao pad supparot">
-                        <span class="text-capitalize ml-2">kao pad supparot</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!------------------- 5th Collapse Bar ------------------------->
-          <div id="accordion-5" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-5" data-toggle="collapse" data-target="#collapseFive"
-                    aria-expanded="false" aria-controls="collapseFive">
-                    <span>
-                      <img class="collapse-img-5" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">starters</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseFive" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-5">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="chicken satay (n)">
-                        <span class="text-capitalize ml-2">chicken satay (n)</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="vegetable spring rolls">
-                        <span class="text-capitalize ml-2">vegetable spring rolls</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="thai fish cakes (n)">
-                        <span class="text-capitalize ml-2">thai fish cakes (n)</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="tempura prawns">
-                        <span class="text-capitalize ml-2">tempura prawns</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="prawns on toast">
-                        <span class="text-capitalize ml-2">prawns on toast</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="dumplings (dim sum)">
-                        <span class="text-capitalize ml-2">dumplings (dim sum)</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="spare ribs">
-                        <span class="text-capitalize ml-2">spare ribs</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="vagetable tempura (v)">
-                        <span class="text-capitalize ml-2">vagetable tempura (v)</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="mix platter (n)">
-                        <span class="text-capitalize ml-2">mix platter (n)</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!------------------- 6th Collapse Bar ------------------------->
-          <div id="accordion-6" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-6" data-toggle="collapse" data-target="#collapseSix"
-                    aria-expanded="false" aria-controls="collapseSix">
-                    <span>
-                      <img class="collapse-img-6" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">soups</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseSix" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-6">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="tom yum">
-                        <span class="text-capitalize ml-2">tom yum</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="tom kha">
-                        <span class="text-capitalize ml-2">tom kha</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!------------------- 7th Collapse Bar ------------------------->
-          <div id="accordion-7" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-7" data-toggle="collapse" data-target="#collapseSeven"
-                    aria-expanded="false" aria-controls="collapseSeven">
-                    <span>
-                      <img class="collapse-img-7" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">thai salads</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseSeven" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-7">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="larb gai">
-                        <span class="text-capitalize ml-2">larb gai</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="yum talay">
-                        <span class="text-capitalize ml-2">yum talay</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="yum nua">
-                        <span class="text-capitalize ml-2">yum nua</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!------------------- 8th Collapse Bar ------------------------->
-          <div id="accordion-8" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-8" data-toggle="collapse" data-target="#collapseEight"
-                    aria-expanded="false" aria-controls="collapseEight">
-                    <span>
-                      <img class="collapse-img-8" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">thai curries</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseEight" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-8">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="green curry">
-                        <span class="text-capitalize ml-2">green curry</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="red curry">
-                        <span class="text-capitalize ml-2">red curry</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="kao pad prik pao">
-                        <span class="text-capitalize ml-2">kao pad prik pao</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="panang">
-                        <span class="text-capitalize ml-2">panang</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="duck curry">
-                        <span class="text-capitalize ml-2">duck curry</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="massaman (n)">
-                        <span class="text-capitalize ml-2">massaman (n)</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="jungle curry">
-                        <span class="text-capitalize ml-2">jungle curry</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!------------------- 9th Collapse Bar ------------------------->
-          <div id="accordion-9" class="mb-2">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <h6 class="text-capitalize toggle-click-9" data-toggle="collapse" data-target="#collapseNine"
-                    aria-expanded="false" aria-controls="collapseNine">
-                    <span>
-                      <img class="collapse-img-9" src="assets/icons/plus_collapse.png" alt="+" width="20">
-                    </span>
-                    <span class="ml-1">scafood and fish</span>
-                  </h6>
-                </h5>
-              </div>
-
-              <div id="collapseNine" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-9">
-                <div class="card-body">
-                  <!----- Food Filtering Area with Checkboxes ----->
-                  <div class="checkbox-list">
-                    <ul>
-                      <li class="checkbox">
-                        <input type="checkbox" value="pla priew wan">
-                        <span class="text-capitalize ml-2">pla priew wan</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pla chu chee">
-                        <span class="text-capitalize ml-2">pla chu chee</span>
-                      </li>
-
-                      <li class="checkbox">
-                        <input type="checkbox" value="pad talay prik pao">
-                        <span class="text-capitalize ml-2">pad talay prik pao</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END of Left Side Bar -->
-
+      <div class="input-group w-100">
+        <div class="form-outline food-menu-search-bar">
+          <input type="search" id="form1" class="form-control" placeholder="I'm Looking for.." />
         </div>
-        <!--END of The Left Side Section  -->
-
-
-
-        <!------------- Food List Area Here -------------->
-        <div class="grid-area col-md-9 col-sm-8 col-xs-12">
-          <!------- Food Grid Cards With Row & Cols --------->
-          <div class="row row-cols-1 row-cols-md-3">
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/wideCard1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$25 / <del>$24</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/wideCard2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$10 / <del>$24</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/wideCard3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$45 / <del>$74</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$15 / <del>$24</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$33 / <del>$44</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/coverA.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$50 / <del>$100</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/cover2.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$120 / <del>$240</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/cover3.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$15 / <del>$54</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col mb-4">
-              <div class="card h-100">
-                <img src="assets/img/cover1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
-                <div class="card-body grid-body">
-                  <h5 class="card-title">Eagle Boys Village Plaza</h5>
-                  <ul class="list-body-mini-list">
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">American</a></li>
-                    <li><a href="#">Sandwiches</a></li>
-                    <li><a href="#">Pasta</a></li>
-                  </ul>
-                  <hr>
-                  <div class="d-grid grid-footer text-center">
-                    <div class="discount-title">
-                      <h5 class="text-danger">$150 / <del>$240</del></h5>
-                    </div>
-                    <div class="grid-footer-btn mt-2">
-                      <button class="btn-grid-order text-capitalize">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>add cart</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!------------- Page Pagination Bar ------------->
-          <div class="pagination" aria-label="...">
-            <ul class="pagination pagination-sm">
-              <li class="page-item active" aria-current="page">
-                <span class="page-link">
-                  1
-                  <span class="sr-only">(current)</span>
-                </span>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">6</a></li>
-            </ul>
-          </div>
-        </div>
+        <button type="button" class="btn btn-food-menu-search">
+          <i class="fas fa-search"></i>
+          <span class="on-mobile-disable">Search</span>
+        </button>
       </div>
     </div>
   </section>
 
+
+  <!-- Popular Menu -->
+  <section id="food-menu" class="mt-5 mb-5 food-menu-mobile maithai-bg">
+    <div class="container menu-container-mobile">
+      <h1 class="text-shadow our-food-style-title food-menu-mobile-title">Popular Menu!</h1>
+      <div class="underline mt-2"></div>
+      <br>
+
+      <!------------- Food List Area Here -------------->
+      <div class="grid-area col-md-12 col-sm-8 col-xs-12">
+        <!------- Food Grid Cards With Row & Cols --------->
+        <div class="row row-cols-1 row-cols-md-3">
+
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/greencurry.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">GREEN-CURRY</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">The famous Thai green curry with bamboo shoots, peppers,
+                    Courgette, green beans in coconut milk (Chicken / Pork / Beef Prawn/Vegetable)</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/labb-gai.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">LABB GAI
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£6.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Minced chicken salad flavoured with onions, coriander,
+                    lemongrass, ground chilli, ground roasted rice, lemon juice, fish sauce and mint leaf</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-kee-maow.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">PAD KEE MAOW
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£8.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Stir fried rice noodles with your choice of meat, eggs, garlic,
+                    fresh chilli, bamboo shoots, mixed vegetables Chicken / Pork / Beef Prawn</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-med-mamuang.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">PAD MED MAMUANG
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Your choice of meat stir fried with cashew nuts, mixed peppers,
+                    carrots, spring onions, onions, mushrooms, dried chilli Chicken / Pork / Beef Prawn/Tofu (V)</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-thai-1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">PAD THAI
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Stir fried rice noodles with your choice of meat, eggs,
+                    beansprouts, carrots, spring onions, ground peanuts, in Pad Thai sauce Chicken / Pork / Beef
+                    Prawn/Tofu (V)</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/panang.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">PANANG</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">A rich and thick panang curry, red chilli slices, lime leaves
+                    in coconut milk Chicken / Pork / Beef Prawn/Vegetable</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/kao-pad.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">KAO PAD</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Fried rice with eggs and choice of meats mixed vegetables and
+                    pineapple With Chicken / Pork / Beef</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/dumplings.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">DUMPLINGS</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£5.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Steamed dumplings with mixed chicken and prawns served with
+                    sweet soya sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/prawns-on-toast.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title">PRAWNS ON TOAST
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£5.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Deep fried minced prawns and chicken on toast served with sweet
+                    Chilli sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!------------- Page Pagination Bar ------------->
+        <div class="pagination" aria-label="...">
+          <ul class="pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                1
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <hr class="hr-disable">
+  </section>
+
+
+
+  <!-- Starter Menu -->
+  <section id="food-menu" class="mt-5 mb-5 food-menu-mobile maithai-bg">
+    <div class="container menu-container-mobile">
+      <h1 class="text-shadow our-food-style-title food-menu-mobile-title">Starter!</h1>
+      <div class="underline mt-2"></div>
+
+      <br>
+
+      <!------------- Food List Area Here -------------->
+      <div class="grid-area col-md-12 col-sm-8 col-xs-12">
+        <!------- Food Grid Cards With Row & Cols --------->
+        <div class="row row-cols-1 row-cols-md-3">
+
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/greencurry.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Spicy Thai Prawn Crackers</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description"></p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/labb-gai.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Chicken Satay
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£6.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Chargrilled strips of chicken with marinated Thai spice served
+                    with peanut sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-kee-maow.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Vegetable Spring rolls</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£4.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Deep fried, hand rolled with mixed vegetable served with sweet
+                    chilli sauce
+                  </p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-med-mamuang.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Thai Fish Cakes
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£5.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Spicy fish cakes, blended together, with green beans, lime
+                    leaves, red curry paste served with sweet chilli sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-thai-1.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Tempura Prawns
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£5.90</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Deep fried, marinated prawns and chicken on toast served with
+                    sweet chili sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/panang.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title  text-uppercase">Prawn on Toast</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Deep fried minced prawns and chicken and prawns served with
+                    sweet chili sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/kao-pad.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title  text-uppercase">Dumplings (Dim Sum)</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Steamed dumplings with mixed chicken and prawn served with
+                    sweet soya sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/dumplings.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title  text-uppercase">Spare Ribs</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£5.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Deep fried spare ribs, marinated with bbq sauce topped with
+                    sesame seeds</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/prawns-on-toast.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Vegetable Tempura
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£5.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Deep fried mixed vegetable in better served with sweet chili
+                    sauce</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!------------- Page Pagination Bar ------------->
+        <div class="pagination" aria-label="...">
+          <ul class="pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                1
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <hr class="hr-disable">
+  </section>
+
+
+
+  <!-- Soups Menu -->
+  <section id="food-menu" class="mt-5 mb-5 food-menu-mobile maithai-bg">
+    <div class="container menu-container-mobile">
+      <h1 class="text-shadow our-food-style-title food-menu-mobile-title">Soups (Tom Yum)!</h1>
+      <div class="underline mt-2"></div>
+      <br>
+
+      <!------------- Food List Area Here -------------->
+      <div class="grid-area col-md-12 col-sm-8 col-xs-12">
+        <!------- Food Grid Cards With Row & Cols --------->
+        <div class="row row-cols-1 row-cols-md-3">
+
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/greencurry.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Chicken</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">A traditional hot and spicy with cococut milk and lemon grass,
+                    galangal, lime leaves, mushroom and herbs</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/labb-gai.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Prawn
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£6.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">A traditional hot and spicy with cococut milk and lemon grass,
+                    galangal, lime leaves, mushroom and herbs</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-kee-maow.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Mushroom</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£4.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">A traditional hot and spicy with cococut milk and lemon grass,
+                    galangal, lime leaves, mushroom and herbs
+                  </p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!------------- Page Pagination Bar ------------->
+        <div class="pagination" aria-label="...">
+          <ul class="pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                1
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <hr class="hr-disable">
+  </section>
+
+
+
+
+  <!-- Soups Menu -->
+  <section id="food-menu" class="mt-5 mb-5 food-menu-mobile maithai-bg">
+    <div class="container menu-container-mobile">
+      <h1 class="text-shadow our-food-style-title food-menu-mobile-title">Soups (Tom Kha)!</h1>
+      <div class="underline mt-2"></div>
+      <br>
+
+      <!------------- Food List Area Here -------------->
+      <div class="grid-area col-md-12 col-sm-8 col-xs-12">
+        <!------- Food Grid Cards With Row & Cols --------->
+        <div class="row row-cols-1 row-cols-md-3">
+
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/greencurry.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Chicken</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£7.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Spicy ans sour soup with cocunut milk and lemon grass,
+                    galangal, lime leaves, mushroom and herbs</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/labb-gai.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Prawn
+                </h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£6.50</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Spicy ans sour soup with cocunut milk and lemon grass,
+                    galangal, lime leaves, mushroom and herbs</p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="assets/img/pad-kee-maow.jpg" class="card-img-top img-thumbnail grid-card-img" alt="...">
+              <div class="card-body grid-body">
+                <h5 class="card-title text-uppercase">Mushroom</h5>
+                <span class="card-vat">Vat: 0.00 %</span>
+                <br>
+                <div class="d-grid grid-footer text-center">
+                  <div class="discount-title">
+                    <h5 class="text-danger">£4.95</h5>
+                  </div>
+                  <hr>
+                  <p class="text-muted mb-2 description">Spicy ans sour soup with cocunut milk and lemon grass,
+                    galangal, lime leaves, mushroom and herbs
+                  </p>
+                  <div class="grid-footer-btn mt-3">
+                    <button class="btn-grid-order text-capitalize">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>add cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!------------- Page Pagination Bar ------------->
+        <div class="pagination" aria-label="...">
+          <ul class="pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                1
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <hr class="hr-disable">
+  </section>
+
+
+
+
+  <!-- MaiThai All Menus -->
+  <section id="food-menu" class="mt-5 margin-disable">
+    <div class="">
+      <div class="maithai-menu">
+        <img class="img img-fluid" src="assets/img/menu_2.jpg" alt="Maithai-menu">
+        <img class="img img-fluid" src="assets/img/menu_1.jpg" alt="Maithai-Menu">
+      </div>
+    </div>
+  </section>
 
 
   <!-------------- FOOTER AREA ----------------->
@@ -1191,7 +1163,7 @@
         <div style="border-bottom: 1px dotted gray;"></div>
 
         <!-- After Footers One Section -->
-        <div class="row mt-5 footer-list-2nd-row mb-5">
+        <div class="row mt-5 footer-list-2nd-row mb-3">
           <div class="col-md-4 business-hour" id="time-table-bookmark">
             <h5 class="text-capitalize mb-3">opening time:</h5>
             <ul>
@@ -1223,22 +1195,34 @@
           </div>
 
           <!-- The Footers Business Card's  -->
-          <div class="col-md-4">
+          <div class="col-md-3">
             <h5 class="text-capitalize mb-3">Payment Methods:</h5>
 
-            <ul class="d-flex business-logo-section">
-              <li class="business-logo">
-                <img class="paypal" src="assets/logo/paypal.png" alt="">
-              </li>
-              <li class="business-logo">
-                <img class="visa" src="assets/logo/visa.png" alt="">
-              </li>
-              <li class="business-logo">
-                <img class="master" src="assets/logo/master.png" alt="">
-              </li>
-            </ul>
+            <img class="img img-fluid" src="assets/img/payment_image.png" alt="">
+
+            <!-- <ul class="d-flex business-logo-section">
+                        <li class="business-logo">
+                            <img class="paypal" src="assets/logo/paypal.png" alt="">
+                        </li>
+                        <li class="business-logo">
+                            <img class="visa" src="assets/logo/visa.png" alt="">
+                        </li>
+                        <li class="business-logo">
+                            <img class="master" src="assets/logo/master.png" alt="">
+                        </li>
+                    </ul> -->
           </div>
 
+        </div>
+
+        <!-- Rating Card Row -->
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <!-- <h5 class="text-capitalize mb-3">Food Agency Rating:</h5> -->
+            <img class="img img-fluid" src="assets/img/rating_image.jpg" alt="">
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
         </div>
 
         <div style="border-bottom: 1px dotted gray;"></div>
