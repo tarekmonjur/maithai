@@ -21,10 +21,12 @@ trait CategoryService
     private $trans_prefix = 'category.';
     private $trans_key = 'list';
     private $paginate = true;
+    private $limit = null;
     // columns config for table view
     private $columnsConfig = [
         'sl' => 100,
         'name' => 0,
+        'sorting' => 0,
         'products_count' => 0,
         'sub_categories_count' => 0,
         'slug' => 0,
@@ -39,16 +41,28 @@ trait CategoryService
             'name' => 'name',
             'label' => '',
             'type' => 'text',
-            'options' => null
+            'value' => '',
         ],
         [
             'name' => 'is_active',
-            'label' => '',
+            'label' => 'status',
             'type' => 'select',
             'options' => [
                 '1' => 'active',
                 '0' => 'inactive'
             ]
+        ],
+        [
+            'name' => 'from_date',
+            'label' => '',
+            'type' => 'date',
+            'value' => '',
+        ],
+        [
+            'name' => 'to_date',
+            'label' => '',
+            'type' => 'date',
+            'value' => 0, // months
         ],
     ];
     private $filters = [];
@@ -88,12 +102,9 @@ trait CategoryService
         }
 
         if ($sub_list) {
-            $relations = null;
+            $relations = ['subCategories'];
             if (!empty($this->getId()) || !empty($this->getSlug())) {
-                $relations = ['subCategories','products'];
-                $categories = $categories->with(['subCategories','products']);
-            } else {
-                $relations = ['subCategories'];
+                array_push($relations, 'products');
             }
 
             if ($this->authUser && $this->authUser->getTable() === 'users') {
@@ -113,6 +124,7 @@ trait CategoryService
                 ->get();
         } else {
             $categories = $this->generateFilters($categories);
+            $categories->orderBy('sort');
 
             if ($this->getPaginate()) {
                 $categories = $categories->paginate(config('app.backend_per_page'));
@@ -139,6 +151,16 @@ trait CategoryService
         }
 
         return $this->data;
+    }
+
+    protected function getSortNumber($sort = null)
+    {
+        if (!empty($sort) && is_numeric($sort)) {
+            return intval($sort);
+        }
+
+        $result = Category::orderByDesc('sort')->first('sort');
+        return $result ? $result->sort + 1 : 0;
     }
 
 }

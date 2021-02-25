@@ -14,12 +14,12 @@ class CreateModulesTable extends Migration
     public function up()
     {
         Schema::create('modules', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 'true');
             $table->string('name', 45);
             $table->string('icon', 45)->nullable();
-            $table->boolean('is_active')->default(1);
-            $table->integer('created_by')->default(0);
-            $table->integer('updated_by')->default(0);
+            $table->boolean('is_active')->nullable()->default(1);
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

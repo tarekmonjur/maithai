@@ -14,11 +14,11 @@ class CreateUserServiceTypesTable extends Migration
     public function up()
     {
         Schema::create('user_service_types', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id', 'true');
             $table->string('name', 45)->unique();
-            $table->boolean('is_active')->default(1);
-            $table->integer('created_by')->default(0);
-            $table->integer('updated_by')->default(0);
+            $table->boolean('is_active')->nullable()->default(1);
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

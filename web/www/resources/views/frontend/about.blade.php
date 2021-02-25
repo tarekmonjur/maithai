@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @push('style')
-<link rel="stylesheet" href="{{asset('frontend/css/about.css')}}">
+
 @endpush
 
 @section('main_content')
@@ -11,14 +11,13 @@
     <div class="jumbotron">
         <div class="about-text-section">
             <div class="about-cover text-light text-capitalize text-center">
-                <h1 class="display-3">about <br> maiThai!</h1>
-                <p>MaiThai Restaurant.</p>
+                <h1 class="display-3">about <br> maiThai kitchen!</h1>
+                <p>MaiThai Kitchen is a Restaurant.</p>
                 <p>Come to explore the test of highest quality ingredients</p>
                 <p>while experiencing comfort through food you</p>
                 <p>never thought was possible.</p>
             </div>
         </div>
-    </div>
     </div>
 </section>
 
@@ -35,7 +34,6 @@
 
         <p class="text-muted">
             Authentic traditional Thai dishes are prepared by our experienced chef using only excellent ingredients, making every dish from our kitchen full of the true flavor’s of original Thai food.
-
         </p>
     </div>
 </section>
@@ -153,7 +151,6 @@
                 <div class="col-md-4">
                     <div class="image middle">
                         <img src="{{asset('frontend/img/founder.jpg')}}" alt="" class="img img-fluid img-thumbnail">
-
                         <!-------------The Image-Content Area------------->
                         <!-- Founders Hover Social Icons Here -->
                         <!-- <div class="image-content">
@@ -163,7 +160,6 @@
                                   <a href="#" class="icon fab fa-instagram"></a>
                                 </div>
                               </div> -->
-
                     </div>
                 </div>
 

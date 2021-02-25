@@ -3,20 +3,6 @@
         <div class="form-row">
             <div class="col">
                 <div class="form-group">
-                    <label for="parent_category">{{lang('parent_category')}} :</label>
-                    <select
-                        class="form-control form-control-sm"
-                        v-model="formInput['parent_category']"
-                        id="parent_category">
-                        <option v-for="category in categories" :value="category.id">{{category.name}}</option>
-                    </select>
-                    <div class="invalid-feedback" v-if="errors.parent_category">{{errors.parent_category}}</div>
-                </div>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col">
-                <div class="form-group">
                     <label for="name">{{lang('name')}} : <span class="text-danger">*</span></label>
                     <input
                         type="text"
@@ -42,7 +28,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="col-6">
+            <div class="col">
                 <div class="form-group">
                     <label for="image">{{lang('image')}} :</label>
                     <input
@@ -55,10 +41,35 @@
                     <div class="invalid-feedback" v-if="errors.image">{{errors.image}}</div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col" v-if="formInput['image']">
                 <div class="form-group">
                     <br>
-                    <img :src="formInput['image']" alt="" width="60">
+                    <img :src="image ? image : formInput['image']" alt="" width="60">
+                </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="sorting">{{lang('sorting')}} : </label>
+                <input
+                    type="text"
+                    id="sorting"
+                    v-model="formInput['sort']"
+                    :class="{'is-invalid' : errors.sort}"
+                    class="form-control form-control-sm" />
+                <div class="invalid-feedback" v-if="errors.sort">{{errors.sort}}</div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="is_active">{{lang('is_active')}} :</label>
+                    <select
+                        class="form-control form-control-sm"
+                        v-model="formInput['is_active']"
+                        id="is_active">
+                        <option value="1">{{lang('active')}}</option>
+                        <option value="0">{{lang('inactive')}}</option>
+                    </select>
+                    <div class="invalid-feedback" v-if="errors.is_active">{{errors.is_active}}</div>
                 </div>
             </div>
         </div>
@@ -83,15 +94,15 @@ import {mapState} from "vuex";
 
 export default {
     name: "form.component",
+    data() {
+        return {image: null}
+    },
     computed: {
         ...mapState([
             'lang_key',
             'formInput',
             'errors',
         ]),
-        categories: function() {
-            return _.get(this.$store.state.formData, 'categories.results');
-        },
     },
     methods: {
         lang(key) {
@@ -108,6 +119,11 @@ export default {
             const files_name = event.target.name;
             const files = event.target.files;
             this.formInput[files_name] = files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = (evt) => {
+                this.image = evt.target.result;
+            }
         }
     },
 }

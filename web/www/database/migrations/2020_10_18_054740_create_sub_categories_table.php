@@ -14,15 +14,16 @@ class CreateSubCategoriesTable extends Migration
     public function up()
     {
         Schema::create('sub_categories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id', 'true');
             $table->integer('category_id');
             $table->string('name', 45)->unique();
             $table->string('slug', 100)->unique();
-            $table->string('image', 100)->nullable();
-            $table->boolean('is_active')->default(1);
-            $table->string('description')->nullable();
-            $table->integer('created_by')->default(0);
-            $table->integer('updated_by')->default(0);
+            $table->string('image', 145)->nullable();
+            $table->integer('sort')->nullable();
+            $table->boolean('is_active')->nullable()->default(1);
+            $table->text('description')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

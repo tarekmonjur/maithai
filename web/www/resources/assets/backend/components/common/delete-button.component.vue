@@ -1,6 +1,6 @@
 <template>
     <a v-if="buttons.delete"
-       :href="buttons.delete.type === 'link' ? buttons.delete.link+'/'+id : 'javascript:void(0)'"
+       :href="buttons.delete.type === 'link' ? buttons.delete.link_href : 'javascript:void(0)'"
        :data-toggle="buttons.delete.type"
        :data-target="buttons.delete.type === 'modal'? '#'+buttons.delete.modal_id : false"
        v-on:click.prevent="buttonAction()">
@@ -50,7 +50,7 @@ export default {
 
             }
             else if (_.get(button, 'type') === 'link') {
-                window.location.href = _.get(button, 'id_link', '');
+                window.location.href = _.get(button, 'link_href', '')+'/'+this.id;
             } else {
                 console.log('button type not valid');
             }

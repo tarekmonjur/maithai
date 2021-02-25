@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaiThai Kitchen | Home</title>
-    <link rel="icon" href="{{asset('frontend/logo/logo.png')}}">
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <title>{{$context['settings']['name']}} | {{$title}}</title>
+    <link rel="icon" href="{{asset('files/logo.png')}}">
+    <link rel="shortcut icon" href="{{asset('files/logo.png')}}">
     <!-- CSS only -->
-    <!-- Style.css, Custom CSS Here -->
-    <!-- <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}"> -->
-    <link rel="stylesheet" href="{{asset('frontend/css/app.css')}}">
-    @stack('style')
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/app.css')}}">
+    @foreach($styles as $style)
+        <style href="{{asset('frontend/css/'.$style.'.css')}}"></style>
+    @endforeach
 </head>
 
 <body>
-<!--------------- HEADER ------------------>
-@include('frontend.common.header')
-
-<!-------------------- NAVBAR -------------->
-@include('frontend.common.navbar')
-
-@yield('main_content')
-
-<!-------------- FOOTER AREA ---------------->
-@include('frontend.common.footer')
-
-<!------------ Shopping cart Drawer ---------->
-@include('frontend.common.cart')
-
+    <div id="app">
+        <main-component></main-component>
+    </div>
 </body>
 
-<!-- JS, Popper.js, and jQuery -->
-<!-- FontAwesome 5 -->
-<script src="{{asset('frontend/fontAwesome/js/all.min.js')}}"></script>
-<script src="{{asset('frontend/fontAwesome/js/fontawesome.min.js')}}"></script>
+<script type="text/javascript">
+  window._baseURL = '{{ url('/') }}';
+  window._asset = '{{ asset('/') }}';
+  window._assetPath = '{{ asset(config('app.asset_path')) }}';
+  window._assetURL = '{{ asset('frontend/') }}';
+  window._context = '{{ base64_encode(json_encode($context??[])) }}';
+  window.current_url = '{{url()->current()}}';
+  window._filters = '{!! base64_encode(json_encode($filters??[])) !!}';
+</script>
 
-<!-- Bootstrap jQuery (3.5.1) -->
-<script src="{{asset('frontend/js/jquery.min.js')}}"></script>
-
-<!-- Bootstrap Popper.js (1.16.1) -->
-<script src="{{asset('frontend/js/popper.min.js')}}"></script>
-
-<!-- Bootstrap bootstrap.min.js (4.5.2) -->
-<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-
-<!-- Shopping Cart Custom JS -->
-<script src="{{asset('frontend/js/cart.js')}}"></script>
-
-@stack('script')
+@foreach($scripts as $script)
+    <script src="{{asset('frontend/js/'.$script.'.js')}}"></script>
+@endforeach
 
 </html>

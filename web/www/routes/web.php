@@ -11,12 +11,39 @@
 |
 */
 
+Route::get('email', function() {
+    return (new App\Mail\CustomerContact([
+        'name' => '',
+        'email' => '',
+        'message' => '',
+    ]));
+});
+
+/********** ......Frontend Auth Routes....... *****************/
+Route::prefix('/')->namespace('Frontend\Auth')->group(function(){
+
+    //Password Reset Routes...
+    Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm');
+    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail');
+    Route::get('password/reset/{token?}', 'ResetPasswordController@showResetForm');
+    Route::post('password/reset', 'ResetPasswordController@reset');
+
+    // Verify User Email
+    Route::get('verify-email', 'LoginController@sendVerifyEmail');
+    Route::get('verify-email/{token}', 'LoginController@verifyEmail');
+});
+
 
 Route::prefix('/')->namespace('Frontend')->group(function(){
-    Route::get('/', 'HomeController@index');
-    Route::get('/food-orders', 'HomeController@foodOrder');
-    Route::get('/food-package', 'HomeController@foodPackage');
-    Route::get('/about', 'HomeController@about');
-    Route::get('/contact', 'HomeController@contact');
-    Route::get('/terms-policy', 'HomeController@termsPolicy');
+    Route::get('/', 'WebController@index');
+    Route::get('/food-orders/{slug?}', 'WebController@product');
+    Route::get('/food-package/{slug?}', 'WebController@package');
+    Route::get('/about', 'WebController@about');
+    Route::get('/contact', 'WebController@contact');
+    Route::get('/terms-policy', 'WebController@termsPolicy');
+    Route::get('/signup', 'WebController@showRegistration');
+    Route::get('/login', 'WebController@showLogin')->name('login');
+    Route::get('/logout', 'WebController@logout');
+
+    Route::get('/my-orders', 'DashboardController@myOrder');
 });

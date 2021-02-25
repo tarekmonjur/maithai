@@ -1,6 +1,6 @@
 <template>
     <a v-if="buttons.edit"
-       :href="buttons.edit.type === 'link' ? buttons.edit.link+'/'+id : 'javascript:void(0)'"
+       :href="buttons.edit.type === 'link' ? buttons.edit.link_href : 'javascript:void(0)'"
        :data-toggle="buttons.edit.type"
        :data-target="buttons.edit.type === 'modal'? '#'+buttons.edit.modal_id : false"
        v-on:click.prevent="buttonAction()">
@@ -36,7 +36,7 @@ export default {
                 });
             }
             else if (_.get(button, 'type') === 'link') {
-                window.location.href = _.get(button, 'id_link', '');
+                window.location.href = _.get(button, 'link_href', '') +'/'+this.id;
             } else {
                 console.log('button type not valid');
             }

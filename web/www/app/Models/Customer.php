@@ -25,7 +25,7 @@ class Customer extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'access_token',
+        'password', 'remember_token',
     ];
 
     /**
@@ -43,5 +43,26 @@ class Customer extends Authenticatable
 
     public function setPasswordAttribute($value){
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function enrollAccessToken() {
+        do{
+            $this->access_token = bcrypt(uniqid('accessToken'));
+        } while($this->where('access_token', $this->access_token)->exists());
+        $this->save();
+    }
+
+    public function details() {
+        return $this->hasOne(CustomerDetails::class, 'customer_id', 'id');
+    }
+
+    public function createdBy() {
+        return $this->belongsTo(User::class, 'created_by', 'id')
+            ->with('details');
+    }
+
+    public function updatedBy() {
+        return $this->belongsTo(User::class, 'updated_by', 'id')
+            ->with('details');
     }
 }

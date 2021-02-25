@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
+                            <input type="checkbox" id="remember" name="remember">
                             <label for="remember">
                                 Remember Me
                             </label>
@@ -64,9 +64,9 @@
                     </div>
                 </div>
             </form>
-            <p class="mb-1">
-                <a href="/">I forgot my password</a>
-            </p>
+{{--            <p class="mb-1">--}}
+{{--                <a href="/">I forgot my password</a>--}}
+{{--            </p>--}}
         </div>
     </div>
 @endsection

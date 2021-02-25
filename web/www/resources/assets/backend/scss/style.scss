@@ -18,6 +18,7 @@ button {
 $color1: #ffffff;
 $color2: #dc3545;
 $color3: #be9653;
+$color4: tomato;
 
 $theme-color: $color1;
 $theme-bg-color: $color2;
@@ -52,7 +53,13 @@ $btn-focus-border-color: darkred;
                 .nav-link {
                     &.active {
                         background: $theme-bg-color!important;
+                        color: $theme-color!important;
                     }
+                }
+            }
+            .menu-open {
+                & > a {
+                    background: $theme-filter-bg-color!important;
                 }
             }
         }
@@ -161,9 +168,26 @@ $btn-focus-border-color: darkred;
                 }
             }
 
+            .table {
+                td, th {
+                    padding: .4rem!important;
+                }
+            }
+
             .actions {
                 img {
                     width: 30px;
+                }
+            }
+
+            .nav-link {
+                color: $color3;
+            }
+            a {
+                color: $color3;
+                &.active {
+                    color: $color4;
+                    font-weight: bold;
                 }
             }
         }
@@ -191,6 +215,30 @@ $btn-focus-border-color: darkred;
 
         svg {
             top: 7px !important;
+        }
+    }
+
+    label {
+        margin: 0px!important;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+}
+
+#form{
+    .select2-container{
+        width: 100%!important;
+    }
+}
+
+#tableFilter{
+    .select2 {
+        width: 100%!important;
+        .select2-selection {
+            border-radius: 0px 4px 4px 0px;
+            border: 1px solid $color3;
         }
     }
 }

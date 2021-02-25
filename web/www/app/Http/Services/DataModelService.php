@@ -8,6 +8,8 @@
 namespace App\Http\Services;
 
 
+use Carbon\Carbon;
+
 trait DataModelService
 {
 
@@ -105,6 +107,24 @@ trait DataModelService
         return $this->columns;
     }
 
+    protected function setLimit($limit = null)
+    {
+        $limit = $limit ?? $this->limit;
+        if (!is_numeric($limit)) {
+            $limit = intval($limit);
+        }
+        $this->limit = $limit;
+        return $this;
+    }
+
+    protected function getLimit($limit = null)
+    {
+        if ($limit) {
+            $this->setLimit($limit);
+        }
+        return $this->limit;
+    }
+
     protected function setColumnsConfig(array $columns = null)
     {
         $columns = $columns ?? $this->columnsConfig;
@@ -129,9 +149,13 @@ trait DataModelService
     {
         $filters = $filters ?? $this->filtersConfig;
         $filters_config = [];
+
         foreach($filters as $filter) {
-            $filter['label'] = $this->getTrans($filter['name']);
-            if ($filter['options']) {
+            $filter['label'] = !empty($filter['label']) ?
+                $this->getTrans($filter['label']) :
+                $this->getTrans($filter['name']);
+
+            if (isset($filter['options'])) {
                 $options = [];
                 foreach($filter['options'] as $key => $value) {
                     $options[] = [
@@ -141,8 +165,18 @@ trait DataModelService
                 }
                 $filter['options'] = $options;
             }
+
+            if ($filter['type'] === 'date' && is_int($filter['value'])) {
+                if ($filter['value'] !== 0) {
+                    $filter['value'] = Carbon::parse()->addMonths($filter['value']);
+                } else {
+                    $filter['value'] = Carbon::now();
+                }
+            }
+
             $filters_config[] = $filter;
         }
+
         $this->data['filters_config'] = $filters_config;
         return $this;
     }
@@ -155,17 +189,42 @@ trait DataModelService
         return $this->data['filters_config'];
     }
 
+    protected function setFilter($key, $value)
+    {
+        $this->data['filters'][$key] = $value;
+        return $this;
+    }
+
     protected function setFilters($filters)
     {
         $filters['columns'] = $this->setColumns($filters['columns'] ?? null)->getColumns();
         $filters['sublist'] = $this->getSubList($filters['sublist'] ?? null);
         $filters['paginate'] = $this->getPaginate($filters['paginate'] ?? null);
-        $this->data['filters'] = $filters;
+        $filters['limit'] = $this->getLimit($filters['limit'] ?? null);
+
+        if (!empty($this->data['filters'])) {
+            $this->data['filters'] = array_merge($this->data['filters'], $filters);
+        } else {
+            $this->data['filters'] = $filters;
+        }
+
         return $this;
     }
 
     protected function getFilters()
     {
         return $this->data['filters'] ?? [];
+    }
+
+    protected function setFiltersConfigData($key, $data) {
+        $filters = $this->getFiltersConfig();
+        if ($key) {
+            foreach($filters as $index => $filter) {
+                if ($filter['name'] === $key) {
+                    $filters[$index]['options'] = $data;
+                }
+            }
+        }
+        $this->data['filters_config'] = $filters;
     }
 }

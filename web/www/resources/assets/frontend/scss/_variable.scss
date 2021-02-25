@@ -1,0 +1,43 @@
+/*****----- Colors Global Variables ----*****/
+$theme-color: #efa034;
+$theme-bg-color: #efa034;
+$theme-bg-gradient: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+
+$theme-color2: rgb(210, 35, 42);
+$theme-bg-color2: rgb(210, 35, 42);
+
+$maithai_common: rgb(210, 35, 42);
+
+$navbar-bg: $theme-bg-gradient;
+$navbar-color: #fff;
+$navbar_shadow: #000000c4;
+$cart_nav_bg: rgb(230, 230, 230);
+
+$button_tomato: rgb(255, 99, 71);
+$shopping_close_btn: orangered;
+$orange_red: orangered;
+$contact_icon: #EE3522;
+
+$common_white: #fff;
+$milky_white: #F5FCEB;
+$cream_white: rgb(211, 211, 211);
+$card_border: rgb(175,112,21);
+
+$darkest_gray: darkslategray;
+$common_dark: #000;
+$footer_dark: #181818;
+
+/****---- Food Order & Food List Variables ----****/
+$food_menu_tomato: #ff6347;
+$food_menu_gradiend: linear-gradient(90deg, rgba(175,112,21,1) 0%, rgba(219,183,129,1) 55%, rgba(242,156,30,1) 100%);
+$food_menu_common: rgb(210, 35, 42);
+
+/*****----- Sizes Global Variables ----*****/
+$logo_img_size: 80px;
+$headers_gap: 10px;
+
+$cart_content_img: 58px;
+$cart_delivery_image: 50px;
+
+/****----- Fonts -----*****/
+$lato_google: 'Lato', sans-serif;
