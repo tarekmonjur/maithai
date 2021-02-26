@@ -10,6 +10,8 @@ return [
 
     'backend_per_page' => env('BACKEND_PER_PAGE', 10),
 
+    'theme' => env('THEME', 'theme1'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -189,7 +191,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
-        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
 
     ],
 

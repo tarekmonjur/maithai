@@ -82,4 +82,24 @@ class WebController extends FrontendController
         return view('frontend.layouts.app', $data);
     }
 
+    public function paymentCancel()
+    {
+        $data = [];
+        $data['data']['payment_status'] = ['cancel'];
+        $data['title'] = trans('frontend.payment_cancel');
+        $data['styles'] = [];
+        $data['scripts'] = ['payment_alert'];
+        return view('frontend.layouts.app', $data);
+    }
+
+    public function paymentSuccess()
+    {
+        $data = [];
+        $data['data']['payment_status'] = ['success'];
+        $data['title'] = trans('frontend.payment_success');
+        $data['styles'] = [];
+        $data['scripts'] = ['payment_alert'];
+        return view('frontend.layouts.app', $data);
+    }
+
 }

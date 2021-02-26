@@ -44,6 +44,8 @@ Route::prefix('/')->namespace('Frontend')->group(function(){
     Route::get('/signup', 'WebController@showRegistration');
     Route::get('/login', 'WebController@showLogin')->name('login');
     Route::get('/logout', 'WebController@logout');
+    Route::get('/payment/cancel', 'WebController@paymentCancel');
+    Route::get('/payment/success', 'WebController@paymentSuccess');
 
     Route::get('/my-orders', 'DashboardController@myOrder');
 });

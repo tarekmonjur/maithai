@@ -9,9 +9,9 @@
     <link rel="icon" href="{{asset('files/logo.png')}}">
     <link rel="shortcut icon" href="{{asset('files/logo.png')}}">
     <!-- CSS only -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset(config('app.theme').'/css/app.css')}}">
     @foreach($styles as $style)
-        <style href="{{asset('frontend/css/'.$style.'.css')}}"></style>
+        <style href="{{asset(config('app.theme').'/css/'.$style.'.css')}}"></style>
     @endforeach
 </head>
 
@@ -25,14 +25,15 @@
   window._baseURL = '{{ url('/') }}';
   window._asset = '{{ asset('/') }}';
   window._assetPath = '{{ asset(config('app.asset_path')) }}';
-  window._assetURL = '{{ asset('frontend/') }}';
+  window._assetURL = '{{ asset(config('app.theme').'/') }}';
   window._context = '{{ base64_encode(json_encode($context??[])) }}';
   window.current_url = '{{url()->current()}}';
   window._filters = '{!! base64_encode(json_encode($filters??[])) !!}';
+  window.data = '{!! base64_encode(json_encode($data??[])) !!}';
 </script>
 
 @foreach($scripts as $script)
-    <script src="{{asset('frontend/js/'.$script.'.js')}}"></script>
+    <script src="{{asset(config('app.theme').'/js/'.$script.'.js')}}"></script>
 @endforeach
-
+<script src="https://gateway.sumup.com/gateway/ecom/card/v2/sdk.js"></script>
 </html>
