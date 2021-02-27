@@ -106,7 +106,7 @@
                                 <i class="fab fa-facebook-f"></i>
                             </a>
 
-                            <a href="https://www.instagram.com/maithaikitchencheshunt" class="ml-4">
+                            <a href="https://www.instagram.com/maithai_kitchen/?igshid=6evz8zz35st5" target="blank" class="ml-4">
                                 <i class="fab fa-instagram"></i>
                             </a>
 
@@ -114,8 +114,8 @@
                                 <i class="fab fa-youtube"></i>
                             </a>
 
-                            <a href="" class="ml-4">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://www.tripadvisor.co.uk/Profile/Maithaikitchen" class="ml-4" target="blank">
+                                <i class="fab fa-tripadvisor"></i>
                             </a>
                         </div>
                     </div>

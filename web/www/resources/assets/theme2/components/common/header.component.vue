@@ -48,10 +48,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="qr-code">
-                    <img class="img img-thumbnail img-qr-code img-fluid" :src="settings.qrcode" alt="QR-CODE">
-                </div>
             </div>
         </div>
     </header>

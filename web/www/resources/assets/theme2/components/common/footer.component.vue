@@ -45,7 +45,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <img :src="settings.rating_image" alt="ratting" style="width: 230px; height: 150px">
+                        <img :src="settings.rating_image" alt="ratting" class="img img-fluid">
                     </div>
                 </div>
                 <br>
@@ -64,18 +64,7 @@
 
                     <div class="col-md-4">
                         <h5 class="text-capitalize mb-3">Payment Methods:</h5>
-                        <img :src="settings.payment_image" alt="ratting" style="max-width: 350px">
-<!--                        <ul class="d-flex business-logo-section">-->
-<!--                            <li class="business-logo">-->
-<!--                                <img class="paypal" :src="this.assetUrl('/logo/paypal.png')" alt="">-->
-<!--                            </li>-->
-<!--                            <li class="business-logo">-->
-<!--                                <img class="visa" :src="this.assetUrl('/logo/visa.png')" alt="">-->
-<!--                            </li>-->
-<!--                            <li class="business-logo">-->
-<!--                                <img class="master" :src="this.assetUrl('/logo/master.png')" alt="">-->
-<!--                            </li>-->
-<!--                        </ul>-->
+                        <img :src="settings.payment_image" alt="ratting" class="img img-fluid">
                     </div>
                 </div>
 
@@ -106,7 +95,7 @@
                                 <i class="fab fa-facebook-f"></i>
                             </a>
 
-                            <a href="https://www.instagram.com/maithaikitchencheshunt" class="ml-4">
+                            <a href="https://www.instagram.com/maithai_kitchen/?igshid=6evz8zz35st5" target="blank" class="ml-4">
                                 <i class="fab fa-instagram"></i>
                             </a>
 
@@ -114,8 +103,8 @@
                                 <i class="fab fa-youtube"></i>
                             </a>
 
-                            <a href="" class="ml-4">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://www.tripadvisor.co.uk/Profile/Maithaikitchen" class="ml-4" target="blank">
+                                <i class="fab fa-tripadvisor"></i>
                             </a>
                         </div>
                     </div>

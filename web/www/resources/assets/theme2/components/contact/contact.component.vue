@@ -7,7 +7,7 @@
         <contact-showcase-component></contact-showcase-component>
         <hr>
         <div id="googleMap" class="map-container">
-            <iframe id="map" src="http://maps.google.com/maps?q=Mai+Thai+Kitchen,Cheshunt=15&output=embed" frameborder="0"
+            <iframe id="map" src="https://maps.google.com/maps?q=Mai+Thai+Kitchen,Cheshunt=15&output=embed" frameborder="0"
                     class="google-map-api" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </app-component>

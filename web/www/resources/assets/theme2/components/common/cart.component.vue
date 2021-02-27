@@ -72,10 +72,9 @@
 
             <div class="row content-title items-nav sticky-top">
                 <div class="col-3">Name</div>
-                <div class="col-1">Unit</div>
                 <div class="col-2">Price</div>
                 <div class="col-2">QTY</div>
-                <div class="col-1">Discount</div>
+                <div class="col-2">Discount</div>
                 <div class="col-1">Vat</div>
                 <div class="col-2">SubTotal</div>
             </div>
@@ -87,9 +86,6 @@
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </a>
                     <span>{{item.product_name}}</span>
-                </div>
-                <div class="col-1 single-item">
-                    <span>{{item.product_unit}}</span>
                 </div>
                 <div class="col-2 single-item">
                     <span class="text-danger">{{settings.currency_symbol}}{{item.product_price}}</span>
@@ -104,7 +100,7 @@
                            @change.lazy="updateToCart($event, index)"
                            :value="item.product_qty">
                 </div>
-                <div class="col-1 single-item">
+                <div class="col-2 single-item">
                     <span class="text-danger">{{settings.currency_symbol}}{{item.discount_amount}}</span>
                 </div>
                 <div class="col-1 single-item">
