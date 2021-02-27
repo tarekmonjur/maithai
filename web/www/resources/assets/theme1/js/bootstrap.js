@@ -14,6 +14,7 @@ window.Bootstrap = require('bootstrap');
 window.Popper = require('popper.js').default;
 
 window.context = (window._context && JSON.parse(atob(window._context))) || [];
+window.data = (window._data && JSON.parse(atob(window._data))) || [];
 window.baseURL = window._baseURL || '';
 window.asset = window._asset || '';
 window.assetPath = window._assetPath || '';

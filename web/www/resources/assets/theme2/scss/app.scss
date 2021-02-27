@@ -37,7 +37,7 @@ body{
     div, header, section, footer, aside, article{
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        //overflow: hidden;
     }
     ul, li, a, h1, h2, h3, h4, h5, h6, p, span{
         margin: 0;
@@ -1069,12 +1069,12 @@ div.rounded-contact-icon{
 /**---iPhone 6,7,8 or Higher Screen Comportable ---**/
 @media only screen and (max-width: 720px){
     /**All Sections Title Text Style, Font-size**/
-    .our-food-style-title,
-    .food-menu-title,
-    .contact-us-title,
-    .gellary-title{
-        font-size: 30px;
-    }
+    //.our-food-style-title,
+    //.food-menu-title,
+    //.contact-us-title,
+    //.gellary-title{
+    //    font-size: 30px;
+    //}
 
     div.leftHeaderItem{
         display: flex;

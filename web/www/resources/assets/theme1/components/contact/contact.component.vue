@@ -36,8 +36,8 @@ export default {
         mapConfigs() {
             return {
                 position: {
-                    lat: 51.709474,
-                    lng: -0.036383
+                    lat: 51.71005503040437,
+                    lng: -0.03449472482283282,
                 }
             }
         }

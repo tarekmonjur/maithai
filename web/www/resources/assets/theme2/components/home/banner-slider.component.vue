@@ -4,7 +4,6 @@
             <li data-target="#homeCarouselIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#homeCarouselIndicators" data-slide-to="1"></li>
             <li data-target="#homeCarouselIndicators" data-slide-to="2"></li>
-            <li data-target="#homeCarouselIndicators" data-slide-to="3"></li>
         </ol>
         <!---------- All Sliders Carousel's Here! --------->
         <div class="carousel-inner">
@@ -15,13 +14,6 @@
                         <div class="dark-bg">
                             <div id="intro">
                                 <div id="intro-section" class="mb-4">
-                                    <!-- <h1 class="intro-title text-uppercase mb-4">
-                                        mai thai
-                                        <br>
-                                        <span>
-                                            <small class="small">kitchen</small>
-                                        </span>
-                                    </h1> -->
                                     <img class="mb-4 mt-4 img img-fluid" :src="this.assetUrl('/logo/mai-thai-png-logo.png')" alt="MaiThai Kitchen" height="150" width="170">
                                     <h5 class="intro-info text-capitalize mb-3">find the best food, cafes & cuisine.
                                     </h5>
@@ -45,7 +37,7 @@
                                     <product-search-component v-if="show_search_product" className="search-dropdown-menu"></product-search-component>
                                 </div>
                                 <a href="#orderFoods" class="order-btn mt-4">Order Food!</a>
-                                <a href="#foodMenu" class="order-btn mt-4 ml-3">Food Menu!</a>
+                                <a href="#speciality" class="order-btn mt-4 ml-3">Food Menu!</a>
                                 <a :href="this.url('/about')" class="order-btn mt-4 ml-3">About Us!</a>
                                 <a :href="this.url('/contact')" class="order-btn mt-4 ml-3">Find Us!</a>
                             </div>
@@ -71,26 +63,9 @@
                                 </div>
 
                                 <a href="#orderFoods" class="order-btn mt-4">Order Food!</a>
-                                <a href="#foodMenu" class="order-btn mt-4 ml-3">Food Menu!</a>
+                                <a href="#speciality" class="order-btn mt-4 ml-3">Food Menu!</a>
                                 <a :href="this.url('/about')" class="order-btn mt-4 ml-3">About Us!</a>
                                 <a :href="this.url('/contact')" class="order-btn mt-4 ml-3">Find Us!</a>
-                                <a href="#gallery" class="order-btn mt-4 ml-3">Gallery!</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <!-------- Carousels 3rd Item here -------->
-            <div class="carousel-item">
-                <section id="home-cover-3">
-                    <div class="jumbotron">
-                        <div class="dark-bg">
-                            <div id="intro">
-                                <a href="#orderFoods" class="order-btn mt-4">Order Food!</a>
-                                <a href="#foodMenu" class="order-btn mt-4 ml-3">Food Menu!</a>
-                                <a :href="this.url('/about')" class="order-btn mt-4 ml-3">About Us!</a>
-                                <a :href="this.url('/contact')" class="order-btn mt-4 ml-3">Find Us!</a>
-                                <a href="#gallery" class="order-btn mt-4 ml-3">Gallery!</a>
                             </div>
                         </div>
                     </div>
@@ -103,10 +78,9 @@
                         <div class="dark-bg">
                             <div id="intro">
                                 <a href="#orderFoods" class="order-btn mt-4">Order Food!</a>
-                                <a href="#foodMenu" class="order-btn mt-4 ml-3">Food Menu!</a>
+                                <a href="#speciality" class="order-btn mt-4 ml-3">Food Menu!</a>
                                 <a :href="this.url('/about')" class="order-btn mt-4 ml-3">About Us!</a>
                                 <a :href="this.url('/contact')" class="order-btn mt-4 ml-3">Find Us!</a>
-                                <a href="#gallery" class="order-btn mt-4 ml-3">Gallery!</a>
                             </div>
                         </div>
                     </div>

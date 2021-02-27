@@ -38,14 +38,14 @@ Route::prefix('/')->namespace('Frontend')->group(function(){
     Route::get('/', 'WebController@index');
     Route::get('/food-orders/{slug?}', 'WebController@product');
     Route::get('/food-package/{slug?}', 'WebController@package');
+    Route::get('/gallery', 'WebController@gallery');
     Route::get('/about', 'WebController@about');
     Route::get('/contact', 'WebController@contact');
     Route::get('/terms-policy', 'WebController@termsPolicy');
     Route::get('/signup', 'WebController@showRegistration');
     Route::get('/login', 'WebController@showLogin')->name('login');
     Route::get('/logout', 'WebController@logout');
-    Route::get('/payment/cancel', 'WebController@paymentCancel');
-    Route::get('/payment/success', 'WebController@paymentSuccess');
+    Route::get('/payment/{status?}', 'WebController@paymentStatus');
 
     Route::get('/my-orders', 'DashboardController@myOrder');
 });

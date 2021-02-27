@@ -6,10 +6,9 @@
         <hr>
         <contact-showcase-component></contact-showcase-component>
         <hr>
-        <div id="googleMap" class="map-container" style="overflow: hidden !important;">
-            <google-map-component
-                :config="mapConfigs"
-            />
+        <div id="googleMap" class="map-container">
+            <iframe id="map" src="http://maps.google.com/maps?q=Mai+Thai+Kitchen,Cheshunt=15&output=embed" frameborder="0"
+                    class="google-map-api" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </app-component>
 </template>
@@ -20,7 +19,6 @@ import AppComponent from './../app.component';
 import BannerComponent from './banner.component';
 import ContactShowcaseComponent from './../common/contact-showcase.component';
 import ContactFormComponent from './contact-form.component';
-import GoogleMapComponent from './../common/maps/google-map.component';
 
 export default {
     name: "contact.component",
@@ -29,15 +27,14 @@ export default {
         BannerComponent,
         ContactShowcaseComponent,
         ContactFormComponent,
-        GoogleMapComponent
     },
     computed: {
         ...mapState(['settings']),
         mapConfigs() {
             return {
                 position: {
-                    lat: 51.709474,
-                    lng: -0.036383
+                    lat: 51.71005503040437,
+                    lng: -0.03449472482283282,
                 }
             }
         }

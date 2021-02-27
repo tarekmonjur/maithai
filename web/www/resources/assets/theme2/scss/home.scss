@@ -31,7 +31,7 @@ section#home-cover{
             background: url('images/mood-board.jpg') no-repeat fixed;
 	        background-size: cover;
 	        opacity: .7;
-	        animation: asad 20s linear infinite;
+	        //animation: asad 20s linear infinite;
         }
     }
 }
@@ -48,7 +48,7 @@ section#home-cover-2{
             background: url('images/maithai2.jpeg') no-repeat fixed;
             background-size: cover;
             opacity: .7;
-            animation: asad 20s linear infinite;
+            //animation: asad 20s linear infinite;
         }
     }
 }
@@ -65,7 +65,7 @@ section#home-cover-3{
             background: url('images/maithai.jpeg') no-repeat fixed;
             background-size: cover;
             opacity: .7;
-            animation: asad 20s linear infinite;
+            //animation: asad 20s linear infinite;
         }
     }
 }
@@ -82,19 +82,19 @@ section#home-cover-4{
             background: url('images/coverA.jpg') no-repeat fixed;
             background-size: cover;
             opacity: .7;
-            animation: asad 20s linear infinite;
+            //animation: asad 20s linear infinite;
         }
     }
 }
 
-@keyframes asad{
-	50%{
-		transform: scale(2);
-	}
-	100%{
-		transform: scale(1);
-	}
-}
+//@keyframes asad{
+//	50%{
+//		transform: scale(2);
+//	}
+//	100%{
+//		transform: scale(1);
+//	}
+//}
 .dark-bg{
 	position: absolute;
 	top: 44%;

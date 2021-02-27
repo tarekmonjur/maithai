@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <button class="navbar-toggler m-1" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -16,8 +16,20 @@
                     <li class="nav-item">
                         <a class="nav-link" :href="this.url('/food-orders')">food order</a>
                     </li>
+                    <li class="nav-item dropdown" style="position: unset">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" style="left: auto" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" target="_blank" :href="this.assetUrl('/menu/food-menu.pdf')">Food Menu</a>
+                            <a class="dropdown-item" target="_blank" :href="this.assetUrl('/menu/lunch-menu.pdf')">Lunch Menu</a>
+                            <a class="dropdown-item" target="_blank" :href="this.assetUrl('/menu/drink-menu.pdf')">Drink & Dessert Menu</a>
+                            <a class="dropdown-item" target="_blank" :href="this.assetUrl('/menu/takeaway-menu.pdf')">Take Away Menu</a>
+                        </div>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" :href="this.url('/food-package')">food package</a>
+                        <a class="nav-link" :href="this.url('/gallery')">gallery</a>
                     </li>
                     <li class="nav-item">
                         <a v-if="!isAuthenticated" class="nav-link" :href="this.url('/login')">login & register</a>

@@ -24,6 +24,7 @@ return [
     'payment_order' => 'Payment Order.',
     'paypal' => 'Paypal.',
     'sumup' => 'Sumup.',
-    'payment_cancel' => 'Payment Cancel.',
-    'payment_success' => 'Payment Success',
+    'payment_cancel' => 'Your payment is canceled. Please contact with support.',
+    'payment_success' => 'Thank you! Your payment is successfully done.',
+    'payment_warning' => 'Your payment not processed. Please contact with support.',
 ];

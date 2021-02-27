@@ -1,7 +1,7 @@
 <template>
     <section id="orderFoods" class="container mt-5">
         <div class="text-center mb-4 d-block">
-            <h1 class="text-shadow section-title">Our Food Styles</h1>
+            <h1 class="text-shadow section-title">Order Foods </h1>
             <div class="underline mt-2 title-underline"></div>
         </div>
         <div class="row mt-5 top-sales-food">

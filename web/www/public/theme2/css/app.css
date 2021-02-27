@@ -56,8 +56,6 @@ section#home-cover .jumbotron::after {
   background: url(/images/mood-board.jpg?fa83e9a021d6e432741290a0932ab533) no-repeat fixed;
   background-size: cover;
   opacity: 0.7;
-  -webkit-animation: asad 20s linear infinite;
-          animation: asad 20s linear infinite;
 }
 
 section#home-cover-2 .jumbotron::after {
@@ -70,8 +68,6 @@ section#home-cover-2 .jumbotron::after {
   background: url(/images/maithai2.jpeg?75e9e9e33fcb81ed27978a608a2dbb9f) no-repeat fixed;
   background-size: cover;
   opacity: 0.7;
-  -webkit-animation: asad 20s linear infinite;
-          animation: asad 20s linear infinite;
 }
 
 section#home-cover-3 .jumbotron::after {
@@ -84,8 +80,6 @@ section#home-cover-3 .jumbotron::after {
   background: url(/images/maithai.jpeg?740749ea7dd63158f5ad68639e773694) no-repeat fixed;
   background-size: cover;
   opacity: 0.7;
-  -webkit-animation: asad 20s linear infinite;
-          animation: asad 20s linear infinite;
 }
 
 section#home-cover-4 .jumbotron::after {
@@ -98,28 +92,6 @@ section#home-cover-4 .jumbotron::after {
   background: url(/images/coverA.jpg?54f3b71d66b0d4d36e91412c894ed282) no-repeat fixed;
   background-size: cover;
   opacity: 0.7;
-  -webkit-animation: asad 20s linear infinite;
-          animation: asad 20s linear infinite;
-}
-
-@-webkit-keyframes asad {
-  50% {
-    transform: scale(2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes asad {
-  50% {
-    transform: scale(2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
 }
 
 .dark-bg {
@@ -677,7 +649,6 @@ body aside,
 body article {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body ul,
@@ -1770,13 +1741,6 @@ footer div.dotted-dateline {
 
 @media only screen and (max-width: 720px) {
   /**All Sections Title Text Style, Font-size**/
-
-  .our-food-style-title,
-  .food-menu-title,
-  .contact-us-title,
-  .gellary-title {
-    font-size: 30px;
-  }
 
   div.leftHeaderItem {
     display: flex;

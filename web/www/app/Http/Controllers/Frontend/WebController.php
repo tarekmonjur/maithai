@@ -24,6 +24,7 @@ class WebController extends FrontendController
 //        dd($request->wantsJson(), $request->isJson(), $request->expectsJson());
 
         $data['title'] = trans('frontend.home');
+        $data['data'] = [];
         $data['styles'] = [];
         $data['scripts'] = ['home'];
         return view('frontend.layouts.app')->with($data);
@@ -31,7 +32,7 @@ class WebController extends FrontendController
 
     public function product() {
         $data['title'] = trans('frontend.product');
-        $data['styles'] = [];
+        $data['styles'] = ['food-list'];
         $data['scripts'] = ['product'];
         return view('frontend.layouts.app')->with($data);
     }
@@ -40,6 +41,13 @@ class WebController extends FrontendController
         $data['title'] = trans('frontend.package');
         $data['styles'] = [];
         $data['scripts'] = ['package'];
+        return view('frontend.layouts.app')->with($data);
+    }
+
+    public function gallery() {
+        $data['title'] = trans('frontend.gallery');
+        $data['styles'] = [];
+        $data['scripts'] = ['gallery'];
         return view('frontend.layouts.app')->with($data);
     }
 
@@ -82,21 +90,21 @@ class WebController extends FrontendController
         return view('frontend.layouts.app', $data);
     }
 
-    public function paymentCancel()
+    public function paymentStatus($status = null)
     {
         $data = [];
-        $data['data']['payment_status'] = ['cancel'];
-        $data['title'] = trans('frontend.payment_cancel');
-        $data['styles'] = [];
-        $data['scripts'] = ['payment_alert'];
-        return view('frontend.layouts.app', $data);
-    }
+        if ($status === 'cancel') {
+            $data['data']['payment_status'] = 'cancel';
+            $data['data']['payment_message'] = trans('frontend.payment_cancel');
+        } else if ($status === 'success') {
+            $data['data']['payment_status'] = 'success';
+            $data['data']['payment_message'] = trans('frontend.payment_success');
+        } else {
+            $data['data']['payment_status'] = 'warning';
+            $data['data']['payment_message'] = trans('frontend.payment_warning');
+        }
 
-    public function paymentSuccess()
-    {
-        $data = [];
-        $data['data']['payment_status'] = ['success'];
-        $data['title'] = trans('frontend.payment_success');
+        $data['title'] = trans('frontend.payment_cancel');
         $data['styles'] = [];
         $data['scripts'] = ['payment_alert'];
         return view('frontend.layouts.app', $data);

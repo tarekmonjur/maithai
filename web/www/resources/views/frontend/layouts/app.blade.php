@@ -9,9 +9,10 @@
     <link rel="icon" href="{{asset('files/logo.png')}}">
     <link rel="shortcut icon" href="{{asset('files/logo.png')}}">
     <!-- CSS only -->
+    <link rel="stylesheet" type="text/css" href="{{asset(config('app.theme').'/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset(config('app.theme').'/css/app.css')}}">
     @foreach($styles as $style)
-        <style href="{{asset(config('app.theme').'/css/'.$style.'.css')}}"></style>
+        <link rel="stylesheet" href="{{asset(config('app.theme').'/css/'.$style.'.css')}}">
     @endforeach
 </head>
 
@@ -29,7 +30,7 @@
   window._context = '{{ base64_encode(json_encode($context??[])) }}';
   window.current_url = '{{url()->current()}}';
   window._filters = '{!! base64_encode(json_encode($filters??[])) !!}';
-  window.data = '{!! base64_encode(json_encode($data??[])) !!}';
+  window._data = '{!! base64_encode(json_encode($data??[])) !!}';
 </script>
 
 @foreach($scripts as $script)
