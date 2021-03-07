@@ -7,7 +7,7 @@
         <div class="box-container">
 
             <div class="box">
-                <img :src="this.assetUrl('/img/img1.jpg')" alt="Food Menu">
+                <img :src="this.assetUrl('/img/img1.jpeg')" alt="Food Menu">
                 <div class="info">
                     <h3>Food Menu</h3>
                     <!-- <p>upto 25% discount</p> -->
@@ -16,7 +16,7 @@
             </div>
 
             <div class="box">
-                <img :src="this.assetUrl('/img/img2.jpg')" alt="Lunch Menu">
+                <img :src="this.assetUrl('/img/img2.jpeg')" alt="Lunch Menu">
                 <div class="info">
                     <h3>Express Lunch Menu</h3>
                     <!-- <p>upto 20% discount</p> -->
@@ -25,7 +25,7 @@
             </div>
 
             <div class="box">
-                <img :src="this.assetUrl('/img/img3.jpg')" alt="Dessert Menu">
+                <img :src="this.assetUrl('/img/img3.jpeg')" alt="Dessert Menu">
                 <div class="info">
                     <h3>Thai Dessert & Sweets</h3>
                     <!-- <p>upto 25% discount</p> -->
@@ -34,7 +34,7 @@
             </div>
 
             <div class="box">
-                <img :src="this.assetUrl('/img/img4.jpg')" alt="Take Away Menu">
+                <img :src="this.assetUrl('/img/img4.jpeg')" alt="Take Away Menu">
                 <div class="info">
                     <h3>Delicious Thai Takeaway</h3>
                     <!-- <p>upto 15% discount</p> -->
