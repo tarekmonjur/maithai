@@ -15396,7 +15396,7 @@ Object(vue__WEBPACK_IMPORTED_MODULE_0__["popScopeId"])();
 
 const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("section", _hoisted_1, [_hoisted_2, _hoisted_3, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_4, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_5, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
-    src: this.assetUrl('/img/img1.jpg'),
+    src: this.assetUrl('/img/img1.jpeg'),
     alt: "Food Menu"
   }, null, 8
   /* PROPS */
@@ -15407,7 +15407,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   }, "Food Menu", 8
   /* PROPS */
   , ["href"])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_8, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
-    src: this.assetUrl('/img/img2.jpg'),
+    src: this.assetUrl('/img/img2.jpeg'),
     alt: "Lunch Menu"
   }, null, 8
   /* PROPS */
@@ -15418,7 +15418,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   }, "Lunch Menu", 8
   /* PROPS */
   , ["href"])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_11, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
-    src: this.assetUrl('/img/img3.jpg'),
+    src: this.assetUrl('/img/img3.jpeg'),
     alt: "Dessert Menu"
   }, null, 8
   /* PROPS */
@@ -15429,7 +15429,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   }, "Dessert Menu", 8
   /* PROPS */
   , ["href"])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_14, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
-    src: this.assetUrl('/img/img4.jpg'),
+    src: this.assetUrl('/img/img4.jpeg'),
     alt: "Take Away Menu"
   }, null, 8
   /* PROPS */
