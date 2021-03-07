@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Http\Services\CommonService;
 use App\Mail\CustomerContact;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
@@ -30,7 +31,7 @@ class ApiController extends Controller
         $this->upload_path = config('app.upload_path');
         $this->middleware(function($request, $next) {
             $this->authUser = Auth::guard($this->guard)->user();
-            return $next($request);
+            return $next($request)->header('Access-Control-Allow-Origin', '*');
         });
     }
 
@@ -96,6 +97,24 @@ class ApiController extends Controller
         } catch (\Exception $e) {
             return $this->jsonResponse(null, $e->getMessage(), 'error', $e->getCode());
         }
+    }
+
+    public function paypalIPN(Request $request)
+    {
+        if ($request->get('payment_status') === 'Completed') {
+            $txn_id = $request->get('txn_id');
+            $order_id = $request->get('custom');
+            $order = Order::where('transaction_no', $txn_id)->find();
+            if (!$order) {
+                Order::where('id', $order_id)->update([
+                    'transaction_no' => $txn_id,
+                    'payment_type' => 'card',
+                    'payment_status' => 'completed',
+                ]);
+            }
+            return true;
+        }
+        return false;
     }
 
 }

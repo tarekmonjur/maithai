@@ -12,6 +12,12 @@
                         v-model="forms[index]['value']"
                         :class="{'is-invalid' : errors[form.name]}"
                         class="form-control form-control-sm" />
+                    <select v-else-if="form.type === 'select'"
+                        v-model.lazy="forms[index]['value']"
+                        class="form-control form-control-sm">
+                        <option selected value="">...Select All...</option>
+                        <option v-for="(value, key) in JSON.parse(form.options)" :value="key">{{this.lang(value)}}</option>
+                    </select>
                     <input v-else-if="form.type === 'file'"
                            :type="form.type"
                            :id="form.id"

@@ -17,6 +17,7 @@ return [
     'logo_settings' => 'Logo Settings',
     'email_settings' => 'Email Settings',
     'time_settings' => 'Time Settings',
+    'payment_settings' => 'Payment Settings',
 
     'name' => 'Name',
     'title' => 'Title',
@@ -43,6 +44,16 @@ return [
     'currency_symbol' => 'Currency Symbol',
     'minimum_order' => 'Minimum Order',
     'email_server_port' => 'Email Server Port',
+    'send_order_email' => 'Send Order Email',
+    'enable_payment_method' => 'Enable Payment Method',
+    'payment_mode' => 'Payment Mode',
+    'paypal_payment_email' => 'Paypal Payment Email',
+    'sumup_payment_email' => 'Sumup Payment Email',
+
+    'yes' => 'Yes',
+    'no' => 'No',
+    'live' => 'live',
+    'sandbox' => 'Sandbox',
 
     'success_msg' => 'Settings successfully saved',
     'error_msg' => 'Settings not saved. Try again..!',

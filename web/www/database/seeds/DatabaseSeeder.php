@@ -30,16 +30,16 @@ class DatabaseSeeder extends Seeder
 
         // system seeder
         $this->call(SettingsSeeder::class);
-        $this->call(UserTypeSeeder::class);
-        $this->call(UserStatusSeeder::class);
-        $this->call(UserServiceTypeSeeder::class);
+//        $this->call(UserTypeSeeder::class);
+//        $this->call(UserStatusSeeder::class);
+//        $this->call(UserServiceTypeSeeder::class);
 
         // system user
-        factory(User::class, 1)
-            ->create(['id' => -1, 'username' => 'admin'])
-            ->each(function ($user) {
-                factory(UserDetails::class)->create(['user_id' => $user->id]);
-            });
+//        factory(User::class, 1)
+//            ->create(['id' => -1, 'username' => 'admin'])
+//            ->each(function ($user) {
+//                factory(UserDetails::class)->create(['user_id' => $user->id]);
+//            });
 
 //        factory(User::class, 13)
 //            ->create()
@@ -48,11 +48,11 @@ class DatabaseSeeder extends Seeder
 //            });
 
         // system customer
-        factory(Customer::class, 1)
-            ->create(['id' => -1, 'username' => 'admin'])
-            ->each(function ($customer) {
-                factory(CustomerDetails::class)->create(['customer_id' => $customer->id]);
-            });
+//        factory(Customer::class, 1)
+//            ->create(['id' => -1, 'username' => 'admin'])
+//            ->each(function ($customer) {
+//                factory(CustomerDetails::class)->create(['customer_id' => $customer->id]);
+//            });
 
 //        factory(Customer::class, 13)
 //            ->create()
