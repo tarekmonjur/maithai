@@ -91,7 +91,7 @@
 
                     <div class="col-md-4 footer-social-icons" style="display: inline-flex; justify-content: center;">
                         <div class="d-flex mt-4">
-                            <a href="https://www.facebook.com/mai1thaikitchen" class="ml-4">
+                            <a href="https://www.facebook.com/mai1thaikitchen" target="blank" class="ml-4">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
 
@@ -99,11 +99,11 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
 
-                            <a href="https://youtube.com/channel/UCDHzPwaAsL3CORkpLSf-JEQ" class="ml-4">
+                            <a href="https://youtube.com/channel/UCDHzPwaAsL3CORkpLSf-JEQ" target="blank" class="ml-4">
                                 <i class="fab fa-youtube"></i>
                             </a>
 
-                            <a href="" class="ml-4">
+                            <a href="https://twitter.com/MaiThaiKitchen1" target="blank" class="ml-4">
                                 <i class="fab fa-twitter"></i>
                             </a>
 
