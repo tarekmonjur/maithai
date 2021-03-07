@@ -2,7 +2,7 @@
 
 @push('style')
 @foreach($styles as $style)
-    <style href="{{asset('frontend/css/'.$style.'.css')}}"></style>
+    <style href="{{asset(config('app.theme').'/css/'.$style.'.css')}}"></style>
 @endforeach
 @endpush
 
@@ -17,10 +17,10 @@
       window._baseURL = '{{ url('/') }}';
       window._asset = '{{ asset('/') }}';
       window._assetPath = '{{ asset(config('app.asset_path')) }}';
-      window._assetURL = '{{ asset('frontend/') }}';
+      window._assetURL = '{{ asset(config('app.theme').'/') }}';
       window._context = '{{ base64_encode(json_encode($context??[])) }}';
     </script>
     @foreach($scripts as $script)
-        <script src="{{asset('frontend/js/'.$script.'.js')}}"></script>
+        <script src="{{asset(config('app.theme').'/js/'.$script.'.js')}}"></script>
     @endforeach
 @endpush

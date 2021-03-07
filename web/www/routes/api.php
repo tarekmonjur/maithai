@@ -121,6 +121,11 @@ Route::namespace('Api')->group(function(){
         Route::delete('/{id}','OrderController@destroy')->name($route_base_path.'.order.destroy');
     });
 
+    /********** ...... Payment API ....... *****************/
+    Route::prefix('/payment')->group(function() use ($route_base_path){
+        Route::post('/paypal', 'ApiController@paypalIPN')->name('payment.paypal');
+    });
+
     /********** ...... Table API ....... *****************/
     Route::prefix('/tables')->group(function() use ($route_base_path){
         Route::get('/','TableController@index')->name($route_base_path.'.table.index');

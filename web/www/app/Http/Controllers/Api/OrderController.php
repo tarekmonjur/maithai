@@ -91,8 +91,8 @@ class OrderController extends ApiController
                 $items = $order->orderDetails()->createMany($items);
                 $order->setAttribute('items', $items);
                 DB::commit();
-                if ($order->source === 'online') {
-                    $this->getContext();
+                $context = $this->getContext();
+                if ($order->source === 'online' && $context['settings']['send_order_email']) {
                     $order = Order::with(['orderDetails', 'shippingDetails', 'customer'])->find($order->id);
                     $to_email = $order->shippingDetails ? $order->shippingDetails->email : '';
                     if ($to_email) {

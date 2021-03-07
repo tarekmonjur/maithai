@@ -15,19 +15,25 @@ require("laravel-mix-vue3");
 //    .sass('resources/sass/app.scss', 'public/css');
 
 
-// mix.sass('resources/assets/frontend/scss/app.scss', 'public/frontend/css')
+// const themes = ['theme1', 'theme2'];
+const themes = ['theme2'];
+
+themes.forEach(theme => {
+  mix.sass('resources/assets/'+theme+'/scss/app.scss', 'public/'+theme+'/css')
+  mix.vue3('resources/assets/'+theme+'/js/home.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/product.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/package.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/login.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/signup.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/about.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/contact.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/policy.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/my_order.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/payment_alert.js', 'public/'+theme+'/js');
+  mix.vue3('resources/assets/'+theme+'/js/gallery.js', 'public/'+theme+'/js');
+});
+
 // mix.sass('resources/assets/backend/scss/style.scss', 'public/backend/css');
-
-// mix.vue3('resources/assets/frontend/js/home.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/product.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/package.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/login.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/signup.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/about.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/contact.js', 'public/frontend/js');
-// mix.vue3('resources/assets/frontend/js/policy.js', 'public/frontend/js');
-mix.vue3('resources/assets/frontend/js/my_order.js', 'public/frontend/js');
-
 // mix.vue3('resources/assets/backend/js/category.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/sub_category.js', 'public/backend/js');
 // mix.vue3('resources/assets/backend/js/unit.js', 'public/backend/js');
