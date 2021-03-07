@@ -10,6 +10,8 @@ return [
 
     'backend_per_page' => env('BACKEND_PER_PAGE', 10),
 
+    'theme' => env('THEME', 'theme3'),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Name
