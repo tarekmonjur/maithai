@@ -42,7 +42,7 @@
     <section id="about-content" class="mb-5">
         <div class="container text-center">
             <!-- About Many Contents -->
-            <h3 class="text-capitalize text-center mb-4">"Authentic Meal for Every Man Jack"</h3>
+            <!-- <h3 class="text-capitalize text-center mb-4">"Authentic Meal for Every Man Jack"</h3>
 
             <p class="text-muted">
                 <span class="headline-p">"Mai Thai Kitchen”</span> are more famous from UK at a celebration of the all variety
@@ -60,9 +60,9 @@
                 If you are looking for an exquisite Thai restaurant to welcome your friends from overseas, Mai Thai kitchen is
                 the best choice to impress your friends with Traditional Thai Dishes.
             </p>
-            <br>
+            <br> -->
 
-            <h3 class="text-capitalize text-center mb-4 mt-5">"Banquet Theory"</h3>
+            <!-- <h3 class="text-capitalize text-center mb-4 mt-5">"Banquet Theory"</h3>
             <p class="text-muted">
                 <span class="headline-p">"Short of screaming-hot Thai food, Everything can be suitable for kids too"</span>. We
                 believe that the distinct delicacy, refinement, and elegance is the charm and uniqueness of the Thai culture
@@ -70,18 +70,18 @@
                 our distinctive Thai dishes that capture the essence of the traditional charm, so that each dish reflects
                 authentic Thai culture.
             </p>
-            <br>
+            <br> -->
 
-            <h3 class="text-capitalize text-center mb-4 mt-5">“Private VIP Events”</h3>
+            <!-- <h3 class="text-capitalize text-center mb-4 mt-5">“Private VIP Events”</h3>
             <p class="text-muted">
                 We will deliver bites that spark conversation and bring people together. Whatever your event, be it a special
                 occasion, a wedding, a birthday, or just that evening with family and friends, we are there for you. Our private
                 catering service takes into account all the factors that you consider when planning your party: the budget (big
                 or small), the size, the setting, and what you want to achieve for your special get- together.
             </p>
-            <br>
+            <br> -->
 
-            <h3 class="text-capitalize text-center mb-4 mt-5">“Special Events”</h3>
+            <!-- <h3 class="text-capitalize text-center mb-4 mt-5">“Special Events”</h3>
             <p class="text-muted">
                 Thai Rice Spoon knows you want your party to be talked about. We will bring our creativity to provide you with a
                 totally unique service. Tell us your plans and we'll go to the kitchen and create a fun and delicious menu
@@ -89,9 +89,9 @@
                 <br> <br>
                 You've been meaning to do for months and we are here for you.
             </p>
-            <br>
+            <br> -->
 
-            <h3 class="text-capitalize text-center mb-4 mt-5">“Wedding Receptions”</h3>
+            <!-- <h3 class="text-capitalize text-center mb-4 mt-5">“Wedding Receptions”</h3>
             <p class="text-muted">
                 You've said, 'I do'. Now we will too.
                 <br> <br>
@@ -100,11 +100,11 @@
                 <br> <br>
                 Thai Food is one of the best treats for your guests.
             </p>
-            <br>
+            <br> -->
 
             <h3 class="text-capitalize text-center mb-4 mt-5">“Beyond Pad Thai”</h3>
             <p class="text-muted">
-                Thai food has been popular in the United States for decades. But recently there has been a renaissance in
+                Thai food has been popular in the UK for decades. But recently there has been a renaissance in
                 regional Thai. What were once greasy and sugary pad Thais, coconut-heavy curries and bland chicken satay dishes
                 have become green papaya salads from the Northeast, rich and complex noodle dishes from around Bangkok, and
                 mouth-searing Indian-influenced curries from the South. Looking to go beyond the old takeout? Here’s where to

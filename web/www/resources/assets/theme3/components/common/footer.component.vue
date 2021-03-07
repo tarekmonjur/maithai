@@ -103,16 +103,20 @@
                                 <i class="fab fa-youtube"></i>
                             </a>
 
+                            <a href="" class="ml-4">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+
                             <a href="https://www.tripadvisor.co.uk/Profile/Maithaikitchen" class="ml-4" target="blank">
                                 <i class="fab fa-tripadvisor"></i>
                             </a>
                         </div>
                     </div>
 
-                    <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
+                    <!-- <div class="col-md-4 footer-qr-code" style="display: inline-flex; justify-content: flex-end;">
                         <img class="img img-fluid img-qr-code img-thumbnail" :src="settings.qrcode"
                              alt="QR-CODE">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

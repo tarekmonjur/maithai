@@ -10,11 +10,11 @@
                         <ul>
                             <li><a :href="this.url('/contact')" class="text-capitalize">request call back</a></li>
                             <li>
-                                <a v-if="!isAuthenticated" :href="this.url('/signup')" class="text-capitalize">register</a>
+                                <a v-if="!isAuthenticated" :href="this.url('/signup')" class="text-capitalize">Register</a>
                                 <a v-else :href="this.url('/my-orders')" class="text-capitalize">My Orders</a>
                             </li>
                             <li>
-                                <a v-if="!isAuthenticated" :href="this.url('/login')" class="text-capitalize">login</a>
+                                <a v-if="!isAuthenticated" :href="this.url('/login')" class="text-capitalize">Login</a>
                                 <a v-else :href="this.url('/logout')" class="text-capitalize">Logout</a>
                             </li>
                         </ul>
@@ -64,7 +64,7 @@
                     </h4>
                 </div>
 
-                <div class="col-md-6 mt-2 mb-2">
+                <!-- <div class="col-md-6 mt-2 mb-2">
                     <div class="pl-3">
                         <img class="mr-2" :src="this.assetUrl('/logo/temp-img.jpg')" :alt="settings.name" />
                         <h5 class="temp-text">
@@ -74,7 +74,7 @@
                             </a>
                         </h5>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </header>

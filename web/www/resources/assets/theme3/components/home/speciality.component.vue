@@ -9,8 +9,8 @@
             <div class="box">
                 <img :src="this.assetUrl('/img/img1.jpg')" alt="Food Menu">
                 <div class="info">
-                    <h3>tasty fried</h3>
-                    <p>upto 25% discount</p>
+                    <h3>Food Menu</h3>
+                    <!-- <p>upto 25% discount</p> -->
                     <a target="_blank" :href="this.assetUrl('/menu/food-menu.pdf')" class="btn-maithai mt-4">Food Menu</a>
                 </div>
             </div>
@@ -18,8 +18,8 @@
             <div class="box">
                 <img :src="this.assetUrl('/img/img2.jpg')" alt="Lunch Menu">
                 <div class="info">
-                    <h3>fresh lunch</h3>
-                    <p>upto 20% discount</p>
+                    <h3>Express Lunch Menu</h3>
+                    <!-- <p>upto 20% discount</p> -->
                     <a target="_blank" :href="this.assetUrl('/menu/lunch-menu.pdf')" class="btn-maithai mt-4">Lunch Menu</a>
                 </div>
             </div>
@@ -27,8 +27,8 @@
             <div class="box">
                 <img :src="this.assetUrl('/img/img3.jpg')" alt="Dessert Menu">
                 <div class="info">
-                    <h3>nice prawn</h3>
-                    <p>upto 25% discount</p>
+                    <h3>Thai Dessert & Sweets</h3>
+                    <!-- <p>upto 25% discount</p> -->
                     <a target="_blank" :href="this.assetUrl('/menu/drink-menu.pdf')" class="btn-maithai mt-4">Dessert Menu</a>
                 </div>
             </div>
@@ -36,8 +36,8 @@
             <div class="box">
                 <img :src="this.assetUrl('/img/img4.jpg')" alt="Take Away Menu">
                 <div class="info">
-                    <h3>delicious thai</h3>
-                    <p>upto 15% discount</p>
+                    <h3>Delicious Thai Takeaway</h3>
+                    <!-- <p>upto 15% discount</p> -->
                     <a target="_blank" :href="this.assetUrl('/menu/takeaway-menu.pdf')" class="btn-maithai mt-4">Take Away Menu</a>
                 </div>
             </div>

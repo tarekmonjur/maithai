@@ -32,8 +32,8 @@
                         <a class="nav-link" :href="this.url('/gallery')">gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a v-if="!isAuthenticated" class="nav-link" :href="this.url('/login')">login & register</a>
-                        <a v-else class="nav-link" :href="this.url('/my-orders')">My Orders</a>
+                        <!-- <a v-if="!isAuthenticated" class="nav-link" :href="this.url('/login')">login & register</a> -->
+                        <!-- <a v-else class="nav-link" :href="this.url('/my-orders')">My Orders</a> -->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" :href="this.url('/about')">about us</a>
