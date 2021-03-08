@@ -15,8 +15,8 @@ require("laravel-mix-vue3");
 //    .sass('resources/sass/app.scss', 'public/css');
 
 
-// const themes = ['theme1', 'theme2'];
-const themes = ['theme2'];
+// const themes = ['theme1', 'theme2', 'theme3'];
+const themes = ['theme3'];
 
 themes.forEach(theme => {
   // mix.sass('resources/assets/'+theme+'/scss/app.scss', 'public/'+theme+'/css')

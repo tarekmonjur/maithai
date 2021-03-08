@@ -76,9 +76,9 @@
         </div>
 
         <!-- QR-Code Section -->
-        <div class="qr-code">
+        <!-- <div class="qr-code">
           <img class="img img-thumbnail img-qr-code img-fluid" src="assets/logo/qr-code.png" alt="QR-CODE">
-        </div>
+        </div> -->
       </div>
     </div>
   </header>
@@ -138,19 +138,19 @@
     </div>
     <!--END of Shopping-Cart Header-->
 
-     <!-- Shopping cart Content (When Bag Is Empty!) -->
-     <div class="cart-content-empty">
+    <!-- Shopping cart Content (When Bag Is Empty!) -->
+    <div class="cart-content-empty">
       <div class="content-item-empty">
-          <img src="assets/logo/shopping-beg-1.png" alt="">
+        <img src="assets/logo/shopping-beg-1.png" alt="">
 
-          <div class="shopping-title-empty text-capitalize">
-              <p class="text-muted">Your shopping bag is empty!</p>
-          </div>
+        <div class="shopping-title-empty text-capitalize">
+          <p class="text-muted">Your shopping bag is empty!</p>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <!-- Shopping cart Content/Body (When Bag Is Not-Empty!) -->
-  <!-- <div class="cart-content">
+    <!-- Shopping cart Content/Body (When Bag Is Not-Empty!) -->
+    <!-- <div class="cart-content">
       <div class="row content-title">
           <div class="col-md-12 body-heading-title">
               <p>Your delivery items</p>
@@ -248,13 +248,13 @@
       <!-- Place Order Footer -->
       <div class="place-order-footer">
         <a href="" class="btn btn-outline-danger text-capitalize">
-            <span class="mr-2">
-              <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-            </span>
-            <span>place order</span>
+          <span class="mr-2">
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+          </span>
+          <span>place order</span>
         </a>
-    </div>
-    <!-- END of Place-Order's Footer -->
+      </div>
+      <!-- END of Place-Order's Footer -->
     </div>
     <!--END of Shopping-Cart's Footer-->
   </div>
@@ -262,7 +262,7 @@
 
 
   <!-------------------- NAVBAR ----------------------->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <button class="navbar-toggler m-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -277,8 +277,23 @@
           <li class="nav-item">
             <a class="nav-link" href="foodOrder.html">food order</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+
+            <!-- DropDown Menu -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="foodMenu.html">Food Menu</a>
+              <a class="dropdown-item" href="lunchMenu.html">Lunch Menu</a>
+              <a class="dropdown-item" href="drinkMenu.html">Drink & Dessert Menu</a>
+              <a class="dropdown-item" href="takeAwayMenu.html">Take Away Menu</a>
+            </div>
+          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="foodPackage.html">food package</a>
+            <a class="nav-link" href="gallery.html">gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active-now" href="loginRegister.html">login & register <span
@@ -493,19 +508,23 @@
           <!-- Footer SOCIAL ICONS -->
           <div class="col-md-4 footer-social-icons" style="display: inline-flex; justify-content: center;">
             <div class="d-flex mt-4">
-              <a href="https://www.facebook.com/mai1thaikitchen" class="ml-4">
+              <a href="https://www.facebook.com/mai1thaikitchen" target="blank" class="ml-4">
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a href="https://www.instagram.com/maithaikitchencheshunt" class="ml-4">
+              <a href="https://www.instagram.com/maithai_kitchen/?igshid=6evz8zz35st5" target="blank" class="ml-4">
                 <i class="fab fa-instagram"></i>
               </a>
 
-              <a href="https://youtube.com/channel/UCDHzPwaAsL3CORkpLSf-JEQ" class="ml-4">
+              <a href="https://youtube.com/channel/UCDHzPwaAsL3CORkpLSf-JEQ" target="blank" class="ml-4">
                 <i class="fab fa-youtube"></i>
               </a>
 
-              <a href="" class="ml-4">
+              <a href="https://www.tripadvisor.co.uk/Profile/Maithaikitchen" class="ml-4" target="blank">
+                <i class="fab fa-tripadvisor"></i>
+              </a>
+
+              <a href="https://twitter.com/MaiThaiKitchen1" class="ml-4" target="blank">
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
