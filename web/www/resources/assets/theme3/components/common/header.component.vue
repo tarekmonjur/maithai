@@ -55,7 +55,7 @@
     <header class="order-header">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mt-2 mb-2">
+                <div class="col-md-12 mt-2 mb-2">
                     <h4 class="temp-text">
                         <a :href="phoneNumber" class="temp-text-a">
                         Call Now to Book a Table or to Place an Order <br>
@@ -63,18 +63,6 @@
                         </a>
                     </h4>
                 </div>
-
-                <!-- <div class="col-md-6 mt-2 mb-2">
-                    <div class="pl-3">
-                        <img class="mr-2" :src="this.assetUrl('/logo/temp-img.jpg')" :alt="settings.name" />
-                        <h5 class="temp-text">
-                            <a href="https://www.just-eat.co.uk/" target="_blank" class="temp-text-a">
-                                YOU CAN ALSO PLACE<br>
-                                ORDER IN JUST EAT.
-                            </a>
-                        </h5>
-                    </div>
-                </div> -->
             </div>
         </div>
     </header>

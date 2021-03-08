@@ -3,11 +3,7 @@
         <div class="jumbotron">
             <div class="about-text-section">
                 <div class="about-cover text-light text-capitalize text-center">
-                    <h1 class="display-3">about <br> {{settings.name}} Kitchen</h1>
-                    <!-- <p>{{settings.name}} is a Restaurant.</p>
-                    <p>Come to explore the test of highest quality ingredients</p>
-                    <p>while experiencing comfort through food you</p>
-                    <p>never thought was possible.</p> -->
+                    <h1 class="display-3">about <br> {{settings.name}}</h1>
                 </div>
             </div>
         </div>

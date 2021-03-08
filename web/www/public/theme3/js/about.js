@@ -12413,9 +12413,9 @@ const _hoisted_7 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createV
 Object(vue__WEBPACK_IMPORTED_MODULE_0__["popScopeId"])();
 
 const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("section", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_3, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_4, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h1", _hoisted_5, [_hoisted_6, _hoisted_7, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createTextVNode"])(" " + Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.settings.name) + " Kitchen", 1
+  return Object(vue__WEBPACK_IMPORTED_MODULE_0__["openBlock"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createBlock"])("section", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_2, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_3, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_4, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h1", _hoisted_5, [_hoisted_6, _hoisted_7, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createTextVNode"])(" " + Object(vue__WEBPACK_IMPORTED_MODULE_0__["toDisplayString"])(_ctx.settings.name), 1
   /* TEXT */
-  )]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])(" <p>{{settings.name}} is a Restaurant.</p>\n                    <p>Come to explore the test of highest quality ingredients</p>\n                    <p>while experiencing comfort through food you</p>\n                    <p>never thought was possible.</p> ")])])])]);
+  )])])])])]);
 });
 
 /***/ }),
@@ -13549,7 +13549,7 @@ const _hoisted_24 = {
   class: "row"
 };
 const _hoisted_25 = {
-  class: "col-md-6 mt-2 mb-2"
+  class: "col-md-12 mt-2 mb-2"
 };
 const _hoisted_26 = {
   class: "temp-text"
@@ -13655,7 +13655,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   /* TEXT */
   )], 8
   /* PROPS */
-  , ["href"])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createCommentVNode"])(" <div class=\"col-md-6 mt-2 mb-2\">\n                    <div class=\"pl-3\">\n                        <img class=\"mr-2\" :src=\"this.assetUrl('/logo/temp-img.jpg')\" :alt=\"settings.name\" />\n                        <h5 class=\"temp-text\">\n                            <a href=\"https://www.just-eat.co.uk/\" target=\"_blank\" class=\"temp-text-a\">\n                                YOU CAN ALSO PLACE<br>\n                                ORDER IN JUST EAT.\n                            </a>\n                        </h5>\n                    </div>\n                </div> ")])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("header", _hoisted_30, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_31, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_32, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_33, [_hoisted_34, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
+  , ["href"])])])])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("header", _hoisted_30, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_31, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_32, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_33, [_hoisted_34, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
     innerHTML: _ctx.settings.opening_time
   }, null, 8
   /* PROPS */
@@ -67555,7 +67555,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asadanik/Documents/WORK/maithai/web/www/resources/assets/theme3/js/about.js */"./resources/assets/theme3/js/about.js");
+module.exports = __webpack_require__(/*! /Users/macbookpro/Devbox/maithai/web/www/resources/assets/theme3/js/about.js */"./resources/assets/theme3/js/about.js");
 
 
 /***/ })
