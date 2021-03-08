@@ -8,7 +8,6 @@ export default {
   state: {
     ...state,
     defaultProductParams: {
-      limit: 12,
       is_active: 1,
       is_package: 0,
       paginate: true,
