@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset(config('app.theme').'/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset(config('app.theme').'/css/app.css')}}">
     @foreach($styles as $style)
-        <link rel="stylesheet" href="{{asset(config('app.theme').'/css/'.$style.'.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset(config('app.theme').'/css/'.$style.'.css')}}">
     @endforeach
 </head>
 
