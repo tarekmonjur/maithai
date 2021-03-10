@@ -1,14 +1,14 @@
 {
-    "/theme3/js/about.js": "/theme3/js/about.js",
-    "/theme3/js/contact.js": "/theme3/js/contact.js",
-    "/theme3/js/gallery.js": "/theme3/js/gallery.js",
-    "/theme3/js/home.js": "/theme3/js/home.js",
-    "/theme3/js/login.js": "/theme3/js/login.js",
-    "/theme3/js/my_order.js": "/theme3/js/my_order.js",
-    "/theme3/js/package.js": "/theme3/js/package.js",
-    "/theme3/js/payment_alert.js": "/theme3/js/payment_alert.js",
-    "/theme3/js/policy.js": "/theme3/js/policy.js",
-    "/theme3/js/product.js": "/theme3/js/product.js",
-    "/theme3/js/signup.js": "/theme3/js/signup.js",
-    "/theme3/css/app.css": "/theme3/css/app.css"
+    "/theme4/js/about.js": "/theme4/js/about.js",
+    "/theme4/js/contact.js": "/theme4/js/contact.js",
+    "/theme4/js/gallery.js": "/theme4/js/gallery.js",
+    "/theme4/js/home.js": "/theme4/js/home.js",
+    "/theme4/js/login.js": "/theme4/js/login.js",
+    "/theme4/js/my_order.js": "/theme4/js/my_order.js",
+    "/theme4/js/package.js": "/theme4/js/package.js",
+    "/theme4/js/payment_alert.js": "/theme4/js/payment_alert.js",
+    "/theme4/js/policy.js": "/theme4/js/policy.js",
+    "/theme4/js/product.js": "/theme4/js/product.js",
+    "/theme4/js/signup.js": "/theme4/js/signup.js",
+    "/theme4/css/app.css": "/theme4/css/app.css"
 }
