@@ -16,7 +16,7 @@
 
 <script>
 import AppComponent from './../app.component';
-import BannerSliderComponent from './banner-slider.component';
+import BannerSliderComponent from './../common/banner-slider.component';
 import ProductShowcaseComponent from './product-showcase.component';
 import GalleryComponent from './gallery.component';
 import SpecialityComponent from './speciality.component';

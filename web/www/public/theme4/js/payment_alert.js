@@ -13148,7 +13148,7 @@ const _hoisted_24 = {
   class: "row"
 };
 const _hoisted_25 = {
-  class: "col-md-12 mt-2 mb-2"
+  class: "col-md-6 mt-2 mb-2"
 };
 const _hoisted_26 = {
   class: "temp-text"
@@ -13167,35 +13167,50 @@ const _hoisted_29 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["create
 );
 
 const _hoisted_30 = {
-  class: "time-header"
+  class: "col-md-6 mt-2 mb-2"
 };
 const _hoisted_31 = {
+  class: "temp-text"
+};
+
+const _hoisted_32 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("i", {
+  class: "fas fa-shopping-cart icon"
+}, null, -1
+/* HOISTED */
+);
+
+const _hoisted_33 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createTextVNode"])(" Order Now ");
+
+const _hoisted_34 = {
+  class: "time-header"
+};
+const _hoisted_35 = {
   class: "container"
 };
-const _hoisted_32 = {
+const _hoisted_36 = {
   class: "row"
 };
-const _hoisted_33 = {
+const _hoisted_37 = {
   class: "col-md-4 mb-4"
 };
 
-const _hoisted_34 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", {
+const _hoisted_38 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", {
   class: "p-3 mb-2 time-border"
 }, "Opening Time", -1
 /* HOISTED */
 );
 
-const _hoisted_35 = {
+const _hoisted_39 = {
   class: "col-md-4 mb-4"
 };
 
-const _hoisted_36 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", {
+const _hoisted_40 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", {
   class: "p-3 mb-2 time-border"
 }, "Delivery Time", -1
 /* HOISTED */
 );
 
-const _hoisted_37 = {
+const _hoisted_41 = {
   class: "col-md-4 mb-4"
 };
 
@@ -13254,15 +13269,20 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
   /* TEXT */
   )], 8
   /* PROPS */
-  , ["href"])])])])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("header", _hoisted_30, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_31, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_32, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_33, [_hoisted_34, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
+  , ["href"])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_30, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("h4", _hoisted_31, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("a", {
+    href: this.url('/food-orders'),
+    class: "temp-text-a"
+  }, [_hoisted_32, _hoisted_33], 8
+  /* PROPS */
+  , ["href"])])])])])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("header", _hoisted_34, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_35, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_36, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_37, [_hoisted_38, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
     innerHTML: _ctx.settings.opening_time
   }, null, 8
   /* PROPS */
-  , ["innerHTML"])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_35, [_hoisted_36, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
+  , ["innerHTML"])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_39, [_hoisted_40, Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", {
     innerHTML: _ctx.settings.delivery_time
   }, null, 8
   /* PROPS */
-  , ["innerHTML"])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_37, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
+  , ["innerHTML"])]), Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("div", _hoisted_41, [Object(vue__WEBPACK_IMPORTED_MODULE_0__["createVNode"])("img", {
     src: _ctx.settings.rating_image,
     alt: "ratting",
     style: {

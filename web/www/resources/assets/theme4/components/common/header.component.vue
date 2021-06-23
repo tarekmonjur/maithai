@@ -55,11 +55,18 @@
     <header class="order-header">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mt-2 mb-2">
+                <div class="col-md-6 mt-2 mb-2">
                     <h4 class="temp-text">
                         <a :href="phoneNumber" class="temp-text-a">
                         Call Now to Book a Table or to Place an Order <br>
                         <i class="fas fa-phone-alt icon"></i>&nbsp;{{settings.phone ? settings.phone : settings.mobile}}
+                        </a>
+                    </h4>
+                </div>
+                <div class="col-md-6 mt-2 mb-2">
+                    <h4 class="temp-text">
+                        <a :href="this.url('/food-orders')" class="temp-text-a">
+                            <i class="fas fa-shopping-cart icon"></i> Order Now
                         </a>
                     </h4>
                 </div>

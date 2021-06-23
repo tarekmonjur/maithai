@@ -44,29 +44,29 @@
 
         </div>
 
-        <div class="icons-container">
+<!--        <div class="icons-container">-->
 
-            <div class="icons">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>fast delivery</h3>
-            </div>
+<!--            <div class="icons">-->
+<!--                <i class="fas fa-shipping-fast"></i>-->
+<!--                <h3>fast delivery</h3>-->
+<!--            </div>-->
 
-            <div class="icons">
-                <i class="fas fa-tags"></i>
-                <h3>heavy discounts</h3>
-            </div>
+<!--            <div class="icons">-->
+<!--                <i class="fas fa-tags"></i>-->
+<!--                <h3>heavy discounts</h3>-->
+<!--            </div>-->
 
-            <div class="icons">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h3>money returns</h3>
-            </div>
+<!--            <div class="icons">-->
+<!--                <i class="fas fa-hand-holding-usd"></i>-->
+<!--                <h3>money returns</h3>-->
+<!--            </div>-->
 
-            <div class="icons">
-                <i class="fas fa-headset"></i>
-                <h3>24 x 7 support</h3>
-            </div>
+<!--            <div class="icons">-->
+<!--                <i class="fas fa-headset"></i>-->
+<!--                <h3>24 x 7 support</h3>-->
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
     </section>
 </template>

@@ -8,7 +8,7 @@
 
 <script>
 import AppComponent from './../app.component';
-import BannerSliderComponent from './banner-slider.component';
+import BannerSliderComponent from './../common/banner-slider.component';
 import RestaurantGalleryComponent from './restaurant-gallery.component';
 import ProductGalleryComponent from './product-gallery.component';
 
